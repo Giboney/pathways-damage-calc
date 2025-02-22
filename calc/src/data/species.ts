@@ -10179,7 +10179,7 @@ const PATHWAYS_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
     abilities: {0: 'Sharpness'},
     baseSpecies: 'Samurott-Hisui',
   },
-  'Typhlosion': { otherFormes: ['Typhlosion-Hisui', 'Typhlosion-Hisui-Mega'] },
+  'Typhlosion': { otherFormes: ['Typhlosion-Hisui', 'Typhlosion-Hisui-Mega', 'Typhlosion-Black Flame'] },
   'Typhlosion-Hisui': { otherFormes: ['Typhlosion', 'Typhlosion-Hisui-Mega'] },
   'Typhlosion-Hisui-Mega': {
     types: ['Ghost', 'Fire'],
@@ -10222,11 +10222,19 @@ const PATHWAYS_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
     weightkg: 79.5,
     abilities: {0: 'Blaze'},
   },
+  Luxray: {otherFormes: ['Luxray-Shadow Mane']},
   'Luxray-Shadow Mane': {
     types: ['Electric', 'Ghost'],
     bs: { hp: 80, at: 130, df: 79, sa: 80, sd: 79, sp: 75 },
     weightkg: 42,
     abilities: {0: 'Intimidate'},
+  },
+  Charizard: {otherFormes: ['Charizard-Gmax', 'Charizard-Mega-X', 'Charizard-Mega-Y', Charizard-2]},
+  'Charizard-2': {
+    types: ['Fire', 'Flying']
+    bs: { hp: 78, at: 139, df: 78, sa: 119, sd: 85, sp: 115 },
+    weightkg: 90.5,
+    abilities: {0: 'Drought'},
   },
 };
 
