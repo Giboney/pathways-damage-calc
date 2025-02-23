@@ -4191,7 +4191,7 @@ const SV_PATCH: {[name: string]: DeepPartial<MoveData>} = {
   Tailwind: {isWind: true},
   Twister: {isWind: true},
   Whirlwind: {isWind: true},
-  'Wicked Blow': {bp: 75, zp: 140},
+  'Wicked Blow': {bp: 80},
   'X-Scissor': {isSlicing: true},
   'Aqua Cutter': {
     bp: 70,
@@ -5238,7 +5238,7 @@ const PATHWAYS_PATCH: {[name: string]: DeepPartial<MoveData>} = {
     category: 'Status',
   },
   'Spirit Bloom': {
-    bp: 0,
+    bp: 70,
     type: 'Fairy',
     category: 'Special',
     maxPower: 90,
