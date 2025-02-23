@@ -316,7 +316,7 @@ th {
 .right {
     float: right;
 }
-.locked-move:checked + .btn {
+.locked-move:checked + .btn, .locked-weather:checked + .btn {
     background: #ffff99;
 }
 
