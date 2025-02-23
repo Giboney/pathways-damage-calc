@@ -4191,6 +4191,7 @@ const SV_PATCH: {[name: string]: DeepPartial<MoveData>} = {
   Tailwind: {isWind: true},
   Twister: {isWind: true},
   Whirlwind: {isWind: true},
+  'Wicked Blow': {bp: 75, zp: 140},
   'X-Scissor': {isSlicing: true},
   'Aqua Cutter': {
     bp: 70,
@@ -5695,6 +5696,7 @@ const PATHWAYS_PATCH: {[name: string]: DeepPartial<MoveData>} = {
     maxPower: 130,
     zp: 175,
   },
+  'Wicked Blow': {bp: 80, zp: 160},
 }
 
 // Pathways introduces some new move classifications
