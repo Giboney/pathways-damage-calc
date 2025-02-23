@@ -10236,6 +10236,20 @@ const PATHWAYS_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
     weightkg: 90.5,
     abilities: {0: 'Drought'},
   },
+  Blastoise: {otherFormes: ['Blastoise-Gmax', 'Blastoise-Mega', 'Blastoise-2']},
+  'Blastoise-2': {
+    types: ['Water'],
+    bs: { hp: 79, at: 83, df: 120, sa: 125, sd: 125, sp: 78 },
+    weightkg: 85.5,
+    abilities: {0: 'Drizzle'},
+  },
+  Venusaur: {otherFormes: ['Venusaur-Gmax', 'Venusaur-Mega', 'Venusaur-2']},
+  'Venusaur-2': {
+    types: ['Grass', 'Poison'],
+    bs: { hp: 80, at: 100, df: 123, sa: 122, sd: 120 sp: 80 },
+    weightkg: 100,
+    abilities: {0: 'Fur Coat'},
+  },
 };
 
 const PATHWAYS_STAT_CHANGES: {[name: string]: DeepPartial<SpeciesData>} = {
