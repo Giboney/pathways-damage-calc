@@ -431,7 +431,52 @@ const SV: TypeChart = extend(true, {}, SS, {
   },
 });
 
-const PATHWAYS = SV;
+const PATHWAYS: TypeChart = extend(true, {}, SV, {
+  '???': {Shadow: 1, Omnitype: 1},
+  Normal: {Shadow: 1, Omnitype: 0},
+  Grass: {Shadow: 1, Omnitype: 0.5},
+  Fire: {Shadow: 1, Omnitype: 1},
+  Water: {Shadow: 1, Omnitype: 1},
+  Electric: {Shadow: 1, Omnitype: 0},
+  Ice: {Shadow: 1, Omnitype: 1},
+  Flying: {Shadow: 1, Omnitype: 1},
+  Bug: {Shadow: 1, Omnitype: 0.5},
+  Poison: {Shadow: 1, Omnitype: 0},
+  Ground: {Shadow: 1, Omnitype: 0},
+  Rock: {Shadow: 1, Omnitype: 2},
+  Fighting: {Shadow: 1, Omnitype: 0},
+  Psychic: {Shadow: 1, Omnitype: 0},
+  Ghost: {Shadow: 1, Omnitype: 0},
+  Dragon: {Shadow: 1, Omnitype: 0},
+  Dark: {Shadow: 1, Omnitype: 0.5},
+  Steel: {Shadow: 1, Omnitype: 0.5},
+  Fairy: {Shadow: 1, Omnitype: 1},
+  Shadow: {
+    '???': 1,
+    Normal: 2,
+    Grass: 2,
+    Fire: 2,
+    Water: 2,
+    Electric: 2,
+    Ice: 2,
+    Flying: 2,
+    Bug: 2,
+    Poison: 2,
+    Ground: 2,
+    Rock: 2,
+    Fighting: 2,
+    Psychic: 2,
+    Ghost: 2,
+    Dragon: 2,
+    Dark: 2,
+    Steel: 2,
+    Fairy: 2,
+    Shadow: 0.5,
+    Omnitype: 0.5
+  },
+  Omnitype: {
+  },
+});
 
 export const TYPE_CHART = [{}, RBY, GSC, ADV, DPP, BW, XY, SM, SS, SV, PATHWAYS];
 
