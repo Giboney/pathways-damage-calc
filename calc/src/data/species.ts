@@ -10251,7 +10251,7 @@ const PATHWAYS_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
   'Delphox-Fairy Tale': {
     types: ['Psychic', 'Normal'],
     bs: { hp: 75, at: 59, df: 72, sa: 114, sd: 100, sp: 114},
-    abilities: (0: 'Magic Bounce'},
+    abilities: {0: 'Magic Bounce'},
   },
   Charizard: {otherFormes: ['Charizard-Gmax', 'Charizard-Mega-X', 'Charizard-Mega-Y', 'Charizard-2']},
   'Charizard-2': {
