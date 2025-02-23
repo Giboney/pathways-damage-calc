@@ -10229,9 +10229,9 @@ const PATHWAYS_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
     weightkg: 42,
     abilities: {0: 'Intimidate'},
   },
-  Charizard: {otherFormes: ['Charizard-Gmax', 'Charizard-Mega-X', 'Charizard-Mega-Y', Charizard-2]},
+  Charizard: {otherFormes: ['Charizard-Gmax', 'Charizard-Mega-X', 'Charizard-Mega-Y', 'Charizard-2']},
   'Charizard-2': {
-    types: ['Fire', 'Flying']
+    types: ['Fire', 'Flying'],
     bs: { hp: 78, at: 139, df: 78, sa: 119, sd: 85, sp: 115 },
     weightkg: 90.5,
     abilities: {0: 'Drought'},
