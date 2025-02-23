@@ -417,7 +417,7 @@ export function calculatePathways(
   if (
     (field.hasWeather('Harsh Sunshine') && move.hasType('Water')) ||
     (field.hasWeather('Heavy Rain') && move.hasType('Fire')) ||
-    (field.hasWeather('Raging Sandstorm') && move.hasType('Grass')
+    (field.hasWeather('Raging Sandstorm', 'Harsh Typhoon') && move.hasType('Grass'))
   ) {
     desc.weather = field.weather;
     return result;
