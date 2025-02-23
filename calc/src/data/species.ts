@@ -10274,6 +10274,9 @@ const PATHWAYS_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
     weightkg: 100,
     abilities: {0: 'Fur Coat'},
   },
+  Florges: {
+    abilities: {0: 'Grassy Surge'},
+  },
 };
 
 const PATHWAYS_STAT_CHANGES: {[name: string]: DeepPartial<SpeciesData>} = {
