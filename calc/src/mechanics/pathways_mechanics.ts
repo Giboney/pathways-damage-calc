@@ -217,9 +217,9 @@ export function calculatePathways(
     const holdingUmbrella = attacker.hasItem('Utility Umbrella');
     type =
       field.hasWeather('Sun', 'Harsh Sunshine') && !holdingUmbrella ? 'Fire'
-      : field.hasWeather('Rain', 'Heavy Rain') && !holdingUmbrella ? 'Water'
-      : field.hasWeather('Sand') ? 'Rock'
-      : field.hasWeather('Hail', 'Snow') ? 'Ice'
+      : field.hasWeather('Rain', 'Heavy Rain', 'Harsh Typhoon') && !holdingUmbrella ? 'Water'
+      : field.hasWeather('Sand', 'Raging Sandstorm') ? 'Rock'
+      : field.hasWeather('Hail', 'Snow', 'Violent Blizzard') ? 'Ice'
       : 'Normal';
     desc.weather = field.weather;
     desc.moveType = type;
@@ -416,7 +416,8 @@ export function calculatePathways(
 
   if (
     (field.hasWeather('Harsh Sunshine') && move.hasType('Water')) ||
-    (field.hasWeather('Heavy Rain') && move.hasType('Fire'))
+    (field.hasWeather('Heavy Rain') && move.hasType('Fire')) ||
+    (field.hasWeather('Raging Sandstorm') && move.hasType('Grass')
   ) {
     desc.weather = field.weather;
     return result;
@@ -1067,7 +1068,7 @@ export function calculateBPModsPathways(
     bpMods.push(6144);
     desc.moveBP = basePower * 1.5;
   } else if (move.named('Solar Beam', 'Solar Blade') &&
-      field.hasWeather('Rain', 'Heavy Rain', 'Sand', 'Hail', 'Snow')) {
+      field.hasWeather('Rain', 'Heavy Rain', 'Sand', 'Hail', 'Snow', 'Violent Blizzard', 'Harsh Typhoon')) {
     bpMods.push(2048);
     desc.moveBP = basePower / 2;
     desc.weather = field.weather;
@@ -1171,7 +1172,7 @@ export function calculateBPModsPathways(
     (attacker.hasAbility('Sheer Force') &&
       (move.secondaries || move.named('Jet Punch', 'Order Up')) && !move.isMax) ||
     (attacker.hasAbility('Sand Force') &&
-      field.hasWeather('Sand') && move.hasType('Rock', 'Ground', 'Steel')) ||
+      field.hasWeather('Sand', 'Raging Sandstorm') && move.hasType('Rock', 'Ground', 'Steel')) ||
     (attacker.hasAbility('Analytic') &&
       (turnOrder !== 'first' || field.defenderSide.isSwitching === 'out')) ||
     (attacker.hasAbility('Tough Claws') && move.flags.contact) ||
@@ -1464,7 +1465,7 @@ export function calculateAtModsPathways(
     desc.defenderAbility = defender.ability;
   }
 
-  if (defender.hasAbility('Hydrochasm Surge', 'Hydrochasm Surge++') && field.hasWeather('Sun', 'Harsh Sunshine', 'Sand')) {
+  if (defender.hasAbility('Hydrochasm Surge', 'Hydrochasm Surge++') && field.hasWeather('Sun', 'Harsh Sunshine', 'Sand', 'Raging Sandstorm')) {
     atMods.push(4915);
     desc.defenderAbility = defender.ability;
   }
@@ -1560,11 +1561,11 @@ export function calculateDefensePathways(
   }
 
   // unlike all other defense modifiers, Sandstorm SpD boost gets applied directly
-  if (field.hasWeather('Sand') && defender.hasType('Rock') && !hitsPhysical) {
+  if (field.hasWeather('Sand', 'Raging Sandstorm') && defender.hasType('Rock') && !hitsPhysical) {
     defense = pokeRound((defense * 3) / 2);
     desc.weather = field.weather;
   }
-  if (field.hasWeather('Snow') && defender.hasType('Ice') && hitsPhysical) {
+  if (field.hasWeather('Snow', 'Violent Blizzard') && defender.hasType('Ice') && hitsPhysical) {
     defense = pokeRound((defense * 3) / 2);
     desc.weather = field.weather;
   }
@@ -1703,7 +1704,8 @@ function calculateBaseDamagePathways(
       desc.weather = field.weather;
     } else if (
       (field.hasWeather('Sun') && move.hasType('Water')) ||
-      (field.hasWeather('Rain') && move.hasType('Fire'))
+      (field.hasWeather('Rain') && move.hasType('Fire')) ||
+      (field.hasWeather('Violent Blizzard') && move.hasType('Fire', 'Fighting')
     ) {
       baseDamage = pokeRound(OF32(baseDamage * 2048) / 4096);
       desc.weather = field.weather;
