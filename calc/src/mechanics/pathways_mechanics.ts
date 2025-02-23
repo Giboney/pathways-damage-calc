@@ -1705,7 +1705,7 @@ function calculateBaseDamagePathways(
     } else if (
       (field.hasWeather('Sun') && move.hasType('Water')) ||
       (field.hasWeather('Rain') && move.hasType('Fire')) ||
-      (field.hasWeather('Violent Blizzard') && move.hasType('Fire', 'Fighting')
+      (field.hasWeather('Violent Blizzard') && move.hasType('Fire', 'Fighting'))
     ) {
       baseDamage = pokeRound(OF32(baseDamage * 2048) / 4096);
       desc.weather = field.weather;
