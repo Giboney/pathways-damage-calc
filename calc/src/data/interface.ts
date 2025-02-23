@@ -17,7 +17,7 @@ export type GameType = 'Singles' | 'Doubles';
 export type Terrain = 'Electric' | 'Grassy' | 'Psychic' | 'Misty';
 export type Weather =
   'Sand' | 'Sun' | 'Rain' | 'Hail' | 'Snow' | 'Harsh Sunshine'|
-  'Heavy Rain' | 'Strong Winds' | 'Harsh Typhoon';
+  'Heavy Rain' | 'Strong Winds' | 'Harsh Typhoon' | 'Raging Sandstorm' | 'Violent Blizzard';
 
 export type NatureName =
   'Adamant' | 'Bashful' | 'Bold' | 'Brave' | 'Calm' |
@@ -29,7 +29,7 @@ export type NatureName =
 export type TypeName =
   'Normal' | 'Fighting' | 'Flying' | 'Poison' | 'Ground' | 'Rock' | 'Bug' | 'Ghost' | 'Steel' |
   'Fire' | 'Water' | 'Grass' | 'Electric' | 'Psychic' | 'Ice' | 'Dragon' | 'Dark' | 'Fairy' |
-  'Stellar' | '???';
+  'Stellar' | '???' | 'Shadow' | 'Omnitype';
 
 export type MoveCategory = 'Physical' | 'Special' | 'Status';
 
