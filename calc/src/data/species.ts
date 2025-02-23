@@ -10210,17 +10210,18 @@ const PATHWAYS_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
   Pikachu: {otherFormes: ['Pikachu-Gmax', 'Pikachu-Partner', 'Pikachu-Kalos', 'Pikachu-Gigachu']},
   'Pikachu-Partner': {
     bs: {hp: 35, at: 55, df: 95, sa: 50, sd: 95, sp: 120},
-    abilities: {0, 'Light Born'},
+    abilities: {0: 'Light Born'},
   },
   'Pikachu-Kalos': {
     bs: { at: 80, df: 50, sa: 75, sp: 140},
   },
   'Pikachu-Gigachu': {
-    bs: {hp: 100, at: 180, df: 150, sa: 100, sd: 100, sp: 100},
+    types: ['Electric'],
+    bs: {hp: 200, at: 180, df: 150, sa: 100, sd: 100, sp: 100},
     weightkg: 100,
-    abilities: {0: 'Pure Power'}
+    abilities: {0: 'Pure Power'},
   },
-  Eevee: {otherFormes: ['Eevee-Gmax', 'Eevee-Partner', 'Eevee-Partner-Evoboost']}
+  Eevee: {otherFormes: ['Eevee-Gmax', 'Eevee-Partner', 'Eevee-Partner-Evoboost']},
   'Eevee-Partner': {
     types: ['Normal'],
     bs: { hp: 65, at: 60, df: 70, sa: 55, sd: 85, sp: 115 },
@@ -10245,6 +10246,12 @@ const PATHWAYS_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
     bs: { hp: 80, at: 130, df: 79, sa: 80, sd: 79, sp: 75 },
     weightkg: 42,
     abilities: {0: 'Intimidate'},
+  },
+  Delphox: {otherFormes: ['Delphox-Fairy Tale']},
+  'Delphox-Fairy Tale': {
+    types: ['Psyichic', 'Normal'],
+    bs: { hp: 75, atk: 59, def: 72, sa: 114, sd: 100, sp: 114},
+    abilities: (0: 'Magic Bounce'},
   },
   Charizard: {otherFormes: ['Charizard-Gmax', 'Charizard-Mega-X', 'Charizard-Mega-Y', 'Charizard-2']},
   'Charizard-2': {

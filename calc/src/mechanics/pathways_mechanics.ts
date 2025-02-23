@@ -1389,7 +1389,7 @@ export function calculateAtModsPathways(
     atMods.push(8192);
     desc.attackerAbility = attacker.ability;
   } else if (
-    attacker.hasAbility('Light Born')
+    attacker.hasAbility('Light Born') ||
     (attacker.hasAbility('Water Bubble') && move.hasType('Water')) ||
     (attacker.hasAbility('Huge Power', 'Pure Power') && move.category === 'Physical')
   ) {

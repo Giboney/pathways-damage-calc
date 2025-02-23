@@ -357,7 +357,7 @@ const PATHWAYS = SV.concat([
   'Witchcraft',
   'Swarming',
   'Fusion Core',
-  'Druidcraft'
+  'Druidcraft',
 
   // Crazy Stuff
   'Distortion',
