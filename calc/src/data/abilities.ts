@@ -350,8 +350,18 @@ const PATHWAYS = SV.concat([
   'Ghouliate',
   'Demolition Expert',
   'Slumbering Beast',
+  'Light Born',
+  'Evoboost',
+  'Fly Trap',
+  'Frost Drain',
+  'Witchcraft',
+  'Swarming',
+  'Fusion Core',
+  'Druidcraft'
 
   // Crazy Stuff
+  'Distortion',
+  'Lightning Speed',
   'Hydrochasm Surge',
   'Hydrochasm Surge++',
 ]);

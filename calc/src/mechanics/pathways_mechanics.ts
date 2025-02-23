@@ -443,7 +443,7 @@ export function calculatePathways(
   if ((defender.hasAbility('Wonder Guard') && typeEffectiveness <= 1) ||
       (move.hasType('Grass') && defender.hasAbility('Sap Sipper')) ||
       (move.hasType('Fire') && defender.hasAbility('Flash Fire', 'Well-Baked Body')) ||
-      (move.hasType('Water') && defender.hasAbility('Dry Skin', 'Storm Drain', 'Water Absorb', 'Water Compaction')) ||
+      (move.hasType('Water') && defender.hasAbility('Dry Skin', 'Storm Drain', 'Water Absorb', 'Water Compaction', 'Fusion Core')) ||
       (move.hasType('Electric') &&
         defender.hasAbility('Lightning Rod', 'Motor Drive', 'Volt Absorb')) ||
       (move.hasType('Ground') &&
@@ -452,10 +452,12 @@ export function calculatePathways(
       (move.flags.bullet && defender.hasAbility('Bulletproof')) ||
       (move.flags.sound && !move.named('Clangorous Soul') && defender.hasAbility('Soundproof')) ||
       (move.priority > 0 && defender.hasAbility('Queenly Majesty', 'Dazzling', 'Armor Tail')) ||
-      (move.hasType('Ground') && defender.hasAbility('Earth Eater')) ||
+      (move.hasType('Ground') && defender.hasAbility('Earth Eater', 'Witchcraft', 'Distortion', 'Lightning Speed', 'Swarming')) ||
       (move.flags.wind && defender.hasAbility('Wind Rider')) ||
       (move.hasType('Fairy') && defender.hasAbility('Misery After')) ||
-      (move.hasType('Ground') && defender.hasAbility('Witchcraft'))
+      (move.hasType('Ground') && defender.hasAbility('Witchcraft')) ||
+      (move.hasType('Ice') && defender.hasAbility('Frost Drain')) ||
+      (move.hasType('Bug') && defender.hasAbility('Fly Trap'))
   ) {
     desc.defenderAbility = defender.ability;
     return result;
@@ -1353,6 +1355,9 @@ export function calculateAtModsPathways(
      !attacker.isDynamaxed)) {
     atMods.push(6144);
     desc.attackerAbility = attacker.ability;
+  } else if (attacker.hasAbility('Fusion Core') && move.category === 'Special') {
+    atMods.push(6144);
+    desc.attackerAbility = attacker.ability;
   } else if (
     (attacker.hasAbility('Guts') && attacker.status && move.category === 'Physical') ||
     (attacker.curHP() <= attacker.maxHP() / 3 &&
@@ -1362,6 +1367,9 @@ export function calculateAtModsPathways(
        (attacker.hasAbility('Swarm') && move.hasType('Bug')))) ||
     (move.category === 'Special' && attacker.abilityOn && attacker.hasAbility('Plus', 'Minus'))
   ) {
+    atMods.push(6144);
+    desc.attackerAbility = attacker.ability;
+  } else if (attacker.hasAbility('Evoboost')) {
     atMods.push(6144);
     desc.attackerAbility = attacker.ability;
   } else if (attacker.hasAbility('Flash Fire') && attacker.abilityOn && move.hasType('Fire')) {
@@ -1381,6 +1389,7 @@ export function calculateAtModsPathways(
     atMods.push(8192);
     desc.attackerAbility = attacker.ability;
   } else if (
+    attacker.hasAbility('Light Born')
     (attacker.hasAbility('Water Bubble') && move.hasType('Water')) ||
     (attacker.hasAbility('Huge Power', 'Pure Power') && move.category === 'Physical')
   ) {
@@ -1441,9 +1450,11 @@ export function calculateAtModsPathways(
 
   if ((defender.hasAbility('Thick Fat') && move.hasType('Fire', 'Ice')) ||
       (defender.hasAbility('Water Bubble') && move.hasType('Fire')) ||
-     (defender.hasAbility('Purifying Salt') && move.hasType('Ghost')) ||
-     (defender.hasAbility('Angel Tears') && move.hasType('Dragon')) ||
-     (defender.hasAbility('Hydrochasm Surge', 'Hydrochasm Surge++') && field.hasWeather('Harsh Typhoon', 'Rain', 'Heavy Rain'))) {
+      (defender.hasAbility('Purifying Salt') && move.hasType('Ghost')) ||
+      (defender.hasAbility('Angel Tears') && move.hasType('Dragon')) ||
+      (defender.hasAbility('Druidcraft') && move.hasType('Ice', 'Bug', 'Flying')) ||
+      (defender.hasAbility('Hydrochasm Surge', 'Hydrochasm Surge++') && field.hasWeather('Harsh Typhoon', 'Rain', 'Heavy Rain'))
+     ) {
     atMods.push(2048);
     desc.defenderAbility = defender.ability;
   }

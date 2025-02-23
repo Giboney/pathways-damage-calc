@@ -10207,14 +10207,31 @@ const PATHWAYS_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
     weightkg: 29,
     abilities: {0: 'Limber'},
   },
+  Pikachu: {otherFormes: ['Pikachu-Gmax', 'Pikachu-Partner', 'Pikachu-Kalos', 'Pikachu-Gigachu']},
   'Pikachu-Partner': {
     bs: {hp: 35, at: 55, df: 95, sa: 50, sd: 95, sp: 120},
+    abilities: {0, 'Light Born'},
   },
+  'Pikachu-Kalos': {
+    bs: { at: 80, df: 50, sa: 75, sp: 140},
+  },
+  'Pikachu-Gigachu': {
+    bs: {hp: 100, at: 180, df: 150, sa: 100, sd: 100, sp: 100},
+    weightkg: 100,
+    abilities: {0: 'Pure Power'}
+  },
+  Eevee: {otherFormes: ['Eevee-Gmax', 'Eevee-Partner', 'Eevee-Partner-Evoboost']}
   'Eevee-Partner': {
     types: ['Normal'],
     bs: { hp: 65, at: 60, df: 70, sa: 55, sd: 85, sp: 115 },
     weightkg: 6.5,
     abilities: {0: 'Adaptability'},
+  },
+  'Eevee-Partner-Evoboost': {
+    types: ['Normal'],
+    bs: { hp: 65, at: 95, df: 70, sa: 95, sd: 85, sp: 115 },
+    weightkg: 6.5,
+    abilities: {0: 'Evoboost'},
   },
   'Typhlosion-Black Flame': {
     types: ['Fire', 'Dragon'],
@@ -10246,7 +10263,7 @@ const PATHWAYS_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
   Venusaur: {otherFormes: ['Venusaur-Gmax', 'Venusaur-Mega', 'Venusaur-2']},
   'Venusaur-2': {
     types: ['Grass', 'Poison'],
-    bs: { hp: 80, at: 100, df: 123, sa: 122, sd: 120 sp: 80 },
+    bs: { hp: 80, at: 100, df: 123, sa: 122, sd: 120, sp: 80 },
     weightkg: 100,
     abilities: {0: 'Fur Coat'},
   },
