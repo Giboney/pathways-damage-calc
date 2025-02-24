@@ -1,1 +1,1 @@
-
+var SETDEX_PATHWAYS = {}
