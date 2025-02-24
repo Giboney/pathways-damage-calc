@@ -290,7 +290,7 @@ $(".ability").bind("keyup change", function () {
 	}
 	var boostedStat = $(this).closest(".poke-info").find(".boostedStat");
 
-	if (ability === "Protosynthesis" || ability === "Quark Drive" || "Ya Estas Cocinado") {
+	if (ability === "Protosynthesis" || ability === "Quark Drive" || ability === "Ya Estas Cocinado") {
 		boostedStat.show();
 		autosetQP($(this).closest(".poke-info"));
 	} else {
