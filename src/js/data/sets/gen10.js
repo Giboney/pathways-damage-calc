@@ -7,5 +7,5 @@ var SETDEX_PATHWAYS = {
 			"nature": "Sassy",
 			"moves": ["Blizzard", "Wood Hammer"]
 		}
-	},
+	}
 };
