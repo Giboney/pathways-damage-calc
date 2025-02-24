@@ -1,5 +1,7 @@
 var SETDEX_PATHWAYS = {
 	"Abomasnow": {
-		"Abomasnow": {}
+		"Abomasnow": {
+			"moves": []
+		}
 	}
 };
