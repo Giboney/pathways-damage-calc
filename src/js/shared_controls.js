@@ -290,7 +290,7 @@ $(".ability").bind("keyup change", function () {
 	}
 	var boostedStat = $(this).closest(".poke-info").find(".boostedStat");
 
-	if (ability === "Protosynthesis" || ability === "Quark Drive") {
+	if (ability === "Protosynthesis" || ability === "Quark Drive" || "Ya Estas Cocinado") {
 		boostedStat.show();
 		autosetQP($(this).closest(".poke-info"));
 	} else {
@@ -298,7 +298,7 @@ $(".ability").bind("keyup change", function () {
 		boostedStat.hide();
 	}
 
-	if (ability === "Supreme Overlord") {
+	if (ability === "Supreme Overlord" || ability === "Ya Estas Cocinado") {
 		$(this).closest(".poke-info").find(".alliesFainted").show();
 	} else {
 		$(this).closest(".poke-info").find(".alliesFainted").val('0');
