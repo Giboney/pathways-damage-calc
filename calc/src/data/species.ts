@@ -10021,6 +10021,9 @@ const SV_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
 
 const SV: {[name: string]: SpeciesData} = extend(true, {}, SS, SV_PATCH, PLA_PATCH);
 
+const PIKACHU_PATCH: {[name: string]: SpeciesData} = extend(true, {}, SV);
+delete PIKACHU_PATCH['Pikachu'].otherFormes;
+
 const PATHWAYS_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
   Dragonite: {otherFormes: ['Dragonite-Mega']},
   'Dragonite-Mega': {
@@ -10444,7 +10447,7 @@ const PATHWAYS_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
   },
 };
 
-const PATHWAYS: {[name: string]: SpeciesData} = extend(true, {}, SV, PATHWAYS_PATCH);
+const PATHWAYS: {[name: string]: SpeciesData} = extend(true, {}, PIKACHU_PATCH, PATHWAYS_PATCH);
 delete PATHWAYS['Pikachu-Alola'];
 delete PATHWAYS['Pikachu-Hoenn'];
 delete PATHWAYS['Pikachu-Unova'];
