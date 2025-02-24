@@ -10203,7 +10203,13 @@ const PATHWAYS_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
     weightkg: 29,
     abilities: {0: 'Limber'},
   },
-  Pikachu: {otherFormes: ['Pikachu-Partner', 'Pikachu-Gmax', 'Pikachu-Kalos', 'Pikachu-Gigachu']},
+  Pikachu: {
+    types: ['Electric'],
+    bs: {hp: 35, at: 55, df: 40, sa: 50, sd: 50, sp: 90},
+    weightkg: 6,
+    abilities: {0: 'Static'},
+    otherFormes: ['Pikachu-Partner', 'Pikachu-Gmax', 'Pikachu-Kalos', 'Pikachu-Gigachu'],
+  },
   'Pikachu-Partner': {
     bs: {hp: 35, at: 55, df: 95, sa: 50, sd: 95, sp: 120},
     abilities: {0: 'Light Born'},
@@ -10211,6 +10217,7 @@ const PATHWAYS_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
   },
   'Pikachu-Kalos': {
     bs: { at: 80, df: 50, sa: 75, sp: 140},
+    baseSpecies: 'Pikachu',
   },
   'Pikachu-Gigachu': {
     types: ['Electric'],
@@ -10445,14 +10452,13 @@ const PATHWAYS_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
 };
 
 const PATHWAYS: {[name: string]: SpeciesData} = extend(true, {}, SV, PATHWAYS_PATCH);
-/*delete PATHWAYS['Pikachu-Alola'];
+
+delete PATHWAYS['Pikachu-Alola'];
 delete PATHWAYS['Pikachu-Hoenn'];
 delete PATHWAYS['Pikachu-Unova'];
 delete PATHWAYS['Pikachu-World'];
 delete PATHWAYS['Pikachu-Sinnoh'];
 delete PATHWAYS['Pikachu-Original'];
-PATHWAYS['Pikachu'].otherFormes!.sort();
-PATHWAYS['Pikachu'].otherFormes!.pop('Pikachu-Alola');*/
 
 export const SPECIES = [{}, RBY, GSC, ADV, DPP, BW, XY, SM, SS, SV, PATHWAYS];
 
