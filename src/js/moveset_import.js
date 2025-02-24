@@ -334,6 +334,11 @@ function checkExeptions(poke) {
 	case 'Mimikyu-Busted':
 		poke = "Mimikyu";
 		break;
+	case 'Pikachu-World':
+	case 'Pikachu-Alola':
+	case 'Pikachu-Unova':
+	case 'Pikachu-Sinnoh':
+	case 'Pikachu-Hoenn':
 	case 'Pikachu-Belle':
 	case 'Pikachu-Cosplay':
 	case 'Pikachu-Libre':
