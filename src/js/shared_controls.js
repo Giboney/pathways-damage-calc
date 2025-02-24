@@ -319,7 +319,7 @@ function autosetQP(pokemon) {
 		if (
 			(item === "Booster Energy") ||
 			(ability === "Protosynthesis" && currentWeather === "Sun") ||
-			(ability === "Quark Drive" && currentTerrain === "Electric")
+			((ability === "Quark Drive" || ability === "Ya Estas Cocinado") && currentTerrain === "Electric")
 		) {
 			pokemon.find(".boostedStat").val("auto");
 		} else {
