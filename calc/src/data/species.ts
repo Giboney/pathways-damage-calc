@@ -10055,7 +10055,7 @@ const PATHWAYS_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
   'Mimikyu-Mega': {
     types: ['Ghost', 'Fairy'],
     bs: { hp: 55, at: 120, df: 100, sa: 90, sd: 105, sp: 106 },
-    abilities: {0: 'Tough Claws'},
+    abilities: {0: 'Long Reach'},
     baseSpecies: 'Mimikyu',
   },
   Volcarona: { otherFormes: ['Volcarona-Mega'] },
