@@ -2537,7 +2537,6 @@ const ADV_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
     bs: {hp: 100, at: 110, df: 90, sa: 85, sd: 90, sp: 60},
     weightkg: 81.9,
     abilities: {0: 'Torrent'},
-    otherFormes: ['Gabriel'],
   },
   Swellow: {
     types: ['Normal', 'Flying'],
@@ -10022,7 +10021,7 @@ const SV_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
 
 const SV: {[name: string]: SpeciesData} = extend(true, {}, SS, SV_PATCH, PLA_PATCH);
 
-const PATHWAYS_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
+const PATHWAYS: {[name: string]: DeepPartial<SpeciesData>} = {
   Dragonite: {otherFormes: ['Dragonite-Mega']},
   'Dragonite-Mega': {
     types: ['Dragon', 'Flying'],
@@ -10292,9 +10291,14 @@ const PATHWAYS_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
     abilities: {0: 'Ya Estas Cocinado'},
     baseSpecies: 'Basculegion',
   },
-};
-
-const PATHWAYS_STAT_CHANGES: {[name: string]: DeepPartial<SpeciesData>} = {
+  Swampert: {otherFormes: ['Swampert-Mega', 'Swampert-Stalking Tide']},
+  'Swampert-Stalking Tide': {
+    types: ['Water', 'Fairy'],
+    bs: {hp: 118, at: 68, df: 104, sa: 127, sd: 104, sp: 69},
+    weightkg: 102,
+    abilities: {0: 'Hydrochasm Surge++'},
+    baseSpecies: 'Swampert',
+  },
   Nidoqueen: {
     bs: {sa: 85, sp: 86},
   },
@@ -10438,19 +10442,7 @@ const PATHWAYS_STAT_CHANGES: {[name: string]: DeepPartial<SpeciesData>} = {
   'Absol-Mega': {
     types: ['Dark', 'Fairy'],
   },
-}
-
-const PATHWAYS_INSANITY_ROOM: {[name: string]: DeepPartial<SpeciesData>} = {
-  Gabriel: {
-    types: ['Water', 'Fairy'],
-    bs: {hp: 100, at: 110, df: 90, sa: 85, sd: 90, sp: 60},
-    weightkg: 81.9,
-    abilities: {0: 'Hydrochasm Surge'},
-    otherFormes: ['Swampert'],
-  },
-}
-
-const PATHWAYS: {[name: string]: SpeciesData} = extend(true, {}, SV, PATHWAYS_PATCH, PATHWAYS_STAT_CHANGES, PATHWAYS_INSANITY_ROOM);
+};
 
 export const SPECIES = [{}, RBY, GSC, ADV, DPP, BW, XY, SM, SS, SV, PATHWAYS];
 
