@@ -357,7 +357,7 @@ export function calculatePathways(
     attacker.hasAbility('Scrappy') || attacker.hasAbility('Mind\'s Eye') ||
       field.defenderSide.isForesight;
   const isRingTarget =
-    defender.hasItem('Ring Target') && !defender.hasAbility('Klutz');
+    defender.hasItem('Ring Target') && !defender.hasAbility('Klutz', 'Light Born');
   const type1Effectiveness = getMoveEffectiveness(
     gen,
     move,
@@ -390,7 +390,7 @@ export function calculatePathways(
   }
 
   if (typeEffectiveness === 0 && move.hasType('Ground') &&
-    defender.hasItem('Iron Ball') && !defender.hasAbility('Klutz')) {
+    defender.hasItem('Iron Ball') && !defender.hasAbility('Klutz', 'Light Born')) {
     typeEffectiveness = 1;
   }
 
@@ -1077,7 +1077,7 @@ export function calculateBPModsPathways(
       attacker.hasAbility('Scrappy') || attacker.hasAbility('Mind\'s Eye') ||
       field.defenderSide.isForesight;
     const isRingTarget =
-      defender.hasItem('Ring Target') && !defender.hasAbility('Klutz');
+      defender.hasItem('Ring Target') && !defender.hasAbility('Klutz', 'Light Born');
     const types = defender.teraType && defender.teraType !== 'Stellar'
       ? [defender.teraType] : defender.types;
     const type1Effectiveness = getMoveEffectiveness(
