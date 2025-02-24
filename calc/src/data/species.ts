@@ -10021,7 +10021,7 @@ const SV_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
 
 const SV: {[name: string]: SpeciesData} = extend(true, {}, SS, SV_PATCH, PLA_PATCH);
 
-const PATHWAYS: {[name: string]: DeepPartial<SpeciesData>} = {
+const PATHWAYS_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
   Dragonite: {otherFormes: ['Dragonite-Mega']},
   'Dragonite-Mega': {
     types: ['Dragon', 'Flying'],
@@ -10443,6 +10443,8 @@ const PATHWAYS: {[name: string]: DeepPartial<SpeciesData>} = {
     types: ['Dark', 'Fairy'],
   },
 };
+
+const PATHWAYS: {[name: string]: SpeciesData} = extend(true, {}, SV, PATHWAYS_PATCH);
 
 export const SPECIES = [{}, RBY, GSC, ADV, DPP, BW, XY, SM, SS, SV, PATHWAYS];
 
