@@ -1181,6 +1181,10 @@ export function calculateBPModsPathways(
     bpMods.push(5325);
     desc.attackerAbility = attacker.ability;
   }
+  if (attacker.hasAbility('Ya Estas Cocinado') && move.flags.contact) {
+    bpMods.push(5462);
+    desc.attackerAbility = attacker.ability;
+  }
 
   if (field.attackerSide.isBattery && move.category === 'Special') {
     bpMods.push(5325);
@@ -1214,7 +1218,7 @@ export function calculateBPModsPathways(
     desc.attackerAbility = attacker.ability;
   }
 
-  if (attacker.hasAbility('Iron Fist') && move.flags.punch) {
+  if (attacker.hasAbility('Iron Fist', 'Distortion', 'Lightning Speed') && move.flags.punch) {
     bpMods.push(6144);
     desc.attackerAbility = attacker.ability;
   }
@@ -1231,7 +1235,7 @@ export function calculateBPModsPathways(
     desc.defenderAbility = defender.ability;
   }
 
-  if (attacker.hasAbility('Supreme Overlord') && attacker.alliesFainted) {
+  if (attacker.hasAbility('Supreme Overlord', 'Ya Estas Cocinado') && attacker.alliesFainted) {
     const powMod = [4096, 4506, 4915, 5325, 5734, 6144];
     bpMods.push(powMod[Math.min(5, attacker.alliesFainted)]);
     desc.attackerAbility = attacker.ability;
