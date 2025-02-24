@@ -360,6 +360,7 @@ const PATHWAYS = SV.concat([
   'Druidcraft',
 
   // Crazy Stuff
+  'Ya Estas Cocinado',
   'Distortion',
   'Lightning Speed',
   'Hydrochasm Surge',
