@@ -10445,6 +10445,13 @@ const PATHWAYS_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
 };
 
 const PATHWAYS: {[name: string]: SpeciesData} = extend(true, {}, SV, PATHWAYS_PATCH);
+delete PATHWAYS['Pikachu-Partner']
+delete PATHWAYS['Pikachu-Alola']
+delete PATHWAYS['Pikachu-Hoenn']
+delete PATHWAYS['Pikachu-Unova']
+delete PATHWAYS['Pikachu-World']
+delete PATHWAYS['Pikachu-Sinnoh']
+delete PATHWAYS['Pikachu-Original']
 
 export const SPECIES = [{}, RBY, GSC, ADV, DPP, BW, XY, SM, SS, SV, PATHWAYS];
 
