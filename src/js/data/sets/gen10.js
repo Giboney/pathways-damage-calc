@@ -1,4 +1,5 @@
 var SETDEX_PATHWAYS = {
-	Ababo: {
+	Abomasnow: {
+		"Abomasnow": {},
 	},
 };
