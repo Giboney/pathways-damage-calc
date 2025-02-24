@@ -10203,7 +10203,7 @@ const PATHWAYS_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
     weightkg: 29,
     abilities: {0: 'Limber'},
   },
-  Pikachu: {otherFormes: ['Pikachu-Gmax', 'Pikachu-Partner', 'Pikachu-Kalos', 'Pikachu-Gigachu']},
+  Pikachu: {otherFormes: ['Pikachu-Gigachu']},
   'Pikachu-Partner': {
     bs: {hp: 35, at: 55, df: 95, sa: 50, sd: 95, sp: 120},
     abilities: {0: 'Light Born'},
@@ -10445,7 +10445,6 @@ const PATHWAYS_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
 };
 
 const PATHWAYS: {[name: string]: SpeciesData} = extend(true, {}, SV, PATHWAYS_PATCH);
-delete PATHWAYS['Pikachu-Partner']
 delete PATHWAYS['Pikachu-Alola']
 delete PATHWAYS['Pikachu-Hoenn']
 delete PATHWAYS['Pikachu-Unova']
