@@ -10172,7 +10172,6 @@ const PATHWAYS_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
     baseSpecies: 'Krookodile',
   },
   'Samurott': { otherFormes: ['Samurott-Hisui', 'Samurott-Hisui-Mega'] },
-  'Samurott-Hisui': { otherFormes: ['Samurott', 'Samurott-Hisui-Mega'] },
   'Samurott-Hisui-Mega': {
     types: ['Water', 'Dark'],
     bs: { hp: 90, at: 138, df: 105, sa: 105, sd: 92, sp: 100 },
@@ -10180,7 +10179,6 @@ const PATHWAYS_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
     baseSpecies: 'Samurott-Hisui',
   },
   'Typhlosion': { otherFormes: ['Typhlosion-Hisui', 'Typhlosion-Hisui-Mega', 'Typhlosion-Black Flame'] },
-  'Typhlosion-Hisui': { otherFormes: ['Typhlosion', 'Typhlosion-Hisui-Mega'] },
   'Typhlosion-Hisui-Mega': {
     types: ['Ghost', 'Fire'],
     bs: { hp: 73, at: 114, df: 88, sa: 140, sd: 110, sp: 109 },
@@ -10188,7 +10186,6 @@ const PATHWAYS_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
     baseSpecies: 'Typhlosion-Hisui',
   },
   'Decidueye': { otherFormes: ['Decidueye-Hisui', 'Decidueye-Hisui-Mega'] },
-  'Decidueye-Hisui': { otherFormes: ['Decidueye', 'Decidueye-Hisui-Mega'] },
   'Decidueye-Hisui-Mega': {
     types: ['Fighting', 'Grass'],
     bs: { hp: 88, at: 147, df: 100, sa: 90, sd: 105, sp: 100 },
@@ -10211,6 +10208,7 @@ const PATHWAYS_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
   'Pikachu-Partner': {
     bs: {hp: 35, at: 55, df: 95, sa: 50, sd: 95, sp: 120},
     abilities: {0: 'Light Born'},
+    baseSpecies: 'Pikachu',
   },
   'Pikachu-Kalos': {
     bs: { at: 80, df: 50, sa: 75, sp: 140},
@@ -10220,6 +10218,7 @@ const PATHWAYS_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
     bs: {hp: 200, at: 180, df: 150, sa: 100, sd: 100, sp: 100},
     weightkg: 100,
     abilities: {0: 'Pure Power'},
+    baseSpecies: 'Pikachu',
   },
   Eevee: {otherFormes: ['Eevee-Gmax', 'Eevee-Partner', 'Eevee-Partner-Evoboost']},
   'Eevee-Partner': {
@@ -10227,18 +10226,21 @@ const PATHWAYS_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
     bs: { hp: 65, at: 60, df: 70, sa: 55, sd: 85, sp: 115 },
     weightkg: 6.5,
     abilities: {0: 'Adaptability'},
+    baseSpecies: 'Eevee'
   },
   'Eevee-Partner-Evoboost': {
     types: ['Normal'],
     bs: { hp: 65, at: 95, df: 70, sa: 95, sd: 85, sp: 115 },
     weightkg: 6.5,
     abilities: {0: 'Evoboost'},
+    baseSpecies: 'Eevee-Partner',
   },
   'Typhlosion-Black Flame': {
     types: ['Fire', 'Dragon'],
     bs: { hp: 73, at: 104, df: 68, sa: 114, sd: 75, sp: 100 },
     weightkg: 79.5,
     abilities: {0: 'Blaze'},
+    baseSpecies: 'Typhlosion',
   },
   Luxray: {otherFormes: ['Luxray-Shadow Mane']},
   'Luxray-Shadow Mane': {
@@ -10246,12 +10248,14 @@ const PATHWAYS_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
     bs: { hp: 80, at: 130, df: 79, sa: 80, sd: 79, sp: 75 },
     weightkg: 42,
     abilities: {0: 'Intimidate'},
+    baseSpecies: 'Luxray',
   },
   Delphox: {otherFormes: ['Delphox-Fairy Tale']},
   'Delphox-Fairy Tale': {
     types: ['Psychic', 'Normal'],
     bs: { hp: 75, at: 59, df: 72, sa: 114, sd: 100, sp: 114},
     abilities: {0: 'Magic Bounce'},
+    baseSpecies: 'Delphox',
   },
   Charizard: {otherFormes: ['Charizard-Gmax', 'Charizard-Mega-X', 'Charizard-Mega-Y', 'Charizard-2']},
   'Charizard-2': {
@@ -10259,6 +10263,7 @@ const PATHWAYS_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
     bs: { hp: 78, at: 139, df: 78, sa: 119, sd: 85, sp: 115 },
     weightkg: 90.5,
     abilities: {0: 'Drought'},
+    baseSpecies: 'Charizard',
   },
   Blastoise: {otherFormes: ['Blastoise-Gmax', 'Blastoise-Mega', 'Blastoise-2']},
   'Blastoise-2': {
@@ -10266,6 +10271,7 @@ const PATHWAYS_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
     bs: { hp: 79, at: 83, df: 120, sa: 125, sd: 125, sp: 78 },
     weightkg: 85.5,
     abilities: {0: 'Drizzle'},
+    baseSpecies: 'Blastoise',
   },
   Venusaur: {otherFormes: ['Venusaur-Gmax', 'Venusaur-Mega', 'Venusaur-2']},
   'Venusaur-2': {
@@ -10273,9 +10279,18 @@ const PATHWAYS_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
     bs: { hp: 80, at: 100, df: 123, sa: 122, sd: 120, sp: 80 },
     weightkg: 100,
     abilities: {0: 'Fur Coat'},
+    baseSpecies: 'Venusaur',
   },
   Florges: {
     abilities: {0: 'Grassy Surge'},
+  },
+  Basculegion: {otherFormes: ['Basculegion-F', 'Basculegion-Iron Muerte']},
+  'Basculegion-Iron Muerte': {
+    types: ['Ghost', 'Steel'],
+    bs: {hp: 120, at: 125, df: 85,  sa: 80, sd: 80,  sp: 120},
+    weightkg: 120,
+    abilities: {0: 'Ya Estas Cocinado'},
+    baseSpecies: 'Basculegion',
   },
 };
 
