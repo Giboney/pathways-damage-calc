@@ -5,7 +5,7 @@ var SETDEX_PATHWAYS = {
 			"evs": {"hp": 248, "df": 130, "sd": 132},
 			"item": "Assault Vest",
 			"nature": "Sassy",
-			"moves": ["Blizzard", "Wood Hammer"],
+			"moves": ["Blizzard", "Wood Hammer"]
 		}
 	},
 };
