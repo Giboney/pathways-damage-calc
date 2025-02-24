@@ -1,1 +1,4 @@
-var SETDEX_PATHWAYS = {};
+var SETDEX_PATHWAYS = {
+	Ababo: {
+	},
+};
