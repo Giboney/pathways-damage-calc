@@ -10451,6 +10451,7 @@ delete PATHWAYS['Pikachu-Unova'];
 delete PATHWAYS['Pikachu-World'];
 delete PATHWAYS['Pikachu-Sinnoh'];
 delete PATHWAYS['Pikachu-Original'];
+PATHWAYS['Pikachu'].otherFormes = ['Pikachu-Partner', 'Pikachu-Gmax', 'Pikachu-Kalos', 'Pikachu-Gigachu'];
 
 export const SPECIES = [{}, RBY, GSC, ADV, DPP, BW, XY, SM, SS, SV, PATHWAYS];
 
