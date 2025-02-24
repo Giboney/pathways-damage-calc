@@ -338,7 +338,6 @@ function checkExeptions(poke) {
 	case 'Pikachu-Cosplay':
 	case 'Pikachu-Libre':
 	case 'Pikachu-Original':
-	case 'Pikachu-Partner':
 	case 'Pikachu-PhD':
 	case 'Pikachu-Pop-Star':
 	case 'Pikachu-Rock-Star':
