@@ -1248,6 +1248,8 @@ function createField() {
 	var isPowerSpot = [$("#powerSpotL").prop("checked"), $("#powerSpotR").prop("checked")];
 	// TODO: support switching in as well!
 	var isSwitchingOut = [$("#switchingL").prop("checked"), $("#switchingR").prop("checked")];
+	// my additions
+	var isCharge = [$("#chargeL").prop("checked"), $("#chargeR").prop("checked")];
 
 	var createSide = function (i) {
 		return new calc.Side({
@@ -1256,7 +1258,8 @@ function createField() {
 			isReflect: isReflect[i], isLightScreen: isLightScreen[i],
 			isProtected: isProtected[i], isSeeded: isSeeded[i], isForesight: isForesight[i],
 			isTailwind: isTailwind[i], isHelpingHand: isHelpingHand[i], isFlowerGift: isFlowerGift[i], isFriendGuard: isFriendGuard[i],
-			isAuroraVeil: isAuroraVeil[i], isBattery: isBattery[i], isPowerSpot: isPowerSpot[i], isSwitching: isSwitchingOut[i] ? 'out' : undefined
+			isAuroraVeil: isAuroraVeil[i], isBattery: isBattery[i], isPowerSpot: isPowerSpot[i], isSwitching: isSwitchingOut[i] ? 'out' : undefined,
+			isCharge: isCharge[i] // added charge
 		});
 	};
 	return new calc.Field({
@@ -1536,6 +1539,9 @@ function clearField() {
 	$("#switchingL").prop("checked", false);
 	$("#switchingR").prop("checked", false);
 	$("input:checkbox[name='terrain']").prop("checked", false);
+	// my additions
+	$("#hchargeL").prop("checked", false);
+	$("#chargeR").prop("checked", false);
 }
 
 function getSetOptions(sets) {
