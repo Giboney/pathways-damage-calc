@@ -1102,8 +1102,9 @@ export function calculateBPModsPathways(
     }
   }
 
-  if (field.attackerSide.isCharge && move.hasType('Dragon')) {
+  if (field.attackerSide.isCharge && move.hasType('Electric')) {
     bpMods.push(8192);
+    desc.moveBP = basePower * 2;
     desc.isCharge = true;
   }
 
