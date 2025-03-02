@@ -92,6 +92,8 @@ export class Side implements State.Side {
   isBattery: boolean;
   isPowerSpot: boolean;
   isSwitching?: 'out' | 'in';
+  //my additions
+  isCharge: boolean;
 
   constructor(side: State.Side = {}) {
     this.spikes = side.spikes || 0;
@@ -114,6 +116,8 @@ export class Side implements State.Side {
     this.isBattery = !!side.isBattery;
     this.isPowerSpot = !!side.isPowerSpot;
     this.isSwitching = side.isSwitching;
+    //my additions
+    this.isCharge = !!side.isCharge;
   }
 
   clone() {
