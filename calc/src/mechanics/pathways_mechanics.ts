@@ -1102,6 +1102,11 @@ export function calculateBPModsPathways(
     }
   }
 
+  if (field.attackerSide.isCharge && move.hasType('Dragon')) {
+    bpMods.push(8192);
+    desc.isCharge = true;
+  }
+
   if (field.attackerSide.isHelpingHand) {
     bpMods.push(6144);
     desc.isHelpingHand = true;
