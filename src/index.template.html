@@ -673,7 +673,7 @@
                     <input class="visually-hidden terrain-trigger calc-trigger" type="checkbox" name="terrain" value="Misty" id="misty" /><label class="btn btn-xxxwide btn-right" for="misty">Misty Terrain</label>
                     <input class="visually-hidden terrain-trigger calc-trigger" type="checkbox" name="terrain" value="Psychic" id="psychic" /><label class="btn btn-xxxwide btn-mid" for="psychic">Psychic Terrain</label>
                 </div>
-                <div aria-labelledby="selectRuinInstruction" class="gen-specific g9 format-specific doubles" role="group" style="margin: 5px auto auto;" title="Select the ruin abilities from other Pok&eacute;mon on the field.">
+                <div aria-labelledby="selectRuinInstruction" class="gen-specific g9 g10 format-specific doubles" role="group" style="margin: 5px auto auto;" title="Select the ruin abilities from other Pok&eacute;mon on the field.">
                     <span class="visually-hidden" id="selectRuinInstruction">Select the active Ruin abilities from other Poke&eacute;mon on the field.</span>
                     <input class="visually-hidden calc-trigger" type="checkbox" name="ruin" value="Beads" id="beads" />
                     <label class="btn btn-xxxwide btn-left" for="beads">Beads of Ruin</label>
@@ -884,6 +884,17 @@
                             <td><div class="right" title="Has this Pok&eacute;mon's power been boosted by an ally's Helping Hand?">
                                 <input aria-describedby="selectHelpingHandInstruction" class="visually-hidden calc-trigger" type="checkbox" id="helpingHandR" />
                                 <label class="btn btn-xxwide" for="helpingHandR">Helping Hand</label>
+                            </div></td>
+                        </tr>
+							   <tr>
+                            <td><div class="left" title="Is Charge active on this Pok&eacute;mon?">
+                                <div hidden id="selectChargeInstruction">Is Charge active on this Pok&eacute;mon?</div>
+                                <input aria-describedby="selectChargeInstruction" class="visually-hidden calc-trigger" type="checkbox" id="ChargeL" />
+                                <label class="btn btn-wide" for="ChargeL">Charge</label>
+                            </div></td>
+                            <td><div class="right" title="Is Charge active on this Pok&eacute;mon?">
+                                <input aria-describedby="selectChargeInstruction" class="visually-hidden calc-trigger" type="checkbox" id="ChargeR" />
+                                <label class="btn btn-wide" for="ChargeR">Charge</label>
                             </div></td>
                         </tr>
                         <tr class="gen-specific g4 g5 g6 g7 g8 g9 g10">
