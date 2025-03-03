@@ -391,7 +391,7 @@ const PATHWAYS = SV.concat([
   'Venomize',
   'Turbo Engine',
   'Darkness Boost2',
-  'Swarm Shell',
+  'Swarm Shell2',
   'Killing Joke2',
   'X Pickup2',
   'Raijin\'s Will2',
