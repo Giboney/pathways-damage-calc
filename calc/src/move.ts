@@ -74,10 +74,11 @@ export class Move implements State.Move {
         }
         // TODO: checking basePower === 10 is fragile (what if the maxMove's basePower is
         // overridden?) and also fails for Max Flare, which is strangely 100 BP in the game data
-        if (maxMove!.basePower === 10 || maxMoveName === 'Max Flare') {
+        //what is the point of this
+        //if (maxMove!.basePower === 10 || maxMoveName === 'Max Flare') {
           return data.maxMove!.basePower;
-        }
-        return maxMove!.basePower;
+        //}
+        //return maxMove!.basePower;
       };
       data = extend(true, {}, maxMove, {
         name: maxMoveName,
