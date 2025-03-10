@@ -270,15 +270,16 @@ $(".ability").bind("keyup change", function () {
 		}
 		$(this).closest(".poke-info").find(moveSelector).find(".move-hits").val(moveHits);
 	}
-
-	if (ability === 'Hydrochasm Surge++') {
-		// Gabriel gets +1 Def, +1 SpDef
-		let pokeInfo = $(this).closest(".poke-info");
-		console.log(pokeInfo);
-		console.log(pokeInfo.find(".df").val());
-		pokeInfo.find(".df .boost").val("1");
-		console.log(pokeInfo.find(".df .boost").val());
-		pokeInfo.find(".sd .boost").val("1");
+	
+	switch (ability) {
+		case "Darkness Boost":
+		case "Untouchable":
+			$(this).closest(".poke-info").find(".sp .boost").val("6");
+		case "Hydrochasm Surge++":
+			$(this).closest(".poke-info").find(".df .boost").val("1");
+			$(this).closest(".poke-info").find(".sd .boost").val("1");
+		case "Untouchable2":
+			$(this).closest(".poke-info").find(".sp .boost").val("2");
 	}
 
 	var TOGGLE_ABILITIES = ['Flash Fire', 'Intimidate', 'Minus', 'Plus', 'Slow Start', 'Unburden', 'Stakeout', 'Teraform Zero'];
@@ -362,6 +363,8 @@ function autosetWeather(ability, i) {
 		lastAutoWeather[i] = "Rain";
 		$("#rain").prop("checked", true);
 		break;
+	case "Swarm Shell":
+	case "Swarm Shell2":
 	case "Sand Stream":
 		lastAutoWeather[i] = "Sand";
 		$("#sand").prop("checked", true);
@@ -392,6 +395,14 @@ function autosetWeather(ability, i) {
 		lastAutoWeather[i] = "Harsh Typhoon";
 		$("#harsh-typhoon").prop("checked", true);
 		break;
+	case "Frozen Tundra":
+		lastAutoWeather[i] = "Violent Blizzard";
+		$("#violent-blizzard").prop("checked", true);
+		break;
+	case "Barren Desert":
+		lastAutoWeather[i] = "Raging Sandstorm";
+		$("#raging-sandstorm").prop("checked", true);
+		break;
 	default:
 		lastAutoWeather[i] = "";
 		var newWeather = lastAutoWeather[1 - i] !== "" ? lastAutoWeather[1 - i] : "";
@@ -419,6 +430,7 @@ function autosetTerrain(ability, i) {
 	$("input:checkbox[name='terrain']:checked").prop("checked", false);
 	switch (ability) {
 	case "Electric Surge":
+	case "Lightning Speed":
 	case "Hadron Engine":
 		lastAutoTerrain[i] = "Electric";
 		$("#electric").prop("checked", true);

@@ -1371,7 +1371,12 @@ export function calculateAtModsPathways(
      !attacker.isDynamaxed)) {
     atMods.push(6144);
     desc.attackerAbility = attacker.ability;
-  } else if (attacker.hasAbility('Fusion Core') && move.category === 'Special') {
+  } else if (
+    //pathways abilities here i guess
+    (attacker.hasAbility('Fusion Core') && move.category === 'Special') ||
+    (attacker.hasAbility('Evoboost')) ||
+    (attacker.hasAbility('Swarm Shell') && move.category === 'Physical')
+    ) {
     atMods.push(6144);
     desc.attackerAbility = attacker.ability;
   } else if (
@@ -1383,9 +1388,6 @@ export function calculateAtModsPathways(
        (attacker.hasAbility('Swarm') && move.hasType('Bug')))) ||
     (move.category === 'Special' && attacker.abilityOn && attacker.hasAbility('Plus', 'Minus'))
   ) {
-    atMods.push(6144);
-    desc.attackerAbility = attacker.ability;
-  } else if (attacker.hasAbility('Evoboost')) {
     atMods.push(6144);
     desc.attackerAbility = attacker.ability;
   } else if (attacker.hasAbility('Flash Fire') && attacker.abilityOn && move.hasType('Fire')) {
@@ -1407,7 +1409,7 @@ export function calculateAtModsPathways(
   } else if (
     attacker.hasAbility('Light Born') ||
     (attacker.hasAbility('Water Bubble') && move.hasType('Water')) ||
-    (attacker.hasAbility('Huge Power', 'Pure Power') && move.category === 'Physical')
+    (attacker.hasAbility('Huge Power', 'Pure Power', 'Lightning Speed') && move.category === 'Physical')
   ) {
     atMods.push(8192);
     desc.attackerAbility = attacker.ability;
@@ -1798,9 +1800,27 @@ export function calculateFinalModsPathways(
     finalMods.push(2048);
     desc.defenderAbility = defender.ability;
   }
+  
+  if (defender.hasAbility('Lightning Speed')) {
+    finalMods.push(2048);
+    desc.defenderAbility = defender.ability;
+    if (move.category === 'Special') {
+      finalMods.push(2048);
+    }
+  }
 
   if (defender.hasAbility('Solid Rock', 'Filter', 'Prism Armor') && typeEffectiveness > 1) {
     finalMods.push(3072);
+    desc.defenderAbility = defender.ability;
+  }
+  
+  if (defender.hasAbility('Swarm Shell')) {
+    finalMods.push(2731);
+    desc.defenderAbility = defender.ability;
+  }
+  
+  if (defender.hasAbility('Darkness Boost') && move.hasType('Fighting')) {
+    finalMods.push(256);
     desc.defenderAbility = defender.ability;
   }
 

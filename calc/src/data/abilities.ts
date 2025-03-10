@@ -340,20 +340,20 @@ const SV = SS.concat([
 ]);
 
 const PATHWAYS = SV.concat([
-  'Burn Out',
-  'Who\'s Next',
-  'Raijin\'s Will',
-  'Tsukuyomi',
-  'Amaterasu',
-  'Daydreamer',
-  'Titanium Armor',
-  'Holy Aegis',
-  'Dragonize',
-  'Lightning Speed',
-  'Darkness Boost',
-  'Swarm Shell',
-  'Untouchable',
-  'Golden Hour',
+  'Burn Out',//irrelevant
+  'Who\'s Next',//not used
+  'Raijin\'s Will',//irrelevant
+  'Tsukuyomi',//sleep oppo unless ability prevents
+  'Amaterasu',//burn oppo
+  'Daydreamer',//irrelevant
+  'Titanium Armor',//30% dr wait for update lol this is weridly coded
+  'Holy Aegis',//unused
+  'Dragonize',//normal -> dragon
+  'Lightning Speed',//done ground immune, +5 prio except in psyterrain, electric surge, iron fist, huge power, half phys dmg, half of half (quarter) spec dmg
+  'Darkness Boost',//done 1/16 fighting dmg taken, max speed on switchin, +6 atk -1 speed on hit
+  'Swarm Shell',//done weaker ver, sand stream, attack x1.5, finalmods /= 1.5
+  'Untouchable',//done +6 speed and evasion on switch in
+  'Golden Hour',//add omnitype
   'Killing Joke',
   'X Pickup',
   'Storm Emperor',
@@ -391,7 +391,7 @@ const PATHWAYS = SV.concat([
   'X Pickup2',
   'Raijin\'s Will2',
   'Burn Out2',
-  'Untouchable2',
+  'Untouchable2',// done +2 speed and evasion on switch in
   'Beary Broken',
   'Pure Prayer',
   'Toxic Chain',
