@@ -241,12 +241,12 @@ function addToDex(poke) {
 		customsets[poke.name] = {};
 	}
 	customsets[poke.name][poke.nameProp] = dexObject;
-	if (poke.name === "Aegislash-Blade") {
+	/*if (poke.name === "Aegislash-Blade") {
 		if (!customsets["Aegislash-Shield"]) {
 			customsets["Aegislash-Shield"] = {};
 		}
 		customsets["Aegislash-Shield"][poke.nameProp] = dexObject;
-	}
+	}*/
 	updateDex(customsets);
 }
 
@@ -319,9 +319,6 @@ function addSets(pokes, name) {
 
 function checkExeptions(poke) {
 	switch (poke) {
-	case 'Aegislash':
-		poke = "Aegislash-Blade";
-		break;
 	case 'Basculin-Blue-Striped':
 		poke = "Basculin";
 		break;
