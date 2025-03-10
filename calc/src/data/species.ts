@@ -10046,7 +10046,7 @@ const PATHWAYS_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
   'Fearow': {types: ['Normal', 'Flying'], bs: {hp: 65, at: 90, df: 65, sa: 61, sd: 61, sp: 100}, abilities: {0: 'Keen Eye'}, weightkg: 38.0,},
   'Ekans': {types: ['Poison'], bs: {hp: 35, at: 60, df: 44, sa: 40, sd: 54, sp: 55}, abilities: {0: 'Intimidate'}, weightkg: 6.9, nfe: true,},
   'Arbok': {types: ['Poison'], bs: {hp: 60, at: 95, df: 69, sa: 65, sd: 79, sp: 80}, abilities: {0: 'Intimidate'}, weightkg: 65.0,},
-  'Pikachu': {types: ['Electric'], bs: {hp: 35, at: 55, df: 40, sa: 50, sd: 50, sp: 90}, abilities: {0: 'Static'}, weightkg: 6.0, nfe: true, otherFormes: ['Pikachu-Partner', 'Pikachu-Gigachu']},
+  'Pikachu': {types: ['Electric'], bs: {hp: 35, at: 55, df: 40, sa: 50, sd: 50, sp: 90}, abilities: {0: 'Static'}, weightkg: 6.0, nfe: true, otherFormes: ['Pikachu-Partner', 'Pikachu-Kalos', 'Pikachu-Gigachu']},
   'Raichu': {types: ['Electric'], bs: {hp: 60, at: 90, df: 55, sa: 90, sd: 80, sp: 110}, abilities: {0: 'Static'}, weightkg: 30.0, otherFormes: ['Raichu-Alola']},
   'Sandshrew': {types: ['Ground'], bs: {hp: 50, at: 75, df: 85, sa: 20, sd: 30, sp: 40}, abilities: {0: 'Sand Veil'}, weightkg: 12.0, nfe: true, otherFormes: ['Sandshrew-Alola']},
   'Sandslash': {types: ['Ground'], bs: {hp: 75, at: 100, df: 110, sa: 45, sd: 55, sp: 65}, abilities: {0: 'Sand Veil'}, weightkg: 29.5, otherFormes: ['Sandslash-Alola']},
@@ -10154,7 +10154,7 @@ const PATHWAYS_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
   'Gyarados': {types: ['Water', 'Flying'], bs: {hp: 95, at: 125, df: 79, sa: 60, sd: 100, sp: 81}, abilities: {0: 'Intimidate'}, weightkg: 235.0, otherFormes: ['Gyarados-Mega']},
   'Lapras': {types: ['Water', 'Ice'], bs: {hp: 130, at: 85, df: 80, sa: 85, sd: 95, sp: 60}, abilities: {0: 'Water Absorb'}, weightkg: 220.0,},
   'Ditto': {types: ['Normal'], bs: {hp: 48, at: 48, df: 48, sa: 48, sd: 48, sp: 48}, abilities: {0: 'Limber'}, weightkg: 4.0, gender: 'N', otherFormes: ['Ditto-Possessor', 'Ditto-Mechatar', 'Ditto-Cruelty', 'Ditto-Cthulu', 'Ditto-Mothership', 'Ditto-Devilstone']},
-  'Eevee': {types: ['Normal'], bs: {hp: 55, at: 55, df: 50, sa: 45, sd: 65, sp: 55}, abilities: {0: 'Run Away'}, weightkg: 6.5, nfe: true, otherFormes: ['Eevee-Partner']},
+  'Eevee': {types: ['Normal'], bs: {hp: 55, at: 55, df: 50, sa: 45, sd: 65, sp: 55}, abilities: {0: 'Run Away'}, weightkg: 6.5, nfe: true, otherFormes: ['Eevee-Partner', 'Eevee-Partner-Evoboost']},
   'Vaporeon': {types: ['Water'], bs: {hp: 130, at: 65, df: 60, sa: 110, sd: 95, sp: 65}, abilities: {0: 'Water Absorb'}, weightkg: 29.0,},
   'Jolteon': {types: ['Electric'], bs: {hp: 65, at: 65, df: 60, sa: 110, sd: 95, sp: 130}, abilities: {0: 'Volt Absorb'}, weightkg: 24.5,},
   'Flareon': {types: ['Fire'], bs: {hp: 65, at: 130, df: 60, sa: 95, sd: 110, sp: 65}, abilities: {0: 'Flash Fire'}, weightkg: 25.0,},
@@ -10795,7 +10795,7 @@ const PATHWAYS_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
   'Pyukumuku': {types: ['Water'], bs: {hp: 55, at: 60, df: 130, sa: 30, sd: 130, sp: 5}, abilities: {0: 'Innards Out'}, weightkg: 1.2,},
   'Type: Null': {types: ['Normal'], bs: {hp: 95, at: 95, df: 95, sa: 95, sd: 95, sp: 59}, abilities: {0: 'Battle Armor'}, weightkg: 120.5, gender: 'N', nfe: true,},
   'Silvally': {types: ['Normal'], bs: {hp: 95, at: 95, df: 95, sa: 95, sd: 95, sp: 95}, abilities: {0: 'RKS System'}, weightkg: 100.5, gender: 'N', otherFormes: ['Silvally-Fighting', 'Silvally-Flying', 'Silvally-Poison', 'Silvally-Ground', 'Silvally-Rock', 'Silvally-Bug', 'Silvally-Ghost', 'Silvally-Steel', 'Silvally-Unknown', 'Silvally-Fire', 'Silvally-Water', 'Silvally-Grass', 'Silvally-Electric', 'Silvally-Psychic', 'Silvally-Ice', 'Silvally-Dragon', 'Silvally-Dark', 'Silvally-Fairy']},
-  'Minior': {types: ['Rock', 'Flying'], bs: {hp: 60, at: 60, df: 100, sa: 60, sd: 100, sp: 60}, abilities: {0: 'Shields Down'}, weightkg: 40.0, gender: 'N',},
+  'Minior': {types: ['Rock', 'Flying'], bs: {hp: 60, at: 60, df: 100, sa: 60, sd: 100, sp: 60}, abilities: {0: 'Shields Down'}, weightkg: 40.0, gender: 'N', otherFormes: ['Minior-Core']},
   'Komala': {types: ['Normal'], bs: {hp: 65, at: 115, df: 65, sa: 30, sd: 95, sp: 110}, abilities: {0: 'Comatose'}, weightkg: 19.9,},
   'Turtonator': {types: ['Fire', 'Dragon'], bs: {hp: 60, at: 78, df: 135, sa: 91, sd: 85, sp: 36}, abilities: {0: 'Shell Armor'}, weightkg: 212.0,},
   'Togedemaru': {types: ['Electric', 'Steel'], bs: {hp: 65, at: 98, df: 73, sa: 20, sd: 83, sp: 96}, abilities: {0: 'Iron Barbs'}, weightkg: 3.3,},
@@ -11064,6 +11064,7 @@ const PATHWAYS_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
   'Bidoof-Peanutbusted': {types: ['Normal'], bs: {hp: 255, at: 255, df: 255, sa: 255, sd: 255, sp: 255}, abilities: {0: 'Ha Ha You\'re Weak'}, weightkg: 20.0, baseSpecies: 'Bidoof',},
   'Whismur-Fluffy': {types: ['Normal', 'Fire'], bs: {hp: 64, at: 51, df: 63, sa: 161, sd: 63, sp: 128}, abilities: {0: 'Scrappy'}, weightkg: 16.3, baseSpecies: 'Whismur',},
   'Eevee-Partner': {types: ['Normal'], bs: {hp: 65, at: 60, df: 70, sa: 55, sd: 85, sp: 115}, abilities: {0: 'Adaptability'}, weightkg: 6.5, baseSpecies: 'Eevee',},
+  'Eevee-Partner-Evoboost': {types: ['Normal'], bs: {hp: 65, at: 95, df: 70, sa: 95, sd: 85, sp: 115}, abilities: {0: 'Evoboost'}, weightkg: 6.5, baseSpecies: 'Eevee',},
   'Pikachu-Partner': {types: ['Electric'], bs: {hp: 35, at: 55, df: 95, sa: 50, sd: 95, sp: 120}, abilities: {0: 'Static'}, weightkg: 6.0, baseSpecies: 'Pikachu',},
   'Zorua-Partner': {types: ['Dark'], bs: {hp: 55, at: 65, df: 65, sa: 90, sd: 65, sp: 110}, abilities: {0: 'Illusion'}, weightkg: 12.5, baseSpecies: 'Zorua',},
   'Riolu-Partner': {types: ['Fighting'], bs: {hp: 70, at: 90, df: 70, sa: 35, sd: 70, sp: 115}, abilities: {0: 'Inner Focus'}, weightkg: 20.2, baseSpecies: 'Riolu',},
@@ -11080,6 +11081,7 @@ const PATHWAYS_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
   'Cufant-Partner': {types: ['Steel'], bs: {hp: 80, at: 110, df: 100, sa: 60, sd: 60, sp: 40}, abilities: {0: 'Sheer Force'}, weightkg: 100.0, baseSpecies: 'Cufant',},
   'Espurr-Partner': {types: ['Psychic'], bs: {hp: 62, at: 48, df: 72, sa: 63, sd: 90, sp: 115}, abilities: {0: 'Infiltrator'}, weightkg: 3.5, baseSpecies: 'Espurr',},
   'Mudbray-Partner': {types: ['Ground'], bs: {hp: 80, at: 100, df: 110, sa: 45, sd: 70, sp: 45}, abilities: {0: 'Own Tempo'}, weightkg: 110.0, baseSpecies: 'Mudbray',},
+  'Pikachu-Kalos': {types: ['Electric'], bs: {hp: 35, at: 80, df: 50, sa: 75, sd: 50, sp: 140}, abilities: {0: 'Static'}, weightkg: 6.0, baseSpecies: 'Pikachu',},
   'Pikachu-Gigachu': {types: ['Electric'], bs: {hp: 200, at: 180, df: 150, sa: 100, sd: 100, sp: 100}, abilities: {0: 'Static'}, weightkg: 100.0, baseSpecies: 'Pikachu',},
   'Raichu-Alola': {types: ['Electric', 'Psychic'], bs: {hp: 60, at: 85, df: 50, sa: 95, sd: 85, sp: 110}, abilities: {0: 'Surge Surfer'}, weightkg: 21.0, baseSpecies: 'Raichu',},
   'Sandshrew-Alola': {types: ['Ice', 'Steel'], bs: {hp: 50, at: 75, df: 90, sa: 10, sd: 35, sp: 40}, abilities: {0: 'Snow Cloak'}, weightkg: 40.0, nfe: true, baseSpecies: 'Sandshrew',},
@@ -11295,6 +11297,7 @@ const PATHWAYS_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
   'Silvally-Dragon': {types: ['Dragon'], bs: {hp: 95, at: 95, df: 95, sa: 95, sd: 95, sp: 95}, abilities: {0: 'RKS System'}, weightkg: 100.5, gender: 'N', baseSpecies: 'Silvally',},
   'Silvally-Dark': {types: ['Dark'], bs: {hp: 95, at: 95, df: 95, sa: 95, sd: 95, sp: 95}, abilities: {0: 'RKS System'}, weightkg: 100.5, gender: 'N', baseSpecies: 'Silvally',},
   'Silvally-Fairy': {types: ['Fairy'], bs: {hp: 95, at: 95, df: 95, sa: 95, sd: 95, sp: 95}, abilities: {0: 'RKS System'}, weightkg: 100.5, gender: 'N', baseSpecies: 'Silvally',},
+  'Minior-Core': {types: ['Rock', 'Flying'], bs: {hp: 60, at: 100, df: 60, sa: 100, sd: 60, sp: 120}, abilities: {0: 'Shields Down'}, weightkg: 0.3, gender: 'N', baseSpecies: 'Minior',},
   'Mimikyu-Mega': {types: ['Ghost', 'Fairy'], bs: {hp: 55, at: 120, df: 100, sa: 90, sd: 105, sp: 106}, abilities: {0: 'Long Reach'}, weightkg: 0.7, baseSpecies: 'Mimikyu',},
   'Mimikyu-Busted': {types: ['Ghost', 'Fairy'], bs: {hp: 55, at: 90, df: 80, sa: 50, sd: 105, sp: 96}, abilities: {0: 'Disguise'}, weightkg: 0.7, baseSpecies: 'Mimikyu',},
   'Necrozma-Dusk-Mane': {types: ['Psychic', 'Steel'], bs: {hp: 97, at: 157, df: 127, sa: 113, sd: 109, sp: 77}, abilities: {0: 'Prism Armor'}, weightkg: 460.0, gender: 'N', baseSpecies: 'Necrozma',},
@@ -11395,6 +11398,12 @@ delete PATHWAYS['Pikachu-Unova'];
 delete PATHWAYS['Pikachu-World'];
 delete PATHWAYS['Pikachu-Sinnoh'];
 delete PATHWAYS['Pikachu-Original'];
+delete PATHWAYS['Pumpkaboo-Small'];
+delete PATHWAYS['Gourgeist-Small'];
+delete PATHWAYS['Aegislash-Blade'];
+delete PATHWAYS['Aegislash-Shield'];
+delete PATHWAYS['Aegislash-Bloth'];
+delete PATHWAYS['Minior-Meteor'];
 
 export const SPECIES = [{}, RBY, GSC, ADV, DPP, BW, XY, SM, SS, SV, PATHWAYS];
 
