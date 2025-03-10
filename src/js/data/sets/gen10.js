@@ -2937,5 +2937,5 @@ var SETDEX_PATHWAYS = {
   },
   "Arbok": {
     "Elite Four Agatha": {"level":85,"ability":"Simple","item":"Air Balloon","nature":"Impish","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":0,"df":128,"sa":0,"sd":128,"sp":0},"moves":["Coil","Sucker Punch","Leech Life","Gunk Shot"]}
-  },
+  }
 };
