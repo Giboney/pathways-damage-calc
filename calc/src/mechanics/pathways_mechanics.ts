@@ -428,6 +428,11 @@ export function calculatePathways(
     typeEffectiveness /= 2;
     desc.weather = field.weather;
   }
+  /*
+  if (field.hasTerrain('DragonicSoul') && move.hasType('Dragon') && defender.hasType('Dragon')) {
+    typeEffectiveness = 1;
+    desc.terrain = field.terrain;
+  }*/
 
   if (move.type === 'Stellar') {
     desc.defenderTera = defender.teraType; // always show in this case

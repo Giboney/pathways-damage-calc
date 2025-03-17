@@ -31,8 +31,15 @@ const EV_ITEMS = [
 export function isGrounded(pokemon: Pokemon, field: Field) {
   return (field.isGravity || pokemon.hasItem('Iron Ball') ||
     (!pokemon.hasType('Flying') &&
-      !pokemon.hasAbility('Levitate') &&
-      !pokemon.hasItem('Air Balloon')));
+     !pokemon.hasAbility('Golden Hour') &&
+     !pokemon.hasAbility('Levitate') &&
+     !pokemon.hasAbility('Lightning Speed') &&
+     !pokemon.hasAbility('Distortion') &&
+     !pokemon.hasAbility('Witchcraft') &&
+     !pokemon.hasAbility('Lightning Speed') &&
+     !pokemon.hasType('Omnitype') &&
+     !pokemon.hasItem('Air Balloon')
+    ));
 }
 
 export function getModifiedStat(stat: number, mod: number, gen?: Generation) {
@@ -92,7 +99,7 @@ export function computeFinalStats(
 
 export function getFinalSpeed(gen: Generation, pokemon: Pokemon, field: Field, side: Side) {
   const weather = field.weather || '';
-  const terrain = field.terrain;
+  const terrain = field.terrain || '';
   let speed = getModifiedStat(pokemon.rawStats.spe, pokemon.boosts.spe, gen);
   const speedMods = [];
 
@@ -101,16 +108,22 @@ export function getFinalSpeed(gen: Generation, pokemon: Pokemon, field: Field, s
   // speedMods.push(1024);
 
   if ((pokemon.hasAbility('Unburden') && pokemon.abilityOn) ||
-      (pokemon.hasAbility('Chlorophyll') && weather.includes('Sun')) ||
-      (pokemon.hasAbility('Sand Rush', 'Desert Devil') && weather === 'Sand') ||
-      (pokemon.hasAbility('Swift Swim') && weather.includes('Rain')) ||
-      (pokemon.hasAbility('Slush Rush') && ['Hail', 'Snow'].includes(weather)) ||
-      (pokemon.hasAbility('Surge Surfer') && terrain === 'Electric')
+      (pokemon.hasAbility('Chlorophyll') && ['Sun', 'Harsh Sunshine'].includes(weather)) ||
+      (pokemon.hasAbility('Sand Rush', 'Desert Devil') && ['Sand', 'Raging Sandstorm'].includes(weather)) ||
+      (pokemon.hasAbility('Swift Swim') && ['Rain', 'Heavy Rain', 'Harsh Typhoon'].includes(weather)) ||
+      (pokemon.hasAbility('Slush Rush') && ['Hail', 'Snow', 'Violent Blizzard'].includes(weather)) ||
+      (pokemon.hasAbility('Surge Surfer') && ['Electric'/*, 'Faraday Cage'*/].includes(terrain)) ||
+      (pokemon.hasAbility('Killing Joke')) ||
+      (pokemon.hasAbility('Anti-Gravity') && field.isGravity)
   ) {
     speedMods.push(8192);
-  } else if ((pokemon.hasAbility('Quick Feet') && pokemon.status) ||
-             (pokemon.hasItem('Nuptial Veil') && pokemon.named('Salandit'))) {
+  } else if (
+    (pokemon.hasAbility('Quick Feet') && pokemon.status) ||
+    (pokemon.hasAbility('Lighten') && pokemon.abilityOn)
+  ) {
     speedMods.push(6144);
+  } else if (pokemon.hasAbility('Chaos Control')) {
+    speedMods.push(5120);
   } else if (pokemon.hasAbility('Slow Start') && pokemon.abilityOn) {
     speedMods.push(2048);
   } else if (isQPActive(pokemon, field) && getQPBoostedStat(pokemon, gen) === 'spe') {
@@ -123,6 +136,8 @@ export function getFinalSpeed(gen: Generation, pokemon: Pokemon, field: Field, s
     speedMods.push(2048);
   } else if (pokemon.hasItem('Quick Powder') && pokemon.named('Ditto')) {
     speedMods.push(8192);
+  } else if (pokemon.hasItem('Nuptial Veil') && pokemon.named('Salandit')) {
+    speedMods.push(6144);
   }
 
   speed = OF32(pokeRound((speed * chainMods(speedMods, 410, 131172)) / 4096));
@@ -134,6 +149,7 @@ export function getFinalSpeed(gen: Generation, pokemon: Pokemon, field: Field, s
   return Math.max(0, speed);
 }
 
+//DO NOT PUT ABILITIES WEATHER TERRAIN HERE
 export function getMoveEffectiveness(
   gen: Generation,
   move: Move,
@@ -142,13 +158,18 @@ export function getMoveEffectiveness(
   isGravity?: boolean,
   isRingTarget?: boolean,
 ) {
-  if ((isRingTarget || isGhostRevealed) && type === 'Ghost' && move.hasType('Normal', 'Fighting')) {
+  let e = gen.types.get(toID(move.type))!.effectiveness[type]!;
+  if (isGhostRevealed && type === 'Ghost' && move.hasType('Normal', 'Fighting')) {
     return 1;
-  } else if ((isRingTarget || isGravity) && type === 'Flying' && move.hasType('Ground')) {
+  } else if (isGravity && (type === 'Flying' || type === 'Omnitype') && move.hasType('Ground')) {
     return 1;
-  } else if ((move.named('Freeze-Dry') && type === 'Water') ||
-             (move.named('Kelp Wreck') && type === 'Steel') ||
-             (move.named('Venomous Spines') && type === 'Dragon')) {
+  } else if (isRingTarget && e === 0) {
+    return 1;
+  } else if (
+    (move.named('Freeze-Dry') && type === 'Water') ||
+    (move.named('Kelp Wreck') && type === 'Steel') ||
+    (move.named('Venomous Spines') && type === 'Dragon')
+  ) {
     return 2;
   } else if (move.named('Flying Press')) {
     return (
@@ -177,20 +198,21 @@ export function checkTeraformZero(pokemon: Pokemon, field: Field) {
 export function checkForecast(pokemon: Pokemon, weather?: Weather) {
   if (pokemon.hasAbility('Forecast') && pokemon.named('Castform')) {
     switch (weather) {
-    case 'Sun':
-    case 'Harsh Sunshine':
-      pokemon.types = ['Fire'];
-      break;
-    case 'Rain':
-    case 'Heavy Rain':
-      pokemon.types = ['Water'];
-      break;
-    case 'Hail':
-    case 'Snow':
-      pokemon.types = ['Ice'];
-      break;
-    default:
-      pokemon.types = ['Normal'];
+      case 'Sun':
+      case 'Harsh Sunshine':
+        pokemon.types = ['Fire'];
+        break;
+      case 'Rain':
+      case 'Heavy Rain':
+        pokemon.types = ['Water'];
+        break;
+      case 'Hail':
+      case 'Snow':
+      case 'Violent Blizzard':
+        pokemon.types = ['Ice'];
+        break;
+      default:
+        pokemon.types = ['Normal'];
     }
   }
 }
@@ -214,7 +236,7 @@ export function checkWonderRoom(pokemon: Pokemon, wonderRoomActive?: boolean) {
 
 export function checkIntimidate(gen: Generation, source: Pokemon, target: Pokemon) {
   const blocked =
-    target.hasAbility('Clear Body', 'White Smoke', 'Hyper Cutter', 'Full Metal Body') ||
+    target.hasAbility('Clear Body', 'White Smoke', 'Hyper Cutter', 'Full Metal Body', 'Mind\'s Eye', 'Bird of Prey', 'Soul Ablaze', 'Golden Hour', 'Moribund', 'Dry Aged', 'Hydrochasm Surge', 'Hydrochasm Surge++', 'Fiery Spirit') || (target.hasAbility('Flower Veil') && target.hasType('Grass')) ||
     // More abilities now block Intimidate in Gen 8+ (DaWoblefet, Cloudy Mistral)
     (gen.num >= 8 && target.hasAbility('Inner Focus', 'Own Tempo', 'Oblivious', 'Scrappy')) ||
     target.hasItem('Clear Amulet');
@@ -223,13 +245,37 @@ export function checkIntimidate(gen: Generation, source: Pokemon, target: Pokemo
       target.boosts.atk = Math.min(6, target.boosts.atk + 1);
     } else if (target.hasAbility('Simple')) {
       target.boosts.atk = Math.max(-6, target.boosts.atk - 2);
+    } else if (target.hasAbility('Mirror Armor')) {
+      source.boosts.atk = Math.max(-6, source.boosts.atk - 1);
     } else {
       target.boosts.atk = Math.max(-6, target.boosts.atk - 1);
     }
     if (target.hasAbility('Competitive')) {
       target.boosts.spa = Math.min(6, target.boosts.spa + 2);
+    } else if (target.hasAbility('Rattled') || (target.item && target.item === 'Adrenaline Orb')) {
+      target.boosts.spe = Math.min(6, target.boosts.spe + 1);
+    }
+    
+  } else if (source.hasAbility('Mesmerize') && source.abilityOn && !blocked) {
+    if (target.hasAbility('Competitive', 'Contrary')) {
+      target.boosts.spa = Math.min(6, target.boosts.spa + 1);
+    } else if (target.hasAbility('Simple')) {
+      target.boosts.spa = Math.max(-6, target.boosts.spa - 2);
+    } else if (target.hasAbility('Mirror Armor')) {
+      source.boosts.spa = Math.max(-6, source.boosts.spa - 1);
+    } else {
+      target.boosts.spa = Math.max(-6, target.boosts.spa - 1);
+    }
+    if (target.hasAbility('Defiant', 'Guard Dog')) {
+      target.boosts.atk = Math.min(6, target.boosts.atk + 2);
+    } else if (target.hasAbility('Rattled') || (target.item && target.item === 'Adrenaline Orb')) {
+      target.boosts.spe = Math.min(6, target.boosts.spe + 1);
     }
   }
+}
+
+export function checkHaHaYoureWeak(gen: Generation, source: Pokemon, target: Pokemon) {
+  
 }
 
 export function checkDownload(source: Pokemon, target: Pokemon, wonderRoomActive?: boolean) {
