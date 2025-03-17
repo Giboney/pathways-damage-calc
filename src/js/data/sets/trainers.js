@@ -1,0 +1,3 @@
+var TRAINERDEX_PATHWAYS = {
+    
+}

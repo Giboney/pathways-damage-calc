@@ -340,167 +340,183 @@ const SV = SS.concat([
 ]);
 
 const PATHWAYS = SV.concat([
+  //add neutralizing gas immune stuff later
   'Burn Out',//irrelevant
-  'Who\'s Next',//not used
+  'Who\'s Next',//not used/irrelevant
   'Raijin\'s Will',//irrelevant
   'Tsukuyomi',//sleep oppo unless ability prevents
   'Amaterasu',//burn oppo
   'Daydreamer',//irrelevant
-  'Titanium Armor',//30% dr wait for update lol this is weridly coded
-  'Holy Aegis',//unused
+  'Titanium Armor',//finalmods x0.7 if special, defmods x1/0.7 if phys or psyshock (dumb)
+  'Holy Aegis',//unused defense supreme overlord? not implemented correctly??
   'Dragonize',//normal -> dragon
-  'Lightning Speed',//done ground immune, +5 prio except in psyterrain, electric surge, iron fist, huge power, half phys dmg, half of half (quarter) spec dmg
+  'Lightning Speed',//done ground immune, +5 prio except in psyterrain, electric surge, iron fist, huge power, half phys dmg, half of half (quarter) spec dmg, airborne, serene grace
   'Darkness Boost',//done 1/16 fighting dmg taken, max speed on switchin, +6 atk -1 speed on hit
   'Swarm Shell',//done weaker ver, sand stream, attack x1.5, finalmods /= 1.5
   'Untouchable',//done +6 speed and evasion on switch in
-  'Golden Hour',//add omnitype
-  'Killing Joke',
-  'X Pickup',
-  'Storm Emperor',
-  'Lightning Armor',
-  'Crown of Zeus',
-  'Juggernaut',
-  'Legendary Aura',
-  'Paid in Full',
-  'Born to Die',
-  'Chaos Control',
-  'Ha Ha You\'re Weak',
-  'Relaxation',
-  'Heavenly Shield',
-  'Ghouliate',
-  'Awakening',
-  'Sinisterize',
-  'Ethereal',
-  'Rotting',
-  'Angel Tears',//check
-  'Honor Bond',
-  'Trouble Bond',
-  'Khepri',
-  'Scorched Earth',
-  'Haunted Field',
-  'Desert Devil',
-  'Guidance System',
-  'Duelize',
-  'Distortion',
-  'Immolate',
-  'Venomize',
-  'Turbo Engine',
-  'Darkness Boost2',
-  'Swarm Shell2',
-  'Killing Joke2',
-  'X Pickup2',
-  'Raijin\'s Will2',
-  'Burn Out2',
+  'Golden Hour',//add omnitype, 0.5x finalmod dr, 1.5x atmod, clear body (for intim/hahaweak), affected by iron ball/gravity, airborne, immune to hazards
+  'Killing Joke',//change gengar form -> forsaken, double speed, multiscale, bypass protect, 
+  'X Pickup',//+6 atk + 6 speed on switch in
+  'Storm Emperor',//unused, summons storm (new weather)
+  'Lightning Armor',//finalmod x0.5 if contact dr, (50% para on contact)
+  'Crown of Zeus',//unused lot of buffs if hit with electric move
+  'Juggernaut',//irrelevant, all moves omniboost
+  'Legendary Aura',//lots of bullshit bpmods x2, finalmods x0.25 dr jesus
+  'Paid in Full',//always live on 1 hp unless already 1 hp, (+3 atk and spa + return double damage of hit)
+  'Born to Die',//always live on 1 hp. (+6 atk and spa + return double damage of hit)
+  'Chaos Control',//1.25x speed, change oppo ability to truant
+  'Ha Ha You\'re Weak',//-6 to all oppo stats on switch
+  'Relaxation',//irrelevant
+  'Heavenly Shield',//defensive download
+  'Ghouliate',//normal -> ghost
+  'Awakening',//comatose + bpmod x 0.5 (resist ice steel rock dragon electric) + atmod x1.3 if phys
+  'Sinisterize',//normal -> dark
+  'Ethereal',//not implemented. add ghost type 
+  'Rotting',//not implemented. add ghost type 
+  'Angel Tears',//finalmod x.5 if dragon, bpmod x1.5 if water or fairy
+  'Honor Bond',//protean + form change on ko
+  'Trouble Bond',//protean + form change on ko
+  'Khepri',//unused drought + finalmods x0.5 if supereffective
+  'Scorched Earth',//unused gives oppo scorched earth hazards (burn)
+  'Haunted Field',//unused give oppo haunted field hazards (yawn)
+  'Desert Devil',//sand rush + bpmods x1.3 if sand and rockgroundsteel
+  'Guidance System',//unused super luck + sniper (finalmods x2 if crit for total of 3x on crits)
+  'Duelize',//normal -> fighting
+  'Distortion',//trick room on switch ends onswitchout/onhit, change melmetal form, bpmods x1.5 if punch, ground immune, +1 atk when hit by ground, 5x accuracy, airborne
+  'Immolate',//normal -> fire
+  'Venomize',//normal -> poison
+  'Turbo Engine',//electric immune, final mods x0.5 and additional x2/3 if special, atmods x2
+  'Darkness Boost2',//max speed on switch, change ttar form, -3 speed +6 atk onhit
+  'Swarm Shell2',//atmods x4 if phys, sandstream, finalmods x1/3
+  'Killing Joke2',//change gengar form, psychic surge, double dmg on psyterrain <- nope
+  'X Pickup2',//+3 atk and speed on switch
+  'Raijin\'s Will2',//irrelevant, para on hit
+  'Burn Out2',//irrelevant, burn on hit
   'Untouchable2',// done +2 speed and evasion on switch in
-  'Beary Broken',
-  'Pure Prayer',
-  'Toxic Chain',
-  'Accelerate',
-  'Bewildering Mist',
-  'Sword of Damocles',
-  'Solar Grace',
-  'Demolition Expert',
-  'Natural Enemy',
-  'Insidious',
-  'Airborne',
-  'Bee Ware',
-  'Extra Cortex',
-  'Fly Trap', //
-  'Tellurize',
-  'Silk Mail',
-  'Swiper',
-  'Sweet Heart',
-  'Spirit Drain',
-  'Swarming',
-  'Showdown Mode',
-  'Screamer',
-  'Iron Heel',
-  'Fusion Core', //
-  'Dirty Deeds',
-  'Clean Heart',
-  'Barren Desert',
-  'Aphrodite\'s Whim',
-  'Vicious Edge',
-  'Ranger Remedy',
-  'Sharpshooter',
-  'Gallant',
-  'Rock Shards',
-  'Scrap Metal',
-  'Frozen Tundra',
-  'Forest Spirits',
-  'Druidcraft',
-  'Floriate',
-  'Life Drain',
-  'All or Nothing',
-  'Gambler Legacy',
-  'Lighten',
-  'Swan Song',
-  'Noble Hunt',
-  'Harbinger of Storm',
-  'Plasma Hellscape',
-  'Ya Estas Cocinado', //
-  'Aquamynthesis',
-  'Healing Droplets',
-  'Healing Droplets++',
-  'Moribund',
-  'Volatile Brew',
-  'Seraphic Heal',
-  'Neurotoxicity',
-  'Metallicize',
-  'Gravity Surge',
-  'Fiery Spirit',
-  'Divine Mandate',
-  'Dragon DNA',
-  'Showtime',
-  'Abyssal Veil',
-  'Annoying Wall',
-  'Abyssal Veil ++',
-  'Reaper',
-  'Stacked Odds',
-  'Cooling',
-  'First Blood',
-  'Soul Conduit',
-  'Lucky Charm',
-  'Eureka',
-  'Bird of Prey',
-  'Dreadful',
-  'Basilisk',
-  'Rags to Riches',
-  'Holy Duster',
-  'Blademaster',
-  'Dream World',
-  'Deep Roots',
-  'Stellar Debris',
-  'Sinful Gluttony',
-  'Lightning Fast',
-  'Opportunist',
-  'Vicious Claws',
-  'Screen Maker',
-  'Coral Debris',
-  'Anti-Gravity',
-  'Draconic Soul',
-  'Terror Realm',
-  'Faraday Cage',
-  'Frozen Kingdom',
-  'Fatal Release',
-  'Hydrochasm Surge',
-  'Hydrochasm Surge++',
-  'Requiem Di Diavolo',
-  'Bull Rush',
-  'Frost Drain',
-  'Witchcraft',
-  'Crescendo',
-  'Grit',
-  'Primal Fury',
-  'Velocity',
-  'Mind Flay',
-  'Ambusher',
-  'Golden Land',
-  'Spendthrift',
-  'Pandemonium',
-  'Assassin',
-  'Light Born',
-  'Evoboost',
+  'Beary Broken',//+1 prio on grassyterrain, grassy surge, bpmods x1.5, ignore armor tail, 
+  'Pure Prayer',//+1 prio on heal move
+  'Accelerate',//irrelevant, speed moxie
+  'Bewildering Mist',//unsued, give oppo bewildering mist hazard (confusion)
+  'Sword of Damocles',//+1 prio on misty, misty surge, bpmods x2, finalmods x0.75
+  'Solar Grace',//cloud nine
+  'Demolition Expert',//boost bullet moves
+  'Natural Enemy',//finalmods x2 if resisted grass or bug move
+  'Insidious',//finalmods x2 if resisted poison or bug move
+  'Airborne',//+1 spa on tailwind/wind move, immune to wind
+  'Bee Ware',//bug moves +1 prio
+  'Extra Cortex',//irrelevant psychic status moves +1
+  'Fly Trap', //immune to bug and poisonstatus
+  'Tellurize',//normal -> ground
+  'Silk Mail',//if fire move finalmods x2 else finalmods x0.5 (weak to fire)
+  'Swiper',//atmods x2 if no item + pickpocket
+  'Sweet Heart',//atmods x2 if fairy move
+  'Spirit Drain',//ghost storm drain but +1 spd
+  'Swarming',//form change on unown, immune to ground
+  'Showdown Mode',//irrelevant, form change on lokix
+  'Screamer',//bpmods x1.5 if sound, immune to sound
+  'Iron Heel',//bpmods x1.5 if kicking
+  'Fusion Core',//water absorb, 1.25x evasion in rain, atmods 1.5x if special
+  'Dirty Deeds',//bpmods x1.5 if dark
+  'Clean Heart',//bpmods x1.5 if fairy
+  'Barren Desert',//start raging sandstorm
+  'Aphrodite\'s Whim',//irrelevant, infatuate all pokemon on field
+  'Vicious Edge',//blade moves deal extra 1/8 max hp indirect (magic guard immune)
+  'Ranger Remedy',//25% shed skin
+  'Sharpshooter',//bpmods x1.5 if shot
+  'Gallant',//irrelevant cute charm ignore gender
+  'Rock Shards',//irrelevant, set rocks on hit
+  'Scrap Metal',//irrelevant, set steel type rocks on hit
+  'Frozen Tundra',//start violent blizzard
+  'Forest Spirits',//bpmods x1.3 if fairy or grass
+  'Druidcraft',//bpmods x0.5 if bug ice or flying dr
+  'Floriate',//normal -> grass
+  'Life Drain',//unused, passive leech seed (broken af)
+  'All or Nothing',//bpmods x(1 + random) defmods x(1 - random), random is [0,50], if 50, move will crit, why decrease defense? who knows
+  'Gambler Legacy',//irrelevant, serene grace for normal moves
+  'Lighten',//unburden, but 1.5x
+  'Swan Song',//irrelevant, perish song for whole battle (switch every 3 turns or faint)
+  'Noble Hunt',//atmods x1.5 + moxie on first ko, resets moxie count on switch out
+  'Harbinger of Storm',//not implemented
+  'Plasma Hellscape',//not used, electric surge, earth eater, normal -> electric
+  'Ya Estas Cocinado',//basculegion form change, bpmods x4/3 if contact, weird mix of supremeoverlord and quark drive. basically atmods x(supremeoverlord + 0.3), but its should boost speed in real battle
+  'Aquamynthesis',//rain proto
+  'Healing Droplets',//drizzle, grassy surge, rain dish
+  'Healing Droplets++',//drizzle, grassy surge, rain dish, iron fist
+  'Moribund',//not used, clear body, 99% cursed body, perish body
+  'Volatile Brew',//not used, irrelevant, 25% poison on hit, stacks with other effects
+  'Seraphic Heal',//irrelevant, water moves heal status + 1/16 hp
+  'Neurotoxicity',//bpmods x1.3 if poison or electric
+  'Metallicize',//normal -> steel
+  'Gravity Surge',//start gravity
+  'Fiery Spirit',//immune to intim/mesmerize, immune to burn
+  'Divine Mandate',//bpmods x1.3 if fairy or flying
+  'Dragon DNA',//bpmods x1.5 if dragon move and use is not dragon type
+  'Showtime',//+6 all stats, -1 all stats end of each turn
+  'Abyssal Veil',//change zoroark form, bpmods x1.5, cursed body 100%, magic guard
+  'Annoying Wall',//not used, finalmods x0.2 if special, defmods x2 if phys or psyshock (dumb), atmods x1.5, regenerator 100%
+  'Abyssal Veil ++',//change zoroark form, bpmods x1.5, cursed body 100%, dodge attacks every other turn (no guard bypasses), magic guard
+  'Reaper',//heal 1/8 of damage dealt
+  'Stacked Odds',//supreme overlord but 1 + 0.06xfainted, atmods
+  'Cooling',//irrelevant, snow hydration
+  'First Blood',//bpmods x1.25 if target at or above 75%
+  'Soul Conduit',//irrelevant, soul heart copy
+  'Lucky Charm',//irrelevant, victory star copy
+  'Eureka',//neuroforce copy
+  'Bird of Prey',//inner focus copy
+  'Dreadful',//bpmods x1.3 if target has nonvolatile status
+  'Basilisk',//dragon moves guarantee crit if target is para, dragon moves 30% para
+  'Rags to Riches',//irrelevant, double money from battles
+  'Holy Duster',//irrelevant, defogs on switch in, but still takes hazards
+  'Blademaster',//bpmods x1.5 if blade
+  'Dream World',//start dream world terrain, sleep normal and psychic types
+  //dream world terrain: psychic type for mimicry, nature power(psychic), terrain pulse/blast
+  //bpmods x1.5 if target psychic or normal, normal and psychic pokemon can move while asleep
+  //ALL sleeping pokemon recover 8% max hp end of turn
+  'Deep Roots',//big root as an ability
+  'Stellar Debris',//sets stellar rocks on hit, can have 2 layers 1/6 vs 1/8
+  'Sinful Gluttony',//fuck this
+  'Lightning Fast',//start endless electric terrain, +1 prio on electric terrain
+  'Vicious Claws',//slicing moves deal extra 1/8 max hp indirect (magic guard immune)
+  'Screen Maker',//irrelevant, screens last an extra 2 turns
+  'Coral Debris',//irrelevant, sets spikes if hit by phys
+  'Anti-Gravity',//double speed in gravity
+  'Draconic Soul',//start dragonic soul terrain
+  //dragonic terrain: dragon type for mimicry, nature power (dragon pulse), terrain pulse/blast
+  //dragon moves are neutral vs dragon pokemon
+  //bpmods x1.5 if dragon move, finalmods x0.9 if target dragon
+  'Terror Realm',//start terror realm terrain
+  //terror terrain: dark type for secret power, mimicry, nature power (dark pulse), terrain pulse/blast. zmove terrain pulse/blast is ghost type??
+  //bpmods x1.5 if ghost or dark move
+  //if asleep and not ghost or dark, lose 1/8 hp end of turn
+  //moves heal 50% of damage dealt if target is asleep
+  'Faraday Cage',//start faraday cage terrain
+  //doubles as electric terrain for abilities, moves, and electric seed, cannot be replaced by electric terrain
+  //electric pokemon get charge at end of turn
+  //bpmods x1.5 if electric move
+  'Frozen Kingdom',//start frozen kingdom terrain and snow
+  //frozen terrain: ice type for secret power, mimicry, nature power (ice beam), terrain pulse/blast
+  //bpmods x1.5 if ice move
+  //lowers speed by one on switch if not ice type
+  //if weather or terrain is changed both disappear
+  'Fatal Release',//sets sticky web on faint
+  'Hydrochasm Surge',//lot of shit
+  'Hydrochasm Surge++',//even more shit fuck arfy for this man i aint coding that
+  'Requiem Di Diavolo',//gliscor form change, bpmods x2 if sound move, soundproof, poison heal, swansong
+  'Bull Rush',//gorilla tactics clone
+  'Frost Drain',//ice immunity, raise spd
+  'Witchcraft',//fire moves cant miss, airborne
+  'Crescendo',//whismur form change, ignore flash fire and well baked body, normal -> fire, fluffy, metronome (finalmods), atmods x1.5 is sound, not there yet  ----> atmods x0.5 if target has flash fire or well baked body
+  'Grit',//guts but atmods x1.3
+  'Primal Fury',//bpmods x1.3 if bug or flying move
+  'Velocity',//irrelevant, boost speed on ko, once per switch in
+  'Mind Flay',//psychic moves apply the mind flay effect (lose 1/8 hp eor)
+  'Ambusher',//bpmods x1.25 if first turn out
+  'Golden Land',//bpmods x(1 + money/30) caps at 1.25, also add 5xlvl money on hit
+  'Spendthrift',//proto, but only activated by big nugget
+  'Pandemonium',//not yet
+  'Assassin',//adaptability clone
+  'Light Born',//atmods x2, klutz
+  'Evoboost',//atmods x1.5, 
   'Great Mischief',
   'Soul Ablaze',
   'Lunar Light',
@@ -515,8 +531,8 @@ const PATHWAYS = SV.concat([
   'Heavy Heart',
   'Purrfection',
   'Stubborn Mule',
-  'Primeval Gift',
-  'Laced Cream',
+  'Primeval Gift',//normal -> type of berry
+  'Laced Cream',//immune to effects nonvola status, gives to attacker if they make contact
   'Tracker',
   'Vicious Fangs',
   'Night Stalker',
@@ -524,11 +540,11 @@ const PATHWAYS = SV.concat([
   'Boiling Point',
   'Street Chef',
   'Vegetarian',
-  'Dry-Aged',
-  'Mesmerize',
-  'Rapid Fire',
-  'Oxidation',
-  'Ferrite Scales',
+  'Dry-Aged',//not used, ignores stat changes from any source, item, status, stat stages
+  'Mesmerize',//intim but spatk
+  'Rapid Fire',//loaded dice as an ability
+  'Oxidation',//poison hits steel for normal effectiveness
+  'Ferrite Scales',//bmods x0.5 if rock or ice dr, immuse to poison
 ]);
 
 export const ABILITIES = [[], RBY, GSC, ADV, DPP, BW, XY, SM, SS, SV, PATHWAYS];

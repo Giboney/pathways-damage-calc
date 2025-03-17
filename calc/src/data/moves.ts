@@ -5666,7 +5666,7 @@ const PATHWAYS_PATCH: {[name: string]: DeepPartial<MoveData>} = {
   'Life Dew': {bp: 0, type: 'Water', category: 'Status', breaksProtect: true,},
   'Surging Strikes': {bp: 25, type: 'Water', category: 'Physical', multihit: 3, willCrit: true, makesContact: true, isPunch: true, zp: 100, maxPower: 130,},
   'Flip Turn': {bp: 60, type: 'Water', category: 'Physical', makesContact: true, zp: 120, maxPower: 110,},
-  'Clean Slate': {bp: 60, type: 'Rock', category: 'Physical', makesContact: true, zp: 120, maxPower: 110,},
+  'Clean Slate': {bp: 60, type: 'Rock', category: 'Physical', makesContact: true, zp: 120, maxPower: 110,},//PATHWAYS STUFF BELOW (also SV mixed in)
   'Ill Intent': {bp: 1, type: '???', category: 'Special', zp: 100, maxPower: 90,},
   'Justified Blow': {bp: 1, type: '???', category: 'Physical', makesContact: true, zp: 100, maxPower: 90,},
   'Unbiased Assault': {bp: 1, type: '???', category: 'Physical', makesContact: true, zp: 100, maxPower: 90,},
@@ -5764,8 +5764,8 @@ const PATHWAYS_PATCH: {[name: string]: DeepPartial<MoveData>} = {
   'Mortal Spin': {bp: 30, type: 'Poison', category: 'Physical', secondaries: true, makesContact: true, zp: 100, maxPower: 70,},
   'Salt Cure': {bp: 40, type: 'Rock', category: 'Physical', zp: 100, maxPower: 90,},
   'Ultima': {bp: 999, type: 'Shadow', category: 'Special', multihit: 2, target: 'allAdjacent', zp: 200, maxPower: 150,},
-  'Shed Tail': {bp: 0, type: 'Normal', category: 'Status',},
-  'Chilly Reception': {bp: 0, type: 'Ice', category: 'Status', breaksProtect: true,},
+  'Shed Tail': {bp: 0, type: 'Normal', category: 'Status',},//--------------SV
+  'Chilly Reception': {bp: 0, type: 'Ice', category: 'Status', breaksProtect: true,},//
   'Psychic Chains': {bp: 80, type: 'Psychic', category: 'Special', zp: 160, maxPower: 130,},
   'Piledriver': {bp: 1, type: 'Ground', category: 'Physical', makesContact: true, zp: 100, maxPower: 90,},
   'Doom Blade': {bp: 75, type: 'Dark', category: 'Physical', makesContact: true, isSlicing: true, isBlade: true, zp: 140, maxPower: 130,},
@@ -5774,12 +5774,12 @@ const PATHWAYS_PATCH: {[name: string]: DeepPartial<MoveData>} = {
   'Disarming Thrust': {bp: 75, type: 'Fighting', category: 'Physical', secondaries: true, makesContact: true, isBlade: true, zp: 140, maxPower: 90,},
   'Tectonic Cleave': {bp: 80, type: 'Ground', category: 'Physical', target: 'allAdjacent', makesContact: true, isSlicing: true, isBlade: true, zp: 160, maxPower: 130,},
   'Roulette Spin': {bp: 60, type: 'Steel', category: 'Physical', secondaries: true, zp: 120, maxPower: 110,},
-  'Silk Trap': {bp: 0, type: 'Bug', category: 'Status', priority: 4,},
+  'Silk Trap': {bp: 0, type: 'Bug', category: 'Status', priority: 4,},//--------------SV
   'Spin Out': {bp: 100, type: 'Steel', category: 'Physical', makesContact: true, zp: 180, maxPower: 130,},
   'Fillet Away': {bp: 0, type: 'Normal', category: 'Status', breaksProtect: true,},
   'Ice Spinner': {bp: 80, type: 'Ice', category: 'Physical', makesContact: true, zp: 160, maxPower: 130,},
   'Double Shock': {bp: 150, type: 'Electric', category: 'Physical', makesContact: true, zp: 200, maxPower: 150,},
-  'Chilling Water': {bp: 50, type: 'Water', category: 'Special', secondaries: true, zp: 100, maxPower: 100,},
+  'Chilling Water': {bp: 50, type: 'Water', category: 'Special', secondaries: true, zp: 100, maxPower: 100,},//--------------end SV
   'Shivering Wisp': {bp: 0, type: 'Ice', category: 'Status',},
   'Fated Fortune': {bp: 0, type: 'Steel', category: 'Status', breaksProtect: true,},
   'Ram Crash': {bp: 70, type: 'Rock', category: 'Physical', priority: 2, makesContact: true, zp: 140, maxPower: 120,},
@@ -5789,9 +5789,9 @@ const PATHWAYS_PATCH: {[name: string]: DeepPartial<MoveData>} = {
   'Divine Spark': {bp: 40, type: 'Fairy', category: 'Special', priority: 1, zp: 100, maxPower: 90,},
   'Holy Spark': {bp: 80, type: 'Fairy', category: 'Special', priority: 2, zp: 160, maxPower: 130,},
   'Broken Skies': {bp: 90, type: 'Flying', category: 'Special', priority: 1, makesContact: true, zp: 175, maxPower: 130,},
-  'Syrup Bomb': {bp: 60, type: 'Grass', category: 'Special', secondaries: true, isBullet: true, zp: 120, maxPower: 110,},
+  'Syrup Bomb': {bp: 60, type: 'Grass', category: 'Special', secondaries: true, isBullet: true, zp: 120, maxPower: 110,},//--------------SV
   'Matcha Gotcha': {bp: 80, type: 'Grass', category: 'Special', drain: [1, 2], target: 'allAdjacentFoes', secondaries: true, zp: 160, maxPower: 130,},
-  'Ivy Cudgel': {bp: 100, type: 'Grass', category: 'Physical', secondaries: true, isBashing: true, zp: 180, maxPower: 130,},
+  'Ivy Cudgel': {bp: 100, type: 'Grass', category: 'Physical', secondaries: true, isBashing: true, zp: 180, maxPower: 130,},//-----end SV
   'Rainbow Road': {bp: 0, type: 'Fairy', category: 'Status',},
   'Crushing Bite': {bp: 80, type: 'Dragon', category: 'Physical', secondaries: true, makesContact: true, isBite: true, zp: 160, maxPower: 130,},
   'Seal Break': {bp: 0, type: 'Ghost', category: 'Status',},
@@ -5825,12 +5825,12 @@ const PATHWAYS_PATCH: {[name: string]: DeepPartial<MoveData>} = {
   'Freaky Buzz': {bp: 90, type: 'Bug', category: 'Special', secondaries: true, priority: 2, isSound: true, zp: 175, maxPower: 130,},
   'Break Dance': {bp: 0, type: 'Ice', category: 'Status', isDance: true, breaksProtect: true,},
   'Combustion': {bp: 0, type: 'Fire', category: 'Status',},
-  'Thunder Clap': {bp: 70, type: 'Electric', category: 'Special', priority: 1, zp: 140, maxPower: 120,},
+  'Thunder Clap': {bp: 70, type: 'Electric', category: 'Special', priority: 1, zp: 140, maxPower: 120,},//----------------------SV
   'Supercell Slam': {bp: 100, type: 'Electric', category: 'Physical', makesContact: true, zp: 180, maxPower: 130,},
   'Temper Flare': {bp: 75, type: 'Fire', category: 'Physical', makesContact: true, zp: 140, maxPower: 130,},
   'Mighty Cleave': {bp: 95, type: 'Rock', category: 'Physical', makesContact: true, isSlicing: true, isBlade: true, breaksProtect: true, zp: 175, maxPower: 130,},
   'Hard Press': {bp: 1, type: 'Steel', category: 'Physical', makesContact: true, zp: 100, maxPower: 90,},
-  'Electro Shot': {bp: 130, type: 'Electric', category: 'Special', isShot: true, zp: 195, maxPower: 140,},
+  'Electro Shot': {bp: 130, type: 'Electric', category: 'Special', isShot: true, zp: 195, maxPower: 140,},//------------------end SV
   'Stone Fangs': {bp: 65, type: 'Rock', category: 'Physical', makesContact: true, isBite: true, zp: 120, maxPower: 120,},
   'Quick Shot': {bp: 40, type: 'Flying', category: 'Physical', secondaries: true, priority: 3, isShot: true, zp: 100, maxPower: 90,},
   'Tangling Arrow': {bp: 90, type: 'Bug', category: 'Physical', secondaries: true, isShot: true, zp: 175, maxPower: 130,},
@@ -5849,7 +5849,7 @@ const PATHWAYS_PATCH: {[name: string]: DeepPartial<MoveData>} = {
   'Jackpot Bonanza': {bp: 80, type: 'Normal', category: 'Physical', target: 'allAdjacentFoes', makesContact: true, zp: 160, maxPower: 130,},
   'Fixed Odds': {bp: 60, type: 'Normal', category: 'Physical', secondaries: true, makesContact: true, zp: 120, maxPower: 110,},
   'Rigged Game': {bp: 95, type: 'Normal', category: 'Physical', overrideOffensivePokemon: 'target', makesContact: true, zp: 175, maxPower: 130,},
-  'Burning Bulwark': {bp: 0, type: 'Fire', category: 'Status', priority: 4,},
+  'Burning Bulwark': {bp: 0, type: 'Fire', category: 'Status', priority: 4,},//----------------------------SV
   'Fickle Beam': {bp: 80, type: 'Dragon', category: 'Special', zp: 160, maxPower: 130,},
   'Tachyon Cutter': {bp: 50, type: 'Steel', category: 'Special', multihit: 2, isSlicing: true, isBlade: true, zp: 100, maxPower: 100,},
   'Malignant Chain': {bp: 100, type: 'Poison', category: 'Special', secondaries: true, zp: 180, maxPower: 90,},
@@ -5857,7 +5857,7 @@ const PATHWAYS_PATCH: {[name: string]: DeepPartial<MoveData>} = {
   'Alluring Voice': {bp: 80, type: 'Fairy', category: 'Special', isSound: true, zp: 160, maxPower: 130,},
   'Dragon Cheer': {bp: 0, type: 'Dragon', category: 'Status', breaksProtect: true,},
   'Psychic Noise': {bp: 75, type: 'Psychic', category: 'Special', isSound: true, zp: 140, maxPower: 130,},
-  'Upper Hand': {bp: 65, type: 'Fighting', category: 'Physical', secondaries: true, priority: 3, makesContact: true, zp: 120, maxPower: 85,},
+  'Upper Hand': {bp: 65, type: 'Fighting', category: 'Physical', secondaries: true, priority: 3, makesContact: true, zp: 120, maxPower: 85,},//------end SV
   'Psybomb': {bp: 80, type: 'Psychic', category: 'Physical', target: 'allAdjacent', zp: 160, maxPower: 130,},
   'Flash-Bang': {bp: 70, type: 'Electric', category: 'Physical', zp: 140, maxPower: 120,},
   'Fae Blade': {bp: 90, type: 'Fairy', category: 'Physical', isSlicing: true, isBlade: true, zp: 175, maxPower: 130,},
@@ -5882,19 +5882,19 @@ const PATHWAYS_PATCH: {[name: string]: DeepPartial<MoveData>} = {
   'Furious Beatdown': {bp: 1, type: 'Dragon', category: 'Physical', zp: 100, maxPower: 90,},
   'Draconic Frenzy': {bp: 75, type: 'Dragon', category: 'Special', secondaries: true, zp: 140, maxPower: 130,},
   'Tectonic Hammer': {bp: 120, type: 'Ground', category: 'Physical', recoil: [1, 3], makesContact: true, zp: 190, maxPower: 140,},
-  'Blood Tithe': {bp: 1, type: 'Ghost', category: 'Special', zp: 100, maxPower: 90,},
-  'Hellfire Rush': {bp: 80, type: 'Ghost', category: 'Physical', secondaries: true, zp: 160, maxPower: 130,},
+  'Blood Tithe': {bp: 1, type: 'Ghost', category: 'Special', zp: 100, maxPower: 90,},//not in game yet
+  'Hellfire Rush': {bp: 80, type: 'Ghost', category: 'Physical', secondaries: true, zp: 160, maxPower: 130,},//also not in game (some form change move)
   'Memory Wipe': {bp: 0, type: 'Psychic', category: 'Status',},
-  'Collision Course': {bp: 100, type: 'Fighting', category: 'Physical', makesContact: true, zp: 180, maxPower: 90,},
-  'Electro Drift': {bp: 100, type: 'Electric', category: 'Special', makesContact: true, zp: 180, maxPower: 130,},
+  'Collision Course': {bp: 100, type: 'Fighting', category: 'Physical', makesContact: true, zp: 180, maxPower: 90,},//--------------SV
+  'Electro Drift': {bp: 100, type: 'Electric', category: 'Special', makesContact: true, zp: 180, maxPower: 130,},//--------------SV
   'Stellar Oblivion': {bp: 80, type: 'Rock', category: 'Special', drain: [3, 4], zp: 160, maxPower: 130,},
-  'Origin Pulse [M]': {bp: 110, type: 'Water', category: 'Special', target: 'allAdjacentFoes', isPulse: true, zp: 185, maxPower: 140,},
-  'Squall': {bp: 80, type: 'Flying', category: 'Special', isWind: true, zp: 160, maxPower: 130,},
-  'Wicked Torque': {bp: 80, type: 'Dark', category: 'Physical', secondaries: true, zp: 160, maxPower: 130,},
+  'Origin Pulse [M]': {bp: 110, type: 'Water', category: 'Special', target: 'allAdjacentFoes', isPulse: true, zp: 185, maxPower: 140,},//double bp vs dmax
+  'Squall': {bp: 80, type: 'Flying', category: 'Special', isWind: true, zp: 160, maxPower: 130,},//double vs fly
+  'Wicked Torque': {bp: 80, type: 'Dark', category: 'Physical', secondaries: true, zp: 160, maxPower: 130,},//--------------SV
   'Blazing Torque': {bp: 80, type: 'Fire', category: 'Physical', secondaries: true, zp: 160, maxPower: 130,},
   'Noxious Torque': {bp: 80, type: 'Poison', category: 'Physical', secondaries: true, zp: 160, maxPower: 90,},
   'Magical Torque': {bp: 80, type: 'Fairy', category: 'Physical', secondaries: true, zp: 160, maxPower: 130,},
-  'Combat Torque': {bp: 80, type: 'Fighting', category: 'Physical', secondaries: true, zp: 160, maxPower: 90,},
+  'Combat Torque': {bp: 80, type: 'Fighting', category: 'Physical', secondaries: true, zp: 160, maxPower: 90,},//--------------end SV
   'Mirage Cutter': {bp: 110, type: 'Water', category: 'Special', isSlicing: true, isBlade: true, zp: 185, maxPower: 140,},
   'Psy Shooter': {bp: 95, type: 'Psychic', category: 'Special', secondaries: true, isShot: true, zp: 175, maxPower: 130,},
   'Numinous Hymn': {bp: 90, type: 'Water', category: 'Special', isSound: true, zp: 175, maxPower: 130,},
@@ -5905,7 +5905,7 @@ const PATHWAYS_PATCH: {[name: string]: DeepPartial<MoveData>} = {
   'Savage Sting': {bp: 50, type: 'Poison', category: 'Physical', willCrit: true, makesContact: true, zp: 100, maxPower: 75,},
   'Simmer': {bp: 90, type: 'Water', category: 'Special', secondaries: true, zp: 175, maxPower: 130,},
   'Guet-Apens': {bp: 90, type: 'Normal', category: 'Physical', makesContact: true, breaksProtect: true, zp: 175, maxPower: 130,},
-  'Rio Rush': {bp: 1, type: 'Fighting', category: 'Physical', makesContact: true, zp: 100, maxPower: 70,},
+  'Rio Rush': {bp: 1, type: 'Fighting', category: 'Physical', makesContact: true, zp: 100, maxPower: 70,},//return moves here
   'Zozo Zania': {bp: 1, type: 'Dark', category: 'Special', makesContact: true, zp: 100, maxPower: 90,},
   'ClefFa Cluffle': {bp: 1, type: 'Fairy', category: 'Special', makesContact: true, zp: 100, maxPower: 90,},
   'Nido Needle': {bp: 1, type: 'Poison', category: 'Physical', makesContact: true, zp: 100, maxPower: 70,},
@@ -5919,7 +5919,7 @@ const PATHWAYS_PATCH: {[name: string]: DeepPartial<MoveData>} = {
   'Purr Pressure': {bp: 1, type: 'Psychic', category: 'Special', makesContact: true, zp: 100, maxPower: 90,},
   'Bray Bravery': {bp: 1, type: 'Ground', category: 'Physical', makesContact: true, zp: 100, maxPower: 90,},
   'Pika Papow': {bp: 1, type: 'Electric', category: 'Special', makesContact: true, zp: 100, maxPower: 90,},
-  'Veevee Volley': {bp: 1, type: 'Normal', category: 'Physical', makesContact: true, zp: 100, maxPower: 90,},
+  'Veevee Volley': {bp: 1, type: 'Normal', category: 'Physical', makesContact: true, zp: 100, maxPower: 90,},// end return moves
   'Splishy Splash': {bp: 90, type: 'Water', category: 'Special', target: 'allAdjacentFoes', secondaries: true, zp: 175, maxPower: 130,},
   'Floaty Fall': {bp: 90, type: 'Flying', category: 'Physical', secondaries: true, makesContact: true, zp: 175, maxPower: 130,},
   'Zippy Zap': {bp: 60, type: 'Electric', category: 'Physical', priority: 2, makesContact: true, zp: 120, maxPower: 110,},
@@ -5931,8 +5931,8 @@ const PATHWAYS_PATCH: {[name: string]: DeepPartial<MoveData>} = {
   'Baddy Bad': {bp: 90, type: 'Dark', category: 'Special', zp: 175, maxPower: 130,},
   'Glitzy Glow': {bp: 90, type: 'Psychic', category: 'Special', zp: 175, maxPower: 130,},
   'Sparkly Swirl': {bp: 90, type: 'Fairy', category: 'Special', secondaries: true, isWind: true, zp: 175, maxPower: 130,},
-  'Spooky Spook': {bp: 90, type: 'Ghost', category: 'Physical', zp: 175, maxPower: 130,},
-  'Drakey Drake': {bp: 90, type: 'Dragon', category: 'Physical', zp: 175, maxPower: 130,},
+  'Spooky Spook': {bp: 90, type: 'Ghost', category: 'Physical', zp: 175, maxPower: 130,},//add residual
+  'Drakey Drake': {bp: 90, type: 'Dragon', category: 'Physical', zp: 175, maxPower: 130,},//add dragon rocks
   'Incognito Illusion': {bp: 0, type: 'Dark', category: 'Status',},
   'Sneaky Scheme': {bp: 70, type: 'Dark', category: 'Special', priority: 1, makesContact: true, zp: 140, maxPower: 120,},
   'Deceptive Dummy': {bp: 0, type: 'Ghost', category: 'Status', priority: 4,},
@@ -5975,22 +5975,22 @@ const PATHWAYS_PATCH: {[name: string]: DeepPartial<MoveData>} = {
   'Earthy Escape': {bp: 70, type: 'Ground', category: 'Physical', secondaries: true, makesContact: true, zp: 140, maxPower: 120,},
   'Bristling Barbs': {bp: 0, type: 'Poison', category: 'Status', breaksProtect: true,},
   'Dire Drench': {bp: 0, type: 'Poison', category: 'Status',},
-  'Ultra Rio Rumble': {bp: 195, type: 'Fighting', category: 'Physical', makesContact: true, isZ: true,},
-  'Phantasmal Zozo Zania': {bp: 195, type: 'Dark', category: 'Special', makesContact: true, isZ: true,},
-  'Blinding Cleffa Cluffle': {bp: 195, type: 'Fairy', category: 'Special', makesContact: true, isZ: true,},
-  'World-Hacking Axy Axe': {bp: 195, type: 'Dragon', category: 'Physical', makesContact: true, isZ: true,},
-  'Earth-Shattering Bonbon Bash': {bp: 195, type: 'Rock', category: 'Physical', makesContact: true, isZ: true,},
-  'Sub-Zero Cubby Cuddle': {bp: 195, type: 'Ice', category: 'Physical', makesContact: true, isZ: true,},
-  'Super Spooky Scary Skull': {bp: 0, type: 'Ghost', category: 'Status', isZ: true,},
-  'Nefarious Nymble Nibble': {bp: 195, type: 'Bug', category: 'Physical', makesContact: true, isZ: true,},
-  'Heavenly Deedee Duster': {bp: 195, type: 'Flying', category: 'Physical', makesContact: true, isZ: true,},
-  'Continental Cucu Crush': {bp: 195, type: 'Steel', category: 'Physical', makesContact: true, isZ: true,},
-  'Perfect Purr Pressure': {bp: 195, type: 'Psychic', category: 'Special', makesContact: true, isZ: true,},
-  'Land-Breaking Bray Bravery': {bp: 195, type: 'Ground', category: 'Physical', makesContact: true, isZ: true,},
-  '10,000,000 Volt Pika Papow': {bp: 195, type: 'Electric', category: 'Special', makesContact: true, isZ: true,},
-  'Extreme Veevee Volley': {bp: 195, type: 'Normal', category: 'Physical', makesContact: true, isZ: true,},
-  'Nido Needle Volley': {bp: 195, type: 'Poison', category: 'Physical', makesContact: true, isZ: true,},
-  'Nido Needle Injection': {bp: 0, type: 'Poison', category: 'Status', isZ: true,},
+  'Ultra Rio Rumble': {bp: 195, type: 'Fighting', category: 'Physical', makesContact: true, isZ: true,},//
+  'Phantasmal Zozo Zania': {bp: 195, type: 'Dark', category: 'Special', makesContact: true, isZ: true,},//
+  'Blinding Cleffa Cluffle': {bp: 195, type: 'Fairy', category: 'Special', makesContact: true, isZ: true,},//
+  'World-Hacking Axy Axe': {bp: 195, type: 'Dragon', category: 'Physical', makesContact: true, isZ: true,},//
+  'Earth-Shattering Bonbon Bash': {bp: 195, type: 'Rock', category: 'Physical', makesContact: true, isZ: true,},//
+  'Sub-Zero Cubby Cuddle': {bp: 195, type: 'Ice', category: 'Physical', makesContact: true, isZ: true,},//
+  'Super Spooky Scary Skull': {bp: 0, type: 'Ghost', category: 'Status', isZ: true,},//
+  'Nefarious Nymble Nibble': {bp: 195, type: 'Bug', category: 'Physical', makesContact: true, isZ: true,},//
+  'Heavenly Deedee Duster': {bp: 195, type: 'Flying', category: 'Physical', makesContact: true, isZ: true,},//
+  'Continental Cucu Crush': {bp: 195, type: 'Steel', category: 'Physical', makesContact: true, isZ: true,},//
+  'Perfect Purr Pressure': {bp: 195, type: 'Psychic', category: 'Special', makesContact: true, isZ: true,},//
+  'Land-Breaking Bray Bravery': {bp: 195, type: 'Ground', category: 'Physical', makesContact: true, isZ: true,},//
+  '10,000,000 Volt Pika Papow': {bp: 195, type: 'Electric', category: 'Special', makesContact: true, isZ: true,},//
+  'Extreme Veevee Volley': {bp: 195, type: 'Normal', category: 'Physical', makesContact: true, isZ: true,},//
+  'Nido Needle Volley': {bp: 195, type: 'Poison', category: 'Physical', makesContact: true, isZ: true,},//
+  'Nido Needle Injection': {bp: 0, type: 'Poison', category: 'Status', isZ: true,},//
   'Breakneck Blitz': {bp: 1, type: 'Normal', category: 'Physical', isZ: true,},
   'All-Out Pummeling': {bp: 1, type: 'Fighting', category: 'Physical', isZ: true,},
   'Supersonic Skystrike': {bp: 1, type: 'Flying', category: 'Physical', isZ: true,},
