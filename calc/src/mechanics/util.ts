@@ -112,7 +112,7 @@ export function getFinalSpeed(gen: Generation, pokemon: Pokemon, field: Field, s
       (pokemon.hasAbility('Sand Rush', 'Desert Devil') && ['Sand', 'Raging Sandstorm'].includes(weather)) ||
       (pokemon.hasAbility('Swift Swim') && ['Rain', 'Heavy Rain', 'Harsh Typhoon'].includes(weather)) ||
       (pokemon.hasAbility('Slush Rush') && ['Hail', 'Snow', 'Violent Blizzard'].includes(weather)) ||
-      (pokemon.hasAbility('Surge Surfer') && ['Electric'/*, 'Faraday Cage'*/].includes(terrain)) ||
+      (pokemon.hasAbility('Surge Surfer') && ['Electric', 'Faraday Cage'].includes(terrain)) ||
       (pokemon.hasAbility('Killing Joke')) ||
       (pokemon.hasAbility('Anti-Gravity') && field.isGravity)
   ) {
@@ -290,6 +290,15 @@ export function checkDownload(source: Pokemon, target: Pokemon, wonderRoomActive
       source.boosts.atk = Math.min(6, source.boosts.atk + 1);
     }
   }
+  if (source.hasAbility('Heavenly Shield')) {
+    let atk = target.stats.atk;
+    let spa = target.stats.spa;
+    if (atk < spa) {
+      source.boosts.spd = Math.min(6, source.boosts.spd + 1);
+    } else {
+      source.boosts.def = Math.min(6, source.boosts.def + 1);
+    }
+  }
 }
 
 export function checkIntrepidSword(source: Pokemon, gen: Generation) {
@@ -305,8 +314,14 @@ export function checkDauntlessShield(source: Pokemon, gen: Generation) {
 }
 
 export function checkWindRider(source: Pokemon, attackingSide: Side) {
-  if (source.hasAbility('Wind Rider') && attackingSide.isTailwind) {
-    source.boosts.atk = Math.min(6, source.boosts.atk + 1);
+  if (attackingSide.isTailwind) {
+    if (source.hasAbility('Wind Rider')) {
+      source.boosts.atk = Math.min(6, source.boosts.atk + 1);
+    } else if (source.hasAbility('Wind Power')) {
+      attackingSide.isCharge = true;
+    } else if (source.hasAbility('Airborne')) {
+      source.boosts.spa = Math.min(6, source.boosts.spa + 1);
+    }
   }
 }
 
@@ -340,7 +355,7 @@ export function checkSeedBoost(pokemon: Pokemon, field: Field) {
   if (!pokemon.item) return;
   if (field.terrain && pokemon.item.includes('Seed')) {
     const terrainSeed = pokemon.item.substring(0, pokemon.item.indexOf(' ')) as Terrain;
-    if (field.hasTerrain(terrainSeed)) {
+    if (field.hasTerrain(terrainSeed) || (field.hasTerrain('Faraday Cage') && terrainSeed === 'Electric')) {
       if (terrainSeed === 'Grassy' || terrainSeed === 'Electric') {
         pokemon.boosts.def = pokemon.hasAbility('Contrary')
           ? Math.max(-6, pokemon.boosts.def - 1)
@@ -558,14 +573,16 @@ export function isQPActive(
   }
 
   const weather = field.weather || '';
-  const terrain = field.terrain;
+  const terrain = field.terrain || '';
 
   return (
     (pokemon.hasAbility('Protosynthesis') &&
-      (weather.includes('Sun') || pokemon.hasItem('Booster Energy'))) ||
+      (['Sun', 'Harsh Sunshine'].includes(weather) || pokemon.hasItem('Booster Energy'))) ||
     (pokemon.hasAbility('Quark Drive', 'Ya Estas Cocinado') &&
-      (terrain === 'Electric' || pokemon.hasItem('Booster Energy'))) ||
-    (pokemon.boostedStat !== 'auto')
+      (['Electric', 'Faraday Cage'].includes(terrain) || pokemon.hasItem('Booster Energy'))) ||
+    (pokemon.boostedStat !== 'auto') ||
+    (pokemon.hasAbility('Aquamynthesis') &&
+      (['Rain', 'Heavy Rain', 'Harsh Typhoon'].includes(weather) || pokemon.hasItem('Booster Energy')))
   );
 }
 
@@ -633,8 +650,7 @@ export function getStabMod(pokemon: Pokemon, move: Move, desc: RawDesc) {
   let stabMod = 4096;
   if (pokemon.hasOriginalType(move.type)) {
     stabMod += 2048;
-  } else if ((pokemon.hasAbility('Protean', 'Libero') && !pokemon.teraType) ||
-             (pokemon.hasAbility('Angel Tears') && move.hasType('Fairy', 'Water'))) {
+  } else if (pokemon.hasAbility('Protean', 'Libero') && !pokemon.teraType) {
     stabMod += 2048;
     desc.attackerAbility = pokemon.ability;
   }
@@ -643,7 +659,7 @@ export function getStabMod(pokemon: Pokemon, move: Move, desc: RawDesc) {
     stabMod += 2048;
     desc.attackerTera = teraType;
   }
-  if (pokemon.hasAbility('Adaptability') && pokemon.hasType(move.type)) {
+  if (pokemon.hasAbility('Adaptability', 'Assassin') && pokemon.hasType(move.type)) {
     stabMod += teraType && pokemon.hasOriginalType(teraType) ? 1024 : 2048;
     desc.attackerAbility = pokemon.ability;
   }
@@ -654,16 +670,16 @@ export function getAuraCrystalAtMod(pokemon: Pokemon) {
   let effectiveAura;
 
   if (pokemon.alignment === 'Shiny') {
-    effectiveAura = Math.round(pokemon.lightAura / 2);
+    effectiveAura = Math.floor(pokemon.lightAura / 2);
   } else if (pokemon.alignment === 'Shadow') {
-    effectiveAura = Math.round(pokemon.darkAura / 2);
+    effectiveAura = Math.floor(pokemon.darkAura / 2);
   } else {
     // Only "pairs" of aura count.
     effectiveAura = Math.min(pokemon.lightAura, pokemon.darkAura);
   }
 
   let multiplier = 1 + Math.min(0.01 * effectiveAura, 0.25);
-  let atMod = pokeRound(4096 * multiplier);
+  let atMod = Math.floor(4096 * multiplier);
   return atMod;
 }
 
@@ -671,16 +687,16 @@ export function getAuraCrystalDefMod(pokemon: Pokemon) {
   let effectiveAura;
 
   if (pokemon.alignment === 'Shiny') {
-    effectiveAura = pokemon.lightAura;
+    effectiveAura = Math.floor(pokemon.lightAura / 2);
   } else if (pokemon.alignment === 'Shadow') {
-    effectiveAura = pokemon.darkAura;
+    effectiveAura = Math.floor(pokemon.darkAura / 2);
   } else {
     // Only "pairs" of aura count.
-    effectiveAura = 2 * Math.min(pokemon.lightAura, pokemon.darkAura);
+    effectiveAura = Math.min(pokemon.lightAura, pokemon.darkAura);
   }
 
   let multiplier = 1 - Math.min(0.005 * effectiveAura, 0.125);
-  let defMod = 4096 * multiplier;
+  let defMod = Math.floor(4096 * multiplier);
 
   return defMod;
 }

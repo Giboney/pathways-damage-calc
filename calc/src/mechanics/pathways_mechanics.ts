@@ -428,11 +428,11 @@ export function calculatePathways(
     typeEffectiveness /= 2;
     desc.weather = field.weather;
   }
-  /*
-  if (field.hasTerrain('DragonicSoul') && move.hasType('Dragon') && defender.hasType('Dragon')) {
+  
+  if (field.hasTerrain('Dragonic Soul') && move.hasType('Dragon') && defender.hasType('Dragon')) {
     typeEffectiveness = 1;
     desc.terrain = field.terrain;
-  }*/
+  }
 
   if (move.type === 'Stellar') {
     desc.defenderTera = defender.teraType; // always show in this case
@@ -1260,21 +1260,12 @@ export function calculateBPModsPathways(
     desc.attackerItem = attacker.item;
   } else if (
     (((attacker.hasItem('Adamant Crystal') && attacker.named('Dialga-Origin')) ||
-      (attacker.hasItem('Adamant Orb') && attacker.named('Dialga'))) &&
-     move.hasType('Steel', 'Dragon')) ||
-    (((attacker.hasItem('Lustrous Orb') &&
-     attacker.named('Palkia')) ||
-      (attacker.hasItem('Lustrous Globe') && attacker.named('Palkia-Origin'))) &&
-     move.hasType('Water', 'Dragon')) ||
-    (((attacker.hasItem('Griseous Orb') || attacker.hasItem('Griseous Core')) &&
-     (attacker.named('Giratina-Origin') || attacker.named('Giratina'))) &&
-     move.hasType('Ghost', 'Dragon')) ||
-    (attacker.hasItem('Vile Vial') &&
-     attacker.named('Venomicon-Epilogue') &&
-     move.hasType('Poison', 'Flying')) ||
-    (attacker.hasItem('Soul Dew') &&
-     attacker.named('Latios', 'Latias', 'Latios-Mega', 'Latias-Mega') &&
-     move.hasType('Psychic', 'Dragon')) ||
+      (attacker.hasItem('Adamant Orb') && attacker.named('Dialga'))) && move.hasType('Steel', 'Dragon')) ||
+    (((attacker.hasItem('Lustrous Orb') && attacker.named('Palkia')) ||
+      (attacker.hasItem('Lustrous Globe') && attacker.named('Palkia-Origin'))) && move.hasType('Water', 'Dragon')) ||
+    (((attacker.hasItem('Griseous Orb') || attacker.hasItem('Griseous Core')) && (attacker.named('Giratina-Origin') || attacker.named('Giratina'))) && move.hasType('Ghost', 'Dragon')) ||
+    (attacker.hasItem('Vile Vial') && attacker.named('Venomicon-Epilogue') && move.hasType('Poison', 'Flying')) ||
+    (attacker.hasItem('Soul Dew') && attacker.named('Latios', 'Latias', 'Latios-Mega', 'Latias-Mega') && move.hasType('Psychic', 'Dragon')) ||
      attacker.item && move.hasType(getItemBoostType(attacker.item)) ||
     (attacker.name.includes('Ogerpon-Cornerstone') && attacker.hasItem('Cornerstone Mask')) ||
     (attacker.name.includes('Ogerpon-Hearthflame') && attacker.hasItem('Hearthflame Mask')) ||
@@ -1290,10 +1281,15 @@ export function calculateBPModsPathways(
   ) {
     bpMods.push(4505);
     desc.attackerItem = attacker.item;
-  } else if (attacker.hasItem('Nuptial Veil') && attacker.named('Salandit') && move.category === 'Special') {
-    bpMods.push(6144);
+  } else if (attacker.hasItem('Aura Crystal')) {
+    bpMods.push(getAuraCrystalAtMod(attacker));
     desc.attackerItem = attacker.item;
   }
+  if (defender.hasItem('Aura Crystal')) {
+    bpMods.push(getAuraCrystalDefMod(defender));
+    desc.defenderItem = defender.item;
+  }
+  
   return bpMods;
 }
 
@@ -1543,6 +1539,9 @@ export function calculateAtModsPathways(
     ((attacker.hasItem('Choice Band') && move.category === 'Physical') ||
       (attacker.hasItem('Choice Specs') && move.category === 'Special'))
   ) {
+    atMods.push(6144);
+    desc.attackerItem = attacker.item;
+  } else if (attacker.hasItem('Nuptial Veil') && attacker.named('Salandit') && move.category === 'Special') {
     atMods.push(6144);
     desc.attackerItem = attacker.item;
   }
@@ -1853,14 +1852,6 @@ export function calculateFinalModsPathways(
       finalMods.push(8192);
     }
     desc.attackerItem = attacker.item;
-  } else if (attacker.hasItem('Aura Crystal')) {
-    let atMod = getAuraCrystalAtMod(attacker);
-    finalMods.push(atMod);
-  }
-
-  if (defender.hasItem('Aura Crystal')) {
-    let defMod = getAuraCrystalDefMod(defender);
-    finalMods.push(defMod);
   }
 
   // Apply Role Bonus
