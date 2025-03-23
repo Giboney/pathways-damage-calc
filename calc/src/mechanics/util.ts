@@ -351,6 +351,7 @@ export function checkInfiltrator(pokemon: Pokemon, affectedSide: Side) {
 }
 
 export function checkSeedBoost(pokemon: Pokemon, field: Field) {
+  /*
   if (!pokemon.item) return;
   if (field.terrain && pokemon.item.includes('Seed')) {
     const terrainSeed = pokemon.item.substring(0, pokemon.item.indexOf(' ')) as Terrain;
@@ -367,6 +368,7 @@ export function checkSeedBoost(pokemon: Pokemon, field: Field) {
       pokemon.item = '' as ItemName;
     }
   }
+  */
 }
 
 // NOTE: We only need to handle guaranteed, damage-relevant boosts here for multi-hit accuracy

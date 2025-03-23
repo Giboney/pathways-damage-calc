@@ -252,13 +252,6 @@ $(".percent-hp").keyup(function () {
 	calcCurrentHP($(this).parent(), max, percent);
 });
 
-$(".boost").on("keyup change", function() {
-	var pokeInfo = $(this).closest(".poke-info");
-	var id = pokeInfo.attr('id');
-	var stat = $(this).closest("tr").prop("className").split(' ', 1)[0];
-	//storeBoosts[id][stat] = Number($(this).val());
-});
-
 $(".abilityToggle").on("change", function() {
 	var pokeInfo = $(this).closest(".poke-info");
 	var id = pokeInfo.attr('id');
@@ -299,8 +292,7 @@ $(".abilityToggle").on("change", function() {
 	
 });
 
-$(".ability").bind("keyup change", function () {
-	var pokeInfo = $(this).closest(".poke-info");
+function abilityChange(pokeInfo) {
 	var ability = pokeInfo.find(".ability").val();
 	var id = pokeInfo.attr('id');
 
@@ -322,21 +314,24 @@ $(".ability").bind("keyup change", function () {
 	
 	if (storeBoosts['selfAbility' + id]) {
 		storeBoosts['selfAbility' + id].apply();
+		storeBoosts['selfAbility' + id] = false;
 	}
-	var boosts = pokeInfo.find(".sp .boost");
-	var before = new Boosts(pokeInfo);
-	if (['Darkness Boost', 'Untouchable'].includes(ability)) {
-		boosts.val(Math.min(Number(boosts.val()) + 6, 6));
-	} else if (ability === "Hydrochasm Surge++") {
-		boosts = pokeInfo.find(".df .boost");
-		boosts.val(Math.min(Number(boosts.val()) + 1, 6));
-		boosts = pokeInfo.find(".sd .boost");
-		boosts.val(Math.min(Number(boosts.val()) + 1, 6));
-	} else if (ability === "Untouchable2") {
-		boosts.val(Math.min(Number(boosts.val()) + 2, 6));
+	if (storeBoosts['multiSelfAbility' + id]) {
+		storeBoosts['multiSelfAbility' + id].apply();
+		storeBoosts['multiSelfAbility' + id] = false;
 	}
-	var after = new Boosts(pokeInfo);
-	storeBoosts['selfAbility' + id] = before.minus(after);
+	switch (ability) {
+		case 'Darkness Boost':
+		case 'Darkness Boost2':
+			raiseStatStage(pokeInfo, 'sp', 12, 'selfAbility' + id);
+		case 'Untouchable':
+			raiseStatStage(pokeInfo, 'sp', 6, 'selfAbility' + id);
+		case ' Untouchable2':
+			raiseStatStage(pokeInfo, 'sp', 2, 'selfAbility' + id);
+		case ' Hydrochasm Surge++':
+			raiseStatStage(pokeInfo, 'df', 1, 'multiSelfAbility' + id);
+			raiseStatStage(pokeInfo, 'sd', 1, 'multiSelfAbility' + id);
+	}
 
 	var TOGGLE_ABILITIES = ['Flash Fire', 'Intimidate', 'Minus', 'Plus', 'Slow Start', 'Unburden', 'Stakeout', 'Teraform Zero', 'Lighten', 'Mesmerize', 'Ha Ha You\'re Weak', 'Ambusher'];
 
@@ -361,8 +356,23 @@ $(".ability").bind("keyup change", function () {
 	} else {
 		pokeInfo.find(".alliesFainted").val('0');
 		pokeInfo.find(".alliesFainted").hide();
-
 	}
+	autosetWeather(ability, 0);
+	autosetTerrain(ability, 0);
+	autosetQP(pokeInfo);
+}
+
+$(".ability").bind("keyup change", function() {
+	var pokeInfo = $(this).closest(".poke-info");
+	var oppoInfo = pokeInfo.attr('id') === "p1" ? $("#p2") : $("#p1");
+	if (!lastManualWeather) {
+		autosetWeather("None", 0);
+	}
+	if (!lastManualTerrain) {
+		autosetTerrain("None", 0);
+	}
+	abilityChange(pokeInfo);
+	abilityChange(oppoInfo);
 });
 
 function autosetQP(pokemon) {
@@ -387,23 +397,19 @@ function autosetQP(pokemon) {
 	}
 }
 
-$(".ability").bind("keyup change", function () {
-	autosetWeather($(this).val(), 0);
-	autosetTerrain($(this).val(), 0);
-	autosetQP($(this).closest(".poke-info"));
-});
-
 $("input[name='weather']").change(function () {
 	var allPokemon = $('.poke-info');
 	allPokemon.each(function () {
 		autosetQP($(this));
 	});
+	
+	var weather = $("input:radio[name='weather']:checked").val();
 	var terrain = $("input:checkbox[name='terrain']:checked").val();
-	var weather = $("input:radio[name='weather']:checked").val()
 	if (terrain === "Frozen Kingdom" && weather !== "Snow") {
-		$("input:checkbox[name='terrain']:checked").prop("checked", false);
-		lastAutoTerrain[0] = "";
+		autosetTerrain("None", 0);
 	}
+	
+	lastManualWeather = weather;
 });
 
 var lastManualWeather = "";
@@ -413,11 +419,15 @@ function autosetWeather(ability, i) {
 		return;
 	}
 	var currentWeather = $("input:radio[name='weather']:checked").val();
+	lastManualWeather = false;
 	if (lastAutoWeather.indexOf(currentWeather) === -1) {
-		lastManualWeather = currentWeather;
 		lastAutoWeather[1 - i] = "";
 	}
 	switch (ability) {
+		case "None":
+			lastAutoWeather[i] = "";
+			$("#clear").prop("checked", true);
+			break;
 		case "Drought":
 		case "Orichalcum Pulse":
 			lastAutoWeather[i] = "Sun";
@@ -468,21 +478,11 @@ function autosetWeather(ability, i) {
 			lastAutoWeather[i] = "Raging Sandstorm";
 			$("#raging-sandstorm").prop("checked", true);
 			break;
-		case "None":
-			lastAutoWeather[i] = "";
-			$("#clear").prop("checked", true);
-			break;
-		default:
-			lastAutoWeather[i] = "";
-			var newWeather = lastAutoWeather[1 - i] !== "" ? lastAutoWeather[1 - i] : "";
-			$("input:radio[name='weather'][value='" + newWeather + "']").prop("checked", true);
-			break;
 	}
 	var terrain = $("input:checkbox[name='terrain']:checked").val();
-	var weather = $("input:radio[name='weather']:checked").val()
+	var weather = $("input:radio[name='weather']:checked").val();
 	if (terrain === "Frozen Kingdom" && weather !== "Snow") {
-		$("input:checkbox[name='terrain']:checked").prop("checked", false);
-		lastAutoTerrain[0] = "";
+		autosetTerrain("None", 0);
 	}
 }
 
@@ -491,27 +491,24 @@ $("input[name='terrain']").change(function () {
 	allPokemon.each(function () {
 		autosetQP($(this));
 	});
-	var terrain = $("input:checkbox[name='terrain']:checked").val();
-	var weather = $("input:radio[name='weather']:checked").val()
-	if (terrain !== "Frozen Kingdom" && weather === "Snow") {
-		$("#clear").prop("checked", true);
-		lastAutoWeather[0] = "";
-	} else if ($(this).val() === "Frozen Kingdom" && !["Snow", ""].includes(weather)) {
-		$(this).prop("checked", false);
-	}
+	lastManualTerrain = $("input:checkbox[name='terrain']:checked").val();
 });
 
 var lastManualTerrain = "";
 var lastAutoTerrain = ["", ""];
 function autosetTerrain(ability, i) {
 	var currentTerrain = $("input:checkbox[name='terrain']:checked").val() || "No terrain";
+	lastManualTerrain = false;
 	if (lastAutoTerrain.indexOf(currentTerrain) === -1) {
-		lastManualTerrain = currentTerrain;
 		lastAutoTerrain[1 - i] = "";
 	}
+	var lastTerrain = $("input:checkbox[name='terrain']:checked");
 	// terrain input uses checkbox instead of radio, need to uncheck all first
 	$("input:checkbox[name='terrain']:checked").prop("checked", false);
 	switch (ability) {
+		case "None":
+			lastAutoTerrain[i] = "";
+			break;
 		case "Electric Surge":
 		case "Lightning Speed":
 		case "Hadron Engine":
@@ -551,18 +548,13 @@ function autosetTerrain(ability, i) {
 			$("#frozen-kingdom").prop("checked", true);
 			break;
 		default:
-			lastAutoTerrain[i] = "";
-			var newTerrain = lastAutoTerrain[1 - i] !== "" ? lastAutoTerrain[1 - i] : lastManualTerrain;
-			if ("No terrain" !== newTerrain) {
-				$("input:checkbox[name='terrain'][value='" + newTerrain + "']").prop("checked", true);
-			}
-			break;
+			lastTerrain.prop("checked", true);
 	}
+	var weather = $("input:radio[name='weather']:checked").val();
 	var terrain = $("input:checkbox[name='terrain']:checked").val();
-	var weather = $("input:radio[name='weather']:checked").val()
 	if (currentTerrain === "Frozen Kingdom" && terrain !== "Frozen Kingdom" && weather === "Snow") {
-		$("#clear").prop("checked", true);
-		lastAutoWeather[0] = "";
+		stickyWeather.clearStickyWeather();
+		autosetWeather("None", 0);
 	}
 }
 
@@ -714,7 +706,8 @@ $(".move-selector").change(function () {
 
 $(".item").change(function () {
 	var itemName = $(this).val();
-	var $metronomeControl = $(this).closest('.poke-info').find('.metronome');
+	var pokeInfo = $(this).closest('.poke-info');
+	var $metronomeControl = pokeInfo.find('.metronome');
 	if (itemName === "Metronome") {
 		$metronomeControl.show();
 	} else {
@@ -725,19 +718,38 @@ $(".item").change(function () {
 		var moveSelector = ".move" + i;
 		var moveHits = 3;
 
-		var moveName = $(this).closest(".poke-info").find(moveSelector).find(".select2-chosen").text();
+		var moveName = pokeInfo.find(moveSelector).find(".select2-chosen").text();
 		var move = moves[moveName] || moves['(No Move)'];
 		if (move.multiaccuracy) {
 			moveHits = move.multihit;
-		} else if ($(this).closest(".poke-info").find(".ability").val() === 'Skill Link') {
+		} else if (pokeInfo.find(".ability").val() === 'Skill Link') {
 			moveHits = 5;
-		} else if ($(this).closest(".poke-info").find(".item").val() === 'Loaded Dice') {
+		} else if (pokeInfo.find(".item").val() === 'Loaded Dice') {
 			moveHits = 4;
 		}
-		$(this).closest(".poke-info").find(moveSelector).find(".move-hits").val(moveHits);
+		pokeInfo.find(moveSelector).find(".move-hits").val(moveHits);
 	}
-
-	autosetQP($(this).closest(".poke-info"));
+	
+	if (storeBoosts['selfItem']) {
+		storeBoosts['selfItem'].apply();
+		storeBoosts['selfItem'] = false;
+	}
+	if (itemName.includes('Seed')) {
+		var terrain = pokeInfo.find("input:checkbox[name='terrain']:checked").val();
+		var seed = itemName.split(' ', 1)[0];
+		if (terrain === seed || seed === "Electric" && terrain === "Faraday Cage") {
+			switch (seed) {
+				case "Grassy":
+				case "Electric":
+					raiseStatStage(pokeInfo, 'df', 1, 'selfItem');
+				case "Misty":
+				case "Psychic":
+					raiseStatStage(pokeInfo, 'sd', 1, 'selfItem');
+			}
+		}
+	}
+	
+	pokeInfo.find(".ability").change();
 });
 
 function smogonAnalysis(pokemonName) {
@@ -942,7 +954,6 @@ $(".set-selector").change(function () {
 			}
 		}
 		abilityObj.change();
-		$("#" + oppoID + " .ability").change(); //activae oppo intim
 		itemObj.change();
 		if (pokemon.gender === "N") {
 			pokeObj.find(".gender").parent().hide();
@@ -1883,12 +1894,16 @@ class Boosts {
 var storeBoosts = {};
 
 function getTerrainEffects() {
-	console.log($("#p2 .sp .boost").val())
-	console.trace()
-	var className = $(this).prop("className");
-	className = className.substring(0, className.indexOf(" "));
-	if ($(this).is("input:checkbox[name='terrain']")) {
-		$("input:checkbox[name='terrain']").not(this).prop("checked", false);
+	var className = $(this).prop("className").split(' ', 1)[0];
+	var weather = $("input:radio[name='weather']:checked").val();
+	var lastTerrain = false;
+	if ($(this).is("input:checkbox[name='terrain']:checked")) {
+		if (!["Snow", ""].includes(weather) && $(this).val() === "Frozen Kingdom") {
+			$(this).prop("checked", false);
+		} else {
+			lastTerrain = $("input:checkbox[name='terrain']:checked").not(this).val();
+			$("input:checkbox[name='terrain']").not(this).prop("checked", false);
+		}
 	}
 	var terrainValue = $("input:checkbox[name='terrain']:checked").val();
 	if (['type1', 'type2', 'teraType', 'teraToggle', 'item'].includes(className)) {
@@ -1954,8 +1969,7 @@ function getTerrainEffects() {
 	}
 
 	//frozen kingdom
-	var weather = $("input:radio[name='weather']:checked").val();
-	if (terrainValue === "Frozen Kingdom") {; //else speed will keep getting lowered on all terrain triggers
+	if (terrainValue === "Frozen Kingdom") { //else speed will keep getting lowered on all terrain triggers
 		if (!typesP1.includes('Ice')) {
 			if (storeBoosts['Frozen Kingdom1']) {
 				storeBoosts['Frozen Kingdom1'].apply();
@@ -1969,11 +1983,40 @@ function getTerrainEffects() {
 			lowerStatStage($("#p2"), 'sp', 1, 'Frozen Kingdom2', false);
 		}
 		if (!weather) {
+			stickyWeather.clearStickyWeather();
 			autosetWeather("Frozen Kingdom", 0); //maybe no longer necessary
 		}
 	} else {
 		storeBoosts['Frozen Kingdom1'] = false;
 		storeBoosts['Frozen Kingdom2'] = false;
+		if (lastTerrain === "Frozen Kingdom") {
+			stickyWeather.clearStickyWeather();
+			autosetWeather("None", 0);
+		}
+	}
+}
+
+function raiseStatStage(pokeInfo, stat, numStages, source, intim = false) {
+	var types = [pokeInfo.find(".type1").val(), pokeInfo.find(".type2").val()];
+	var ability = pokeInfo.find(".ability").val();
+	var item = pokeInfo.find(".item").val();
+	var boosts = pokeInfo.find("." + stat + " .boost");
+	
+	var before = new Boosts(pokeInfo);
+	if (ability !== "Dry-Aged") {
+		if (ability === "Simple") {
+			numStages *= 2;
+		} else if (ability === "Contrary") {
+			numStages *= -1;
+		}
+		boosts.val(Math.min(Number(boosts.val()) + numStages, 6));
+	}
+	var after = new Boosts(pokeInfo);
+	if (!source.includes('multi') || !storeBoosts[source]) {
+		storeBoosts[source] = before.minus(after);
+	} else {
+		var more = before.minus(after);
+		storeBoosts[source].plus(more);
 	}
 }
 
@@ -1996,10 +2039,14 @@ function lowerStatStage(pokeInfo, stat, numStages, source, intim = false) {
 			item = $("#p1 .item").val();
 		}
 	}
-	var dropImmune = ['Clear Body', 'White Smoke', 'Full Metal Body', 'Golden Hour', 'Moribund', 'Dry Aged', 'Hydrochasm Surge', 'Hydrochasm Surge++', ].includes(ability) || (ability === "Flower Veil" && types.includes("Grass")) || ['Clear Amulet', 'White Herb'].includes(item);
+	var dropImmune = ['Clear Body', 'White Smoke', 'Full Metal Body', 'Golden Hour', 'Moribund', 'Dry-Aged', 'Hydrochasm Surge', 'Hydrochasm Surge++', ].includes(ability) || (ability === "Flower Veil" && types.includes("Grass")) || ['Clear Amulet', 'White Herb'].includes(item);
 	var intimImmune = dropImmune || ['Inner Focus', 'Own Tempo', 'Oblivious', 'Scrappy', 'Mind\'s Eye', 'Bird of Prey', 'Soul Ablaze', 'Fiery Spirit', 'Guard Dog'].includes(ability);
 	
 	var before = new Boosts($("#" + id));
+	if (item === "Adrenaline Orb" && intim) {
+		var sp = pokeInfo.find(".sp .boost")
+		sp.val(Math.min(Number(sp.val()) + 1, 6));
+	}
 	if (!dropImmune) {
 		if (ability === "Simple") {
 			numStages *= 2;
@@ -2021,10 +2068,6 @@ function lowerStatStage(pokeInfo, stat, numStages, source, intim = false) {
 				var at = pokeInfo.find(".at .boost")
 				at.val(Math.min(Number(at.val()) + 1, 6));
 			} else if (ability === "Rattled") {
-				var sp = pokeInfo.find(".sp .boost")
-				sp.val(Math.min(Number(sp.val()) + 1, 6));
-			}
-			if (item === "Adrenaline Orb") {
 				var sp = pokeInfo.find(".sp .boost")
 				sp.val(Math.min(Number(sp.val()) + 1, 6));
 			}
