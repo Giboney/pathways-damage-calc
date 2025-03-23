@@ -204,6 +204,7 @@ export function checkForecast(pokemon: Pokemon, weather?: Weather) {
         break;
       case 'Rain':
       case 'Heavy Rain':
+      case 'Harsh Typhoon':
         pokemon.types = ['Water'];
         break;
       case 'Hail':
@@ -235,47 +236,45 @@ export function checkWonderRoom(pokemon: Pokemon, wonderRoomActive?: boolean) {
 }
 
 export function checkIntimidate(gen: Generation, source: Pokemon, target: Pokemon) {
-  const blocked =
-    target.hasAbility('Clear Body', 'White Smoke', 'Hyper Cutter', 'Full Metal Body', 'Mind\'s Eye', 'Bird of Prey', 'Soul Ablaze', 'Golden Hour', 'Moribund', 'Dry Aged', 'Hydrochasm Surge', 'Hydrochasm Surge++', 'Fiery Spirit') || (target.hasAbility('Flower Veil') && target.hasType('Grass')) ||
-    // More abilities now block Intimidate in Gen 8+ (DaWoblefet, Cloudy Mistral)
-    (gen.num >= 8 && target.hasAbility('Inner Focus', 'Own Tempo', 'Oblivious', 'Scrappy')) ||
-    target.hasItem('Clear Amulet');
-  if (source.hasAbility('Intimidate') && source.abilityOn && !blocked) {
-    if (target.hasAbility('Contrary', 'Defiant', 'Guard Dog')) {
-      target.boosts.atk = Math.min(6, target.boosts.atk + 1);
-    } else if (target.hasAbility('Simple')) {
-      target.boosts.atk = Math.max(-6, target.boosts.atk - 2);
-    } else if (target.hasAbility('Mirror Armor')) {
-      source.boosts.atk = Math.max(-6, source.boosts.atk - 1);
-    } else {
-      target.boosts.atk = Math.max(-6, target.boosts.atk - 1);
-    }
-    if (target.hasAbility('Competitive')) {
-      target.boosts.spa = Math.min(6, target.boosts.spa + 2);
-    } else if (target.hasAbility('Rattled') || (target.item && target.item === 'Adrenaline Orb')) {
-      target.boosts.spe = Math.min(6, target.boosts.spe + 1);
-    }
-    
-  } else if (source.hasAbility('Mesmerize') && source.abilityOn && !blocked) {
-    if (target.hasAbility('Competitive', 'Contrary')) {
-      target.boosts.spa = Math.min(6, target.boosts.spa + 1);
-    } else if (target.hasAbility('Simple')) {
-      target.boosts.spa = Math.max(-6, target.boosts.spa - 2);
-    } else if (target.hasAbility('Mirror Armor')) {
-      source.boosts.spa = Math.max(-6, source.boosts.spa - 1);
-    } else {
-      target.boosts.spa = Math.max(-6, target.boosts.spa - 1);
-    }
-    if (target.hasAbility('Defiant', 'Guard Dog')) {
-      target.boosts.atk = Math.min(6, target.boosts.atk + 2);
-    } else if (target.hasAbility('Rattled') || (target.item && target.item === 'Adrenaline Orb')) {
-      target.boosts.spe = Math.min(6, target.boosts.spe + 1);
+  if (gen.num < 10) {
+    const blocked =
+      target.hasAbility('Clear Body', 'White Smoke', 'Hyper Cutter', 'Full Metal Body', 'Mind\'s Eye', 'Bird of Prey', 'Soul Ablaze', 'Golden Hour', 'Moribund', 'Dry Aged', 'Hydrochasm Surge', 'Hydrochasm Surge++', 'Fiery Spirit') || (target.hasAbility('Flower Veil') && target.hasType('Grass')) ||
+      // More abilities now block Intimidate in Gen 8+ (DaWoblefet, Cloudy Mistral)
+      (gen.num >= 8 && target.hasAbility('Inner Focus', 'Own Tempo', 'Oblivious', 'Scrappy')) ||
+      target.hasItem('Clear Amulet');
+    if (source.hasAbility('Intimidate') && source.abilityOn && !blocked) {
+      if (target.hasAbility('Contrary', 'Defiant', 'Guard Dog')) {
+        target.boosts.atk = Math.min(6, target.boosts.atk + 1);
+      } else if (target.hasAbility('Simple')) {
+        target.boosts.atk = Math.max(-6, target.boosts.atk - 2);
+      } else if (target.hasAbility('Mirror Armor')) {
+        source.boosts.atk = Math.max(-6, source.boosts.atk - 1);
+      } else {
+        target.boosts.atk = Math.max(-6, target.boosts.atk - 1);
+      }
+      if (target.hasAbility('Competitive')) {
+        target.boosts.spa = Math.min(6, target.boosts.spa + 2);
+      } else if (target.hasAbility('Rattled') || (target.item && target.item === 'Adrenaline Orb')) {
+        target.boosts.spe = Math.min(6, target.boosts.spe + 1);
+      }
+
+    } else if (source.hasAbility('Mesmerize') && source.abilityOn && !blocked) {
+      if (target.hasAbility('Competitive', 'Contrary')) {
+        target.boosts.spa = Math.min(6, target.boosts.spa + 1);
+      } else if (target.hasAbility('Simple')) {
+        target.boosts.spa = Math.max(-6, target.boosts.spa - 2);
+      } else if (target.hasAbility('Mirror Armor')) {
+        source.boosts.spa = Math.max(-6, source.boosts.spa - 1);
+      } else {
+        target.boosts.spa = Math.max(-6, target.boosts.spa - 1);
+      }
+      if (target.hasAbility('Defiant', 'Guard Dog')) {
+        target.boosts.atk = Math.min(6, target.boosts.atk + 2);
+      } else if (target.hasAbility('Rattled') || (target.item && target.item === 'Adrenaline Orb')) {
+        target.boosts.spe = Math.min(6, target.boosts.spe + 1);
+      }
     }
   }
-}
-
-export function checkHaHaYoureWeak(gen: Generation, source: Pokemon, target: Pokemon) {
-  
 }
 
 export function checkDownload(source: Pokemon, target: Pokemon, wonderRoomActive?: boolean) {

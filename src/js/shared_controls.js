@@ -256,67 +256,111 @@ $(".boost").on("keyup change", function() {
 	var pokeInfo = $(this).closest(".poke-info");
 	var id = pokeInfo.attr('id');
 	var stat = $(this).closest("tr").prop("className").split(' ', 1)[0];
-	storeBoosts[id][stat] = Number($(this).val());
+	//storeBoosts[id][stat] = Number($(this).val());
+});
+
+$(".abilityToggle").on("change", function() {
+	var pokeInfo = $(this).closest(".poke-info");
+	var id = pokeInfo.attr('id');
+	var oppoInfo = id === "p1" ? $("#p2") : $("#p1");
+	if ($(this).is(':checked')) {
+		var ability = pokeInfo.find(".ability").val();
+		switch (ability) {
+			case "Intimidate":
+				if (storeBoosts['oppoAbility' + id]) {
+					storeBoosts['oppoAbility' + id].apply();
+				}
+				lowerStatStage(oppoInfo, 'at', 1, 'oppoAbility' + id, true);
+				break;
+			case "Mesmerize":
+				if (storeBoosts['oppoAbility' + id]) {
+					storeBoosts['oppoAbility' + id].apply();
+				}
+				lowerStatStage(oppoInfo, 'sa', 1, 'oppoAbility' + id, true);
+				break;
+			case "Ha Ha You\'re Weak":
+				lowerStatStage(oppoInfo, 'at', 6, 'multiOppoAbility' + id);
+				lowerStatStage(oppoInfo, 'df', 6, 'multiOppoAbility' + id);
+				lowerStatStage(oppoInfo, 'sa', 6, 'multiOppoAbility' + id);
+				lowerStatStage(oppoInfo, 'sd', 6, 'multiOppoAbility' + id);
+				lowerStatStage(oppoInfo, 'sp', 6, 'multiOppoAbility' + id);
+				break;
+		}
+	} else {		
+		if (storeBoosts['oppoAbility' + id]) {
+			storeBoosts['oppoAbility' + id].apply();
+			storeBoosts['oppoAbility' + id] = false;
+		}
+		if (storeBoosts['multiOppoAbility' + id]) {
+			storeBoosts['multiOppoAbility' + id].apply();
+			storeBoosts['multiOppoAbility' + id] = false;
+		}
+	}
+	
 });
 
 $(".ability").bind("keyup change", function () {
-	var ability = $(this).closest(".poke-info").find(".ability").val();
 	var pokeInfo = $(this).closest(".poke-info");
+	var ability = pokeInfo.find(".ability").val();
+	var id = pokeInfo.attr('id');
 
 	for (var i = 1; i <= 4; i++) {
 		var moveSelector = ".move" + i;
 		var moveHits = 3;
 
-		var moveName = $(this).closest(".poke-info").find(moveSelector).find(".select2-chosen").text();
+		var moveName = pokeInfo.find(moveSelector).find(".select2-chosen").text();
 		var move = moves[moveName] || moves['(No Move)'];
 		if (move.multiaccuracy) {
 			moveHits = move.multihit;
 		} else if (ability === 'Skill Link') {
 			moveHits = 5;
-		} else if ($(this).closest(".poke-info").find(".item").val() === 'Loaded Dice') {
+		} else if (pokeInfo.find(".item").val() === 'Loaded Dice') {
 			moveHits = 4;
 		}
 		pokeInfo.find(moveSelector).find(".move-hits").val(moveHits);
 	}
 	
-	storeBoosts[pokeInfo.attr('id')].load();
+	if (storeBoosts['selfAbility' + id]) {
+		storeBoosts['selfAbility' + id].apply();
+	}
+	var boosts = pokeInfo.find(".sp .boost");
+	var before = new Boosts(pokeInfo);
 	if (['Darkness Boost', 'Untouchable'].includes(ability)) {
-		var boosts = pokeInfo.find(".sp .boost");
 		boosts.val(Math.min(Number(boosts.val()) + 6, 6));
 	} else if (ability === "Hydrochasm Surge++") {
-		var boosts = pokeInfo.find(".df .boost");
+		boosts = pokeInfo.find(".df .boost");
 		boosts.val(Math.min(Number(boosts.val()) + 1, 6));
 		boosts = pokeInfo.find(".sd .boost");
 		boosts.val(Math.min(Number(boosts.val()) + 1, 6));
 	} else if (ability === "Untouchable2") {
-		var boosts = pokeInfo.find(".sp .boost");
 		boosts.val(Math.min(Number(boosts.val()) + 2, 6));
 	}
-	storeBoosts.preTerrain[pokeInfo.attr('id')].save();
+	var after = new Boosts(pokeInfo);
+	storeBoosts['selfAbility' + id] = before.minus(after);
 
 	var TOGGLE_ABILITIES = ['Flash Fire', 'Intimidate', 'Minus', 'Plus', 'Slow Start', 'Unburden', 'Stakeout', 'Teraform Zero', 'Lighten', 'Mesmerize', 'Ha Ha You\'re Weak', 'Ambusher'];
 
-	if (TOGGLE_ABILITIES.indexOf(ability) >= 0) {
-		$(this).closest(".poke-info").find(".abilityToggle").show();
+	if (TOGGLE_ABILITIES.includes(ability)) {
+		pokeInfo.find(".abilityToggle").show();
+		pokeInfo.find(".abilityToggle").change();
 	} else {
-		$(this).closest(".poke-info").find(".abilityToggle").hide();
+		pokeInfo.find(".abilityToggle").hide();
 	}
 	
-	var boostedStat = $(this).closest(".poke-info").find(".boostedStat");
-
+	var boostedStat = pokeInfo.find(".boostedStat");
 	if (ability === "Protosynthesis" || ability === "Quark Drive" || ability === "Ya Estas Cocinado") {
 		boostedStat.show();
-		autosetQP($(this).closest(".poke-info"));
+		autosetQP(pokeInfo);
 	} else {
 		boostedStat.val("");
 		boostedStat.hide();
 	}
 
 	if (ability === "Supreme Overlord" || ability === "Ya Estas Cocinado") {
-		$(this).closest(".poke-info").find(".alliesFainted").show();
+		pokeInfo.find(".alliesFainted").show();
 	} else {
-		$(this).closest(".poke-info").find(".alliesFainted").val('0');
-		$(this).closest(".poke-info").find(".alliesFainted").hide();
+		pokeInfo.find(".alliesFainted").val('0');
+		pokeInfo.find(".alliesFainted").hide();
 
 	}
 });
@@ -343,7 +387,7 @@ function autosetQP(pokemon) {
 	}
 }
 
-$("#p1 .ability").bind("keyup change", function () {
+$(".ability").bind("keyup change", function () {
 	autosetWeather($(this).val(), 0);
 	autosetTerrain($(this).val(), 0);
 	autosetQP($(this).closest(".poke-info"));
@@ -522,8 +566,8 @@ function autosetTerrain(ability, i) {
 	}
 }
 
-$("#p1 .item").bind("keyup change", function () {
-	autosetStatus("#p1", $(this).val());
+$(".item").bind("keyup change", function () {
+	autosetStatus("#" + $(this).closest(".poke-info").attr('id'), $(this).val());
 });
 
 var lastManualStatus = {"#p1": "Healthy"};
@@ -728,7 +772,6 @@ $(".set-selector").change(function () {
 			pokeObj.find("." + LEGACY_STATS[gen][i] + " .base").val(pokemon.bs[LEGACY_STATS[gen][i]]);
 		}
 		pokeObj.find(".boost").val(0);
-		storeBoosts[pokeObj.attr('id')].save();
 		pokeObj.find(".percent-hp").val(100);
 		pokeObj.find(".status").val("Healthy");
 		$(".status").change();
@@ -885,7 +928,21 @@ $(".set-selector").change(function () {
 		}
 		calcHP(pokeObj);
 		calcStats(pokeObj);
+		var id = pokeObj.attr('id');
+		var oppoID = id === "p1" ? "p2" : "p1";
+		for (i in storeBoosts) {
+			if (storeBoosts[i]) {
+				var boostID = storeBoosts[i].pokeInfo.attr('id');
+				if (i.includes(id) && boostID === oppoID) {
+					storeBoosts[i].apply(); //removes intim on switch out
+				}
+				if (boostID === id || i.includes(id)) {
+					delete storeBoosts[i]; //remove drop negation for pokemon already intimidated by oppo
+				}
+			}
+		}
 		abilityObj.change();
+		$("#" + oppoID + " .ability").change(); //activae oppo intim
 		itemObj.change();
 		if (pokemon.gender === "N") {
 			pokeObj.find(".gender").parent().hide();
@@ -1760,226 +1817,74 @@ function isPokeInfoGrounded(pokeInfo) {
 	);
 }
 
-var storeBoosts = {
-	p1: {
-		at: Number($("#p1 .at .boost").val()),
-		df: Number($("#p1 .df .boost").val()),
-		sa: Number($("#p1 .sa .boost").val()),
-		sd: Number($("#p1 .sd .boost").val()),
-		sp: Number($("#p1 .sp .boost").val()),
-		save: function() {
-			this.at = Number($("#p1 .at .boost").val());
-			this.df = Number($("#p1 .df .boost").val());
-			this.sa = Number($("#p1 .sa .boost").val());
-			this.sd = Number($("#p1 .sd .boost").val());
-			this.sp = Number($("#p1 .sp .boost").val());
-		},
-		load: function() {
-			$("#p1 .at .boost").val(String(this.at));
-			$("#p1 .df .boost").val(String(this.df));
-			$("#p1 .sa .boost").val(String(this.sa));
-			$("#p1 .sd .boost").val(String(this.sd));
-			$("#p1 .sp .boost").val(String(this.sp));
-		}
-	},
-	p2: {
-		at: Number($("#p2 .at .boost").val()),
-		df: Number($("#p2 .df .boost").val()),
-		sa: Number($("#p2 .sa .boost").val()),
-		sd: Number($("#p2 .sd .boost").val()),
-		sp: Number($("#p2 .sp .boost").val()),
-		save: function() {
-			this.at = Number($("#p2 .at .boost").val());
-			this.df = Number($("#p2 .df .boost").val());
-			this.sa = Number($("#p2 .sa .boost").val());
-			this.sd = Number($("#p2 .sd .boost").val());
-			this.sp = Number($("#p2 .sp .boost").val());
-		},
-		load: function() {
-			$("#p2 .at .boost").val(String(this.at));
-			$("#p2 .df .boost").val(String(this.df));
-			$("#p2 .sa .boost").val(String(this.sa));
-			$("#p2 .sd .boost").val(String(this.sd));
-			$("#p2 .sp .boost").val(String(this.sp));
-		}
-	},
-	/*save: function() {
-		this.p1.at = Number($("#p1 .at .boost").val());
-		this.p1.df = Number($("#p1 .df .boost").val());
-		this.p1.sa = Number($("#p1 .sa .boost").val());
-		this.p1.sd = Number($("#p1 .sd .boost").val());
-		this.p1.sp = Number($("#p1 .sp .boost").val());
-		this.p2.at = Number($("#p2 .at .boost").val());
-		this.p2.df = Number($("#p2 .df .boost").val());
-		this.p2.sa = Number($("#p2 .sa .boost").val());
-		this.p2.sd = Number($("#p2 .sd .boost").val());
-		this.p2.sp = Number($("#p2 .sp .boost").val());
-	},*/
-	/*load: function() {
-		$("#p1 .at .boost").val(String(this.p1.at));
-		$("#p1 .df .boost").val(String(this.p1.df));
-		$("#p1 .sa .boost").val(String(this.p1.sa));
-		$("#p1 .sd .boost").val(String(this.p1.sd));
-		$("#p1 .sp .boost").val(String(this.p1.sp));
-		$("#p2 .at .boost").val(String(this.p2.at));
-		$("#p2 .df .boost").val(String(this.p2.df));
-		$("#p2 .sa .boost").val(String(this.p2.sa));
-		$("#p2 .sd .boost").val(String(this.p2.sd));
-		$("#p2 .sp .boost").val(String(this.p2.sp));
-	},*/
-	preTerrain: {
-		p1: {
-			at: Number($("#p1 .at .boost").val()),
-			df: Number($("#p1 .df .boost").val()),
-			sa: Number($("#p1 .sa .boost").val()),
-			sd: Number($("#p1 .sd .boost").val()),
-			sp: Number($("#p1 .sp .boost").val()),
-			save: function() {
-				this.at = Number($("#p1 .at .boost").val());
-				this.df = Number($("#p1 .df .boost").val());
-				this.sa = Number($("#p1 .sa .boost").val());
-				this.sd = Number($("#p1 .sd .boost").val());
-				this.sp = Number($("#p1 .sp .boost").val());
-			},
-		},
-		p2: {
-			at: Number($("#p2 .at .boost").val()),
-			df: Number($("#p2 .df .boost").val()),
-			sa: Number($("#p2 .sa .boost").val()),
-			sd: Number($("#p2 .sd .boost").val()),
-			sp: Number($("#p2 .sp .boost").val()),
-			save: function() {
-				this.at = Number($("#p2 .at .boost").val());
-				this.df = Number($("#p2 .df .boost").val());
-				this.sa = Number($("#p2 .sa .boost").val());
-				this.sd = Number($("#p2 .sd .boost").val());
-				this.sp = Number($("#p2 .sp .boost").val());
-			},
-		},
-		load: function() {
-			$("#p1 .at .boost").val(String(this.p1.at));
-			$("#p1 .df .boost").val(String(this.p1.df));
-			$("#p1 .sa .boost").val(String(this.p1.sa));
-			$("#p1 .sd .boost").val(String(this.p1.sd));
-			$("#p1 .sp .boost").val(String(this.p1.sp));
-			$("#p2 .at .boost").val(String(this.p2.at));
-			$("#p2 .df .boost").val(String(this.p2.df));
-			$("#p2 .sa .boost").val(String(this.p2.sa));
-			$("#p2 .sd .boost").val(String(this.p2.sd));
-			$("#p2 .sp .boost").val(String(this.p2.sp));
-		},
-	},
+//NEW IDEA
+//STORE BOOSTS IN BOOOSTS CLASS
+//CREATE BOOSTS CLASS CACHE
+//LOAD BOOSTS FROM CACHE BY NAME AS NEEDED
+
+class Boosts {
+	constructor(pokeInfo = false) {
+		this.pokeInfo = pokeInfo;
+		this.at = pokeInfo ? Number(this.pokeInfo.find(".at .boost").val()) : 0;
+		this.df = pokeInfo ? Number(this.pokeInfo.find(".df .boost").val()) : 0;
+		this.sa = pokeInfo ? Number(this.pokeInfo.find(".sa .boost").val()) : 0;
+		this.sd = pokeInfo ? Number(this.pokeInfo.find(".sd .boost").val()) : 0;
+		this.sp = pokeInfo ? Number(this.pokeInfo.find(".sp .boost").val()) : 0;
+	}
+	
+	apply() {
+		var boost = this.pokeInfo.find(".at .boost");
+		boost.val(Math.min(Math.max(Number(boost.val()) + this.at, -6), 6));
+		boost = this.pokeInfo.find(".df .boost");
+		boost.val(Math.min(Math.max(Number(boost.val()) + this.df, -6), 6));
+		boost = this.pokeInfo.find(".sa .boost");
+		boost.val(Math.min(Math.max(Number(boost.val()) + this.sa, -6), 6));
+		boost = this.pokeInfo.find(".sd .boost");
+		boost.val(Math.min(Math.max(Number(boost.val()) + this.sd, -6), 6));
+		boost = this.pokeInfo.find(".sp .boost");
+		boost.val(Math.min(Math.max(Number(boost.val()) + this.sp, -6), 6));
+	}
+	
+	minus(boosts) {
+		this.at -= boosts.at;
+		this.df -= boosts.df;
+		this.sa -= boosts.sa;
+		this.sd -= boosts.sd;
+		this.sp -= boosts.sp;
+		return this;
+	}
+	
+	plus(boosts) {
+		this.at += boosts.at;
+		this.df += boosts.df;
+		this.sa += boosts.sa;
+		this.sd += boosts.sd;
+		this.sp += boosts.sp;
+		return this;
+	}
 	/*
-	preAbility: {
-		p1: {
-			at: Number($("#p1 .at .boost").val()),
-			df: Number($("#p1 .df .boost").val()),
-			sa: Number($("#p1 .sa .boost").val()),
-			sd: Number($("#p1 .sd .boost").val()),
-			sp: Number($("#p1 .sp .boost").val()),
-		},
-		p2: {
-			at: Number($("#p2 .at .boost").val()),
-			df: Number($("#p2 .df .boost").val()),
-			sa: Number($("#p2 .sa .boost").val()),
-			sd: Number($("#p2 .sd .boost").val()),
-			sp: Number($("#p2 .sp .boost").val()),
-		}
-	},
-	preItem: {
-		p1: {
-			at: Number($("#p1 .at .boost").val()),
-			df: Number($("#p1 .df .boost").val()),
-			sa: Number($("#p1 .sa .boost").val()),
-			sd: Number($("#p1 .sd .boost").val()),
-			sp: Number($("#p1 .sp .boost").val()),
-		},
-		p2: {
-			at: Number($("#p2 .at .boost").val()),
-			df: Number($("#p2 .df .boost").val()),
-			sa: Number($("#p2 .sa .boost").val()),
-			sd: Number($("#p2 .sd .boost").val()),
-			sp: Number($("#p2 .sp .boost").val()),
-		}
-	},
-	setPreTerrain: function() {
-		this.preTerrain.p1.at = Number($("#p1 .at .boost").val());
-		this.preTerrain.p1.df = Number($("#p1 .df .boost").val());
-		this.preTerrain.p1.sa = Number($("#p1 .sa .boost").val());
-		this.preTerrain.p1.sd = Number($("#p1 .sd .boost").val());
-		this.preTerrain.p1.sp = Number($("#p1 .sp .boost").val());
-		this.preTerrain.p2.at = Number($("#p2 .at .boost").val());
-		this.preTerrain.p2.df = Number($("#p2 .df .boost").val());
-		this.preTerrain.p2.sa = Number($("#p2 .sa .boost").val());
-		this.preTerrain.p2.sd = Number($("#p2 .sd .boost").val());
-		this.preTerrain.p2.sp = Number($("#p2 .sp .boost").val());
-	},
-	setPreAbility: function() {
-		this.preAbility.p1.at = Number($("#p1 .at .boost").val());
-		this.preAbility.p1.df = Number($("#p1 .df .boost").val());
-		this.preAbility.p1.sa = Number($("#p1 .sa .boost").val());
-		this.preAbility.p1.sd = Number($("#p1 .sd .boost").val());
-		this.preAbility.p1.sp = Number($("#p1 .sp .boost").val());
-		this.preAbility.p2.at = Number($("#p2 .at .boost").val());
-		this.preAbility.p2.df = Number($("#p2 .df .boost").val());
-		this.preAbility.p2.sa = Number($("#p2 .sa .boost").val());
-		this.preAbility.p2.sd = Number($("#p2 .sd .boost").val());
-		this.preAbility.p2.sp = Number($("#p2 .sp .boost").val());
-	},
-	setPreItem: function() {
-		this.preItem.p1.at = Number($("#p1 .at .boost").val());
-		this.preItem.p1.df = Number($("#p1 .df .boost").val());
-		this.preItem.p1.sa = Number($("#p1 .sa .boost").val());
-		this.preItem.p1.sd = Number($("#p1 .sd .boost").val());
-		this.preItem.p1.sp = Number($("#p1 .sp .boost").val());
-		this.preItem.p2.at = Number($("#p2 .at .boost").val());
-		this.preItem.p2.df = Number($("#p2 .df .boost").val());
-		this.preItem.p2.sa = Number($("#p2 .sa .boost").val());
-		this.preItem.p2.sd = Number($("#p2 .sd .boost").val());
-		this.preItem.p2.sp = Number($("#p2 .sp .boost").val());
-	},
-	loadPreTerrain: function() {
-		$("#p1 .at .boost").val(String(this.preTerrain.p1.at));
-		$("#p1 .df .boost").val(String(this.preTerrain.p1.df));
-		$("#p1 .sa .boost").val(String(this.preTerrain.p1.sa));
-		$("#p1 .sd .boost").val(String(this.preTerrain.p1.sd));
-		$("#p1 .sp .boost").val(String(this.preTerrain.p1.sp));
-		$("#p2 .at .boost").val(String(this.preTerrain.p2.at));
-		$("#p2 .df .boost").val(String(this.preTerrain.p2.df));
-		$("#p2 .sa .boost").val(String(this.preTerrain.p2.sa));
-		$("#p2 .sd .boost").val(String(this.preTerrain.p2.sd));
-		$("#p2 .sp .boost").val(String(this.preTerrain.p2.sp));
-	},
-	loadPreAbility: function() {
-		$("#p1 .at .boost").val(String(this.preAbility.p1.at));
-		$("#p1 .df .boost").val(String(this.preAbility.p1.df));
-		$("#p1 .sa .boost").val(String(this.preAbility.p1.sa));
-		$("#p1 .sd .boost").val(String(this.preAbility.p1.sd));
-		$("#p1 .sp .boost").val(String(this.preAbility.p1.sp));
-		$("#p2 .at .boost").val(String(this.preAbility.p2.at));
-		$("#p2 .df .boost").val(String(this.preAbility.p2.df));
-		$("#p2 .sa .boost").val(String(this.preAbility.p2.sa));
-		$("#p2 .sd .boost").val(String(this.preAbility.p2.sd));
-		$("#p2 .sp .boost").val(String(this.preAbility.p2.sp));
-		
-	},
-	loadPreItem: function() {
-		$("#p1 .at .boost").val(String(this.preItem.p1.at));
-		$("#p1 .df .boost").val(String(this.preItem.p1.df));
-		$("#p1 .sa .boost").val(String(this.preItem.p1.sa));
-		$("#p1 .sd .boost").val(String(this.preItem.p1.sd));
-		$("#p1 .sp .boost").val(String(this.preItem.p1.sp));
-		$("#p2 .at .boost").val(String(this.preItem.p2.at));
-		$("#p2 .df .boost").val(String(this.preItem.p2.df));
-		$("#p2 .sa .boost").val(String(this.preItem.p2.sa));
-		$("#p2 .sd .boost").val(String(this.preItem.p2.sd));
-		$("#p2 .sp .boost").val(String(this.preItem.p2.sp));
-		
-	},
-	*/
-};
+	save() {
+		this.at = Number(this.pokeInfo.find(".at .boost").val());
+		this.df = Number(this.pokeInfo.find(".df .boost").val());
+		this.sa = Number(this.pokeInfo.find(".sa .boost").val());
+		this.sd = Number(this.pokeInfo.find(".sd .boost").val());
+		this.sp = Number(this.pokeInfo.find(".sp .boost").val());
+	}
+	
+	load() {
+		this.pokeInfo.find(".at .boost").val(this.at);
+		this.pokeInfo.find(".df .boost").val(this.df);
+		this.pokeInfo.find(".sa .boost").val(this.sa);
+		this.pokeInfo.find(".sd .boost").val(this.sd);
+		this.pokeInfo.find(".sp .boost").val(this.sp);
+	}*/
+}
+
+var storeBoosts = {};
 
 function getTerrainEffects() {
+	console.log($("#p2 .sp .boost").val())
+	console.trace()
 	var className = $(this).prop("className");
 	className = className.substring(0, className.indexOf(" "));
 	if ($(this).is("input:checkbox[name='terrain']")) {
@@ -2048,39 +1953,60 @@ function getTerrainEffects() {
 		}
 	}
 
-	//frozen kingdom snow end and speed drop
+	//frozen kingdom
 	var weather = $("input:radio[name='weather']:checked").val();
-	if (terrainValue === "Frozen Kingdom") {
-		storeBoosts.preTerrain.load(); //else speed will keep getting lowered on all terrain triggers
+	if (terrainValue === "Frozen Kingdom") {; //else speed will keep getting lowered on all terrain triggers
 		if (!typesP1.includes('Ice')) {
-			lowerStatStage($("#p1"), 'sp', 1);
+			if (storeBoosts['Frozen Kingdom1']) {
+				storeBoosts['Frozen Kingdom1'].apply();
+			}
+			lowerStatStage($("#p1"), 'sp', 1, 'Frozen Kingdom1', false);
 		}
 		if (!typesP2.includes('Ice')) {
-			lowerStatStage($("#p2"), 'sp', 1);
+			if (storeBoosts['Frozen Kingdom2']) {
+				storeBoosts['Frozen Kingdom2'].apply();
+			}
+			lowerStatStage($("#p2"), 'sp', 1, 'Frozen Kingdom2', false);
 		}
 		if (!weather) {
-			autosetWeather("Frozen Kingdom", 0);
+			autosetWeather("Frozen Kingdom", 0); //maybe no longer necessary
 		}
+	} else {
+		storeBoosts['Frozen Kingdom1'] = false;
+		storeBoosts['Frozen Kingdom2'] = false;
 	}
 }
 
-function lowerStatStage(pokeInfo, stat, numStages, intim = false) {
+function lowerStatStage(pokeInfo, stat, numStages, source, intim = false) {
 	var types = [pokeInfo.find(".type1").val(), pokeInfo.find(".type2").val()];
 	var ability = pokeInfo.find(".ability").val();
 	var item = pokeInfo.find(".item").val();
+	var id = pokeInfo.attr('id');
+	var boosts = pokeInfo.find("." + stat + " .boost");
+	if (ability === "Mirror Armor" && !source.includes('Frozen Kingdom')) {
+		if (id === "p1") {
+			boosts = $("#p2").find("." + stat + " .boost");
+			id = "p2";
+			ability = $("#p2 .ability").val();
+			item = $("#p2 .item").val();
+		} else if (id === "p2") {
+			boosts = $("#p1").find("." + stat + " .boost");
+			id = "p1";
+			ability = $("#p1 .ability").val();
+			item = $("#p1 .item").val();
+		}
+	}
 	var dropImmune = ['Clear Body', 'White Smoke', 'Full Metal Body', 'Golden Hour', 'Moribund', 'Dry Aged', 'Hydrochasm Surge', 'Hydrochasm Surge++', ].includes(ability) || (ability === "Flower Veil" && types.includes("Grass")) || ['Clear Amulet', 'White Herb'].includes(item);
 	var intimImmune = dropImmune || ['Inner Focus', 'Own Tempo', 'Oblivious', 'Scrappy', 'Mind\'s Eye', 'Bird of Prey', 'Soul Ablaze', 'Fiery Spirit', 'Guard Dog'].includes(ability);
 	
-	if (!dropImmune && !(intim && intimImmune)) {
-		var boosts = pokeInfo.find("." + stat + " .boost");
-		if (ability === "Mirror Armor" && intim) {
-			boosts = pokeInfo.attr('id') === "p1" ? $("#p2").find("." + stat + " .boost") : $("#p1").find("." + stat + " .boost");
-		} else if (ability === "Simple") {
+	var before = new Boosts($("#" + id));
+	if (!dropImmune) {
+		if (ability === "Simple") {
 			numStages *= 2;
 		} else if (ability === "Contrary") {
 			numStages *= -1;
 		}
-		if (!(ability === "Hyper Cutter" && boosts.hasClass("at"))) {
+		if (!(ability === "Hyper Cutter" && boosts.hasClass("at")) && !(intim && intimImmune)) {
 			boosts.val(Math.min(Math.max(Number(boosts.val()) - numStages, -6), 6));
 			if (ability === "Defiant") {
 				var at = pokeInfo.find(".at .boost")
@@ -2090,19 +2016,26 @@ function lowerStatStage(pokeInfo, stat, numStages, intim = false) {
 				sa.val(Math.min(Number(sa.val()) + 2, 6));
 			}
 		}
+		if (intim) {
+			if (ability === "Guard Dog") {
+				var at = pokeInfo.find(".at .boost")
+				at.val(Math.min(Number(at.val()) + 1, 6));
+			} else if (ability === "Rattled") {
+				var sp = pokeInfo.find(".sp .boost")
+				sp.val(Math.min(Number(sp.val()) + 1, 6));
+			}
+			if (item === "Adrenaline Orb") {
+				var sp = pokeInfo.find(".sp .boost")
+				sp.val(Math.min(Number(sp.val()) + 1, 6));
+			}
+		}
 	}
-	if (intim) {
-		if (ability === "Guard Dog") {
-			var at = pokeInfo.find(".at .boost")
-			at.val(Math.min(Number(at.val()) + 1, 6));
-		} else if (ability === "Rattled") {
-			var sp = pokeInfo.find(".sp .boost")
-			sp.val(Math.min(Number(sp.val()) + 1, 6));
-		}
-		if (item === "Adrenaline Orb") {
-			var sp = pokeInfo.find(".sp .boost")
-			sp.val(Math.min(Number(sp.val()) + 1, 6));
-		}
+	var after = new Boosts($("#" + id));
+	if (!source.includes('multi') || !storeBoosts[source]) {
+		storeBoosts[source] = before.minus(after);
+	} else {
+		var more = before.minus(after);
+		storeBoosts[source].plus(more);
 	}
 }
 
