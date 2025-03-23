@@ -252,8 +252,16 @@ $(".percent-hp").keyup(function () {
 	calcCurrentHP($(this).parent(), max, percent);
 });
 
+$(".boost").on("keyup change", function() {
+	var pokeInfo = $(this).closest(".poke-info");
+	var id = pokeInfo.attr('id');
+	var stat = $(this).closest("tr").prop("className").split(' ', 1)[0];
+	storeBoosts[id][stat] = Number($(this).val());
+});
+
 $(".ability").bind("keyup change", function () {
 	var ability = $(this).closest(".poke-info").find(".ability").val();
+	var pokeInfo = $(this).closest(".poke-info");
 
 	for (var i = 1; i <= 4; i++) {
 		var moveSelector = ".move" + i;
@@ -268,19 +276,23 @@ $(".ability").bind("keyup change", function () {
 		} else if ($(this).closest(".poke-info").find(".item").val() === 'Loaded Dice') {
 			moveHits = 4;
 		}
-		$(this).closest(".poke-info").find(moveSelector).find(".move-hits").val(moveHits);
+		pokeInfo.find(moveSelector).find(".move-hits").val(moveHits);
 	}
 	
-	switch (ability) {
-		case "Darkness Boost":
-		case "Untouchable":
-			$(this).closest(".poke-info").find(".sp .boost").val("6");
-		case "Hydrochasm Surge++":
-			$(this).closest(".poke-info").find(".df .boost").val("1");
-			$(this).closest(".poke-info").find(".sd .boost").val("1");
-		case "Untouchable2":
-			$(this).closest(".poke-info").find(".sp .boost").val("2");
+	storeBoosts[pokeInfo.attr('id')].load();
+	if (['Darkness Boost', 'Untouchable'].includes(ability)) {
+		var boosts = pokeInfo.find(".sp .boost");
+		boosts.val(Math.min(Number(boosts.val()) + 6, 6));
+	} else if (ability === "Hydrochasm Surge++") {
+		var boosts = pokeInfo.find(".df .boost");
+		boosts.val(Math.min(Number(boosts.val()) + 1, 6));
+		boosts = pokeInfo.find(".sd .boost");
+		boosts.val(Math.min(Number(boosts.val()) + 1, 6));
+	} else if (ability === "Untouchable2") {
+		var boosts = pokeInfo.find(".sp .boost");
+		boosts.val(Math.min(Number(boosts.val()) + 2, 6));
 	}
+	storeBoosts.preTerrain[pokeInfo.attr('id')].save();
 
 	var TOGGLE_ABILITIES = ['Flash Fire', 'Intimidate', 'Minus', 'Plus', 'Slow Start', 'Unburden', 'Stakeout', 'Teraform Zero', 'Lighten', 'Mesmerize', 'Ha Ha You\'re Weak', 'Ambusher'];
 
@@ -289,6 +301,7 @@ $(".ability").bind("keyup change", function () {
 	} else {
 		$(this).closest(".poke-info").find(".abilityToggle").hide();
 	}
+	
 	var boostedStat = $(this).closest(".poke-info").find(".boostedStat");
 
 	if (ability === "Protosynthesis" || ability === "Quark Drive" || ability === "Ya Estas Cocinado") {
@@ -341,6 +354,12 @@ $("input[name='weather']").change(function () {
 	allPokemon.each(function () {
 		autosetQP($(this));
 	});
+	var terrain = $("input:checkbox[name='terrain']:checked").val();
+	var weather = $("input:radio[name='weather']:checked").val()
+	if (terrain === "Frozen Kingdom" && weather !== "Snow") {
+		$("input:checkbox[name='terrain']:checked").prop("checked", false);
+		lastAutoTerrain[0] = "";
+	}
 });
 
 var lastManualWeather = "";
@@ -415,6 +434,12 @@ function autosetWeather(ability, i) {
 			$("input:radio[name='weather'][value='" + newWeather + "']").prop("checked", true);
 			break;
 	}
+	var terrain = $("input:checkbox[name='terrain']:checked").val();
+	var weather = $("input:radio[name='weather']:checked").val()
+	if (terrain === "Frozen Kingdom" && weather !== "Snow") {
+		$("input:checkbox[name='terrain']:checked").prop("checked", false);
+		lastAutoTerrain[0] = "";
+	}
 }
 
 $("input[name='terrain']").change(function () {
@@ -422,6 +447,14 @@ $("input[name='terrain']").change(function () {
 	allPokemon.each(function () {
 		autosetQP($(this));
 	});
+	var terrain = $("input:checkbox[name='terrain']:checked").val();
+	var weather = $("input:radio[name='weather']:checked").val()
+	if (terrain !== "Frozen Kingdom" && weather === "Snow") {
+		$("#clear").prop("checked", true);
+		lastAutoWeather[0] = "";
+	} else if ($(this).val() === "Frozen Kingdom" && !["Snow", ""].includes(weather)) {
+		$(this).prop("checked", false);
+	}
 });
 
 var lastManualTerrain = "";
@@ -480,6 +513,12 @@ function autosetTerrain(ability, i) {
 				$("input:checkbox[name='terrain'][value='" + newTerrain + "']").prop("checked", true);
 			}
 			break;
+	}
+	var terrain = $("input:checkbox[name='terrain']:checked").val();
+	var weather = $("input:radio[name='weather']:checked").val()
+	if (currentTerrain === "Frozen Kingdom" && terrain !== "Frozen Kingdom" && weather === "Snow") {
+		$("#clear").prop("checked", true);
+		lastAutoWeather[0] = "";
 	}
 }
 
@@ -689,6 +728,7 @@ $(".set-selector").change(function () {
 			pokeObj.find("." + LEGACY_STATS[gen][i] + " .base").val(pokemon.bs[LEGACY_STATS[gen][i]]);
 		}
 		pokeObj.find(".boost").val(0);
+		storeBoosts[pokeObj.attr('id')].save();
 		pokeObj.find(".percent-hp").val(100);
 		pokeObj.find(".status").val("Healthy");
 		$(".status").change();
@@ -1720,35 +1760,231 @@ function isPokeInfoGrounded(pokeInfo) {
 	);
 }
 
-var boostsPreTerrain1 = {
-	hp: Number($("#p1 .hp .boost").val()),
-	at: Number($("#p1 .at .boost").val()),
-	df: Number($("#p1 .df .boost").val()),
-	sa: Number($("#p1 .sa .boost").val()),
-	sd: Number($("#p1 .sd .boost").val()),
-	sp: Number($("#p1 .sp .boost").val()),
+var storeBoosts = {
+	p1: {
+		at: Number($("#p1 .at .boost").val()),
+		df: Number($("#p1 .df .boost").val()),
+		sa: Number($("#p1 .sa .boost").val()),
+		sd: Number($("#p1 .sd .boost").val()),
+		sp: Number($("#p1 .sp .boost").val()),
+		save: function() {
+			this.at = Number($("#p1 .at .boost").val());
+			this.df = Number($("#p1 .df .boost").val());
+			this.sa = Number($("#p1 .sa .boost").val());
+			this.sd = Number($("#p1 .sd .boost").val());
+			this.sp = Number($("#p1 .sp .boost").val());
+		},
+		load: function() {
+			$("#p1 .at .boost").val(String(this.at));
+			$("#p1 .df .boost").val(String(this.df));
+			$("#p1 .sa .boost").val(String(this.sa));
+			$("#p1 .sd .boost").val(String(this.sd));
+			$("#p1 .sp .boost").val(String(this.sp));
+		}
+	},
+	p2: {
+		at: Number($("#p2 .at .boost").val()),
+		df: Number($("#p2 .df .boost").val()),
+		sa: Number($("#p2 .sa .boost").val()),
+		sd: Number($("#p2 .sd .boost").val()),
+		sp: Number($("#p2 .sp .boost").val()),
+		save: function() {
+			this.at = Number($("#p2 .at .boost").val());
+			this.df = Number($("#p2 .df .boost").val());
+			this.sa = Number($("#p2 .sa .boost").val());
+			this.sd = Number($("#p2 .sd .boost").val());
+			this.sp = Number($("#p2 .sp .boost").val());
+		},
+		load: function() {
+			$("#p2 .at .boost").val(String(this.at));
+			$("#p2 .df .boost").val(String(this.df));
+			$("#p2 .sa .boost").val(String(this.sa));
+			$("#p2 .sd .boost").val(String(this.sd));
+			$("#p2 .sp .boost").val(String(this.sp));
+		}
+	},
+	/*save: function() {
+		this.p1.at = Number($("#p1 .at .boost").val());
+		this.p1.df = Number($("#p1 .df .boost").val());
+		this.p1.sa = Number($("#p1 .sa .boost").val());
+		this.p1.sd = Number($("#p1 .sd .boost").val());
+		this.p1.sp = Number($("#p1 .sp .boost").val());
+		this.p2.at = Number($("#p2 .at .boost").val());
+		this.p2.df = Number($("#p2 .df .boost").val());
+		this.p2.sa = Number($("#p2 .sa .boost").val());
+		this.p2.sd = Number($("#p2 .sd .boost").val());
+		this.p2.sp = Number($("#p2 .sp .boost").val());
+	},*/
+	/*load: function() {
+		$("#p1 .at .boost").val(String(this.p1.at));
+		$("#p1 .df .boost").val(String(this.p1.df));
+		$("#p1 .sa .boost").val(String(this.p1.sa));
+		$("#p1 .sd .boost").val(String(this.p1.sd));
+		$("#p1 .sp .boost").val(String(this.p1.sp));
+		$("#p2 .at .boost").val(String(this.p2.at));
+		$("#p2 .df .boost").val(String(this.p2.df));
+		$("#p2 .sa .boost").val(String(this.p2.sa));
+		$("#p2 .sd .boost").val(String(this.p2.sd));
+		$("#p2 .sp .boost").val(String(this.p2.sp));
+	},*/
+	preTerrain: {
+		p1: {
+			at: Number($("#p1 .at .boost").val()),
+			df: Number($("#p1 .df .boost").val()),
+			sa: Number($("#p1 .sa .boost").val()),
+			sd: Number($("#p1 .sd .boost").val()),
+			sp: Number($("#p1 .sp .boost").val()),
+			save: function() {
+				this.at = Number($("#p1 .at .boost").val());
+				this.df = Number($("#p1 .df .boost").val());
+				this.sa = Number($("#p1 .sa .boost").val());
+				this.sd = Number($("#p1 .sd .boost").val());
+				this.sp = Number($("#p1 .sp .boost").val());
+			},
+		},
+		p2: {
+			at: Number($("#p2 .at .boost").val()),
+			df: Number($("#p2 .df .boost").val()),
+			sa: Number($("#p2 .sa .boost").val()),
+			sd: Number($("#p2 .sd .boost").val()),
+			sp: Number($("#p2 .sp .boost").val()),
+			save: function() {
+				this.at = Number($("#p2 .at .boost").val());
+				this.df = Number($("#p2 .df .boost").val());
+				this.sa = Number($("#p2 .sa .boost").val());
+				this.sd = Number($("#p2 .sd .boost").val());
+				this.sp = Number($("#p2 .sp .boost").val());
+			},
+		},
+		load: function() {
+			$("#p1 .at .boost").val(String(this.p1.at));
+			$("#p1 .df .boost").val(String(this.p1.df));
+			$("#p1 .sa .boost").val(String(this.p1.sa));
+			$("#p1 .sd .boost").val(String(this.p1.sd));
+			$("#p1 .sp .boost").val(String(this.p1.sp));
+			$("#p2 .at .boost").val(String(this.p2.at));
+			$("#p2 .df .boost").val(String(this.p2.df));
+			$("#p2 .sa .boost").val(String(this.p2.sa));
+			$("#p2 .sd .boost").val(String(this.p2.sd));
+			$("#p2 .sp .boost").val(String(this.p2.sp));
+		},
+	},
+	/*
+	preAbility: {
+		p1: {
+			at: Number($("#p1 .at .boost").val()),
+			df: Number($("#p1 .df .boost").val()),
+			sa: Number($("#p1 .sa .boost").val()),
+			sd: Number($("#p1 .sd .boost").val()),
+			sp: Number($("#p1 .sp .boost").val()),
+		},
+		p2: {
+			at: Number($("#p2 .at .boost").val()),
+			df: Number($("#p2 .df .boost").val()),
+			sa: Number($("#p2 .sa .boost").val()),
+			sd: Number($("#p2 .sd .boost").val()),
+			sp: Number($("#p2 .sp .boost").val()),
+		}
+	},
+	preItem: {
+		p1: {
+			at: Number($("#p1 .at .boost").val()),
+			df: Number($("#p1 .df .boost").val()),
+			sa: Number($("#p1 .sa .boost").val()),
+			sd: Number($("#p1 .sd .boost").val()),
+			sp: Number($("#p1 .sp .boost").val()),
+		},
+		p2: {
+			at: Number($("#p2 .at .boost").val()),
+			df: Number($("#p2 .df .boost").val()),
+			sa: Number($("#p2 .sa .boost").val()),
+			sd: Number($("#p2 .sd .boost").val()),
+			sp: Number($("#p2 .sp .boost").val()),
+		}
+	},
+	setPreTerrain: function() {
+		this.preTerrain.p1.at = Number($("#p1 .at .boost").val());
+		this.preTerrain.p1.df = Number($("#p1 .df .boost").val());
+		this.preTerrain.p1.sa = Number($("#p1 .sa .boost").val());
+		this.preTerrain.p1.sd = Number($("#p1 .sd .boost").val());
+		this.preTerrain.p1.sp = Number($("#p1 .sp .boost").val());
+		this.preTerrain.p2.at = Number($("#p2 .at .boost").val());
+		this.preTerrain.p2.df = Number($("#p2 .df .boost").val());
+		this.preTerrain.p2.sa = Number($("#p2 .sa .boost").val());
+		this.preTerrain.p2.sd = Number($("#p2 .sd .boost").val());
+		this.preTerrain.p2.sp = Number($("#p2 .sp .boost").val());
+	},
+	setPreAbility: function() {
+		this.preAbility.p1.at = Number($("#p1 .at .boost").val());
+		this.preAbility.p1.df = Number($("#p1 .df .boost").val());
+		this.preAbility.p1.sa = Number($("#p1 .sa .boost").val());
+		this.preAbility.p1.sd = Number($("#p1 .sd .boost").val());
+		this.preAbility.p1.sp = Number($("#p1 .sp .boost").val());
+		this.preAbility.p2.at = Number($("#p2 .at .boost").val());
+		this.preAbility.p2.df = Number($("#p2 .df .boost").val());
+		this.preAbility.p2.sa = Number($("#p2 .sa .boost").val());
+		this.preAbility.p2.sd = Number($("#p2 .sd .boost").val());
+		this.preAbility.p2.sp = Number($("#p2 .sp .boost").val());
+	},
+	setPreItem: function() {
+		this.preItem.p1.at = Number($("#p1 .at .boost").val());
+		this.preItem.p1.df = Number($("#p1 .df .boost").val());
+		this.preItem.p1.sa = Number($("#p1 .sa .boost").val());
+		this.preItem.p1.sd = Number($("#p1 .sd .boost").val());
+		this.preItem.p1.sp = Number($("#p1 .sp .boost").val());
+		this.preItem.p2.at = Number($("#p2 .at .boost").val());
+		this.preItem.p2.df = Number($("#p2 .df .boost").val());
+		this.preItem.p2.sa = Number($("#p2 .sa .boost").val());
+		this.preItem.p2.sd = Number($("#p2 .sd .boost").val());
+		this.preItem.p2.sp = Number($("#p2 .sp .boost").val());
+	},
+	loadPreTerrain: function() {
+		$("#p1 .at .boost").val(String(this.preTerrain.p1.at));
+		$("#p1 .df .boost").val(String(this.preTerrain.p1.df));
+		$("#p1 .sa .boost").val(String(this.preTerrain.p1.sa));
+		$("#p1 .sd .boost").val(String(this.preTerrain.p1.sd));
+		$("#p1 .sp .boost").val(String(this.preTerrain.p1.sp));
+		$("#p2 .at .boost").val(String(this.preTerrain.p2.at));
+		$("#p2 .df .boost").val(String(this.preTerrain.p2.df));
+		$("#p2 .sa .boost").val(String(this.preTerrain.p2.sa));
+		$("#p2 .sd .boost").val(String(this.preTerrain.p2.sd));
+		$("#p2 .sp .boost").val(String(this.preTerrain.p2.sp));
+	},
+	loadPreAbility: function() {
+		$("#p1 .at .boost").val(String(this.preAbility.p1.at));
+		$("#p1 .df .boost").val(String(this.preAbility.p1.df));
+		$("#p1 .sa .boost").val(String(this.preAbility.p1.sa));
+		$("#p1 .sd .boost").val(String(this.preAbility.p1.sd));
+		$("#p1 .sp .boost").val(String(this.preAbility.p1.sp));
+		$("#p2 .at .boost").val(String(this.preAbility.p2.at));
+		$("#p2 .df .boost").val(String(this.preAbility.p2.df));
+		$("#p2 .sa .boost").val(String(this.preAbility.p2.sa));
+		$("#p2 .sd .boost").val(String(this.preAbility.p2.sd));
+		$("#p2 .sp .boost").val(String(this.preAbility.p2.sp));
+		
+	},
+	loadPreItem: function() {
+		$("#p1 .at .boost").val(String(this.preItem.p1.at));
+		$("#p1 .df .boost").val(String(this.preItem.p1.df));
+		$("#p1 .sa .boost").val(String(this.preItem.p1.sa));
+		$("#p1 .sd .boost").val(String(this.preItem.p1.sd));
+		$("#p1 .sp .boost").val(String(this.preItem.p1.sp));
+		$("#p2 .at .boost").val(String(this.preItem.p2.at));
+		$("#p2 .df .boost").val(String(this.preItem.p2.df));
+		$("#p2 .sa .boost").val(String(this.preItem.p2.sa));
+		$("#p2 .sd .boost").val(String(this.preItem.p2.sd));
+		$("#p2 .sp .boost").val(String(this.preItem.p2.sp));
+		
+	},
+	*/
 };
-var boostsPreTerrain2 = {
-	hp: Number($("#p2 .hp .boost").val()),
-	at: Number($("#p2 .at .boost").val()),
-	df: Number($("#p2 .df .boost").val()),
-	sa: Number($("#p2 .sa .boost").val()),
-	sd: Number($("#p2 .sd .boost").val()),
-	sp: Number($("#p2 .sp .boost").val()),
-};
-function loadPreTerrainBoosts(pokeInfo) {
-	boosts = pokeInfo.attr('id') === "p1" ? boostsPreTerrain1 : boostsPreTerrain2;
-	pokeInfo.find(".hp .boost").val(String(boosts.hp));
-	pokeInfo.find(".at .boost").val(String(boosts.at));
-	pokeInfo.find(".df .boost").val(String(boosts.df));
-	pokeInfo.find(".sa .boost").val(String(boosts.sa));
-	pokeInfo.find(".sd .boost").val(String(boosts.sd));
-	pokeInfo.find(".sp .boost").val(String(boosts.sp));
-}
 
 function getTerrainEffects() {
 	var className = $(this).prop("className");
 	className = className.substring(0, className.indexOf(" "));
+	if ($(this).is("input:checkbox[name='terrain']")) {
+		$("input:checkbox[name='terrain']").not(this).prop("checked", false);
+	}
 	var terrainValue = $("input:checkbox[name='terrain']:checked").val();
 	if (['type1', 'type2', 'teraType', 'teraToggle', 'item'].includes(className)) {
 		var id = $(this).closest(".poke-info").prop("id");
@@ -1814,9 +2050,8 @@ function getTerrainEffects() {
 
 	//frozen kingdom snow end and speed drop
 	var weather = $("input:radio[name='weather']:checked").val();
-	loadPreTerrainBoosts($("#p1"));
-	loadPreTerrainBoosts($("#p2"));
 	if (terrainValue === "Frozen Kingdom") {
+		storeBoosts.preTerrain.load(); //else speed will keep getting lowered on all terrain triggers
 		if (!typesP1.includes('Ice')) {
 			lowerStatStage($("#p1"), 'sp', 1);
 		}
@@ -1826,8 +2061,6 @@ function getTerrainEffects() {
 		if (!weather) {
 			autosetWeather("Frozen Kingdom", 0);
 		}
-	} else if (terrainValue && weather === "Snow") {
-		autosetWeather("None", 0);
 	}
 }
 
@@ -1871,7 +2104,6 @@ function lowerStatStage(pokeInfo, stat, numStages, intim = false) {
 			sp.val(Math.min(Number(sp.val()) + 1, 6));
 		}
 	}
-	
 }
 
 function loadDefaultLists() {

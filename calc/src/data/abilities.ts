@@ -500,7 +500,7 @@ const PATHWAYS = SV.concat([
   //if weather or terrain is changed both disappear
   'Fatal Release',//sets sticky web on faint
   'Hydrochasm Surge',//lot of shit
-  'Hydrochasm Surge++',//even more shit fuck arfy for this man i aint coding that
+  'Hydrochasm Surge++',//even more shit fuck arfy for this man i aint coding that unaware, clear body, battle armor, noguard, magic guard, 
   'Requiem Di Diavolo',//gliscor form change, bpmods x2 if sound move, soundproof, poison heal, swansong
   'Bull Rush',//gorilla tactics clone
   'Frost Drain',//ice immunity, raise spd
