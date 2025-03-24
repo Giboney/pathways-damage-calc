@@ -180,6 +180,7 @@ $(".sl .dvs").keyup(function () {
 });
 
 function getForcedTeraType(pokemonName) {
+	/*
 	if (startsWith(pokemonName, "Ogerpon-Cornerstone")) {
 		return "Rock";
 	} else if (startsWith(pokemonName, "Ogerpon-Hearthflame")) {
@@ -190,7 +191,7 @@ function getForcedTeraType(pokemonName) {
 		return "Water";
 	} else if (startsWith(pokemonName, "Terapagos")) {
 		return "Stellar";
-	}
+	}*/
 	return null;
 }
 
@@ -256,29 +257,35 @@ $(".abilityToggle").on("change", function() {
 	var pokeInfo = $(this).closest(".poke-info");
 	var id = pokeInfo.attr('id');
 	var oppoInfo = id === "p1" ? $("#p2") : $("#p1");
-	if (storeBoosts['oppoAbility' + id]) {
-		storeBoosts['oppoAbility' + id].apply();
-		storeBoosts['oppoAbility' + id] = false;
+	if (storeBoosts['ability' + id]) {
+		storeBoosts['ability' + id].apply();
+		storeBoosts['ability' + id] = false;
 	}
-	if (storeBoosts['multiOppoAbility' + id]) {
-		storeBoosts['multiOppoAbility' + id].apply();
-		storeBoosts['multiOppoAbility' + id] = false;
+	if (storeBoosts['multiAbility' + id]) {
+		storeBoosts['multiAbility' + id].apply();
+		storeBoosts['multiAbility' + id] = false;
 	}
 	if ($(this).is(':checked')) {
 		var ability = pokeInfo.find(".ability").val();
 		switch (ability) {
 			case "Intimidate":
-				lowerStatStage(oppoInfo, 'at', 1, 'oppoAbility' + id, true);
+				lowerStatStage(oppoInfo, 'at', 1, 'ability' + id, true);
+				break;
+			case 'Intrepid Sword':
+				raiseStatStage(pokeInfo, 'at', 1, 'ability' + id);
+				break;
+			case 'Dauntless Shield':
+				raiseStatStage(pokeInfo, 'df', 1, 'ability' + id);
 				break;
 			case "Mesmerize":
-				lowerStatStage(oppoInfo, 'sa', 1, 'oppoAbility' + id, true);
+				lowerStatStage(oppoInfo, 'sa', 1, 'ability' + id, true);
 				break;
 			case "Ha Ha You\'re Weak":
-				lowerStatStage(oppoInfo, 'at', 6, 'multiOppoAbility' + id);
-				lowerStatStage(oppoInfo, 'df', 6, 'multiOppoAbility' + id);
-				lowerStatStage(oppoInfo, 'sa', 6, 'multiOppoAbility' + id);
-				lowerStatStage(oppoInfo, 'sd', 6, 'multiOppoAbility' + id);
-				lowerStatStage(oppoInfo, 'sp', 6, 'multiOppoAbility' + id);
+				lowerStatStage(oppoInfo, 'at', 6, 'multiAbility' + id);
+				lowerStatStage(oppoInfo, 'df', 6, 'multiAbility' + id);
+				lowerStatStage(oppoInfo, 'sa', 6, 'multiAbility' + id);
+				lowerStatStage(oppoInfo, 'sd', 6, 'multiAbility' + id);
+				lowerStatStage(oppoInfo, 'sp', 6, 'multiAbility' + id);
 				break;
 		}
 	}
@@ -305,32 +312,64 @@ function abilityChange(pokeInfo) {
 		pokeInfo.find(moveSelector).find(".move-hits").val(moveHits);
 	}
 	
-	if (storeBoosts['selfAbility' + id]) {
-		storeBoosts['selfAbility' + id].apply();
-		storeBoosts['selfAbility' + id] = false;
+	if (storeBoosts['ability' + id]) {
+		storeBoosts['ability' + id].apply();
+		storeBoosts['ability' + id] = false;
 	}
-	if (storeBoosts['multiSelfAbility' + id]) {
-		storeBoosts['multiSelfAbility' + id].apply();
-		storeBoosts['multiSelfAbility' + id] = false;
+	if (storeBoosts['multiAbility' + id]) {
+		storeBoosts['multiAbility' + id].apply();
+		storeBoosts['multiAbility' + id] = false;
 	}
 	switch (ability) {
+		case 'Download':
+			var oppoInfo = id === "p1" ? $("#p2") : $("#p1");
+			var df = Number(oppoInfo.find(".df .total").text());
+			var sd = Number(oppoInfo.find(".sd .total").text());
+			if (sd > df) {
+				raiseStatStage(pokeInfo, 'at', 1, 'ability' + id);
+			} else {
+				raiseStatStage(pokeInfo, 'sa', 1, 'ability' + id);
+			}
+			break;
+		case 'Heavenly Shield':
+			var oppoInfo = id === "p1" ? $("#p2") : $("#p1");
+			var at = Number(oppoInfo.find(".at .total").text());
+			var sa = Number(oppoInfo.find(".sa .total").text());
+			if (at > sa) {
+				raiseStatStage(pokeInfo, 'df', 1, 'ability' + id);
+			} else {
+				raiseStatStage(pokeInfo, 'sd', 1, 'ability' + id);
+			}
+			break;
+		case 'Embody Aspect (Teal)':
+			raiseStatStage(pokeInfo, 'sp', 1, 'ability' + id);
+			break;
+		case 'Embody Aspect (Cornerstone)':
+			raiseStatStage(pokeInfo, 'df', 1, 'ability' + id);
+			break;
+		case 'Embody Aspect (Hearthflame)':
+			raiseStatStage(pokeInfo, 'at', 1, 'ability' + id);
+			break;
+		case 'Embody Aspect (Wellspring)':
+			raiseStatStage(pokeInfo, 'sd', 1, 'ability' + id);
+			break;
 		case 'Darkness Boost':
 		case 'Darkness Boost2':
-			raiseStatStage(pokeInfo, 'sp', 12, 'selfAbility' + id);
+			raiseStatStage(pokeInfo, 'sp', 12, 'ability' + id);
 			break;
 		case 'Untouchable':
-			raiseStatStage(pokeInfo, 'sp', 6, 'selfAbility' + id);
+			raiseStatStage(pokeInfo, 'sp', 6, 'ability' + id);
 			break;
 		case 'Untouchable2':
-			raiseStatStage(pokeInfo, 'sp', 2, 'selfAbility' + id);
+			raiseStatStage(pokeInfo, 'sp', 2, 'ability' + id);
 			break;
 		case 'Hydrochasm Surge++':
-			raiseStatStage(pokeInfo, 'df', 1, 'multiSelfAbility' + id);
-			raiseStatStage(pokeInfo, 'sd', 1, 'multiSelfAbility' + id);
+			raiseStatStage(pokeInfo, 'df', 1, 'multiAbility' + id);
+			raiseStatStage(pokeInfo, 'sd', 1, 'multiAbility' + id);
 			break;
 	}
 
-	var TOGGLE_ABILITIES = ['Flash Fire', 'Intimidate', 'Minus', 'Plus', 'Slow Start', 'Unburden', 'Stakeout', 'Teraform Zero', 'Lighten', 'Mesmerize', 'Ha Ha You\'re Weak', 'Ambusher'];
+	var TOGGLE_ABILITIES = ['Flash Fire', 'Intimidate', 'Minus', 'Plus', 'Slow Start', 'Unburden', 'Stakeout', 'Teraform Zero', 'Lighten', 'Mesmerize', 'Ha Ha You\'re Weak', 'Ambusher', 'Intrepid Sword', 'Dauntless Shield'];
 
 	if (TOGGLE_ABILITIES.includes(ability)) {
 		pokeInfo.find(".abilityToggle").show();
@@ -1483,6 +1522,9 @@ function calcStat(poke, StatID) {
 		total *= 2;
 	}
 	stat.find(".total").text(total);
+	if (!['hp', 'sp'].includes(StatID)) {
+		abilityChange(poke.attr('id') === "p1" ? $("#p2") : $("#p1"));
+	}
 	return total;
 }
 

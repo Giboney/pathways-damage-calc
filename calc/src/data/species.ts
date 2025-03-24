@@ -9560,7 +9560,7 @@ const SV_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
     abilities: {0: 'Sturdy'},
     weightkg: 39.8,
     baseSpecies: 'Ogerpon',
-  },
+  },/*
   'Ogerpon-Teal-Tera': {
     types: ['Grass'],
     bs: {hp: 80, at: 120, df: 84, sa: 60, sd: 96, sp: 110},
@@ -9588,7 +9588,7 @@ const SV_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
     abilities: {0: 'Embody Aspect (Cornerstone)'},
     weightkg: 39.8,
     baseSpecies: 'Ogerpon',
-  },
+  },*/
   Oinkologne: {
     types: ['Normal'],
     bs: {hp: 110, at: 100, df: 75, sa: 59, sd: 80, sp: 65},
@@ -11378,10 +11378,10 @@ const PATHWAYS_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
   'Ogerpon-Wellspring': {types: ['Water', 'Grass'], bs: {hp: 80, at: 120, df: 84, sa: 60, sd: 96, sp: 110}, abilities: {0: 'Water Absorb'}, weightkg: 39.8, baseSpecies: 'Ogerpon',},
   'Ogerpon-Hearthflame': {types: ['Fire', 'Grass'], bs: {hp: 80, at: 120, df: 84, sa: 60, sd: 96, sp: 110}, abilities: {0: 'Mold Breaker'}, weightkg: 39.8, baseSpecies: 'Ogerpon',},
   'Ogerpon-Cornerstone': {types: ['Rock', 'Grass'], bs: {hp: 80, at: 120, df: 84, sa: 60, sd: 96, sp: 110}, abilities: {0: 'Sturdy'}, weightkg: 39.8, baseSpecies: 'Ogerpon',},
-  'Ogerpon-Teal-Tera': {types: ['Grass'], bs: {hp: 80, at: 120, df: 84, sa: 60, sd: 96, sp: 110}, abilities: {0: 'Embody Aspect'}, weightkg: 39.8, baseSpecies: 'Ogerpon',},
-  'Ogerpon-Wellspring-Tera': {types: ['Water'], bs: {hp: 80, at: 120, df: 84, sa: 60, sd: 96, sp: 110}, abilities: {0: 'Embody Aspect'}, weightkg: 39.8, baseSpecies: 'Ogerpon',},
-  'Ogerpon-Hearthflame-Tera': {types: ['Fire'], bs: {hp: 80, at: 120, df: 84, sa: 60, sd: 96, sp: 110}, abilities: {0: 'Embody Aspect'}, weightkg: 39.8, baseSpecies: 'Ogerpon',},
-  'Ogerpon-Cornerstone-Tera': {types: ['Rock'], bs: {hp: 80, at: 120, df: 84, sa: 60, sd: 96, sp: 110}, abilities: {0: 'Embody Aspect'}, weightkg: 39.8, baseSpecies: 'Ogerpon',},
+  'Ogerpon-Teal-Tera': {types: ['Grass'], bs: {hp: 80, at: 120, df: 84, sa: 60, sd: 96, sp: 110}, abilities: {0: 'Embody Aspect (Teal)'}, weightkg: 39.8, baseSpecies: 'Ogerpon',},
+  'Ogerpon-Wellspring-Tera': {types: ['Water'], bs: {hp: 80, at: 120, df: 84, sa: 60, sd: 96, sp: 110}, abilities: {0: 'Embody Aspect (Wellspring)'}, weightkg: 39.8, baseSpecies: 'Ogerpon',},
+  'Ogerpon-Hearthflame-Tera': {types: ['Fire'], bs: {hp: 80, at: 120, df: 84, sa: 60, sd: 96, sp: 110}, abilities: {0: 'Embody Aspect (Hearthflame)'}, weightkg: 39.8, baseSpecies: 'Ogerpon',},
+  'Ogerpon-Cornerstone-Tera': {types: ['Rock'], bs: {hp: 80, at: 120, df: 84, sa: 60, sd: 96, sp: 110}, abilities: {0: 'Embody Aspect (Cornerstone)'}, weightkg: 39.8, baseSpecies: 'Ogerpon',},
   'Combee-Royal-Guard': {types: ['Bug', 'Flying'], bs: {hp: 30, at: 105, df: 42, sa: 105, sd: 42, sp: 150}, abilities: {0: 'Honey Gather'}, weightkg: 5.5, baseSpecies: 'Combee',},
   'Lokix-Showdown-Mode': {types: ['Bug', 'Dark'], bs: {hp: 71, at: 142, df: 38, sa: 52, sd: 25, sp: 122}, abilities: {0: 'Swarm'}, weightkg: 17.5, baseSpecies: 'Lokix',},
   'Terapagos-Terastal': {types: ['Normal'], bs: {hp: 95, at: 95, df: 110, sa: 105, sd: 110, sp: 85}, abilities: {0: 'Tera Shell'}, weightkg: 16.0, baseSpecies: 'Terapagos',},

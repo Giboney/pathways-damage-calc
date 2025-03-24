@@ -1,3 +1,4 @@
+//PATHWAYS DAMAGE CALC IN Move_Usage_Calculations.rb -> def pbCalcDamage
 import type {Generation, AbilityName, StatID, Terrain} from '../data/interface';
 import {toID} from '../util';
 import {
@@ -7,7 +8,6 @@ import {
   getMultiAttack,
   getNaturalGift,
   getTechnoBlast,
-  SEED_BOOSTED_STAT,
 } from '../items';
 import type {RawDesc} from '../desc';
 import type {Field} from '../field';
@@ -17,16 +17,10 @@ import {Result} from '../result';
 import {
   chainMods,
   checkAirLock,
-  checkDauntlessShield,
-  checkDownload,
-  checkEmbody,
   checkForecast,
   checkInfiltrator,
-  checkIntimidate,
-  checkIntrepidSword,
   checkItem,
   checkMultihitBoost,
-  checkSeedBoost,
   checkTeraformZero,
   checkWindRider,
   checkWonderRoom,
@@ -71,21 +65,8 @@ export function calculatePathways(
   checkItem(defender, field.isMagicRoom);
   checkWonderRoom(attacker, field.isWonderRoom);
   checkWonderRoom(defender, field.isWonderRoom);
-  checkSeedBoost(attacker, field);
-  checkSeedBoost(defender, field);
-  checkDauntlessShield(attacker, gen);
-  checkDauntlessShield(defender, gen);
-  checkEmbody(attacker, gen);
-  checkEmbody(defender, gen);
 
   computeFinalStats(gen, attacker, defender, field, 'def', 'spd', 'spe');
-
-  checkIntimidate(gen, attacker, defender);
-  checkIntimidate(gen, defender, attacker);
-  checkDownload(attacker, defender, field.isWonderRoom);
-  checkDownload(defender, attacker, field.isWonderRoom);
-  checkIntrepidSword(attacker, gen);
-  checkIntrepidSword(defender, gen);
 
   checkWindRider(attacker, field.attackerSide);
   checkWindRider(defender, field.defenderSide);
@@ -595,14 +576,6 @@ export function calculatePathways(
     desc,
     isCritical
   );
-
-  if (hasTerrainSeed(defender) &&
-    field.hasTerrain(defender.item!.substring(0, defender.item!.indexOf(' ')) as Terrain) &&
-    SEED_BOOSTED_STAT[defender.item!] === defenseStat) {
-    // Last condition applies so the calc doesn't show a seed where it wouldn't affect the outcome
-    // (like Grassy Seed when being hit by a special move)
-    desc.defenderItem = defender.item;
-  }
 
   // the random factor is applied between the crit mod and the stab mod, so don't apply anything
   // below this until we're inside the loop
@@ -1872,6 +1845,3 @@ export function calculateFinalModsPathways(
   return finalMods;
 }
 
-function hasTerrainSeed(pokemon: Pokemon) {
-  return pokemon.hasItem('Electric Seed', 'Misty Seed', 'Grassy Seed', 'Psychic Seed');
-}
