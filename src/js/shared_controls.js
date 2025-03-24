@@ -256,19 +256,21 @@ $(".abilityToggle").on("change", function() {
 	var pokeInfo = $(this).closest(".poke-info");
 	var id = pokeInfo.attr('id');
 	var oppoInfo = id === "p1" ? $("#p2") : $("#p1");
+	if (storeBoosts['oppoAbility' + id]) {
+		storeBoosts['oppoAbility' + id].apply();
+		storeBoosts['oppoAbility' + id] = false;
+	}
+	if (storeBoosts['multiOppoAbility' + id]) {
+		storeBoosts['multiOppoAbility' + id].apply();
+		storeBoosts['multiOppoAbility' + id] = false;
+	}
 	if ($(this).is(':checked')) {
 		var ability = pokeInfo.find(".ability").val();
 		switch (ability) {
 			case "Intimidate":
-				if (storeBoosts['oppoAbility' + id]) {
-					storeBoosts['oppoAbility' + id].apply();
-				}
 				lowerStatStage(oppoInfo, 'at', 1, 'oppoAbility' + id, true);
 				break;
 			case "Mesmerize":
-				if (storeBoosts['oppoAbility' + id]) {
-					storeBoosts['oppoAbility' + id].apply();
-				}
 				lowerStatStage(oppoInfo, 'sa', 1, 'oppoAbility' + id, true);
 				break;
 			case "Ha Ha You\'re Weak":
@@ -278,15 +280,6 @@ $(".abilityToggle").on("change", function() {
 				lowerStatStage(oppoInfo, 'sd', 6, 'multiOppoAbility' + id);
 				lowerStatStage(oppoInfo, 'sp', 6, 'multiOppoAbility' + id);
 				break;
-		}
-	} else {		
-		if (storeBoosts['oppoAbility' + id]) {
-			storeBoosts['oppoAbility' + id].apply();
-			storeBoosts['oppoAbility' + id] = false;
-		}
-		if (storeBoosts['multiOppoAbility' + id]) {
-			storeBoosts['multiOppoAbility' + id].apply();
-			storeBoosts['multiOppoAbility' + id] = false;
 		}
 	}
 	
@@ -324,13 +317,17 @@ function abilityChange(pokeInfo) {
 		case 'Darkness Boost':
 		case 'Darkness Boost2':
 			raiseStatStage(pokeInfo, 'sp', 12, 'selfAbility' + id);
+			break;
 		case 'Untouchable':
 			raiseStatStage(pokeInfo, 'sp', 6, 'selfAbility' + id);
-		case ' Untouchable2':
+			break;
+		case 'Untouchable2':
 			raiseStatStage(pokeInfo, 'sp', 2, 'selfAbility' + id);
-		case ' Hydrochasm Surge++':
+			break;
+		case 'Hydrochasm Surge++':
 			raiseStatStage(pokeInfo, 'df', 1, 'multiSelfAbility' + id);
 			raiseStatStage(pokeInfo, 'sd', 1, 'multiSelfAbility' + id);
+			break;
 	}
 
 	var TOGGLE_ABILITIES = ['Flash Fire', 'Intimidate', 'Minus', 'Plus', 'Slow Start', 'Unburden', 'Stakeout', 'Teraform Zero', 'Lighten', 'Mesmerize', 'Ha Ha You\'re Weak', 'Ambusher'];
@@ -345,7 +342,6 @@ function abilityChange(pokeInfo) {
 	var boostedStat = pokeInfo.find(".boostedStat");
 	if (ability === "Protosynthesis" || ability === "Quark Drive" || ability === "Ya Estas Cocinado") {
 		boostedStat.show();
-		autosetQP(pokeInfo);
 	} else {
 		boostedStat.val("");
 		boostedStat.hide();
@@ -357,14 +353,12 @@ function abilityChange(pokeInfo) {
 		pokeInfo.find(".alliesFainted").val('0');
 		pokeInfo.find(".alliesFainted").hide();
 	}
-	autosetWeather(ability, 0);
-	autosetTerrain(ability, 0);
-	autosetQP(pokeInfo);
 }
 
 $(".ability").bind("keyup change", function() {
 	var pokeInfo = $(this).closest(".poke-info");
 	var oppoInfo = pokeInfo.attr('id') === "p1" ? $("#p2") : $("#p1");
+	//reset weather and terrain before ability check if not set manually
 	if (!lastManualWeather) {
 		autosetWeather("None", 0);
 	}
@@ -373,6 +367,15 @@ $(".ability").bind("keyup change", function() {
 	}
 	abilityChange(pokeInfo);
 	abilityChange(oppoInfo);
+	
+	//get weather and terrain oppo first so this poke overrides
+	//then check QP after weather and terrain check
+	autosetWeather(oppoInfo.find(".ability").val(), 0);
+	autosetTerrain(oppoInfo.find(".ability").val(), 0);
+	autosetWeather(pokeInfo.find(".ability").val(), 0);
+	autosetTerrain(pokeInfo.find(".ability").val(), 0);
+	autosetQP(pokeInfo);
+	autosetQP(oppoInfo);
 });
 
 function autosetQP(pokemon) {
@@ -419,7 +422,6 @@ function autosetWeather(ability, i) {
 		return;
 	}
 	var currentWeather = $("input:radio[name='weather']:checked").val();
-	lastManualWeather = false;
 	if (lastAutoWeather.indexOf(currentWeather) === -1) {
 		lastAutoWeather[1 - i] = "";
 	}
@@ -483,6 +485,9 @@ function autosetWeather(ability, i) {
 	var weather = $("input:radio[name='weather']:checked").val();
 	if (terrain === "Frozen Kingdom" && weather !== "Snow") {
 		autosetTerrain("None", 0);
+	}
+	if (currentWeather !== weather) {
+		lastManualWeather = false;
 	}
 }
 
@@ -548,7 +553,9 @@ function autosetTerrain(ability, i) {
 			$("#frozen-kingdom").prop("checked", true);
 			break;
 		default:
+			//if ability did not change terrain, recheck previous terrain and keep manual terrain
 			lastTerrain.prop("checked", true);
+			lastManualTerrain = lastTerrain.val();
 	}
 	var weather = $("input:radio[name='weather']:checked").val();
 	var terrain = $("input:checkbox[name='terrain']:checked").val();
@@ -704,6 +711,30 @@ $(".move-selector").change(function () {
 	moveGroupObj.children(".move-z").prop("checked", false);
 });
 
+function checkBoostItem(pokeInfo) {
+	var itemName = pokeInfo.find(".item").val();
+	var id = pokeInfo.attr('id');
+	if (storeBoosts['selfItem' + id]) {
+		storeBoosts['selfItem' + id].apply();
+		storeBoosts['selfItem' + id] = false;
+	}
+	if (itemName.includes('Seed')) {
+		var terrain = $("input:checkbox[name='terrain']:checked").val();
+		var seed = itemName.split(' ', 1)[0];
+		if (terrain === seed || (seed === "Electric" && terrain === "Faraday Cage")) {
+			switch (seed) {
+				case "Grassy":
+				case "Electric":
+					raiseStatStage(pokeInfo, 'df', 1, 'selfItem' + id);
+					break;
+				case "Misty":
+				case "Psychic":
+					raiseStatStage(pokeInfo, 'sd', 1, 'selfItem' + id);
+			}
+		}
+	}
+}
+
 $(".item").change(function () {
 	var itemName = $(this).val();
 	var pokeInfo = $(this).closest('.poke-info');
@@ -730,26 +761,9 @@ $(".item").change(function () {
 		pokeInfo.find(moveSelector).find(".move-hits").val(moveHits);
 	}
 	
-	if (storeBoosts['selfItem']) {
-		storeBoosts['selfItem'].apply();
-		storeBoosts['selfItem'] = false;
-	}
-	if (itemName.includes('Seed')) {
-		var terrain = pokeInfo.find("input:checkbox[name='terrain']:checked").val();
-		var seed = itemName.split(' ', 1)[0];
-		if (terrain === seed || seed === "Electric" && terrain === "Faraday Cage") {
-			switch (seed) {
-				case "Grassy":
-				case "Electric":
-					raiseStatStage(pokeInfo, 'df', 1, 'selfItem');
-				case "Misty":
-				case "Psychic":
-					raiseStatStage(pokeInfo, 'sd', 1, 'selfItem');
-			}
-		}
-	}
+	checkBoostItem(pokeInfo);
 	
-	pokeInfo.find(".ability").change();
+	pokeInfo.find(".ability").change();//in case item change affects ability effects
 });
 
 function smogonAnalysis(pokemonName) {
@@ -930,16 +944,7 @@ $(".set-selector").change(function () {
 		if (pokemon.baseSpecies && pokemon.baseSpecies !== pokemon.name) {
 			baseForme = pokedex[pokemon.baseSpecies];
 		}
-		//showFormes includes ability check
-		if (pokemon.otherFormes) {
-			showFormes(formeObj, pokemonName, pokemon, pokemonName);
-		} else if (baseForme && baseForme.otherFormes) {
-			showFormes(formeObj, pokemonName, baseForme, pokemon.baseSpecies);
-		} else {
-			formeObj.hide();
-		}
-		calcHP(pokeObj);
-		calcStats(pokeObj);
+		//do this before any ability checks to avoid double procs
 		var id = pokeObj.attr('id');
 		var oppoID = id === "p1" ? "p2" : "p1";
 		for (i in storeBoosts) {
@@ -953,6 +958,16 @@ $(".set-selector").change(function () {
 				}
 			}
 		}
+		//showFormes includes ability check
+		if (pokemon.otherFormes) {
+			showFormes(formeObj, pokemonName, pokemon, pokemonName);
+		} else if (baseForme && baseForme.otherFormes) {
+			showFormes(formeObj, pokemonName, baseForme, pokemon.baseSpecies);
+		} else {
+			formeObj.hide();
+		}
+		calcHP(pokeObj);
+		calcStats(pokeObj);
 		abilityObj.change();
 		itemObj.change();
 		if (pokemon.gender === "N") {
@@ -1952,15 +1967,21 @@ function getTerrainEffects() {
 		if (typesP1.some((e) => ['Normal', 'Psychic'].includes(e))) {
 			$("#p1").find(".status").val("Asleep");
 			$("#p1" + " .status").change();
+		} else if ($("#p1 .status").val() === "Asleep") {
+			$("#p1").find(".status").val("Healthy");
+			$("#p1").find(".status").change();
 		}
 		if (typesP2.some((e) => ['Normal', 'Psychic'].includes(e))) {
 			$("#p2").find(".status").val("Asleep");
 			$("#p2" + " .status").change();
+		} else if ($("#p2 .status").val() === "Asleep") {
+			$("#p2").find(".status").val("Healthy");
+			$("#p2").find(".status").change();
 		}
 	} else {
 		if ($("#p1 .status").val() === "Asleep" || !$("#p1 .status").val()) {
-				$("#p1").find(".status").val("Healthy");
-				$("#p1").find(".status").change();
+			$("#p1").find(".status").val("Healthy");
+			$("#p1").find(".status").change();
 		}
 		if ($("#p2 .status").val() === "Asleep" || !$("#p2 .status").val()) {
 			$("#p2").find(".status").val("Healthy");
@@ -1969,18 +1990,18 @@ function getTerrainEffects() {
 	}
 
 	//frozen kingdom
-	if (terrainValue === "Frozen Kingdom") { //else speed will keep getting lowered on all terrain triggers
+	if (terrainValue === "Frozen Kingdom") {
 		if (!typesP1.includes('Ice')) {
-			if (storeBoosts['Frozen Kingdom1']) {
+			if (storeBoosts['Frozen Kingdom1']) { //else speed will keep getting lowered on all terrain triggers
 				storeBoosts['Frozen Kingdom1'].apply();
 			}
-			lowerStatStage($("#p1"), 'sp', 1, 'Frozen Kingdom1', false);
+			lowerStatStage($("#p1"), 'sp', 1, 'Frozen Kingdom1');
 		}
 		if (!typesP2.includes('Ice')) {
 			if (storeBoosts['Frozen Kingdom2']) {
 				storeBoosts['Frozen Kingdom2'].apply();
 			}
-			lowerStatStage($("#p2"), 'sp', 1, 'Frozen Kingdom2', false);
+			lowerStatStage($("#p2"), 'sp', 1, 'Frozen Kingdom2');
 		}
 		if (!weather) {
 			stickyWeather.clearStickyWeather();
@@ -1994,9 +2015,12 @@ function getTerrainEffects() {
 			autosetWeather("None", 0);
 		}
 	}
+	
+	checkBoostItem($("#p1"));
+	checkBoostItem($("#p2"));
 }
 
-function raiseStatStage(pokeInfo, stat, numStages, source, intim = false) {
+function raiseStatStage(pokeInfo, stat, numStages, source) {
 	var types = [pokeInfo.find(".type1").val(), pokeInfo.find(".type2").val()];
 	var ability = pokeInfo.find(".ability").val();
 	var item = pokeInfo.find(".item").val();
@@ -2074,11 +2098,11 @@ function lowerStatStage(pokeInfo, stat, numStages, source, intim = false) {
 		}
 	}
 	var after = new Boosts($("#" + id));
-	if (!source.includes('multi') || !storeBoosts[source]) {
-		storeBoosts[source] = before.minus(after);
-	} else {
+	if (source.includes('multi') && storeBoosts[source]) {
 		var more = before.minus(after);
 		storeBoosts[source].plus(more);
+	} else {
+		storeBoosts[source] = before.minus(after);
 	}
 }
 
