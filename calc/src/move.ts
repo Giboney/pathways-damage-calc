@@ -162,14 +162,10 @@ export class Move implements State.Move {
     this.isMax = !!data.isMax;
     this.multiaccuracy = !!data.multiaccuracy;
 
-    if (!this.bp) {
+    if (!this.bp || this.bp === 1) {
       // Assume max happiness for these moves because the calc doesn't support happiness
       if (['return', 'frustration', 'pikapapow', 'veeveevolley'].includes(data.id)) {
         this.bp = 102;
-      }
-      // Assume max aura for these moves because I was too lazy to add an aura field.
-      if (['illintent', 'justifiedblow', 'unbiasedassault'].includes(data.id)) {
-        this.bp = 105;
       }
     }
   }

@@ -1320,8 +1320,8 @@ function createPokemon(pokeInfo) {
 		};
 
 		// Pathways Stuff
-		var light_aura = pokeInfo.find(".lightaura").val();
-		var dark_aura = pokeInfo.find(".darkaura").val();
+		var light_aura = Number(pokeInfo.find(".lightaura").val());
+		var dark_aura = Number(pokeInfo.find(".darkaura").val());
 		var alignment = pokeInfo.find(".alignment").val();
 
 		var roleName = pokeInfo.find(".role").val();
@@ -1744,7 +1744,7 @@ function clearField() {
 	$("#switchingR").prop("checked", false);
 	$("input:checkbox[name='terrain']").prop("checked", false);
 	// my additions
-	$("#hchargeL").prop("checked", false);
+	$("#chargeL").prop("checked", false);
 	$("#chargeR").prop("checked", false);
 }
 

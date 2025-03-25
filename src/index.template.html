@@ -149,7 +149,7 @@
                     We use inputmode="decimal" so that mobile devices will have a numpad appear when inputting values.
                     https://css-tricks.com/everything-you-ever-wanted-to-know-about-inputmode/#aa-decimal
                     -->
-                    <input class="level calc-trigger" id="levelL1" value="120" inputmode="decimal" />
+                    <input class="level calc-trigger" type="number" id="levelL1" value="120" min="0" max="120" inputmode="decimal" />
                 </div>
                 <div class="hide">
                     <label for="weightL1">Weight (kg)</label>
@@ -159,16 +159,24 @@
                 <div>
                     <label>Role</label>
                     <select aria-label="role" class="role calc-trigger"></select>
-						  <select aria-label="role-rank" class="rank calc-trigger hide"><option>Apprentice</option><option>Expert</option><option>Master</option></select>
+				    <select aria-label="role-rank" class="rank calc-trigger hide">
+                        <option>Apprentice</option>
+                        <option>Expert</option>
+                        <option>Master</option>
+                    </select>
                 </div>
                 <div>
                     <label for="lightauraL1">Light Aura</label>
-                    <input class="lightaura calc-trigger" id="lightauraL1" value="50" inputmode="decimal"/>
+                    <input class="lightaura calc-trigger" type="number" id="lightauraL1" value="50" min="0" inputmode="decimal" style="margin-right: 5px"/>
                     <label for="darkauraL1">Dark Aura</label>
-                    <input class="darkaura calc-trigger" id="darkauraL1" value="50" inputmode="decimal" />
+                    <input class="darkaura calc-trigger" type="number" id="darkauraL1" value="50" min="0" inputmode="decimal" style="margin-right: 5px"/>
 
                     <label>Alignment</label>
-						  <select class="alignment calc-trigger"><option></option><option selected="selected">Neutral</option><option>Shiny</option><option>Shadow</option></select>
+                    <select class="alignment calc-trigger">
+                        <option>Neutral</option>
+                        <option>Shiny</option>
+                        <option>Shadow</option>
+                    </select>
                 </div>
             </div>
             <div class="info-group">
@@ -1033,7 +1041,7 @@
                 </div>
                 <div>
                     <label for="levelR1">Level</label>
-                    <input class="level calc-trigger" id="levelR1" value="120" inputmode="decimal" />
+                    <input class="level calc-trigger" type="number" id="levelR1" value="120" min="0" max="120" inputmode="decimal" />
                 </div>
                 <div class="hide">
                     <label for="weightR1">Weight (kg)</label>
@@ -1047,9 +1055,9 @@
                 </div>
                 <div>
                     <label for="lightauraR1">Light Aura</label>
-                    <input class="lightaura calc-trigger" id="lightauraR1" value="50" inputmode="decimal"/>
+                    <input class="lightaura calc-trigger" type="number" id="lightauraR1" value="50" inputmode="decimal"/>
                     <label for="darkauraR1">Dark Aura</label>
-                    <input class="darkaura calc-trigger" id="darkauraR1" value="50" inputmode="decimal" />
+                    <input class="darkaura calc-trigger" type="number" id="darkauraR1" value="50" inputmode="decimal" />
                     <label>Alignment</label>
 						  <select class="alignment calc-trigger"><option></option><option selected="selected">Neutral</option><option>Shiny</option><option>Shadow</option></select>
                 </div>

@@ -341,7 +341,7 @@ const SV = SS.concat([
 
 const PATHWAYS = SV.concat([
   //add neutralizing gas immune stuff later
-  'Burn Out',//irrelevant
+  'Burn Out',//irrelevant use for multihit? no thanks
   'Who\'s Next',//not used/irrelevant
   'Raijin\'s Will',//irrelevant
   'Tsukuyomi',//sleep oppo unless ability prevents

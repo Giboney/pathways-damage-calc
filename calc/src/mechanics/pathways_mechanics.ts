@@ -1,4 +1,6 @@
 //PATHWAYS DAMAGE CALC IN Move_Usage_Calculations.rb -> def pbCalcDamage
+//going to need a complete restructure of the calc to be accurate
+//this will take months fuckkkk
 import type {Generation, AbilityName, StatID, Terrain} from '../data/interface';
 import {toID} from '../util';
 import {
@@ -746,208 +748,224 @@ export function calculateBasePowerPathways(
   let basePower: number;
 
   switch (move.name) {
-  case 'Payback':
-    basePower = move.bp * (turnOrder === 'last' ? 2 : 1);
-    desc.moveBP = basePower;
-    break;
-  case 'Bolt Beak':
-  case 'Fishious Rend':
-    basePower = move.bp * (turnOrder !== 'last' ? 2 : 1);
-    desc.moveBP = basePower;
-    break;
-  case 'Pursuit':
-    const switching = field.defenderSide.isSwitching === 'out';
-    basePower = move.bp * (switching ? 2 : 1);
-    if (switching) desc.isSwitching = 'out';
-    desc.moveBP = basePower;
-    break;
-  case 'Electro Ball':
-    const r = Math.floor(attacker.stats.spe / defender.stats.spe);
-    basePower = r >= 4 ? 150 : r >= 3 ? 120 : r >= 2 ? 80 : r >= 1 ? 60 : 40;
-    if (defender.stats.spe === 0) basePower = 40;
-    desc.moveBP = basePower;
-    break;
-  case 'Gyro Ball':
-    basePower = Math.min(150, Math.floor((25 * defender.stats.spe) / attacker.stats.spe) + 1);
-    if (attacker.stats.spe === 0) basePower = 1;
-    desc.moveBP = basePower;
-    break;
-  case 'Punishment':
-    basePower = Math.min(200, 60 + 20 * countBoosts(gen, defender.boosts));
-    desc.moveBP = basePower;
-    break;
-  case 'Low Kick':
-  case 'Grass Knot':
-    const w = getWeight(defender, desc, 'defender');
-    basePower = w >= 200 ? 120 : w >= 100 ? 100 : w >= 50 ? 80 : w >= 25 ? 60 : w >= 10 ? 40 : 20;
-    desc.moveBP = basePower;
-    break;
-  case 'Hex':
-  case 'Infernal Parade':
-    // Hex deals double damage to Pokemon with Comatose (ih8ih8sn0w)
-    basePower = move.bp * (defender.status || defender.hasAbility('Comatose') ? 2 : 1);
-    desc.moveBP = basePower;
-    break;
-  case 'Barb Barrage':
-    basePower = move.bp * (defender.hasStatus('psn', 'tox') ? 2 : 1);
-    desc.moveBP = basePower;
-    break;
-  case 'Holy Water':
-    basePower = move.bp * (defender.hasStatus('slp', 'psn', 'brn', 'frz', 'par', 'tox') ? 2 : 1);
-    desc.moveBP = basePower;
-    break;
-  case 'Heavy Slam':
-  case 'Heat Crash':
-    const wr =
-        getWeight(attacker, desc, 'attacker') /
-        getWeight(defender, desc, 'defender');
-    basePower = wr >= 5 ? 120 : wr >= 4 ? 100 : wr >= 3 ? 80 : wr >= 2 ? 60 : 40;
-    desc.moveBP = basePower;
-    break;
-  case 'Stored Power':
-  case 'Power Trip':
-    basePower = 20 + 20 * countBoosts(gen, attacker.boosts);
-    desc.moveBP = basePower;
-    break;
-  case 'Acrobatics':
-    basePower = move.bp * (attacker.hasItem('Flying Gem') ||
-        (!attacker.item || isQPActive(attacker, field)) ? 2 : 1);
-    desc.moveBP = basePower;
-    break;
-  case 'Assurance':
-    basePower = move.bp * (defender.hasAbility('Parental Bond (Child)') ? 2 : 1);
-    // NOTE: desc.attackerAbility = 'Parental Bond' will already reflect this boost
-    break;
-  case 'Wake-Up Slap':
-    // Wake-Up Slap deals double damage to Pokemon with Comatose (ih8ih8sn0w)
-    basePower = move.bp * (defender.hasStatus('slp') || defender.hasAbility('Comatose') ? 2 : 1);
-    desc.moveBP = basePower;
-    break;
-  case 'Smelling Salts':
-    basePower = move.bp * (defender.hasStatus('par') ? 2 : 1);
-    desc.moveBP = basePower;
-    break;
-  case 'Weather Bomb':
-  case 'Weather Ball':
-    basePower = move.bp * (field.weather && !field.hasWeather('Strong Winds') ? 2 : 1);
-    if (field.hasWeather('Sun', 'Harsh Sunshine', 'Rain', 'Heavy Rain') &&
-      attacker.hasItem('Utility Umbrella')) basePower = move.bp;
-    desc.moveBP = basePower;
-    break;
-  case 'Terrain Pulse':
-    basePower = move.bp * (isGrounded(attacker, field) && field.terrain ? 2 : 1);
-    desc.moveBP = basePower;
-    break;
-  case 'Rising Voltage':
-    basePower = move.bp * ((isGrounded(defender, field) && field.hasTerrain('Electric')) ? 2 : 1);
-    desc.moveBP = basePower;
-    break;
-  case 'Psyblade':
-    basePower = move.bp * (field.hasTerrain('Electric') ? 1.5 : 1);
-    if (field.hasTerrain('Electric')) {
+    case 'Payback':
+      basePower = move.bp * (turnOrder === 'last' ? 2 : 1);
       desc.moveBP = basePower;
-      desc.terrain = field.terrain;
-    }
-    break;
-  case 'Fling':
-    basePower = getFlingPower(attacker.item);
-    desc.moveBP = basePower;
-    desc.attackerItem = attacker.item;
-    break;
-  case 'Dragon Energy':
-  case 'Eruption':
-  case 'Water Spout':
-    basePower = Math.max(1, Math.floor((150 * attacker.curHP()) / attacker.maxHP()));
-    desc.moveBP = basePower;
-    break;
-  case 'Flail':
-  case 'Reversal':
-    const p = Math.floor((48 * attacker.curHP()) / attacker.maxHP());
-    basePower = p <= 1 ? 200 : p <= 4 ? 150 : p <= 9 ? 100 : p <= 16 ? 80 : p <= 32 ? 40 : 20;
-    desc.moveBP = basePower;
-    break;
-  case 'Natural Gift':
-    if (attacker.item?.endsWith('Berry')) {
-      const gift = getNaturalGift(gen, attacker.item)!;
-      basePower = gift.p;
-      desc.attackerItem = attacker.item;
-      desc.moveBP = move.bp;
-    } else {
-      basePower = move.bp;
-    }
-    break;
-  case 'Nature Power':
-    move.category = 'Special';
-    move.secondaries = true;
-
-    // Nature Power cannot affect Dark-types if it is affected by Prankster
-    if (attacker.hasAbility('Prankster') && defender.types.includes('Dark')) {
-      basePower = 0;
-      desc.moveName = 'Nature Power';
-      desc.attackerAbility = 'Prankster';
       break;
-    }
-    switch (field.terrain) {
-    case 'Electric':
-      basePower = 90;
-      desc.moveName = 'Thunderbolt';
+    case 'Bolt Beak':
+    case 'Fishious Rend':
+      basePower = move.bp * (turnOrder !== 'last' ? 2 : 1);
+      desc.moveBP = basePower;
       break;
-    case 'Grassy':
-      basePower = 90;
-      desc.moveName = 'Energy Ball';
+    case 'Pursuit':
+      const switching = field.defenderSide.isSwitching === 'out';
+      basePower = move.bp * (switching ? 2 : 1);
+      if (switching) desc.isSwitching = 'out';
+      desc.moveBP = basePower;
       break;
-    case 'Misty':
-      basePower = 95;
-      desc.moveName = 'Moonblast';
+    case 'Electro Ball':
+      const r = Math.floor(attacker.stats.spe / defender.stats.spe);
+      basePower = r >= 4 ? 150 : r >= 3 ? 120 : r >= 2 ? 80 : r >= 1 ? 60 : 40;
+      if (defender.stats.spe === 0) basePower = 40;
+      desc.moveBP = basePower;
       break;
-    case 'Psychic':
-      // Nature Power does not affect grounded Pokemon if it is affected by
-      // Prankster and there is Psychic Terrain active
-      if (attacker.hasAbility('Prankster') && isGrounded(defender, field)) {
-        basePower = 0;
-        desc.attackerAbility = 'Prankster';
-      } else {
-        basePower = 90;
-        desc.moveName = 'Psychic';
+    case 'Gyro Ball':
+      basePower = Math.min(150, Math.floor((25 * defender.stats.spe) / attacker.stats.spe) + 1);
+      if (attacker.stats.spe === 0) basePower = 1;
+      desc.moveBP = basePower;
+      break;
+    case 'Punishment':
+      basePower = Math.min(200, 60 + 20 * countBoosts(gen, defender.boosts));
+      desc.moveBP = basePower;
+      break;
+    case 'Low Kick':
+    case 'Grass Knot':
+      const w = getWeight(defender, desc, 'defender');
+      basePower = w >= 200 ? 120 : w >= 100 ? 100 : w >= 50 ? 80 : w >= 25 ? 60 : w >= 10 ? 40 : 20;
+      desc.moveBP = basePower;
+      break;
+    case 'Hex':
+    case 'Infernal Parade':
+      // Hex deals double damage to Pokemon with Comatose (ih8ih8sn0w)
+      basePower = move.bp * (defender.status || defender.hasAbility('Comatose') ? 2 : 1);
+      desc.moveBP = basePower;
+      break;
+    case 'Barb Barrage':
+      basePower = move.bp * (defender.hasStatus('psn', 'tox') ? 2 : 1);
+      desc.moveBP = basePower;
+      break;
+    case 'Holy Water':
+      basePower = move.bp * (defender.hasStatus('slp', 'psn', 'brn', 'fbt', 'par', 'tox') ? 2 : 1);
+      desc.moveBP = basePower;
+      break;
+    case 'Heavy Slam':
+    case 'Heat Crash':
+      const wr =
+          getWeight(attacker, desc, 'attacker') /
+          getWeight(defender, desc, 'defender');
+      basePower = wr >= 5 ? 120 : wr >= 4 ? 100 : wr >= 3 ? 80 : wr >= 2 ? 60 : 40;
+      desc.moveBP = basePower;
+      break;
+    case 'Stored Power':
+    case 'Power Trip':
+      basePower = 20 + 20 * countBoosts(gen, attacker.boosts);
+      desc.moveBP = basePower;
+      break;
+    case 'Acrobatics':
+      basePower = move.bp * (attacker.hasItem('Flying Gem') ||
+          (!attacker.item || isQPActive(attacker, field)) ? 2 : 1);
+      desc.moveBP = basePower;
+      break;
+    case 'Assurance':
+      basePower = move.bp * (defender.hasAbility('Parental Bond (Child)') ? 2 : 1);
+      // NOTE: desc.attackerAbility = 'Parental Bond' will already reflect this boost
+      break;
+    case 'Wake-Up Slap':
+      // Wake-Up Slap deals double damage to Pokemon with Comatose (ih8ih8sn0w)
+      basePower = move.bp * (defender.hasStatus('slp') || defender.hasAbility('Comatose') ? 2 : 1);
+      desc.moveBP = basePower;
+      break;
+    case 'Smelling Salts':
+      basePower = move.bp * (defender.hasStatus('par') ? 2 : 1);
+      desc.moveBP = basePower;
+      break;
+    case 'Weather Bomb':
+    case 'Weather Ball':
+      basePower = move.bp * (field.weather && !field.hasWeather('Strong Winds') ? 2 : 1);
+      if (field.hasWeather('Sun', 'Harsh Sunshine', 'Rain', 'Heavy Rain') &&
+        attacker.hasItem('Utility Umbrella')) basePower = move.bp;
+      desc.moveBP = basePower;
+      break;
+    case 'Terrain Pulse':
+      basePower = move.bp * (isGrounded(attacker, field) && field.terrain ? 2 : 1);
+      desc.moveBP = basePower;
+      break;
+    case 'Rising Voltage':
+      basePower = move.bp * ((isGrounded(defender, field) && field.hasTerrain('Electric')) ? 2 : 1);
+      desc.moveBP = basePower;
+      break;
+    case 'Psyblade':
+      basePower = move.bp * (field.hasTerrain('Electric') ? 1.5 : 1);
+      if (field.hasTerrain('Electric')) {
+        desc.moveBP = basePower;
+        desc.terrain = field.terrain;
       }
       break;
+    case 'Fling':
+      basePower = getFlingPower(attacker.item);
+      desc.moveBP = basePower;
+      desc.attackerItem = attacker.item;
+      break;
+    case 'Dragon Energy':
+    case 'Eruption':
+    case 'Water Spout':
+      basePower = Math.max(1, Math.floor((150 * attacker.curHP()) / attacker.maxHP()));
+      desc.moveBP = basePower;
+      break;
+    case 'Flail':
+    case 'Reversal':
+      const p = Math.floor((48 * attacker.curHP()) / attacker.maxHP());
+      basePower = p <= 1 ? 200 : p <= 4 ? 150 : p <= 9 ? 100 : p <= 16 ? 80 : p <= 32 ? 40 : 20;
+      desc.moveBP = basePower;
+      break;
+    case 'Natural Gift':
+      if (attacker.item?.endsWith('Berry')) {
+        const gift = getNaturalGift(gen, attacker.item)!;
+        basePower = gift.p;
+        desc.attackerItem = attacker.item;
+        desc.moveBP = move.bp;
+      } else {
+        basePower = move.bp;
+      }
+      break;
+    case 'Nature Power':
+      move.category = 'Special';
+      move.secondaries = true;
+
+      // Nature Power cannot affect Dark-types if it is affected by Prankster
+      if (attacker.hasAbility('Prankster') && defender.types.includes('Dark')) {
+        basePower = 0;
+        desc.moveName = 'Nature Power';
+        desc.attackerAbility = 'Prankster';
+        break;
+      }
+      switch (field.terrain) {
+        case 'Electric':
+          basePower = 90;
+          desc.moveName = 'Thunderbolt';
+          break;
+        case 'Grassy':
+          basePower = 90;
+          desc.moveName = 'Energy Ball';
+          break;
+        case 'Misty':
+          basePower = 95;
+          desc.moveName = 'Moonblast';
+          break;
+        case 'Psychic':
+          // Nature Power does not affect grounded Pokemon if it is affected by
+          // Prankster and there is Psychic Terrain active
+          if (attacker.hasAbility('Prankster') && isGrounded(defender, field)) {
+            basePower = 0;
+            desc.attackerAbility = 'Prankster';
+          } else {
+            basePower = 90;
+            desc.moveName = 'Psychic';
+          }
+          break;
+        default:
+          basePower = 80;
+          desc.moveName = 'Tri Attack';
+      }
+      break;
+    case 'Water Shuriken':
+      basePower = attacker.named('Greninja-Ash') && attacker.hasAbility('Battle Bond') ? 20 : 15;
+      desc.moveBP = basePower;
+      break;
+    // Triple moves damage increases after each consecutive hit (20, 40, 60)
+    case 'Triple Dig':
+    case 'Triple Dive':
+    case 'Triple Kick':
+    case 'Triple Axel':
+      basePower = hit * 20;
+      desc.moveBP = move.hits === 2 ? 60 : move.hits === 3 ? 120 : 20;
+      break;
+    case 'Crush Grip':
+    case 'Wring Out':
+      basePower = 100 * Math.floor((defender.curHP() * 4096) / defender.maxHP());
+      basePower = Math.floor(Math.floor((120 * basePower + 2048 - 1) / 4096) / 100) || 1;
+      desc.moveBP = basePower;
+      break;
+    case 'Hard Press':
+      basePower = 100 * Math.floor((defender.curHP() * 4096) / defender.maxHP());
+      basePower = Math.floor(Math.floor((100 * basePower + 2048 - 1) / 4096) / 100) || 1;
+      desc.moveBP = basePower;
+      break;
+    case 'Tera Blast':
+      basePower = attacker.teraType === 'Stellar' ? 100 : 80;
+      desc.moveBP = basePower;
+      break;
+    case 'Justified Blow':
+      basePower = Math.min(105, Math.max(5, Math.round((attacker.lightAura - attacker.darkAura) * 2.1)));
+      if (attacker.alignment === 'Shiny') basePower *= 1.5;
+      desc.moveBP = basePower;
+      break;
+    case 'Ill Intent':
+      basePower = Math.min(105, Math.max(5, Math.round((attacker.darkAura - attacker.lightAura) * 2.1)));
+      if (attacker.alignment === 'Shadow') basePower *= 1.5;
+      desc.moveBP = basePower;
+      break;
+    case 'Unbiased Assault':
+      if (attacker.lightAura === attacker.darkAura) {
+        basePower = Math.min(105, Math.max(5, Math.round((attacker.lightAura + attacker.darkAura) * 1.75)));
+        if (attacker.alignment === 'Neutral') basePower *= 1.5;
+      } else {
+        basePower = 0;
+      }
+      desc.moveBP = basePower;
+      break;
     default:
-      basePower = 80;
-      desc.moveName = 'Tri Attack';
-    }
-    break;
-  case 'Water Shuriken':
-    basePower = attacker.named('Greninja-Ash') && attacker.hasAbility('Battle Bond') ? 20 : 15;
-    desc.moveBP = basePower;
-    break;
-  // Triple Axel's and Triple Dig's damage increases after each consecutive hit (20, 40, 60)
-  case 'Triple Dig':
-  case 'Triple Axel':
-    basePower = hit * 20;
-    desc.moveBP = move.hits === 2 ? 60 : move.hits === 3 ? 120 : 20;
-    break;
-  // Triple Kick's damage increases after each consecutive hit (10, 20, 30)
-  case 'Triple Kick':
-    basePower = hit * 10;
-    desc.moveBP = move.hits === 2 ? 30 : move.hits === 3 ? 60 : 10;
-    break;
-  case 'Crush Grip':
-  case 'Wring Out':
-    basePower = 100 * Math.floor((defender.curHP() * 4096) / defender.maxHP());
-    basePower = Math.floor(Math.floor((120 * basePower + 2048 - 1) / 4096) / 100) || 1;
-    desc.moveBP = basePower;
-    break;
-  case 'Hard Press':
-    basePower = 100 * Math.floor((defender.curHP() * 4096) / defender.maxHP());
-    basePower = Math.floor(Math.floor((100 * basePower + 2048 - 1) / 4096) / 100) || 1;
-    desc.moveBP = basePower;
-    break;
-  case 'Tera Blast':
-    basePower = attacker.teraType === 'Stellar' ? 100 : 80;
-    desc.moveBP = basePower;
-    break;
-  default:
-    basePower = move.bp;
+      basePower = move.bp;
   }
   if (basePower === 0) {
     return 0;
