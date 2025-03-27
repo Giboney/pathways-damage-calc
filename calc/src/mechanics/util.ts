@@ -149,7 +149,7 @@ export function getFinalSpeed(gen: Generation, pokemon: Pokemon, field: Field, s
   return Math.max(0, speed);
 }
 
-//DO NOT PUT ABILITIES WEATHER TERRAIN HERE
+//DO NOT PUT ABILITIES WEATHER TERRAIN HERE, make new function
 export function getMoveEffectiveness(
   gen: Generation,
   move: Move,
@@ -168,13 +168,20 @@ export function getMoveEffectiveness(
   } else if (
     (move.named('Freeze-Dry') && type === 'Water') ||
     (move.named('Kelp Wreck') && type === 'Steel') ||
-    (move.named('Venomous Spines') && type === 'Dragon')
+    (move.named('Venomous Spines') && type === 'Dragon') ||
+    (move.named('Shinu Slash') && ['Water', 'Ice'].includes(type)) ||
+    move.named('Minamo Giri') && ['Water', 'Ice', 'Steel', 'Dragon'].includes(type)
   ) {
     return 2;
   } else if (move.named('Flying Press')) {
     return (
       gen.types.get('fighting' as ID)!.effectiveness[type]! *
       gen.types.get('flying' as ID)!.effectiveness[type]!
+    );
+  } else if (move.named('Fyre Frost') || move.named('Fire Frost')) {
+    return (
+      gen.types.get('ice' as ID)!.effectiveness[type]! *
+      gen.types.get('fire' as ID)!.effectiveness[type]!
     );
   } else {
     return gen.types.get(toID(move.type))!.effectiveness[type]!;
@@ -605,6 +612,20 @@ export function getFinalDamage(
   return OF16(pokeRound(Math.max(1, OF32(damageAmount * finalMod) / 4096)));
 }
 
+export function getFinalDamagePathways(
+  basePower: number,
+  attack: number,
+  defense: number,
+  level: number,
+  finalMod: number,
+) {
+  let damageRolls = [];
+  for (let i = 0; i < 16; i++) {
+    damageRolls[i] = Math.max(Math.round((Math.floor(Math.floor(Math.floor(2 * level / 5 + 2) * basePower * attack / defense) / 50) + 2) * finalMod), 1);
+  }
+  return damageRolls;
+}
+
 /**
  * Determines which move category Shell Side Arm should behave as.
  *
@@ -770,7 +791,7 @@ export function getStatDescriptionText(
 }
 
 export function handleFixedDamageMoves(attacker: Pokemon, move: Move) {
-  if (move.named('Seismic Toss', 'Night Shade')) {
+  if (move.named('Seismic Toss', 'Night Shade', 'Piledriver')) {
     return attacker.level;
   } else if (move.named('Dragon Rage')) {
     return 40;

@@ -1678,7 +1678,7 @@ $(".gen").change(function () {
 	var itemOptions = getSelectOptions(items, true);
 	$("select.item").find("option").remove().end().append("<option value=\"\">(none)</option>" + itemOptions);
 
-	var roleNames = Object.values(calc.ROLES_BY_ID).map((role) => role["name"]);
+	var roleNames = Object.values(calc.ROLES_BY_ID).map(function(role) {return role["name"]});
 	var roleOptions = getSelectOptions(roleNames);
 	$("select.role").find("option").remove().end().append(roleOptions);
 

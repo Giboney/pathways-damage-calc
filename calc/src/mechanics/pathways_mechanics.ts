@@ -1,6 +1,11 @@
 //PATHWAYS DAMAGE CALC IN Move_Usage_Calculations.rb -> def pbCalcDamage
 //going to need a complete restructure of the calc to be accurate
 //this will take months fuckkkk
+//rage fist, cave in, avalanche, last respects,
+//brick break, doom blade, stone fangs,
+//grassy glide, spirit bloom, pin shock
+//rigged game, wall crash, shield bash
+
 import type {Generation, AbilityName, StatID, Terrain} from '../data/interface';
 import {toID} from '../util';
 import {
@@ -223,13 +228,20 @@ export function calculatePathways(
     desc.attackerItem = attacker.item;
   } else if (
     move.named('Nature Power') ||
-    (move.originalName === 'Terrain Pulse' && isGrounded(attacker, field))
+    move.originalName === 'Terrain Pulse' ||
+    move.named('Terrain Blast')
   ) {
+    const ground = move.originalName.includes('Terrain') && isGrounded(attacker, field);
     type =
-      field.hasTerrain('Electric') ? 'Electric'
-      : field.hasTerrain('Grassy') ? 'Grass'
-      : field.hasTerrain('Misty') ? 'Fairy'
-      : field.hasTerrain('Psychic') ? 'Psychic'
+      field.hasTerrain('Electric') && ground ? 'Electric'
+      : field.hasTerrain('Grassy') && ground ? 'Grass'
+      : field.hasTerrain('Misty') && ground ? 'Fairy'
+      : field.hasTerrain('Psychic') && ground ? 'Psychic'
+      : field.hasTerrain('Dragonic Soul') ? 'Dragon'
+      : field.hasTerrain('Terror Realm') ? 'Dark'
+      : field.hasTerrain('Dream World') ? 'Psychic'
+      : field.hasTerrain('Faraday Cage') ? 'Electric'
+      : field.hasTerrain('Frozen Kingdom') ? 'Ice'
       : 'Normal';
     desc.terrain = field.terrain;
 
@@ -550,7 +562,7 @@ export function calculatePathways(
     move.named('Shell Side Arm') &&
     getShellSideArmCategory(attacker, defender) === 'Physical'
       ? 'atk'
-      : move.named('Body Press')
+      : move.named('Body Press', 'Wall Crash', 'Shield Bash')
         ? 'def'
         : move.category === 'Special'
           ? 'spa'
@@ -635,9 +647,9 @@ export function calculatePathways(
       getFinalDamage(baseDamage, i, typeEffectiveness, applyBurn || applyFrostbite, stabMod, finalMod, protect);
   }
 
-  desc.attackBoost =
-    move.named('Foul Play') ? defender.boosts[attackStat] : attacker.boosts[attackStat];
+  desc.attackBoost = move.named('Foul Play', 'Rigged Game') ? defender.boosts[attackStat] : attacker.boosts[attackStat];
 
+  //multihit here
   if ((move.dropsStats && move.timesUsed! > 1) || move.hits > 1) {
     // store boosts so intermediate boosts don't show.
     const origDefBoost = desc.defenseBoost;
@@ -719,7 +731,7 @@ export function calculatePathways(
           protect
         );
         damageMultiplier++;
-        return affectedAmount + newFinalDamage;
+        return affectedAmount + newFinalDamage; //how is this not infinite recursion????
       });
     }
     desc.defenseBoost = origDefBoost;
@@ -745,7 +757,7 @@ export function calculateBasePowerPathways(
 ) {
   const turnOrder = attacker.stats.spe > defender.stats.spe ? 'first' : 'last';
 
-  let basePower: number;
+  let basePower = move.bp;
 
   switch (move.name) {
     case 'Payback':
@@ -831,13 +843,18 @@ export function calculateBasePowerPathways(
       break;
     case 'Weather Bomb':
     case 'Weather Ball':
-      basePower = move.bp * (field.weather && !field.hasWeather('Strong Winds') ? 2 : 1);
-      if (field.hasWeather('Sun', 'Harsh Sunshine', 'Rain', 'Heavy Rain') &&
-        attacker.hasItem('Utility Umbrella')) basePower = move.bp;
+      if (field.hasWeather('Harsh Typhoon', 'Sand', 'Raging Sandstorm', 'Snow', 'Violent Blizzard') ||
+          (field.hasWeather('Sun', 'Harsh Sunshine', 'Rain', 'Heavy Rain') && !attacker.hasItem('Utility Umbrella'))) {
+        basePower *= 2;
+      }
       desc.moveBP = basePower;
       break;
     case 'Terrain Pulse':
-      basePower = move.bp * (isGrounded(attacker, field) && field.terrain ? 2 : 1);
+    case 'Terrain Blast':
+      if (field.hasTerrain('Dragonic Soul', 'Terror Realm', 'Dream World', 'Faraday Cage', 'Frozen Kingdom') ||
+          (field.hasTerrain('Electric', 'Grassy', 'Misty', 'Psychic') && !isGrounded(attacker, field))) {
+        basePower *= 2;
+      }
       desc.moveBP = basePower;
       break;
     case 'Rising Voltage':
@@ -845,8 +862,8 @@ export function calculateBasePowerPathways(
       desc.moveBP = basePower;
       break;
     case 'Psyblade':
-      basePower = move.bp * (field.hasTerrain('Electric') ? 1.5 : 1);
       if (field.hasTerrain('Electric')) {
+        basePower *= 1.5;
         desc.moveBP = basePower;
         desc.terrain = field.terrain;
       }
@@ -964,8 +981,36 @@ export function calculateBasePowerPathways(
       }
       desc.moveBP = basePower;
       break;
-    default:
-      basePower = move.bp;
+    case 'Facade':
+    case 'Brilliant Bravado':
+      if (attacker.hasStatus('brn', 'par', 'psn', 'tox', 'fbt')) {
+        basePower *= 2;
+        desc.moveBP = basePower;
+      }
+      break;
+    case 'Armageddon':
+      if (defender.hasStatus('brn')) {
+        basePower *= 2;
+        desc.moveBP = basePower;
+      }
+      break;
+    case 'Ragnarok':
+      if (defender.hasStatus('par')) {
+        basePower *= 2;
+        desc.moveBP = basePower;
+      }
+      break;
+    case 'Barb Barrage':
+      if (defender.hasStatus('psn', 'tox')) {
+        basePower *= 2;
+        desc.moveBP = basePower;
+      }
+      break;
+    case 'Hydro Steam':
+      if (field.weather === 'Sun') {
+        basePower *= 3; //essentials moment
+        desc.moveBP = basePower;
+      }
   }
   if (basePower === 0) {
     return 0;
@@ -1044,7 +1089,7 @@ export function calculateBPModsPathways(
     resistedKnockOffDamage = !!item.megaEvolves && defender.name.includes(item.megaEvolves);
   }
 
-  if ((move.named('Facade', 'Brilliant Bravado') && attacker.hasStatus('brn', 'par', 'psn', 'tox')) ||
+  if ((move.named('Facade', 'Brilliant Bravado') && attacker.hasStatus('brn', 'par', 'psn', 'tox', 'fbt')) ||
     (move.named('Brine') && defender.curHP() <= defender.maxHP() / 2) ||
     (move.named('Venoshock') && defender.hasStatus('psn', 'tox')) ||
     (move.named('Lash Out') && (countBoosts(gen, attacker.boosts) < 0))
@@ -1298,16 +1343,16 @@ export function calculateAttackPathways(
     move.named('Shell Side Arm') &&
     getShellSideArmCategory(attacker, defender) === 'Physical'
       ? 'atk'
-      : move.named('Body Press')
+      : move.named('Body Press', 'Wall Crash', 'Shield Bash')
         ? 'def'
         : move.category === 'Special'
           ? 'spa'
           : 'atk';
   desc.attackEVs =
-    move.named('Foul Play')
+    move.named('Foul Play', 'Rigged Game')
       ? getStatDescriptionText(gen, defender, attackStat, defender.nature)
       : getStatDescriptionText(gen, attacker, attackStat, attacker.nature);
-  const attackSource = move.named('Foul Play') ? defender : attacker;
+  const attackSource = move.named('Foul Play', 'Rigged Game') ? defender : attacker;
   if (attackSource.boosts[attackStat] === 0 ||
       (isCritical && attackSource.boosts[attackStat] < 0)) {
     attack = attackSource.rawStats[attackStat];
@@ -1696,13 +1741,8 @@ function calculateBaseDamagePathways(
   if (attacker.hasAbility('Parental Bond (Child)')) {
     baseDamage = pokeRound(OF32(baseDamage * 1024) / 4096);
   }
-
-  if (
-    field.hasWeather('Sun') && move.named('Hydro Steam') && !attacker.hasItem('Utility Umbrella')
-  ) {
-    baseDamage = pokeRound(OF32(baseDamage * 6144) / 4096);
-    desc.weather = field.weather;
-  } else if (!defender.hasItem('Utility Umbrella')) {
+  
+  if (!defender.hasItem('Utility Umbrella')) {
     if (
       (field.hasWeather('Sun', 'Harsh Sunshine') && move.hasType('Fire')) ||
       (field.hasWeather('Rain', 'Heavy Rain') && move.hasType('Water'))
