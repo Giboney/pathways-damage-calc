@@ -36,7 +36,7 @@ export function isGrounded(pokemon: Pokemon, field: Field) {
      !pokemon.hasAbility('Lightning Speed') &&
      !pokemon.hasAbility('Distortion') &&
      !pokemon.hasAbility('Witchcraft') &&
-     !pokemon.hasAbility('Lightning Speed') &&
+     !pokemon.hasAbility('Swarming') &&
      !pokemon.hasType('Omnitype') &&
      !pokemon.hasItem('Air Balloon')
     ));
@@ -612,20 +612,6 @@ export function getFinalDamage(
   return OF16(pokeRound(Math.max(1, OF32(damageAmount * finalMod) / 4096)));
 }
 
-export function getFinalDamagePathways(
-  basePower: number,
-  attack: number,
-  defense: number,
-  level: number,
-  finalMod: number,
-) {
-  let damageRolls = [];
-  for (let i = 0; i < 16; i++) {
-    damageRolls[i] = Math.max(Math.round((Math.floor(Math.floor(Math.floor(2 * level / 5 + 2) * basePower * attack / defense) / 50) + 2) * finalMod), 1);
-  }
-  return damageRolls;
-}
-
 /**
  * Determines which move category Shell Side Arm should behave as.
  *
@@ -684,63 +670,6 @@ export function getStabMod(pokemon: Pokemon, move: Move, desc: RawDesc) {
     desc.attackerAbility = pokemon.ability;
   }
   return stabMod;
-}
-
-export function getAuraCrystalAtMod(pokemon: Pokemon) {
-  let effectiveAura;
-
-  if (pokemon.alignment === 'Shiny') {
-    effectiveAura = Math.floor(pokemon.lightAura / 2);
-  } else if (pokemon.alignment === 'Shadow') {
-    effectiveAura = Math.floor(pokemon.darkAura / 2);
-  } else {
-    // Only "pairs" of aura count.
-    effectiveAura = Math.min(pokemon.lightAura, pokemon.darkAura);
-  }
-
-  let multiplier = 1 + Math.min(0.01 * effectiveAura, 0.25);
-  let atMod = Math.floor(4096 * multiplier);
-  return atMod;
-}
-
-export function getAuraCrystalDefMod(pokemon: Pokemon) {
-  let effectiveAura;
-
-  if (pokemon.alignment === 'Shiny') {
-    effectiveAura = Math.floor(pokemon.lightAura / 2);
-  } else if (pokemon.alignment === 'Shadow') {
-    effectiveAura = Math.floor(pokemon.darkAura / 2);
-  } else {
-    // Only "pairs" of aura count.
-    effectiveAura = Math.min(pokemon.lightAura, pokemon.darkAura);
-  }
-
-  let multiplier = 1 - Math.min(0.005 * effectiveAura, 0.125);
-  let defMod = Math.floor(4096 * multiplier);
-
-  return defMod;
-}
-
-export function getRoleDamageMod(pokemon: Pokemon) {
-  if (pokemon.role === NO_ROLE) {
-    return 4096;
-  }
-
-  if (pokemon.hasType(...pokemon.role.types)) {
-    switch (pokemon.roleRank) {
-      case 'Apprentice':
-        return 4096 * 1.04;
-      case 'Expert':
-        return 4096 * 1.07;
-      case 'Master':
-        return 4096 * 1.10;
-      default:
-        console.log('No role rank selected.');
-    }
-  }
-
-  // Unreachable
-  return 4096;
 }
 
 export function getStellarStabMod(pokemon: Pokemon, move: Move, stabMod = 1, turns = 0) {

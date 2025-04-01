@@ -172,7 +172,7 @@ export interface Types {
   [Symbol.iterator](): IterableIterator<Type>;
 }
 
-export type TypeEffectiveness = 0 | 0.5 | 1 | 2;
+export type TypeEffectiveness = 0 | 0.5 | 1 | 2 | number;
 
 export interface Type extends Data<TypeName> {
   readonly kind: 'Type';

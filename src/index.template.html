@@ -56,7 +56,7 @@
 <div class="wrapper">
     <div class="title-text main-title-text">Pok&eacute;mon Pathways Damage Calculator</div>
     <hr />
-<input class="gen visually-hidden" type="radio" style="display:none" name="gen" value="10" id="gen10" checked="checked" /><label style="display:none" class="btn btn-small btn-right" for="gen10">PATHWAYS</label>
+    <input class="gen visually-hidden" type="radio" style="display:none" name="gen" value="10" id="gen10" checked="checked" /><label style="display:none" class="btn btn-small btn-right" for="gen10">PATHWAYS</label>
     <div aria-label="Move selection" class="move-result-group" role="region" title="Select a move to show detailed results.">
         <div  aria-labelledby="resultHeaderL" class="move-result-subgroup" role="radiogroup">
             <div class="result-move-header"><span id="resultHeaderL">Pok&eacute;mon 1's Moves (select one to show detailed results)</span>
@@ -776,7 +776,7 @@
                                 <label class="btn btn-xwide" for="srR">Stealth Rock</label>
                             </div></td>
                         </tr>
-                        <tr class="gen-specific g8 g10 hide">
+                        <tr class="gen-specific g8 g10">
                             <div hidden id="selectSteelsurgeInstruction">Is Steelsurge affecting this side of the field?</div>
                             <td><div class="left" title="Is Steelsurge affecting this side of the field?">
                                 <input aria-describedby="selectSteelsurgeInstruction" class="visually-hidden calc-trigger" type="checkbox" id="steelsurgeL" />
@@ -787,7 +787,7 @@
                                 <label class="btn btn-xwide" for="steelsurgeR">Steelsurge</label>
                             </div></td>
                         </tr>
-                        <tr class="gen-specific g8 g10 hide">
+                        <tr class="gen-specific g8 g10">
                             <div hidden id="selectVinefireInstruction">Is Vine Lash and/or Wildfire affecting this side of the field?</div>
                             <td><div class="left" title="Is Vine Lash/Wildfire affecting this side of the field?">
                                 <input aria-describedby="selectVinefireInstruction" class="visually-hidden calc-trigger" type="checkbox" id="vinelashL" />
@@ -802,7 +802,7 @@
                                 <label class="btn btn-wide btn-right" for="vinelashR">Vine Lash</label>
                             </div></td>
                         </tr>
-                        <tr class="gen-specific g8 g10 hide">
+                        <tr class="gen-specific g8 g10">
                             <div hidden id="selectCannonlithInstruction">Is Cannonade and/or Volcalith affecting this side of the field?</div>
                             <td><div class="left" title="Is Cannonade/Volcalith affecting this side of the field?">
                                 <input aria-describedby="selectCannonlithInstruction" class="visually-hidden calc-trigger" type="checkbox" id="cannonadeL" />
@@ -1605,13 +1605,17 @@
     <script type="text/javascript" src="./calc/field.js?"></script>
     <script type="text/javascript" src="./calc/items.js?"></script>
     <script type="text/javascript" src="./calc/mechanics/util.js?"></script>
-    <script type="text/javascript" src="./calc/mechanics/pathways_mechanics.js?"></script>
-    <!--
+    <script type="text/javascript" src="./calc/mechanics/pathways_mechanics/attack.js?"></script>
+    <script type="text/javascript" src="./calc/mechanics/pathways_mechanics/basePower.js?"></script>
+    <script type="text/javascript" src="./calc/mechanics/pathways_mechanics/defense.js?"></script>
+    <script type="text/javascript" src="./calc/mechanics/pathways_mechanics/finalMod.js?"></script>
+    <script type="text/javascript" src="./calc/mechanics/pathways_mechanics/util.js?"></script>
+    <script type="text/javascript" src="./calc/mechanics/pathways_mechanics/pathways.js?"></script>
     <script type="text/javascript" src="./calc/mechanics/gen789.js?"></script>
     <script type="text/javascript" src="./calc/mechanics/gen56.js?"></script>
     <script type="text/javascript" src="./calc/mechanics/gen4.js?"></script>
     <script type="text/javascript" src="./calc/mechanics/gen3.js?"></script>
-    <script type="text/javascript" src="./calc/mechanics/gen12.js?"></script>-->
+    <script type="text/javascript" src="./calc/mechanics/gen12.js?"></script>
     <script type="text/javascript" src="./calc/calc.js?"></script>
     <script type="text/javascript" src="./calc/desc.js?"></script>
     <script type="text/javascript" src="./calc/result.js?"></script>

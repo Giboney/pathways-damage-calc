@@ -471,6 +471,7 @@ function autosetWeather(ability, i) {
 			break;
 		case "Drought":
 		case "Orichalcum Pulse":
+		case "Khepri":
 			lastAutoWeather[i] = "Sun";
 			$("#sun").prop("checked", true);
 			break;
@@ -568,6 +569,7 @@ function autosetTerrain(ability, i) {
 			$("#misty").prop("checked", true);
 			break;
 		case "Psychic Surge":
+		case "Killing Joke2":
 			lastAutoTerrain[i] = "Psychic";
 			$("#psychic").prop("checked", true);
 			break;
@@ -1955,12 +1957,8 @@ function getTerrainEffects() {
 	var weather = $("input:radio[name='weather']:checked").val();
 	var lastTerrain = false;
 	if ($(this).is("input:checkbox[name='terrain']:checked")) {
-		if (!["Snow", ""].includes(weather) && $(this).val() === "Frozen Kingdom") {
-			$(this).prop("checked", false);
-		} else {
-			lastTerrain = $("input:checkbox[name='terrain']:checked").not(this).val();
-			$("input:checkbox[name='terrain']").not(this).prop("checked", false);
-		}
+		lastTerrain = $("input:checkbox[name='terrain']:checked").not(this).val();
+		$("input:checkbox[name='terrain']").not(this).prop("checked", false);
 	}
 	var terrainValue = $("input:checkbox[name='terrain']:checked").val();
 	if (['type1', 'type2', 'teraType', 'teraToggle', 'item'].includes(className)) {
@@ -2045,7 +2043,7 @@ function getTerrainEffects() {
 			}
 			lowerStatStage($("#p2"), 'sp', 1, 'Frozen Kingdom2');
 		}
-		if (!weather) {
+		if (weather !== "Snow") {
 			stickyWeather.clearStickyWeather();
 			autosetWeather("Frozen Kingdom", 0); //maybe no longer necessary
 		}

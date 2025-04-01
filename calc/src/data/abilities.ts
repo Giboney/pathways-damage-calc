@@ -400,6 +400,16 @@ const PATHWAYS = SV.concat([
   'Sword of Damocles',//+1 prio on misty, misty surge, bpmods x2, finalmods x0.75
   'Solar Grace',//cloud nine
   'Demolition Expert',//boost bullet moves
+  'Stealth Bomber',
+  'Rainbow Wings',
+  'Slumbering Beast',
+  'Power of Friendship',
+  'Vocalist',
+  'Blinding',
+  'Frost Body',
+  'Misery After',
+  'Spirit Call',
+  'Dragon Fear',
   'Natural Enemy',//finalmods x2 if resisted grass or bug move
   'Insidious',//finalmods x2 if resisted poison or bug move
   'Airborne',//+1 spa on tailwind/wind move, immune to wind

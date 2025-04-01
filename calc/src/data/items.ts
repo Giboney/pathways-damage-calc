@@ -504,6 +504,9 @@ const PATHWAYS = SV.concat([
   'Katana',
   'Nuptial Veil',
   'Royal Jelly',
+  'Sword and Boots',
+  'Cobalt Gem',
+  'Inner Light',
 ]);
 
 const BERRIES: {[berry: string]: {t: I.TypeName; p: number}} = {

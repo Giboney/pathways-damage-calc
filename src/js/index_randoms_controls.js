@@ -52,10 +52,6 @@ function performCalculations() {
 		// P1
 		result = damageResults[0][i];
 		maxDamage = result.range()[1] * p1.moves[i].hits;
-		if (!zProtectAlerted && maxDamage > 0 && p1.item.indexOf(" Z") === -1 && p1field.defenderSide.isProtected && p1.moves[i].isZ) {
-			alert('Although only possible while hacking, Z-Moves fully damage through protect without a Z-Crystal');
-			zProtectAlerted = true;
-		}
 		p1.maxDamages.push({moveOrder: i, maxDamage: maxDamage});
 		p1.maxDamages.sort(function (firstMove, secondMove) {
 			return secondMove.maxDamage - firstMove.maxDamage;
@@ -66,10 +62,6 @@ function performCalculations() {
 		// P2
 		result = damageResults[1][i];
 		maxDamage = result.range()[1] * p2.moves[i].hits;
-		if (!zProtectAlerted && maxDamage > 0 && p2.item.indexOf(" Z") === -1 && p2field.defenderSide.isProtected && p2.moves[i].isZ) {
-			alert('Although only possible while hacking, Z-Moves fully damage through protect without a Z-Crystal');
-			zProtectAlerted = true;
-		}
 		p2.maxDamages.push({moveOrder: i, maxDamage: maxDamage});
 		p2.maxDamages.sort(function (firstMove, secondMove) {
 			return secondMove.maxDamage - firstMove.maxDamage;
