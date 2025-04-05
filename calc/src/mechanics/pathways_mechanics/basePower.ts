@@ -139,7 +139,7 @@ export function calculateBasePowerPathways(
       break;
     case 'Wake-Up Slap':
       // Wake-Up Slap deals double damage to Pokemon with Comatose (ih8ih8sn0w)
-      basePower = move.bp * (defender.hasStatus('slp') || defender.hasAbility('Comatose') ? 2 : 1);
+      basePower = move.bp * (defender.hasStatus('slp') || defender.hasAbility('Comatose', 'Awakening') ? 2 : 1);
       desc.moveBP = basePower;
       break;
     case 'Smelling Salts':

@@ -297,6 +297,57 @@ $(".abilityToggle").on("change", function() {
 	
 });
 
+var formChangeAbilities = [
+	'Lightning Speed', 'Distortion', 'Killing Joke', 'Killing Joke2', 'Abyssal Veil', 'Abyssal Veil ++',
+	'Requiem Di Diavolo', 'Crescendo', 'Darkness Boost', 'Darkness Boost2', 'Ya Estas Cocinado'
+];
+
+function getFormFromAbility(ability, name) {
+	switch (ability) {
+		case 'Ya Estas Cocinado':
+			if (name.includes('Basculegion')) {
+				return 'Basculegion-Iron-Muerte';
+			}
+			return name;
+		case 'Lightning Speed':
+		case 'Distortion':
+			if (name.includes('Melmetal')) {
+				return 'Melmetal-Plane';
+			}
+			return name;
+		case 'Killing Joke':
+		case 'Killing Joke2':
+			if (name.includes('Gengar')) {
+				return 'Gengar-Forsaken';
+			}
+			return name;
+		case 'Abyssal Veil':
+		case 'Abyssal Veil ++':
+			if (name.includes('Zoroark')) {
+				return 'Zoroark-Edgefox';
+			}
+			return name;
+		case 'Requiem Di Diavolo':
+			if (name.includes('Gliscor')) {
+				return 'Gliscor-Devil-DJ';
+			}
+			return name;
+		case 'Crescendo':
+			if (name.includes('Whismur')) {
+				return 'Whismur-Fluffy';
+			}
+			return name;
+		case 'Darkness Boost':
+		case 'Darkness Boost2':
+			if (name.includes('Tyranitar')) {
+				return 'Tyranitar-Dark';
+			}
+			return name;
+		default:
+			return name;
+	}
+}
+
 function abilityChange(pokeInfo) {
 	var ability = pokeInfo.find(".ability").val();
 	var id = pokeInfo.attr('id');
@@ -311,7 +362,7 @@ function abilityChange(pokeInfo) {
 			moveHits = move.multihit;
 		} else if (ability === 'Skill Link') {
 			moveHits = 5;
-		} else if (pokeInfo.find(".item").val() === 'Loaded Dice') {
+		} else if (pokeInfo.find(".item").val() === 'Loaded Dice' || ability === 'Rapid Fire') {
 			moveHits = 4;
 		}
 		pokeInfo.find(moveSelector).find(".move-hits").val(moveHits);
@@ -372,6 +423,25 @@ function abilityChange(pokeInfo) {
 			raiseStatStage(pokeInfo, 'df', 1, 'multiAbility' + id);
 			raiseStatStage(pokeInfo, 'sd', 1, 'multiAbility' + id);
 			break;
+		case 'X Pickup':
+			raiseStatStage(pokeInfo, 'at', 6, 'multiAbility' + id);
+			raiseStatStage(pokeInfo, 'sp', 6, 'multiAbility' + id);
+			break;
+		case 'X Pickup2':
+			raiseStatStage(pokeInfo, 'at', 3, 'multiAbility' + id);
+			raiseStatStage(pokeInfo, 'sp', 3, 'multiAbility' + id);
+			break;
+		case 'Power of Friendship':
+			raiseStatStage(pokeInfo, 'sa', 2, 'multiAbility' + id);
+			raiseStatStage(pokeInfo, 'sp', 2, 'multiAbility' + id);
+			break;
+		case 'Showtime':
+			raiseStatStage(pokeInfo, 'at', 6, 'multiAbility' + id);
+			raiseStatStage(pokeInfo, 'df', 6, 'multiAbility' + id);
+			raiseStatStage(pokeInfo, 'sa', 6, 'multiAbility' + id);
+			raiseStatStage(pokeInfo, 'sd', 6, 'multiAbility' + id);
+			raiseStatStage(pokeInfo, 'sp', 6, 'multiAbility' + id);
+			break;
 	}
 
 	var TOGGLE_ABILITIES = ['Flash Fire', 'Intimidate', 'Minus', 'Plus', 'Slow Start', 'Unburden', 'Stakeout', 'Teraform Zero', 'Lighten', 'Mesmerize', 'Ha Ha You\'re Weak', 'Ambusher', 'Intrepid Sword', 'Dauntless Shield'];
@@ -384,18 +454,32 @@ function abilityChange(pokeInfo) {
 	}
 	
 	var boostedStat = pokeInfo.find(".boostedStat");
-	if (ability === "Protosynthesis" || ability === "Quark Drive" || ability === "Ya Estas Cocinado") {
+	if (["Quark Drive", "Ya Estas Cocinado", "Protosynthesis", "Aquamynthesis", "Spendthrift"].includes(ability)) {
 		boostedStat.show();
 	} else {
 		boostedStat.val("");
 		boostedStat.hide();
 	}
 
-	if (ability === "Supreme Overlord" || ability === "Ya Estas Cocinado") {
+	if (["Supreme Overlord", "Ya Estas Cocinado", "Stacked Odds"].includes(ability)) {
 		pokeInfo.find(".alliesFainted").show();
 	} else {
 		pokeInfo.find(".alliesFainted").val('0');
 		pokeInfo.find(".alliesFainted").hide();
+	}
+	
+	if (ability === 'Gravity Surge') {
+		$("#gravity").prop("checked", true);
+	}
+	
+	//form change
+	if (formChangeAbilities.includes(ability)) {
+		var pokemonName = pokeInfo.find('.forme').parent().is(':visible') ? pokeInfo.find('.forme').val() : '';
+		var newForm = getFormFromAbility(ability, pokemonName)
+		if (newForm !== pokemonName) {
+			pokeInfo.find('.forme').val(getFormFromAbility(ability, pokemonName));
+			pokeInfo.find('.forme').change();
+		}
 	}
 }
 
@@ -432,10 +516,11 @@ function autosetQP(pokemon) {
 
 	if (!boostedStat || boostedStat === "auto") {
 		if (
-			(item === "Booster Energy") ||
+			(item === "Booster Energy" && ["Quark Drive", "Ya Estas Cocinado", "Protosynthesis", "Aquamynthesis"].includes(ability)) ||
 			(ability === "Protosynthesis" && ["Sun", "Harsh Sunshine"].includes(currentWeather)) ||
 			(["Quark Drive", "Ya Estas Cocinado"].includes(ability) && ["Electric", "Faraday Cage"].includes(currentTerrain)) ||
-			(ability === "Aquamynthesis" && ["Rain", "Heavy Rain", "Harsh Typhoon"].includes(currentWeather))
+			(ability === "Aquamynthesis" && ["Rain", "Heavy Rain", "Harsh Typhoon"].includes(currentWeather)) ||
+			(ability === "Spendthrift" && item === "Big Nugget")
 		) {
 			pokemon.find(".boostedStat").val("auto");
 		} else {
@@ -481,6 +566,8 @@ function autosetWeather(ability, i) {
 			$("#sun").prop("checked", true);
 			break;
 		case "Drizzle":
+		case "Healing Droplets":
+		case "Healing Droplets++":
 			lastAutoWeather[i] = "Rain";
 			$("#rain").prop("checked", true);
 			break;
@@ -509,6 +596,7 @@ function autosetWeather(ability, i) {
 			$("#heavy-rain").prop("checked", true);
 			break;
 		case "Delta Stream":
+		case "Dragon Fear":
 			lastAutoWeather[i] = "Strong Winds";
 			$("#strong-winds").prop("checked", true);
 			break;
@@ -568,6 +656,8 @@ function autosetTerrain(ability, i) {
 				$("#electric").prop("checked", true);
 				break;
 			case "Grassy Surge":
+			case "Healing Droplets":
+			case "Healing Droplets++":
 				lastAutoTerrain[i] = "Grassy";
 				$("#grassy").prop("checked", true);
 				break;
@@ -744,7 +834,7 @@ $(".move-selector").change(function () {
 			moveHits = move.multihit;
 		} else if (pokemon.find('.ability').val() === 'Skill Link') {
 			moveHits = 5;
-		} else if (pokemon.find(".item").val() === 'Loaded Dice') {
+		} else if (pokemon.find(".item").val() === 'Loaded Dice' || ability === 'Rapid Fire') {
 			moveHits = 4;
 		}
 
@@ -803,7 +893,7 @@ $(".item").change(function () {
 			moveHits = move.multihit;
 		} else if (pokeInfo.find(".ability").val() === 'Skill Link') {
 			moveHits = 5;
-		} else if (pokeInfo.find(".item").val() === 'Loaded Dice') {
+		} else if (pokeInfo.find(".item").val() === 'Loaded Dice' || ability === 'Rapid Fire') {
 			moveHits = 4;
 		}
 		pokeInfo.find(moveSelector).find(".move-hits").val(moveHits);
@@ -827,9 +917,7 @@ $(".set-selector").change(function () {
 	var pokemon = pokedex[pokemonName];
 	if (pokemon) {
 		var pokeObj = $(this).closest(".poke-info");
-		var isAutoTera =
-		(startsWith(pokemonName, "Ogerpon") && endsWith(pokemonName, "Tera")) ||
-		pokemonName === 'Terapagos-Stellar';
+		var isAutoTera = false;
 		if (stickyMoves.getSelectedSide() === pokeObj.prop("id")) {
 			stickyMoves.clearStickyMove();
 		}
@@ -1106,7 +1194,7 @@ $(".teraToggle").change(function () {
 	if (forme.is(":hidden")) return;
 	var container = $(this).closest(".info-group").siblings();
 	// Ogerpon and Terapagos mechs
-	if (startsWith(curForme, "Ogerpon")) {
+	/*if (startsWith(curForme, "Ogerpon")) {
 		if (
 			curForme !== "Ogerpon" && !endsWith(curForme, "Tera") &&
 			container.find(".item").val() !== curForme.split("-")[1] + " Mask"
@@ -1146,7 +1234,7 @@ $(".teraToggle").change(function () {
 			baseStat.val(pokedex[newForme].bs[property]);
 			baseStat.keyup();
 		}
-	}
+	}*/
 });
 
 $(".forme").change(function () {
@@ -1163,31 +1251,19 @@ $(".forme").change(function () {
 		baseStat.val(altForme.bs[LEGACY_STATS[9][i]]);
 		baseStat.keyup();
 	}
-	if (
-		(startsWith($(this).val(), "Ogerpon") && endsWith($(this).val(), "Tera")) || $(this).val() === "Terapagos-Stellar"
-	) {
-		$(this).parent().siblings().find(".teraToggle").prop("checked", true);
-	}
 	var isRandoms = $("#randoms").prop("checked");
 	var pokemonSets = isRandoms ? gen >= 8 ? randdex[pokemonName][setName] :
 		randdex[pokemonName] : setdex[pokemonName];
 	var chosenSet = pokemonSets && pokemonSets[setName];
-	var greninjaSet = $(this).val().indexOf("Greninja") !== -1;
 	var isAltForme = $(this).val() !== pokemonName;
-	if (isAltForme && abilities.indexOf(altForme.abilities[0]) !== -1 && !greninjaSet) {
+	if (isAltForme && abilities.indexOf(altForme.abilities[0]) !== -1 && !formChangeAbilities.includes(container.find(".ability").val())) {
 		container.find(".ability").val(altForme.abilities[0]);
-	} else if (greninjaSet) {
-		$(this).parent().find(".ability");
 	} else if (chosenSet) {
 		if (!isRandoms) {
 			container.find(".abilities").val(chosenSet.ability);
 		} else {
 			container.find(".ability").val(chosenSet.abilities[0]);
 		}
-	}
-	var forcedTeraType = getForcedTeraType($(this).val());
-	if (forcedTeraType) {
-		$(this).parent().siblings().find(".teraType").val(forcedTeraType);
 	}
 	container.find(".ability").keyup();
 	if (startsWith($(this).val(), "Ogerpon-") && !startsWith($(this).val(), "Ogerpon-Teal")) {

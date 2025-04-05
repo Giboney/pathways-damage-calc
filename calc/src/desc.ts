@@ -87,6 +87,7 @@ export function displayMove(
   attacker: Pokemon,
   defender: Pokemon,
   move: Move,
+  field: Field,
   damage: Damage,
   notation = '%'
 ) {
@@ -97,7 +98,7 @@ export function displayMove(
   const minDisplay = toDisplay(notation, min, defender.maxHP());
   const maxDisplay = toDisplay(notation, max, defender.maxHP());
 
-  const recoveryText = getRecovery(gen, attacker, defender, move, damage, notation).text;
+  const recoveryText = getRecovery(gen, attacker, defender, move, field, damage, notation).text;
   const recoilText = getRecoil(gen, attacker, defender, move, damage, notation).text;
 
   return `${minDisplay} - ${maxDisplay}${notation}${recoveryText &&
@@ -109,6 +110,7 @@ export function getRecovery(
   attacker: Pokemon,
   defender: Pokemon,
   move: Move,
+  field: Field,
   damage: Damage,
   notation = '%'
 ) {
@@ -128,6 +130,20 @@ export function getRecovery(
       recovery[1] += Math.min(Math.round(maxD[i] * move.hits / 8), max);
     }
   }
+  if (attacker.hasAbility('Reaper')) {
+    const max = Math.round(defender.maxHP() / 8);
+    for (let i = 0; i < minD.length; i++) {
+      recovery[0] += Math.min(Math.round(minD[i] * move.hits / 8), max);
+      recovery[1] += Math.min(Math.round(maxD[i] * move.hits / 8), max);
+    }
+  }
+  if (field.hasTerrain('Terror Realm') && (defender.hasStatus('slp') || defender.hasAbility('Comatose', 'Awakening'))) {
+    const max = Math.round(defender.maxHP() / 2);
+    for (let i = 0; i < minD.length; i++) {
+      recovery[0] += Math.min(Math.round(minD[i] * move.hits / 2), max);
+      recovery[1] += Math.min(Math.round(maxD[i] * move.hits / 2), max);
+    }
+  }
 
   if (move.named('G-Max Finale')) {
     recovery[0] = recovery[1] = Math.round(attacker.maxHP() / 6);
@@ -145,7 +161,7 @@ export function getRecovery(
       const range = [minD[i], maxD[i]];
       for (const j in recovery) {
         let drained = Math.round(range[j] * percentHealed);
-        if (attacker.hasItem('Big Root')) drained = Math.trunc(drained * 5324 / 4096);
+        if (attacker.hasItem('Big Root') || attacker.hasAbility('Deep Roots')) drained = Math.floor(drained * 1.3);
         recovery[j] += Math.min(drained * move.hits, max);
       }
     }
@@ -284,7 +300,7 @@ export function getKOChance(
   const hazards = getHazards(gen, defender, field);
   const eot = getEndOfTurn(gen, attacker, defender, move, field);
   const toxicCounter =
-    defender.hasStatus('tox') && !hasMagicGuard(defender, field) && !defender.hasAbility('Poison Heal')
+    defender.hasStatus('tox') && !hasMagicGuard(defender, field) && !defender.hasAbility('Poison Heal', 'Reqieum Di Diavolo')
       ? defender.toxicCounter : 0;
 
   // multi-hit moves have too many possibilities for brute-forcing to work, so reduce it
@@ -563,15 +579,15 @@ function getEndOfTurn(
       damage -= Math.floor(defender.maxHP() / 8);
       texts.push(defender.ability + ' damage');
     }
-  } else if (field.hasWeather('Rain', 'Heavy Rain')) {
+  } else if (field.hasWeather('Rain', 'Heavy Rain', 'Harsh Typhoon')) {
     if (defender.hasAbility('Dry Skin')) {
       damage += Math.floor(defender.maxHP() / 8);
       texts.push('Dry Skin recovery');
-    } else if (defender.hasAbility('Rain Dish')) {
+    } else if (defender.hasAbility('Rain Dish', 'Healing Droplets', 'Healing Droplets++')) {
       damage += Math.floor(defender.maxHP() / 16);
       texts.push('Rain Dish recovery');
     }
-  } else if (field.hasWeather('Sand')) {
+  } else if (field.hasWeather('Sand', 'Raging Sandstorm')) {
     if (
       !defender.hasType('Rock', 'Ground', 'Steel') &&
       !hasMagicGuard(defender, field) &&
@@ -581,7 +597,7 @@ function getEndOfTurn(
       damage -= Math.floor(defender.maxHP() / (gen.num === 2 ? 8 : 16));
       texts.push('sandstorm damage');
     }
-  } else if (field.hasWeather('Hail', 'Snow')) {
+  } else if (field.hasWeather('Hail', 'Snow', 'Violent Blizzard')) {
     if (defender.hasAbility('Ice Body')) {
       damage += Math.floor(defender.maxHP() / 16);
       texts.push('Ice Body recovery');
@@ -617,7 +633,7 @@ function getEndOfTurn(
         damage += Math.floor(defender.maxHP() / 16);
         texts.push('Black Sludge recovery');
       }
-    } else if (!hasMagicGuard(defender, field)) { //klutz?
+    } else if (!hasMagicGuard(defender, field)) {
       damage -= Math.floor(defender.maxHP() / 8);
       texts.push('Black Sludge damage');
     }
@@ -636,7 +652,7 @@ function getEndOfTurn(
 
   if (field.attackerSide.isSeeded && !hasMagicGuard(attacker, field)) {
     let recovery = Math.floor(attacker.maxHP() / (gen.num >= 2 ? 8 : 16));
-    if (defender.hasItem('Big Root')) recovery = Math.trunc(recovery * 5324 / 4096);
+    if (defender.hasItem('Big Root') || defender.hasAbility('Deep Roots')) recovery = Math.floor(recovery * 1.3);
     if (attacker.hasAbility('Liquid Ooze')) {
       damage -= recovery;
       texts.push('Liquid Ooze damage');
@@ -651,23 +667,26 @@ function getEndOfTurn(
       damage += Math.floor(defender.maxHP() / 16);
       texts.push('Grassy Terrain recovery');
     }
+  } else if (field.hasTerrain('Dream World') && defender.hasType('Normal', 'Psychic')) {
+    damage += Math.floor(defender.maxHP() / 12.5);
+    texts.push('Dream World recovery');
   }
 
   if (defender.hasStatus('psn')) {
-    if (defender.hasAbility('Poison Heal')) {
+    if (defender.hasAbility('Poison Heal', 'Reqieum Di Diavolo')) {
       if (!healBlock) {
         damage += Math.floor(defender.maxHP() / 8);
-        texts.push('Poison Heal');
+        texts.push('Poison Heal', 'Reqieum Di Diavolo');
       }
     } else if (!hasMagicGuard(defender, field)) {
       damage -= Math.floor(defender.maxHP() / (gen.num === 1 ? 16 : 8));
       texts.push('poison damage');
     }
   } else if (defender.hasStatus('tox')) {
-    if (defender.hasAbility('Poison Heal')) {
+    if (defender.hasAbility('Poison Heal', 'Reqieum Di Diavolo')) {
       if (!healBlock) {
         damage += Math.floor(defender.maxHP() / 8);
-        texts.push('Poison Heal');
+        texts.push('Poison Heal', 'Reqieum Di Diavolo');
       }
     } else if (!hasMagicGuard(defender, field)) {
       texts.push('toxic damage');
@@ -684,7 +703,7 @@ function getEndOfTurn(
     damage -= Math.floor(defender.maxHP() / 16);
     texts.push('frostbite damage');
   } else if (
-    (defender.hasStatus('slp') || defender.hasAbility('Comatose')) &&
+    (defender.hasStatus('slp') || defender.hasAbility('Comatose', 'Awakening')) &&
     attacker.hasAbility('isBadDreams') &&
     !hasMagicGuard(defender, field)
   ) {

@@ -422,7 +422,7 @@ const PATHWAYS = SV.concat([
   'Sweet Heart',//atmods x2 if fairy move
   'Spirit Drain',//ghost storm drain but +1 spd
   'Swarming',//form change on unown, immune to ground
-  'Showdown Mode',//irrelevant, form change on lokix
+  'Showdown Mode',//form change on lokix
   'Screamer',//bpmods x1.5 if sound, immune to sound
   'Iron Heel',//bpmods x1.5 if kicking
   'Fusion Core',//water absorb, 1.25x evasion in rain, atmods 1.5x if special
@@ -480,9 +480,9 @@ const PATHWAYS = SV.concat([
   'Blademaster',//bpmods x1.5 if blade
   'Dream World',//start dream world terrain, sleep normal and psychic types
   //dream world terrain: psychic type for mimicry, nature power(psychic), terrain pulse/blast
-  //bpmods x1.5 if target psychic or normal, normal and psychic pokemon can move while asleep
+  //if target psychic or normal, normal and psychic pokemon can move while asleep
   //ALL sleeping pokemon recover 8% max hp end of turn
-  'Deep Roots',//big root as an ability
+  'Deep Roots',//big root as an ability does not stack with big root
   'Stellar Debris',//sets stellar rocks on hit, can have 2 layers 1/6 vs 1/8
   'Sinful Gluttony',//fuck this
   'Lightning Fast',//start endless electric terrain, +1 prio on electric terrain

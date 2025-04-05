@@ -588,7 +588,8 @@ export function isQPActive(
       (['Electric', 'Faraday Cage'].includes(terrain) || pokemon.hasItem('Booster Energy'))) ||
     (pokemon.boostedStat !== 'auto') ||
     (pokemon.hasAbility('Aquamynthesis') &&
-      (['Rain', 'Heavy Rain', 'Harsh Typhoon'].includes(weather) || pokemon.hasItem('Booster Energy')))
+      (['Rain', 'Heavy Rain', 'Harsh Typhoon'].includes(weather) || pokemon.hasItem('Booster Energy'))) ||
+    (pokemon.hasAbility('Spendthrift') && pokemon.hasItem('Big Nugget'))
   );
 }
 

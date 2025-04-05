@@ -59,11 +59,11 @@ export class Result {
   }
 
   moveDesc(notation = '%') {
-    return displayMove(this.gen, this.attacker, this.defender, this.move, this.damage, notation);
+    return displayMove(this.gen, this.attacker, this.defender, this.move, this.field, this.damage, notation);
   }
 
   recovery(notation = '%') {
-    return getRecovery(this.gen, this.attacker, this.defender, this.move, this.damage, notation);
+    return getRecovery(this.gen, this.attacker, this.defender, this.move, this.field, this.damage, notation);
   }
 
   recoil(notation = '%') {

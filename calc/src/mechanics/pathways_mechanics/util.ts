@@ -62,7 +62,7 @@ export function getMoveEffectivenessPathways(
     (type === 'Flying' || type === 'Omnitype') &&
     (field.isGravity || defender.hasItem('Iron Ball') || move.named('Thousand Arrows'))
   ) {
-    if ((defender.hasItem('Iron Ball') && !defender.hasAbility('Klutz', 'Light Born'))) {
+    if (defender.hasItem('Iron Ball')) {
       desc.defenderItem = defender.item;
     }
     return 1;

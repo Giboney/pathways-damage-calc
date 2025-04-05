@@ -1,9 +1,13 @@
 //PATHWAYS DAMAGE CALC IN Move_Usage_Calculations.rb -> def pbCalcDamage
 //
 //brick break, doom blade, stone fangs,
-//grassy glide, spirit bloom, pin shock
 //amaterasu?, tsukuyomi?
 //
+//vicious claws, vicious edge, mind flay, terror realm
+//SINFUL GLUTTONY
+//hydrochasm++ toggle second phase??
+//CHECK ROUNDING is .round is actually math.floor or what?
+//GRAVITY SURGE
 //RECHECK ABILITIES
 //BROKEN ABILITIES
 //FORM CHANGE ABILITIES
@@ -208,7 +212,10 @@ export function calculatePathways(
   // will not be a critical hit (UltiMario)
   const isCritical = (
     !defender.hasAbility('Battle Armor', 'Shell Armor', 'Hydrochasm Surge', 'Hydrochasm Surge++') &&
-    (move.isCrit || (attacker.hasAbility('Merciless') && defender.hasStatus('psn', 'tox'))) &&
+    (move.isCrit ||
+     (attacker.hasAbility('Merciless') && defender.hasStatus('psn', 'tox')) ||
+     (attacker.hasAbility('Basilisk') && move.hasType('Dragon') && defender.hasStatus('par'))
+    ) &&
     move.timesUsed === 1 //whats this times used??
   );
 
@@ -339,10 +346,15 @@ export function calculatePathways(
   move.type = type;
 
   // FIXME: this is incorrect, should be move.flags.heal, not move.drain
-  if ((attacker.hasAbility('Triage') && move.drain) ||
-      (attacker.hasAbility('Gale Wings') &&
-       move.hasType('Flying') &&
-       attacker.curHP() === attacker.maxHP())) {
+  if (
+    (attacker.hasAbility('Triage', 'Pure Prayer', 'Healing Droplets', 'Healing Droplets++') && move.drain) ||
+    (attacker.hasAbility('Gale Wings') && move.hasType('Flying') && attacker.curHP() === attacker.maxHP()) ||
+    (attacker.hasAbility('Spirit Call') && move.hasType('Ghost')) ||
+    (move.named('Grassy Glide', 'Spirit Bloom') && field.hasTerrain('Grassy')) || //if IR ability with these it could proc armor tail incorrectly
+    (move.named('Pin Shock') && field.hasTerrain('Electric')) ||
+    (attacker.hasAbility('Bee Ware') && move.hasType('Bug')) ||
+    (attacker.hasAbility('Lightning Fast') && field.hasTerrain('Electric'))
+  ) {
     move.priority = 1;
     desc.attackerAbility = attacker.ability;
   }
@@ -378,7 +390,7 @@ export function calculatePathways(
       (move.named('Synchronoise') && !defender.hasType(attacker.types[0]) &&
         (!attacker.types[1] || !defender.hasType(attacker.types[1]))) ||
       (move.named('Dream Eater') &&
-        (!(defender.hasStatus('slp') || defender.hasAbility('Comatose')))) ||
+        (!(defender.hasStatus('slp') || defender.hasAbility('Comatose', 'Awakening')))) ||
       (move.named('Steel Roller') && !field.terrain) ||
       (move.named('Poltergeist') && (!defender.item || isQPActive(defender, field)))
   ) {
@@ -396,22 +408,24 @@ export function calculatePathways(
 
   const turn2typeEffectiveness = typeEffectiveness;
 
-  if ((defender.hasAbility('Wonder Guard') && typeEffectiveness <= 1) ||
-      (move.hasType('Grass') && defender.hasAbility('Sap Sipper')) ||
-      (move.hasType('Fire') && defender.hasAbility('Flash Fire', 'Well-Baked Body')) ||
-      (move.hasType('Water') && defender.hasAbility('Dry Skin', 'Storm Drain', 'Water Absorb', 'Water Compaction', 'Fusion Core')) ||
-      (move.hasType('Electric') && defender.hasAbility('Lightning Rod', 'Motor Drive', 'Volt Absorb', 'Turbo Engine')) ||
-      (move.hasType('Ground') && !move.named('Thousand Arrows') && !defender.hasItem('Iron Ball') && !defender.hasType('Flying', 'Omnitype') &&
-       (defender.hasAbility('Golden Hour', 'Levitate', 'Lightning Speed', 'Distortion', 'Witchcraft', 'Swarming'))) ||
-      (move.flags.bullet && defender.hasAbility('Bulletproof')) ||
-      (move.flags.sound && !move.named('Clangorous Soul') && defender.hasAbility('Soundproof')) ||
-      (move.priority > 0 && defender.hasAbility('Queenly Majesty', 'Dazzling', 'Armor Tail')) ||
-      (move.hasType('Ground') && defender.hasAbility('Earth Eater')) ||
-      (move.flags.wind && defender.hasAbility('Wind Rider')) ||
-      (move.hasType('Fairy') && defender.hasAbility('Misery After')) ||
-      (move.hasType('Ice') && defender.hasAbility('Frost Drain')) ||
-      (move.hasType('Bug') && defender.hasAbility('Fly Trap')) ||
-      (move.hasType('Poison') && defender.hasAbility('Ferrite Scales'))
+  if (
+    (defender.hasAbility('Wonder Guard') && typeEffectiveness <= 1) ||
+    (move.hasType('Grass') && defender.hasAbility('Sap Sipper')) ||
+    (move.hasType('Fire') && (defender.hasAbility('Flash Fire', 'Well-Baked Body') && !attacker.hasAbility('Crescendo'))) ||
+    (move.hasType('Water') && defender.hasAbility('Dry Skin', 'Storm Drain', 'Water Absorb', 'Water Compaction', 'Fusion Core')) ||
+    (move.hasType('Electric') && defender.hasAbility('Lightning Rod', 'Motor Drive', 'Volt Absorb', 'Turbo Engine')) ||
+    (move.hasType('Ground') && !move.named('Thousand Arrows') && !defender.hasItem('Iron Ball') && !defender.hasType('Flying', 'Omnitype') &&
+     (defender.hasAbility('Golden Hour', 'Levitate', 'Lightning Speed', 'Distortion', 'Witchcraft', 'Swarming'))) ||
+    (move.flags.bullet && defender.hasAbility('Bulletproof')) ||
+    (move.flags.sound && !move.named('Clangorous Soul') && defender.hasAbility('Soundproof', 'Screamer', 'Reqieum Di Diavolo')) ||
+    (move.priority > 0 && defender.hasAbility('Queenly Majesty', 'Dazzling', 'Armor Tail')) ||
+    (move.hasType('Ground') && defender.hasAbility('Earth Eater', 'Plasma Hellscape')) ||
+    (move.flags.wind && defender.hasAbility('Wind Rider')) ||
+    (move.hasType('Fairy') && defender.hasAbility('Misery After')) ||
+    (move.hasType('Ice') && defender.hasAbility('Frost Drain')) ||
+    (move.hasType('Bug') && defender.hasAbility('Fly Trap')) ||
+    (move.hasType('Poison') && defender.hasAbility('Ferrite Scales')) ||
+    (move.hasType('Dragon') && defender.hasAbility('Dragon Fear'))
   ) {
     desc.defenderAbility = defender.ability;
     return result;
