@@ -94,6 +94,12 @@ export class Side implements State.Side {
   isSwitching?: 'out' | 'in';
   //my additions
   isCharge: boolean;
+  isMetalScraps?: boolean;
+  stellarRocks?: number;
+  isDrakeyDrake: boolean;
+  isColdTherapy?: boolean;
+  isSaltCure?: boolean;
+  isSpookySpook?: boolean;
 
   constructor(side: State.Side = {}) {
     this.spikes = side.spikes || 0;
@@ -118,6 +124,12 @@ export class Side implements State.Side {
     this.isSwitching = side.isSwitching;
     //my additions
     this.isCharge = !!side.isCharge;
+    this.isMetalScraps = !!side.isMetalScraps;
+    this.stellarRocks = side.stellarRocks || 0;
+    this.isDrakeyDrake = !!side.isDrakeyDrake;
+    this.isColdTherapy = !!side.isColdTherapy;
+    this.isSaltCure = !!side.isSaltCure;
+    this.isSpookySpook = !!side.isSpookySpook;
   }
 
   clone() {

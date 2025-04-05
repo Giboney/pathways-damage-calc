@@ -31,7 +31,6 @@ import {
   isQPActive,
 } from '../util';
 import {
-  getMoveEffectivenessPathways,
   getStabModPathways,
   getQPBoostedStatPathways,
   getModifiedStatPathways,
@@ -170,22 +169,19 @@ export function calculateDfModPathways(
     desc.defenderItem = defender.item;
   }
   
-  // Pokemon with "-of Ruin" Ability are immune to the opposing "-of Ruin" ability
-  /*const isSwordOfRuinActive = (attacker.hasAbility('Sword of Ruin') || field.isSwordOfRuin) &&
-    !defender.hasAbility('Sword of Ruin');
-  const isBeadsOfRuinActive = (attacker.hasAbility('Beads of Ruin') || field.isBeadsOfRuin) &&
-    !defender.hasAbility('Beads of Ruin');
+  //doubles ruin abilities
   if (
-    (isSwordOfRuinActive && hitsPhysical) ||
-    (isBeadsOfRuinActive && !hitsPhysical)
+    (field.isSwordOfRuin && hitsPhysical && !attacker.hasAbility('Sword of Ruin')) ||
+    (field.isBeadsOfRuin && move.category === 'Special' && !attacker.hasAbility('Beads of Ruin'))
   ) {
-    if (attacker.hasAbility('Sword of Ruin') || attacker.hasAbility('Beads of Ruin')) {
-      desc.attackerAbility = attacker.ability;
-    } else {
-      desc[hitsPhysical ? 'isSwordOfRuin' : 'isBeadsOfRuin'] = true;
+    dfMod *= 0.75;
+    if (hitsPhysical) {
+      desc.isSwordOfRuin = true;
     }
-    dfMods.push(3072);
-  }*/
+    if (move.category === 'Special') {
+      desc.isBeadsOfRuin = true;
+    }
+  }
 
   return dfMod;
 }

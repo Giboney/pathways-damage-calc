@@ -18,7 +18,7 @@ import type {Pokemon} from '../../pokemon';
 import {Stats} from '../../stats';
 import type {RawDesc} from '../../desc';
 import {NO_ROLE} from '../../data/roles';
-import {isQPActive} from '../util';
+import {isQPActive, isGrounded} from '../util';
 
 
 
@@ -48,9 +48,6 @@ export function getMoveEffectivenessPathways(
   field: Field,
   desc: RawDesc,
 ) {
-  if (move.hasType('Shadow')) {
-    return 2;
-  }
   let e = gen.types.get(toID(move.type))!.effectiveness[type]!;
   if (
     (attacker.hasAbility('Scrappy') || attacker.hasAbility('Mind\'s Eye') || field.defenderSide.isForesight) &&
@@ -398,8 +395,23 @@ export function checkMultihitBoostPathways(
 
 
 
-export function affectedByHazards(field: Field, pokemon: Pokemon) {
-  return false;
+export function affectedByHazards(defender: Pokemon, field: Field) {
+  let side = field.defenderSide
+  return (
+    !hasMagicGuard(defender, field) && !defender.hasItem('Heavy-Duty Boots', 'Sword and Boots') &&
+    !defender.hasAbility('Golden Hour', 'Hydrchasm Surge', 'Hydrchasm Surge++') &&
+    (side.isSR || side.steelsurge || (side.spikes !== 0 && isGrounded(defender, field)) ||
+     side.isMetalScraps || side.stellarRocks !== 0 || (side.isDrakeyDrake && !defender.hasType('Fairy', 'Omnitype')))
+  );
+}
+
+
+
+export function hasMagicGuard(pokemon: Pokemon, field: Field) {
+  return (
+    pokemon.hasAbility('Magic Guard', 'Lunar Light', 'Sinful Gluttony', 'Abyssal Veil', 'Abyssal Veil ++') ||
+    (pokemon.hasAbility('Hydrochasm Surge', 'Hydrochasm Surge++') && field.hasWeather('Rain', 'Heavy Rain', 'Harsh Typhoon'))
+  );
 }
 
 

@@ -83,5 +83,11 @@ export namespace State {
     isSwitching?: 'out' | 'in';
     //my additions
     isCharge?: boolean;
+    isMetalScraps?: boolean;
+    stellarRocks?: number;
+    isDrakeyDrake?: boolean;
+    isColdTherapy?: boolean;
+    isSaltCure?: boolean;
+    isSpookySpook?: boolean;
   }
 }

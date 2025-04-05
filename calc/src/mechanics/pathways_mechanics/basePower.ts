@@ -61,6 +61,10 @@ export function calculateBasePowerPathways(
   const turnOrder = attacker.stats.spe > defender.stats.spe ? 'first' : 'last';
 
   let basePower = move.bp;
+  if (move.named('Return', 'Frustration', 'Pika Papow', 'Veevee Volley', 'Rio Rush', 'Zozo Zania', 'Cleffa Cluffle', 'Nido Needle', 'Axy Axe', 'Bonbon Bash', 'Cubby Cuddle', 'Skully Scare', 'Nymble Nibble', 'Deedee Duster', 'Cucu Crush', 'Purr Pressure', 'Bray Bravery')) {
+    basePower = 102;
+    desc.moveBP = basePower;
+  }
 
   //could also be an if else block
   switch (move.name) {
@@ -410,6 +414,7 @@ export function calculateBasePowerPathways(
       }
       break;
     case 'Collision Course':
+    case 'Electro Drift':
       const type1Effectiveness = getMoveEffectivenessPathways(
         gen,
         attacker,
@@ -429,7 +434,7 @@ export function calculateBasePowerPathways(
         desc
       ) : 1;
       if (type1Effectiveness * type2Effectiveness >= 2) {
-        basePower *= 1.3;
+        basePower *= 1.3; //essentials moment
         desc.moveBP = basePower;
       }
       break;

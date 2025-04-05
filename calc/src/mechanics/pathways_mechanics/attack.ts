@@ -31,7 +31,6 @@ import {
   isQPActive,
 } from '../util';
 import {
-  getMoveEffectivenessPathways,
   getStabModPathways,
   getQPBoostedStatPathways,
   getModifiedStatPathways,
@@ -203,6 +202,7 @@ export function calculateAtModPathways(
   ) {
     atMod *= 1.25;
     desc.defenderAbility = defender.ability;
+    desc.weather = field.weather;
   }
   
   //field
@@ -214,22 +214,13 @@ export function calculateAtModPathways(
     desc.isFlowerGiftAttacker = true;
   }
   
-  // Pokemon with "-of Ruin" Ability are immune to the opposing "-of Ruin" ability
-  /*const isTabletsOfRuinActive = (defender.hasAbility('Tablets of Ruin') || field.isTabletsOfRuin) &&
-    !attacker.hasAbility('Tablets of Ruin');
-  const isVesselOfRuinActive = (defender.hasAbility('Vessel of Ruin') || field.isVesselOfRuin) &&
-    !attacker.hasAbility('Vessel of Ruin');
   if (
-    (isTabletsOfRuinActive && move.category === 'Physical') ||
-    (isVesselOfRuinActive && move.category === 'Special')
+    (field.isTabletsOfRuin && move.category === 'Physical' && !defender.hasAbility('Tablets of Ruin')) ||
+    (field.isVesselOfRuin && move.category === 'Special' && !defender.hasAbility('Vessel of Ruin'))
   ) {
-    if (defender.hasAbility('Tablets of Ruin') || defender.hasAbility('Vessel of Ruin')) {
-      desc.defenderAbility = defender.ability;
-    } else {
-      desc[move.category === 'Special' ? 'isVesselOfRuin' : 'isTabletsOfRuin'] = true;
-    }
-    atMods.push(3072);
-  }*/
+    atMod *= 0.75;
+    desc[move.category === 'Special' ? 'isVesselOfRuin' : 'isTabletsOfRuin'] = true;
+  }
 
   //ITEMS
   //attacker item

@@ -1,3 +1,8 @@
+//saltcure moved to field next to leech seed and others
+//add drakey stellar metal cold spook
+//improve leech
+
+
 if (!Array.prototype.indexOf) {
 	Array.prototype.indexOf = function (searchElement, fromIndex) { // eslint-disable-line no-extend-native
 		var k;
@@ -549,60 +554,62 @@ function autosetTerrain(ability, i) {
 	}
 	var lastTerrain = $("input:checkbox[name='terrain']:checked");
 	// terrain input uses checkbox instead of radio, need to uncheck all first
-	$("input:checkbox[name='terrain']:checked").prop("checked", false);
-	switch (ability) {
-		case "None":
-			lastAutoTerrain[i] = "";
-			break;
-		case "Electric Surge":
-		case "Lightning Speed":
-		case "Hadron Engine":
-			lastAutoTerrain[i] = "Electric";
-			$("#electric").prop("checked", true);
-			break;
-		case "Grassy Surge":
-			lastAutoTerrain[i] = "Grassy";
-			$("#grassy").prop("checked", true);
-			break;
-		case "Misty Surge":
-			lastAutoTerrain[i] = "Misty";
-			$("#misty").prop("checked", true);
-			break;
-		case "Psychic Surge":
-		case "Killing Joke2":
-			lastAutoTerrain[i] = "Psychic";
-			$("#psychic").prop("checked", true);
-			break;
-		case "Draconic Soul":
-			lastAutoTerrain[i] = "Dragonic Soul";
-			$("#dragonic-soul").prop("checked", true);
-			break;
-		case "Terror Realm":
-			lastAutoTerrain[i] = "Terror Realm";
-			$("#terror-realm").prop("checked", true);
-			break;
-		case "Dream World":
-			lastAutoTerrain[i] = "Dream World";
-			$("#dream-world").prop("checked", true);
-			break;
-		case "Faraday Cage":
-			lastAutoTerrain[i] = "Faraday Cage";
-			$("#faraday-cage").prop("checked", true);
-			break;
-		case "Frozen Kingdom":
-			lastAutoTerrain[i] = "Frozen Kingdom";
-			$("#frozen-kingdom").prop("checked", true);
-			break;
-		default:
-			//if ability did not change terrain, recheck previous terrain and keep manual terrain
-			lastTerrain.prop("checked", true);
-			lastManualTerrain = lastTerrain.val();
-	}
-	var weather = $("input:radio[name='weather']:checked").val();
-	var terrain = $("input:checkbox[name='terrain']:checked").val();
-	if (currentTerrain === "Frozen Kingdom" && terrain !== "Frozen Kingdom" && weather === "Snow") {
-		stickyWeather.clearStickyWeather();
-		autosetWeather("None", 0);
+	if (ability !== 'Frozen Kingdom' || !$("input:radio[name='weather']:checked").is('.locked-weather') || weather === 'Snow') {
+		$("input:checkbox[name='terrain']:checked").prop("checked", false);
+	
+		switch (ability) {
+			case "None":
+				lastAutoTerrain[i] = "";
+				break;
+			case "Electric Surge":
+			case "Lightning Speed":
+			case "Hadron Engine":
+				lastAutoTerrain[i] = "Electric";
+				$("#electric").prop("checked", true);
+				break;
+			case "Grassy Surge":
+				lastAutoTerrain[i] = "Grassy";
+				$("#grassy").prop("checked", true);
+				break;
+			case "Misty Surge":
+				lastAutoTerrain[i] = "Misty";
+				$("#misty").prop("checked", true);
+				break;
+			case "Psychic Surge":
+			case "Killing Joke2":
+				lastAutoTerrain[i] = "Psychic";
+				$("#psychic").prop("checked", true);
+				break;
+			case "Draconic Soul":
+				lastAutoTerrain[i] = "Dragonic Soul";
+				$("#dragonic-soul").prop("checked", true);
+				break;
+			case "Terror Realm":
+				lastAutoTerrain[i] = "Terror Realm";
+				$("#terror-realm").prop("checked", true);
+				break;
+			case "Dream World":
+				lastAutoTerrain[i] = "Dream World";
+				$("#dream-world").prop("checked", true);
+				break;
+			case "Faraday Cage":
+				lastAutoTerrain[i] = "Faraday Cage";
+				$("#faraday-cage").prop("checked", true);
+				break;
+			case "Frozen Kingdom":
+				lastAutoTerrain[i] = "Frozen Kingdom";
+				$("#frozen-kingdom").prop("checked", true);
+				break;
+			default:
+				//if ability did not change terrain, recheck previous terrain and keep manual terrain
+				lastTerrain.prop("checked", true);
+				lastManualTerrain = lastTerrain.val();
+		}
+		var weather = $("input:radio[name='weather']:checked").val();
+		var terrain = $("input:checkbox[name='terrain']:checked").val();
+		if (currentTerrain === "Frozen Kingdom" && terrain !== "Frozen Kingdom" && weather === 'Snow') {
+			autosetWeather("None", 0);
+		}
 	}
 }
 
@@ -1348,7 +1355,6 @@ function createPokemon(pokeInfo) {
 			ivs: ivs,
 			evs: evs,
 			isDynamaxed: isDynamaxed,
-			isSaltCure: pokeInfo.find(".saltcure").is(":checked"),
 			alliesFainted: parseInt(pokeInfo.find(".alliesFainted").val()),
 			boostedStat: pokeInfo.find(".boostedStat").val() || undefined,
 			teraType: teraType,
@@ -1453,24 +1459,57 @@ function createField() {
 	var isSwitchingOut = [$("#switchingL").prop("checked"), $("#switchingR").prop("checked")];
 	// my additions
 	var isCharge = [$("#chargeL").prop("checked"), $("#chargeR").prop("checked")];
+	var isSaltCure = [$("#cureL").prop("checked"), $("#cureR").prop("checked")];
+	var isSpookySpook = [$("#spookL").prop("checked"), $("#spookR").prop("checked")];
+	var isColdTherapy = [$("#coldL").prop("checked"), $("#coldR").prop("checked")];
+	var isMetalScraps = [$("#metalScrapsL").prop("checked"), $("#metalScrapsR").prop("checked")];
+	var stellarRocks = [~~$("input:radio[name='stellarRocksL']:checked").val(), ~~$("input:radio[name='stellarRocksR']:checked").val()];
+	var isDrakeyDrake = [$("#drakeyDrakeL").prop("checked"), $("#drakeyDrakeR").prop("checked")];
 
 	var createSide = function (i) {
 		return new calc.Side({
-			spikes: spikes[i], isSR: isSR[i], steelsurge: steelsurge[i],
-			vinelash: vinelash[i], wildfire: wildfire[i], cannonade: cannonade[i], volcalith: volcalith[i],
-			isReflect: isReflect[i], isLightScreen: isLightScreen[i],
-			isProtected: isProtected[i], isSeeded: isSeeded[i], isForesight: isForesight[i],
-			isTailwind: isTailwind[i], isHelpingHand: isHelpingHand[i], isFlowerGift: isFlowerGift[i], isFriendGuard: isFriendGuard[i],
-			isAuroraVeil: isAuroraVeil[i], isBattery: isBattery[i], isPowerSpot: isPowerSpot[i], isSwitching: isSwitchingOut[i] ? 'out' : undefined,
-			isCharge: isCharge[i] // added charge
+			spikes: spikes[i],
+			isSR: isSR[i],
+			steelsurge: steelsurge[i],
+			vinelash: vinelash[i],
+			wildfire: wildfire[i],
+			cannonade: cannonade[i],
+			volcalith: volcalith[i],
+			isReflect: isReflect[i],
+			isLightScreen: isLightScreen[i],
+			isProtected: isProtected[i],
+			isSeeded: isSeeded[i],
+			isForesight: isForesight[i],
+			isTailwind: isTailwind[i],
+			isHelpingHand: isHelpingHand[i],
+			isFlowerGift: isFlowerGift[i],
+			isFriendGuard: isFriendGuard[i],
+			isAuroraVeil: isAuroraVeil[i],
+			isBattery: isBattery[i],
+			isPowerSpot: isPowerSpot[i],
+			isSwitching: isSwitchingOut[i] ? 'out' : undefined,
+			isCharge: isCharge[i], // additions
+			isSaltCure: isSaltCure[i],
+			isSpookySpook: isSpookySpook[i],
+			isColdTherapy: isColdTherapy[i],
+			isMetalScraps: isMetalScraps[i],
+			isDrakeyDrake: isDrakeyDrake[i],
+			stellarRocks: stellarRocks[i]
 		});
 	};
 	return new calc.Field({
-		gameType: gameType, weather: weather, terrain: terrain,
-		isMagicRoom: isMagicRoom, isWonderRoom: isWonderRoom, isGravity: isGravity,
-		isBeadsOfRuin: isBeadsOfRuin, isTabletsOfRuin: isTabletsOfRuin,
-		isSwordOfRuin: isSwordOfRuin, isVesselOfRuin: isVesselOfRuin,
-		attackerSide: createSide(0), defenderSide: createSide(1)
+		gameType: gameType,
+		weather: weather,
+		terrain: terrain,
+		isMagicRoom: isMagicRoom,
+		isWonderRoom: isWonderRoom,
+		isGravity: isGravity,
+		isBeadsOfRuin: isBeadsOfRuin,
+		isTabletsOfRuin: isTabletsOfRuin,
+		isSwordOfRuin: isSwordOfRuin,
+		isVesselOfRuin: isVesselOfRuin,
+		attackerSide: createSide(0),
+		defenderSide: createSide(1)
 	});
 }
 
@@ -1748,6 +1787,18 @@ function clearField() {
 	// my additions
 	$("#chargeL").prop("checked", false);
 	$("#chargeR").prop("checked", false);
+	$("#cureL").prop("checked", false);
+	$("#cureR").prop("checked", false);
+	$("#spookL").prop("checked", false);
+	$("#spookR").prop("checked", false);
+	$("#coldL").prop("checked", false);
+	$("#coldR").prop("checked", false);
+	$("#metalScrapsL").prop("checked", false);
+	$("#metalScrapsR").prop("checked", false);
+	$("#stellarRocksL0").prop("checked", true);
+	$("#stellarRocksR0").prop("checked", true);
+	$("#drakeyDrakeL").prop("checked", false);
+	$("#drakeyDrakeR").prop("checked", false);
 }
 
 function getSetOptions(sets) {
@@ -1957,8 +2008,12 @@ function getTerrainEffects() {
 	var weather = $("input:radio[name='weather']:checked").val();
 	var lastTerrain = false;
 	if ($(this).is("input:checkbox[name='terrain']:checked")) {
-		lastTerrain = $("input:checkbox[name='terrain']:checked").not(this).val();
-		$("input:checkbox[name='terrain']").not(this).prop("checked", false);
+		if ($(this).val() === 'Frozen Kingdom' && $("input:radio[name='weather']:checked").is('.locked-weather') && weather !== 'Snow') {
+			$(this).prop('checked', false);
+		} else {
+			lastTerrain = $("input:checkbox[name='terrain']:checked").not(this).val();
+			$("input:checkbox[name='terrain']").not(this).prop("checked", false);
+		}
 	}
 	var terrainValue = $("input:checkbox[name='terrain']:checked").val();
 	if (['type1', 'type2', 'teraType', 'teraToggle', 'item'].includes(className)) {
@@ -2044,14 +2099,15 @@ function getTerrainEffects() {
 			lowerStatStage($("#p2"), 'sp', 1, 'Frozen Kingdom2');
 		}
 		if (weather !== "Snow") {
-			stickyWeather.clearStickyWeather();
-			autosetWeather("Frozen Kingdom", 0); //maybe no longer necessary
+			if ($(this).is("input:checkbox[name='terrain']:checked")) {
+				stickyWeather.clearStickyWeather();
+			}
+			autosetWeather("Frozen Kingdom", 0);
 		}
 	} else {
 		storeBoosts['Frozen Kingdom1'] = false;
 		storeBoosts['Frozen Kingdom2'] = false;
-		if (lastTerrain === "Frozen Kingdom") {
-			stickyWeather.clearStickyWeather();
+		if (lastTerrain === "Frozen Kingdom" && weather === "Snow") {
 			autosetWeather("None", 0);
 		}
 	}

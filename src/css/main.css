@@ -242,28 +242,28 @@ th {
     border-radius: 8px;
 }
 .btn-wide {
-    width: 7em;
+    width: 7em !important;
 }
 .btn-xwide {
-    width: 8em;
+    width: 8em !important;
 }
 .btn-xxwide {
-    width: 9em;
+    width: 9em !important;
 }
 .btn-xxxwide {
-    width: 10em;
+    width: 10em !important;
 }
 .btn-xxxxwide {
-	width: 11em;
+	width: 11em !important;
 }
 .btn-xxxxxwide {
-	width: 12em;
+	width: 12em !important;
 }
 .btn-small {
-    width: 4em;
+    width: 4em !important;
 }
 .btn-xsmall {
-    width: 1em;
+    width: 1em !important;
 }
 .btn-left {
     border-top-right-radius: 0;

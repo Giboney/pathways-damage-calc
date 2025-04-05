@@ -476,14 +476,6 @@
                     </select>
                 </div>
             </div>
-            <div class="info-group gen-specific g9 g10">
-                <div class="left" title="Has this Pok&eacute;mon been cured with Salt Cure?">
-                    <div hidden id="selectRevealInstruction">Has this Pok&eacute;mon been cured with Salt Cure?</div>
-                    <input aria-describedby="selectRevealInstruction" class="visually-hidden saltcure calc-trigger" type="checkbox" id="cureL" />
-                    <label class="btn btn-xxwide" for="cureL">Salt Cure</label>
-                </div>
-                <br />
-            </div>
             <div class="info-group">
                 <label for="currentHpL1">Current HP</label>
                 <input class="current-hp calc-trigger" id="currentHpL1" value="341" inputmode="decimal" />/<span class="max-hp">341</span> (
@@ -686,7 +678,7 @@
                     <input class="visually-hidden terrain-trigger calc-trigger" type="checkbox" name="terrain" value="Faraday Cage" id="faraday-cage" /><label class="btn btn-xxxwide btn-mid" for="faraday-cage">Faraday Cage</label>
                     <input class="visually-hidden terrain-trigger calc-trigger" type="checkbox" name="terrain" value="Frozen Kingdom" id="frozen-kingdom" /><label class="btn btn-xxxwide btn-right" for="frozen-kingdom">Frozen Kingdom</label>
                 </div>
-                <div aria-labelledby="selectRuinInstruction" class="gen-specific g9" role="group" style="margin: 5px auto auto;" title="Select the ruin abilities from other Pok&eacute;mon on the field.">
+                <div aria-labelledby="selectRuinInstruction" class="gen-specific g9 g10 format-specific doubles" role="group" style="margin: 5px auto auto;" title="Select the ruin abilities from other Pok&eacute;mon on the field.">
                     <span class="visually-hidden" id="selectRuinInstruction">Select the active Ruin abilities from other Poke&eacute;mon on the field.</span>
                     <input class="visually-hidden calc-trigger" type="checkbox" name="ruin" value="Beads" id="beads" />
                     <label class="btn btn-xxxwide btn-left" for="beads">Beads of Ruin</label>
@@ -776,6 +768,70 @@
                                 <label class="btn btn-xwide" for="srR">Stealth Rock</label>
                             </div></td>
                         </tr>
+                        <tr class="gen-specific g3 g4 g5 g6 g7 g8 g9 g10">
+                            <div hidden id="selectSpikeInstruction">Are there Spikes on this side of the field?</div>
+                            <td><div aria-labelledby="selectSpikeInstruction" class="left" role="radiogroup" title="Are there Spikes on this side of the field?">
+                                <input class="visually-hidden calc-trigger" type="radio" name="spikesL" value="0" id="spikesL0" checked="checked" />
+                                <label class="btn btn-xsmall btn-left" for="spikesL0">0</label>
+                                <input class="visually-hidden calc-trigger" type="radio" name="spikesL" value="1" id="spikesL1" />
+                                <label class="btn btn-xsmall btn-mid" for="spikesL1">1</label>
+                                <input class="visually-hidden calc-trigger" type="radio" name="spikesL" value="2" id="spikesL2" />
+                                <label class="btn btn-xsmall btn-mid" for="spikesL2">2</label>
+                                <input class="visually-hidden calc-trigger" type="radio" name="spikesL" value="3" id="spikesL3" />
+                                <label class="btn btn-wide btn-right" for="spikesL3">3 Spikes</label>
+                            </div></td>
+                            <td><div aria-labelledby="selectSpikeInstruction" class="right" role="radiogroup" title="Are there Spikes on this side of the field?">
+                                <input class="visually-hidden calc-trigger" type="radio" name="spikesR" value="3" id="spikesR3" />
+                                <label class="btn btn-wide btn-left" for="spikesR3">3 Spikes</label>
+                                <input class="visually-hidden calc-trigger" type="radio" name="spikesR" value="2" id="spikesR2" />
+                                <label class="btn btn-xsmall btn-mid" for="spikesR2">2</label>
+                                <input class="visually-hidden calc-trigger" type="radio" name="spikesR" value="1" id="spikesR1" />
+                                <label class="btn btn-xsmall btn-mid" for="spikesR1">1</label>
+                                <input class="visually-hidden calc-trigger" type="radio" name="spikesR" value="0" id="spikesR0" checked="checked" />
+                                <label class="btn btn-xsmall btn-right" for="spikesR0">0</label>
+                            </div></td>
+                        </tr>
+                        <tr class="gen-specific g10">
+                            <div hidden id="selectDrakeyDrakeInstruction">Is Drakey Drake affecting this side of the field?</div>
+                            <td><div class="left" title="Is Drakey Drake affecting this side of the field?">
+                                <input aria-describedby="sselectDrakeyDrakeInstruction" class="visually-hidden calc-trigger" type="checkbox" id="drakeyDrakeL" />
+                                <label class="btn btn-xwide" for="drakeyDrakeL">Drakey Drake</label>
+                            </div></td>
+                            <td><div class="right" title="Is Drakey Drake affecting this side of the field?">
+                                <input aria-describedby="selectDrakeyDrakeInstruction" class="visually-hidden calc-trigger" type="checkbox" id="drakeyDrakeR" />
+                                <label class="btn btn-xwide" for="drakeyDrakeR">Drakey Drake</label>
+                            </div></td>
+                        </tr>
+                        <tr class="gen-specific g10">
+                            <div hidden id="selectMetalScrapsInstruction">Are Metal Scraps affecting this side of the field?</div>
+                            <td><div class="left" title="Are Metal Scraps affecting this side of the field?">
+                                <input aria-describedby="sselectMetalScrapsInstruction" class="visually-hidden calc-trigger" type="checkbox" id="metalScrapsL" />
+                                <label class="btn btn-xwide" for="metalScrapsL">Metal Scraps</label>
+                            </div></td>
+                            <td><div class="right" title="Are Metal Scraps affecting this side of the field?">
+                                <input aria-describedby="selectMetalScrapsInstruction" class="visually-hidden calc-trigger" type="checkbox" id="metalScrapsR" />
+                                <label class="btn btn-xwide" for="metalScrapsR">Metal Scraps</label>
+                            </div></td>
+                        </tr>
+                        <tr class="gen-specific g10">
+                            <div hidden id="selectStellarRocksInstruction">Are Stellar Rocks affecting this side of the field?</div>
+                            <td><div class="left" aria-describedby="selectStellarRocksInstruction" role="radiogroup" title="Are Stellar Rocks affecting this side of the field?">
+                                <input class="visually-hidden calc-trigger" type="radio" name="stellarRocksL" value="0" id="stellarRocksL0" checked="checked"/>
+                                <label class="btn btn-xsmall btn-left" for="stellarRocksL0">0</label>
+                                <input class="visually-hidden calc-trigger" type="radio" name="stellarRocksL" value="1" id="stellarRocksL1"/>
+                                <label class="btn btn-xsmall btn-mid" for="stellarRocksL1">1</label>
+                                <input class="visually-hidden calc-trigger" type="radio" name="stellarRocksL" value="2" id="stellarRocksL2"/>
+                                <label class="btn btn-xxwide btn-right" for="stellarRocksL2">2 Stellar Rocks</label>
+                            </div></td>
+                            <td><div class="right" aria-describedby="selectStellarRocksInstruction" role="radiogroup" title="Are Stellar Rocks affecting this side of the field?">
+                                <input class="visually-hidden calc-trigger" type="radio" name="stellarRocksR" value="2" id="stellarRocksR2"/>
+                                <label class="btn btn-xxwide btn-left" for="stellarRocksR2">2 Stellar Rocks</label>
+                                <input class="visually-hidden calc-trigger" type="radio" name="stellarRocksR" value="1" id="stellarRocksR1"/>
+                                <label class="btn btn-xsmall btn-mid" for="stellarRocksR1">1</label>
+                                <input class="visually-hidden calc-trigger" type="radio" name="stellarRocksR" value="0" id="stellarRocksR0" checked="checked"/>
+                                <label class="btn btn-xsmall btn-right" for="stellarRocksR0">0</label>
+                            </div></td>
+                        </tr>
                         <tr class="gen-specific g8 g10">
                             <div hidden id="selectSteelsurgeInstruction">Is Steelsurge affecting this side of the field?</div>
                             <td><div class="left" title="Is Steelsurge affecting this side of the field?">
@@ -785,6 +841,84 @@
                             <td><div class="right" title="Is Steelsurge affecting this side of the field?">
                                 <input aria-describedby="selectSteelsurgeInstruction" class="visually-hidden calc-trigger" type="checkbox" id="steelsurgeR" />
                                 <label class="btn btn-xwide" for="steelsurgeR">Steelsurge</label>
+                            </div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="left" title="Is this Pok&eacute;mon protected by Reflect or Light Screen?">
+                                <div hidden id="selectScreenInstruction">Is this Pok&eacute;mon protected by Reflect or Light Screen?</div>
+                                <input aria-describedby="selectScreenInstruction" class="visually-hidden calc-trigger" type="checkbox" id="reflectL" />
+                                <label class="btn btn-left" for="reflectL">Reflect</label>
+                                <input aria-describedby="selectScreenInstruction" class="visually-hidden calc-trigger" type="checkbox" id="lightScreenL" />
+                                <label class="btn btn-xwide btn-right" for="lightScreenL">Light Screen</label>
+                            </div></td>
+                            <td><div class="right" title="Is this Pok&eacute;mon protected by Reflect or Light Screen?">
+                                <input aria-describedby="selectScreenInstruction" class="visually-hidden calc-trigger" type="checkbox" id="lightScreenR" />
+                                <label class="btn btn-xwide btn-left" for="lightScreenR">Light Screen</label>
+                                <input aria-describedby="selectScreenInstruction" class="visually-hidden calc-trigger" type="checkbox" id="reflectR" />
+                                <label class="btn btn-right" for="reflectR">Reflect</label>
+                            </div></td>
+                        </tr>
+                        <tr class="gen-specific g7 g8 g9 g10">
+                            <td><div class="left" title="Is the Pok&eacute;mon protected by Aurora Veil?">
+                                <div hidden id="selectAuroraVeilInstruction">Is the Pok&eacute;mon protected by Aurora Veil?</div>
+                                <input aria-describedby="selectAuroraVeilInstruction" class="visually-hidden calc-trigger" type="checkbox" id="auroraVeilL" />
+                                <label class="btn btn-xxwide" for="auroraVeilL">Aurora Veil</label>
+                            </div></td>
+                            <td><div class="right" title="Is the Pok&eacute;mon protected by Aurora Veil?">
+                                <input aria-describedby="selectAuroraVeilInstruction" class="visually-hidden calc-trigger" type="checkbox" id="auroraVeilR" />
+                                <label class="btn btn-xxwide" for="auroraVeilR">Aurora Veil</label>
+                            </div></td>
+                        </tr>
+                        <tr class="gen-specific g2 g3 g4 g5 g6 g7 g8 g9 g10">
+                            <td><div class="left" title="Is this Pok&eacute;mon protected?">
+                                <div hidden id="selectProtectInstruction">Is this Pok&eacute;mon protected?</div>
+                                <input aria-describedby="selectProtectInstruction" class="visually-hidden calc-trigger" type="checkbox" id="protectL" />
+                                <label class="btn btn-wide" for="protectL">Protect</label>
+                            </div></td>
+                            <td><div class="right" title="Is this Pok&eacute;mon protected?">
+                                <input aria-describedby="selectProtectInstruction" class="visually-hidden calc-trigger" type="checkbox" id="protectR" />
+                                <label class="btn btn-wide" for="protectR">Protect</label>
+                            </div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="left" title="Has this Pok&eacute;mon been affected by Leech Seed?">
+                                <div hidden id="selectLeechSeedInstruction">Has this Pok&eacute;mon been affected by Leech Seed?</div>
+                                <input aria-describedby="selectLeechSeedInstruction" class="visually-hidden calc-trigger" type="checkbox" id="leechSeedL" />
+                                <label class="btn btn-wide" for="leechSeedL">Leech Seed</label>
+                            </div></td>
+                            <td><div class="right" title="Has this Pok&eacute;mon been affected by Leech Seed?">
+                                <input aria-describedby="selectLeechSeedInstruction" class="visually-hidden calc-trigger" type="checkbox" id="leechSeedR" />
+                                <label class="btn btn-wide" for="leechSeedR">Leech Seed</label>
+                            </div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="left" title="Has this Pok&eacute;mon been cured with Salt Cure?">
+                                <div hidden id="selectCureInstruction">Has this Pok&eacute;mon been cured with Salt Cure or Cold Therapy?</div>
+                                <input aria-describedby="selectCureInstruction" class="visually-hidden calc-trigger" type="checkbox" id="cureL" />
+                                <label class="btn btn-left btn-wide" for="cureL">Salt Cure</label>
+                            </div>
+                            <div class="left" title="Has this Pok&eacute;mon been affected by Cold Therapy?">
+                                <input aria-describedby="selectCureInstruction" class="visually-hidden calc-trigger" type="checkbox" id="coldL" />
+                                <label class="btn btn-xxwide btn-right" for="coldL">Cold Therapy</label>
+                            </div></td>
+                            <td><div class="right" title="Has this Pok&eacute;mon been cured with Salt Cure?">
+                                <input aria-describedby="selectCureInstruction" class="visually-hidden calc-trigger" type="checkbox" id="cureR" />
+                                <label class="btn btn-right btn-wide" for="cureR">Salt Cure</label>
+                            </div>
+                            <div class="right" title="Has this Pok&eacute;mon been affected by Cold Therapy?">
+                                <input aria-describedby="selectCureInstruction" class="visually-hidden calc-trigger" type="checkbox" id="coldR" />
+                                <label class="btn btn-xxwide btn-left" for="coldR">Cold Therapy</label>
+                            </div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="left" title="Has this Pok&eacute;mon been spooked by Spooky Spook?">
+                                <div hidden id="selectSpookInstruction">Has this Pok&eacute;mon been spooked by Spooky Spook?</div>
+                                <input aria-describedby="selectSpookInstruction" class="visually-hidden calc-trigger" type="checkbox" id="spookL" />
+                                <label class="btn btn-xxwide" for="spookL">Spooky Spook</label>
+                            </div></td>
+                            <td><div class="right" title="Has this Pok&eacute;mon been spooked by Spooky Spook?">
+                                <input aria-describedby="selectSpookInstruction" class="visually-hidden calc-trigger" type="checkbox" id="spookR" />
+                                <label class="btn btn-xxwide" for="spookR">Spooky Spook</label>
                             </div></td>
                         </tr>
                         <tr class="gen-specific g8 g10">
@@ -818,77 +952,6 @@
                             </div></td>
                         </tr>
                         <tr class="gen-specific g3 g4 g5 g6 g7 g8 g9 g10">
-                            <div hidden id="selectSpikeInstruction">Are there Spikes on this side of the field?</div>
-                            <td><div aria-labelledby="selectSpikeInstruction" class="left" role="radiogroup" title="Are there Spikes on this side of the field?">
-                                <input class="visually-hidden calc-trigger" type="radio" name="spikesL" value="0" id="spikesL0" checked="checked" />
-                                <label class="btn btn-xsmall btn-left" for="spikesL0">0</label>
-                                <input class="visually-hidden calc-trigger" type="radio" name="spikesL" value="1" id="spikesL1" />
-                                <label class="btn btn-xsmall btn-mid" for="spikesL1">1</label>
-                                <input class="visually-hidden calc-trigger" type="radio" name="spikesL" value="2" id="spikesL2" />
-                                <label class="btn btn-xsmall btn-mid" for="spikesL2">2</label>
-                                <input class="visually-hidden calc-trigger" type="radio" name="spikesL" value="3" id="spikesL3" />
-                                <label class="btn btn-wide btn-right" for="spikesL3">3 Spikes</label>
-                            </div></td>
-                            <td><div aria-labelledby="selectSpikeInstruction" class="right" role="radiogroup" title="Are there Spikes on this side of the field?">
-                                <input class="visually-hidden calc-trigger" type="radio" name="spikesR" value="3" id="spikesR3" />
-                                <label class="btn btn-wide btn-left" for="spikesR3">3 Spikes</label>
-                                <input class="visually-hidden calc-trigger" type="radio" name="spikesR" value="2" id="spikesR2" />
-                                <label class="btn btn-xsmall btn-mid" for="spikesR2">2</label>
-                                <input class="visually-hidden calc-trigger" type="radio" name="spikesR" value="1" id="spikesR1" />
-                                <label class="btn btn-xsmall btn-mid" for="spikesR1">1</label>
-                                <input class="visually-hidden calc-trigger" type="radio" name="spikesR" value="0" id="spikesR0" checked="checked" />
-                                <label class="btn btn-xsmall btn-right" for="spikesR0">0</label>
-                            </div></td>
-                        </tr>
-                        <tr>
-                            <td><div class="left" title="Is this Pok&eacute;mon protected by Reflect and/or Light Screen?">
-                                <div hidden id="selectScreenInstruction">Is this Pok&eacute;mon protected by Reflect and/or Light Screen?</div>
-                                <input aria-describedby="selectScreenInstruction" class="visually-hidden calc-trigger" type="checkbox" id="reflectL" />
-                                <label class="btn btn-left" for="reflectL">Reflect</label>
-                                <input aria-describedby="selectScreenInstruction" class="visually-hidden calc-trigger" type="checkbox" id="lightScreenL" />
-                                <label class="btn btn-xwide btn-right" for="lightScreenL">Light Screen</label>
-                            </div></td>
-                            <td><div class="right" title="Is this Pok&eacute;mon protected by Reflect and/or Light Screen?">
-                                <input aria-describedby="selectScreenInstruction" class="visually-hidden calc-trigger" type="checkbox" id="lightScreenR" />
-                                <label class="btn btn-xwide btn-left" for="lightScreenR">Light Screen</label>
-                                <input aria-describedby="selectScreenInstruction" class="visually-hidden calc-trigger" type="checkbox" id="reflectR" />
-                                <label class="btn btn-right" for="reflectR">Reflect</label>
-                            </div></td>
-                        </tr>
-                        <tr class="gen-specific g2 g3 g4 g5 g6 g7 g8 g9 g10">
-                            <td><div class="left" title="Is this Pok&eacute;mon protected?">
-                                <div hidden id="selectProtectInstruction">Is this Pok&eacute;mon protected?</div>
-                                <input aria-describedby="selectProtectInstruction" class="visually-hidden calc-trigger" type="checkbox" id="protectL" />
-                                <label class="btn btn-wide" for="protectL">Protect</label>
-                            </div></td>
-                            <td><div class="right" title="Is this Pok&eacute;mon protected?">
-                                <input aria-describedby="selectProtectInstruction" class="visually-hidden calc-trigger" type="checkbox" id="protectR" />
-                                <label class="btn btn-wide" for="protectR">Protect</label>
-                            </div></td>
-                        </tr>
-                        <tr>
-                            <td><div class="left" title="Has this Pok&eacute;mon been affected by Leech Seed?">
-                                <div hidden id="selectLeechSeedInstruction">Has this Pok&eacute;mon been affected by Leech Seed?</div>
-                                <input aria-describedby="selectLeechSeedInstruction" class="visually-hidden calc-trigger" type="checkbox" id="leechSeedL" />
-                                <label class="btn btn-wide" for="leechSeedL">Leech Seed</label>
-                            </div></td>
-                            <td><div class="right" title="Has this Pok&eacute;mon been affected by Leech Seed?">
-                                <input aria-describedby="selectLeechSeedInstruction" class="visually-hidden calc-trigger" type="checkbox" id="leechSeedR" />
-                                <label class="btn btn-wide" for="leechSeedR">Leech Seed</label>
-                            </div></td>
-                        </tr>
-                        <tr class="gen-specific g2 g3 g4 g5 g6 g7 g8 g9 g10">
-                            <td><div class="left" title="Has this Pok&eacute;mon been revealed with Foresight or Odor Sleuth?">
-                                <div hidden id="selectRevealInstruction">Has this Pok&eacute;mon been revealed with Foresight or Odor Sleuth?</div>
-                                <input aria-describedby="selectRevealInstruction" class="visually-hidden calc-trigger" type="checkbox" id="foresightL" />
-                                <label class="btn btn-wide" for="foresightL">Foresight</label>
-                            </div></td>
-                            <td><div class="right" title="Has this Pok&eacute;mon been revealed with Foresight or Odor Sleuth?">
-                                <input aria-describedby="selectRevealInstruction" class="visually-hidden calc-trigger" type="checkbox" id="foresightR" />
-                                <label class="btn btn-wide" for="foresightR">Foresight</label>
-                            </div></td>
-                        </tr>
-                        <tr class="gen-specific g3 g4 g5 g6 g7 g8 g9 g10">
                             <td><div class="left" title="Has this Pok&eacute;mon's power been boosted by an ally's Helping Hand?">
                                 <div hidden id="selectHelpingHandInstruction">Has this Pok&eacute;mon's power been boosted by an ally's Helping Hand?</div>
                                 <input aria-describedby="selectHelpingHandInstruction" class="visually-hidden calc-trigger" type="checkbox" id="helpingHandL" />
@@ -899,7 +962,7 @@
                                 <label class="btn btn-xxwide" for="helpingHandR">Helping Hand</label>
                             </div></td>
                         </tr>
-							   <tr>
+				        <tr>
                             <td><div class="left" title="Is Charge active on this Pok&eacute;mon?">
                                 <div hidden id="selectChargeInstruction">Is Charge active on this Pok&eacute;mon?</div>
                                 <input aria-describedby="selectChargeInstruction" class="visually-hidden calc-trigger" type="checkbox" id="chargeL" />
@@ -908,6 +971,17 @@
                             <td><div class="right" title="Is Charge active on this Pok&eacute;mon?">
                                 <input aria-describedby="selectChargeInstruction" class="visually-hidden calc-trigger" type="checkbox" id="chargeR" />
                                 <label class="btn btn-wide" for="chargeR">Charge</label>
+                            </div></td>
+                        </tr>
+                        <tr class="gen-specific g5 g6 g7 g8 g9 g10">
+                            <td><div class="left" title="Is the Pok&eacute;mon protected by an ally's Friend Guard?">
+                                <div hidden id="selectFriendGuardInstruction">Is the Pok&eacute;mon protected by an ally's Friend Guard?</div>
+                                <input aria-describedby="selectFriendGuardInstruction" class="visually-hidden calc-trigger" type="checkbox" id="friendGuardL" />
+                                <label class="btn btn-xxwide" for="friendGuardL">Friend Guard</label>
+                            </div></td>
+                            <td><div class="right" title="Is the Pok&eacute;mon protected by an ally's Friend Guard?">
+                                <input aria-describedby="selectFriendGuardInstruction" class="visually-hidden calc-trigger" type="checkbox" id="friendGuardR" />
+                                <label class="btn btn-xxwide" for="friendGuardR">Friend Guard</label>
                             </div></td>
                         </tr>
                         <tr class="gen-specific g4 g5 g6 g7 g8 g9 g10">
@@ -930,28 +1004,6 @@
                             <td><div class="right" title="Is the Pok&eacute;mon affected by an ally's Flower Gift?">
                                 <input aria-describedby="selectFlowerGiftInstruction" class="visually-hidden calc-trigger" type="checkbox" id="flowerGiftR" />
                                 <label class="btn btn-xxwide" for="flowerGiftR">Flower Gift</label>
-                            </div></td>
-                        </tr>
-                        <tr class="gen-specific g5 g6 g7 g8 g9 g10">
-                            <td><div class="left" title="Is the Pok&eacute;mon protected by an ally's Friend Guard?">
-                                <div hidden id="selectFriendGuardInstruction">Is the Pok&eacute;mon protected by an ally's Friend Guard?</div>
-                                <input aria-describedby="selectFriendGuardInstruction" class="visually-hidden calc-trigger" type="checkbox" id="friendGuardL" />
-                                <label class="btn btn-xxwide" for="friendGuardL">Friend Guard</label>
-                            </div></td>
-                            <td><div class="right" title="Is the Pok&eacute;mon protected by an ally's Friend Guard?">
-                                <input aria-describedby="selectFriendGuardInstruction" class="visually-hidden calc-trigger" type="checkbox" id="friendGuardR" />
-                                <label class="btn btn-xxwide" for="friendGuardR">Friend Guard</label>
-                            </div></td>
-                        </tr>
-                        <tr class="gen-specific g7 g8 g9 g10">
-                            <td><div class="left" title="Is the Pok&eacute;mon protected by an ally's Aurora Veil?">
-                                <div hidden id="selectAuroraVeilInstruction">Is the Pok&eacute;mon protected by an ally's Aurora Veil?</div>
-                                <input aria-describedby="selectAuroraVeilInstruction" class="visually-hidden calc-trigger" type="checkbox" id="auroraVeilL" />
-                                <label class="btn btn-xxwide" for="auroraVeilL">Aurora Veil</label>
-                            </div></td>
-                            <td><div class="right" title="Is the Pok&eacute;mon protected by an ally's Aurora Veil?">
-                                <input aria-describedby="selectAuroraVeilInstruction" class="visually-hidden calc-trigger" type="checkbox" id="auroraVeilR" />
-                                <label class="btn btn-xxwide" for="auroraVeilR">Aurora Veil</label>
                             </div></td>
                         </tr>
                         <tr class="gen-specific g7 g8 g9 g10">
@@ -985,6 +1037,17 @@
                             <td><div class="right" title="Is the defending Pok&eacute;mon switching out?">
                                 <input aria-describedby="selectSwitchingInstruction" class="visually-hidden calc-trigger" type="checkbox" id="switchingR" />
                                 <label class="btn btn-xxwide" for="switchingR">Switching Out</label>
+                            </div></td>
+                        </tr>
+                        <tr class="gen-specific g2 g3 g4 g5 g6 g7 g8 g9 g10">
+                            <td><div class="left" title="Has this Pok&eacute;mon been revealed with Foresight or Odor Sleuth?">
+                                <div hidden id="selectRevealInstruction">Has this Pok&eacute;mon been revealed with Foresight or Odor Sleuth?</div>
+                                <input aria-describedby="selectRevealInstruction" class="visually-hidden calc-trigger" type="checkbox" id="foresightL" />
+                                <label class="btn btn-wide" for="foresightL">Foresight</label>
+                            </div></td>
+                            <td><div class="right" title="Has this Pok&eacute;mon been revealed with Foresight or Odor Sleuth?">
+                                <input aria-describedby="selectRevealInstruction" class="visually-hidden calc-trigger" type="checkbox" id="foresightR" />
+                                <label class="btn btn-wide" for="foresightR">Foresight</label>
                             </div></td>
                         </tr>
                         <tr>
@@ -1401,14 +1464,6 @@
                     </select>
                 </div>
             </div>
-            <div class="info-group gen-specific g9 g10">
-                <div class="left" title="Has this Pok&eacute;mon been cured with Salt Cure?">
-                    <div hidden id="selectRevealInstruction">Has this Pok&eacute;mon been cured with Salt Cure?</div>
-                    <input aria-describedby="selectRevealInstruction" class="visually-hidden saltcure calc-trigger" type="checkbox" id="cureR" />
-                    <label class="btn btn-xxwide" for="cureR">Salt Cure</label>
-                </div>
-                <br />
-            </div>
             <div class="info-group">
                 <label for="currentHpR1">Current HP</label>
                 <input class="current-hp calc-trigger" id="currentHpR1" value="341" inputmode="decimal" />/<span class="max-hp">341</span> (
@@ -1626,7 +1681,7 @@
     <script type="text/javascript" src="./js/moveset_import.js?"></script>
 </div>
 
-<div class="credits"><b>This is a fork.</b> The original calculator was created by Honko, maintained by Austin and Kris. This Pokemon Pathways patch was made by Moorts and Giboney.
+<div class="credits"><b>This is a fork.</b> The original calculator was created by Honko, maintained by Austin and Kris. This Pokemon Pathways patch was originally made by Moorts and expanded by bo_bobson27 aka Giboney.
     <li><a href="https://github.com/giboney/pathways-damage-calc" class="links-lighten" target="_blank">GitHub repository</a></li></ul>
 
 	 <br>

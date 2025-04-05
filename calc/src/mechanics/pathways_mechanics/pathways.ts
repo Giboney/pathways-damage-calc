@@ -2,13 +2,13 @@
 //
 //brick break, doom blade, stone fangs,
 //grassy glide, spirit bloom, pin shock
-//spooky spook, cold therapy, metal scraps, stellar rocks, dreadful drake
+//amaterasu?, tsukuyomi?
 //
 //RECHECK ABILITIES
+//BROKEN ABILITIES
 //FORM CHANGE ABILITIES
 //CUSTOM MAX MOVES
 //DOUBLES RUIN ABILITIES
-//AMATERASU, TSUKUYOMI
 //TRAINERS UI
 
 import type {Generation, AbilityName, StatID, Terrain} from '../../data/interface';
@@ -206,9 +206,11 @@ export function calculatePathways(
 
   // Merciless does not ignore Shell Armor, damage dealt to a poisoned Pokemon with Shell Armor
   // will not be a critical hit (UltiMario)
-  const isCritical = !defender.hasAbility('Battle Armor', 'Shell Armor') &&
+  const isCritical = (
+    !defender.hasAbility('Battle Armor', 'Shell Armor', 'Hydrochasm Surge', 'Hydrochasm Surge++') &&
     (move.isCrit || (attacker.hasAbility('Merciless') && defender.hasStatus('psn', 'tox'))) &&
-    move.timesUsed === 1;
+    move.timesUsed === 1 //whats this times used??
+  );
 
   let type = move.type;
   if (move.originalName === 'Weather Ball' || move.originalName === 'Weather Bomb') {
@@ -301,8 +303,7 @@ export function calculatePathways(
     type = 'Stellar';
   }
 
-  //MAKE STRUCTURE FOR THIS
-  let typeChange = getAteAbilityType(gen, attacker, move);
+  let abilityTyping = getAteAbilityType(gen, attacker, move);
   let hasAteAbilityTypeChange = false;
   const noTypeChange = move.named(
     'Revelation Dance',
@@ -318,11 +319,13 @@ export function calculatePathways(
     'Struggle',
   ) || (move.named('Tera Blast') && attacker.teraType);
 
-  if ((type === 'Normal' || attacker.hasAbility('Normalize')) && !move.isZ && !noTypeChange && typeChange) {
-    type = typeChange;
-    if (!attacker.hasAbility('Liquid Voice')) {
-      hasAteAbilityTypeChange = true;
-    }
+  if (
+    !move.isZ && !noTypeChange && abilityTyping &&
+    ((type === 'Normal' || attacker.hasAbility('Normalize')) ||
+    (attacker.hasAbility('Liquid Voice') && type !== 'Water'))
+  ) {
+    type = abilityTyping;
+    hasAteAbilityTypeChange = !attacker.hasAbility('Liquid Voice');
     if (attacker.hasAbility('Primeval Gift')) {
       desc.attackerItem = attacker.item;
     }
@@ -364,6 +367,7 @@ export function calculatePathways(
     )
     : 1;
   let typeEffectiveness = type1Effectiveness * type2Effectiveness;
+  if (move.hasType('Shadow')) typeEffectiveness = 2;
   
   if (typeEffectiveness === 0) {
     return result;
@@ -406,7 +410,8 @@ export function calculatePathways(
       (move.flags.wind && defender.hasAbility('Wind Rider')) ||
       (move.hasType('Fairy') && defender.hasAbility('Misery After')) ||
       (move.hasType('Ice') && defender.hasAbility('Frost Drain')) ||
-      (move.hasType('Bug') && defender.hasAbility('Fly Trap'))
+      (move.hasType('Bug') && defender.hasAbility('Fly Trap')) ||
+      (move.hasType('Poison') && defender.hasAbility('Ferrite Scales'))
   ) {
     desc.defenderAbility = defender.ability;
     return result;

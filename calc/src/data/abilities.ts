@@ -527,7 +527,7 @@ const PATHWAYS = SV.concat([
   'Assassin',//adaptability clone
   'Light Born',//atmods x2, klutz
   'Evoboost',//atmods x1.5, 
-  'Great Mischief',
+  /*'Great Mischief',
   'Soul Ablaze',
   'Lunar Light',
   'Vile Venom',
@@ -540,16 +540,16 @@ const PATHWAYS = SV.concat([
   'Fowl Play',
   'Heavy Heart',
   'Purrfection',
-  'Stubborn Mule',
+  'Stubborn Mule',*/
   'Primeval Gift',//normal -> type of berry
   'Laced Cream',//immune to effects nonvola status, gives to attacker if they make contact
-  'Tracker',
+  /*'Tracker',
   'Vicious Fangs',
   'Night Stalker',
   'Berry Good',
   'Boiling Point',
   'Street Chef',
-  'Vegetarian',
+  'Vegetarian',*/
   'Dry-Aged',//not used, ignores stat changes from any source, item, status, stat stages
   'Mesmerize',//intim but spatk
   'Rapid Fire',//loaded dice as an ability

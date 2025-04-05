@@ -29,7 +29,6 @@ import {
   isGrounded,
 } from '../util';
 import {
-  getMoveEffectivenessPathways,
   getStabModPathways,
   getModifiedStatPathways,
   computeFinalStatsPathways,
@@ -85,12 +84,11 @@ export function calculateFinalModPathways(
   } else if (
     (defender.hasAbility('Ice Scales') && move.category === 'Special') ||
     (defender.hasAbility('Multiscale', 'Shadow Shield', 'Killing Joke') && defender.curHP() === defender.maxHP() &&
-     hitCount === 0 && !affectedByHazards(field, defender) && !attacker.hasAbility('Parental Bond (Child)')) ||
+     hitCount === 0 && !affectedByHazards(defender, field) && !attacker.hasAbility('Parental Bond (Child)')) ||
     (defender.hasAbility('Water Bubble') && move.hasType('Fire')) ||
     (defender.hasAbility('Punk Rock') && move.flags.sound) ||
     (defender.hasAbility('Angel Tears') && move.hasType('Dragon')) ||
     (defender.hasAbility('Khepri') && typeEffectiveness > 1) ||
-    (defender.hasAbility('Hydrochasm Surge', 'Hydrochasm Surge++') && field.hasWeather('Rain', 'Heavy Rain', 'Harsh Typhoon')) ||
     defender.hasAbility('Golden Hour') ||
     (defender.hasAbility('Lightning Armor') && move.flags.contact)
   ) {
@@ -130,6 +128,10 @@ export function calculateFinalModPathways(
     desc.defenderAbility = defender.ability;
   } else if (defender.hasAbility('Holy Aegis')) {
     //supremeoverlord defense here
+  } else if (defender.hasAbility('Hydrochasm Surge', 'Hydrochasm Surge++') && field.hasWeather('Rain', 'Heavy Rain', 'Harsh Typhoon')) {
+    finalMod *= 0.5;
+    desc.defenderAbility = defender.ability;
+    desc.weather = field.weather;
   }
   
   //field
@@ -207,9 +209,7 @@ export function calculateFinalModPathways(
   }
   
   //other shit
-  if (attacker.hasAbility('Parental Bond (Child)')) {
-    finalMod *= 0.25;
-  } else if (field.gameType !== 'Singles' && ['allAdjacent', 'allAdjacentFoes'].includes(move.target)) {
+  if (field.gameType !== 'Singles' && ['allAdjacent', 'allAdjacentFoes'].includes(move.target)) {
     finalMod *= 0.75;
   }
 

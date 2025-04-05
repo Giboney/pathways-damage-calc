@@ -161,13 +161,6 @@ export class Move implements State.Move {
     this.isZ = !!data.isZ;
     this.isMax = !!data.isMax;
     this.multiaccuracy = !!data.multiaccuracy;
-
-    if (!this.bp || this.bp === 1) {
-      // Assume max happiness for these moves because the calc doesn't support happiness
-      if (['return', 'frustration', 'pikapapow', 'veeveevolley', 'riorush', 'zozozania', 'cleffacluffle', 'nodineedle', 'axyaxe', 'bonbonbash', 'cubbycuddle', 'skullyscare', 'nymblenibble', 'deedeeduster', 'cucucrush', 'purrpressure', 'braybravery'].includes(data.id)) {
-        this.bp = 102;
-      }
-    }
   }
 
   named(...names: string[]) {
