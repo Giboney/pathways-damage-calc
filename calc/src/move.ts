@@ -161,6 +161,12 @@ export class Move implements State.Move {
     this.isZ = !!data.isZ;
     this.isMax = !!data.isMax;
     this.multiaccuracy = !!data.multiaccuracy;
+    
+    if (!this.bp && this.gen.num < 10) {
+      if (['return', 'frustration'].includes(data.id)) {
+        this.bp = 102;
+      }
+    }
   }
 
   named(...names: string[]) {
