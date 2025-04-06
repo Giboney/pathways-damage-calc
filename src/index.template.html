@@ -118,12 +118,21 @@
 
     <div aria-label="Pok&eacute;mon 1" class="panel" role="region">
         <fieldset class="poke-info" id="p1">
-            <legend align="center">Pok&eacute;mon 1</legend>
+            <legend>Pok&eacute;mon 1</legend>
+            <input type="text" class="trainer-selector" style="display:none"/>
             <input type="text" class="set-selector calc-trigger" />
-            <span id="importedSetsOptions" style="width:auto; display:none">
-                <input type="checkbox" id="importedSets" /> Only show imported sets <br />
-                <button id="clearSets">Clear Imported Sets</button>
-            </span>
+            <div style="display:flex;justify-content:space-between;flex-direction:row-reverse;">
+                <div class="trainerSetsOptions">
+                    <input type="checkbox" id="trainerSets" class="trainer-sets visually-hidden">
+                    <label for="trainerSets" class="btn btn-5xwide">Show sets by trainer</label>
+                </div>
+                <div class="importedSetsOptions" style="display:none">
+                    <input type="checkbox" id="importedSets" class="import-checkbox visually-hidden"/>
+                    <label for="importedSets" class="btn btn-7xwide">Only show imported sets</label>
+                    <br/>
+                    <button class="clear-sets btn btn-xxxxwide">Clear Imported Sets</button>
+                </div>
+            </div>
             <div class="info-group top">
                 <div>
                     <label>Type</label>
@@ -1064,10 +1073,10 @@
         </div>
         <div aria-label="Import team" role="region">
             <fieldset class="poke-import">
-                <legend align="center">Import / Export</legend>
+                <legend>Import / Export</legend>
                 <div id="import-1_wrapper" class="dataTables_wrapper no-footer">
                     <form class="import-team">
-                        <input class="import-name-text" value="Custom Set"></input>
+                        <input class="import-name-text" value="Custom Set">
                         <textarea class="import-team-text"></textarea>
                         <!--<button style='position:absolute' class='bs-btn bs-btn-default'>Import</button>-->
                     </form>
@@ -1077,12 +1086,21 @@
     </div>
     <div aria-label="Pok&eacute;mon 2" role="region" class="panel">
         <fieldset class="poke-info" id="p2">
-            <legend align="center">Pok&eacute;mon 2</legend>
+            <legend>Pok&eacute;mon 2</legend>
+            <input type="text" class="trainer-selector" style="display:none"/>
             <input type="text" class="set-selector calc-trigger" />
-            <span id="importedSetsOptions" style="width:auto; display:none">
-                <input type="checkbox" id="importedSets" /> Only show imported sets <br />
-                <button id="clearSets">Clear Imported Sets</button>
-            </span>
+            <div style="display:flex;justify-content:space-between;flex-direction:row-reverse;">
+                <div class="trainerSetsOptions">
+                    <input type="checkbox" id="trainerSets2" class="trainer-sets visually-hidden">
+                    <label for="trainerSets2" class="btn btn-5xwide">Show sets by trainer</label>
+                </div>
+                <div class="importedSetsOptions" style="display:none">
+                    <input type="checkbox" id="importedSets2" class="import-checkbox visually-hidden"/>
+                    <label for="importedSets2" class="btn btn-7xwide">Only show imported sets</label>
+                    <br/>
+                    <button class="clear-sets btn btn-xxxxwide">Clear Imported Sets</button>
+                </div>
+            </div>
             <div class="info-group top">
                 <div>
                     <label>Type</label>

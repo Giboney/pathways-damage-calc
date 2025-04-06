@@ -668,7 +668,9 @@ function getEndOfTurn(
       texts.push('Grassy Terrain recovery');
     }
   } else if (field.hasTerrain('Dream World') && defender.hasType('Normal', 'Psychic')) {
-    damage += Math.floor(defender.maxHP() / 12.5);
+    //essentials normally does math.floor with integer mechanics
+    //but dream world uses a decimal and the pbRecoverHP function uses .round
+    damage += Math.round(defender.maxHP() / 12.5);
     texts.push('Dream World recovery');
   }
 

@@ -256,8 +256,14 @@ th {
 .btn-xxxxwide {
 	width: 11em !important;
 }
-.btn-xxxxxwide {
-	width: 12em !important;
+.btn-5xwide {
+    width: 12em !important;
+}
+.btn-6xwide {
+    width: 13em !important;
+}
+.btn-7xwide {
+	width: 14em !important;
 }
 .btn-small {
     width: 4em !important;
@@ -379,8 +385,8 @@ th {
 .info-group {
     margin: 1em 0;
 }
-.set-selector {
-    width: 100%;
+.set-selector, .trainer-selector {
+    width: 100% !important;
 }
 .info-selectors select {
     width: 12em;

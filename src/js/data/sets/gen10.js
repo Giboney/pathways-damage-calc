@@ -2686,7 +2686,8 @@ var SETDEX_PATHWAYS = {
     "Overconfident Raito Dynamax": {"level":1,"ability":"Imposter","item":"Focus Sash","nature":"Modest","ivs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"evs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"moves":["Transform","","",""]},
     "Overconfident Raito Magikarp 2": {"level":1,"ability":"Prankster","item":"Mental Herb","nature":"Modest","ivs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"evs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"moves":["Destiny Bond","Baneful Bunker","",""]},
     "Overconfident Raito Magikarp 3": {"level":1,"ability":"Prankster","item":"Focus Sash","nature":"Modest","ivs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"evs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"moves":["Memento","","",""]},
-    "Overconfident Raito Magikarp 4": {"level":1,"ability":"Supreme Overlord","item":"Focus Sash","nature":"Modest","ivs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"evs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"moves":["Endeavor","Aqua Jet","",""]}
+    "Overconfident Raito Magikarp 4": {"level":1,"ability":"Supreme Overlord","item":"Focus Sash","nature":"Modest","ivs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"evs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"moves":["Endeavor","Aqua Jet","",""]},
+    "Academy Rival A Test Dummy": {"level":1,"ability":"Technician","item":"","nature":"Timid","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"moves":["Brine","Icicle Spear","Double Hit","Bullet Punch"]}
   },
   "Braviary-Hisui": {
     "Regigigas Fanatic Estionese": {"level":80,"ability":"Sheer Force","item":"Life Orb","nature":"Timid","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":248,"at":0,"df":0,"sa":252,"sd":8,"sp":0},"moves":["Calm Mind","Air Slash","Psychic","U-turn"]},

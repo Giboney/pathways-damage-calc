@@ -308,10 +308,10 @@ function addSets(pokes, name) {
 	}
 	if (addedpokes == 1) {
 		alert("Successfully imported 1 set");
-		$(allPokemon("#importedSetsOptions")).css("display", "inline");
+		$(".importedSetsOptions").css("display", "inline");
 	} else if (addedpokes > 1) {
 		alert("Successfully imported " + addedpokes + " sets");
-		$(allPokemon("#importedSetsOptions")).css("display", "inline");
+		$(".importedSetsOptions").css("display", "inline");
 	} else {
 		alert("No sets imported, please check your syntax and try again");
 	}
@@ -368,22 +368,23 @@ function checkExeptions(poke) {
 
 }
 
-$(allPokemon("#clearSets")).click(function () {
+$(".clear-sets").click(function () {
 	if (confirm("Are you sure you want to delete your custom sets? This action cannot be undone.")) {
 		localStorage.removeItem("customsets");
 		alert("Custom Sets successfully cleared. Please refresh the page.");
-		$(allPokemon("#importedSetsOptions")).hide();
-		loadDefaultLists();
+		$(".importedSetsOptions").hide();
+		loadDefaultLists('p1');
+		loadDefaultLists('p2');
 	}
 });
 
-$(allPokemon("#importedSets")).click(function () {
-	var pokeID = $(this).parent().parent().prop("id");
+$(".import-checkbox").click(function () {
+	var pokeID = $(this).closest(".poke-info").attr('id');
 	var showCustomSets = $(this).prop("checked");
 	if (showCustomSets) {
 		loadCustomList(pokeID);
 	} else {
-		loadDefaultLists();
+		loadDefaultLists(pokeID);
 	}
 });
 
@@ -393,8 +394,9 @@ $(document).ready(function () {
 	if (localStorage.customsets) {
 		customSets = JSON.parse(localStorage.customsets);
 		updateDex(customSets);
-		$(allPokemon("#importedSetsOptions")).css("display", "inline");
+		$(".importedSetsOptions").css("display", "inline");
 	} else {
-		loadDefaultLists();
+		loadDefaultLists('p1');
+		loadDefaultLists('p2');
 	}
 });

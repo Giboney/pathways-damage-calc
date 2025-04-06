@@ -6,13 +6,8 @@
 //vicious claws, vicious edge, mind flay, terror realm
 //SINFUL GLUTTONY
 //hydrochasm++ toggle second phase??
-//CHECK ROUNDING is .round is actually math.floor or what?
-//GRAVITY SURGE
-//RECHECK ABILITIES
-//BROKEN ABILITIES
-//FORM CHANGE ABILITIES
+//NEUTRALIZING GAS IMMUNITY
 //CUSTOM MAX MOVES
-//DOUBLES RUIN ABILITIES
 //TRAINERS UI
 
 import type {Generation, AbilityName, StatID, Terrain} from '../../data/interface';
