@@ -2147,7 +2147,7 @@ var TRAINERDEX_PATHWAYS = {
   },
   "Gang Leader Blake 5": {
     "Toxtricity": {
-      "1": {"level":80,"ability":"Punk Rock","item":"Focus Sash","nature":"Modest","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":4,"sa":252,"sd":0,"sp":252},"moves":["Boomburst","Overdrive","Sludge Bomb","Thunder Wave"]}
+      "1 Dynamax": {"level":80,"ability":"Punk Rock","item":"Focus Sash","nature":"Modest","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":4,"sa":252,"sd":0,"sp":252},"moves":["Boomburst","Overdrive","Sludge Bomb","Thunder Wave"]}
     },
     "Sneasler": {
       "2": {"level":80,"ability":"Unburden","item":"Electric Seed","nature":"Jolly","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":4,"sa":0,"sd":0,"sp":252},"moves":["Swords Dance","Dire Claw","Close Combat","Acrobatics"]}
@@ -2178,7 +2178,7 @@ var TRAINERDEX_PATHWAYS = {
   },
   "Gang Leader Blake 7": {
     "Toxtricity": {
-      "1": {"level":100,"ability":"Punk Rock","item":"Focus Sash","nature":"Modest","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":4,"sa":252,"sd":0,"sp":252},"moves":["Boomburst","Overdrive","Sludge Bomb","Thunder Wave"]}
+      "1 Dynamax": {"level":100,"ability":"Punk Rock","item":"Focus Sash","nature":"Modest","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":4,"sa":252,"sd":0,"sp":252},"moves":["Boomburst","Overdrive","Sludge Bomb","Thunder Wave"]}
     },
     "Sneasler": {
       "2": {"level":100,"ability":"Unburden","item":"Electric Seed","nature":"Jolly","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":4,"sa":0,"sd":0,"sp":252},"moves":["Swords Dance","Dire Claw","Close Combat","Acrobatics"]}
@@ -4438,7 +4438,7 @@ var TRAINERDEX_PATHWAYS = {
       "4": {"level":85,"ability":"Fur Coat","item":"Black Sludge","nature":"Calm","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":0,"df":0,"sa":4,"sd":252,"sp":0},"moves":["Sludge Bomb","Earth Power","Calm Mind","Giga Drain"]}
     },
     "Snorlax": {
-      "5": {"level":85,"ability":"Titanium Armor","item":"Assault Vest","nature":"Adamant","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":252,"sa":0,"sd":4,"sp":0},"moves":["Body Slam","Wood Hammer","Earthquake","Drain Punch"]}
+      "5 Dynamax": {"level":85,"ability":"Titanium Armor","item":"Assault Vest","nature":"Adamant","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":252,"sa":0,"sd":4,"sp":0},"moves":["Body Slam","Wood Hammer","Earthquake","Drain Punch"]}
     },
     "Pikachu-Kalos": {
       "6": {"level":85,"ability":"Huge Power","item":"Pikashunium Z","nature":"Jolly","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":4,"sa":0,"sd":0,"sp":252},"moves":["Volt Tackle","Extreme Speed","Wood Hammer","Wave Crash"]}
@@ -4705,7 +4705,7 @@ var TRAINERDEX_PATHWAYS = {
       "1": {"level":80,"ability":"Iron Barbs","item":"Rocky Helmet","nature":"Careful","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":6,"df":0,"sa":0,"sd":252,"sp":0},"moves":["Stealth Rock","Iron Defense","Shield Bash","Roost"]}
     },
     "Cinderace": {
-      "2": {"level":80,"ability":"Libero","item":"Choice Band","nature":"Jolly","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":6,"at":252,"df":0,"sa":0,"sd":0,"sp":252},"moves":["Pyro Ball","Sacred Sword","Heavy Cavalry","Relic Blade"]}
+      "2 Dynamax": {"level":80,"ability":"Libero","item":"Choice Band","nature":"Jolly","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":6,"at":252,"df":0,"sa":0,"sd":0,"sp":252},"moves":["Pyro Ball","Sacred Sword","Heavy Cavalry","Relic Blade"]}
     },
     "Aggron": {
       "3": {"level":80,"ability":"Intimidate","item":"Aggronite","nature":"Calm","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":0,"df":6,"sa":0,"sd":252,"sp":0},"moves":["Iron Defense","Shield Bash","Recover","Body Press"]}
@@ -4734,7 +4734,7 @@ var TRAINERDEX_PATHWAYS = {
       "4": {"level":100,"ability":"Clear Body","item":"Dragapultite","nature":"Adamant","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":0,"sa":0,"sd":6,"sp":252},"moves":["Dragon Darts","Shadow Bone","Sacred Sword","Swords Dance"]}
     },
     "Sneasler": {
-      "5": {"level":100,"ability":"Unburden","item":"Air Balloon","nature":"Jolly","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":0,"sa":0,"sd":6,"sp":252},"moves":["Close Combat","Earthquake","Dire Claw","Shadow Bone"]}
+      "5 Dynamax": {"level":100,"ability":"Unburden","item":"Air Balloon","nature":"Jolly","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":0,"sa":0,"sd":6,"sp":252},"moves":["Close Combat","Earthquake","Dire Claw","Shadow Bone"]}
     },
     "Melmetal": {
       "6": {"level":102,"ability":"Distortion","item":"Weakness Policy","nature":"Brave","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":0},"evs":{"hp":252,"at":252,"df":0,"sa":0,"sd":6,"sp":0},"moves":["Double Iron Bash","Earthquake","Ice Punch","Thunder Punch"]}
@@ -4751,7 +4751,7 @@ var TRAINERDEX_PATHWAYS = {
       "3": {"level":120,"ability":"Honor Bond","item":"Focus Sash","nature":"Jolly","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":6,"at":252,"df":0,"sa":0,"sd":0,"sp":252},"moves":["Biden Blast","Close Combat","Wicked Blow","Surging Strikes"]}
     },
     "Sneasler": {
-      "4": {"level":120,"ability":"Pure Power","item":"Choice Scarf","nature":"Jolly","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":6,"at":252,"df":0,"sa":0,"sd":0,"sp":252},"moves":["Dragon Ascent","Close Combat","Dire Claw","Spectral Thief"]}
+      "4 Dynamax": {"level":120,"ability":"Pure Power","item":"Choice Scarf","nature":"Jolly","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":6,"at":252,"df":0,"sa":0,"sd":0,"sp":252},"moves":["Dragon Ascent","Close Combat","Dire Claw","Spectral Thief"]}
     },
     "Melmetal": {
       "5": {"level":120,"ability":"Lightning Speed","item":"Weakness Policy","nature":"Adamant","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":252,"df":0,"sa":0,"sd":6,"sp":0},"moves":["Double Iron Bash","Bolt Strike","Glacial Lance","Bitter Blade"]}
@@ -5060,7 +5060,7 @@ var TRAINERDEX_PATHWAYS = {
     "Bidoof-Peanutbutter": {
       "1": {"level":120,"ability":"Ha Ha You're Weak","item":"Choice Band","nature":"Adamant","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":4,"sa":0,"sd":0,"sp":252},"moves":["U-turn","Flip Turn","",""]},
       "2": {"level":120,"ability":"X Pickup","item":"Expert Belt","nature":"Adamant","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":252,"df":4,"sa":0,"sd":0,"sp":0},"moves":["Power Trip","","",""]},
-      "3": {"level":120,"ability":"Huge Power","item":"Assault Vest","nature":"Adamant","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":4,"sa":0,"sd":0,"sp":252},"moves":["Drain Punch","Serpent Ascent","Precipice Blades","Facade"]},
+      "3 Dynamax": {"level":120,"ability":"Huge Power","item":"Assault Vest","nature":"Adamant","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":4,"sa":0,"sd":0,"sp":252},"moves":["Drain Punch","Serpent Ascent","Precipice Blades","Facade"]},
       "4": {"level":120,"ability":"Lightning Speed","item":"Life Orb","nature":"Adamant","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":4,"sa":0,"sd":0,"sp":252},"moves":["Earthquake","Boulder Drop","Fishious Rend","Bolt Beak"]},
       "5": {"level":120,"ability":"Wonder Guard","item":"Leftovers","nature":"Adamant","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":0,"df":252,"sa":0,"sd":4,"sp":0},"moves":["No Retreat","Diamond Storm","Earthquake","Return"]},
       "6": {"level":120,"ability":"Golden Hour","item":"Eviolite","nature":"Naive","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":4,"sa":0,"sd":0,"sp":252},"moves":["Minamo Giri","Biden Blast","Fyre Frost",""]}
@@ -5168,7 +5168,7 @@ var TRAINERDEX_PATHWAYS = {
   },
   "Solo Expert Toto": {
     "Slaking": {
-      "1": {"level":85,"ability":"","item":"Assault Vest","nature":"Jolly","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":4,"sa":0,"sd":0,"sp":252},"moves":["Double-Edge","Aerial Ace","Superpower","Earthquake"]}
+      "1 Dynamax": {"level":85,"ability":"","item":"Assault Vest","nature":"Jolly","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":4,"sa":0,"sd":0,"sp":252},"moves":["Double-Edge","Aerial Ace","Superpower","Earthquake"]}
     }
   },
   "Regigigas Fanatic Estionese": {
@@ -5225,7 +5225,7 @@ var TRAINERDEX_PATHWAYS = {
       "4": {"level":80,"ability":"Prankster","item":"Leftovers","nature":"Relaxed","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":0,"sp":31},"evs":{"hp":252,"at":0,"df":252,"sa":0,"sd":4,"sp":0},"moves":["Curse","Trick Room","Recover","Spore"]}
     },
     "Roserade": {
-      "5": {"level":80,"ability":"Drought","item":"Big Root","nature":"Modest","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":4,"sa":252,"sd":0,"sp":252},"moves":["Power Trick","Giga Drain","Venoshock","Solar Beam"]}
+      "5 Dynamax": {"level":80,"ability":"Drought","item":"Big Root","nature":"Modest","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":4,"sa":252,"sd":0,"sp":252},"moves":["Power Trick","Giga Drain","Venoshock","Solar Beam"]}
     },
     "Gliscor": {
       "6": {"level":80,"ability":"Contrary","item":"Assault Vest","nature":"Naive","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":4,"sa":0,"sd":0,"sp":252},"moves":["Overheat","Close Combat","Squall","Ice Hammer"]}
@@ -5245,7 +5245,7 @@ var TRAINERDEX_PATHWAYS = {
       "4": {"level":100,"ability":"Contrary","item":"Choice Specs","nature":"Modest","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":4,"at":0,"df":0,"sa":252,"sd":0,"sp":252},"moves":["Leaf Storm","Overheat","Shadow Ball",""]}
     },
     "Great Tusk": {
-      "5": {"level":100,"ability":"Protosynthesis","item":"Assault Vest","nature":"Jolly","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":252,"df":0,"sa":0,"sd":4,"sp":0},"moves":["Close Combat","Headlong Rush","Knock Off","Fire Lash"]}
+      "5 Dynamax": {"level":100,"ability":"Protosynthesis","item":"Assault Vest","nature":"Jolly","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":252,"df":0,"sa":0,"sd":4,"sp":0},"moves":["Close Combat","Headlong Rush","Knock Off","Fire Lash"]}
     },
     "Garganacl": {
       "6": {"level":100,"ability":"Purifying Salt","item":"Leftovers","nature":"Impish","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":0},"evs":{"hp":252,"at":4,"df":252,"sa":0,"sd":0,"sp":0},"moves":["Body Press","Salt Cure","Recover","Curse"]}

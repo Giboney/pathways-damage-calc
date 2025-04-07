@@ -234,7 +234,7 @@ var SETDEX_PATHWAYS = {
     "Hero Red 2": {"level":85,"ability":"Titanium Armor","item":"Assault Vest","nature":"Adamant","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":252,"sa":0,"sd":4,"sp":0},"moves":["Body Slam","Avalanche","Earthquake","Drain Punch"]},
     "Hero Red 3": {"level":85,"ability":"Titanium Armor","item":"Assault Vest","nature":"Adamant","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":252,"sa":0,"sd":4,"sp":0},"moves":["Body Slam","Avalanche","Earthquake","Drain Punch"]},
     "Hero Red 4": {"level":85,"ability":"Titanium Armor","item":"Groundium Z","nature":"Adamant","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":252,"df":0,"sa":0,"sd":4,"sp":0},"moves":["Body Slam","Slack Off","Earthquake","Drain Punch"]},
-    "Hero Red 5": {"level":85,"ability":"Titanium Armor","item":"Assault Vest","nature":"Adamant","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":252,"sa":0,"sd":4,"sp":0},"moves":["Body Slam","Wood Hammer","Earthquake","Drain Punch"]},
+    "Hero Red 5 Dynamax": {"level":85,"ability":"Titanium Armor","item":"Assault Vest","nature":"Adamant","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":252,"sa":0,"sd":4,"sp":0},"moves":["Body Slam","Wood Hammer","Earthquake","Drain Punch"]},
     "Hero Red 6": {"level":120,"ability":"Triage","item":"Sitrus Berry","nature":"Adamant","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":252,"sa":0,"sd":4,"sp":0},"moves":["Body Slam","Bitter Blade","Drain Punch","Monkey Mode"]}
   },
   "Slowking-Galar": {
@@ -254,7 +254,7 @@ var SETDEX_PATHWAYS = {
   "Slaking": {
     "Queen of Dreams Aurora 1": {"level":100,"ability":"Unaware","item":"Weakness Policy","nature":"Careful","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":0,"df":4,"sa":0,"sd":252,"sp":0},"moves":["Body Press","Power Trip","Bulk Up","Slack Off"]},
     "Gym Leader Norman 3 Lead": {"level":80,"ability":"","item":"Assault Vest","nature":"Jolly","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":4,"sa":0,"sd":0,"sp":252},"moves":["Return","Earthquake","Night Slash","Drain Punch"]},
-    "Solo Expert Toto Lead": {"level":85,"ability":"","item":"Assault Vest","nature":"Jolly","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":4,"sa":0,"sd":0,"sp":252},"moves":["Double-Edge","Aerial Ace","Superpower","Earthquake"]}
+    "Solo Expert Toto Lead Dynamax": {"level":85,"ability":"","item":"Assault Vest","nature":"Jolly","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":4,"sa":0,"sd":0,"sp":252},"moves":["Double-Edge","Aerial Ace","Superpower","Earthquake"]}
   },
   "Audino": {
     "Queen of Dreams Aurora 1": {"level":100,"ability":"Dream World","item":"Audinite","nature":"Bold","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":0,"df":252,"sa":4,"sd":0,"sp":0},"moves":["Calm Mind","Slack Off","Draining Kiss","Torch Song"]},
@@ -325,8 +325,8 @@ var SETDEX_PATHWAYS = {
   "Toxtricity": {
     "Lord of Lightning Vain 10 Lead": {"level":95,"ability":"Hadron Engine","item":"Focus Sash","nature":"Adamant","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":4,"sa":0,"sd":0,"sp":252},"moves":["Plasma Fists","Gunk Shot","Flare Blitz","Shift Gear"]},
     "Gang Leader Blake 2": {"level":75,"ability":"Punk Rock","item":"Throat Spray","nature":"Timid","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":4,"sa":252,"sd":0,"sp":252},"moves":["Boomburst","Overdrive","Sludge Bomb","Thunder Wave"]},
-    "Gang Leader Blake 5 Lead": {"level":80,"ability":"Punk Rock","item":"Focus Sash","nature":"Modest","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":4,"sa":252,"sd":0,"sp":252},"moves":["Boomburst","Overdrive","Sludge Bomb","Thunder Wave"]},
-    "Gang Leader Blake 7 Lead": {"level":100,"ability":"Punk Rock","item":"Focus Sash","nature":"Modest","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":4,"sa":252,"sd":0,"sp":252},"moves":["Boomburst","Overdrive","Sludge Bomb","Thunder Wave"]},
+    "Gang Leader Blake 5 Lead Dynamax": {"level":80,"ability":"Punk Rock","item":"Focus Sash","nature":"Modest","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":4,"sa":252,"sd":0,"sp":252},"moves":["Boomburst","Overdrive","Sludge Bomb","Thunder Wave"]},
+    "Gang Leader Blake 7 Lead Dynamax": {"level":100,"ability":"Punk Rock","item":"Focus Sash","nature":"Modest","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":4,"sa":252,"sd":0,"sp":252},"moves":["Boomburst","Overdrive","Sludge Bomb","Thunder Wave"]},
     "Wandering Musician Lyric 1 Dynamax": {"level":100,"ability":"Unburden","item":"Air Balloon","nature":"Modest","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":4,"sa":252,"sd":0,"sp":252},"moves":["Boomburst","Overdrive","Sludge Bomb","Ice Beam"]}
   },
   "Magnezone": {
@@ -1262,7 +1262,7 @@ var SETDEX_PATHWAYS = {
     "Jockstrap Keith 2": {"level":75,"ability":"Libero","item":"Firium Z","nature":"Jolly","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":4,"sa":0,"sd":0,"sp":252},"moves":["Pyro Ball","High Jump Kick","Zen Headbutt","Gunk Shot"]},
     "Jockstrap Keith 5": {"level":80,"ability":"Libero","item":"Choice Band","nature":"Jolly","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":4,"sa":0,"sd":0,"sp":252},"moves":["Pyro Ball","High Jump Kick","Zen Headbutt","Gunk Shot"]},
     "Jockstrap Keith 7": {"level":100,"ability":"Libero","item":"Choice Band","nature":"Jolly","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":4,"sa":0,"sd":0,"sp":252},"moves":["Pyro Ball","High Jump Kick","Zen Headbutt","Gunk Shot"]},
-    "Shadow Six High Flyer Milos Zelex": {"level":80,"ability":"Libero","item":"Choice Band","nature":"Jolly","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":6,"at":252,"df":0,"sa":0,"sd":0,"sp":252},"moves":["Pyro Ball","Sacred Sword","Heavy Cavalry","Relic Blade"]}
+    "Shadow Six High Flyer Milos Zelex Dynamax": {"level":80,"ability":"Libero","item":"Choice Band","nature":"Jolly","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":6,"at":252,"df":0,"sa":0,"sd":0,"sp":252},"moves":["Pyro Ball","Sacred Sword","Heavy Cavalry","Relic Blade"]}
   },
   "Sneasler": {
     "Gang Leader Blake Lead": {"level":70,"ability":"Unburden","item":"Air Balloon","nature":"Jolly","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":4,"sa":0,"sd":0,"sp":252},"moves":["Swords Dance","Dire Claw","Close Combat","Acrobatics"]},
@@ -1274,8 +1274,8 @@ var SETDEX_PATHWAYS = {
     "Gang Leader Blake 7": {"level":100,"ability":"Unburden","item":"Electric Seed","nature":"Jolly","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":4,"sa":0,"sd":0,"sp":252},"moves":["Swords Dance","Dire Claw","Close Combat","Acrobatics"]},
     "Gang Leader Blake 8": {"level":100,"ability":"Unburden","item":"Air Balloon","nature":"Jolly","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":4,"sa":0,"sd":0,"sp":252},"moves":["Swords Dance","Dire Claw","Close Combat","Acrobatics"]},
     "Shadow Six High Flyer Milos Zelex": {"level":80,"ability":"Sharpness","item":"Air Balloon","nature":"Jolly","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":6,"at":252,"df":0,"sa":0,"sd":0,"sp":252},"moves":["Dire Claw","Sacred Sword","Shadow Claw","Swords Dance"]},
-    "Shadow Six High Flyer Milos Zelex 1": {"level":100,"ability":"Unburden","item":"Air Balloon","nature":"Jolly","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":0,"sa":0,"sd":6,"sp":252},"moves":["Close Combat","Earthquake","Dire Claw","Shadow Bone"]},
-    "Cheese Lord Miloszelex 10": {"level":120,"ability":"Pure Power","item":"Choice Scarf","nature":"Jolly","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":6,"at":252,"df":0,"sa":0,"sd":0,"sp":252},"moves":["Dragon Ascent","Close Combat","Dire Claw","Spectral Thief"]},
+    "Shadow Six High Flyer Milos Zelex 1 Dynamax": {"level":100,"ability":"Unburden","item":"Air Balloon","nature":"Jolly","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":0,"sa":0,"sd":6,"sp":252},"moves":["Close Combat","Earthquake","Dire Claw","Shadow Bone"]},
+    "Cheese Lord Miloszelex 10 Dynamax": {"level":120,"ability":"Pure Power","item":"Choice Scarf","nature":"Jolly","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":6,"at":252,"df":0,"sa":0,"sd":0,"sp":252},"moves":["Dragon Ascent","Close Combat","Dire Claw","Spectral Thief"]},
     "Battle Server Kairo 26 Lead": {"level":80,"ability":"Unburden","item":"Focus Sash","nature":"Jolly","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":4,"sa":0,"sd":0,"sp":252},"moves":["Dire Claw","Close Combat","Acrobatics","Reversal"]}
   },
   "Houndoom": {
@@ -1456,7 +1456,7 @@ var SETDEX_PATHWAYS = {
     "Dancer Suza 5": {"level":80,"ability":"","item":"Assault Vest","nature":"Adamant","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":200,"df":0,"sa":0,"sd":252,"sp":56},"moves":["Headlong Rush","Close Combat","Megahorn","Rapid Spin"]},
     "Dancer Suza 7": {"level":100,"ability":"","item":"Assault Vest","nature":"Adamant","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":200,"df":0,"sa":0,"sd":252,"sp":56},"moves":["Headlong Rush","Close Combat","Megahorn","Rapid Spin"]},
     "Regigigas Fanatic Estionese Dynamax": {"level":80,"ability":"Chlorophyll","item":"Life Orb","nature":"Adamant","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":4,"sa":0,"sd":0,"sp":252},"moves":["Headlong Rush","Icicle Crash","Rapid Spin","Close Combat"]},
-    "Mad Berserker Gallagher 1": {"level":100,"ability":"Protosynthesis","item":"Assault Vest","nature":"Jolly","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":252,"df":0,"sa":0,"sd":4,"sp":0},"moves":["Close Combat","Headlong Rush","Knock Off","Fire Lash"]}
+    "Mad Berserker Gallagher 1 Dynamax": {"level":100,"ability":"Protosynthesis","item":"Assault Vest","nature":"Jolly","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":252,"df":0,"sa":0,"sd":4,"sp":0},"moves":["Close Combat","Headlong Rush","Knock Off","Fire Lash"]}
   },
   "Lilligant-Hisui": {
     "Dancer Suza 2": {"level":75,"ability":"Hustle","item":"Wide Lens","nature":"Jolly","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":4,"sa":0,"sd":0,"sp":252},"moves":["Victory Dance","Leaf Blade","Close Combat","Poison Jab"]},
@@ -2321,7 +2321,7 @@ var SETDEX_PATHWAYS = {
   },
   "Roserade": {
     "Gym Leader Gardenia 3": {"level":80,"ability":"Natural Cure","item":"Life Orb","nature":"Timid","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":4,"sa":252,"sd":0,"sp":252},"moves":["Giga Drain","Sludge Bomb","Extrasensory","Shadow Ball"]},
-    "Mad Berserker Gallagher": {"level":80,"ability":"Drought","item":"Big Root","nature":"Modest","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":4,"sa":252,"sd":0,"sp":252},"moves":["Power Trick","Giga Drain","Venoshock","Solar Beam"]}
+    "Mad Berserker Gallagher Dynamax": {"level":80,"ability":"Drought","item":"Big Root","nature":"Modest","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":4,"sa":252,"sd":0,"sp":252},"moves":["Power Trick","Giga Drain","Venoshock","Solar Beam"]}
   },
   "Tropius": {
     "Gym Leader Gardenia 3": {"level":80,"ability":"Harvest","item":"Sitrus Berry","nature":"Bold","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":0,"df":252,"sa":0,"sd":4,"sp":0},"moves":["Leech Seed","Substitute","Air Slash","Toxic"]}
@@ -2663,10 +2663,10 @@ var SETDEX_PATHWAYS = {
   "Bidoof-Peanutbutter": {
     "Disaster Rusty Lead": {"level":120,"ability":"Ha Ha You're Weak","item":"Choice Band","nature":"Adamant","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":4,"sa":0,"sd":0,"sp":252},"moves":["U-turn","Flip Turn","",""]},
     "Disaster Rusty": {"level":120,"ability":"X Pickup","item":"Expert Belt","nature":"Adamant","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":252,"df":4,"sa":0,"sd":0,"sp":0},"moves":["Power Trip","","",""]},
-    "Disaster Rusty Bidoof-Peanutbutter 2": {"level":120,"ability":"Huge Power","item":"Assault Vest","nature":"Adamant","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":4,"sa":0,"sd":0,"sp":252},"moves":["Drain Punch","Serpent Ascent","Precipice Blades","Facade"]},
-    "Disaster Rusty Bidoof-Peanutbutter 3": {"level":120,"ability":"Lightning Speed","item":"Life Orb","nature":"Adamant","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":4,"sa":0,"sd":0,"sp":252},"moves":["Earthquake","Boulder Drop","Fishious Rend","Bolt Beak"]},
-    "Disaster Rusty Bidoof-Peanutbutter 4": {"level":120,"ability":"Wonder Guard","item":"Leftovers","nature":"Adamant","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":0,"df":252,"sa":0,"sd":4,"sp":0},"moves":["No Retreat","Diamond Storm","Earthquake","Return"]},
-    "Disaster Rusty Bidoof-Peanutbutter 5": {"level":120,"ability":"Golden Hour","item":"Eviolite","nature":"Naive","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":4,"sa":0,"sd":0,"sp":252},"moves":["Minamo Giri","Biden Blast","Fyre Frost",""]},
+    "Disaster Rusty Dynamax": {"level":120,"ability":"Huge Power","item":"Assault Vest","nature":"Adamant","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":4,"sa":0,"sd":0,"sp":252},"moves":["Drain Punch","Serpent Ascent","Precipice Blades","Facade"]},
+    "Disaster Rusty Bidoof-Peanutbutter 2": {"level":120,"ability":"Lightning Speed","item":"Life Orb","nature":"Adamant","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":4,"sa":0,"sd":0,"sp":252},"moves":["Earthquake","Boulder Drop","Fishious Rend","Bolt Beak"]},
+    "Disaster Rusty Bidoof-Peanutbutter 3": {"level":120,"ability":"Wonder Guard","item":"Leftovers","nature":"Adamant","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":0,"df":252,"sa":0,"sd":4,"sp":0},"moves":["No Retreat","Diamond Storm","Earthquake","Return"]},
+    "Disaster Rusty Bidoof-Peanutbutter 4": {"level":120,"ability":"Golden Hour","item":"Eviolite","nature":"Naive","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":4,"sa":0,"sd":0,"sp":252},"moves":["Minamo Giri","Biden Blast","Fyre Frost",""]},
     "Disaster Rusty 1 Lead": {"level":120,"ability":"Ha Ha You're Weak","item":"Choice Band","nature":"Adamant","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":4,"sa":0,"sd":0,"sp":252},"moves":["Explosion","","",""]},
     "Disaster Rusty 1": {"level":120,"ability":"Golden Hour","item":"Eviolite","nature":"Naive","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":4,"sa":0,"sd":0,"sp":252},"moves":["Minamo Giri","Biden Blast","Fyre Frost","Rock Slide"]},
     "Disaster Rusty 1 Bidoof-Peanutbutter 2": {"level":120,"ability":"Lightning Speed","item":"Life Orb","nature":"Adamant","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":4,"sa":0,"sd":0,"sp":252},"moves":["Earthquake","Fishious Rend","Bolt Beak",""]},
