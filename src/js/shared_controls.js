@@ -2415,7 +2415,7 @@ function loadCustomList(id, sets) {
 			});
 		},
 		initSelection: function (element, callback) {
-			var data = !!sets ? getFirstValidSetOption(sets) : getFirstValidSetOption();
+			var data = !!sets ? getFirstValidSetOption(sets) : '';
 			callback(data);
 		}
 	});
