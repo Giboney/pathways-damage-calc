@@ -8,7 +8,6 @@
 //hydrochasm++ toggle second phase??
 //NEUTRALIZING GAS IMMUNITY
 //CUSTOM MAX MOVES
-//TRAINERS UI
 
 import type {Generation, AbilityName, StatID, Terrain} from '../../data/interface';
 import {toID} from '../../util';
