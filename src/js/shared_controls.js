@@ -476,6 +476,10 @@ function abilityChange(pokeInfo) {
 			pokeInfo.find('.forme').change();
 		}
 	}
+	
+	if (ability === 'Golden Hour') {
+		pokeInfo.find('.type2').val('Omnitype'); //technically essentials uses a 3rd tpye but fuck that
+	}
 }
 
 $(".ability").bind("keyup change", function() {
@@ -935,7 +939,7 @@ $(".set-selector").change(function () {
 		var moveObj;
 		var abilityObj = pokeObj.find(".ability");
 		var itemObj = pokeObj.find(".item");
-		var randset;
+		var randset = false;
 		if ($("#randoms").prop("checked")) {
 			if (gen >= 8) {
 				// The Gens 8 and 9 randdex contains information for multiple Random Battles formats for each Pokemon.
@@ -1235,16 +1239,16 @@ $(".teraToggle").change(function () {
 });
 
 $(".forme").change(function () {
-	var altForme = pokedex[$(this).val()],
-		container = $(this).closest(".info-group").siblings(),
-		fullSetName = container.find(".select2-chosen").first().text(),
-		pokemonName = fullSetName.substring(0, fullSetName.indexOf(" (")),
-		setName = fullSetName.substring(fullSetName.indexOf("(") + 1, fullSetName.lastIndexOf(")"));
+	var altForme = pokedex[$(this).val()];
+	var pokeInfo = $(this).closest(".poke-info");
+	var fullSetName = pokeInfo.find("input.set-selector").val();
+	var pokemonName = fullSetName.substring(0, fullSetName.indexOf(" ("));
+	var setName = fullSetName.substring(fullSetName.indexOf("(") + 1, fullSetName.lastIndexOf(")"));
 
 	$(this).parent().siblings().find(".type1").val(altForme.types[0]);
 	$(this).parent().siblings().find(".type2").val(altForme.types[1] ? altForme.types[1] : "");
 	for (var i = 0; i < LEGACY_STATS[9].length; i++) {
-		var baseStat = container.find("." + LEGACY_STATS[9][i]).find(".base");
+		var baseStat = pokeInfo.find("." + LEGACY_STATS[9][i]).find(".base");
 		baseStat.val(altForme.bs[LEGACY_STATS[9][i]]);
 		baseStat.keyup();
 	}
@@ -1253,20 +1257,20 @@ $(".forme").change(function () {
 		TRAINERDEX_PATHWAYS[$(this).closest('.poke-info').find('input.trainer-selector').val()][pokemonName] : setdex[pokemonName];
 	var chosenSet = pokemonSets && pokemonSets[setName];
 	var isAltForme = $(this).val() !== pokemonName;
-	if (isAltForme && abilities.indexOf(altForme.abilities[0]) !== -1 && !formChangeAbilities.includes(container.find(".ability").val())) {
-		container.find(".ability").val(altForme.abilities[0]);
+	if (isAltForme && abilities.indexOf(altForme.abilities[0]) !== -1 && !formChangeAbilities.includes(pokeInfo.find(".ability").val())) {
+		pokeInfo.find(".ability").val(altForme.abilities[0]);
 	} else if (chosenSet) {
 		if (!isRandoms) {
-			container.find(".abilities").val(chosenSet.ability);
+			pokeInfo.find(".abilities").val(chosenSet.ability);
 		} else {
-			container.find(".ability").val(chosenSet.abilities[0]);
+			pokeInfo.find(".ability").val(chosenSet.abilities[0]);
 		}
 	}
-	container.find(".ability").keyup();
+	pokeInfo.find(".ability").keyup();
 	if (startsWith($(this).val(), "Ogerpon-") && !startsWith($(this).val(), "Ogerpon-Teal")) {
-		container.find(".item").val($(this).val().split("-")[1] + " Mask").keyup();
+		pokeInfo.find(".item").val($(this).val().split("-")[1] + " Mask").keyup();
 	} else {
-		container.find(".item").prop("disabled", false);
+		pokeInfo.find(".item").prop("disabled", false);
 	}
 });
 
@@ -1926,7 +1930,11 @@ $('.trainer-sets').on('change', function() {
 });
 
 $('.trainer-selector').on('change', function() {
-	loadCustomList($(this).closest(".poke-info").attr('id'), TRAINERDEX_PATHWAYS[$(this).val()]);
+	var pokeInfo = $(this).closest(".poke-info");
+	var sets = TRAINERDEX_PATHWAYS[$(this).val()];
+	loadCustomList(pokeInfo.attr('id'), sets);
+	$(pokeInfo).find('.set-selector').val(getFirstValidSetOption(sets).id);
+	$(pokeInfo).find('.set-selector').change();
 });
 
 function getSetOptions(sets) {
@@ -2407,7 +2415,7 @@ function loadCustomList(id, sets) {
 			});
 		},
 		initSelection: function (element, callback) {
-			var data = '';
+			var data = !!sets ? getFirstValidSetOption(sets) : getFirstValidSetOption();
 			callback(data);
 		}
 	});
