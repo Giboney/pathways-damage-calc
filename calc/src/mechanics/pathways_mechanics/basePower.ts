@@ -368,28 +368,29 @@ export function calculateBasePowerPathways(
       }
       break;
     case 'Knock Off':
-      const item = gen.items.get(toID(defender.item))!;
+      const defenderItem = (defender.item && defender.item !== '') ? defender.item : defender.disabledItem;
+      const item = gen.items.get(toID(defenderItem))!;
       let resistedKnockOffDamage = (
-        (!defender.item || isQPActive(defender, field)) ||
+        !defenderItem ||
+        (isQPActive(defender, field) && ['Booster Energy', 'Big Nugget'].includes(defenderItem)) || //not correct when activated by weather or terrain
         (!!item.megaEvolves && defender.name.includes(item.megaEvolves)) ||
-        (defender.named('Dialga-Origin') && defender.hasItem('Adamant Crystal')) ||
-        (defender.named('Palkia-Origin') && defender.hasItem('Lustrous Globe')) ||
-        // Griseous Core for gen 9, Griseous Orb otherwise
-        (defender.name.includes('Giratina-Origin') && defender.item.includes('Griseous')) ||
-        (defender.name.includes('Arceus') && defender.item.includes('Plate')) ||
-        (defender.name.includes('Genesect') && defender.item.includes('Drive')) ||
-        (defender.named('Groudon', 'Groudon-Primal') && defender.hasItem('Red Orb')) ||
-        (defender.named('Kyogre', 'Kyogre-Primal') && defender.hasItem('Blue Orb')) ||
-        (defender.name.includes('Silvally') && defender.item.includes('Memory')) ||
-        defender.item.includes(' Z') ||
-        (defender.named('Zacian') && defender.hasItem('Rusted Sword')) ||
-        (defender.named('Zamazenta') && defender.hasItem('Rusted Shield')) ||
-        (defender.name.includes('Ogerpon-Cornerstone') && defender.hasItem('Cornerstone Mask')) ||
-        (defender.name.includes('Ogerpon-Hearthflame') && defender.hasItem('Hearthflame Mask')) ||
-        (defender.name.includes('Ogerpon-Wellspring') && defender.hasItem('Wellspring Mask')) ||
-        (defender.named('Venomicon-Epilogue') && defender.hasItem('Vile Vial'))
+        (defender.named('Dialga-Origin') && defenderItem === 'Adamant Crystal') ||
+        (defender.named('Palkia-Origin') && defenderItem === 'Lustrous Globe') ||
+        (defender.name.includes('Giratina-Origin') && defenderItem.includes('Griseous')) ||
+        (defender.name.includes('Arceus') && defenderItem.includes('Plate')) ||
+        (defender.name.includes('Genesect') && defenderItem.includes('Drive')) ||
+        (defender.named('Groudon', 'Groudon-Primal') && defenderItem === 'Red Orb') ||
+        (defender.named('Kyogre', 'Kyogre-Primal') && defenderItem === 'Blue Orb') ||
+        (defender.name.includes('Silvally') && defenderItem.includes('Memory')) ||
+        defenderItem.includes(' Z') ||
+        (defender.named('Zacian') && defenderItem === 'Rusted Sword') ||
+        (defender.named('Zamazenta') && defenderItem === 'Rusted Shield') ||
+        (defender.name.includes('Ogerpon-Cornerstone') && defenderItem === 'Cornerstone Mask') ||
+        (defender.name.includes('Ogerpon-Hearthflame') && defenderItem === 'Hearthflame Mask') ||
+        (defender.name.includes('Ogerpon-Wellspring') && defenderItem === 'Wellspring Mask')
       );
       if (!resistedKnockOffDamage) {
+        //bandaid fix for klutz removing item
         basePower = Math.round(basePower * 1.5);
         desc.moveBP = basePower;
       }

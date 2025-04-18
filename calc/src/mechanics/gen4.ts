@@ -66,7 +66,21 @@ export function calculateDPP(
     return result;
   }
 
-  if (attacker.hasAbility('Mold Breaker')) {
+  const defenderAbilityIgnored = defender.hasAbility(
+    'Battle Armor', 'Clear Body', 'Damp', 'Dry Skin',
+    'Filter', 'Flash Fire', 'Flower Gift', 'Heatproof',
+    'Hyper Cutter', 'Immunity', 'Inner Focus', 'Insomnia',
+    'Keen Eye', 'Leaf Guard', 'Levitate', 'Lightning Rod',
+    'Limber', 'Magma Armor', 'Marvel Scale', 'Motor Drive',
+    'Oblivious', 'Own Tempo', 'Sand Veil', 'Shell Armor',
+    'Shield Dust', 'Simple', 'Snow Cloak', 'Solid Rock',
+    'Soundproof', 'Sticky Hold', 'Storm Drain', 'Sturdy',
+    'Suction Cups', 'Tangled Feet', 'Thick Fat', 'Unaware',
+    'Vital Spirit', 'Volt Absorb', 'Water Absorb', 'Water Veil',
+    'White Smoke', 'Wonder Guard'
+  );
+
+  if (attacker.hasAbility('Mold Breaker') && defenderAbilityIgnored) {
     defender.ability = '' as AbilityName;
     desc.attackerAbility = attacker.ability;
   }
@@ -91,6 +105,9 @@ export function calculateDPP(
     desc.attackerItem = attacker.item;
     desc.moveBP = move.bp;
     desc.moveType = move.type;
+  } else if (move.named('Brick Break')) {
+    field.defenderSide.isReflect = false;
+    field.defenderSide.isLightScreen = false;
   }
 
   if (attacker.hasAbility('Normalize') && !move.named('Struggle')) {
@@ -196,6 +213,7 @@ export function calculateDPP(
   const attack = calculateAttackDPP(gen, attacker, defender, move, field, desc, isCritical);
 
   // #endregion
+
   // #region (Special) Defense
   const defense = calculateDefenseDPP(gen, attacker, defender, move, field, desc, isCritical);
 
@@ -261,7 +279,7 @@ export function calculateDPP(
   }
   result.damage = damage;
 
-  if ((move.dropsStats && move.timesUsed! > 1) || move.hits > 1) {
+  if (move.timesUsed! > 1 || move.hits > 1) {
     // store boosts so intermediate boosts don't show.
     const origDefBoost = desc.defenseBoost;
     const origAtkBoost = desc.attackBoost;
@@ -273,6 +291,7 @@ export function calculateDPP(
       numAttacks = move.hits;
     }
     let usedItems = [false, false];
+    const damageMatrix = [damage];
     for (let times = 1; times < numAttacks; times++) {
       usedItems = checkMultihitBoost(gen, attacker, defender, move,
         field, desc, usedItems[0], usedItems[1]);
@@ -290,10 +309,10 @@ export function calculateDPP(
       }
       baseDamage = calculateFinalModsDPP(baseDamage, attacker, move, field, desc, isCritical);
 
-      let damageMultiplier = 0;
-      result.damage = result.damage.map(affectedAmount => {
+      const damageArray = [];
+      for (let i = 0; i < 16; i++) {
         let newFinalDamage = 0;
-        newFinalDamage = Math.floor((baseDamage * (85 + damageMultiplier)) / 100);
+        newFinalDamage = Math.floor((baseDamage * (85 + i)) / 100);
         newFinalDamage = Math.floor(newFinalDamage * stabMod);
         newFinalDamage = Math.floor(newFinalDamage * type1Effectiveness);
         newFinalDamage = Math.floor(newFinalDamage * type2Effectiveness);
@@ -301,10 +320,11 @@ export function calculateDPP(
         newFinalDamage = Math.floor(newFinalDamage * ebeltMod);
         newFinalDamage = Math.floor(newFinalDamage * tintedMod);
         newFinalDamage = Math.max(1, newFinalDamage);
-        damageMultiplier++;
-        return affectedAmount + newFinalDamage;
-      });
+        damageArray[i] = newFinalDamage;
+      }
+      damageMatrix[times] = damageArray;
     }
+    result.damage = damageMatrix;
     desc.defenseBoost = origDefBoost;
     desc.attackBoost = origAtkBoost;
   }

@@ -384,7 +384,7 @@ export function calculatePathways(
       (move.named('Synchronoise') && !defender.hasType(attacker.types[0]) &&
         (!attacker.types[1] || !defender.hasType(attacker.types[1]))) ||
       (move.named('Dream Eater') &&
-        (!(defender.hasStatus('slp') || defender.hasAbility('Comatose', 'Awakening')))) ||
+        (!(defender.hasStatus('slp') && !defender.hasAbility('Comatose', 'Awakening')))) ||
       (move.named('Steel Roller') && !field.terrain) ||
       (move.named('Poltergeist') && (!defender.item || isQPActive(defender, field)))
   ) {
@@ -554,7 +554,9 @@ export function calculatePathways(
     desc.attackerAbility = attacker.ability;
   }
 
-  let damage = getFinalDamagePathways(basePower, attack, defense, attacker.level, finalMod);
+  const damage = getFinalDamagePathways(basePower, attack, defense, attacker.level, finalMod);
+  
+  result.damage = childDamage ? [damage, childDamage] : damage;
 
   desc.attackBoost = move.named('Foul Play', 'Rigged Game') ? defender.boosts[attackStat] : attacker.boosts[attackStat];
 
@@ -572,6 +574,7 @@ export function calculatePathways(
       numAttacks = move.hits;
     }
     let usedItems = [false, false];
+    let damageMatrix = [damage];
     for (let times = 1; times < numAttacks; times++) {
       usedItems = checkMultihitBoostPathways(attacker, defender, move,
         field, desc, usedItems[0], usedItems[1]);
@@ -614,13 +617,15 @@ export function calculatePathways(
       );
 
       let damageMultiplier = 0;
-      damage = getFinalDamagePathways(newBasePower, attack, defense, attacker.level, newFinalMod);
+      damageMatrix[times] = getFinalDamagePathways(newBasePower, attack, defense, attacker.level, newFinalMod);
     }
+    result.damage = damageMatrix;
+    
+      console.log(damageMatrix)
     desc.defenseBoost = origDefBoost;
     desc.attackBoost = origAtkBoost;
   }
 
-  result.damage = childDamage ? [damage, childDamage] : damage;
 
   // #endregion
 

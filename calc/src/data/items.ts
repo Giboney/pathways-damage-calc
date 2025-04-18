@@ -1,5 +1,5 @@
 import type * as I from './interface';
-import {toID} from '../util';
+import {toID, extend} from '../util';
 
 const RBY: string[] = [];
 
@@ -494,7 +494,35 @@ const SV = SS.concat([
   'Wellspring Mask',
 ]);
 
+const PATHWAYS_MEGA_STONES: {[species: string]: string} = {
+  Dragonitite: 'Dragonite',
+  Dragapultite: 'Dragapult',
+  Mightyenite: 'Mightyena',
+  Volcaronite: 'Volcarona',
+  Flygonite: 'Flygon',
+  Mimikite: 'Mimikyu',
+  Quagsirite: 'Quagsire',
+  Togekissite: 'Togekiss',
+  Hydreigonite: 'Hydreigon',
+  'Samurottite H': 'Samurott-Hisui',
+  'Kommo-o': 'Kommonite',
+  Glimmorite: 'Glimmora',
+  Froslassite: 'Frosslass',
+  Goodrite: 'Goodra',
+  'Typhlosionite H': 'Typhlosion-Hisui',
+  'Deciduite H': 'Decidueye-Hisui',
+  Shedinjite: 'Shedinja',
+  Baxcalite: 'Baxcalibur',
+  Swannite: 'Swanna',
+  Tropiusite: 'Tropius',
+  Vikavoltite: 'Vikavolt',
+  Electrodite: 'Electrode',
+  Mismagiusite: 'Mismagius',
+  Krookodilite: 'Krookodile',
+};
+
 const PATHWAYS = SV.concat([
+  ...Object.keys(PATHWAYS_MEGA_STONES),
   'Aura Crystal',
   'Frost Orb',
   'Curious Bat',
@@ -508,30 +536,6 @@ const PATHWAYS = SV.concat([
   'Cobalt Gem',
   'Malice Gem',
   'Inner Light',
-  'Dragonitite',
-  'Dragapultite',
-  'Mightyenite',
-  'Volcaronite',
-  'Flygonite',
-  'Mimikite',
-  'Quagsirite',
-  'Togekissite',
-  'Hydreigonite',
-  'Samurottite H',
-  'Kommonite',
-  'Glimmorite',
-  'Froslassite',
-  'Goodrite',
-  'Typhlosionite H',
-  'Deciduite H',
-  'Shedinjite',
-  'Baxcalite',
-  'Swannite',
-  'Tropiusite',
-  'Vikavoltite',
-  'Electrodite',
-  'Mismagiusite',
-  'Krookodilite',
   'Gravity Extender',
   //'Partnerium Z',
 ]);
@@ -648,7 +652,7 @@ class Item implements I.Item {
     this.kind = 'Item';
     this.id = toID(name);
     this.name = name as I.ItemName;
-    this.megaEvolves = MEGA_STONES[name] as I.SpeciesName;
+    this.megaEvolves = extend(true, {}, MEGA_STONES, PATHWAYS_MEGA_STONES)[name] as I.SpeciesName;
     const berry = BERRIES[name];
     if (berry) {
       this.isBerry = true;

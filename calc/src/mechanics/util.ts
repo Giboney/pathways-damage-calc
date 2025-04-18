@@ -232,6 +232,7 @@ export function checkItem(pokemon: Pokemon, magicRoomActive?: boolean) {
     pokemon.hasAbility('Klutz', 'Light Born') && !EV_ITEMS.includes(pokemon.item!) ||
     magicRoomActive
   ) {
+    pokemon.disabledItem = pokemon.item;
     pokemon.item = '' as ItemName;
   }
 }
