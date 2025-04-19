@@ -1539,6 +1539,7 @@ function createField() {
 	var isCharge = [$("#chargeL").prop("checked"), $("#chargeR").prop("checked")];
 	var isSaltCure = [$("#cureL").prop("checked"), $("#cureR").prop("checked")];
 	var isSpookySpook = [$("#spookL").prop("checked"), $("#spookR").prop("checked")];
+	var isMindflay = [$("#mindflayL").prop("checked"), $("#mindflayR").prop("checked")];
 	var isColdTherapy = [$("#coldL").prop("checked"), $("#coldR").prop("checked")];
 	var isMetalScraps = [$("#metalScrapsL").prop("checked"), $("#metalScrapsR").prop("checked")];
 	var stellarRocks = [~~$("input:radio[name='stellarRocksL']:checked").val(), ~~$("input:radio[name='stellarRocksR']:checked").val()];
@@ -1569,6 +1570,7 @@ function createField() {
 			isCharge: isCharge[i], // additions
 			isSaltCure: isSaltCure[i],
 			isSpookySpook: isSpookySpook[i],
+			isMindflay: isMindflay[i],
 			isColdTherapy: isColdTherapy[i],
 			isMetalScraps: isMetalScraps[i],
 			isDrakeyDrake: isDrakeyDrake[i],

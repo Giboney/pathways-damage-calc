@@ -1,13 +1,12 @@
 //PATHWAYS DAMAGE CALC IN Move_Usage_Calculations.rb -> def pbCalcDamage
 //
-//brick break, doom blade, stone fangs,
 //amaterasu?, tsukuyomi?
 //
-//vicious claws, vicious edge, mind flay, terror realm
 //SINFUL GLUTTONY
 //hydrochasm++ toggle second phase??
 //NEUTRALIZING GAS IMMUNITY
 //CUSTOM MAX MOVES
+//fix gender issues
 
 import type {Generation, AbilityName, StatID, Terrain} from '../../data/interface';
 import {toID} from '../../util';
@@ -52,6 +51,7 @@ import {
   getAuraCrystalDR,
   getRoleDamageMod,
   getFinalDamagePathways,
+  hasMagicGuard,
 } from './util';
 import {calculateBasePowerPathways} from './basePower';
 import {calculateAttackPathways} from './attack';
@@ -553,8 +553,18 @@ export function calculatePathways(
     childDamage = calculatePathways(gen, child, defender, move, field).damage as number[];
     desc.attackerAbility = attacker.ability;
   }
+  
+  let vicious = 0;
+  if (
+    !hasMagicGuard(defender, field) && !defender.hasItem('Protective Pads') &&
+    ((attacker.hasAbility('Vicious Edge') && move.flags.blade) ||
+     (attacker.hasAbility('Vicious Claws') && move.flags.slicing))
+  ) {
+    vicious = Math.floor(defender.maxHP() / 8);
+    desc.attackerAbility = attacker.ability;
+  }
 
-  const damage = getFinalDamagePathways(basePower, attack, defense, attacker.level, finalMod);
+  const damage = getFinalDamagePathways(basePower, attack, defense, attacker.level, finalMod, vicious);
   
   result.damage = childDamage ? [damage, childDamage] : damage;
 
@@ -617,7 +627,7 @@ export function calculatePathways(
       );
 
       let damageMultiplier = 0;
-      damageMatrix[times] = getFinalDamagePathways(newBasePower, attack, defense, attacker.level, newFinalMod);
+      damageMatrix[times] = getFinalDamagePathways(newBasePower, attack, defense, attacker.level, newFinalMod, 0);
     }
     result.damage = damageMatrix;
     

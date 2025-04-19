@@ -28,12 +28,13 @@ export function getFinalDamagePathways(
   defense: number,
   level: number,
   finalMod: number,
+  vicious: number,
 ) {
   let damageRolls = [];
   for (let i = 0; i < 16; i++) {
     damageRolls[i] = Math.max(
       Math.round((Math.floor(Math.floor(Math.floor(2 * level / 5 + 2) * basePower * attack / defense) / 50) + 2) * finalMod * ((85 + i) / 100)), 1
-    );
+    ) + vicious;
   }
   return damageRolls;
 }

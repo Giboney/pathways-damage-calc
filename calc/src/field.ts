@@ -100,6 +100,7 @@ export class Side implements State.Side {
   isColdTherapy?: boolean;
   isSaltCure?: boolean;
   isSpookySpook?: boolean;
+  isMindflay?: boolean;
 
   constructor(side: State.Side = {}) {
     this.spikes = side.spikes || 0;
@@ -130,6 +131,7 @@ export class Side implements State.Side {
     this.isColdTherapy = !!side.isColdTherapy;
     this.isSaltCure = !!side.isSaltCure;
     this.isSpookySpook = !!side.isSpookySpook;
+    this.isMindflay = !!side.isMindflay;
   }
 
   clone() {

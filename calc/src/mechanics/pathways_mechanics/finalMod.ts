@@ -234,7 +234,7 @@ export function calculateFinalModPathways(
     desc.isFrostbitten = true;
   }
   
-  if (!isCritical) {
+  if (!isCritical && !move.named('Brick Break', 'Psychic Fangs', 'Doom Blade', 'Stone Fangs')) {
     if (field.defenderSide.isAuroraVeil) {
       finalMod *= field.gameType !== 'Singles' ? 2 / 3 : 0.5;
       desc.isAuroraVeil = true;

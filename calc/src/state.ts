@@ -89,5 +89,6 @@ export namespace State {
     isColdTherapy?: boolean;
     isSaltCure?: boolean;
     isSpookySpook?: boolean;
+    isMindflay?: boolean;
   }
 }

@@ -716,6 +716,14 @@ function getEndOfTurn(
     //but dream world uses a decimal and the pbRecoverHP function uses .round
     damage += Math.round(defender.maxHP() / 12.5);
     texts.push('Dream World recovery');
+  } else if (
+    field.hasTerrain('Terror Realm') &&
+    (defender.hasStatus('slp') || defender.hasAbility('Comatose', 'Awakening')) &&
+    !defender.hasType('Ghost', 'Dark') &&
+    !hasMagicGuard(defender, field)
+  ) {
+    damage -= Math.floor(defender.maxHP() / 8);
+    texts.push('Terror Realm damage');
   }
 
   if (defender.hasStatus('psn')) {
@@ -783,6 +791,10 @@ function getEndOfTurn(
       (defender.teraType && ['Dark', 'Bug'].includes(defender.teraType));
     damage -= Math.floor(defender.maxHP() / (isResistType ? 10 : 5));
     texts.push('Spooky Spook');
+  }
+  if (field.defenderSide.isMindflay && !hasMagicGuard(defender, field)) {
+    damage -= Math.floor(defender.maxHP() / 8);
+    texts.push('Mindflay');
   }
   if (!defender.hasType('Fire') && !hasMagicGuard(defender, field) &&
       (move.named('Fire Pledge (Grass Pledge Boosted)', 'Grass Pledge (Fire Pledge Boosted)'))) {
