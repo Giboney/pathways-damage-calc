@@ -2,10 +2,9 @@
 //
 //amaterasu?, tsukuyomi?
 //
-//SINFUL GLUTTONY
+//SINFUL GLUTTONY take half of oppo atk def spa spd round down add to guzz stats subtract from your stats, also steal all boosts
 //hydrochasm++ toggle second phase??
-//NEUTRALIZING GAS IMMUNITY
-//CUSTOM MAX MOVES
+//NEUTRALIZING GAS IMMUNITY done i guess?
 //fix gender issues
 
 import type {Generation, AbilityName, StatID, Terrain} from '../../data/interface';
@@ -156,12 +155,10 @@ export function calculatePathways(
   const defenderIgnoresAbility = defender.hasAbility(
     'Full Metal Body',
     'Prism Armor',
-    'Shadow Shield',
-    'Tablets of Ruin',
-    'Vessel of Ruin'
+    'Shadow Shield'
   );
 
-  const attackerIgnoresAbility = attacker.hasAbility('Mold Breaker', 'Teravolt', 'Turboblaze');
+  const attackerIgnoresAbility = attacker.hasAbility('Mold Breaker', 'Teravolt', 'Turboblaze', 'Hydrochasm Surge++');
   const moveIgnoresAbility = move.named(
     'G-Max Drum Solo',
     'G-Max Fire Ball',
@@ -187,7 +184,8 @@ export function calculatePathways(
     'As One (Glastrier)', 'As One (Spectrier)', 'Battle Bond', 'Comatose',
     'Disguise', 'Gulp Missile', 'Ice Face', 'Multitype', 'Neutralizing Gas',
     'Power Construct', 'RKS System', 'Schooling', 'Shields Down',
-    'Stance Change', 'Tera Shift', 'Zen Mode', 'Zero to Hero',
+    'Stance Change', 'Tera Shift', 'Zen Mode', 'Zero to Hero', 'Legendary Aura',
+    'Hydrochasm Surge++', 'Golden Hour'
   ];
 
   if (attacker.hasAbility('Neutralizing Gas') &&
@@ -304,7 +302,7 @@ export function calculatePathways(
     type = 'Stellar';
   }
 
-  let abilityTyping = getAteAbilityType(gen, attacker, move);
+  let abilityTyping = getAteAbilityType(gen, attacker.ability, attacker.item, !!move.flags.sound);
   let hasAteAbilityTypeChange = false;
   const noTypeChange = move.named(
     'Revelation Dance',
@@ -631,7 +629,6 @@ export function calculatePathways(
     }
     result.damage = damageMatrix;
     
-      console.log(damageMatrix)
     desc.defenseBoost = origDefBoost;
     desc.attackBoost = origAtkBoost;
   }

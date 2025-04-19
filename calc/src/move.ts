@@ -1,6 +1,7 @@
 import type * as I from './data/interface';
 import type {State} from './state';
 import {toID, extend} from './util';
+import {getAteAbilityType} from './mechanics/pathways_mechanics/util'
 
 const SPECIAL = ['Fire', 'Water', 'Grass', 'Electric', 'Ice', 'Psychic', 'Dark', 'Dragon'];
 
@@ -56,29 +57,24 @@ export class Move implements State.Move {
     name = options.name || name;
     this.originalName = name;
     let data: I.Move = extend(true, {name}, gen.moves.get(toID(name)), options.overrides);
-
     this.hits = 1;
     // If isZMove but there isn't a corresponding z-move, use the original move
-    if (options.useMax && data.maxMove) {
+    if (options.useMax) {
       const maxMoveName: string = getMaxMoveName(
+        gen,
         data.type,
         data.name,
-        options.species,
         !!(data.category === 'Status'),
-        options.ability
+        options.species,
+        options.ability,
+        options.item
       );
       const maxMove = gen.moves.get(toID(maxMoveName));
       const maxPower = () => {
         if (['G-Max Drum Solo', 'G-Max Fire Ball', 'G-Max Hydrosnipe'].includes(maxMoveName)) {
           return 160;
         }
-        // TODO: checking basePower === 10 is fragile (what if the maxMove's basePower is
-        // overridden?) and also fails for Max Flare, which is strangely 100 BP in the game data
-        //what is the point of this
-        //if (maxMove!.basePower === 10 || maxMoveName === 'Max Flare') {
-          return data.maxMove!.basePower;
-        //}
-        //return maxMove!.basePower;
+        return data.category === 'Status' ? 0 : data.maxMove!.basePower;
       };
       data = extend(true, {}, maxMove, {
         name: maxMoveName,
@@ -246,29 +242,32 @@ const ZMOVES_TYPING: {
 };
 
 export function getMaxMoveName(
+  gen: I.Generation,
   moveType: I.TypeName,
-  moveName?: string,
-  pokemonSpecies?: string,
-  isStatus?: boolean,
-  pokemonAbility?: string
+  moveName: string,
+  isStatus: boolean,
+  pokemonSpecies?: I.SpeciesName,
+  pokemonAbility?: I.AbilityName,
+  pokemonItem?: I.ItemName
 ) {
   if (isStatus) return 'Max Guard';
-  if (pokemonAbility === 'Normalize') return 'Max Strike';
-  if (moveType === 'Fire') {
-    if (pokemonSpecies === 'Charizard-Gmax') return 'G-Max Wildfire';
-    if (pokemonSpecies === 'Centiskorch-Gmax') return 'G-Max Centiferno';
-    if (pokemonSpecies === 'Cinderace-Gmax') return 'G-Max Fire Ball';
+  if (
+    moveType === 'Normal' || pokemonAbility === 'Normalize' &&
+    !['Weather Ball', 'Weather Bomb', 'Terrain Pulse', 'Terrain Blast'].includes(moveName)
+  ) {
+    moveType = getAteAbilityType(gen, pokemonAbility, pokemonItem) || moveType; //check this
   }
   if (moveType === 'Normal') {
     if (pokemonSpecies === 'Eevee-Gmax') return 'G-Max Cuddle';
     if (pokemonSpecies === 'Meowth-Gmax') return 'G-Max Gold Rush';
     if (pokemonSpecies === 'Snorlax-Gmax') return 'G-Max Replenish';
-    if (!(moveName === 'Weather Ball' || moveName === 'Terrain Pulse')) {
-      if (pokemonAbility === 'Pixilate') return 'Max Starfall';
-      if (pokemonAbility === 'Aerilate') return 'Max Airstream';
-      if (pokemonAbility === 'Refrigerate') return 'Max Hailstorm';
-      if (pokemonAbility === 'Galvanize') return 'Max Lightning';
-    }
+  }
+  if (moveType === 'Fire') {
+    if (pokemonSpecies === 'Charizard-Gmax') return 'G-Max Wildfire';
+    if (pokemonSpecies === 'Centiskorch-Gmax') return 'G-Max Centiferno';
+    if (pokemonSpecies === 'Cinderace-Gmax') return 'G-Max Fire Ball';
+    if (pokemonSpecies === 'Riolu-Aura') return 'G-Max Soulburn';
+    if (pokemonSpecies === 'Riolu-Originator') return 'G-Max Soulbreak';
   }
   if (moveType === 'Fairy') {
     if (pokemonSpecies === 'Alcremie-Gmax') return 'G-Max Finale';
@@ -282,6 +281,7 @@ export function getMaxMoveName(
     if (pokemonSpecies === 'Pikachu-Gmax') return 'G-Max Volt Crash';
     if (pokemonSpecies?.startsWith('Toxtricity') &&
       pokemonSpecies?.endsWith('Gmax')) return 'G-Max Stun Shock';
+    if (pokemonSpecies === 'Luxray-Shadow-Mane') return 'G-Max Dread Shock';
   }
   if (moveType === 'Grass') {
     if (pokemonSpecies === 'Appletun-Gmax') return 'G-Max Sweetness';
@@ -301,11 +301,26 @@ export function getMaxMoveName(
     if (pokemonSpecies === 'Urshifu-Gmax') return 'G-Max One Blow';
   }
   if (moveType === 'Poison' && pokemonSpecies === 'Garbodor-Gmax') return 'G-Max Malodor';
-  if (moveType === 'Fighting' && pokemonSpecies === 'Machamp-Gmax') return 'G-Max Chi Strike';
+  if (moveType === 'Fighting') {
+    if (pokemonSpecies === 'Riolu-Aura') return 'G-Max Aurastorm';
+    if (pokemonSpecies === 'Riolu-Originator') return 'G-Max Soulcrush';
+    if (pokemonSpecies === 'Machamp-Gmax') return 'G-Max Chi Strike';
+  }
   if (moveType === 'Ghost' && pokemonSpecies === 'Gengar-Gmax') return 'G-Max Terror';
-  if (moveType === 'Ice' && pokemonSpecies === 'Lapras-Gmax') return 'G-Max Resonance';
-  if (moveType === 'Flying' && pokemonSpecies === 'Corviknight-Gmax') return 'G-Max Wind Rage';
-  if (moveType === 'Dragon' && pokemonSpecies === 'Duraludon-Gmax') return 'G-Max Depletion';
+  if (moveType === 'Ice') {
+    if (pokemonSpecies === 'Riolu-Aura') return 'G-Max Soulshards';
+    if (pokemonSpecies === 'Riolu-Originator') return 'G-Max Soulrend';
+    if (pokemonSpecies === 'Lapras-Gmax') return 'G-Max Resonance';
+  }
+  if (moveType === 'Flying')  {
+    if (pokemonSpecies === 'Corviknight-Gmax') return 'G-Max Wind Rage';
+    if (pokemonSpecies === 'Riolu-Aura') return 'G-Max Aura Vortex';
+    if (pokemonSpecies === 'Riolu-Originator') return 'G-Max Soul Vortex';
+  }
+  if (moveType === 'Dragon') {
+    if (pokemonSpecies === 'Duraludon-Gmax') return 'G-Max Depletion';
+    if (pokemonSpecies === 'Typhlosion-Black-Flame') return 'G-Max Armageddon';
+  }
   if (moveType === 'Psychic' && pokemonSpecies === 'Orbeetle-Gmax') return 'G-Max Gravitas';
   if (moveType === 'Rock' && pokemonSpecies === 'Coalossal-Gmax') return 'G-Max Volcalith';
   if (moveType === 'Ground' && pokemonSpecies === 'Sandaconda-Gmax') return 'G-Max Sandblast';

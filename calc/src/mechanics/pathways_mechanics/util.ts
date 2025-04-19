@@ -1,6 +1,7 @@
 import type {
   Generation,
   ID,
+  AbilityName,
   ItemName,
   MoveCategory,
   NatureName,
@@ -462,8 +463,6 @@ export function getRoleDamageMod(pokemon: Pokemon) {
         return 1.07;
       case 'Master':
         return 1.10;
-      default:
-        console.log('No role rank selected.');
     }
   }
   return 1;
@@ -471,16 +470,21 @@ export function getRoleDamageMod(pokemon: Pokemon) {
 
 
 
-export function getAteAbilityType(gen: Generation, attacker: Pokemon, move: Move) {
-  switch (attacker.ability) {
+export function getAteAbilityType(
+  gen: Generation,
+  attackerAbility?: AbilityName,
+  attackerItem?: string,
+  isSound?: boolean
+) {
+  switch (attackerAbility) {
     case 'Liquid Voice':
-      if (move.flags.sound) {
+      if (isSound) {
         return 'Water';
       }
       return false;
     case 'Primeval Gift':
-      if (attacker.item?.endsWith('Berry')) {
-        return getNaturalGift(gen, attacker.item)!.t;
+      if (attackerItem!.endsWith('Berry')) {
+        return getNaturalGift(gen, <string>attackerItem)!.t;
       }
       return false;
     case 'Aerialate':

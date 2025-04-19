@@ -5,7 +5,6 @@ import {
   getFlingPower,
   getItemBoostType,
   getMultiAttack,
-  getNaturalGift,
   getTechnoBlast,
 } from '../../items';
 import type {RawDesc} from '../../desc';
