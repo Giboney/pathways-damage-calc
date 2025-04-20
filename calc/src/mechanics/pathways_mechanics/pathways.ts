@@ -5,7 +5,7 @@
 //SINFUL GLUTTONY take half of oppo atk def spa spd round down add to guzz stats subtract from your stats, also steal all boosts
 //hydrochasm++ toggle second phase??
 //NEUTRALIZING GAS IMMUNITY done i guess?
-//fix gender issues
+//pbs export?
 
 import type {Generation, AbilityName, StatID, Terrain} from '../../data/interface';
 import {toID} from '../../util';

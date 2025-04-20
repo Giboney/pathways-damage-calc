@@ -13,7 +13,7 @@ function ExportPokemon(pokeInfo) {
 	var pokemon = createPokemon(pokeInfo);
 	var EV_counter = 0;
 	var finalText = "";
-	finalText = pokemon.name + (pokemon.item ? " @ " + pokemon.item : "") + "\n";
+	finalText = pokemon.name + (pokemon.gender !== 'N' ? " (" + pokemon.gender + ")" : "") + (pokemon.item ? " @ " + pokemon.item : "") + "\n";
 	finalText += "Level: " + pokemon.level + "\n";
 	finalText += pokemon.nature && gen > 2 ? pokemon.nature + " Nature" + "\n" : "";
 	if (gen === 9) {
@@ -231,6 +231,7 @@ function addToDex(poke) {
 	dexObject.nature = poke.nature;
 	dexObject.item = poke.item;
 	dexObject.isCustomSet = poke.isCustomSet;
+	dexObject.gender = poke.gender;
 	var customsets;
 	if (localStorage.customsets) {
 		customsets = JSON.parse(localStorage.customsets);

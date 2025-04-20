@@ -935,6 +935,7 @@ $(".set-selector").change(function () {
 		pokeObj.find(".boost").val(0);
 		pokeObj.find(".percent-hp").val(100);
 		pokeObj.find(".status").val("Healthy");
+		pokeObj.find(".gender").val(pokemon.gender);
 		$(".status").change();
 		var moveObj;
 		var abilityObj = pokeObj.find(".ability");
@@ -1014,6 +1015,9 @@ $(".set-selector").change(function () {
 				setSelectValueIfValid(itemObj, set.item, "");
 			}
 			var setMoves = set.moves;
+			pokeObj.find(".gender").val(set.gender);
+			console.log(set.gender);
+			console.log(pokeObj.find(".gender"));
 			if (randset) {
 				if (gen === 8 || gen === 1) {
 					setMoves = randset.moves;
@@ -1110,7 +1114,9 @@ $(".set-selector").change(function () {
 		if (pokemon.gender === "N") {
 			pokeObj.find(".gender").parent().hide();
 			pokeObj.find(".gender").val("");
-		} else pokeObj.find(".gender").parent().show();
+		} else {
+			pokeObj.find(".gender").parent().show();
+		}
 	}
 });
 
@@ -1428,7 +1434,7 @@ function createPokemon(pokeInfo) {
 			ability: ability,
 			abilityOn: pokeInfo.find(".abilityToggle").is(":checked"),
 			item: item,
-			gender: pokeInfo.find(".gender").is(":visible") ? getGender(pokeInfo.find(".gender").val()) : "N",
+			gender: pokeInfo.find(".gender").is(":visible") ? pokeInfo.find(".gender").val() : "N",
 			nature: pokeInfo.find(".nature").val(),
 			ivs: ivs,
 			evs: evs,
@@ -1457,12 +1463,6 @@ function createPokemon(pokeInfo) {
 			}
 		});
 	}
-}
-
-function getGender(gender) {
-	if (!gender || gender === 'genderless' || gender === 'N') return 'N';
-	if (gender.toLowerCase() === 'male' || gender === 'M') return 'M';
-	return 'F';
 }
 
 function getMoveDetails(moveInfo, opts) {
