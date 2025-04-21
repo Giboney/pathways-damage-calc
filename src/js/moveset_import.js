@@ -285,7 +285,7 @@ function addSets(pokes, name) {
 	var currentPoke;
 	var addedpokes = 0;
 	for (var i = 0; i < rows.length; i++) {
-		currentRow = rows[i].split(/[()@]/);
+		currentRow = rows[i].split(/[()@]/); //add support for gender here
 		for (var j = 0; j < currentRow.length; j++) {
 			currentRow[j] = checkExeptions(currentRow[j].trim());
 			if (calc.SPECIES[10][currentRow[j].trim()] !== undefined) {

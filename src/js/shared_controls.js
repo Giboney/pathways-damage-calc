@@ -115,26 +115,32 @@ $("input:radio[name='defaultLevel']").change(function () {
 
 // auto-calc stats and current HP on change
 $(".level").bind("keyup change", function () {
+	$('.ability').change();
 	var poke = $(this).closest(".poke-info");
 	calcHP(poke);
 	calcStats(poke);
 });
 $(".nature").bind("keyup change", function () {
+	$('.ability').change();
 	calcStats($(this).closest(".poke-info"));
 });
 $(".hp .base, .hp .evs, .hp .ivs").bind("keyup change", function () {
 	calcHP($(this).closest(".poke-info"));
 });
 $(".at .base, .at .evs, .at .ivs").bind("keyup change", function () {
+	$('.ability').change();
 	calcStat($(this).closest(".poke-info"), 'at');
 });
 $(".df .base, .df .evs, .df .ivs").bind("keyup change", function () {
+	$('.ability').change();
 	calcStat($(this).closest(".poke-info"), 'df');
 });
 $(".sa .base, .sa .evs, .sa .ivs").bind("keyup change", function () {
+	$('.ability').change();
 	calcStat($(this).closest(".poke-info"), 'sa');
 });
 $(".sd .base, .sd .evs, .sd .ivs").bind("keyup change", function () {
+	$('.ability').change();
 	calcStat($(this).closest(".poke-info"), 'sd');
 });
 $(".sp .base, .sp .evs, .sp .ivs").bind("keyup change", function () {
@@ -257,6 +263,7 @@ $(".abilityToggle").on("change", function() {
 	var pokeInfo = $(this).closest(".poke-info");
 	var id = pokeInfo.attr('id');
 	var oppoInfo = id === "p1" ? $("#p2") : $("#p1");
+	var ability = pokeInfo.find(".ability").val();
 	if (storeBoosts['ability' + id]) {
 		storeBoosts['ability' + id].apply();
 		storeBoosts['ability' + id] = false;
@@ -265,8 +272,15 @@ $(".abilityToggle").on("change", function() {
 		storeBoosts['multiAbility' + id].apply();
 		storeBoosts['multiAbility' + id] = false;
 	}
+	if (ability === 'Sinful Gluttony') {
+		var gainStats = {at: 0, df: 0, sa: 0, sd: 0};
+		var loseStats = {at: 0, df: 0, sa: 0, sd: 0};
+		pokeInfo.find('.devouredStats').text(JSON.stringify(gainStats));
+		oppoInfo.find('.devouredStats').text(JSON.stringify(loseStats));
+		calcStats(pokeInfo);
+		calcStats(oppoInfo);
+	}
 	if ($(this).is(':checked')) {
-		var ability = pokeInfo.find(".ability").val();
 		switch (ability) {
 			case "Intimidate":
 				lowerStatStage(oppoInfo, 'at', 1, 'ability' + id, true);
@@ -287,9 +301,42 @@ $(".abilityToggle").on("change", function() {
 				lowerStatStage(oppoInfo, 'sd', 6, 'multiAbility' + id);
 				lowerStatStage(oppoInfo, 'sp', 6, 'multiAbility' + id);
 				break;
+			case "Sinful Gluttony":
+				var raisedStages = ['at', 'df', 'sa', 'sd', 'sp'].some(function(stat) {
+					return oppoInfo.find("." + stat + " .boost").val() > 0;
+				});
+				if (raisedStages) {
+					var before = new Boosts(oppoInfo);
+					var changed = false;
+					['at', 'df', 'sa', 'sd', 'sp'].forEach(function(stat) {
+						var oppoBoost = oppoInfo.find("." + stat + " .boost");
+						var selfBoost = pokeInfo.find("." + stat + " .boost");
+						if (oppoBoost.val() > selfBoost.val()) {
+							raiseStatStage(pokeInfo, stat, oppoBoost.val() - selfBoost.val(), 'multiAbility' + id);
+							changed = true;
+						}
+						oppoBoost.val(0);
+					});
+					if (changed) {
+						var after = new Boosts(oppoInfo);
+						storeBoosts['ability' + id] = before.minus(after);
+					}
+				}
+				//target loses half atk if atk > spa, else lose half spa
+				//always steal half of targets atk, never spa
+				var halfAtk = Number(oppoInfo.find('.at .total').text()) > Number(oppoInfo.find('.sa .total').text());
+				Object.keys(gainStats).forEach(function(stat) {
+					var diff = Math.floor(Number(oppoInfo.find('.' + stat + ' .total').text()) / 2);
+					gainStats[stat] = stat !== 'sa' ? diff : 0;
+					loseStats[stat] = (halfAtk && stat === 'sa') || (!halfAtk && stat === 'at') ? 0 : -1 * diff;
+				});
+				pokeInfo.find('.devouredStats').text(JSON.stringify(gainStats));
+				oppoInfo.find('.devouredStats').text(JSON.stringify(loseStats));
+				calcStats(pokeInfo);
+				calcStats(oppoInfo);
+				break;
 		}
 	}
-	
 });
 
 var formChangeAbilities = [
@@ -363,13 +410,15 @@ function abilityChange(pokeInfo) {
 		pokeInfo.find(moveSelector).find(".move-hits").val(moveHits);
 	}
 	
-	if (storeBoosts['ability' + id]) {
-		storeBoosts['ability' + id].apply();
-		storeBoosts['ability' + id] = false;
-	}
-	if (storeBoosts['multiAbility' + id]) {
-		storeBoosts['multiAbility' + id].apply();
-		storeBoosts['multiAbility' + id] = false;
+	if (ability !== 'Sinful Gluttony') {
+		if (storeBoosts['ability' + id]) {
+			storeBoosts['ability' + id].apply();
+			storeBoosts['ability' + id] = false;
+		}
+		if (storeBoosts['multiAbility' + id]) {
+			storeBoosts['multiAbility' + id].apply();
+			storeBoosts['multiAbility' + id] = false;
+		}
 	}
 	switch (ability) {
 		case 'Download':
@@ -439,7 +488,7 @@ function abilityChange(pokeInfo) {
 			break;
 	}
 
-	var TOGGLE_ABILITIES = ['Flash Fire', 'Intimidate', 'Minus', 'Plus', 'Slow Start', 'Unburden', 'Stakeout', 'Teraform Zero', 'Lighten', 'Mesmerize', 'Ha Ha You\'re Weak', 'Ambusher', 'Intrepid Sword', 'Dauntless Shield'];
+	var TOGGLE_ABILITIES = ['Flash Fire', 'Intimidate', 'Minus', 'Plus', 'Slow Start', 'Unburden', 'Stakeout', 'Teraform Zero', 'Lighten', 'Mesmerize', 'Ha Ha You\'re Weak', 'Ambusher', 'Intrepid Sword', 'Dauntless Shield', 'Sinful Gluttony'];
 
 	if (TOGGLE_ABILITIES.includes(ability)) {
 		pokeInfo.find(".abilityToggle").show();
@@ -1016,8 +1065,6 @@ $(".set-selector").change(function () {
 			}
 			var setMoves = set.moves;
 			pokeObj.find(".gender").val(set.gender);
-			console.log(set.gender);
-			console.log(pokeObj.find(".gender"));
 			if (randset) {
 				if (gen === 8 || gen === 1) {
 					setMoves = randset.moves;
@@ -1107,6 +1154,7 @@ $(".set-selector").change(function () {
 		} else {
 			formeObj.hide();
 		}
+		pokeObj.find('.devouredStats').text('{"at": 0, "df": 0, "sd": 0}');
 		calcHP(pokeObj);
 		calcStats(pokeObj);
 		abilityObj.change();
@@ -1365,6 +1413,7 @@ function createPokemon(pokeInfo) {
 				return move.category !== "Status";
 			});
 		}
+		
 
 		return new calc.Pokemon(gen, name, {
 			level: set.level,
@@ -1422,6 +1471,12 @@ function createPokemon(pokeInfo) {
 		if (roleName !== 'None') {
 			roleRank = pokeInfo.find(".rank").val();
 		}
+		
+		var devouredStats = JSON.parse(pokeInfo.find(".devouredStats").text());
+		Object.keys(devouredStats).forEach(function(stat) {
+			Object.defineProperty(devouredStats, legacyStatToStat(stat), Object.getOwnPropertyDescriptor(devouredStats, stat));
+			delete devouredStats[stat];
+		});
 
 		pokeInfo.isDynamaxed = isDynamaxed;
 		calcHP(pokeInfo);
@@ -1457,6 +1512,7 @@ function createPokemon(pokeInfo) {
 			lightAura: light_aura,
 			darkAura: dark_aura,
 			alignment: alignment,
+			devouredStats: devouredStats,
 			overrides: {
 				baseStats: baseStats,
 				types: types
@@ -1642,10 +1698,10 @@ function calcStat(poke, StatID) {
 	if (gen > 7 && StatID === "hp" && poke.isDynamaxed && total !== 1) {
 		total *= 2;
 	}
-	stat.find(".total").text(total);
-	if (!['hp', 'sp'].includes(StatID)) {
-		abilityChange(poke.attr('id') === "p1" ? $("#p2") : $("#p1"));
+	if (['at', 'df', 'sa', 'sd'].includes(StatID)) {
+		total += JSON.parse(poke.find('.devouredStats').text())[StatID];
 	}
+	stat.find(".total").text(total);
 	return total;
 }
 

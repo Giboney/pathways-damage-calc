@@ -115,11 +115,12 @@ export const Stats = new (class {
     iv: number,
     ev: number,
     level: number,
-    nature?: string
+    nature?: string,
+    devouredStat?: number
   ) {
     if (gen.num < 1) throw new Error(`Invalid generation ${gen.num}`);
     if (gen.num < 3) return this.calcStatRBY(stat, base, iv, level);
-    return this.calcStatADV(gen.natures, stat, base, iv, ev, level, nature);
+    return this.calcStatADV(gen.natures, stat, base, iv, ev, level, nature, devouredStat);
   }
 
   calcStatADV(
@@ -129,7 +130,8 @@ export const Stats = new (class {
     iv: number,
     ev: number,
     level: number,
-    nature?: string
+    nature?: string,
+    devouredStat?: number
   ) {
     if (stat === 'hp') {
       return base === 1
@@ -150,7 +152,7 @@ export const Stats = new (class {
               ? 0.9
               : 1;
 
-      return Math.floor((Math.floor(((base * 2 + iv + Math.floor(ev / 4)) * level) / 100) + 5) * n);
+      return Math.floor((Math.floor(((base * 2 + iv + Math.floor(ev / 4)) * level) / 100) + 5) * n) + (devouredStat || 0);
     }
   }
 

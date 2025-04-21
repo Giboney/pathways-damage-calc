@@ -6,6 +6,7 @@
 //hydrochasm++ toggle second phase??
 //NEUTRALIZING GAS IMMUNITY done i guess?
 //pbs export?
+//gender support for importing sets
 
 import type {Generation, AbilityName, StatID, Terrain} from '../../data/interface';
 import {toID} from '../../util';

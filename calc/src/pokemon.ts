@@ -48,6 +48,7 @@ export class Pokemon implements State.Pokemon {
   lightAura: number;
   darkAura: number;
   alignment: I.Alignment;
+  devouredStats: I.StatsTable;
 
   constructor(
     gen: I.Generation,
@@ -57,6 +58,7 @@ export class Pokemon implements State.Pokemon {
       ivs?: Partial<I.StatsTable> & {spc?: number};
       evs?: Partial<I.StatsTable> & {spc?: number};
       boosts?: Partial<I.StatsTable> & {spc?: number};
+      devouredStats?: Partial<I.StatsTable> & {spc?: number};
     } = {}
   ) {
     this.species = extend(true, {}, gen.species.get(toID(name)), options.overrides);
@@ -88,7 +90,10 @@ export class Pokemon implements State.Pokemon {
     this.ivs = Pokemon.withDefault(gen, options.ivs, 31);
     this.evs = Pokemon.withDefault(gen, options.evs, gen.num >= 3 ? 0 : 252);
     this.boosts = Pokemon.withDefault(gen, options.boosts, 0, false);
-
+    this.devouredStats = Pokemon.withDefault(gen, options.devouredStats, 0, false);
+    console.log(options.devouredStats)
+    console.trace();
+    
     // Gigantamax 'forms' inherit weight from their base species when not dynamaxed
     // TODO: clean this up with proper Gigantamax support
     if (this.weightkg === 0 && !this.isDynamaxed && this.species.baseSpecies) {
@@ -192,6 +197,7 @@ export class Pokemon implements State.Pokemon {
       ivs: extend(true, {}, this.ivs),
       evs: extend(true, {}, this.evs),
       boosts: extend(true, {}, this.boosts),
+      devouredStats: extend(true, {}, this.devouredStats),
       originalCurHP: this.originalCurHP,
       status: this.status,
       teraType: this.teraType,
@@ -214,7 +220,8 @@ export class Pokemon implements State.Pokemon {
       this.ivs[stat]!,
       this.evs[stat]!,
       this.level,
-      this.nature
+      this.nature,
+      this.devouredStats[stat]!
     );
   }
 

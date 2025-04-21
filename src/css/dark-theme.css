@@ -168,3 +168,13 @@ input.select2-input {
 .locked-move:checked + .btn, .locked-weather:checked + .btn {
     background: #00867b;
 }
+/*
+.devour:active {
+    background-color: darkgray;
+}*/
+
+button {
+    background-color: var(--button-color);
+    border-color: #aaaaaa;
+    color: var(--text);
+}

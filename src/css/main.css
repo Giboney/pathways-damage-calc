@@ -544,3 +544,17 @@ table.field {
 .flex-parent {
 	display: flex;
 }
+
+/*
+.devour {
+    padding: 0;
+}
+
+.devour:active {
+    background-color: lightgray;
+}
+*/
+
+input[type="checkbox" i] {
+    margin-top: 0;
+}
