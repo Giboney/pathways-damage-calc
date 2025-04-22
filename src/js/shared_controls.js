@@ -1154,7 +1154,7 @@ $(".set-selector").change(function () {
 		} else {
 			formeObj.hide();
 		}
-		pokeObj.find('.devouredStats').text('{"at": 0, "df": 0, "sd": 0}');
+		pokeObj.find('.devouredStats').text('{"at":0,"df":0,"sa":0,"sd":0}');
 		calcHP(pokeObj);
 		calcStats(pokeObj);
 		abilityObj.change();

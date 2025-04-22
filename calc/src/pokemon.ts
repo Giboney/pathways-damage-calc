@@ -91,8 +91,6 @@ export class Pokemon implements State.Pokemon {
     this.evs = Pokemon.withDefault(gen, options.evs, gen.num >= 3 ? 0 : 252);
     this.boosts = Pokemon.withDefault(gen, options.boosts, 0, false);
     this.devouredStats = Pokemon.withDefault(gen, options.devouredStats, 0, false);
-    console.log(options.devouredStats)
-    console.trace();
     
     // Gigantamax 'forms' inherit weight from their base species when not dynamaxed
     // TODO: clean this up with proper Gigantamax support

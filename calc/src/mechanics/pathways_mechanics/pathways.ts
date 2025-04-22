@@ -1,9 +1,7 @@
 //PATHWAYS DAMAGE CALC IN Move_Usage_Calculations.rb -> def pbCalcDamage
 //
-//amaterasu?, tsukuyomi?
-//
-//SINFUL GLUTTONY take half of oppo atk def spa spd round down add to guzz stats subtract from your stats, also steal all boosts
 //hydrochasm++ toggle second phase??
+////fix custom sets button appearing when trainersets is on
 //NEUTRALIZING GAS IMMUNITY done i guess?
 //pbs export?
 //gender support for importing sets
