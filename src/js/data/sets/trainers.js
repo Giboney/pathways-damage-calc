@@ -951,23 +951,23 @@ var TRAINERDEX_PATHWAYS = {
     }
   },
   "Ghost Girl Yariette 7": {
-    "Muk-Alola": {
-      "1": {"level":120,"ability":"Dirty Deeds","item":"Flying Gem","nature":"Adamant","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":60,"at":236,"df":200,"sa":0,"sd":4,"sp":8},"moves":["Pursuit","Knock Off","Gunk Shot","Wing Attack"],"gender":""}
+    "Banette": {
+      "1": {"level":80,"ability":"Prankster","item":"Focus Sash","nature":"Adamant","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":252,"df":4,"sa":0,"sd":0,"sp":0},"moves":["Shivering Wisp","Poltergeist","Destiny Bond","Knock Off"],"gender":"F"}
     },
-    "Cofagrigus": {
-      "2": {"level":120,"ability":"Shadow Tag","item":"Sitrus Berry","nature":"Bold","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":0,"df":252,"sa":0,"sd":4,"sp":0},"moves":["Body Press","Phantom Hand","Pain Split","Iron Defense"],"gender":""}
+    "Mismagius": {
+      "2": {"level":80,"ability":"","item":"Mismagiusite","nature":"Timid","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":4,"sa":252,"sd":0,"sp":252},"moves":["Shadow Ball","Inferno","Nasty Plot","Thunderbolt"],"gender":"F"}
     },
-    "Vikavolt": {
-      "3": {"level":120,"ability":"Levitate","item":"Vikavoltite","nature":"Quiet","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":0},"evs":{"hp":244,"at":0,"df":0,"sa":16,"sd":248,"sp":0},"moves":["Zap Cannon","Bug Buzz","Dark Dirge","Volt Switch"],"gender":""}
+    "Hatterene": {
+      "3": {"level":80,"ability":"Magic Bounce","item":"Leftovers","nature":"Modest","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":0,"df":4,"sa":252,"sd":0,"sp":0},"moves":["Calm Mind","Draining Kiss","Psyshock","Mystical Fire"],"gender":"F"}
     },
-    "Iron Valiant": {
-      "4": {"level":120,"ability":"Dreadful","item":"Psychium Z","nature":"Jolly","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":4,"at":252,"df":0,"sa":0,"sd":0,"sp":252},"moves":["Hypnosis","Swords Dance","Close Combat","Knock Off"],"gender":""}
+    "Golurk": {
+      "4 Dynamax": {"level":80,"ability":"No Guard","item":"Assault Vest","nature":"Adamant","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":252,"df":4,"sa":0,"sd":0,"sp":0},"moves":["Dynamic Punch","Poltergeist","Earthquake","Fire Punch"],"gender":"M"}
     },
-    "Musharna": {
-      "5": {"level":120,"ability":"Mind Flay","item":"Kee Berry","nature":"Relaxed","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":0,"df":156,"sa":0,"sd":100,"sp":0},"moves":["Calm Mind","Moonlight","Psychic Chains","Moonblast"],"gender":""}
+    "Typhlosion-Hisui": {
+      "5": {"level":80,"ability":"Magic Guard","item":"Choice Scarf","nature":"Modest","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":4,"sa":252,"sd":0,"sp":252},"moves":["Shadow Ball","Eruption","Extrasensory","Focus Blast"],"gender":"M"}
     },
-    "Dragonite": {
-      "6": {"level":120,"ability":"Multiscale","item":"Heavy-Duty Boots","nature":"Adamant","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":160,"df":0,"sa":0,"sd":0,"sp":96},"moves":["Roost","Dragon Tail","Extreme Speed","Earthquake"],"gender":""}
+    "Flutter Mane": {
+      "6": {"level":80,"ability":"","item":"Fairium Z","nature":"Timid","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":4,"sa":252,"sd":0,"sp":252},"moves":["Shadow Ball","Moonblast","Energy Ball","Mystical Fire"],"gender":""}
     }
   },
   "Ghost Girl Yariette 8": {
@@ -982,23 +982,23 @@ var TRAINERDEX_PATHWAYS = {
     }
   },
   "Ghost Girl Yariette 9": {
-    "Muk-Alola": {
-      "1": {"level":120,"ability":"Dirty Deeds","item":"Black Sludge","nature":"Adamant","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":60,"at":236,"df":200,"sa":0,"sd":4,"sp":8},"moves":["Pursuit","Knock Off","Gunk Shot","Minimize"],"gender":""}
+    "Banette": {
+      "1": {"level":100,"ability":"Prankster","item":"Focus Sash","nature":"Adamant","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":252,"df":4,"sa":0,"sd":0,"sp":0},"moves":["Shivering Wisp","Poltergeist","Destiny Bond","Knock Off"],"gender":"F"}
     },
-    "Cofagrigus": {
-      "2": {"level":120,"ability":"Shadow Tag","item":"Sitrus Berry","nature":"Bold","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":0,"df":252,"sa":0,"sd":4,"sp":0},"moves":["Body Press","Phantom Hand","Pain Split","Iron Defense"],"gender":""}
+    "Mismagius": {
+      "2": {"level":100,"ability":"","item":"Mismagiusite","nature":"Timid","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":4,"sa":252,"sd":0,"sp":252},"moves":["Shadow Ball","Inferno","Nasty Plot","Thunderbolt"],"gender":"F"}
     },
-    "Vikavolt": {
-      "3": {"level":120,"ability":"Levitate","item":"Vikavoltite","nature":"Quiet","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":0},"evs":{"hp":244,"at":0,"df":0,"sa":16,"sd":248,"sp":0},"moves":["Zap Cannon","Bug Buzz","Dark Dirge","Volt Switch"],"gender":""}
+    "Hatterene": {
+      "3": {"level":100,"ability":"Magic Bounce","item":"Leftovers","nature":"Modest","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":0,"df":4,"sa":252,"sd":0,"sp":0},"moves":["Calm Mind","Draining Kiss","Psyshock","Mystical Fire"],"gender":"F"}
     },
-    "Iron Valiant": {
-      "4": {"level":120,"ability":"Dreadful","item":"Psychium Z","nature":"Jolly","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":4,"at":252,"df":0,"sa":0,"sd":0,"sp":252},"moves":["Hypnosis","Swords Dance","Close Combat","Knock Off"],"gender":""}
+    "Golurk": {
+      "4 Dynamax": {"level":100,"ability":"No Guard","item":"Assault Vest","nature":"Adamant","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":252,"df":4,"sa":0,"sd":0,"sp":0},"moves":["Dynamic Punch","Poltergeist","Earthquake","Fire Punch"],"gender":"M"}
     },
-    "Musharna": {
-      "5": {"level":120,"ability":"Mind Flay","item":"Kee Berry","nature":"Relaxed","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":0,"df":156,"sa":0,"sd":100,"sp":0},"moves":["Calm Mind","Moonlight","Psychic Chains","Moonblast"],"gender":""}
+    "Typhlosion-Hisui": {
+      "5": {"level":100,"ability":"Magic Guard","item":"Choice Scarf","nature":"Modest","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":4,"sa":252,"sd":0,"sp":252},"moves":["Shadow Ball","Eruption","Extrasensory","Focus Blast"],"gender":"M"}
     },
-    "Dragonite": {
-      "6": {"level":120,"ability":"Multiscale","item":"Heavy-Duty Boots","nature":"Adamant","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":160,"df":0,"sa":0,"sd":0,"sp":96},"moves":["Roost","Dragon Tail","Extreme Speed","Earthquake"],"gender":""}
+    "Flutter Mane": {
+      "6": {"level":100,"ability":"","item":"Fairium Z","nature":"Timid","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":4,"sa":252,"sd":0,"sp":252},"moves":["Shadow Ball","Moonblast","Energy Ball","Mystical Fire"],"gender":""}
     }
   },
   "Ghost Girl Yariette 10": {
@@ -2583,22 +2583,22 @@ var TRAINERDEX_PATHWAYS = {
   },
   "Skydiver Axel 5": {
     "Pelipper": {
-      "1": {"level":120,"ability":"Drizzle","item":"Assault Vest","nature":"Relaxed","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":0},"evs":{"hp":248,"at":0,"df":156,"sa":0,"sd":104,"sp":0},"moves":["U-turn","Hurricane","Scald","Ice Beam"],"gender":""}
+      "1": {"level":80,"ability":"Drizzle","item":"Damp Rock","nature":"Relaxed","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":0},"evs":{"hp":252,"at":0,"df":252,"sa":4,"sd":0,"sp":0},"moves":["Scald","Hurricane","Roost","U-turn"],"gender":"M"}
     },
-    "Clefable": {
-      "2": {"level":120,"ability":"Unaware","item":"Heavy-Duty Boots","nature":"Bold","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":0,"df":252,"sa":0,"sd":0,"sp":4},"moves":["Moonblast","Calm Mind","Flamethrower","Soft-Boiled"],"gender":""}
+    "Rotom-Fan": {
+      "2 Dynamax": {"level":80,"ability":"","item":"Terrain Extender","nature":"Timid","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":4,"sa":252,"sd":0,"sp":252},"moves":["Thunder","Air Slash","Pain Split","Rising Voltage"],"gender":""}
     },
-    "Muk-Alola": {
-      "3": {"level":120,"ability":"Dirty Deeds","item":"Black Sludge","nature":"Adamant","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":60,"at":236,"df":200,"sa":0,"sd":4,"sp":8},"moves":["Pursuit","Knock Off","Gunk Shot","Minimize"],"gender":""}
+    "Iron Jugulis": {
+      "3": {"level":80,"ability":"Quark Drive","item":"Life Orb","nature":"Timid","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":4,"sa":252,"sd":0,"sp":252},"moves":["Dark Pulse","Hurricane","Hydro Pump","Earth Power"],"gender":""}
     },
-    "Swampert": {
-      "4": {"level":120,"ability":"Shadow Tag","item":"Swampertite","nature":"Jolly","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":0,"sa":0,"sd":4,"sp":252},"moves":["Earthquake","Waterfall","Ice Punch","Bulk Up"],"gender":""}
+    "Aerodactyl": {
+      "4": {"level":80,"ability":"Rock Head","item":"Aerodactylite","nature":"Jolly","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":4,"sa":0,"sd":0,"sp":252},"moves":["Head Smash","Dual Wingbeat","Earthquake","Aqua Tail"],"gender":"F"}
     },
-    "Raging Bolt": {
-      "5": {"level":120,"ability":"","item":"Dragonium Z","nature":"Modest","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":180,"at":0,"df":0,"sa":172,"sd":20,"sp":136},"moves":["Draco Meteor","Discharge","Thunder Clap","Calm Mind"],"gender":""}
+    "Corviknight": {
+      "5": {"level":80,"ability":"Mirror Armor","item":"Leftovers","nature":"Careful","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":4,"df":0,"sa":0,"sd":252,"sp":0},"moves":["Bulk Up","Body Press","Roost","Brave Bird"],"gender":"M"}
     },
-    "Gholdengo": {
-      "6": {"level":120,"ability":"","item":"Air Balloon","nature":"Bold","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":248,"at":0,"df":100,"sa":0,"sd":96,"sp":64},"moves":["Make It Rain","Phantom Hand","Nasty Plot","Recover"],"gender":""}
+    "Dragonite": {
+      "6": {"level":80,"ability":"Multiscale","item":"Lum Berry","nature":"Adamant","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":0,"sa":0,"sd":4,"sp":252},"moves":["Dragon Dance","Outrage","Dual Wingbeat","Earthquake"],"gender":"M"}
     }
   },
   "Skydiver Axel 6": {

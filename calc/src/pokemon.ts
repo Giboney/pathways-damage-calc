@@ -69,14 +69,9 @@ export class Pokemon implements State.Pokemon {
     this.weightkg = this.species.weightkg;
 
     this.level = options.level || 100;
-    this.gender = options.gender || this.species.gender || 'M';
+    this.gender = options.gender || this.species.gender || undefined;
     this.ability = options.ability || this.species.abilities?.[0] || undefined;
     this.abilityOn = !!options.abilityOn;
-
-    // Handle Slumbering Beast Ability
-    if (this.name === 'Slaking' && this.ability !== 'Slumbering Beast') {
-      this.species.baseStats.atk = 90;
-    }
 
     this.isDynamaxed = !!options.isDynamaxed;
     this.dynamaxLevel = this.isDynamaxed
