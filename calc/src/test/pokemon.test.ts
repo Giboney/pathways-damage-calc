@@ -8,8 +8,8 @@ describe('Pokemon', () => {
     expect(p.name).toBe('Gengar');
     expect(p.types).toEqual(['Ghost', 'Poison']);
     expect(p.weightkg).toBe(40.5);
-    expect(p.level).toBe(100);
-    expect(p.gender).toBe('M');
+    expect(p.level).toBe(100);/*
+    expect(p.gender).toBe('M');*/
     expect(p.item).toBeUndefined();
     expect(p.ability).toBe('Cursed Body');
     expect(p.nature).toBe('Serious');

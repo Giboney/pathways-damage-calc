@@ -1,10 +1,7 @@
 //PATHWAYS DAMAGE CALC IN Move_Usage_Calculations.rb -> def pbCalcDamage
 //
 //hydrochasm++ toggle second phase??
-////fix custom sets button appearing when trainersets is on
 //NEUTRALIZING GAS IMMUNITY done i guess?
-//pbs export?
-//gender support for importing sets
 
 import type {Generation, AbilityName, StatID, Terrain} from '../../data/interface';
 import {toID} from '../../util';
