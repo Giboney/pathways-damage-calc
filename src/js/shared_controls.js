@@ -301,6 +301,12 @@ $(".abilityToggle").on("change", function() {
 				lowerStatStage(oppoInfo, 'sd', 6, 'multiAbility' + id);
 				lowerStatStage(oppoInfo, 'sp', 6, 'multiAbility' + id);
 				break;
+			case 'Hydrochasm Surge++':
+				pokeInfo.find('.boost').val(0);
+				raiseStatStage(pokeInfo, 'sa', 3, 'multiAbility' + id);
+				$('#' + (id === 'p1' ? 'tailwindL' : 'tailwindR')).prop('checked', true);
+				autosetTerrain('Psychic Surge', 0);
+				break;
 			case "Sinful Gluttony":
 				var raisedStages = ['at', 'df', 'sa', 'sd', 'sp'].some(function(stat) {
 					return oppoInfo.find("." + stat + " .boost").val() > 0;
@@ -336,12 +342,17 @@ $(".abilityToggle").on("change", function() {
 				calcStats(oppoInfo);
 				break;
 		}
+	} else if (ability === 'Hydrochasm Surge++') {
+		raiseStatStage(pokeInfo, 'df', 1, 'multiAbility' + id);
+		raiseStatStage(pokeInfo, 'sd', 1, 'multiAbility' + id);
+		$('#' + (id === 'p1' ? 'tailwindL' : 'tailwindR')).prop('checked', false);
 	}
 });
 
 var formChangeAbilities = [
 	'Lightning Speed', 'Distortion', 'Killing Joke', 'Killing Joke2', 'Abyssal Veil', 'Abyssal Veil ++',
-	'Requiem Di Diavolo', 'Crescendo', 'Darkness Boost', 'Darkness Boost2', 'Ya Estas Cocinado'
+	'Requiem Di Diavolo', 'Crescendo', 'Darkness Boost', 'Darkness Boost2', 'Ya Estas Cocinado',
+	'Hydrochasm Surge', 'Hydrochasm Surge++', 'Tera Shift'
 ];
 
 function getFormFromAbility(ability, name) {
@@ -385,6 +396,17 @@ function getFormFromAbility(ability, name) {
 				return 'Tyranitar-Dark';
 			}
 			return name;
+		case 'Hydrochasm Surge':
+		case 'Hydrochasm Surge++':
+			if (name.includes('Swampert')) {
+				return 'Swampert-Stalking-Tide';
+			}
+			return name;
+		case 'Tera Shift':
+			if (name.includes('Terapagos')) {
+				return 'Terapagos-Terastal';
+			}
+			return name;
 		default:
 			return name;
 	}
@@ -410,15 +432,13 @@ function abilityChange(pokeInfo) {
 		pokeInfo.find(moveSelector).find(".move-hits").val(moveHits);
 	}
 	
-	if (ability !== 'Sinful Gluttony') {
-		if (storeBoosts['ability' + id]) {
-			storeBoosts['ability' + id].apply();
-			storeBoosts['ability' + id] = false;
-		}
-		if (storeBoosts['multiAbility' + id]) {
-			storeBoosts['multiAbility' + id].apply();
-			storeBoosts['multiAbility' + id] = false;
-		}
+	if (storeBoosts['ability' + id]) {
+		storeBoosts['ability' + id].apply();
+		storeBoosts['ability' + id] = false;
+	}
+	if (storeBoosts['multiAbility' + id]) {
+		storeBoosts['multiAbility' + id].apply();
+		storeBoosts['multiAbility' + id] = false;
 	}
 	switch (ability) {
 		case 'Download':
@@ -463,10 +483,6 @@ function abilityChange(pokeInfo) {
 		case 'Untouchable2':
 			raiseStatStage(pokeInfo, 'sp', 2, 'ability' + id);
 			break;
-		case 'Hydrochasm Surge++':
-			raiseStatStage(pokeInfo, 'df', 1, 'multiAbility' + id);
-			raiseStatStage(pokeInfo, 'sd', 1, 'multiAbility' + id);
-			break;
 		case 'X Pickup':
 			raiseStatStage(pokeInfo, 'at', 6, 'multiAbility' + id);
 			raiseStatStage(pokeInfo, 'sp', 6, 'multiAbility' + id);
@@ -488,7 +504,7 @@ function abilityChange(pokeInfo) {
 			break;
 	}
 
-	var TOGGLE_ABILITIES = ['Flash Fire', 'Intimidate', 'Minus', 'Plus', 'Slow Start', 'Unburden', 'Stakeout', 'Teraform Zero', 'Lighten', 'Mesmerize', 'Ha Ha You\'re Weak', 'Ambusher', 'Intrepid Sword', 'Dauntless Shield', 'Sinful Gluttony'];
+	var TOGGLE_ABILITIES = ['Flash Fire', 'Intimidate', 'Minus', 'Plus', 'Slow Start', 'Unburden', 'Stakeout', 'Teraform Zero', 'Lighten', 'Mesmerize', 'Ha Ha You\'re Weak', 'Ambusher', 'Intrepid Sword', 'Dauntless Shield', 'Sinful Gluttony', 'Hydrochasm Surge++'];
 
 	if (TOGGLE_ABILITIES.includes(ability)) {
 		pokeInfo.find(".abilityToggle").show();

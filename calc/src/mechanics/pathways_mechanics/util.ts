@@ -223,13 +223,15 @@ export function getFinalSpeedPathways(pokemon: Pokemon, field: Field, side: Side
   } else if (
     (pokemon.hasAbility('Quick Feet') && pokemon.status) ||
     (pokemon.hasAbility('Lighten') && pokemon.abilityOn) ||
-		(isQPActive(pokemon, field) && getQPBoostedStatPathways(pokemon) === 'spe')
+    (isQPActive(pokemon, field) && getQPBoostedStatPathways(pokemon) === 'spe')
   ) {
     speedMod *= 1.5;
   } else if (pokemon.hasAbility('Chaos Control')) {
     speedMod *= 1.25;
   } else if (pokemon.hasAbility('Slow Start') && pokemon.abilityOn) {
     speedMod *= 0.5;
+  } else if (pokemon.hasAbility('Hydrochasm Surge++') && pokemon.abilityOn) {
+    speedMod *= ['Rain', 'Heavy Rain', 'Harsh Typhoon'].includes(weather) ? 2.5 : 1.5;
   }
 
   if (

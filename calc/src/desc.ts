@@ -630,6 +630,9 @@ function getEndOfTurn(
     } else if (defender.hasAbility('Rain Dish', 'Healing Droplets', 'Healing Droplets++')) {
       damage += Math.floor(defender.maxHP() / 16);
       texts.push('Rain Dish recovery');
+    } else if (defender.hasAbility('Hydrochasm Surge++') && defender.abilityOn) {
+      damage += Math.floor(defender.maxHP() / 8);
+      texts.push('Hydrochasm Surge++ phase 2 recovery');
     }
   } else if (field.hasWeather('Sand', 'Raging Sandstorm')) {
     if (

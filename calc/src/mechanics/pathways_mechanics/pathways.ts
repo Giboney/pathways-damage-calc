@@ -400,7 +400,9 @@ export function calculatePathways(
     (defender.hasAbility('Wonder Guard') && typeEffectiveness <= 1) ||
     (move.hasType('Grass') && defender.hasAbility('Sap Sipper')) ||
     (move.hasType('Fire') && (defender.hasAbility('Flash Fire', 'Well-Baked Body') && !attacker.hasAbility('Crescendo'))) ||
-    (move.hasType('Water') && defender.hasAbility('Dry Skin', 'Storm Drain', 'Water Absorb', 'Water Compaction', 'Fusion Core')) ||
+    (move.hasType('Water') && defender.hasAbility(
+      'Dry Skin', 'Storm Drain', 'Water Absorb', 'Water Compaction', 'Fusion Core', 'Hydrochasm Surge++'
+    )) ||
     (move.hasType('Electric') && defender.hasAbility('Lightning Rod', 'Motor Drive', 'Volt Absorb', 'Turbo Engine')) ||
     (move.hasType('Ground') && !move.named('Thousand Arrows') && !defender.hasItem('Iron Ball') && !defender.hasType('Flying', 'Omnitype') &&
      (defender.hasAbility('Golden Hour', 'Levitate', 'Lightning Speed', 'Distortion', 'Witchcraft', 'Swarming'))) ||
@@ -409,7 +411,7 @@ export function calculatePathways(
     (move.priority > 0 && defender.hasAbility('Queenly Majesty', 'Dazzling', 'Armor Tail')) ||
     (move.hasType('Ground') && defender.hasAbility('Earth Eater', 'Plasma Hellscape')) ||
     (move.flags.wind && defender.hasAbility('Wind Rider')) ||
-    (move.hasType('Fairy') && defender.hasAbility('Misery After')) ||
+    (move.hasType('Fairy') && defender.hasAbility('Misery After', 'Hydrochasm Surge++')) ||
     (move.hasType('Ice') && defender.hasAbility('Frost Drain')) ||
     (move.hasType('Bug') && defender.hasAbility('Fly Trap')) ||
     (move.hasType('Poison') && defender.hasAbility('Ferrite Scales')) ||
