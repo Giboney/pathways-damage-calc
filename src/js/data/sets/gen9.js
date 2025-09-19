@@ -139,7 +139,7 @@ var SETDEX_SV = {
     "RU Aurora Veil": {"ability":"Snow Warning","item":"Icy Rock","nature":"Timid","teraType":"Water","ivs":{"at":0},"evs":{"hp":248,"sa":8,"sp":252},"moves":["Aurora Veil","Blizzard","Encore","Snowscape"]},
     "NU Aurora Veil Support": {"ability":"Snow Warning","item":"Icy Rock","nature":"Timid","teraType":"Water","evs":{"hp":248,"df":8,"sp":252},"moves":["Aurora Veil","Freeze-Dry","Encore","Moonblast"]},
     "NU Nasty Plot": {"ability":"Snow Warning","item":"Heavy-Duty Boots","nature":"Timid","teraType":"Ground","evs":{"df":4,"sa":252,"sp":252},"moves":["Nasty Plot","Moonblast","Freeze-Dry","Tera Blast"]},
-    "Doubles OU Aurora Veil": {"ability":"Snow Warning","item":"Light Clay","nature":"Timid","teraType":"Ghost","ivs":{"at":0},"evs":{"hp":216,"sa":40,"sp":252},"moves":["Blizzard","Aurora Veil","Icy Wind","Encore"]},
+    "Doubles OU Snow Setter": {"ability":"Snow Warning","item":"Light Clay","nature":"Timid","teraType":"Ghost","ivs":{"at":0},"evs":{"hp":208,"df":72,"sa":36,"sp":192},"moves":["Freeze-Dry","Icy Wind","Encore","Aurora Veil"]},
     "VGC 2025 Reg G Offensive": {"level":50,"ability":"Snow Warning","item":"Focus Sash","nature":"Timid","teraType":"Ghost","ivs":{"at":0},"evs":{"hp":4,"sa":252,"sp":252},"moves":["Blizzard","Freeze-Dry","Aurora Veil","Icy Wind"]},
     "VGC 2025 Reg G Screens Setter": {"level":50,"ability":"Snow Warning","item":"Covert Cloak","nature":"Timid","teraType":"Water","ivs":{"at":0},"evs":{"hp":228,"df":36,"sa":20,"sd":76,"sp":148},"moves":["Blizzard","Aurora Veil","Encore","Icy Wind"]},
     "VGC 2025 Reg G Screen Setter": {"level":50,"ability":"Snow Warning","item":"Light Clay","nature":"Timid","teraType":"Fire","ivs":{"at":0},"evs":{"hp":84,"df":132,"sa":84,"sd":4,"sp":204},"moves":["Blizzard","Moonblast","Aurora Veil","Helping Hand"]},
@@ -1464,7 +1464,7 @@ var SETDEX_SV = {
   },
   "Deoxys-Speed": {
     "OU Mixed Attacker": {"ability":"Pressure","item":"Heavy-Duty Boots","nature":"Naive","teraType":"Fighting","evs":{"at":200,"sa":252,"sp":56},"moves":["Psycho Boost","Superpower","Knock Off","Ice Beam"]},
-    "OU Offensive Nasty Plot": {"ability":"Pressure","item":"Life Orb","nature":"Modest","teraType":"Psychic","ivs":{"at":0},"evs":{"df":4,"sa":252,"sp":252},"moves":["Nasty Plot","Psycho Boost","Focus Blast","Shadow Ball"]},
+    "OU Offensive Nasty Plot": {"ability":"Pressure","item":"Life Orb","nature":"Modest","teraType":"Fighting","ivs":{"at":0},"evs":{"df":4,"sa":252,"sp":252},"moves":["Nasty Plot","Psycho Boost","Focus Blast","Shadow Ball"]},
     "OU Boots Nasty Plot": {"ability":"Pressure","item":"Heavy-Duty Boots","nature":"Modest","teraType":"Electric","ivs":{"at":0},"evs":{"df":4,"sa":252,"sp":252},"moves":["Nasty Plot","Thunderbolt","Ice Beam","Psycho Boost"]},
     "OU Lead": {"ability":"Pressure","item":"Colbur Berry","nature":"Naive","teraType":"Ghost","evs":{"hp":248,"df":156,"sp":104},"moves":["Stealth Rock","Psychic Noise","Knock Off","Superpower"]},
     "Ubers Lead": {"ability":"Pressure","item":"Rocky Helmet","nature":"Timid","teraType":"Ghost","evs":{"hp":248,"df":240,"sp":16},"moves":["Stealth Rock","Spikes","Taunt","Psycho Boost"]},
@@ -1977,6 +1977,7 @@ var SETDEX_SV = {
     "OU All-Out Attacker": {"ability":"Bad Dreams","item":"Life Orb","nature":"Timid","teraType":"Poison","evs":{"sa":252,"sd":4,"sp":252},"moves":["Dark Pulse","Sludge Bomb","Ice Beam","Focus Blast"]},
     "Ubers Choice Scarf": {"ability":"Bad Dreams","item":"Choice Scarf","nature":"Timid","teraType":"Dark","evs":{"sa":252,"sd":4,"sp":252},"moves":["Dark Pulse","Trick","Sludge Bomb","Ice Beam"]},
     "Ubers Nasty Plot": {"ability":"Bad Dreams","item":"Life Orb","nature":"Timid","teraType":"Poison","ivs":{"at":0},"evs":{"sa":252,"sd":4,"sp":252},"moves":["Nasty Plot","Sludge Bomb","Dark Pulse","Ice Beam"]},
+    "Monotype Bulkyrai (Bulky Darkrai)": {"ability":"Bad Dreams","item":"Leftovers","nature":"Timid","ivs":{"at":0},"evs":{"hp":252,"df":16,"sp":240},"moves":["Will-O-Wisp","Nasty Plot","Dark Pulse","Focus Blast"]},
     "Monotype Choice Scarf (Dark)": {"ability":"Bad Dreams","item":"Choice Scarf","nature":"Timid","ivs":{"at":0},"evs":{"sa":252,"sd":4,"sp":252},"moves":["Dark Pulse","Sludge Bomb","Psychic","Trick"]},
     "Monotype Nasty Plot": {"ability":"Bad Dreams","item":"Heavy-Duty Boots","nature":"Timid","ivs":{"at":0},"evs":{"sa":252,"sd":4,"sp":252},"moves":["Nasty Plot","Dark Pulse","Ice Beam","Focus Blast"]},
     "Monotype Will-O-Wisp": {"ability":"Bad Dreams","item":"Leftovers","nature":"Timid","ivs":{"at":0},"evs":{"hp":252,"df":16,"sp":240},"moves":["Will-O-Wisp","Nasty Plot","Dark Pulse","Focus Blast"]},
@@ -2421,6 +2422,7 @@ var SETDEX_SV = {
   },
   "Bisharp": {
     "RU Swords Dance": {"ability":"Defiant","item":"Eviolite","nature":"Adamant","teraType":"Flying","evs":{"hp":80,"at":252,"sp":176},"moves":["Swords Dance","Sucker Punch","Iron Head","Throat Chop"]},
+    "Monotype Eviolite Swords Dance (Dark)": {"ability":"Defiant","item":"Eviolite","nature":"Adamant","evs":{"hp":80,"at":232,"df":20,"sp":176},"moves":["Swords Dance","Throat Chop","Sucker Punch","Iron Head"]},
     "Monotype Swords Dance (Dark)": {"ability":"Defiant","item":"Life Orb","nature":"Adamant","evs":{"at":252,"sd":4,"sp":252},"moves":["Swords Dance","Iron Head","Throat Chop","Sucker Punch"]},
     "Monotype Swords Dance (Steel)": {"ability":"Defiant","item":"Life Orb","nature":"Adamant","evs":{"at":252,"sd":4,"sp":252},"moves":["Swords Dance","Throat Chop","Low Kick","Sucker Punch"]},
     "National Dex UU Swords Dance": {"ability":"Defiant","item":"Life Orb","nature":"Adamant","evs":{"at":252,"sd":4,"sp":252},"moves":["Swords Dance","Knock Off","Sucker Punch","Iron Head"]},
@@ -4983,7 +4985,7 @@ var SETDEX_SV = {
   },
   "Raging Bolt": {
     "OU Calm Mind": {"ability":"Protosynthesis","item":"Booster Energy","nature":"Modest","teraType":"Fairy","ivs":{"at":20},"evs":{"df":4,"sa":252,"sp":252},"moves":["Calm Mind","Thunderclap","Dragon Pulse","Thunderbolt"]},
-    "OU Choice Specs": {"ability":"Protosynthesis","item":"Choice Specs","nature":"Modest","teraType":"Fairy","ivs":{"at":20},"evs":{"df":4,"sa":252,"sp":252},"moves":["Thunderbolt","Thunderclap","Volt Switch","Draco Meteor"]},
+    "OU Choice Specs": {"ability":"Protosynthesis","item":"Choice Specs","nature":"Modest","teraType":"Fairy","ivs":{"at":20},"evs":{"df":4,"sa":252,"sp":252},"moves":["Thunderbolt","Draco Meteor","Thunderclap","Volt Switch"]},
     "OU Boots Pivot": {"ability":"Protosynthesis","item":"Heavy-Duty Boots","nature":"Modest","teraType":"Fairy","ivs":{"at":20},"evs":{"df":4,"sa":252,"sp":252},"moves":["Thunderbolt","Thunderclap","Volt Switch","Dragon Pulse"]},
     "Doubles OU Assault Vest": {"ability":"Protosynthesis","item":"Assault Vest","nature":"Modest","teraType":"Fairy","evs":{"hp":132,"df":140,"sa":100,"sd":52,"sp":84},"moves":["Thunderclap","Draco Meteor","Thunderbolt","Snarl"]},
     "Doubles OU Calm Mind": {"ability":"Protosynthesis","item":"Leftovers","nature":"Modest","teraType":"Fairy","ivs":{"at":20},"evs":{"hp":252,"df":188,"sa":68},"moves":["Thunderclap","Dragon Pulse","Calm Mind","Protect"]},
