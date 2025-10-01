@@ -134,7 +134,8 @@ var SETDEX_RBY = {
   },
   "Arcanine": {
     "UU Agility Sweeper": {"moves":["Agility","Body Slam","Hyper Beam","Fire Blast"]},
-    "NU Defensive": {"moves":["Fire Blast","Body Slam","Hyper Beam","Rest"]}
+    "NU Defensive": {"moves":["Fire Blast","Body Slam","Hyper Beam","Rest"]},
+    "OU Showdown Usage": {"moves":["Body Slam","Fire Blast","Hyper Beam","Agility"]}
   },
   "Poliwag": {
     "PU Amnesia Sweeper": {"moves":["Hypnosis","Amnesia","Hydro Pump","Psychic"]},
@@ -287,7 +288,8 @@ var SETDEX_RBY = {
   "Electrode": {
     "Ubers Explosion": {"moves":["Thunder Wave","Thunderbolt","Screech","Explosion"]},
     "UU Fast Attacker": {"moves":["Thunderbolt","Thunder Wave","Explosion","Screech"]},
-    "1v1 Screech + Hyper Beam": {"moves":["Thunderbolt","Hyper Beam","Screech","Rest"]}
+    "1v1 Screech + Hyper Beam": {"moves":["Thunderbolt","Hyper Beam","Screech","Rest"]},
+    "OU Showdown Usage": {"moves":["Thunderbolt","Thunder Wave","Explosion","Screech"]}
   },
   "Exeggcute": {
     "NU Support": {"moves":["Sleep Powder","Stun Spore","Psychic","Explosion"]},
@@ -423,8 +425,7 @@ var SETDEX_RBY = {
   },
   "Vaporeon": {
     "UU Bulky Special Attacker": {"moves":["Surf","Blizzard","Body Slam","Rest"]},
-    "Tradebacks OU Growth": {"moves":["Growth","Surf","Acid Armor","Rest"]},
-    "OU Showdown Usage": {"moves":["Rest","Acid Armor","Hydro Pump","Ice Beam"]}
+    "Tradebacks OU Growth": {"moves":["Growth","Surf","Acid Armor","Rest"]}
   },
   "Jolteon": {
     "OU Offensive": {"moves":["Thunder Wave","Thunderbolt","Double Kick","Rest"]},
