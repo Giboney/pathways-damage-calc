@@ -49,13 +49,14 @@ export function getMoveEffectivenessPathways(
   type: TypeName,
   field: Field,
   desc: RawDesc,
+  hitCount?: number,
 ) {
   let e = gen.types.get(toID(move.type))!.effectiveness[type]!;
   if (
-    (attacker.hasAbility('Scrappy') || attacker.hasAbility('Mind\'s Eye') || field.defenderSide.isForesight) &&
+    (attacker.hasAbility('Scrappy', 'Mind\'s Eye', 'Tracker') || field.defenderSide.isForesight) &&
     type === 'Ghost' && move.hasType('Normal', 'Fighting')
   ) {
-    if (attacker.hasAbility('Scrappy') || attacker.hasAbility('Mind\'s Eye')) {
+    if (attacker.hasAbility('Scrappy', 'Mind\'s Eye', 'Tracker')) {
       desc.attackerAbility = attacker.ability;
     }
     return 1;
@@ -68,20 +69,38 @@ export function getMoveEffectivenessPathways(
       desc.defenderItem = defender.item;
     }
     return 1;
-  } else if (field.hasTerrain('Dragonic Soul') && move.hasType('Dragon') && defender.hasType('Dragon')) {
+  } else if (
+    (field.hasTerrain('Dragonic Soul') && move.hasType('Dragon') && defender.hasType('Dragon')) ||
+    (field.hasTerrain('Garden of Thorns') && move.hasType('Fire', 'Ice') && type === 'Grass' && isGrounded(defender,field)) ||
+    (field.hasTerrain('Rock Never Dies') && move.hasType('Ground') && type === 'Flying')
+  ) {
     desc.terrain = field.terrain;
     return 1;
   } else if (defender.hasItem('Ring Target') && e === 0) {
     desc.defenderItem = defender.item;
     return 1;
+  } else if (attacker.hasAbility('Equivalence') || defender.hasAbility('Equivalence')) {
+    if (attacker.hasAbility('Equivalence')) {
+      desc.attackerAbility = attacker.ability;
+    } else {
+      desc.defenderAbility = defender.ability;
+    }
+    return 1;
+  } else if (
+    (attacker.hasAbility('Astral Projection') && attacker.hasType('Ghost')) ||
+    (attacker.hasAbility('Bane') && type === 'Normal' && move.hasType('Ghost'))
+  ) {
+    desc.attackerAbility = attacker.ability;
+    return 1;
   }
 	
   if (
-    (move.named('Freeze-Dry') && type === 'Water') ||
+    (move.named('Freeze-Dry', 'Arctic Ardor') && type === 'Water') ||
     (move.named('Kelp Wreck') && type === 'Steel') ||
     (move.named('Venomous Spines') && type === 'Dragon') ||
     (move.named('Shinu Slash') && ['Water', 'Ice'].includes(type)) ||
-    (move.named('Minamo Giri') && ['Water', 'Ice', 'Steel', 'Dragon'].includes(type))
+    (move.named('Minamo Giri') && ['Water', 'Ice', 'Steel', 'Dragon'].includes(type)) ||
+    (move.named('Ferrous Feathers') && ['Rock', 'Ice'].includes(type))
   ) {
     e = 2;
   } else if (move.named('Flying Press')) {
@@ -110,7 +129,7 @@ export function getStabModPathways(pokemon: Pokemon, move: Move, desc: RawDesc) 
   let stabMod = 1;
   if (pokemon.hasOriginalType(move.type)) {
     stabMod += 0.5;
-  } else if (pokemon.hasAbility('Protean', 'Libero', 'Honor Bond', 'Trouble Bond', 'Battle Bond') && !pokemon.teraType) {
+  } else if (pokemon.hasAbility('Protean', 'Libero', 'Honor Bond', 'Trouble Bond', 'Battle Bond', 'Transmutation') && !pokemon.teraType) {
     stabMod += 0.5;
     desc.attackerAbility = pokemon.ability;
   }
@@ -119,7 +138,7 @@ export function getStabModPathways(pokemon: Pokemon, move: Move, desc: RawDesc) 
     stabMod += 0.5;
     desc.attackerTera = teraType;
   }
-  if (pokemon.hasAbility('Adaptability', 'Assassin') && pokemon.hasType(move.type)) {
+  if (pokemon.hasAbility('Adaptability', 'Assassin', 'Absolute Gaia') && pokemon.hasType(move.type)) {
     stabMod += teraType && pokemon.hasOriginalType(teraType) ? 0.25 : 0.5;
     desc.attackerAbility = pokemon.ability;
   }
@@ -213,21 +232,23 @@ export function getFinalSpeedPathways(pokemon: Pokemon, field: Field, side: Side
   if ((pokemon.hasAbility('Unburden') && pokemon.abilityOn) ||
       (pokemon.hasAbility('Chlorophyll') && ['Sun', 'Harsh Sunshine'].includes(weather)) ||
       (pokemon.hasAbility('Sand Rush', 'Desert Devil') && ['Sand', 'Raging Sandstorm'].includes(weather)) ||
-      (pokemon.hasAbility('Swift Swim') && ['Rain', 'Heavy Rain', 'Harsh Typhoon'].includes(weather)) ||
-      (pokemon.hasAbility('Slush Rush') && ['Hail', 'Snow', 'Violent Blizzard'].includes(weather)) ||
+      (pokemon.hasAbility('Swift Swim', 'Beary Cold') && ['Rain', 'Heavy Rain', 'Harsh Typhoon'].includes(weather)) ||
+      (pokemon.hasAbility('Slush Rush', 'Beary Cold') && ['Hail', 'Snow', 'Violent Blizzard'].includes(weather)) ||
       (pokemon.hasAbility('Surge Surfer') && ['Electric', 'Faraday Cage'].includes(terrain)) ||
       (pokemon.hasAbility('Killing Joke')) ||
       (pokemon.hasAbility('Anti-Gravity') && field.isGravity)
   ) {
     speedMod *= 2;
   } else if (
-    (pokemon.hasAbility('Quick Feet') && pokemon.status) ||
+    (pokemon.hasAbility('Quick Feet', 'Rampage') && pokemon.status) ||
     (pokemon.hasAbility('Lighten') && pokemon.abilityOn) ||
     (isQPActive(pokemon, field) && getQPBoostedStatPathways(pokemon) === 'spe')
   ) {
     speedMod *= 1.5;
   } else if (pokemon.hasAbility('Chaos Control')) {
     speedMod *= 1.25;
+  } else if (pokemon.hasAbility('Absolute Gaia')) {
+    speedMod *= 1.2;
   } else if (pokemon.hasAbility('Slow Start') && pokemon.abilityOn) {
     speedMod *= 0.5;
   } else if (pokemon.hasAbility('Hydrochasm Surge++') && pokemon.abilityOn) {
@@ -248,7 +269,7 @@ export function getFinalSpeedPathways(pokemon: Pokemon, field: Field, side: Side
   if (side.isTailwind) speedMod *= 2;
   // Pledge swamp would get applied here when implemented
 	
-  if (pokemon.hasStatus('par') && !pokemon.hasAbility('Quick Feet', 'Laced Cream', 'Dry Aged')) {
+  if (pokemon.hasStatus('par') && !pokemon.hasAbility('Quick Feet', 'Rampage', 'Laced Cream', 'Dry Aged')) {
     speedMod *= 0.5;
   }
 
@@ -267,7 +288,7 @@ export function checkMultihitBoostPathways(
   defenderUsedItem = false
 ) {
   // NOTE: attacker.ability must be Parental Bond for these moves to be multi-hit
-  if (move.named('Gyro Ball', 'Electro Ball') && defender.hasAbility('Gooey', 'Tangling Hair')) {
+  if (move.named('Gyro Ball', 'Electro Ball') && defender.hasAbility('Gooey', 'Tangling Hair', 'Cotton Down')) {
     // Gyro Ball (etc) makes contact into Gooey (etc) whenever its inflicting multiple hits because
     // this can only happen if the attacker ability is Parental Bond (and thus can't be Long Reach)
     if (attacker.hasItem('White Herb') && !attackerUsedItem) {
@@ -293,7 +314,7 @@ export function checkMultihitBoostPathways(
     (defender.hasItem('Maranga Berry') && move.category === 'Special') ||
     (defender.hasItem('Kee Berry') && move.category === 'Physical')) {
     const defStat = defender.hasItem('Kee Berry') ? 'def' : 'spd';
-    if (attacker.hasAbility('Unaware')) {
+    if (attacker.hasAbility('Unaware', 'Lunar Light', 'Hydrochasm Surge', 'Hydrochasm Surge++')) {
       desc.attackerAbility = attacker.ability;
     } else {
       if (defender.hasAbility('Contrary')) {
@@ -322,7 +343,7 @@ export function checkMultihitBoostPathways(
   }
 
   if (defender.hasAbility('Stamina')) {
-    if (attacker.hasAbility('Unaware')) {
+    if (attacker.hasAbility('Unaware', 'Lunar Light', 'Hydrochasm Surge', 'Hydrochasm Surge++')) {
       desc.attackerAbility = attacker.ability;
     } else {
       defender.boosts.def = Math.min(defender.boosts.def + 1, 6);
@@ -330,7 +351,7 @@ export function checkMultihitBoostPathways(
       desc.defenderAbility = defender.ability;
     }
   } else if (defender.hasAbility('Water Compaction') && move.hasType('Water')) {
-    if (attacker.hasAbility('Unaware')) {
+    if (attacker.hasAbility('Unaware', 'Lunar Light', 'Hydrochasm Surge', 'Hydrochasm Surge++')) {
       desc.attackerAbility = attacker.ability;
     } else {
       defender.boosts.def = Math.min(defender.boosts.def + 2, 6);
@@ -338,7 +359,7 @@ export function checkMultihitBoostPathways(
       desc.defenderAbility = defender.ability;
     }
   } else if (defender.hasAbility('Weak Armor')) {
-    if (attacker.hasAbility('Unaware')) {
+    if (attacker.hasAbility('Unaware', 'Lunar Light', 'Hydrochasm Surge', 'Hydrochasm Surge++')) {
       desc.attackerAbility = attacker.ability;
     } else {
       if (defender.hasItem('White Herb') && !defenderUsedItem && defender.boosts.def === 0) {
@@ -355,7 +376,7 @@ export function checkMultihitBoostPathways(
   }
 
   if (move.dropsStats) {
-    if (attacker.hasAbility('Unaware')) {
+    if (attacker.hasAbility('Unaware', 'Lunar Light', 'Hydrochasm Surge', 'Hydrochasm Surge++')) {
       desc.attackerAbility = attacker.ability;
     } else {
       // No move with dropsStats has fancy logic regarding category here
@@ -377,7 +398,7 @@ export function checkMultihitBoostPathways(
       }
 
       attacker.boosts[stat] = boosts;
-      attacker.stats[stat] = getModifiedStatPathways(attacker.rawStats[stat], defender.boosts[stat]);
+      attacker.stats[stat] = getModifiedStatPathways(attacker.rawStats[stat], attacker.boosts[stat]);
     }
   }
 
@@ -403,7 +424,7 @@ export function affectedByHazards(defender: Pokemon, field: Field) {
   let side = field.defenderSide
   return (
     !hasMagicGuard(defender, field) && !defender.hasItem('Heavy-Duty Boots', 'Sword and Boots') &&
-    !defender.hasAbility('Golden Hour', 'Hydrchasm Surge', 'Hydrchasm Surge++') &&
+    !defender.hasAbility('Golden Hour', 'Hydrchasm Surge', 'Hydrchasm Surge++', 'Stubborn Mule') &&
     (side.isSR || side.steelsurge || (side.spikes !== 0 && isGrounded(defender, field)) ||
      side.isMetalScraps || side.stellarRocks !== 0 || (side.isDrakeyDrake && !defender.hasType('Fairy', 'Omnitype')))
   );
@@ -476,50 +497,55 @@ export function getAteAbilityType(
   gen: Generation,
   attackerAbility?: AbilityName,
   attackerItem?: string,
-  isSound?: boolean
+  type?: string,
+  isSound?: boolean,
 ) {
-  switch (attackerAbility) {
-    case 'Liquid Voice':
-      if (isSound) {
+  if (attackerAbility === 'Normalize') {
+    return 'Normal';
+  } else if (isSound && attackerAbility === 'Liquid Voice') {
+    return 'Water';
+  } else if (type === 'Normal') {
+    switch (attackerAbility) {
+      case 'Primeval Gift':
+        if (attackerItem!.endsWith('Berry')) {
+          return getNaturalGift(gen, <string>attackerItem)!.t;
+        }
+        return false;
+      case 'Aerialate':
+        return 'Flying';
+      case 'Floriate':
+        return 'Grass';
+      case 'Tellurize':
+        return 'Ground';
+      case 'Venomize':
+        return 'Poison';
+      case 'Immolate':
+      case 'Crescendo':
+        return 'Fire';
+      case 'Duelize':
+        return 'Fighting';
+      case 'Galvanize':
+      case 'Plasma Hellscape':
+        return 'Electric';
+      case 'Ghouliate':
+        return 'Ghost';
+      case 'Sinisterize':
+        return 'Dark';
+      case 'Pixilate':
+        return 'Fairy';
+      case 'Metallicize':
+        return 'Steel';
+      case 'Dragonize':
+        return 'Dragon';
+      case 'Refrigerate':
+        return 'Ice';
+      case 'Hydrate':
         return 'Water';
-      }
-      return false;
-    case 'Primeval Gift':
-      if (attackerItem!.endsWith('Berry')) {
-        return getNaturalGift(gen, <string>attackerItem)!.t;
-      }
-      return false;
-    case 'Aerialate':
-      return 'Flying';
-    case 'Floriate':
-      return 'Grass';
-    case 'Tellurize':
-      return 'Ground';
-    case 'Venomize':
-      return 'Poison';
-    case 'Immolate':
-    case 'Crescendo':
-      return 'Fire';
-    case 'Duelize':
-      return 'Fighting';
-    case 'Galvanize':
-    case 'Plasma Hellscape':
-      return 'Electric';
-    case 'Ghouliate':
-      return 'Ghost';
-    case 'Sinisterize':
-      return 'Dark';
-    case 'Normalize':
-      return 'Normal';
-    case 'Pixilate':
-      return 'Fairy';
-    case 'Metallicize':
-      return 'Steel';
-    case 'Dragonize':
-      return 'Dragon';
-    case 'Refrigerate':
-      return 'Ice';
-    default:
-      return false;
+      case 'Psyonize':
+        return 'Psychic';
+      default:
+        return false;
+    }
   }
+  return false;
 }

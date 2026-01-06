@@ -49,6 +49,7 @@ export class Pokemon implements State.Pokemon {
   darkAura: number;
   alignment: I.Alignment;
   devouredStats: I.StatsTable;
+  combo?: number;
 
   constructor(
     gen: I.Generation,
@@ -86,6 +87,7 @@ export class Pokemon implements State.Pokemon {
     this.evs = Pokemon.withDefault(gen, options.evs, gen.num >= 3 ? 0 : 252);
     this.boosts = Pokemon.withDefault(gen, options.boosts, 0, false);
     this.devouredStats = Pokemon.withDefault(gen, options.devouredStats, 0, false);
+    this.combo = options.combo;
     
     // Gigantamax 'forms' inherit weight from their base species when not dynamaxed
     // TODO: clean this up with proper Gigantamax support
@@ -202,6 +204,7 @@ export class Pokemon implements State.Pokemon {
       darkAura: this.darkAura,
       alignment: this.alignment,
       overrides: this.species,
+      combo: this.combo,
     });
   }
 

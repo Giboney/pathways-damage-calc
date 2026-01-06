@@ -109,7 +109,7 @@ export function calculateDfModPathways(
     (defender.hasAbility('Flower Gift') && //essentials does not account for psyshock here
      field.hasWeather('Sun', 'Harsh Sunshine') && defender.hasItem('Utility Umbrella') && move.category === 'Special') ||
     //essentials says grass pelt is for ALL defenses >:)
-    (defender.hasAbility('Grass Pelt') && field.hasTerrain('Grassy')) ||
+    (defender.hasAbility('Grass Pelt') && field.hasTerrain('Grassy', 'Garden of Thorns')) ||
     //essentials does not account for psyshock here either
     (defender.hasAbility('Marvel Scale') && defender.status && move.category === 'Physical')
   ) {
@@ -125,8 +125,8 @@ export function calculateDfModPathways(
   ) {
     dfMod *= 1.3;
     desc.defenderAbility = defender.ability;
-  } else if (defender.hasAbility('Soul Ablaze') && defender.hasItem('Cobalt Gem')) {
-    dfMod += Number((1 - defender.curHP() / defender.maxHP()).toFixed(2));
+  } else if (defender.hasAbility('Soul Ablaze')) {
+    dfMod *= Number(1 + (attacker.curHP() / attacker.maxHP()).toFixed(2));
     desc.defenderAbility = defender.ability;
   }
   
@@ -165,6 +165,9 @@ export function calculateDfModPathways(
     (defender.hasItem('Metal Powder') && defender.named('Ditto'))
   ) {
     dfMod *= 1.5;
+    desc.defenderItem = defender.item;
+  } else if (defender.hasItem('Riot Shield') && hitsPhysical) {
+    dfMod *= 1.3;
     desc.defenderItem = defender.item;
   }
   

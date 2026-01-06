@@ -1,6 +1,12 @@
 import type * as I from './data/interface';
 import type {State} from './state';
-import {toID, extend} from './util';
+import {toID, extend} from './util';/*
+import {
+  getItemBoostType,
+  getMultiAttack,
+  getNaturalGift,
+  getTechnoBlast
+} from './data/items';*/
 import {getAteAbilityType} from './mechanics/pathways_mechanics/util'
 
 const SPECIAL = ['Fire', 'Water', 'Grass', 'Electric', 'Ice', 'Psychic', 'Dark', 'Dragon'];
@@ -83,7 +89,7 @@ export class Move implements State.Move {
       });
     }
     if (options.useZ && data.zMove?.basePower) {
-      const zMoveName: string = getZMoveName(data.name, data.type, options.item);
+      const zMoveName: string = getZMoveName(data.name, data.type, options.item, options.species);
       const zMove = gen.moves.get(toID(zMoveName));
       data = extend(true, {}, zMove, {
         name: zMoveName,
@@ -190,22 +196,19 @@ export class Move implements State.Move {
   }
 }
 
-export function getZMoveName(moveName: string, moveType: I.TypeName, item?: string) {
+export function getZMoveName(moveName: string, moveType: I.TypeName, item?: string, species?: string) {
   item = item || '';
+  species = species || '';
   if (moveName.includes('Hidden Power')) return 'Breakneck Blitz';
   if (moveName === 'Clanging Scales' && item === 'Kommonium Z') return 'Clangorous Soulblaze';
   if (moveName === 'Darkest Lariat' && item === 'Incinium Z') return 'Malicious Moonsault';
   if (moveName === 'Giga Impact' && item === 'Snorlium Z') return 'Pulverizing Pancake';
   if (moveName === 'Moongeist Beam' && item === 'Lunalium Z') return 'Menacing Moonraze Maelstrom';
-  if (moveName === 'Photon Geyser' && item === 'Ultranecrozium Z') {
-    return 'Light That Burns the Sky';
-  }
+  if (moveName === 'Photon Geyser' && item === 'Ultranecrozium Z') return 'Light That Burns the Sky';
   if (moveName === 'Play Rough' && item === 'Mimikium Z') return 'Let\'s Snuggle Forever';
   if (moveName === 'Psychic' && item === 'Mewnium Z') return 'Genesis Supernova';
   if (moveName === 'Sparkling Aria' && item === 'Primarium Z') return 'Oceanic Operetta';
-  if (moveName === 'Spectral Thief' && item === 'Marshadium Z') {
-    return 'Soul-Stealing 7-Star Strike';
-  }
+  if (moveName === 'Spectral Thief' && item === 'Marshadium Z') return 'Soul-Stealing 7-Star Strike';
   if (moveName === 'Spirit Shackle' && item === 'Decidium Z') return 'Sinister Arrow Raid';
   if (moveName === 'Stone Edge' && item === 'Lycanium Z') return 'Splintered Stormshards';
   if (moveName === 'Sunsteel Strike' && item === 'Solganium Z') return 'Searing Sunraze Smash';
@@ -214,6 +217,45 @@ export function getZMoveName(moveName: string, moveType: I.TypeName, item?: stri
   if (moveName === 'Thunderbolt') {
     if (item === 'Aloraichium Z') return 'Stoked Sparksurfer';
     if (item === 'Pikashunium Z') return '10,000,000 Volt Thunderbolt';
+  }
+  if (item === 'Partnerium Z') {
+    switch (moveName) {
+      case 'Riorio Rush':
+        return 'Ultra Rio Rumble';
+      case 'Zozo Zania':
+        return 'Phantasmal Zozo Zania';
+      case 'Cleffa Cluffle':
+        return 'Blinding Cleffa Cluffle';
+      case 'Nido Needle':
+        if (species === 'Nidoran-M-Partner') {
+          return 'Nido Needle Volley';
+        } else if (species === 'Nidoran-F-Partner') {
+          return 'Nido Needle Injection';
+        }//not sure how to do form specific
+        return 'Nido Needle Volley';
+      case 'Axy Axe':
+        return 'World-Hacking Axy Axe';
+      case 'Bonbon Bash':
+        return 'Earth-Shattering Bonbon Bash';
+      case 'Cubby Cuddle':
+        return 'Sub-Zero Cubby Cuddle';
+      case 'Skully Scare':
+        return 'Super Spooky Scary Skull';
+      case 'Nymble Nibble':
+        return 'Nefarious Nymble Nibble';
+      case 'Deedee Duster':
+        return 'Heavenly Deedee Duster';
+      case 'Cucu Crush':
+        return 'Continental Cucu Crush';
+      case 'Purr Pressure':
+        return 'Perfect Purr Pressure';
+      case 'Bray Bravery':
+        return 'Land-Breaking Bray Bravery';
+      case 'Pika Papow':
+        return '10,000,000 Volt Pika Papow';
+      case 'Veevee Volley':
+        return 'Extreme Veevee Volley';
+    }
   }
   return ZMOVES_TYPING[moveType]!;
 }
@@ -252,10 +294,13 @@ export function getMaxMoveName(
 ) {
   if (isStatus) return 'Max Guard';
   if (
-    moveType === 'Normal' || pokemonAbility === 'Normalize' &&
-    !['Weather Ball', 'Weather Bomb', 'Terrain Pulse', 'Terrain Blast'].includes(moveName)
+    !['Revelation Dance', 'Judgment', 'Nature Power', 'Techno Blast', 'Multi-Attack', 'Natural Gift', 'Weather Ball',
+      'Weather Bomb', 'Terrain Pulse', 'Terrain Blast', 'Struggle', 'Wild Card'].includes(moveName)
   ) {
-    moveType = getAteAbilityType(gen, pokemonAbility, pokemonItem) || moveType; //check this
+    moveType = getAteAbilityType(gen, pokemonAbility, pokemonItem, moveType) || moveType; //check this
+    //technically doesnt account for neutralizing gas but uh yea im not revamping this whole thing for such a niche scenario
+    //the above moves also change type to what they would be, but i dont have access to the data needed here
+    //ideally max moves and such are handled in the actual calculate function so that i have all the info
   }
   if (moveType === 'Normal') {
     if (pokemonSpecies === 'Eevee-Gmax') return 'G-Max Cuddle';
@@ -349,4 +394,5 @@ const MAXMOVES_TYPING: {
   Rock: 'Rockfall',
   Steel: 'Steelspike',
   Water: 'Geyser',
+  '???': 'Wildcard'
 };

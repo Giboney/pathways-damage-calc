@@ -102,22 +102,22 @@ export function calculateAtModPathways(
   } else if (
     attacker.hasAbility('Noble Hunt', 'Evoboost', 'Annoying Wall', 'Golden Hour') ||
     (attacker.hasAbility('Embody Aspect (Wellspring)', 'Embody Aspect (Hearthflame)', 'Embody Aspect (Cornerstone)') && move.hasType('Grass')) ||
-    (attacker.hasAbility('Fusion Core') && move.category === 'Special') ||
+    (attacker.hasAbility('Fusion Core', 'Flash Flood', 'Purrfection') && move.category === 'Special') ||
     (attacker.curHP() <= attacker.maxHP() / 3 &&
      ((attacker.hasAbility('Overgrow') && move.hasType('Grass')) ||
       (attacker.hasAbility('Blaze') && move.hasType('Fire')) ||
       (attacker.hasAbility('Torrent') && move.hasType('Water')) ||
-      (attacker.hasAbility('Swarm') && move.hasType('Bug')) ||
-      (attacker.hasAbility('Lunar Light')))
+      (attacker.hasAbility('Swarm', 'Hoppertunist') && move.hasType('Bug')) ||
+      (attacker.hasAbility('Undying Rage')))
     ) ||
     (move.category === 'Special' && attacker.abilityOn && attacker.hasAbility('Plus', 'Minus')) ||
     (attacker.hasAbility('Flash Fire') && attacker.abilityOn && move.hasType('Fire')) ||
     (attacker.hasAbility('Flower Gift') &&
      field.hasWeather('Sun', 'Harsh Sunshine') && !attacker.hasItem('Utility Umbrella') && move.category === 'Physical'
     ) ||
-    (attacker.hasAbility('Guts') && attacker.status && move.category === 'Physical') ||
+    (attacker.hasAbility('Guts', 'Rampage') && attacker.status && move.category === 'Physical') ||
     (attacker.hasAbility('Hustle', 'Swarm Shell') && move.category === 'Physical') ||
-    (attacker.hasAbility('Solar Power') &&
+    (attacker.hasAbility('Solar Power', 'Praise the Sun') &&
      field.hasWeather('Sun', 'Harsh Sunshine') && !attacker.hasItem('Utility Umbrella') && move.category === 'Special')
   ) {
     atMod *= 1.5;
@@ -183,8 +183,8 @@ export function calculateAtModPathways(
       atMod *= mod;
       desc.attackerAbility = attacker.ability;
     }
-  } else if (attacker.hasAbility('Soul Ablaze') && attacker.hasItem('Cobalt Gem')) {
-    atMod += Number((1 - attacker.curHP() / attacker.maxHP()).toFixed(2));
+  } else if (attacker.hasAbility('Soul Ablaze')) {
+    atMod *= 1 + (1 - Number((attacker.curHP() / attacker.maxHP()).toFixed(2))) / 2;
     desc.attackerAbility = attacker.ability;
   }
   

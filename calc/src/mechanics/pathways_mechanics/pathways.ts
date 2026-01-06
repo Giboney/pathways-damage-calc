@@ -47,6 +47,7 @@ import {
   getRoleDamageMod,
   getFinalDamagePathways,
   hasMagicGuard,
+  affectedByHazards,
 } from './util';
 import {calculateBasePowerPathways} from './basePower';
 import {calculateAttackPathways} from './attack';
@@ -85,6 +86,13 @@ export function calculatePathways(
       : 1;
     // restrict to +- 6
     attacker.boosts.spa = Math.min(6, Math.max(-6, attacker.boosts.spa));
+  } else if (move.named('Bouncing Bug')){
+    attacker.boosts.atk +=
+      attacker.hasAbility('Simple') ? 2
+      : attacker.hasAbility('Contrary') ? -1
+      : 1;
+    // restrict to +- 6
+    attacker.boosts.atk = Math.min(6, Math.max(-6, attacker.boosts.atk));
   }
 
   computeFinalStatsPathways(attacker, defender, field, 'atk', 'spa');
@@ -113,6 +121,10 @@ export function calculatePathways(
       (move.named('Tera Blast') && attacker.teraType)) {
     move.category = attacker.stats.atk > attacker.stats.spa ? 'Physical' : 'Special';
   }
+  
+  if (move.named('Pompous Plummet')) {
+    move.overrideOffensiveStat = attacker.stats.atk > attacker.stats.spa ? 'atk' : 'spa';
+  }
 
   const result = new Result(gen, attacker, defender, move, field, 0, desc);
 
@@ -132,7 +144,7 @@ export function calculatePathways(
   
   const breaksProtect = (
     move.breaksProtect || move.isZ || move.isMax ||
-    (attacker.hasAbility('Unseen Fist') && move.flags.contact) ||
+    (attacker.hasAbility('Unseen Fist', 'Blind Spot') && move.flags.contact) ||
     (attacker.hasAbility('Killing Joke'))
   );
 
@@ -154,7 +166,7 @@ export function calculatePathways(
     'Shadow Shield'
   );
 
-  const attackerIgnoresAbility = attacker.hasAbility('Mold Breaker', 'Teravolt', 'Turboblaze', 'Hydrochasm Surge++');
+  const attackerIgnoresAbility = attacker.hasAbility('Mold Breaker', 'Teravolt', 'Turboblaze', 'Hydrochasm Surge++', 'Law Breaker');
   const moveIgnoresAbility = move.named(
     'G-Max Drum Solo',
     'G-Max Fire Ball',
@@ -164,9 +176,10 @@ export function calculatePathways(
     'Moongeist Beam',
     'Photon Geyser',
     'Searing Sunraze Smash',
-    'Sunsteel Strike'
+    'Sunsteel Strike',
+    'Nido Needle Volley'
   );
-  if (!defenderIgnoresAbility && !defender.hasAbility('Poison Heal') &&
+  if (!defenderIgnoresAbility && !defender.hasAbility('Poison Heal') && //why is poison heal here?
     (attackerIgnoresAbility || moveIgnoresAbility)) {
     if (attackerIgnoresAbility) desc.attackerAbility = attacker.ability;
     if (defender.hasItem('Ability Shield')) {
@@ -241,7 +254,7 @@ export function calculatePathways(
     const ground = move.originalName.includes('Terrain') && isGrounded(attacker, field);
     type =
       field.hasTerrain('Electric') && ground ? 'Electric'
-      : field.hasTerrain('Grassy') && ground ? 'Grass'
+      : field.hasTerrain('Grassy', 'Garden of Thorns') && ground ? 'Grass'
       : field.hasTerrain('Misty') && ground ? 'Fairy'
       : field.hasTerrain('Psychic') && ground ? 'Psychic'
       : field.hasTerrain('Dragonic Soul') ? 'Dragon'
@@ -249,6 +262,7 @@ export function calculatePathways(
       : field.hasTerrain('Dream World') ? 'Psychic'
       : field.hasTerrain('Faraday Cage') ? 'Electric'
       : field.hasTerrain('Frozen Kingdom') ? 'Ice'
+      : field.hasTerrain('Rock Never Dies') ? 'Rock'
       : 'Normal';
     desc.terrain = field.terrain;
 
@@ -263,7 +277,7 @@ export function calculatePathways(
       (field.hasTerrain('Psychic') && isGrounded(defender, field))))) {
       desc.moveType = type;
     }
-  } else if (move.originalName === 'Revelation Dance' || move.named('Wild Card')) {
+  } else if (['Revelation Dance', 'Wild Card'].includes(move.originalName)) {
     if (attacker.teraType) {
       type = attacker.teraType;
     } else {
@@ -298,7 +312,7 @@ export function calculatePathways(
     type = 'Stellar';
   }
 
-  let abilityTyping = getAteAbilityType(gen, attacker.ability, attacker.item, !!move.flags.sound);
+  let abilityTyping = getAteAbilityType(gen, attacker.ability, attacker.item, move.type, !!move.flags.sound);
   let hasAteAbilityTypeChange = false;
   const noTypeChange = move.named(
     'Revelation Dance',
@@ -312,15 +326,13 @@ export function calculatePathways(
     'Terrain Pulse',
     'Terrain Blast',
     'Struggle',
+    'Wild Card',
+    'Raging Bull'
   ) || (move.named('Tera Blast') && attacker.teraType);
 
-  if (
-    !move.isZ && !noTypeChange && abilityTyping &&
-    ((type === 'Normal' || attacker.hasAbility('Normalize')) ||
-    (attacker.hasAbility('Liquid Voice') && type !== 'Water'))
-  ) {
+  if (!noTypeChange && abilityTyping) {
     type = abilityTyping;
-    hasAteAbilityTypeChange = !attacker.hasAbility('Liquid Voice');
+    hasAteAbilityTypeChange = !attacker.hasAbility('Liquid Voice'); //used for damage boost
     if (attacker.hasAbility('Primeval Gift')) {
       desc.attackerItem = attacker.item;
     }
@@ -338,10 +350,11 @@ export function calculatePathways(
     (attacker.hasAbility('Triage', 'Pure Prayer', 'Healing Droplets', 'Healing Droplets++') && move.drain) ||
     (attacker.hasAbility('Gale Wings') && move.hasType('Flying') && attacker.curHP() === attacker.maxHP()) ||
     (attacker.hasAbility('Spirit Call') && move.hasType('Ghost')) ||
-    (move.named('Grassy Glide', 'Spirit Bloom') && field.hasTerrain('Grassy')) || //if IR ability with these it could proc armor tail incorrectly
+    (move.named('Grassy Glide', 'Spirit Bloom') && field.hasTerrain('Grassy', 'Garden of Thorns')) || //if IR ability with these it could proc armor tail incorrectly
     (move.named('Pin Shock') && field.hasTerrain('Electric')) ||
     (attacker.hasAbility('Bee Ware') && move.hasType('Bug')) ||
-    (attacker.hasAbility('Lightning Fast') && field.hasTerrain('Electric'))
+    (attacker.hasAbility('Lightning Fast') && field.hasTerrain('Electric')) ||
+    (attacker.hasAbility('Vocalist') && move.flags.sound)
   ) {
     move.priority = 1;
     desc.attackerAbility = attacker.ability;
@@ -395,22 +408,29 @@ export function calculatePathways(
   }
 
   const turn2typeEffectiveness = typeEffectiveness;
+  
+  if (defender.hasAbility('Tera Shell', 'Flash FLood') &&
+      defender.curHP() === defender.maxHP() &&
+      !affectedByHazards(defender, field)) {
+    typeEffectiveness = 0.5;
+    desc.defenderAbility = defender.ability;
+  }
 
   if (
     (defender.hasAbility('Wonder Guard') && typeEffectiveness <= 1) ||
     (move.hasType('Grass') && defender.hasAbility('Sap Sipper')) ||
     (move.hasType('Fire') && (defender.hasAbility('Flash Fire', 'Well-Baked Body') && !attacker.hasAbility('Crescendo'))) ||
     (move.hasType('Water') && defender.hasAbility(
-      'Dry Skin', 'Storm Drain', 'Water Absorb', 'Water Compaction', 'Fusion Core', 'Hydrochasm Surge++'
+      'Dry Skin', 'Storm Drain', 'Water Absorb', 'Water Compaction', 'Fusion Core', 'Hydrochasm Surge++', 'Flash Flood'
     )) ||
     (move.hasType('Electric') && defender.hasAbility('Lightning Rod', 'Motor Drive', 'Volt Absorb', 'Turbo Engine')) ||
     (move.hasType('Ground') && !move.named('Thousand Arrows') && !defender.hasItem('Iron Ball') && !defender.hasType('Flying', 'Omnitype') &&
-     (defender.hasAbility('Golden Hour', 'Levitate', 'Lightning Speed', 'Distortion', 'Witchcraft', 'Swarming'))) ||
+     (defender.hasAbility('Golden Hour', 'Levitate', 'Lightning Speed', 'Distortion', 'Witchcraft', 'Swarming', 'Spookster'))) ||
     (move.flags.bullet && defender.hasAbility('Bulletproof')) ||
-    (move.flags.sound && !move.named('Clangorous Soul') && defender.hasAbility('Soundproof', 'Screamer', 'Reqieum Di Diavolo')) ||
-    (move.priority > 0 && defender.hasAbility('Queenly Majesty', 'Dazzling', 'Armor Tail')) ||
+    (move.flags.sound && !move.named('Clangorous Soul') && defender.hasAbility('Soundproof', 'Screamer', 'Requiem Di Diavolo')) ||
+    (move.priority > 0 && defender.hasAbility('Queenly Majesty', 'Dazzling', 'Armor Tail', 'Dust Reaction')) ||
     (move.hasType('Ground') && defender.hasAbility('Earth Eater', 'Plasma Hellscape')) ||
-    (move.flags.wind && defender.hasAbility('Wind Rider')) ||
+    (move.flags.wind && defender.hasAbility('Wind Rider', 'Fowl Play')) ||
     (move.hasType('Fairy') && defender.hasAbility('Misery After', 'Hydrochasm Surge++')) ||
     (move.hasType('Ice') && defender.hasAbility('Frost Drain')) ||
     (move.hasType('Bug') && defender.hasAbility('Fly Trap')) ||
@@ -552,9 +572,10 @@ export function calculatePathways(
   
   let vicious = 0;
   if (
-    !hasMagicGuard(defender, field) && !defender.hasItem('Protective Pads') &&
+    !hasMagicGuard(defender, field) && !defender.hasItem('Protective Pads', 'Shinobi Guantlet') &&
     ((attacker.hasAbility('Vicious Edge') && move.flags.blade) ||
-     (attacker.hasAbility('Vicious Claws') && move.flags.slicing))
+     (attacker.hasAbility('Vicious Claws') && move.flags.slicing) ||
+     (attacker.hasAbility('Vicious Fangs') && move.flags.bite))
   ) {
     vicious = Math.floor(defender.maxHP() / 8);
     desc.attackerAbility = attacker.ability;
@@ -590,15 +611,12 @@ export function calculatePathways(
         field, desc, isCritical);
       // Check if lost -ate ability. Typing stays the same, only boost is lost
       // Cannot be regained during multihit move and no Normal moves with stat drawbacks
-      hasAteAbilityTypeChange = hasAteAbilityTypeChange &&
-        attacker.hasAbility('Aerilate', 'Galvanize', 'Pixilate', 'Refrigerate', 'Normalize');
+      hasAteAbilityTypeChange = hasAteAbilityTypeChange && !!getAteAbilityType(gen, attacker.ability, attacker.item, move.type, !!move.flags.sound);
 
-      if ((move.dropsStats && move.timesUsed! > 1)) {
-        // Hack to make Tera Shell with multihit moves, but not over multiple turns
-        typeEffectiveness = turn2typeEffectiveness;
-        // Stellar damage boost applies for 1 turn, but all hits of multihit.
-        //stabMod = getStellarStabMod(attacker, move, preStellarStabMod, times);
-      }
+      // Hack to make Tera Shell with multihit moves, but not over multiple turns
+      typeEffectiveness = turn2typeEffectiveness;
+      // Stellar damage boost applies for 1 turn, but all hits of multihit.
+      //stabMod = getStellarStabMod(attacker, move, preStellarStabMod, times);
 
       const newBasePower = calculateBasePowerPathways(
         gen,
@@ -623,7 +641,7 @@ export function calculatePathways(
       );
 
       let damageMultiplier = 0;
-      damageMatrix[times] = getFinalDamagePathways(newBasePower, attack, defense, attacker.level, newFinalMod, 0);
+      damageMatrix[times] = getFinalDamagePathways(newBasePower, newAttack, newDefense, attacker.level, newFinalMod, 0);
     }
     result.damage = damageMatrix;
     

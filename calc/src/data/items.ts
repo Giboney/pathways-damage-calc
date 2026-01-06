@@ -505,7 +505,7 @@ const PATHWAYS_MEGA_STONES: {[species: string]: string} = {
   Togekissite: 'Togekiss',
   Hydreigonite: 'Hydreigon',
   'Samurottite H': 'Samurott-Hisui',
-  'Kommo-o': 'Kommonite',
+  Kommonite: 'Kommo-o',
   Glimmorite: 'Glimmora',
   Froslassite: 'Frosslass',
   Goodrite: 'Goodra',
@@ -519,6 +519,7 @@ const PATHWAYS_MEGA_STONES: {[species: string]: string} = {
   Electrodite: 'Electrode',
   Mismagiusite: 'Mismagius',
   Krookodilite: 'Krookodile',
+  Haxorus: 'Haxorite',
 };
 
 const PATHWAYS = SV.concat([
@@ -533,11 +534,16 @@ const PATHWAYS = SV.concat([
   'Nuptial Veil',
   'Royal Jelly',
   'Sword and Boots',
-  'Cobalt Gem',
+  //'Cobalt Gem',
   'Malice Gem',
   'Inner Light',
   'Gravity Extender',
-  //'Partnerium Z',
+  'Partnerium Z',
+  'Fist Wraps',
+  'Shinobi Gauntlet',
+  'Gambler\'s Dice',//TODO
+  'Riot Shield',
+  'Sinister Orb',
 ]);
 
 const BERRIES: {[berry: string]: {t: I.TypeName; p: number}} = {

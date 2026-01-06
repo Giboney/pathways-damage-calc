@@ -342,13 +342,13 @@ const SV = SS.concat([
 const PATHWAYS = SV.concat([
   //add neutralizing gas immune stuff later
   'Burn Out',//irrelevant use for multihit? no thanks
-  'Who\'s Next',//not used/irrelevant
+  //'Who\'s Next',//not used/irrelevant
   'Raijin\'s Will',//irrelevant
   'Tsukuyomi',//sleep oppo unless ability prevents
   'Amaterasu',//burn oppo
   'Daydreamer',//irrelevant
   'Titanium Armor',//finalmods x0.7 if special, defmods x1/0.7 if phys or psyshock (dumb)
-  'Holy Aegis',//unused defense supreme overlord? not implemented correctly??
+  //'Holy Aegis',//unused defense supreme overlord? not implemented correctly??
   'Dragonize',//normal -> dragon
   'Lightning Speed',//done ground immune, +5 prio except in psyterrain, electric surge, iron fist, huge power, half phys dmg, half of half (quarter) spec dmg, airborne, serene grace
   'Darkness Boost',//done 1/16 fighting dmg taken, max speed on switchin, +6 atk -1 speed on hit
@@ -357,9 +357,9 @@ const PATHWAYS = SV.concat([
   'Golden Hour',//add omnitype, 0.5x finalmod dr, 1.5x atmod, clear body (for intim/hahaweak), affected by iron ball/gravity, airborne, immune to hazards
   'Killing Joke',//change gengar form -> forsaken, double speed, multiscale, bypass protect, 
   'X Pickup',//+6 atk + 6 speed on switch in
-  'Storm Emperor',//unused, summons storm (new weather)
+  //'Storm Emperor',//unused, summons storm (new weather)
   'Lightning Armor',//finalmod x0.5 if contact dr, (50% para on contact)
-  'Crown of Zeus',//unused lot of buffs if hit with electric move
+  //'Crown of Zeus',//unused lot of buffs if hit with electric move
   'Juggernaut',//irrelevant, all moves omniboost
   'Legendary Aura',//lots of bullshit bpmods x2, finalmods x0.25 dr jesus
   'Paid in Full',//always live on 1 hp unless already 1 hp, (+3 atk and spa + return double damage of hit)
@@ -371,16 +371,16 @@ const PATHWAYS = SV.concat([
   'Ghouliate',//normal -> ghost
   'Awakening',//comatose + bpmod x 0.5 (resist ice steel rock dragon electric) + atmod x1.3 if phys
   'Sinisterize',//normal -> dark
-  'Ethereal',//not implemented. add ghost type 
-  'Rotting',//not implemented. add ghost type 
+  //'Ethereal',//not implemented. add ghost type 
+  //'Rotting',//not implemented. add ghost type 
   'Angel Tears',//finalmod x.5 if dragon, bpmod x1.5 if water or fairy
   'Honor Bond',//protean + form change on ko
   'Trouble Bond',//protean + form change on ko
-  'Khepri',//unused drought + finalmods x0.5 if supereffective
-  'Scorched Earth',//unused gives oppo scorched earth hazards (burn)
-  'Haunted Field',//unused give oppo haunted field hazards (yawn)
+  //'Khepri',//unused drought + finalmods x0.5 if supereffective
+  //'Scorched Earth',//unused gives oppo scorched earth hazards (burn)
+  //'Haunted Field',//unused give oppo haunted field hazards (yawn)
   'Desert Devil',//sand rush + bpmods x1.3 if sand and rockgroundsteel
-  'Guidance System',//unused super luck + sniper (finalmods x2 if crit for total of 3x on crits)
+  //'Guidance System',//unused super luck + sniper (finalmods x2 if crit for total of 3x on crits)
   'Duelize',//normal -> fighting
   'Distortion',//trick room on switch ends onswitchout/onhit, change melmetal form, bpmods x1.5 if punch, ground immune, +1 atk when hit by ground, 5x accuracy, airborne
   'Immolate',//normal -> fire
@@ -396,20 +396,20 @@ const PATHWAYS = SV.concat([
   'Beary Broken',//+1 prio on grassyterrain, grassy surge, bpmods x1.5, ignore armor tail, 
   'Pure Prayer',//+1 prio on heal move
   'Accelerate',//irrelevant, speed moxie
-  'Bewildering Mist',//unsued, give oppo bewildering mist hazard (confusion)
+  //'Bewildering Mist',//unsued, give oppo bewildering mist hazard (confusion)
   'Sword of Damocles',//+1 prio on misty, misty surge, bpmods x2, finalmods x0.75
   'Solar Grace',//cloud nine
   'Demolition Expert',//boost bullet moves
-  'Stealth Bomber',
-  'Rainbow Wings',
-  'Slumbering Beast',
-  'Power of Friendship',
-  'Vocalist',
-  'Blinding',
-  'Frost Body',
-  'Misery After',
-  'Spirit Call',
-  'Dragon Fear',
+  //'Stealth Bomber',//unused
+  'Rainbow Wings',//
+  'Slumbering Beast',//
+  'Power of Friendship',//
+  'Vocalist',//
+  'Blinding',//
+  'Frost Body',//
+  'Misery After',//
+  'Spirit Call',//
+  //'Dragon Fear',
   'Natural Enemy',//finalmods x2 if resisted grass or bug move
   'Insidious',//finalmods x2 if resisted poison or bug move
   'Airborne',//+1 spa on tailwind/wind move, immune to wind
@@ -440,20 +440,20 @@ const PATHWAYS = SV.concat([
   'Forest Spirits',//bpmods x1.3 if fairy or grass
   'Druidcraft',//bpmods x0.5 if bug ice or flying dr
   'Floriate',//normal -> grass
-  'Life Drain',//unused, passive leech seed (broken af)
-  'All or Nothing',//bpmods x(1 + random) defmods x(1 - random), random is [0,50], if 50, move will crit, why decrease defense? who knows
+  //'Life Drain',//unused, passive leech seed (broken af)
+  'All or Nothing',//bpmods x(1 + random) defmods x(1 - random), random is [0,50], if 50, move will crit, why decrease defense? who knows TODO
   'Gambler Legacy',//irrelevant, serene grace for normal moves
   'Lighten',//unburden, but 1.5x
   'Swan Song',//irrelevant, perish song for whole battle (switch every 3 turns or faint)
   'Noble Hunt',//atmods x1.5 + moxie on first ko, resets moxie count on switch out
-  'Harbinger of Storm',//not implemented
-  'Plasma Hellscape',//not used, electric surge, earth eater, normal -> electric
+  //'Harbinger of Storm',//not implemented
+  //'Plasma Hellscape',//not used, electric surge, earth eater, normal -> electric
   'Ya Estas Cocinado',//basculegion form change, bpmods x4/3 if contact, weird mix of supremeoverlord and quark drive. basically atmods x(supremeoverlord + 0.3), but its should boost speed in real battle
   'Aquamynthesis',//rain proto
   'Healing Droplets',//drizzle, grassy surge, rain dish
   'Healing Droplets++',//drizzle, grassy surge, rain dish, iron fist
-  'Moribund',//not used, clear body, 99% cursed body, perish body
-  'Volatile Brew',//not used, irrelevant, 25% poison on hit, stacks with other effects
+  //'Moribund',//not used, clear body, 99% cursed body, perish body
+  //'Volatile Brew',//not used, irrelevant, 25% poison on hit, stacks with other effects
   'Seraphic Heal',//irrelevant, water moves heal status + 1/16 hp
   'Neurotoxicity',//bpmods x1.3 if poison or electric
   'Metallicize',//normal -> steel
@@ -463,7 +463,7 @@ const PATHWAYS = SV.concat([
   'Dragon DNA',//bpmods x1.5 if dragon move and use is not dragon type
   'Showtime',//+6 all stats, -1 all stats end of each turn
   'Abyssal Veil',//change zoroark form, bpmods x1.5, cursed body 100%, magic guard
-  'Annoying Wall',//not used, finalmods x0.2 if special, defmods x2 if phys or psyshock (dumb), atmods x1.5, regenerator 100%
+  'Annoying Wall',//finalmods x0.2 if special, defmods x2 if phys or psyshock (dumb), atmods x1.5, regenerator 100%
   'Abyssal Veil ++',//change zoroark form, bpmods x1.5, cursed body 100%, dodge attacks every other turn (no guard bypasses), magic guard
   'Reaper',//heal 1/8 of damage dealt
   'Stacked Odds',//supreme overlord but 1 + 0.06xfainted, atmods
@@ -523,38 +523,79 @@ const PATHWAYS = SV.concat([
   'Ambusher',//bpmods x1.25 if first turn out
   'Golden Land',//bpmods x(1 + money/30) caps at 1.25, also add 5xlvl money on hit
   'Spendthrift',//proto, but only activated by big nugget
-  'Pandemonium',//not yet
+  'Pandemonium',//TODO (later)
   'Assassin',//adaptability clone
   'Light Born',//atmods x2, klutz
   'Evoboost',//atmods x1.5, 
-  /*'Great Mischief',
-  'Soul Ablaze',
-  'Lunar Light',
-  'Vile Venom',
-  'Robust Toxin',
-  'Rampage',
-  'Rolling Stone',
-  'Beary Cold',
-  'Spookster',
-  'Hoppertunist',
-  'Fowl Play',
-  'Heavy Heart',
-  'Purrfection',
-  'Stubborn Mule',*/
+  'Great Mischief',//toggle 0.5bpmod + dirty deeds copy
+  'Soul Ablaze',//riolu
+  'Lunar Light',//unaware, magic guard, 50% atmod fairy move
+  'Vile Venom',//iron heel, double poison damage, 25% boost if target is poisoned
+  'Robust Toxin',//25% dr if attacker is poisoned, heals from poisoned foes NEED TO DO HEALING LATER
+  'Rampage',//guts + quick feet + klutz
+  'Rolling Stone',//sturdy + rock head + speed boost on hit
+  'Beary Cold',//tough claws + slush rush + swift swim
+  'Spookster',//25% dr + cursed body + levitate
+  'Hoppertunist',//tinted lens + compound eye + swarm
+  'Fowl Play',//tailwind on switch + wind rider = airborne
+  'Heavy Heart',//sheer force + cheek pouch + gluttony
+  'Purrfection',//psychic terrain seed sower + 50% spa boost + infiltrator
+  'Stubborn Mule',//boots + stamina for def and spd + inner focus
   'Primeval Gift',//normal -> type of berry
   'Laced Cream',//immune to effects nonvola status, gives to attacker if they make contact
-  /*'Tracker',
-  'Vicious Fangs',
-  'Night Stalker',
-  'Berry Good',
-  'Boiling Point',
-  'Street Chef',
-  'Vegetarian',*/
+  'Tracker',//
+  'Vicious Fangs',//
+  'Night Stalker',//
+  'Berry Good',//unused
+  'Boiling Point',//
+  'Street Chef',// DONE
+  'Vegetarian',//seraphic heal for grass
   'Dry-Aged',//not used, ignores stat changes from any source, item, status, stat stages
   'Mesmerize',//intim but spatk
   'Rapid Fire',//loaded dice as an ability
   'Oxidation',//poison hits steel for normal effectiveness
   'Ferrite Scales',//bmods x0.5 if rock or ice dr, immuse to poison
+  'Garden of Thorns',//TODO
+  //'Temporal Exchange',//unused (for now)
+  'Flash Flood', //done
+  //'Lightning Chain',//
+  //'Ice Sculptor',//
+  //'Mana Burn',//
+  //'Magical Meltdown',//
+  //'Elementalist',//
+  //'Spell Focus',//
+  'Brewer',//
+  'Dust Reaction',//
+  'Snake Oil',//
+  'Hydrate',//
+  'Equivalence',//
+  'Open Stance',//
+  'Tranquility',//
+  'Blind Spot',//
+  'Psyonize',//
+  'Martial Body',//
+  //'Guidance',//
+  //'Blessed Salt',//
+  //'Chakra Mirror',//unused
+  //'Astral Projection',//
+  //'Praise the Sun',//
+  'Mindless Rage',//
+  'Heavy Blows',//
+  'Undying Rage',//
+  'Restless',//
+  //'Hellfire',//
+  //'Law Breaker',//
+  //'Breakdown',//
+  //'Scorching Touch',//
+  //'Bane',//
+  'Transmutation',//
+  'Rock Never Dies',//TODO
+  'Absolute Gaia',//
+  'Combo Flurry',//DONE
+  'Revelry',//
+  'Undead Detonation',//
+  'Soul Siphon',//DONE
+  'Axe Tyranny',//
 ]);
 
 export const ABILITIES = [[], RBY, GSC, ADV, DPP, BW, XY, SM, SS, SV, PATHWAYS];

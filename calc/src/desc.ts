@@ -54,6 +54,7 @@ export interface RawDesc {
   isDefenderDynamaxed?: boolean;
   //my additions
   isCharge?: boolean;
+  combo?: number;
 }
 
 export function display(
@@ -137,7 +138,7 @@ export function getRecovery(
     recovery[1] = Math.min(recovery[1], maxHealing);
   }
  
-  if (attacker.hasAbility('Reaper')) {
+  if (attacker.hasAbility('Reaper', 'Absolute Gaia')) {
     for (let i = 0; i < minD.length; i++) {
       recovery[0] += minD[i] > 0 ? Math.max(Math.round(minD[i] / 8), 1) : 0;
       recovery[1] += maxD[i] > 0 ? Math.max(Math.round(maxD[i] / 8), 1) : 0;
@@ -178,7 +179,9 @@ export function getRecovery(
       const range = [minD[i], maxD[i]];
       for (const j in recovery) {
         let drained = Math.max(Math.round(range[j] * percentHealed), 1);
-        if (attacker.hasItem('Big Root')) drained = Math.trunc(drained * 5324 / 4096);
+        if (attacker.hasItem('Big Root')) drained = Math.trunc(drained * 1.3);
+        if (attacker.hasAbility('Deep Roots')) drained = Math.trunc(drained * 1.3);
+        if (field.hasTerrain('Garden of Thorns') && isGrounded(attacker, field)) drained = Math.trunc(drained * 1.3);
         recovery[j] += Math.min(drained, max);
       }
     }
@@ -225,7 +228,7 @@ export function getRecoil(
         notation, Math.min(max, defender.curHP()) * mod, attacker.maxHP(), 100
       );
     }
-    if (!attacker.hasAbility('Rock Head')) {
+    if (!attacker.hasAbility('Rock Head', 'Rolling Stone') && !attacker.hasItem('Fist Wraps')) {
       recoil = [minRecoilDamage, maxRecoilDamage];
       text = `${minRecoilDamage} - ${maxRecoilDamage}${notation} recoil damage`;
     }
@@ -696,16 +699,37 @@ function getEndOfTurn(
       texts.push('Leech Seed damage');
     }
   }
+  
+  if (attacker.hasAbility('Soul Siphon') && (defender.hasStatus('slp') || defender.hasAbility('Comatose', 'Awakening'))) {
+    damage -= Math.floor(defender.maxHP() / 8);
+    texts.push('Soul Siphon damage');
+  }
 
   if (field.attackerSide.isSeeded && !hasMagicGuard(attacker, field)) {
     let recovery = Math.floor(attacker.maxHP() / (gen.num >= 2 ? 8 : 16));
-    if (defender.hasItem('Big Root') || defender.hasAbility('Deep Roots')) recovery = Math.floor(recovery * 1.3);
+    if (attacker.hasItem('Big Root')) recovery = Math.trunc(recovery * 1.3);
+    if (attacker.hasAbility('Deep Roots')) recovery = Math.trunc(recovery * 1.3);
+    if (field.hasTerrain('Garden of Thorns') && isGrounded(attacker, field)) recovery = Math.trunc(recovery * 1.3);
     if (attacker.hasAbility('Liquid Ooze')) {
       damage -= recovery;
       texts.push('Liquid Ooze damage');
     } else if (!healBlock) {
       damage += recovery;
       texts.push('Leech Seed recovery');
+    }
+  }
+  
+  if (defender.hasAbility('Soul Siphon') && (attacker.hasStatus('slp') || attacker.hasAbility('Comatose', 'Awakening'))) {
+    let recovery = Math.floor(attacker.maxHP() / 8);
+    if (attacker.hasItem('Big Root')) recovery = Math.trunc(recovery * 1.3);
+    if (attacker.hasAbility('Deep Roots')) recovery = Math.trunc(recovery * 1.3);
+    if (field.hasTerrain('Garden of Thorns') && isGrounded(attacker, field)) recovery = Math.trunc(recovery * 1.3);
+    if (attacker.hasAbility('Liquid Ooze')) {
+      damage -= recovery;
+      texts.push('Liquid Ooze damage');
+    } else if (!healBlock) {
+      damage += recovery;
+      texts.push('Soul Siphon recovery');
     }
   }
 
@@ -727,23 +751,26 @@ function getEndOfTurn(
   ) {
     damage -= Math.floor(defender.maxHP() / 8);
     texts.push('Terror Realm damage');
+  } else if (field.hasTerrain('Garden of Thorns') && isGrounded(defender, field) && !healBlock) {
+      damage += Math.floor(defender.maxHP() / 16);
+      texts.push('Garden of Thorns recovery');
   }
 
   if (defender.hasStatus('psn')) {
-    if (defender.hasAbility('Poison Heal', 'Reqieum Di Diavolo')) {
+    if (defender.hasAbility('Poison Heal', 'Requiem Di Diavolo')) {
       if (!healBlock) {
         damage += Math.floor(defender.maxHP() / 8);
-        texts.push('Poison Heal', 'Reqieum Di Diavolo');
+        texts.push(defender.ability || "");
       }
     } else if (!hasMagicGuard(defender, field)) {
       damage -= Math.floor(defender.maxHP() / (gen.num === 1 ? 16 : 8));
       texts.push('poison damage');
     }
   } else if (defender.hasStatus('tox')) {
-    if (defender.hasAbility('Poison Heal', 'Reqieum Di Diavolo')) {
+    if (defender.hasAbility('Poison Heal', 'Requiem Di Diavolo')) {
       if (!healBlock) {
         damage += Math.floor(defender.maxHP() / 8);
-        texts.push('Poison Heal', 'Reqieum Di Diavolo');
+        texts.push(defender.ability || "");
       }
     } else if (!hasMagicGuard(defender, field)) {
       texts.push('toxic damage');
@@ -1057,6 +1084,9 @@ function buildDescription(description: RawDesc, attacker: Pokemon, defender: Pok
     output += Math.min(5, description.alliesFainted) +
       ` ${description.alliesFainted === 1 ? 'ally' : 'allies'} fainted `;
   }
+  if (description.combo) {
+    output += Math.min(5, description.combo) + ' Combo ';
+  }
   if (description.attackerTera) {
     output += `Tera ${description.attackerTera} `;
   }
@@ -1132,12 +1162,23 @@ function buildDescription(description: RawDesc, attacker: Pokemon, defender: Pok
     output += `Tera ${description.defenderTera} `;
   }
   output += description.defenderName;
+  let terrainString = description.terrain ?
+    (description.terrain + ([
+      'Dragonic Soul',
+      'Terror Realm',
+      'Dream World',
+      'Faraday Cage',
+      'Frozen Kingdom',
+      'Garden of Thorns',
+      'Rock Never Dies'
+    ].includes(description.terrain) ? '' : ' Terrain'))
+    : '';
   if (description.weather && description.terrain) {
-    // do nothing
+    output += ' in ' + description.weather + ' and ' + terrainString;
   } else if (description.weather) {
     output += ' in ' + description.weather;
   } else if (description.terrain) {
-    output += ' in ' + description.terrain + ' Terrain';
+    output += ' in ' + terrainString;
   }
   if (description.isReflect) {
     output += ' through Reflect';

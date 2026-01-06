@@ -15,7 +15,7 @@ export type StatusName = 'slp' | 'psn' | 'brn' | 'frz' | 'par' | 'tox' | 'fbt';
 
 export type GameType = 'Singles' | 'Doubles';
 export type Terrain = 'Electric' | 'Grassy' | 'Psychic' | 'Misty' | 'Dragonic Soul' | 'Terror Realm' |
-  'Dream World' | 'Faraday Cage' | 'Frozen Kingdom';
+  'Dream World' | 'Faraday Cage' | 'Frozen Kingdom' | 'Garden of Thorns' | 'Rock Never Dies';
 export type Weather =
   'Sand' | 'Sun' | 'Rain' | 'Hail' | 'Snow' | 'Harsh Sunshine'|
   'Heavy Rain' | 'Strong Winds' | 'Harsh Typhoon' | 'Raging Sandstorm' | 'Violent Blizzard';
@@ -109,7 +109,8 @@ export interface MoveFlags {
   powder?: 1 | 0;
   shot?: 1 | 0;
   slicing?: 1 | 0;
-  wind?: 1| 0;
+  wind?: 1 | 0;
+  twoturn?: 1 | 0;
 }
 
 export interface SelfOrSecondaryEffect {

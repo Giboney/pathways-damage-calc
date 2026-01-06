@@ -29,15 +29,9 @@ const EV_ITEMS = [
 ];
 
 export function isGrounded(pokemon: Pokemon, field: Field) {
-  return (field.isGravity || pokemon.hasItem('Iron Ball') ||
-    (!pokemon.hasType('Flying') &&
-     !pokemon.hasAbility('Golden Hour') &&
-     !pokemon.hasAbility('Levitate') &&
-     !pokemon.hasAbility('Lightning Speed') &&
-     !pokemon.hasAbility('Distortion') &&
-     !pokemon.hasAbility('Witchcraft') &&
-     !pokemon.hasAbility('Swarming') &&
-     !pokemon.hasType('Omnitype') &&
+  return (field.isGravity || pokemon.hasItem('Iron Ball') || field.hasTerrain('Rock Never Dies') ||
+    (!pokemon.hasType('Flying', 'Omnitype') &&
+     !pokemon.hasAbility('Golden Hour', 'Levitate', 'Lightning Speed', 'Distortion', 'Witchcraft', 'Swarming', 'Spookster') &&
      !pokemon.hasItem('Air Balloon')
     ));
 }
@@ -229,7 +223,7 @@ export function checkItem(pokemon: Pokemon, magicRoomActive?: boolean) {
   // Pokemon with Klutz still get their speed dropped in generation 4
   if (pokemon.gen.num === 4 && pokemon.hasItem('Iron Ball')) return;
   if (
-    pokemon.hasAbility('Klutz', 'Light Born') && !EV_ITEMS.includes(pokemon.item!) ||
+    pokemon.hasAbility('Klutz', 'Light Born', 'Rampage') && !EV_ITEMS.includes(pokemon.item!) ||
     magicRoomActive
   ) {
     pokemon.disabledItem = pokemon.item;
@@ -246,7 +240,7 @@ export function checkWonderRoom(pokemon: Pokemon, wonderRoomActive?: boolean) {
 export function checkIntimidate(gen: Generation, source: Pokemon, target: Pokemon) {
   if (gen.num < 10) {
     const blocked =
-      target.hasAbility('Clear Body', 'White Smoke', 'Hyper Cutter', 'Full Metal Body', 'Mind\'s Eye', 'Bird of Prey', 'Soul Ablaze', 'Golden Hour', 'Moribund', 'Dry Aged', 'Hydrochasm Surge', 'Hydrochasm Surge++', 'Fiery Spirit') || (target.hasAbility('Flower Veil') && target.hasType('Grass')) ||
+      target.hasAbility('Clear Body', 'White Smoke', 'Hyper Cutter', 'Full Metal Body', 'Mind\'s Eye', 'Bird of Prey', 'Soul Ablaze', 'Golden Hour', 'Moribund', 'Dry Aged', 'Hydrochasm Surge', 'Hydrochasm Surge++', 'Fiery Spirit', 'Axe Tyranny', 'Bane', 'Stubborn Mule') || (target.hasAbility('Flower Veil') && target.hasType('Grass')) ||
       // More abilities now block Intimidate in Gen 8+ (DaWoblefet, Cloudy Mistral)
       (gen.num >= 8 && target.hasAbility('Inner Focus', 'Own Tempo', 'Oblivious', 'Scrappy')) ||
       target.hasItem('Clear Amulet');
@@ -322,11 +316,11 @@ export function checkDauntlessShield(source: Pokemon, gen: Generation) {
 
 export function checkWindRider(source: Pokemon, attackingSide: Side) {
   if (attackingSide.isTailwind) {
-    if (source.hasAbility('Wind Rider')) {
+    if (source.hasAbility('Wind Rider', 'Fowl Play')) {
       source.boosts.atk = Math.min(6, source.boosts.atk + 1);
     } else if (source.hasAbility('Wind Power')) {
       attackingSide.isCharge = true;
-    } else if (source.hasAbility('Airborne')) {
+    } else if (source.hasAbility('Airborne', 'Fowl Play')) {
       source.boosts.spa = Math.min(6, source.boosts.spa + 1);
     }
   }
@@ -351,7 +345,7 @@ export function checkEmbody(source: Pokemon, gen: Generation) {
 }
 
 export function checkInfiltrator(pokemon: Pokemon, affectedSide: Side) {
-  if (pokemon.hasAbility('Infiltrator')) {
+  if (pokemon.hasAbility('Infiltrator', 'Purrfection')) {
     affectedSide.isReflect = false;
     affectedSide.isLightScreen = false;
     affectedSide.isAuroraVeil = false;

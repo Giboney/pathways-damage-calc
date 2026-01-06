@@ -9,11 +9,14 @@ var SETDEX_PATHWAYS = {
   "Gouging Fire": {
     "Dragon Monarch Born": {"level":100,"ability":"Protosynthesis","item":"Weakness Policy","nature":"Adamant","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":4,"sa":0,"sd":0,"sp":252},"moves":["Flare Blitz","Terror Fang","Earthquake","Dragon Dance"],"gender":""},
     "Dragon Monarch Born 1": {"level":100,"ability":"Protosynthesis","item":"Booster Energy","nature":"Jolly","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":92,"at":164,"df":0,"sa":0,"sd":0,"sp":252},"moves":["Flare Blitz","Terror Fang","Earthquake","Burning Bulwark"],"gender":""},
-    "Occultist Umbra 1": {"level":100,"ability":"Immolate","item":"Choice Band","nature":"Jolly","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":0,"sa":0,"sd":4,"sp":252},"moves":["Extreme Speed","Earthquake","Iron Head","Dragon Claw"],"gender":""}
+    "Occultist Umbra 1": {"level":100,"ability":"Immolate","item":"Choice Band","nature":"Jolly","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":0,"sa":0,"sd":4,"sp":252},"moves":["Extreme Speed","Earthquake","Iron Head","Dragon Claw"],"gender":""},
+    "Fanatic Occultist Umbra": {"level":120,"ability":"Immolate","item":"Choice Band","nature":"Jolly","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":0,"sa":0,"sd":4,"sp":252},"moves":["Extreme Speed","Headlong Rush","Double Iron Bash","Glaive Rush"],"gender":""}
   },
   "Lycanroc-Midnight": {
     "Dragon Monarch Born": {"level":100,"ability":"Strong Jaw","item":"Choice Scarf","nature":"Adamant","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":0,"sa":4,"sd":0,"sp":252},"moves":["Head Smash","Psychic Fangs","Fire Fang","Crunch"],"gender":"M"},
-    "Dragon Monarch Born 10": {"level":120,"ability":"Chaos Control","item":"Focus Sash","nature":"Jolly","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":0,"sa":4,"sd":0,"sp":252},"moves":["Diamond Storm","Wicked Blow","Spiky Shield","Extreme Speed"],"gender":"M"}
+    "Dragon Monarch Born 10": {"level":120,"ability":"Chaos Control","item":"Focus Sash","nature":"Jolly","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":0,"sa":4,"sd":0,"sp":252},"moves":["Diamond Storm","Wicked Blow","Spiky Shield","Extreme Speed"],"gender":"M"},
+    "Mystery Girl Emma Lead": {"level":30,"ability":"Strong Jaw","item":"Leftovers","nature":"Adamant","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":0,"sa":4,"sd":0,"sp":252},"moves":["Accelerock","Psychic Fangs","Stone Fangs","Crunch"],"gender":"F"},
+    "Mystery Girl Emma 1": {"level":65,"ability":"Strong Jaw","item":"Leftovers","nature":"Adamant","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":0,"sa":4,"sd":0,"sp":252},"moves":["Accelerock","Psychic Fangs","Stone Fangs","Crunch"],"gender":"F"}
   },
   "Mightyena": {
     "Dragon Monarch Born": {"level":100,"ability":"Draconic Soul","item":"Mightyenite","nature":"Jolly","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":4,"sa":0,"sd":0,"sp":252},"moves":["Crunch","Poison Fang","Terror Fang","Ice Fang"],"gender":"F"},
@@ -22,6 +25,7 @@ var SETDEX_PATHWAYS = {
     "Magma Admin Courtney": {"level":60,"ability":"Intimidate","item":"","nature":"Serious","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"moves":["","","",""],"gender":""},
     "Aqua Admin Shelly": {"level":60,"ability":"Intimidate","item":"","nature":"Serious","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"moves":["","","",""],"gender":""},
     "Aqua Admin Matt": {"level":60,"ability":"Intimidate","item":"","nature":"Serious","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"moves":["","","",""],"gender":""},
+    "Blake Gang Goonies 3": {"level":55,"ability":"","item":"","nature":"Serious","ivs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"evs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"moves":["","","",""],"gender":"M"},
     "Hero Ruby 3 Lead Dynamax": {"level":80,"ability":"Strong Jaw","item":"Expert Belt","nature":"Adamant","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":4,"sa":0,"sd":0,"sp":252},"moves":["Crunch","Play Rough","Thunder Fang","Ice Fang"],"gender":"F"},
     "Hero Ruby 4 Lead": {"level":90,"ability":"Huge Power","item":"Choice Scarf","nature":"Jolly","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":4,"sa":0,"sd":0,"sp":252},"moves":["Knock Off","Play Rough","Close Combat","Glacial Lance"],"gender":"F"}
   },
@@ -45,6 +49,12 @@ var SETDEX_PATHWAYS = {
     "Hero Silver 3": {"level":80,"ability":"Swift Swim","item":"White Herb","nature":"Modest","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":128,"at":0,"df":0,"sa":252,"sd":0,"sp":128},"moves":["Hydro Pump","Ice Beam","Draco Meteor","Hurricane"],"gender":""},
     "Hero Silver 4 Dynamax": {"level":90,"ability":"Drizzle","item":"White Herb","nature":"Modest","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":4,"sa":252,"sd":0,"sp":252},"moves":["Hydro Pump","Sludge Bomb","Draco Meteor","Hurricane"],"gender":""}
   },
+  "Drakeon": {
+    "Dragon Monarch Born 1": {"level":100,"ability":"Gallant","item":"Leftovers","nature":"Impish","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":0,"df":252,"sa":0,"sd":4,"sp":0},"moves":["Body Press","Drakey Drake","Roost","Dragon Dance"],"gender":"F"},
+    "Shadow Six Perceptive Detective Felix Lead": {"level":80,"ability":"Spendthrift","item":"Big Nugget","nature":"Impish","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":0,"df":252,"sa":0,"sd":4,"sp":0},"moves":["Body Press","Drakey Drake","Roost","Shield Bash"],"gender":"M"},
+    "Shadow Six Perceptive Detective Felix 1 Lead": {"level":100,"ability":"Sword of Damocles","item":"Gambler's Dice","nature":"Impish","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":0,"df":252,"sa":0,"sd":4,"sp":0},"moves":["Body Press","Wall Crash","Roost","Draco Crush"],"gender":"M"},
+    "Shadow Six Perceptive Detective Felix 2 Lead": {"level":80,"ability":"Spendthrift","item":"Big Nugget","nature":"Impish","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":0,"df":252,"sa":0,"sd":4,"sp":0},"moves":["Body Press","Draco Crush","Roost","Lucky Dip"],"gender":"M"}
+  },
   "Hydrapple": {
     "Dragon Monarch Born 1": {"level":100,"ability":"Frost Drain","item":"Assault Vest","nature":"Calm","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":0,"df":0,"sa":4,"sd":252,"sp":0},"moves":["Fickle Beam","Giga Drain","Earth Power","Body Press"],"gender":"M"}
   },
@@ -53,15 +63,6 @@ var SETDEX_PATHWAYS = {
     "Dragon Monarch Born 10": {"level":120,"ability":"Born to Die","item":"Salac Berry","nature":"Adamant","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":0,"sa":0,"sd":4,"sp":252},"moves":["Diamond Storm","Headlong Rush","Victory Dance","Terror Fang"],"gender":"M"},
     "Hero Zinnia 3": {"level":80,"ability":"Rock Head","item":"Choice Scarf","nature":"Jolly","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":4,"sa":0,"sd":0,"sp":252},"moves":["Head Smash","Iron Head","Outrage","Earthquake"],"gender":"M"},
     "Hero Zinnia 4 Dynamax": {"level":95,"ability":"Magic Guard","item":"Life Orb","nature":"Jolly","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":4,"sa":0,"sd":0,"sp":252},"moves":["Head Smash","High Jump Kick","Outrage","Dragon Ascent"],"gender":"M"}
-  },
-  "Goodra-Hisui": {
-    "Dragon Monarch Born 1": {"level":100,"ability":"Shell Armor","item":"Leftovers","nature":"Bold","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":0,"df":252,"sa":0,"sd":4,"sp":0},"moves":["Body Press","Shield Bash","Shelter","Recover"],"gender":"F"},
-    "Hero Zinnia 4": {"level":95,"ability":"Simple","item":"White Herb","nature":"Modest","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":4,"sa":252,"sd":0,"sp":252},"moves":["Shell Smash","Dragon Pulse","Flash Cannon","Torch Song"],"gender":""},
-    "Occultist Umbra Lead": {"level":80,"ability":"Toxic Debris","item":"Assault Vest","nature":"Sassy","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":0},"evs":{"hp":252,"at":0,"df":158,"sa":0,"sd":100,"sp":0},"moves":["Dragon Pulse","Body Press","Ice Beam","Flash Cannon"],"gender":"M"},
-    "Occultist Umbra 1 Lead": {"level":100,"ability":"Toxic Debris","item":"Assault Vest","nature":"Sassy","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":0},"evs":{"hp":252,"at":0,"df":158,"sa":0,"sd":100,"sp":0},"moves":["Dragon Pulse","Body Press","Ice Beam","Shield Bash"],"gender":"M"},
-    "Doctor Yukine": {"level":80,"ability":"Hydration","item":"Leftovers","nature":"Bold","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":0,"df":252,"sa":0,"sd":4,"sp":0},"moves":["Iron Defense","Body Press","Shield Bash","Rest"],"gender":"M"},
-    "Battle Server Kairo 12": {"level":70,"ability":"Gooey","item":"Assault Vest","nature":"Relaxed","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":0,"df":252,"sa":0,"sd":0,"sp":0},"moves":["Flash Cannon","Dragon Tail","Ice Beam","Body Press"],"gender":"F"},
-    "Battle Server Kairo 25": {"level":80,"ability":"Shell Armor","item":"Leftovers","nature":"Bold","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":0,"df":252,"sa":4,"sd":0,"sp":0},"moves":["Flash Cannon","Body Press","Draco Meteor","Shelter"],"gender":"F"}
   },
   "Noivern": {
     "Dragon Monarch Born 6 Lead": {"level":65,"ability":"Telepathy","item":"Dragon Fang","nature":"Timid","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":200,"at":0,"df":0,"sa":88,"sd":0,"sp":220},"moves":["Air Slash","Dragon Pulse","",""],"gender":"M"},
@@ -74,8 +75,7 @@ var SETDEX_PATHWAYS = {
     "Battle Server Kairo 7": {"level":55,"ability":"Infiltrator","item":"","nature":"Timid","ivs":{"hp":25,"at":0,"df":25,"sa":25,"sd":25,"sp":25},"evs":{"hp":0,"at":0,"df":0,"sa":80,"sd":0,"sp":80},"moves":["Hyper Voice","Air Slash","Flamethrower","Dragon Pulse"],"gender":"F"}
   },
   "Roaring Moon": {
-    "Dragon Monarch Born 10": {"level":120,"ability":"Sniper","item":"Assault Vest","nature":"Jolly","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":4,"sa":0,"sd":0,"sp":252},"moves":["Wicked Blow","Terror Fang","Dire Claw","Storm Throw"],"gender":""},
-    "Dark Prince Gavin 1": {"level":88,"ability":"Misery After","item":"Choice Band","nature":"Jolly","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":4,"sa":0,"sd":0,"sp":252},"moves":["Outrage","Jaw Lock","Iron Head","Earthquake"],"gender":""}
+    "Dragon Monarch Born 10": {"level":120,"ability":"Sniper","item":"Assault Vest","nature":"Jolly","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":4,"sa":0,"sd":0,"sp":252},"moves":["Wicked Blow","Terror Fang","Dire Claw","Storm Throw"],"gender":""}
   },
   "Mightyena-Mega": {
     "Dragon Monarch Born 10": {"level":120,"ability":"Huge Power","item":"Focus Sash","nature":"Jolly","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":4,"sa":0,"sd":0,"sp":252},"moves":["Wicked Blow","Dire Claw","Close Combat","Sucker Punch"],"gender":"F"}
@@ -91,12 +91,12 @@ var SETDEX_PATHWAYS = {
     "King of Nightmares Lygn": {"level":100,"ability":"No Guard","item":"Psychium Z","nature":"Modest","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":4,"sa":252,"sd":0,"sp":252},"moves":["Shadow Ball","Sludge Bomb","Focus Blast","Hypnosis"],"gender":"F"},
     "King of Nightmares Lygn 1 Lead": {"level":100,"ability":"Terror Realm","item":"Ghostium Z","nature":"Timid","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":4,"sa":252,"sd":0,"sp":252},"moves":["Shadow Ball","Sludge Bomb","Dazzling Gleam","Destiny Bond"],"gender":"F"},
     "King of Nightmares Lygn 10 Lead": {"level":120,"ability":"Tsukuyomi","item":"Focus Sash","nature":"Timid","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":4,"sa":252,"sd":0,"sp":252},"moves":["Aura Sphere","Moonblast","Sludge Bomb","Astral Barrage"],"gender":"F"},
+    "Devious Duo Zilla & Emma": {"level":70,"ability":"Swan Song","item":"Gengarite","nature":"Timid","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":0,"sa":252,"sd":4,"sp":252},"moves":["Aura Sphere","Substitute","Sludge Bomb","Protect"],"gender":""},
     "Venomous Sister Zilla Lead": {"level":70,"ability":"Swan Song","item":"Gengarite","nature":"Timid","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":0,"sa":252,"sd":4,"sp":252},"moves":["Aura Sphere","Substitute","Sludge Bomb","Protect"],"gender":""},
     "Rebel Biker Striker": {"level":32,"ability":"","item":"","nature":"Bold","ivs":{"hp":15,"at":15,"df":15,"sa":15,"sd":15,"sp":15},"evs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"moves":["Hex","Toxic","Venoshock","Confuse Ray"],"gender":"M"},
     "Gym Leader Morty 3": {"level":80,"ability":"Levitate","item":"Gengarite","nature":"Timid","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":4,"sa":252,"sd":0,"sp":252},"moves":["Shadow Ball","Sludge Wave","Nasty Plot","Focus Blast"],"gender":"M"},
     "Shadow Six Corrupted Jester Barret 3": {"level":80,"ability":"Levitate","item":"Gengarite","nature":"Timid","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":0,"df":0,"sa":252,"sd":4,"sp":0},"moves":["Sludge Bomb","Dark Pulse","Shadow Ball","Nasty Plot"],"gender":""},
-    "Shadow Six Unfettered Scholar Maxwell": {"level":80,"ability":"Sheer Force","item":"Life Orb","nature":"Timid","ivs":{"hp":31,"at":5,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":6,"at":0,"df":0,"sa":252,"sd":0,"sp":252},"moves":["Shadow Ball","Sludge Wave","Thunder","Destiny Bond"],"gender":"M"},
-    "Elite Four Agatha": {"level":85,"ability":"Intimidate","item":"Gengarite","nature":"Timid","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":4,"sa":252,"sd":0,"sp":252},"moves":["Hex","Venoshock","Dazzling Gleam","Nasty Plot"],"gender":"F"}
+    "Shadow Six Unfettered Scholar Maxwell": {"level":80,"ability":"Sheer Force","item":"Life Orb","nature":"Timid","ivs":{"hp":31,"at":5,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":6,"at":0,"df":0,"sa":252,"sd":0,"sp":252},"moves":["Shadow Ball","Sludge Wave","Thunder","Destiny Bond"],"gender":"M"}
   },
   "Grimmsnarl": {
     "King of Nightmares Lygn": {"level":100,"ability":"Prankster","item":"Red Card","nature":"Adamant","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":252,"df":4,"sa":0,"sd":0,"sp":0},"moves":["Darkest Lariat","Play Rough","Dark Void","Parting Shot"],"gender":"M"},
@@ -117,8 +117,8 @@ var SETDEX_PATHWAYS = {
     "Novice Shinobi Hyun 6 Lead": {"level":75,"ability":"Sharpness","item":"Assault Vest","nature":"Adamant","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":4,"sa":0,"sd":252,"sp":0},"moves":["Ceaseless Edge","Aqua Cutter","Sacred Sword","Aqua Jet"],"gender":"M"},
     "Novice Shinobi Hyun 7 Lead": {"level":80,"ability":"Sharpness","item":"Assault Vest","nature":"Adamant","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":4,"sa":0,"sd":252,"sp":0},"moves":["Ceaseless Edge","Aqua Cutter","Sacred Sword","Sucker Punch"],"gender":"M"},
     "Novice Shinobi Hyun 9 Lead": {"level":100,"ability":"Sharpness","item":"Assault Vest","nature":"Adamant","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":4,"sa":0,"sd":252,"sp":0},"moves":["Ceaseless Edge","Aqua Cutter","Sacred Sword","Sucker Punch"],"gender":"M"},
-    "Occultist Umbra": {"level":80,"ability":"Sharpness","item":"Katana","nature":"Jolly","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":0,"sa":0,"sd":4,"sp":252},"moves":["Ceaseless Edge","Sacred Sword","Aqua Cutter","Sucker Punch"],"gender":"M"},
-    "Occultist Umbra 1": {"level":100,"ability":"Sharpness","item":"Katana","nature":"Jolly","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":0,"sa":0,"sd":4,"sp":252},"moves":["Ceaseless Edge","Sacred Sword","Aqua Cutter","Stone Axe"],"gender":"M"},
+    "Occultist Umbra": {"level":80,"ability":"Sharpness","item":"Sinister Orb","nature":"Jolly","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":0,"sa":0,"sd":4,"sp":252},"moves":["Ceaseless Edge","Sacred Sword","Aqua Cutter","Sucker Punch"],"gender":"M"},
+    "Occultist Umbra 1": {"level":100,"ability":"Sharpness","item":"Sinister Orb","nature":"Jolly","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":0,"sa":0,"sd":4,"sp":252},"moves":["Ceaseless Edge","Sacred Sword","Aqua Cutter","Sucker Punch"],"gender":"M"},
     "Grammar Hero Nerd": {"level":80,"ability":"Sharpness","item":"Focus Sash","nature":"Jolly","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":0,"sa":0,"sd":4,"sp":252},"moves":["Ceaseless Edge","Aerial Ace","X-Scissor","Razor Shell"],"gender":"M"}
   },
   "Spiritomb": {
@@ -139,13 +139,15 @@ var SETDEX_PATHWAYS = {
     "King of Nightmares Lygn 1": {"level":100,"ability":"Fly Trap","item":"Weakness Policy","nature":"Adamant","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":252,"df":4,"sa":0,"sd":0,"sp":0},"moves":["Spore","Seed Bomb","Sucker Punch","Earthquake"],"gender":""},
     "Gardener Caroline 2": {"level":75,"ability":"","item":"Leftovers","nature":"Impish","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":0,"df":4,"sa":0,"sd":252,"sp":0},"moves":["Bullet Seed","Payback","Spore","Synthesis"],"gender":""},
     "Gardener Caroline 5": {"level":80,"ability":"","item":"Booster Energy","nature":"Adamant","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":4,"sa":0,"sd":0,"sp":252},"moves":["Trailblaze","Close Combat","Spore","Sucker Punch"],"gender":""},
-    "Gardener Caroline 7": {"level":100,"ability":"","item":"Booster Energy","nature":"Adamant","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":4,"sa":0,"sd":0,"sp":252},"moves":["Trailblaze","Close Combat","Spore","Sucker Punch"],"gender":""}
+    "Gardener Caroline 7": {"level":100,"ability":"","item":"Booster Energy","nature":"Adamant","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":4,"sa":0,"sd":0,"sp":252},"moves":["Trailblaze","Close Combat","Spore","Sucker Punch"],"gender":""},
+    "Mysterious Heroine ???": {"level":100,"ability":"","item":"Leftovers","nature":"Impish","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":0,"df":4,"sa":0,"sd":252,"sp":0},"moves":["Seed Bomb","Sucker Punch","Spore","Synthesis"],"gender":"F"}
   },
   "Gallade": {
     "King of Nightmares Lygn 10": {"level":120,"ability":"Untouchable","item":"Focus Sash","nature":"Adamant","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":4,"sa":0,"sd":0,"sp":252},"moves":["Close Combat","Psycho Cut","Bitter Blade","Reversal"],"gender":"M"},
     "Gym Leader Maylene 3": {"level":80,"ability":"Sharpness","item":"Focus Sash","nature":"Adamant","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":4,"sa":0,"sd":0,"sp":252},"moves":["Sacred Sword","Psycho Cut","Leaf Blade","Swords Dance"],"gender":""},
     "Hero Sapphire 3 Dynamax": {"level":80,"ability":"Sharpness","item":"Life Orb","nature":"Jolly","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":4,"sa":0,"sd":0,"sp":252},"moves":["Night Slash","Sacred Sword","Psycho Cut","Aerial Ace"],"gender":"M"},
     "Hero Sapphire 4 Dynamax": {"level":90,"ability":"Huge Power","item":"Life Orb","nature":"Jolly","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":4,"sa":0,"sd":0,"sp":252},"moves":["Knock Off","Close Combat","Psycho Cut","Aerial Ace"],"gender":"M"},
+    "Shadow Six High Flyer Milos Zelex 2 Dynamax": {"level":80,"ability":"Sharpness","item":"Life Orb","nature":"Jolly","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":0,"sa":0,"sd":6,"sp":252},"moves":["Psycho Cut","Sacred Sword","Night Slash","Relic Blade"],"gender":""},
     "Druid Jehowiczak Lead Dynamax": {"level":80,"ability":"Sharpness","item":"Life Orb","nature":"Jolly","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":4,"sa":0,"sd":0,"sp":252},"moves":["Sacred Sword","Night Slash","Psycho Cut","Aerial Ace"],"gender":"M"},
     "Battle Server Kairo 26": {"level":80,"ability":"Justified","item":"Galladite","nature":"Jolly","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":4,"sa":0,"sd":0,"sp":252},"moves":["Psycho Cut","Close Combat","X-Scissor","Poison Jab"],"gender":"M"}
   },
@@ -157,6 +159,7 @@ var SETDEX_PATHWAYS = {
     "Skydiver Axel 5": {"level":80,"ability":"Mirror Armor","item":"Leftovers","nature":"Careful","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":4,"df":0,"sa":0,"sd":252,"sp":0},"moves":["Bulk Up","Body Press","Roost","Brave Bird"],"gender":"M"},
     "Skydiver Axel 7": {"level":100,"ability":"Mirror Armor","item":"Leftovers","nature":"Careful","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":4,"df":0,"sa":0,"sd":252,"sp":0},"moves":["Bulk Up","Body Press","Roost","Brave Bird"],"gender":"M"},
     "Shadow Six High Flyer Milos Zelex Lead": {"level":80,"ability":"Iron Barbs","item":"Rocky Helmet","nature":"Careful","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":6,"df":0,"sa":0,"sd":252,"sp":0},"moves":["Stealth Rock","Iron Defense","Shield Bash","Roost"],"gender":"F"},
+    "Shadow Six High Flyer Milos Zelex 2 Lead": {"level":80,"ability":"Iron Barbs","item":"Leftovers","nature":"Careful","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":0,"df":4,"sa":0,"sd":252,"sp":0},"moves":["U-turn","Iron Defense","Shield Bash","Roost"],"gender":"F"},
     "Cheese Lord Miloszelex 10 Lead": {"level":120,"ability":"Turbo Engine","item":"Leftovers","nature":"Brave","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":0,"sp":31},"evs":{"hp":252,"at":252,"df":0,"sa":6,"sd":0,"sp":0},"moves":["Sticky Web","Sappy Seed","Flip Turn","Drakey Drake"],"gender":"F"},
     "Battle Server Kairo 30": {"level":80,"ability":"Mirror Armor","item":"Leftovers","nature":"Careful","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":0,"df":4,"sa":0,"sd":252,"sp":0},"moves":["Brave Bird","Body Press","Bulk Up","Roost"],"gender":"F"}
   },
@@ -171,10 +174,8 @@ var SETDEX_PATHWAYS = {
     "Cool Sisters Elisia & Akiza": {"level":12,"ability":"Shell Armor","item":"Leftovers","nature":"Bold","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"moves":["Icy Wind","Water Pulse","Sing","Body Slam"],"gender":"F"},
     "Empress of Ice Elisia": {"level":90,"ability":"Ice Scales","item":"Leftovers","nature":"Bold","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":0,"df":252,"sa":0,"sd":4,"sp":0},"moves":["Ice Beam","Recover","Toxic","Chilling Water"],"gender":"F"},
     "Empress of Ice Elisia 1": {"level":100,"ability":"Ice Scales","item":"Leftovers","nature":"Bold","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":0,"df":252,"sa":0,"sd":4,"sp":0},"moves":["Ice Beam","Recover","Toxic","Cold Therapy"],"gender":"F"},
-    "Empress of Ice Elisia 10 Dynamax": {"level":90,"ability":"Ice Scales","item":"Leftovers","nature":"Bold","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":0,"df":252,"sa":0,"sd":4,"sp":0},"moves":["Blizzard","Recover","Origin Pulse","Cold Therapy"],"gender":"F"},
     "Gym Leader Misty 3 Dynamax": {"level":80,"ability":"Shell Armor","item":"Leftovers","nature":"Modest","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":0,"df":4,"sa":252,"sd":0,"sp":0},"moves":["Surf","Sing","Ice Beam","Dragon Pulse"],"gender":"F"},
-    "Battle Server Kairo 13": {"level":70,"ability":"Hydration","item":"Leftovers","nature":"Modest","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":0,"sa":252,"sd":4,"sp":252},"moves":["Surf","Freeze-Dry","Sleep Talk","Rest"],"gender":"F"},
-    "Elite Four Lorelei Dynamax": {"level":85,"ability":"Shell Armor","item":"Leftovers","nature":"Modest","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":0,"df":4,"sa":252,"sd":0,"sp":0},"moves":["Ice Beam","Psychic","Recover","Freeze-Dry"],"gender":"F"}
+    "Battle Server Kairo 13": {"level":70,"ability":"Hydration","item":"Leftovers","nature":"Modest","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":0,"sa":252,"sd":4,"sp":252},"moves":["Surf","Freeze-Dry","Sleep Talk","Rest"],"gender":"F"}
   },
   "Pancham": {
     "Cool Sisters Elisia & Akiza Lead": {"level":15,"ability":"Mold Breaker","item":"","nature":"Adamant","ivs":{"hp":15,"at":15,"df":15,"sa":15,"sd":15,"sp":15},"evs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"moves":["Karate Chop","Power Trip","Tackle","Work Up"],"gender":"M"},
@@ -189,15 +190,13 @@ var SETDEX_PATHWAYS = {
   },
   "Slowking": {
     "Queen of Dreams Aurora Lead": {"level":95,"ability":"Dream World","item":"Rocky Helmet","nature":"Bold","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":0,"df":124,"sa":0,"sd":132,"sp":0},"moves":["Scald","Slack Off","Flamethrower","Psychic Noise"],"gender":"F"},
-    "Queen of Dreams Aurora 10": {"level":100,"ability":"Chaos Control","item":"Leftovers","nature":"Bold","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":252,"sa":252,"sd":4,"sp":0},"moves":["Surf","Psystrike","Slack Off","Calm Mind"],"gender":"F"},
     "Gym Leader Sabrina 3": {"level":80,"ability":"Regenerator","item":"Leftovers","nature":"Bold","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":0,"df":252,"sa":0,"sd":4,"sp":0},"moves":["Scald","Psychic","Calm Mind","Slack Off"],"gender":"M"}
   },
   "Delphox-Fairy-Tale": {
     "Queen of Dreams Aurora": {"level":97,"ability":"Magic Bounce","item":"Normalium Z","nature":"Timid","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":4,"sa":252,"sd":0,"sp":252},"moves":["Boomburst","Psychic","Fire Blast","Nasty Plot"],"gender":"F"},
     "Queen of Dreams Aurora 1": {"level":102,"ability":"Relaxation","item":"Throat Spray","nature":"Timid","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":4,"sa":252,"sd":0,"sp":252},"moves":["Boomburst","Psyshock","Fire Blast","Nasty Plot"],"gender":"F"},
     "Queen of Dreams Aurora 5 Lead": {"level":65,"ability":"Magic Bounce","item":"Normalium Z","nature":"Timid","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":4,"sa":252,"sd":0,"sp":252},"moves":["Hyper Voice","Psychic","Fire Blast","Reflect"],"gender":"F"},
-    "Queen of Dreams Aurora 6 Lead": {"level":75,"ability":"Magic Bounce","item":"Normalium Z","nature":"Timid","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":4,"sa":252,"sd":0,"sp":252},"moves":["Hyper Voice","Psychic","Fire Blast","Nasty Plot"],"gender":"F"},
-    "Queen of Dreams Aurora 10 Dynamax": {"level":100,"ability":"Drought","item":"Life Orb","nature":"Timid","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":4,"sa":252,"sd":0,"sp":252},"moves":["Torch Song","Psystrike","Solar Beam","Morning Sun"],"gender":"F"}
+    "Queen of Dreams Aurora 6 Lead": {"level":75,"ability":"Magic Bounce","item":"Normalium Z","nature":"Timid","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":4,"sa":252,"sd":0,"sp":252},"moves":["Hyper Voice","Psychic","Fire Blast","Nasty Plot"],"gender":"F"}
   },
   "Armarouge": {
     "Queen of Dreams Aurora": {"level":95,"ability":"Speed Boost","item":"Weakness Policy","nature":"Bold","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":184,"sa":72,"sd":0,"sp":252},"moves":["Flamethrower","Aura Sphere","Calm Mind","Stored Power"],"gender":"M"},
@@ -213,23 +212,23 @@ var SETDEX_PATHWAYS = {
     "Outcast Mandy 2": {"level":75,"ability":"","item":"Flame Orb","nature":"Adamant","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":252,"df":4,"sa":0,"sd":0,"sp":0},"moves":["Facade","Earthquake","Crunch","Swords Dance"],"gender":"F"},
     "Outcast Mandy 5": {"level":80,"ability":"","item":"Flame Orb","nature":"Adamant","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":252,"df":4,"sa":0,"sd":0,"sp":0},"moves":["Facade","Earthquake","Thunder Punch","Swords Dance"],"gender":"F"},
     "Outcast Mandy 7": {"level":100,"ability":"","item":"Flame Orb","nature":"Adamant","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":252,"df":4,"sa":0,"sd":0,"sp":0},"moves":["Facade","Earthquake","Thunder Punch","Swords Dance"],"gender":"F"},
+    "Outcast Mandy": {"level":80,"ability":"Stacked Odds","item":"Leftovers","nature":"Careful","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":248,"at":0,"df":8,"sa":0,"sd":252,"sp":0},"moves":["Drain Punch","Earthquake","Ice Punch","Bulk Up"],"gender":"F"},
     "Hero Silver 4": {"level":90,"ability":"Huge Power","item":"Life Orb","nature":"Adamant","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":252,"df":4,"sa":0,"sd":0,"sp":0},"moves":["Extreme Speed","Headlong Rush","Close Combat","Swords Dance"],"gender":""},
     "Cheese Guardian Maxwell 10 Dynamax": {"level":120,"ability":"Beary Broken","item":"Assault Vest","nature":"Adamant","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":252,"df":6,"sa":0,"sd":0,"sp":0},"moves":["Return","Headlong Rush","Grassy Glide","Drain Punch"],"gender":"M"},
-    "Occultist Umbra": {"level":80,"ability":"Merciless","item":"Assault Vest","nature":"Adamant","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":252,"df":0,"sa":0,"sd":4,"sp":0},"moves":["Earthquake","Ice Punch","Play Rough","Hammer Arm"],"gender":"M"}
+    "Occultist Umbra": {"level":80,"ability":"Merciless","item":"Leftovers","nature":"Adamant","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":252,"df":0,"sa":0,"sd":4,"sp":0},"moves":["Headlong Rush","Blazing Portent","Play Rough","Swords Dance"],"gender":"M"}
   },
   "Gardevoir": {
     "Queen of Dreams Aurora": {"level":95,"ability":"Dream World","item":"Gardevoirite","nature":"Timid","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":4,"sa":252,"sd":0,"sp":252},"moves":["Psyshock","Torch Song","Destiny Bond","Boomburst"],"gender":"F"},
     "Queen of Dreams Aurora 5": {"level":65,"ability":"Trace","item":"Gardevoirite","nature":"Timid","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":4,"sa":252,"sd":0,"sp":252},"moves":["Psyshock","Torch Song","Light Screen","Hyper Voice"],"gender":"F"},
     "Queen of Dreams Aurora 6": {"level":75,"ability":"Dream World","item":"Gardevoirite","nature":"Timid","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":4,"sa":252,"sd":0,"sp":252},"moves":["Psyshock","Torch Song","Destiny Bond","Hyper Voice"],"gender":"F"},
-    "Queen of Dreams Aurora 10 Lead": {"level":100,"ability":"Bewildering Mist","item":"Gardevoirite","nature":"Timid","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":4,"sa":252,"sd":0,"sp":252},"moves":["Calm Mind","Psychic","Recover","Boomburst"],"gender":"F"},
     "Mute Girl Midnight 2": {"level":80,"ability":"Trace","item":"Gardevoirite","nature":"Timid","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":4,"sa":252,"sd":0,"sp":252},"moves":["Psychic","Dazzling Gleam","Calm Mind","Mystical Fire"],"gender":"F"},
     "Gym Leader Tate&Liza 3": {"level":80,"ability":"Trace","item":"Gardevoirite","nature":"Timid","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":4,"sa":252,"sd":0,"sp":252},"moves":["Hyper Voice","Psychic","Mystical Fire","Calm Mind"],"gender":"F"},
     "Hero Ruby 3": {"level":80,"ability":"Prankster","item":"Light Clay","nature":"Timid","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":4,"sa":252,"sd":0,"sp":252},"moves":["Reflect","Shadow Ball","Light Screen","Psyshock"],"gender":"F"},
-    "Hero Ruby 4": {"level":90,"ability":"Simple","item":"Focus Sash","nature":"Timid","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":4,"sa":252,"sd":0,"sp":252},"moves":["Psystrike","Torch Song","Moonblast","Quiver Dance"],"gender":"F"}
+    "Hero Ruby 4": {"level":90,"ability":"Simple","item":"Focus Sash","nature":"Timid","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":4,"sa":252,"sd":0,"sp":252},"moves":["Psystrike","Torch Song","Moonblast","Quiver Dance"],"gender":"F"},
+    "Druid Jehowiczak": {"level":80,"ability":"Aroma Veil","item":"Gardevoirite","nature":"Timid","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":0,"sa":252,"sd":4,"sp":252},"moves":["Hyper Voice","Psyshock","Earth Power","Gaia Burst"],"gender":"F"}
   },
   "Snorlax": {
     "Queen of Dreams Aurora": {"level":95,"ability":"Stamina","item":"Leftovers","nature":"Careful","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":0,"df":96,"sa":0,"sd":160,"sp":0},"moves":["Body Slam","Curse","Slack Off","Power Trip"],"gender":"F"},
-    "Queen of Dreams Aurora 10": {"level":100,"ability":"Triage","item":"Sitrus Berry","nature":"Adamant","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":0,"df":252,"sa":0,"sd":4,"sp":0},"moves":["Zen Headbutt","Drain Punch","Belly Drum","Slack Off"],"gender":"F"},
     "Hero Red 1": {"level":85,"ability":"Titanium Armor","item":"Assault Vest","nature":"Adamant","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":252,"sa":0,"sd":4,"sp":0},"moves":["Body Slam","Avalanche","Earthquake","Drain Punch"],"gender":"M"},
     "Hero Red 2": {"level":85,"ability":"Titanium Armor","item":"Assault Vest","nature":"Adamant","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":252,"sa":0,"sd":4,"sp":0},"moves":["Body Slam","Avalanche","Earthquake","Drain Punch"],"gender":"M"},
     "Hero Red 3": {"level":85,"ability":"Titanium Armor","item":"Assault Vest","nature":"Adamant","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":252,"sa":0,"sd":4,"sp":0},"moves":["Body Slam","Avalanche","Earthquake","Drain Punch"],"gender":"M"},
@@ -245,7 +244,7 @@ var SETDEX_PATHWAYS = {
   },
   "Scream Tail": {
     "Queen of Dreams Aurora 1": {"level":100,"ability":"Speed Boost","item":"Leftovers","nature":"Bold","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":0,"df":252,"sa":4,"sd":0,"sp":0},"moves":["Baton Pass","Calm Mind","Dazzling Gleam","Stored Power"],"gender":"F"},
-    "Queen of Dreams Aurora 10": {"level":100,"ability":"Speed Boost","item":"Weakness Policy","nature":"Bold","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":0,"df":252,"sa":4,"sd":0,"sp":0},"moves":["Recover","Calm Mind","Moonblast","Stored Power"],"gender":"F"},
+    "Devious Duo Zilla & Emma": {"level":70,"ability":"Arena Trap","item":"Shed Shell","nature":"Timid","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":0,"df":0,"sa":0,"sd":4,"sp":252},"moves":["Wish","Protect","Cosmic Power","Dazzling Gleam"],"gender":""},
     "Venomous Sister Zilla": {"level":70,"ability":"Arena Trap","item":"Shed Shell","nature":"Timid","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":0,"df":0,"sa":0,"sd":4,"sp":252},"moves":["Wish","Protect","Cosmic Power","Dazzling Gleam"],"gender":""},
     "Heart Breaker Dreadna 3": {"level":75,"ability":"","item":"Leftovers","nature":"Timid","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":0,"df":4,"sa":0,"sd":0,"sp":252},"moves":["Moonblast","Stored Power","Calm Mind","Wish"],"gender":""},
     "Heart Breaker Dreadna 5": {"level":80,"ability":"","item":"Booster Energy","nature":"Timid","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":0,"df":4,"sa":0,"sd":0,"sp":252},"moves":["Moonblast","Stored Power","Calm Mind","Wish"],"gender":""},
@@ -254,7 +253,8 @@ var SETDEX_PATHWAYS = {
   "Slaking": {
     "Queen of Dreams Aurora 1": {"level":100,"ability":"Unaware","item":"Weakness Policy","nature":"Careful","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":0,"df":4,"sa":0,"sd":252,"sp":0},"moves":["Body Press","Power Trip","Bulk Up","Slack Off"],"gender":"M"},
     "Gym Leader Norman 3 Lead": {"level":80,"ability":"","item":"Assault Vest","nature":"Jolly","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":4,"sa":0,"sd":0,"sp":252},"moves":["Return","Earthquake","Night Slash","Drain Punch"],"gender":"M"},
-    "Solo Expert Toto Lead Dynamax": {"level":85,"ability":"","item":"Assault Vest","nature":"Jolly","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":4,"sa":0,"sd":0,"sp":252},"moves":["Double-Edge","Aerial Ace","Superpower","Earthquake"],"gender":"M"}
+    "Solo Expert Toto Lead Dynamax": {"level":85,"ability":"","item":"Assault Vest","nature":"Jolly","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":4,"sa":0,"sd":0,"sp":252},"moves":["Double-Edge","Aerial Ace","Superpower","Earthquake"],"gender":"M"},
+    "Monk Instructor Terra": {"level":100,"ability":"Slumbering Beast","item":"Leftovers","nature":"Jolly","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":120,"df":0,"sa":0,"sd":0,"sp":136},"moves":["Earthquake","Bulk Up","Drain Punch","Body Slam"],"gender":"M"}
   },
   "Audino": {
     "Queen of Dreams Aurora 1": {"level":100,"ability":"Dream World","item":"Audinite","nature":"Bold","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":0,"df":252,"sa":4,"sd":0,"sp":0},"moves":["Calm Mind","Slack Off","Draining Kiss","Torch Song"],"gender":"F"},
@@ -262,15 +262,14 @@ var SETDEX_PATHWAYS = {
     "Battle Server Kairo 18": {"level":80,"ability":"Regenerator","item":"Audinite","nature":"Bold","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":0,"df":252,"sa":4,"sd":0,"sp":0},"moves":["Calm Mind","Wish","Draining Kiss","Flamethrower"],"gender":"F"},
     "Battle Server Kairo 36": {"level":80,"ability":"Regenerator","item":"Audinite","nature":"Bold","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":0,"df":252,"sa":4,"sd":0,"sp":0},"moves":["Calm Mind","Wish","Draining Kiss","Flamethrower"],"gender":"F"},
     "Battle Server Kairo 37": {"level":80,"ability":"Regenerator","item":"Audinite","nature":"Bold","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":0,"df":252,"sa":4,"sd":0,"sp":0},"moves":["Calm Mind","Wish","Draining Kiss","Flamethrower"],"gender":"F"},
-    "Battle Server Kairo 38 Lead": {"level":80,"ability":"Regenerator","item":"Audinite","nature":"Bold","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":0,"df":252,"sa":4,"sd":0,"sp":0},"moves":["Calm Mind","Wish","Draining Kiss","Flamethrower"],"gender":"F"}
-  },
-  "Musharna": {
-    "Queen of Dreams Aurora 10": {"level":100,"ability":"Relaxation","item":"Leftovers","nature":"Bold","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":0,"df":252,"sa":0,"sd":0,"sp":0},"moves":["Dream Eater","Nightmare","Slack Off","Moonblast"],"gender":"F"}
+    "Battle Server Kairo 38 Lead": {"level":80,"ability":"Regenerator","item":"Audinite","nature":"Bold","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":0,"df":252,"sa":4,"sd":0,"sp":0},"moves":["Calm Mind","Wish","Draining Kiss","Flamethrower"],"gender":"F"},
+    "Shy Girl Grace 2": {"level":35,"ability":"Regenerator","item":"Audinite","nature":"Bold","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":0,"df":252,"sa":4,"sd":0,"sp":0},"moves":["Calm Mind","Wish","Draining Kiss","Moonblast"],"gender":"F"},
+    "The Vessel Slater": {"level":40,"ability":"Clean Heart","item":"Shell Bell","nature":"Calm","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":0,"df":4,"sa":0,"sd":252,"sp":0},"moves":["Wish","Protect","Hyper Voice","Draining Kiss"],"gender":"F"},
+    "The Vessel Slater Audino 3": {"level":100,"ability":"Clean Heart","item":"Audinite","nature":"Calm","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":0,"df":4,"sa":0,"sd":252,"sp":0},"moves":["Wish","Protect","Hyper Voice","Draining Kiss"],"gender":"F"}
   },
   "Manectric-Blue-Lightning": {
     "Lord of Lightning Vain Lead": {"level":94,"ability":"Faraday Cage","item":"Life Orb","nature":"Timid","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":4,"sa":252,"sd":0,"sp":252},"moves":["Rising Voltage","Ice Beam","Flamethrower","Volt Switch"],"gender":"M"},
     "Lord of Lightning Vain 2": {"level":102,"ability":"Lightning Armor","item":"Life Orb","nature":"Timid","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":4,"sa":252,"sd":0,"sp":252},"moves":["Rising Voltage","Ice Beam","Flamethrower","Volt Switch"],"gender":"M"},
-    "Lord of Lightning Vain 10": {"level":95,"ability":"Crown of Zeus","item":"Manectite","nature":"Timid","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":4,"sa":252,"sd":0,"sp":252},"moves":["Rising Voltage","Ice Beam","Torch Song","Scald"],"gender":"M"},
     "Lord of Lightning Vain 1 Lead": {"level":90,"ability":"Lightning Rod","item":"Leftovers","nature":"Timid","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":4,"sa":252,"sd":0,"sp":252},"moves":["Hold Back","","",""],"gender":"M"},
     "Lord of Lightning Vain 11 Lead": {"level":72,"ability":"Faraday Cage","item":"Life Orb","nature":"Timid","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":4,"sa":252,"sd":0,"sp":252},"moves":["Rising Voltage","Ice Beam","Flamethrower","Volt Switch"],"gender":"M"}
   },
@@ -278,7 +277,8 @@ var SETDEX_PATHWAYS = {
     "Lord of Lightning Vain": {"level":92,"ability":"Magic Guard","item":"Life Orb","nature":"Timid","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":4,"sa":252,"sd":0,"sp":252},"moves":["Chloroblast","Thunderbolt","Reflect","Volt Switch"],"gender":""},
     "Regigigas Fanatic Estionese": {"level":80,"ability":"Drought","item":"Heat Rock","nature":"Timid","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":0,"sa":252,"sd":4,"sp":252},"moves":["Chloroblast","Leech Seed","Volt Switch","Discharge"],"gender":""},
     "Wandering Musician Lyric 1": {"level":100,"ability":"Magic Guard","item":"Life Orb","nature":"Timid","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":4,"sa":252,"sd":0,"sp":252},"moves":["Chloroblast","Thunderbolt","Reflect","Volt Switch"],"gender":""},
-    "Battle Server Kairo 5": {"level":35,"ability":"Aftermath","item":"","nature":"Timid","ivs":{"hp":20,"at":0,"df":20,"sa":20,"sd":20,"sp":20},"evs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"moves":["Giga Drain","Charge Beam","Leech Seed","Swift"],"gender":""}
+    "Battle Server Kairo 5": {"level":35,"ability":"Aftermath","item":"","nature":"Timid","ivs":{"hp":20,"at":0,"df":20,"sa":20,"sd":20,"sp":20},"evs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"moves":["Giga Drain","Charge Beam","Leech Seed","Swift"],"gender":""},
+    "Statico Goons Statico Goons": {"level":30,"ability":"Aftermath","item":"","nature":"Modest","ivs":{"hp":20,"at":0,"df":20,"sa":20,"sd":20,"sp":20},"evs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"moves":["Giga Drain","Charge Beam","Leech Seed","Swift"],"gender":""}
   },
   "Kilowattrel": {
     "Lord of Lightning Vain": {"level":92,"ability":"No Guard","item":"Life Orb","nature":"Timid","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":4,"sa":252,"sd":0,"sp":252},"moves":["Thunder","Hurricane","Hydro Pump","Volt Switch"],"gender":"M"},
@@ -294,15 +294,15 @@ var SETDEX_PATHWAYS = {
   "Serperior": {
     "Lord of Lightning Vain": {"level":92,"ability":"Contrary","item":"Leftovers","nature":"Timid","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":0,"df":0,"sa":4,"sd":0,"sp":252},"moves":["Leaf Storm","Draco Meteor","Glare","Leech Seed"],"gender":"M"},
     "Lord of Lightning Vain 2": {"level":100,"ability":"Contrary","item":"Leftovers","nature":"Timid","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":0,"df":0,"sa":4,"sd":0,"sp":252},"moves":["Leaf Storm","Draco Meteor","Synthesis","Overheat"],"gender":"M"},
-    "Lord of Lightning Vain 10": {"level":95,"ability":"Contrary","item":"Choice Scarf","nature":"Timid","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":4,"sa":252,"sd":0,"sp":252},"moves":["Leaf Storm","Draco Meteor","Fleur Cannon","Make It Rain"],"gender":"M"},
     "Arch Saint Arlo Fyor": {"level":80,"ability":"Contrary","item":"Life Orb","nature":"Timid","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":0,"sa":252,"sd":6,"sp":252},"moves":["Giga Drain","Leaf Storm","Overheat","Draco Meteor"],"gender":"F"},
     "Tourney Champion FQEF": {"level":70,"ability":"Contrary","item":"Grassium Z","nature":"Modest","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":0,"sa":252,"sd":4,"sp":252},"moves":["Leaf Storm","Grass Whistle","Dragon Pulse","Synthesis"],"gender":""},
-    "Serpent Tamer Ahran": {"level":70,"ability":"Contrary","item":"Leftovers","nature":"Modest","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":6,"sa":252,"sd":0,"sp":252},"moves":["Leaf Storm","Dragon Pulse","Glare","Substitute"],"gender":""}
+    "Serpent Tamer Ahran": {"level":70,"ability":"Contrary","item":"Leftovers","nature":"Modest","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":6,"sa":252,"sd":0,"sp":252},"moves":["Leaf Storm","Dragon Pulse","Glare","Substitute"],"gender":""},
+    "Mysterious Heroine ???": {"level":100,"ability":"Contrary","item":"Grassium Z","nature":"Modest","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":0,"sa":252,"sd":4,"sp":252},"moves":["Leaf Storm","Glare","Dragon Pulse","Substitute"],"gender":"F"}
   },
   "Dracozolt": {
     "Lord of Lightning Vain Dynamax": {"level":92,"ability":"Lighten","item":"Air Balloon","nature":"Adamant","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":4,"sa":0,"sd":0,"sp":252},"moves":["Bolt Beak","Outrage","Fire Fang","Earthquake"],"gender":"M"},
-    "Lord of Lightning Vain 10 Dynamax": {"level":95,"ability":"Surge Surfer","item":"Life Orb","nature":"Adamant","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":4,"sa":0,"sd":0,"sp":252},"moves":["Bolt Beak","Headlong Rush","Glaive Rush","Close Combat"],"gender":"M"},
-    "Lord of Lightning Vain 11": {"level":70,"ability":"Lighten","item":"Air Balloon","nature":"Adamant","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":4,"sa":0,"sd":0,"sp":252},"moves":["Bolt Beak","Outrage","Fire Fang","Earthquake"],"gender":"M"}
+    "Lord of Lightning Vain 11": {"level":70,"ability":"Lighten","item":"Air Balloon","nature":"Adamant","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":4,"sa":0,"sd":0,"sp":252},"moves":["Bolt Beak","Outrage","Fire Fang","Earthquake"],"gender":"M"},
+    "Fossil Duo Mogege and Tali": {"level":75,"ability":"Hustle","item":"Choice Scarf","nature":"Jolly","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":4,"sa":0,"sd":0,"sp":252},"moves":["Bolt Beak","Outrage","Seed Bomb","Stomping Tantrum"],"gender":"M"}
   },
   "Galvantula": {
     "Lord of Lightning Vain 2 Lead": {"level":100,"ability":"Faraday Cage","item":"Focus Sash","nature":"Timid","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":4,"sa":252,"sd":0,"sp":252},"moves":["Sticky Web","Rising Voltage","Bug Buzz","Energy Ball"],"gender":"F"},
@@ -311,37 +311,20 @@ var SETDEX_PATHWAYS = {
     "Gym Leader Volkner 3 Lead": {"level":80,"ability":"Compound Eyes","item":"Focus Sash","nature":"Timid","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":4,"sa":252,"sd":0,"sp":252},"moves":["Thunder","Bug Buzz","Sticky Web","Energy Ball"],"gender":""},
     "Battle Server Kairo 17": {"level":70,"ability":"Compound Eyes","item":"Choice Specs","nature":"Timid","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":0,"sa":252,"sd":4,"sp":252},"moves":["Thunder","Bug Buzz","Energy Ball","Volt Switch"],"gender":"F"},
     "Battle Server Kairo 35 Lead": {"level":80,"ability":"Compound Eyes","item":"Focus Sash","nature":"Timid","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":4,"sa":252,"sd":0,"sp":252},"moves":["Sticky Web","Thunder","Bug Buzz","Energy Ball"],"gender":"F"},
-    "Tourney Champion FQEF Lead": {"level":70,"ability":"Compound Eyes","item":"Focus Sash","nature":"Timid","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":0,"sa":252,"sd":4,"sp":252},"moves":["Thunder","Bug Buzz","Sticky Web","Thunder Wave"],"gender":""}
+    "Tourney Champion FQEF Lead": {"level":70,"ability":"Compound Eyes","item":"Focus Sash","nature":"Timid","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":0,"sa":252,"sd":4,"sp":252},"moves":["Thunder","Bug Buzz","Sticky Web","Thunder Wave"],"gender":""},
+    "Statico Goons Statico Goons Lead": {"level":30,"ability":"Compound Eyes","item":"","nature":"Modest","ivs":{"hp":20,"at":0,"df":20,"sa":20,"sd":20,"sp":20},"evs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"moves":["Discharge","Signal Beam","Thunder Wave","Sticky Web"],"gender":"F"}
   },
   "Electrode": {
     "Lord of Lightning Vain 2": {"level":100,"ability":"Faraday Cage","item":"Electrodite","nature":"Timid","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":4,"sa":252,"sd":0,"sp":252},"moves":["Electro Ball","Flash Cannon","Energy Ball","Volt Switch"],"gender":""},
     "Youngster Picco": {"level":32,"ability":"Aftermath","item":"","nature":"Serious","ivs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"evs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"moves":["Self-Destruct","Discharge","Light Screen","Thunder Wave"],"gender":"M"},
-    "Gym Leader LT Surge 3": {"level":80,"ability":"Huge Power","item":"Life Orb","nature":"Modest","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":0,"sa":252,"sd":4,"sp":252},"moves":["Explosion","Volt Switch","Thunder","Magnet Rise"],"gender":"F"},
-    "Gym Leader Lt. Surge": {"level":80,"ability":"Soundproof","item":"Electrodite","nature":"Modest","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":4,"sa":252,"sd":0,"sp":252},"moves":["Electro Ball","Flash Cannon","Energy Ball","Aura Sphere"],"gender":""}
+    "Gym Leader LT Surge 3": {"level":80,"ability":"Huge Power","item":"Life Orb","nature":"Modest","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":0,"sa":252,"sd":4,"sp":252},"moves":["Explosion","Volt Switch","Thunder","Magnet Rise"],"gender":"F"}
   },
   "Raging Bolt": {
-    "Lord of Lightning Vain 2 Dynamax": {"level":100,"ability":"Unburden","item":"Electric Seed","nature":"Modest","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":4,"sa":252,"sd":0,"sp":252},"moves":["Parabolic Charge","Dragon Pulse","Calm Mind","Thunder Clap"],"gender":"M"}
-  },
-  "Toxtricity": {
-    "Lord of Lightning Vain 10 Lead": {"level":95,"ability":"Hadron Engine","item":"Focus Sash","nature":"Adamant","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":4,"sa":0,"sd":0,"sp":252},"moves":["Plasma Fists","Gunk Shot","Flare Blitz","Shift Gear"],"gender":"M"},
-    "Gang Leader Blake 2": {"level":75,"ability":"Punk Rock","item":"Throat Spray","nature":"Timid","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":4,"sa":252,"sd":0,"sp":252},"moves":["Boomburst","Overdrive","Sludge Bomb","Thunder Wave"],"gender":"M"},
-    "Gang Leader Blake 5 Lead Dynamax": {"level":80,"ability":"Punk Rock","item":"Focus Sash","nature":"Modest","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":4,"sa":252,"sd":0,"sp":252},"moves":["Boomburst","Overdrive","Sludge Bomb","Thunder Wave"],"gender":"M"},
-    "Gang Leader Blake 7 Lead Dynamax": {"level":100,"ability":"Punk Rock","item":"Focus Sash","nature":"Modest","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":4,"sa":252,"sd":0,"sp":252},"moves":["Boomburst","Overdrive","Sludge Bomb","Thunder Wave"],"gender":"M"},
-    "Wandering Musician Lyric 1 Dynamax": {"level":100,"ability":"Unburden","item":"Air Balloon","nature":"Modest","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":4,"sa":252,"sd":0,"sp":252},"moves":["Boomburst","Overdrive","Sludge Bomb","Ice Beam"],"gender":""}
-  },
-  "Magnezone": {
-    "Lord of Lightning Vain 10": {"level":95,"ability":"Lightning Armor","item":"Air Balloon","nature":"Modest","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":0,"df":4,"sa":252,"sd":0,"sp":0},"moves":["Thunder Cage","Flash Cannon","Earth Power","Reflect"],"gender":""},
-    "Team Rocket Linda": {"level":35,"ability":"Sturdy","item":"","nature":"Serious","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"moves":["","","",""],"gender":""},
-    "Gym Leader LT Surge 3": {"level":80,"ability":"Magnet Pull","item":"Air Balloon","nature":"Modest","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":0,"df":0,"sa":0,"sd":4,"sp":252},"moves":["Tri Attack","Flash Cannon","Electric Terrain","Rising Voltage"],"gender":""},
-    "Gym Leader Jasmine 3": {"level":80,"ability":"Levitate","item":"Light Clay","nature":"Modest","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":0,"df":4,"sa":252,"sd":0,"sp":0},"moves":["Discharge","Flash Cannon","Reflect","Light Screen"],"gender":""},
-    "Shadow Six Idle Warrior Rexzo Kuxne": {"level":80,"ability":"Levitate","item":"Light Clay","nature":"Jolly","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":6,"at":0,"df":0,"sa":252,"sd":0,"sp":252},"moves":["Flash Cannon","Reflect","Discharge","Light Screen"],"gender":"M"},
-    "Arch Saint Arlo Fyor": {"level":80,"ability":"Sturdy","item":"Assault Vest","nature":"Modest","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":212,"at":0,"df":0,"sa":252,"sd":0,"sp":44},"moves":["Volt Switch","Thunderbolt","Flash Cannon","Leaf Storm"],"gender":""},
-    "Battle Server Kairo 16 Lead": {"level":70,"ability":"Sturdy","item":"Choice Scarf","nature":"Modest","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":0,"sa":252,"sd":4,"sp":252},"moves":["Thunderbolt","Flash Cannon","Tri Attack","Volt Switch"],"gender":""}
-  },
-  "Regieleki": {
-    "Lord of Lightning Vain 10": {"level":95,"ability":"Crown of Zeus","item":"Life Orb","nature":"Timid","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":4,"sa":252,"sd":0,"sp":252},"moves":["Thunderbolt","Ice Beam","Aura Sphere","Parabolic Charge"],"gender":""}
+    "Lord of Lightning Vain 2 Dynamax": {"level":100,"ability":"Unburden","item":"Electric Seed","nature":"Modest","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":4,"sa":252,"sd":0,"sp":252},"moves":["Parabolic Charge","Dragon Pulse","Calm Mind","Thunder Clap"],"gender":"M"},
+    "Janitor Bo": {"level":100,"ability":"Unburden","item":"Weakness Policy","nature":"Modest","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":0,"df":44,"sa":20,"sd":4,"sp":188},"moves":["Thunder","Dragon Pulse","Numinous Hymn","Air Slash"],"gender":""}
   },
   "Pheromosa": {
+    "Devious Duo Zilla & Emma Lead": {"level":72,"ability":"Intimidate","item":"Eject Pack","nature":"Jolly","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":0,"sa":0,"sd":4,"sp":252},"moves":["Parting Shot","U-turn","Flip Turn","Close Combat"],"gender":""},
     "Venomous Sister Zilla": {"level":72,"ability":"Intimidate","item":"Eject Pack","nature":"Jolly","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":0,"sa":0,"sd":4,"sp":252},"moves":["Parting Shot","U-turn","Flip Turn","Close Combat"],"gender":""},
     "Fair Maiden Cassandra 5": {"level":75,"ability":"Beast Boost","item":"Buginium Z","nature":"Jolly","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":4,"sa":0,"sd":0,"sp":252},"moves":["U-turn","Close Combat","Poison Jab","Drill Run"],"gender":""},
     "Fair Maiden Cassandra 7": {"level":80,"ability":"Beast Boost","item":"Buginium Z","nature":"Jolly","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":4,"sa":0,"sd":0,"sp":252},"moves":["U-turn","Close Combat","Poison Jab","Drill Run"],"gender":""},
@@ -350,44 +333,44 @@ var SETDEX_PATHWAYS = {
     "Professor Spruce Dragon 1": {"level":100,"ability":"Beast Boost","item":"Life Orb","nature":"Naive","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":132,"df":0,"sa":124,"sd":0,"sp":252},"moves":["Leech Life","Outrage","Ice Beam","Earthquake"],"gender":""}
   },
   "Gothitelle": {
+    "Devious Duo Zilla & Emma": {"level":70,"ability":"Shadow Tag","item":"Shed Shell","nature":"Bold","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":0},"evs":{"hp":252,"at":0,"df":252,"sa":0,"sd":4,"sp":0},"moves":["Protect","Pain Split","Trick Room","Psychic"],"gender":"F"},
     "Venomous Sister Zilla": {"level":70,"ability":"Shadow Tag","item":"Shed Shell","nature":"Bold","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":0},"evs":{"hp":252,"at":0,"df":252,"sa":0,"sd":4,"sp":0},"moves":["Protect","Pain Split","Trick Room","Psychic"],"gender":"F"},
     "Aroma Lady Yanna": {"level":65,"ability":"Mesmerize","item":"","nature":"Serious","ivs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"evs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"moves":["Psychic","Calm Mind","Shadow Ball","Foul Play"],"gender":"F"}
   },
   "Eelektross": {
+    "Devious Duo Zilla & Emma": {"level":70,"ability":"Friend Guard","item":"Assault Vest","nature":"Calm","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":0,"df":0,"sa":4,"sd":252,"sp":0},"moves":["Giga Drain","Thunderbolt","Flamethrower","Volt Switch"],"gender":"F"},
     "Venomous Sister Zilla": {"level":70,"ability":"Friend Guard","item":"Assault Vest","nature":"Calm","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":0,"df":0,"sa":4,"sd":252,"sp":0},"moves":["Giga Drain","Thunderbolt","Flamethrower","Volt Switch"],"gender":"F"},
     "Gym Leader Volkner 3": {"level":80,"ability":"Levitate","item":"Assault Vest","nature":"Modest","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":0,"df":4,"sa":252,"sd":0,"sp":0},"moves":["Volt Switch","Giga Drain","Flamethrower","Acid Spray"],"gender":""},
     "Druid Jehowiczak": {"level":80,"ability":"Levitate","item":"Assault Vest","nature":"Adamant","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":252,"df":4,"sa":0,"sd":0,"sp":0},"moves":["Drain Punch","Thunder Punch","Iron Tail","Throat Chop"],"gender":"F"},
     "Druid Jehowiczak 1": {"level":100,"ability":"Druidcraft","item":"Assault Vest","nature":"Modest","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":0,"df":0,"sa":252,"sd":4,"sp":0},"moves":["Thunderbolt","Earth Power","Signal Beam","Flash Cannon"],"gender":"F"}
   },
   "Wobbuffet": {
+    "Devious Duo Zilla & Emma": {"level":70,"ability":"Shadow Tag","item":"Shed Shell","nature":"Calm","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":0},"evs":{"hp":252,"at":0,"df":4,"sa":0,"sd":252,"sp":0},"moves":["Protect","Counter","Mirror Coat","Destiny Bond"],"gender":"F"},
     "Venomous Sister Zilla": {"level":70,"ability":"Shadow Tag","item":"Shed Shell","nature":"Calm","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":0},"evs":{"hp":252,"at":0,"df":4,"sa":0,"sd":252,"sp":0},"moves":["Protect","Counter","Mirror Coat","Destiny Bond"],"gender":"F"},
     "Bug Catcher Gibie": {"level":67,"ability":"","item":"","nature":"Serious","ivs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"evs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"moves":["Counter","Mirror Coat","Destiny Bond","Encore"],"gender":"M"},
     "Battle Server Kairo 9": {"level":55,"ability":"Shadow Tag","item":"Leftovers","nature":"Bold","ivs":{"hp":25,"at":0,"df":25,"sa":25,"sd":25,"sp":25},"evs":{"hp":80,"at":0,"df":80,"sa":0,"sd":0,"sp":0},"moves":["Counter","Mirror Coat","Encore","Destiny Bond"],"gender":"F"}
   },
   "Ninetales-Alola": {
     "Empress of Ice Elisia Lead": {"level":90,"ability":"Frozen Kingdom","item":"Light Clay","nature":"Timid","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":4,"sa":252,"sd":0,"sp":252},"moves":["Aurora Veil","Blizzard","Moonblast",""],"gender":"F"},
-    "Empress of Ice Elisia 10 Lead": {"level":90,"ability":"Snow Warning","item":"Light Clay","nature":"Timid","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":4,"sa":252,"sd":0,"sp":252},"moves":["Aurora Veil","Shivering Wisp","Blizzard","Moonblast"],"gender":"F"},
     "Battle Server Kairo 22 Lead": {"level":80,"ability":"Snow Warning","item":"Icy Rock","nature":"Timid","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":4,"sa":252,"sd":0,"sp":252},"moves":["Aurora Veil","Blizzard","Moonblast","Extrasensory"],"gender":"F"},
-    "Elite Four Lorelei Lead": {"level":85,"ability":"Snow Warning","item":"Icy Rock","nature":"Timid","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":4,"sa":252,"sd":0,"sp":252},"moves":["Aurora Veil","Blizzard","Moonblast","Shivering Wisp"],"gender":"F"}
+    "Mystery Girl Emma 1 Lead": {"level":65,"ability":"Snow Warning","item":"Icy Rock","nature":"Timid","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":4,"sa":252,"sd":0,"sp":252},"moves":["Aurora Veil","Blizzard","Moonblast","Shivering Wisp"],"gender":"F"}
   },
   "Empoleon": {
     "Empress of Ice Elisia": {"level":90,"ability":"Unburden","item":"White Herb","nature":"Modest","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":4,"sa":252,"sd":0,"sp":252},"moves":["Hydro Pump","Flash Cannon","Blizzard","Earth Power"],"gender":"F"},
-    "Empress of Ice Elisia 10": {"level":90,"ability":"Slush Rush","item":"Choice Specs","nature":"Modest","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":4,"sa":252,"sd":0,"sp":252},"moves":["Water Spout","Blizzard","Make It Rain","Grass Knot"],"gender":"F"},
     "Battle Chaser Kairo 1": {"level":55,"ability":"Competitive","item":"","nature":"Modest","ivs":{"hp":25,"at":0,"df":25,"sa":25,"sd":25,"sp":25},"evs":{"hp":160,"at":0,"df":0,"sa":160,"sd":0,"sp":0},"moves":["Brine","Ice Beam","Flash Cannon","Swagger"],"gender":"M"},
     "Battle Chaser Kairo 2 Lead": {"level":70,"ability":"Competitive","item":"Leftovers","nature":"Modest","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":0,"df":4,"sa":252,"sd":0,"sp":0},"moves":["Scald","Ice Beam","Flash Cannon","Stealth Rock"],"gender":"M"},
     "Battle Chaser Kairo 3 Lead": {"level":75,"ability":"Competitive","item":"Leftovers","nature":"Modest","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":0,"df":4,"sa":252,"sd":0,"sp":0},"moves":["Scald","Ice Beam","Flash Cannon","Stealth Rock"],"gender":"M"},
     "Battle Chaser Kairo 5 Lead": {"level":80,"ability":"Competitive","item":"Leftovers","nature":"Modest","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":0,"df":4,"sa":252,"sd":0,"sp":0},"moves":["Scald","Ice Beam","Flash Cannon","Stealth Rock"],"gender":"M"},
-    "Battle Chaser Kairo 7 Lead": {"level":100,"ability":"Competitive","item":"Leftovers","nature":"Modest","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":0,"df":4,"sa":252,"sd":0,"sp":0},"moves":["Scald","Ice Beam","Flash Cannon","Stealth Rock"],"gender":"M"}
+    "Battle Chaser Kairo 7 Lead": {"level":100,"ability":"Competitive","item":"Leftovers","nature":"Modest","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":0,"df":4,"sa":252,"sd":0,"sp":0},"moves":["Scald","Ice Beam","Flash Cannon","Stealth Rock"],"gender":"M"},
+    "Professor Spruce Dragon Dynamax": {"level":80,"ability":"Analytic","item":"Life Orb","nature":"Calm","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":0,"df":0,"sa":4,"sd":252,"sp":0},"moves":["Hydro Pump","Flash Cannon","Volt Switch","Roost"],"gender":""}
   },
   "Glastrier": {
     "Empress of Ice Elisia Dynamax": {"level":92,"ability":"Chilling Neigh","item":"Assault Vest","nature":"Adamant","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":0},"evs":{"hp":252,"at":252,"df":0,"sa":0,"sd":4,"sp":0},"moves":["Avalanche","Body Press","High Horsepower","Crunch"],"gender":""},
-    "Empress of Ice Elisia 1 Dynamax": {"level":102,"ability":"Stamina","item":"Assault Vest","nature":"Adamant","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":0},"evs":{"hp":176,"at":252,"df":0,"sa":0,"sd":80,"sp":0},"moves":["Icicle Crash","Body Press","High Horsepower","Crunch"],"gender":""},
-    "Empress of Ice Elisia 10": {"level":90,"ability":"Contrary","item":"Focus Sash","nature":"Adamant","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":0},"evs":{"hp":252,"at":252,"df":4,"sa":0,"sd":0,"sp":0},"moves":["Trick Room","Glacial Lance","Superpower","Headlong Rush"],"gender":""}
+    "Empress of Ice Elisia 1 Dynamax": {"level":102,"ability":"Stamina","item":"Assault Vest","nature":"Adamant","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":0},"evs":{"hp":176,"at":252,"df":0,"sa":0,"sd":80,"sp":0},"moves":["Icicle Crash","Body Press","High Horsepower","Crunch"],"gender":""}
   },
   "Froslass": {
     "Empress of Ice Elisia": {"level":90,"ability":"Frozen Kingdom","item":"Froslassite","nature":"Timid","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":4,"sa":252,"sd":0,"sp":252},"moves":["Shadow Ball","Blizzard","Thunderbolt","Destiny Bond"],"gender":"F"},
     "Empress of Ice Elisia 1 Lead": {"level":100,"ability":"Frozen Kingdom","item":"Light Clay","nature":"Timid","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":4,"sa":252,"sd":0,"sp":252},"moves":["Aurora Veil","Destiny Bond","Blizzard","Shadow Ball"],"gender":"F"},
-    "Empress of Ice Elisia 10": {"level":90,"ability":"Prankster","item":"Focus Sash","nature":"Modest","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":4,"sa":252,"sd":0,"sp":252},"moves":["Astral Barrage","Blizzard","Will-O-Wisp","Destiny Bond"],"gender":"F"},
     "Fair Maiden Cassandra 1": {"level":35,"ability":"Snow Cloak","item":"","nature":"Timid","ivs":{"hp":20,"at":0,"df":20,"sa":20,"sd":20,"sp":20},"evs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"moves":["Icy Wind","Water Pulse","Weather Ball","Snowscape"],"gender":"F"},
     "Fair Maiden Cassandra 2": {"level":35,"ability":"Snow Cloak","item":"","nature":"Timid","ivs":{"hp":20,"at":0,"df":20,"sa":20,"sd":20,"sp":20},"evs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"moves":["Icy Wind","Water Pulse","Weather Ball","Snowscape"],"gender":"F"},
     "Fair Maiden Cassandra 3": {"level":50,"ability":"Snow Cloak","item":"","nature":"Timid","ivs":{"hp":25,"at":0,"df":25,"sa":25,"sd":25,"sp":25},"evs":{"hp":0,"at":0,"df":0,"sa":160,"sd":0,"sp":160},"moves":["Blizzard","Hex","Will-O-Wisp","Snowscape"],"gender":"F"},
@@ -406,11 +389,10 @@ var SETDEX_PATHWAYS = {
   },
   "Walking Wake": {
     "Empress of Ice Elisia 1": {"level":100,"ability":"Competitive","item":"White Herb","nature":"Timid","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":4,"sa":252,"sd":0,"sp":252},"moves":["Hydro Steam","Dragon Pulse","Flamethrower","Weather Ball"],"gender":"F"},
-    "Shadow Six Detective MacBurn Felix 1": {"level":100,"ability":"Adaptability","item":"Life Orb","nature":"Timid","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":0,"sa":252,"sd":4,"sp":252},"moves":["Draco Meteor","Hydro Steam","Dragon Pulse","Flamethrower"],"gender":"M"}
+    "Alchemist Hexipher": {"level":100,"ability":"Hydrate","item":"Normalium Z","nature":"Timid","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":0,"sa":252,"sd":4,"sp":252},"moves":["Blood Moon","Elemental","Dragon Pulse","Flip Turn"],"gender":""}
   },
   "Baxcalibur": {
     "Empress of Ice Elisia 1": {"level":100,"ability":"Frozen Kingdom","item":"Baxcalite","nature":"Adamant","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":4,"sa":0,"sd":0,"sp":252},"moves":["Glaive Rush","Icicle Crash","Earthquake","Dragon Dance"],"gender":"F"},
-    "Empress of Ice Elisia 10": {"level":90,"ability":"Frozen Kingdom","item":"Baxcalite","nature":"Jolly","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":4,"sa":0,"sd":0,"sp":252},"moves":["Icicle Spear","Scale Shot","Earthquake","Dragon Dance"],"gender":"F"},
     "Mad Berserker Gallagher 1": {"level":100,"ability":"Intimidate","item":"Baxcalite","nature":"Adamant","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":252,"df":0,"sa":4,"sd":0,"sp":0},"moves":["Dual Chop","Earthquake","Iron Head","Recover"],"gender":"M"}
   },
   "Darmanitan-Galar": {
@@ -418,10 +400,10 @@ var SETDEX_PATHWAYS = {
   },
   "Weavile": {
     "Dark Prince Gavin Lead": {"level":85,"ability":"Technician","item":"Loaded Dice","nature":"Jolly","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":4,"sa":0,"sd":0,"sp":252},"moves":["Icicle Spear","Shuriken Throw","Rock Blast","Aerial Ace"],"gender":"F"},
-    "Dark Prince Gavin 1": {"level":88,"ability":"Technician","item":"Loaded Dice","nature":"Jolly","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":4,"sa":0,"sd":0,"sp":252},"moves":["Icicle Spear","Shuriken Throw","Rock Blast","Aerial Ace"],"gender":"F"},
     "Academy Rival Esrever 6": {"level":70,"ability":"Vicious Claws","item":"Life Orb","nature":"Adamant","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":4,"sa":0,"sd":0,"sp":252},"moves":["Night Slash","Ice Spinner","Close Combat","Sucker Punch"],"gender":"M"},
     "Academy Rival Esrever 7": {"level":70,"ability":"Vicious Claws","item":"Life Orb","nature":"Adamant","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":4,"sa":0,"sd":0,"sp":252},"moves":["Night Slash","Ice Spinner","Close Combat","Sucker Punch"],"gender":"M"},
     "Rocket Boss Giovanni Dynamax": {"level":85,"ability":"Supreme Overlord","item":"Life Orb","nature":"Jolly","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":4,"sa":0,"sd":0,"sp":252},"moves":["Glacial Lance","Wicked Blow","Close Combat","Claw Dagger"],"gender":"M"},
+    "Goonette Goonettes 5": {"level":55,"ability":"","item":"","nature":"Serious","ivs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"evs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"moves":["","","",""],"gender":"F"},
     "Gym Leader Candice 3": {"level":80,"ability":"Tough Claws","item":"Life Orb","nature":"Jolly","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":4,"sa":0,"sd":0,"sp":252},"moves":["Triple Axel","Night Slash","Swords Dance","Brick Break"],"gender":""},
     "Elite 4 Trainer Karen 3": {"level":80,"ability":"Tough Claws","item":"Life Orb","nature":"Jolly","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":4,"sa":0,"sd":0,"sp":252},"moves":["Night Slash","Ice Spinner","Low Kick","Swords Dance"],"gender":"M"},
     "Hero Silver 3": {"level":80,"ability":"No Guard","item":"Life Orb","nature":"Jolly","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":4,"sa":0,"sd":0,"sp":252},"moves":["Triple Axel","Extreme Speed","Dynamic Punch","Night Slash"],"gender":""},
@@ -430,32 +412,7 @@ var SETDEX_PATHWAYS = {
     "Nightmare Elisia Lead": {"level":75,"ability":"Dazzling","item":"Life Orb","nature":"Jolly","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":4,"sa":0,"sd":0,"sp":252},"moves":["Triple Axel","Knock Off","Poison Jab","Brick Break"],"gender":"F"}
   },
   "Incineroar": {
-    "Dark Prince Gavin": {"level":87,"ability":"Simple","item":"Clear Amulet","nature":"Adamant","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":176,"df":0,"sa":0,"sd":0,"sp":80},"moves":["Bulk Up","Flame Charge","Crunch","Leech Life"],"gender":"M"},
-    "Dark Prince Gavin 1": {"level":90,"ability":"Simple","item":"Clear Amulet","nature":"Adamant","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":176,"df":0,"sa":0,"sd":0,"sp":80},"moves":["Bulk Up","Flame Charge","Crunch","Leech Life"],"gender":"M"}
-  },
-  "Obstagoon": {
-    "Dark Prince Gavin 1 Lead Dynamax": {"level":88,"ability":"Pandemonium","item":"Assault Vest","nature":"Adamant","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":252,"df":0,"sa":0,"sd":4,"sp":0},"moves":["Double-Edge","Throat Chop","Stomping Tantrum","Gunk Shot"],"gender":"M"}
-  },
-  "Gyarados": {
-    "Dark Prince Gavin 1": {"level":88,"ability":"Pandemonium","item":"Gyaradosite","nature":"Adamant","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":4,"sa":0,"sd":0,"sp":252},"moves":["Dragon Dance","Waterfall","Crunch","Serpent Ascent"],"gender":"M"},
-    "Academy Rival Esrever 6": {"level":70,"ability":"Moxie","item":"Wacan Berry","nature":"Adamant","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":4,"sa":0,"sd":0,"sp":252},"moves":["Dragon Dance","Earthquake","Serpent Ascent","Waterfall"],"gender":"M"},
-    "Academy Rival Esrever 7": {"level":70,"ability":"Moxie","item":"Wacan Berry","nature":"Adamant","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":4,"sa":0,"sd":0,"sp":252},"moves":["Dragon Dance","Earthquake","Serpent Ascent","Waterfall"],"gender":"M"},
-    "Aqua Boss Archie": {"level":85,"ability":"Simple","item":"Weakness Policy","nature":"Adamant","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":4,"sa":0,"sd":0,"sp":252},"moves":["Wave Crash","Serpent Ascent","Earthquake","No Retreat"],"gender":"M"},
-    "Gym Leader Misty 3": {"level":80,"ability":"Intimidate","item":"Wacan Berry","nature":"Jolly","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":0,"sa":0,"sd":4,"sp":252},"moves":["Waterfall","Ice Fang","Dragon Ascent","Dragon Dance"],"gender":"M"},
-    "Gym Leader Clair 3": {"level":80,"ability":"Moxie","item":"Leftovers","nature":"Jolly","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":6,"at":252,"df":0,"sa":0,"sd":252,"sp":0},"moves":["Waterfall","Earthquake","Dragon Dance","Iron Head"],"gender":""},
-    "Gym Leader Wallace 3": {"level":80,"ability":"Intimidate","item":"Gyaradosite","nature":"Jolly","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":4,"sa":0,"sd":0,"sp":252},"moves":["Waterfall","Dragon Dance","Crunch","Power Whip"],"gender":"M"},
-    "Hero Blue 3": {"level":84,"ability":"Contrary","item":"Wacan Berry","nature":"Adamant","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":4,"sa":0,"sd":0,"sp":252},"moves":["Wave Crash","Serpent Ascent","Ice Hammer","Superpower"],"gender":"M"},
-    "Doctor Yukine": {"level":80,"ability":"Swift Swim","item":"Choice Band","nature":"Jolly","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":4,"sa":0,"sd":0,"sp":252},"moves":["Waterfall","Earthquake","Fly","Crunch"],"gender":""},
-    "World Champion Wait2Seconds": {"level":80,"ability":"Moxie","item":"Wacan Berry","nature":"Adamant","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":0,"sa":4,"sd":0,"sp":252},"moves":["Dragon Dance","Waterfall","Earthquake","Power Whip"],"gender":""},
-    "Battle Server Kairo 31": {"level":80,"ability":"Moxie","item":"Wacan Berry","nature":"Adamant","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":0,"sa":0,"sd":4,"sp":252},"moves":["Dragon Dance","Waterfall","Dragon Ascent","Earthquake"],"gender":"M"},
-    "Serpent Tamer Ahran Lead": {"level":70,"ability":"Moxie","item":"Leftovers","nature":"Jolly","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":0,"sa":0,"sd":6,"sp":252},"moves":["Waterfall","Dragon Ascent","Dragon Dance","Earthquake"],"gender":""},
-    "Gym Leader Misty": {"level":80,"ability":"Intimidate","item":"Gyaradosite","nature":"Adamant","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":4,"sa":0,"sd":0,"sp":252},"moves":["Waterfall","Crunch","Earthquake","Dragon Dance"],"gender":"M"}
-  },
-  "Kingambit": {
-    "Dark Prince Gavin 1": {"level":88,"ability":"Supreme Overlord","item":"Life Orb","nature":"Adamant","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":252,"df":4,"sa":0,"sd":0,"sp":0},"moves":["Swords Dance","Sucker Punch","Iron Head","Zen Headbutt"],"gender":"M"},
-    "Arch Saint Arlo Fyor 1": {"level":100,"ability":"Supreme Overlord","item":"Leftovers","nature":"Adamant","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":212,"at":252,"df":0,"sa":0,"sd":0,"sp":44},"moves":["Swords Dance","Iron Head","Sucker Punch","Jet Punch"],"gender":"M"},
-    "World Champion Wait2Seconds": {"level":80,"ability":"Supreme Overlord","item":"Focus Sash","nature":"Jolly","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":72,"sa":0,"sd":0,"sp":184},"moves":["Swords Dance","Knock Off","Sucker Punch","Iron Head"],"gender":""},
-    "Battle Server Kairo 30": {"level":80,"ability":"Supreme Overlord","item":"Life Orb","nature":"Adamant","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":252,"df":0,"sa":0,"sd":4,"sp":0},"moves":["Iron Head","Sucker Punch","Swords Dance","Low Kick"],"gender":"M"}
+    "Dark Prince Gavin": {"level":87,"ability":"Simple","item":"Clear Amulet","nature":"Adamant","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":176,"df":0,"sa":0,"sd":0,"sp":80},"moves":["Bulk Up","Flame Charge","Crunch","Leech Life"],"gender":"M"}
   },
   "Ditto-Possessor": {
     "Possessed Elisia Lead": {"level":1,"ability":"Showtime","item":"Ring Target","nature":"Hardy","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":0,"df":252,"sa":0,"sd":4,"sp":0},"moves":["A Terrible Curse!","A Spooky Curse!","A Scary Curse!","A MEGA CURSE!"],"gender":""}
@@ -475,62 +432,11 @@ var SETDEX_PATHWAYS = {
   "Ditto-Devilstone": {
     "Phantom Thief Felix Lead": {"level":1,"ability":"Showtime","item":"Ring Target","nature":"Hardy","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":0,"df":252,"sa":0,"sd":4,"sp":0},"moves":["Endless Riches!","Mountains of Gold!","All Mine For The Taking!","I WILL NOT BE STOPPED!"],"gender":""}
   },
-  "Torkoal": {
-    "Headmaster Yamamoto Lead": {"level":80,"ability":"Drought","item":"Heat Rock","nature":"Modest","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":0,"df":4,"sa":0,"sd":252,"sp":0},"moves":["Lava Plume","Stealth Rock","Solar Beam","Earth Power"],"gender":"M"},
-    "Gym Leader Flannery 3 Lead": {"level":80,"ability":"Drought","item":"Heat Rock","nature":"Bold","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":0,"df":252,"sa":4,"sd":0,"sp":0},"moves":["Lava Plume","Body Press","Solar Beam","Stealth Rock"],"gender":"F"}
-  },
-  "Ninetales": {
-    "Headmaster Yamamoto": {"level":80,"ability":"Solar Power","item":"Choice Specs","nature":"Timid","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":4,"sa":252,"sd":0,"sp":252},"moves":["Fire Blast","Solar Beam","Extrasensory","Shadow Ball"],"gender":"F"},
-    "Magma Admin Courtney Lead": {"level":60,"ability":"Drought","item":"","nature":"Serious","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"moves":["","","",""],"gender":""},
-    "Elite 4 Trainer Flint 3 Lead": {"level":80,"ability":"Drought","item":"Heat Rock","nature":"Timid","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":4,"sa":252,"sd":0,"sp":252},"moves":["Nasty Plot","Solar Beam","Fire Blast","Extrasensory"],"gender":"F"}
-  },
-  "Aerodactyl": {
-    "Headmaster Yamamoto": {"level":80,"ability":"Intimidate","item":"Aerodactylite","nature":"Jolly","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":4,"sa":0,"sd":0,"sp":252},"moves":["Head Smash","Brave Bird","Earthquake","Iron Head"],"gender":"M"},
-    "Skydiver Axel Lead": {"level":70,"ability":"Rock Head","item":"Aerodactylite","nature":"Jolly","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":4,"sa":0,"sd":0,"sp":252},"moves":["Head Smash","Dual Wingbeat","Earthquake","Ice Fang"],"gender":"F"},
-    "Skydiver Axel 1": {"level":70,"ability":"Rock Head","item":"Aerodactylite","nature":"Jolly","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":4,"sa":0,"sd":0,"sp":252},"moves":["Head Smash","Dual Wingbeat","Earthquake","Ice Fang"],"gender":"F"},
-    "Skydiver Axel 2": {"level":75,"ability":"Rock Head","item":"Aerodactylite","nature":"Jolly","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":4,"sa":0,"sd":0,"sp":252},"moves":["Head Smash","Dual Wingbeat","Earthquake","Aqua Tail"],"gender":"F"},
-    "Skydiver Axel 4 Lead": {"level":75,"ability":"Rock Head","item":"Aerodactylite","nature":"Jolly","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":4,"sa":0,"sd":0,"sp":252},"moves":["Head Smash","Dual Wingbeat","Earthquake","Ice Fang"],"gender":"F"},
-    "Skydiver Axel 5": {"level":80,"ability":"Rock Head","item":"Aerodactylite","nature":"Jolly","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":4,"sa":0,"sd":0,"sp":252},"moves":["Head Smash","Dual Wingbeat","Earthquake","Aqua Tail"],"gender":"F"},
-    "Skydiver Axel 6": {"level":80,"ability":"Rock Head","item":"Aerodactylite","nature":"Jolly","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":4,"sa":0,"sd":0,"sp":252},"moves":["Head Smash","Dual Wingbeat","Earthquake","Aqua Tail"],"gender":"F"},
-    "Skydiver Axel 7": {"level":100,"ability":"Rock Head","item":"Aerodactylite","nature":"Jolly","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":4,"sa":0,"sd":0,"sp":252},"moves":["Head Smash","Dual Wingbeat","Earthquake","Aqua Tail"],"gender":"F"},
-    "Skydiver Axel 8": {"level":100,"ability":"Rock Head","item":"Aerodactylite","nature":"Jolly","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":4,"sa":0,"sd":0,"sp":252},"moves":["Head Smash","Dual Wingbeat","Earthquake","Aqua Tail"],"gender":"F"},
-    "Channeler Lonita Lead": {"level":65,"ability":"Rock Head","item":"","nature":"Serious","ivs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"evs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"moves":["Rock Slide","Brave Bird","Earthquake","Fire Fang"],"gender":"F"},
-    "Battle Server Kairo 19": {"level":80,"ability":"Rock Head","item":"Choice Band","nature":"Jolly","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":4,"sa":0,"sd":0,"sp":252},"moves":["Head Smash","Brave Bird","Earthquake","Ice Fang"],"gender":"F"},
-    "Champion Blue": {"level":85,"ability":"Rock Head","item":"Life Orb","nature":"Jolly","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":4,"sa":0,"sd":0,"sp":252},"moves":["Head Smash","Brave Bird","Earthquake","Wood Hammer"],"gender":"M"}
-  },
-  "Infernape": {
-    "Headmaster Yamamoto": {"level":80,"ability":"Iron Fist","item":"Life Orb","nature":"Jolly","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":4,"sa":0,"sd":0,"sp":252},"moves":["Close Combat","Flare Blitz","Thunder Punch","Poison Jab"],"gender":"M"},
-    "Battle Chaser Kairo Lead": {"level":55,"ability":"Iron Fist","item":"Fightinium Z","nature":"Jolly","ivs":{"hp":25,"at":25,"df":25,"sa":25,"sd":25,"sp":25},"evs":{"hp":0,"at":160,"df":0,"sa":0,"sd":0,"sp":160},"moves":["Fire Punch","Thunder Punch","Taunt","Close Combat"],"gender":"M"},
-    "Battle Chaser Kairo 1": {"level":55,"ability":"Iron Fist","item":"Fightinium Z","nature":"Jolly","ivs":{"hp":25,"at":25,"df":25,"sa":25,"sd":25,"sp":25},"evs":{"hp":0,"at":160,"df":0,"sa":0,"sd":0,"sp":160},"moves":["Fire Punch","Thunder Punch","Taunt","Close Combat"],"gender":"M"},
-    "Battle Chaser Kairo 2": {"level":70,"ability":"Iron Fist","item":"Fightinium Z","nature":"Jolly","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":4,"sa":0,"sd":0,"sp":252},"moves":["Fire Punch","Thunder Punch","Rock Slide","Close Combat"],"gender":"M"},
-    "Battle Chaser Kairo 3": {"level":75,"ability":"Iron Fist","item":"Punching Glove","nature":"Jolly","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":4,"sa":0,"sd":0,"sp":252},"moves":["Fire Punch","Thunder Punch","Knock Off","Drain Punch"],"gender":"M"},
-    "Battle Chaser Kairo 4": {"level":75,"ability":"Iron Fist","item":"Punching Glove","nature":"Jolly","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":4,"sa":0,"sd":0,"sp":252},"moves":["Fire Punch","Thunder Punch","Knock Off","Drain Punch"],"gender":"M"},
-    "Battle Chaser Kairo 5": {"level":80,"ability":"Iron Fist","item":"Life Orb","nature":"Jolly","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":4,"sa":0,"sd":0,"sp":252},"moves":["Fire Punch","Thunder Punch","Knock Off","Drain Punch"],"gender":"M"},
-    "Battle Chaser Kairo 7": {"level":100,"ability":"Iron Fist","item":"Life Orb","nature":"Jolly","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":4,"sa":0,"sd":0,"sp":252},"moves":["Fire Punch","Thunder Punch","Knock Off","Drain Punch"],"gender":"M"},
-    "Gym Leader Maylene 3": {"level":80,"ability":"Sheer Force","item":"Life Orb","nature":"Jolly","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":4,"sa":0,"sd":0,"sp":252},"moves":["Flare Blitz","Close Combat","Thunder Punch","Rock Slide"],"gender":""},
-    "Elite 4 Trainer Flint 3": {"level":80,"ability":"Sheer Force","item":"Choice Scarf","nature":"Jolly","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":4,"sa":0,"sd":0,"sp":252},"moves":["Close Combat","Flare Blitz","U-turn","Earthquake"],"gender":"M"},
-    "Overconfident Raito 1": {"level":90,"ability":"Dragonize","item":"Air Balloon","nature":"Jolly","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":4,"sa":0,"sd":0,"sp":252},"moves":["Flare Blitz","Double-Edge","Close Combat","Thunder Punch"],"gender":"M"}
-  },
-  "Walrein": {
-    "Headmaster Yamamoto": {"level":80,"ability":"Thick Fat","item":"Leftovers","nature":"Bold","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":0,"df":4,"sa":0,"sd":252,"sp":0},"moves":["Surf","Ice Beam","Toxic","Recover"],"gender":"F"},
-    "Aqua Admin Matt": {"level":60,"ability":"Thick Fat","item":"","nature":"Serious","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"moves":["","","",""],"gender":""},
-    "Gym Leader Wallace 3": {"level":80,"ability":"Thick Fat","item":"Leftovers","nature":"Bold","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":0,"df":252,"sa":4,"sd":0,"sp":0},"moves":["Ice Beam","Protect","Toxic","Surf"],"gender":"M"}
-  },
-  "Hydreigon": {
-    "Headmaster Yamamoto": {"level":80,"ability":"Huge Power","item":"Life Orb","nature":"Jolly","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":4,"sa":0,"sd":0,"sp":252},"moves":["Wicked Blow","Outrage","Earthquake","Stone Edge"],"gender":"F"},
-    "Mute Girl Midnight 2 Dynamax": {"level":80,"ability":"","item":"Life Orb","nature":"Timid","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":4,"sa":252,"sd":0,"sp":252},"moves":["Dragon Pulse","Flash Cannon","Dark Pulse","Flamethrower"],"gender":"F"},
-    "Shadow Six Corrupted Jester Barret 3 Dynamax": {"level":80,"ability":"Soul Conduit","item":"Leftovers","nature":"Timid","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":6,"at":0,"df":0,"sa":252,"sd":0,"sp":252},"moves":["Dark Pulse","Flash Cannon","Dragon Pulse","Earth Power"],"gender":""},
-    "Shadow Six Corrupted Jester Barret 4": {"level":100,"ability":"Intimidate","item":"Hydreigonite","nature":"Adamant","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":252,"df":0,"sa":0,"sd":4,"sp":0},"moves":["Crunch","Dragon Hammer","Earthquake","Psycho Cut"],"gender":"M"},
-    "Shadow Six Corrupted Jester Barret 5": {"level":75,"ability":"Dirty Deeds","item":"Life Orb","nature":"Timid","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":6,"at":0,"df":0,"sa":252,"sd":0,"sp":252},"moves":["Dark Pulse","Flash Cannon","Dragon Pulse","Earth Power"],"gender":""},
-    "Shadow Six Corrupted Jester Barret 10": {"level":120,"ability":"Intrepid Sword","item":"Hydreigonite","nature":"Adamant","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":252,"df":0,"sa":0,"sd":4,"sp":0},"moves":["Wicked Blow","Dragon Hammer","Earthquake","Psycho Cut"],"gender":"M"},
-    "Wandering Musician Lyric": {"level":80,"ability":"Levitate","item":"Loaded Dice","nature":"Adamant","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":0,"sa":0,"sd":4,"sp":252},"moves":["Scale Shot","Earthquake","Dragon Dance","Crunch"],"gender":"F"},
-    "That Guy Bobkowski": {"level":70,"ability":"Levitate","item":"Choice Specs","nature":"Timid","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":4,"sa":252,"sd":0,"sp":252},"moves":["Dark Pulse","Flash Cannon","Fire Blast","Draco Meteor"],"gender":""},
-    "Battle Server Kairo 15": {"level":70,"ability":"Levitate","item":"Choice Specs","nature":"Timid","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":0,"sa":252,"sd":4,"sp":252},"moves":["Draco Meteor","Dark Pulse","Fire Blast","Earth Power"],"gender":"F"}
-  },
   "Sneasel": {
     "Academy Rival Esrever Lead": {"level":15,"ability":"","item":"Sitrus Berry","nature":"Jolly","ivs":{"hp":15,"at":15,"df":15,"sa":15,"sd":15,"sp":15},"evs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"moves":["Ice Shard","Leer","Thief","Quick Attack"],"gender":"M"},
     "Academy Rival Esrever 10": {"level":30,"ability":"","item":"Sitrus Berry","nature":"Jolly","ivs":{"hp":20,"at":20,"df":20,"sa":20,"sd":20,"sp":20},"evs":{"hp":0,"at":40,"df":0,"sa":0,"sd":0,"sp":40},"moves":["Ice Shard","Metal Claw","Thief","Quick Attack"],"gender":"M"},
-    "Blake Gang Goon Lead": {"level":45,"ability":"Pickpocket","item":"","nature":"Serious","ivs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"evs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"moves":["Beat Up","Icicle Spear","Low Sweep","Icy Wind"],"gender":"M"}
+    "Blake Gang Goon Lead": {"level":45,"ability":"Pickpocket","item":"","nature":"Serious","ivs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"evs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"moves":["Beat Up","Icicle Spear","Low Sweep","Icy Wind"],"gender":"M"},
+    "Claw Gang Minnie": {"level":30,"ability":"","item":"Quick Claw","nature":"Adamant","ivs":{"hp":20,"at":20,"df":20,"sa":20,"sd":20,"sp":20},"evs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"moves":["Thief","Icicle Spear","Low Sweep","Icy Wind"],"gender":"M"}
   },
   "Gligar": {
     "Academy Rival Esrever 1 Lead": {"level":15,"ability":"Hyper Cutter","item":"Sitrus Berry","nature":"Careful","ivs":{"hp":15,"at":15,"df":15,"sa":15,"sd":15,"sp":15},"evs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"moves":["Sand Tomb","Wing Attack","Knock Off","Agility"],"gender":"M"},
@@ -539,7 +445,8 @@ var SETDEX_PATHWAYS = {
   },
   "Growlithe": {
     "Academy Rival Esrever 2 Lead": {"level":15,"ability":"Intimidate","item":"Sitrus Berry","nature":"Adamant","ivs":{"hp":15,"at":15,"df":15,"sa":15,"sd":15,"sp":15},"evs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"moves":["Flame Wheel","Bite","Double Kick","Howl"],"gender":"M"},
-    "Academy Rival Esrever 10": {"level":30,"ability":"Intimidate","item":"Sitrus Berry","nature":"Adamant","ivs":{"hp":20,"at":20,"df":20,"sa":20,"sd":20,"sp":20},"evs":{"hp":0,"at":80,"df":0,"sa":0,"sd":0,"sp":0},"moves":["Flame Wheel","Bite","Double Kick","Retaliate"],"gender":"M"}
+    "Academy Rival Esrever 10": {"level":30,"ability":"Intimidate","item":"Sitrus Berry","nature":"Adamant","ivs":{"hp":20,"at":20,"df":20,"sa":20,"sd":20,"sp":20},"evs":{"hp":0,"at":80,"df":0,"sa":0,"sd":0,"sp":0},"moves":["Flame Wheel","Bite","Double Kick","Retaliate"],"gender":"M"},
+    "Police Officer Lead": {"level":15,"ability":"","item":"","nature":"Serious","ivs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"evs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"moves":["","","",""],"gender":""}
   },
   "Type: Null": {
     "Academy Rival Esrever 3 Lead": {"level":35,"ability":"","item":"Leftovers","nature":"Serious","ivs":{"hp":20,"at":20,"df":20,"sa":20,"sd":20,"sp":20},"evs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":80},"moves":["Tri Attack","Air Slash","Flame Charge","Payback"],"gender":""},
@@ -561,9 +468,7 @@ var SETDEX_PATHWAYS = {
     "Cool Couple Isaac & Jenna": {"level":50,"ability":"Intimidate","item":"","nature":"Serious","ivs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"evs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"moves":["Extreme Speed","Heat Wave","Scorching Sands","Will-O-Wisp"],"gender":""},
     "Elite 4 Trainer Flint 3 Dynamax": {"level":80,"ability":"Intimidate","item":"Rocky Helmet","nature":"Impish","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":0,"df":236,"sa":0,"sd":20,"sp":0},"moves":["Flare Blitz","Close Combat","Will-O-Wisp","Extreme Speed"],"gender":"M"},
     "Hero Crystal 3": {"level":80,"ability":"Drought","item":"Charcoal","nature":"Adamant","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":4,"sa":0,"sd":0,"sp":252},"moves":["Morning Sun","Extreme Speed","Flare Blitz","Wild Charge"],"gender":"M"},
-    "Shadow Six High Flyer Milos Zelex": {"level":80,"ability":"Rock Head","item":"Choice Scarf","nature":"Adamant","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":6,"at":252,"df":0,"sa":0,"sd":0,"sp":252},"moves":["Flare Blitz","Head Smash","",""],"gender":"M"},
-    "Gym Leader Blaine Dynamax": {"level":80,"ability":"Fusion Core","item":"Air Balloon","nature":"Modest","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":0,"df":0,"sa":252,"sd":0,"sp":4},"moves":["Fire Blast","Solar Beam","Scorching Sands","Morning Sun"],"gender":"M"},
-    "Champion Blue": {"level":85,"ability":"Immolate","item":"Choice Band","nature":"Jolly","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":4,"sa":0,"sd":0,"sp":252},"moves":["Extreme Speed","Close Combat","Wild Charge","Psychic Fangs"],"gender":"M"}
+    "Shadow Six High Flyer Milos Zelex": {"level":80,"ability":"Rock Head","item":"Choice Scarf","nature":"Adamant","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":6,"at":252,"df":0,"sa":0,"sd":0,"sp":252},"moves":["Flare Blitz","Head Smash","",""],"gender":"M"}
   },
   "Gliscor": {
     "Academy Rival Esrever 6": {"level":70,"ability":"Poison Heal","item":"Toxic Orb","nature":"Impish","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":0,"df":252,"sa":0,"sd":0,"sp":4},"moves":["Swords Dance","Roost","Earthquake","Dual Wingbeat"],"gender":"M"},
@@ -574,7 +479,22 @@ var SETDEX_PATHWAYS = {
     "Overconfident Raito 1": {"level":90,"ability":"Poison Heal","item":"Toxic Orb","nature":"Jolly","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":4,"sa":0,"sd":0,"sp":252},"moves":["Knock Off","Brave Bird","Earthquake","Stealth Rock"],"gender":"M"},
     "Mad Berserker Gallagher": {"level":80,"ability":"Contrary","item":"Assault Vest","nature":"Naive","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":4,"sa":0,"sd":0,"sp":252},"moves":["Overheat","Close Combat","Squall","Ice Hammer"],"gender":"M"},
     "Mad Berserker Gallagher 1 Lead": {"level":102,"ability":"Requiem Di Diavolo","item":"Bright Powder","nature":"Modest","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":184,"at":0,"df":0,"sa":252,"sd":0,"sp":72},"moves":["Earth Power","Chatter","Boomburst","Roost"],"gender":"M"},
+    "Musicians Gallagher and Lyric Lead": {"level":120,"ability":"Requiem Di Diavolo","item":"Gambler's Dice","nature":"Modest","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":184,"at":0,"df":0,"sa":252,"sd":0,"sp":72},"moves":["Broken Skies","Malignant Chain","Boomburst","Roost"],"gender":"M"},
     "Battle Server Kairo 24 Lead": {"level":80,"ability":"Poison Heal","item":"Toxic Orb","nature":"Timid","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":184,"sa":0,"sd":0,"sp":72},"moves":["Stone Edge","Earthquake","Toxic","Roost"],"gender":"M"}
+  },
+  "Gyarados": {
+    "Academy Rival Esrever 6": {"level":70,"ability":"Moxie","item":"Wacan Berry","nature":"Adamant","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":4,"sa":0,"sd":0,"sp":252},"moves":["Dragon Dance","Earthquake","Serpent Ascent","Waterfall"],"gender":"M"},
+    "Academy Rival Esrever 7": {"level":70,"ability":"Moxie","item":"Wacan Berry","nature":"Adamant","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":4,"sa":0,"sd":0,"sp":252},"moves":["Dragon Dance","Earthquake","Serpent Ascent","Waterfall"],"gender":"M"},
+    "Aqua Boss Archie": {"level":85,"ability":"Simple","item":"Weakness Policy","nature":"Adamant","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":4,"sa":0,"sd":0,"sp":252},"moves":["Wave Crash","Serpent Ascent","Earthquake","No Retreat"],"gender":"M"},
+    "Gym Leader Misty 3": {"level":80,"ability":"Intimidate","item":"Wacan Berry","nature":"Jolly","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":0,"sa":0,"sd":4,"sp":252},"moves":["Waterfall","Ice Fang","Dragon Ascent","Dragon Dance"],"gender":"M"},
+    "Gym Leader Clair 3": {"level":80,"ability":"Moxie","item":"Leftovers","nature":"Jolly","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":6,"at":252,"df":0,"sa":0,"sd":252,"sp":0},"moves":["Waterfall","Earthquake","Dragon Dance","Iron Head"],"gender":""},
+    "Gym Leader Wallace 3": {"level":80,"ability":"Intimidate","item":"Gyaradosite","nature":"Jolly","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":4,"sa":0,"sd":0,"sp":252},"moves":["Waterfall","Dragon Dance","Crunch","Power Whip"],"gender":"M"},
+    "Hero Blue 3": {"level":84,"ability":"Contrary","item":"Wacan Berry","nature":"Adamant","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":4,"sa":0,"sd":0,"sp":252},"moves":["Wave Crash","Serpent Ascent","Ice Hammer","Superpower"],"gender":"M"},
+    "Doctor Yukine": {"level":80,"ability":"Swift Swim","item":"Choice Band","nature":"Jolly","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":4,"sa":0,"sd":0,"sp":252},"moves":["Waterfall","Earthquake","Fly","Crunch"],"gender":""},
+    "Arch Saint Arlo Fyor 2": {"level":80,"ability":"Intimidate","item":"Gyaradosite","nature":"Jolly","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":0,"sa":0,"sd":4,"sp":252},"moves":["Holy Water","Crunch","Serpent Ascent","Dragon Dance"],"gender":"F"},
+    "World Champion Wait2Seconds": {"level":80,"ability":"Moxie","item":"Wacan Berry","nature":"Adamant","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":0,"sa":4,"sd":0,"sp":252},"moves":["Dragon Dance","Waterfall","Earthquake","Power Whip"],"gender":""},
+    "Battle Server Kairo 31": {"level":80,"ability":"Moxie","item":"Wacan Berry","nature":"Adamant","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":0,"sa":0,"sd":4,"sp":252},"moves":["Dragon Dance","Waterfall","Dragon Ascent","Earthquake"],"gender":"M"},
+    "Serpent Tamer Ahran Lead": {"level":70,"ability":"Moxie","item":"Leftovers","nature":"Jolly","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":0,"sa":0,"sd":6,"sp":252},"moves":["Waterfall","Dragon Ascent","Dragon Dance","Earthquake"],"gender":""}
   },
   "Krookodile": {
     "Academy Rival Esrever 6": {"level":70,"ability":"Intimidate","item":"Krookodilite","nature":"Jolly","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":4,"sa":0,"sd":0,"sp":252},"moves":["Crunch","Earthquake","Stone Edge","Bulk Up"],"gender":"F"},
@@ -597,7 +517,8 @@ var SETDEX_PATHWAYS = {
   "Jumpluff": {
     "D-Rank Teacher Mr. Dee": {"level":30,"ability":"Chlorophyll","item":"","nature":"Adamant","ivs":{"hp":15,"at":15,"df":15,"sa":15,"sd":15,"sp":15},"evs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"moves":["Aerial Ace","Strength Sap","Sleep Powder","Bullet Seed"],"gender":"M"},
     "D-Rank Teacher Mr. Dee 2": {"level":30,"ability":"Infiltrator","item":"","nature":"Adamant","ivs":{"hp":15,"at":15,"df":15,"sa":15,"sd":15,"sp":15},"evs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"moves":["Acrobatics","Strength Sap","Sleep Powder","Bullet Seed"],"gender":"M"},
-    "Lass Jeni": {"level":27,"ability":"Chlorophyll","item":"","nature":"Serious","ivs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"evs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"moves":["Aerial Ace","Giga Drain","Leech Seed","Synthesis"],"gender":"M"}
+    "Lass Jeni": {"level":27,"ability":"Chlorophyll","item":"","nature":"Serious","ivs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"evs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"moves":["Aerial Ace","Giga Drain","Leech Seed","Synthesis"],"gender":"M"},
+    "Lass Yuka": {"level":30,"ability":"Chlorophyll","item":"","nature":"Serious","ivs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"evs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"moves":["Aerial Ace","Giga Drain","Leech Seed","Synthesis"],"gender":"M"}
   },
   "Poliwhirl": {
     "Street Fighter Akiza 2": {"level":30,"ability":"Water Absorb","item":"","nature":"Naughty","ivs":{"hp":20,"at":20,"df":20,"sa":20,"sd":20,"sp":20},"evs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"moves":["Water Pulse","Low Kick","Ice Punch","Bulldoze"],"gender":"F"}
@@ -625,8 +546,7 @@ var SETDEX_PATHWAYS = {
     "Street Fighter Akiza 8 Dynamax": {"level":80,"ability":"Swift Swim","item":"Assault Vest","nature":"Adamant","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":0,"sa":0,"sd":4,"sp":252},"moves":["Wave Crash","Close Combat","Darkest Lariat","Earthquake"],"gender":"F"},
     "Street Fighter Akiza 9 Dynamax": {"level":100,"ability":"Swift Swim","item":"Assault Vest","nature":"Adamant","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":0,"sa":0,"sd":4,"sp":252},"moves":["Wave Crash","Close Combat","Darkest Lariat","Earthquake"],"gender":"F"},
     "Street Fighter Akiza 10 Dynamax": {"level":100,"ability":"Swift Swim","item":"Assault Vest","nature":"Adamant","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":0,"sa":0,"sd":4,"sp":252},"moves":["Wave Crash","Close Combat","Darkest Lariat","Earthquake"],"gender":"F"},
-    "Aqua Elite Ant": {"level":50,"ability":"Swift Swim","item":"","nature":"Serious","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"moves":["Dynamic Punch","Hydro Pump","Hypnosis","Body Slam"],"gender":""},
-    "Elite Four Bruno": {"level":85,"ability":"Iron Fist","item":"Punching Glove","nature":"Adamant","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":252,"df":4,"sa":0,"sd":0,"sp":0},"moves":["Jet Punch","Drain Punch","Ice Punch","Poison Jab"],"gender":"M"}
+    "Aqua Elite Ant": {"level":50,"ability":"Swift Swim","item":"","nature":"Serious","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"moves":["Dynamic Punch","Hydro Pump","Hypnosis","Body Slam"],"gender":""}
   },
   "Decidueye-Hisui": {
     "Street Fighter Akiza 5": {"level":75,"ability":"Scrappy","item":"Choice Scarf","nature":"Adamant","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":4,"sa":0,"sd":0,"sp":252},"moves":["Leaf Blade","Triple Arrows","Brave Bird","Knock Off"],"gender":"F"},
@@ -640,6 +560,7 @@ var SETDEX_PATHWAYS = {
     "Street Fighter Akiza 5": {"level":75,"ability":"","item":"Air Balloon","nature":"Adamant","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":4,"sa":0,"sd":252,"sp":0},"moves":["Supercell Slam","Drain Punch","Ice Punch","Iron Head"],"gender":""},
     "Street Fighter Akiza 7": {"level":80,"ability":"","item":"Normalium Z","nature":"Adamant","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":252,"df":0,"sa":0,"sd":4,"sp":0},"moves":["Thunder Punch","Drain Punch","Ice Punch","Belly Drum"],"gender":""},
     "Street Fighter Akiza 9": {"level":100,"ability":"","item":"Normalium Z","nature":"Adamant","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":252,"df":0,"sa":0,"sd":4,"sp":0},"moves":["Thunder Punch","Drain Punch","Ice Punch","Belly Drum"],"gender":""},
+    "Shadow Six Unfettered Scholar Maxwell 3": {"level":80,"ability":"Quark Drive","item":"Grassy Seed","nature":"Adamant","ivs":{"hp":31,"at":31,"df":31,"sa":13,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":0,"sa":0,"sd":172,"sp":84},"moves":["Thunder Punch","Drain Punch","Ice Punch","Swords Dance"],"gender":""},
     "Cheese Guardian Maxwell 10": {"level":120,"ability":"Triage","item":"Sitrus Berry","nature":"Adamant","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":6,"sa":0,"sd":252,"sp":0},"moves":["Belly Drum","Drain Punch","Horn Leech","Bitter Blade"],"gender":""}
   },
   "Blaziken": {
@@ -701,8 +622,7 @@ var SETDEX_PATHWAYS = {
   "Kartana": {
     "Novice Shinobi Hyun 5": {"level":75,"ability":"Beast Boost","item":"Life Orb","nature":"Jolly","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":4,"sa":0,"sd":0,"sp":252},"moves":["Leaf Blade","Sacred Sword","Psycho Cut","Smart Strike"],"gender":""},
     "Novice Shinobi Hyun 7": {"level":80,"ability":"Beast Boost","item":"Choice Scarf","nature":"Adamant","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":4,"sa":0,"sd":0,"sp":252},"moves":["Leaf Blade","Sacred Sword","Psycho Cut","Smart Strike"],"gender":""},
-    "Novice Shinobi Hyun 9": {"level":100,"ability":"Beast Boost","item":"Choice Scarf","nature":"Adamant","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":4,"sa":0,"sd":0,"sp":252},"moves":["Leaf Blade","Sacred Sword","Psycho Cut","Smart Strike"],"gender":""},
-    "Eclipse Elite Zack": {"level":100,"ability":"Sharpness","item":"Choice Scarf","nature":"Adamant","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":0,"sa":6,"sd":0,"sp":252},"moves":["Sacred Sword","Smart Strike","Leaf Blade","Psycho Cut"],"gender":"M"}
+    "Novice Shinobi Hyun 9": {"level":100,"ability":"Beast Boost","item":"Choice Scarf","nature":"Adamant","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":4,"sa":0,"sd":0,"sp":252},"moves":["Leaf Blade","Sacred Sword","Psycho Cut","Smart Strike"],"gender":""}
   },
   "Pidgeot": {
     "Novice Shinobi Hyun 5": {"level":75,"ability":"Big Pecks","item":"Pidgeotite","nature":"Timid","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":4,"sa":252,"sd":0,"sp":252},"moves":["Hurricane","Heat Wave","Hyper Voice","Roost"],"gender":"M"},
@@ -734,8 +654,7 @@ var SETDEX_PATHWAYS = {
     "Ghost Girl Yariette 8": {"level":80,"ability":"","item":"Mismagiusite","nature":"Timid","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":4,"sa":252,"sd":0,"sp":252},"moves":["Shadow Ball","Inferno","Nasty Plot","Thunderbolt"],"gender":"F"},
     "Ghost Girl Yariette 9": {"level":100,"ability":"","item":"Mismagiusite","nature":"Timid","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":4,"sa":252,"sd":0,"sp":252},"moves":["Shadow Ball","Inferno","Nasty Plot","Thunderbolt"],"gender":"F"},
     "Ghost Girl Yariette 10": {"level":100,"ability":"","item":"Mismagiusite","nature":"Timid","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":4,"sa":252,"sd":0,"sp":252},"moves":["Shadow Ball","Inferno","Nasty Plot","Thunderbolt"],"gender":"F"},
-    "Gym Leader Morty 3": {"level":80,"ability":"Levitate","item":"Life Orb","nature":"Timid","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":0,"df":0,"sa":0,"sd":6,"sp":252},"moves":["Shadow Ball","Focus Blast","Thunderbolt","Power Gem"],"gender":"F"},
-    "Elite Four Agatha": {"level":85,"ability":"No Guard","item":"Life Orb","nature":"Timid","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":4,"sa":252,"sd":0,"sp":252},"moves":["Hex","Zap Cannon","Inferno","Destiny Bond"],"gender":"F"}
+    "Gym Leader Morty 3": {"level":80,"ability":"Levitate","item":"Life Orb","nature":"Timid","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":0,"df":0,"sa":0,"sd":6,"sp":252},"moves":["Shadow Ball","Focus Blast","Thunderbolt","Power Gem"],"gender":"F"}
   },
   "Golurk": {
     "Ghost Girl Yariette 3": {"level":50,"ability":"No Guard","item":"","nature":"Adamant","ivs":{"hp":25,"at":25,"df":25,"sa":25,"sd":25,"sp":25},"evs":{"hp":160,"at":160,"df":0,"sa":0,"sd":0,"sp":0},"moves":["Dynamic Punch","Shadow Punch","Earthquake","Fire Punch"],"gender":"M"},
@@ -768,8 +687,7 @@ var SETDEX_PATHWAYS = {
     "Ghost Girl Yariette 5": {"level":75,"ability":"Magic Guard","item":"Life Orb","nature":"Timid","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":4,"sa":252,"sd":0,"sp":252},"moves":["Shadow Ball","Fire Blast","Extrasensory","Focus Blast"],"gender":"M"},
     "Ghost Girl Yariette 7": {"level":80,"ability":"Magic Guard","item":"Choice Scarf","nature":"Modest","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":4,"sa":252,"sd":0,"sp":252},"moves":["Shadow Ball","Eruption","Extrasensory","Focus Blast"],"gender":"M"},
     "Ghost Girl Yariette 9": {"level":100,"ability":"Magic Guard","item":"Choice Scarf","nature":"Modest","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":4,"sa":252,"sd":0,"sp":252},"moves":["Shadow Ball","Eruption","Extrasensory","Focus Blast"],"gender":"M"},
-    "Occultist Umbra": {"level":80,"ability":"Magic Guard","item":"Typhlosionite H","nature":"Timid","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":128,"at":0,"df":0,"sa":128,"sd":0,"sp":252},"moves":["Calm Mind","Earth Power","Flamethrower","Shadow Ball"],"gender":"M"},
-    "Occultist Umbra 1": {"level":100,"ability":"Magic Guard","item":"Typhlosionite H","nature":"Timid","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":128,"at":0,"df":0,"sa":128,"sd":0,"sp":252},"moves":["Calm Mind","Earth Power","Flamethrower","Shadow Ball"],"gender":"M"}
+    "Occultist Umbra": {"level":80,"ability":"Magic Guard","item":"Typhlosionite H","nature":"Timid","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":4,"at":0,"df":0,"sa":252,"sd":0,"sp":252},"moves":["Infernal Parade","Hexed Miasma","Eruption","Vengeful Flame"],"gender":"M"}
   },
   "Mantine": {
     "C-Rank Teacher Mr. Cee Lead": {"level":50,"ability":"Drizzle","item":"Wacan Berry","nature":"Modest","ivs":{"hp":20,"at":0,"df":20,"sa":20,"sd":20,"sp":20},"evs":{"hp":156,"at":0,"df":0,"sa":100,"sd":0,"sp":0},"moves":["Surf","Tailwind","Roost","Hurricane"],"gender":"F"},
@@ -817,7 +735,8 @@ var SETDEX_PATHWAYS = {
     "Fair Maiden Cassandra 7": {"level":80,"ability":"Liquid Voice","item":"Assault Vest","nature":"Modest","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":0,"df":0,"sa":252,"sd":4,"sp":0},"moves":["Psychic","Boomburst","Moonblast","Ice Beam"],"gender":"F"},
     "Fair Maiden Cassandra 8": {"level":80,"ability":"Liquid Voice","item":"Assault Vest","nature":"Modest","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":0,"df":0,"sa":252,"sd":4,"sp":0},"moves":["Psychic","Boomburst","Moonblast","Ice Beam"],"gender":"F"},
     "Fair Maiden Cassandra 9": {"level":100,"ability":"Liquid Voice","item":"Assault Vest","nature":"Modest","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":0,"df":0,"sa":252,"sd":4,"sp":0},"moves":["Psychic","Boomburst","Moonblast","Ice Beam"],"gender":"F"},
-    "Fair Maiden Cassandra 10": {"level":100,"ability":"Liquid Voice","item":"Assault Vest","nature":"Modest","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":0,"df":0,"sa":252,"sd":4,"sp":0},"moves":["Psychic","Boomburst","Moonblast","Ice Beam"],"gender":"F"}
+    "Fair Maiden Cassandra 10": {"level":100,"ability":"Liquid Voice","item":"Assault Vest","nature":"Modest","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":0,"df":0,"sa":252,"sd":4,"sp":0},"moves":["Psychic","Boomburst","Moonblast","Ice Beam"],"gender":"F"},
+    "Shadow Six Unfettered Scholar Maxwell 3": {"level":80,"ability":"Liquid Voice","item":"Leftovers","nature":"Modest","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":0,"df":248,"sa":0,"sd":8,"sp":0},"moves":["Boomburst","Draining Kiss","Substitute","Calm Mind"],"gender":"M"}
   },
   "Tsareena": {
     "Fair Maiden Cassandra 5": {"level":75,"ability":"Iron Heel","item":"Life Orb","nature":"Adamant","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":4,"sa":0,"sd":0,"sp":252},"moves":["Trop Kick","High Jump Kick","Triple Axel","U-turn"],"gender":"F"},
@@ -878,7 +797,8 @@ var SETDEX_PATHWAYS = {
     "Shadow Six Idle Warrior Rexzo Kuxne": {"level":80,"ability":"Sand Force","item":"Life Orb","nature":"Adamant","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":6,"at":252,"df":0,"sa":0,"sd":0,"sp":252},"moves":["Earthquake","Dragon Claw","U-turn","Dragon Dance"],"gender":"M"},
     "Shadow Six Idle Warrior Rexzo Kuxne 1": {"level":100,"ability":"Sand Stream","item":"Flygonite","nature":"Timid","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":0,"sa":252,"sd":4,"sp":252},"moves":["Dragon Pulse","Earth Power","Fire Blast","Boomburst"],"gender":"M"},
     "Wandering Musician Lyric 1": {"level":100,"ability":"Simple","item":"Focus Sash","nature":"Adamant","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":4,"sa":0,"sd":0,"sp":252},"moves":["Dragon Dance","Dragon Hammer","Earthquake","Steel Wing"],"gender":""},
-    "That Guy Bobkowski": {"level":70,"ability":"Dragonize","item":"Life Orb","nature":"Timid","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":4,"sa":252,"sd":0,"sp":252},"moves":["Boomburst","Earth Power","Fire Blast","Giga Drain"],"gender":""}
+    "That Guy Bobkowski": {"level":70,"ability":"Dragonize","item":"Life Orb","nature":"Timid","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":4,"sa":252,"sd":0,"sp":252},"moves":["Boomburst","Earth Power","Fire Blast","Giga Drain"],"gender":""},
+    "Rocker Princess Petra": {"level":102,"ability":"Rock Never Dies","item":"Flygonite","nature":"Modest","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":0,"sa":252,"sd":4,"sp":252},"moves":["Earth Power","Dragon Pulse","Flamethrower","Flash Cannon"],"gender":"M"}
   },
   "Alakazam": {
     "Battle Scholar Eros 5": {"level":75,"ability":"Magic Guard","item":"Alakazite","nature":"Timid","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":4,"sa":252,"sd":0,"sp":252},"moves":["Psyshock","Focus Blast","Shadow Ball","Dazzling Gleam"],"gender":"M"},
@@ -894,8 +814,7 @@ var SETDEX_PATHWAYS = {
     "Shadow Six Corrupted Jester Barret 5": {"level":75,"ability":"Mind Flay","item":"Focus Sash","nature":"Timid","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":0,"sa":252,"sd":4,"sp":252},"moves":["Expanding Force","Phantom Hand","Dark Pulse","Energy Ball"],"gender":"M"},
     "Professor Spruce Dragon": {"level":80,"ability":"Magic Guard","item":"Alakazite","nature":"Timid","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":4,"sa":252,"sd":0,"sp":252},"moves":["Calm Mind","Dazzling Gleam","Psyshock","Shadow Ball"],"gender":"M"},
     "Professor Spruce Dragon 1": {"level":100,"ability":"Magic Guard","item":"Alakazite","nature":"Timid","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":4,"sa":252,"sd":0,"sp":252},"moves":["Calm Mind","Dazzling Gleam","Psyshock","Shadow Ball"],"gender":"M"},
-    "Gym Leader Sabrina": {"level":80,"ability":"Magic Guard","item":"Alakazite","nature":"Timid","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":4,"sa":252,"sd":0,"sp":252},"moves":["Psychic","Shadow Ball","Aura Sphere","Nasty Plot"],"gender":"F"},
-    "Champion Blue": {"level":85,"ability":"Psychic Surge","item":"Focus Sash","nature":"Timid","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":4,"sa":252,"sd":0,"sp":252},"moves":["Expanding Force","Nasty Plot","Thunderbolt","Dazzling Gleam"],"gender":"M"}
+    "Professor Spruce Dragon Alakazam 2": {"level":80,"ability":"Gravity Surge","item":"Alakazite","nature":"Timid","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":0,"sa":252,"sd":4,"sp":252},"moves":["Psyshock","Focus Blast","Nasty Plot","Hypnosis"],"gender":""}
   },
   "Sandy Shocks": {
     "Battle Scholar Eros 5": {"level":75,"ability":"","item":"Groundium Z","nature":"Timid","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":4,"sa":252,"sd":0,"sp":252},"moves":["Earth Power","Discharge","Power Gem","Flash Cannon"],"gender":""},
@@ -939,7 +858,7 @@ var SETDEX_PATHWAYS = {
     "Cranky Mage Aran 8": {"level":80,"ability":"Protean","item":"Choice Band","nature":"Jolly","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":4,"sa":0,"sd":0,"sp":252},"moves":["Flower Trick","Play Rough","Low Kick","Knock Off"],"gender":"F"},
     "Cranky Mage Aran 9": {"level":100,"ability":"Protean","item":"Choice Band","nature":"Jolly","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":4,"sa":0,"sd":0,"sp":252},"moves":["Flower Trick","Play Rough","Low Kick","Knock Off"],"gender":"F"},
     "Cranky Mage Aran 10": {"level":100,"ability":"Protean","item":"Choice Band","nature":"Jolly","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":4,"sa":0,"sd":0,"sp":252},"moves":["Flower Trick","Play Rough","Low Kick","Knock Off"],"gender":"F"},
-    "Shadow Six Detective MacBurn Felix": {"level":80,"ability":"Protean","item":"Choice Band","nature":"Jolly","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":4,"sa":0,"sd":0,"sp":252},"moves":["Flower Trick","Knock Off","Play Rough","Triple Axel"],"gender":"F"},
+    "Shadow Six Perceptive Detective Felix": {"level":80,"ability":"Protean","item":"Life Orb","nature":"Jolly","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":4,"sa":0,"sd":0,"sp":252},"moves":["Flower Trick","Knock Off","Play Rough","Triple Axel"],"gender":"F"},
     "Battle Server Kairo 23": {"level":80,"ability":"Protean","item":"Life Orb","nature":"Jolly","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":0,"sa":0,"sd":4,"sp":252},"moves":["Flower Trick","Thunder Punch","Low Kick","Play Rough"],"gender":"M"}
   },
   "Delphox": {
@@ -962,7 +881,8 @@ var SETDEX_PATHWAYS = {
     "Cranky Mage Aran 8": {"level":80,"ability":"","item":"Ampharosite","nature":"Modest","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":0,"df":4,"sa":252,"sd":0,"sp":0},"moves":["Thunderbolt","Dragon Pulse","Focus Blast","Tail Glow"],"gender":"F"},
     "Cranky Mage Aran 9": {"level":100,"ability":"","item":"Ampharosite","nature":"Modest","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":0,"df":4,"sa":252,"sd":0,"sp":0},"moves":["Discharge","Dragon Pulse","Focus Blast","Tail Glow"],"gender":"F"},
     "Cranky Mage Aran 10": {"level":100,"ability":"","item":"Ampharosite","nature":"Modest","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":0,"df":4,"sa":252,"sd":0,"sp":0},"moves":["Thunderbolt","Dragon Pulse","Focus Blast","Tail Glow"],"gender":"F"},
-    "Gym Leader Jasmine 3": {"level":80,"ability":"Electric Surge","item":"Life Orb","nature":"Modest","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":0,"df":4,"sa":252,"sd":0,"sp":0},"moves":["Thunderbolt","Dragon Pulse","Volt Switch","Focus Blast"],"gender":""}
+    "Gym Leader Jasmine 3": {"level":80,"ability":"Electric Surge","item":"Life Orb","nature":"Modest","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":0,"df":4,"sa":252,"sd":0,"sp":0},"moves":["Thunderbolt","Dragon Pulse","Volt Switch","Focus Blast"],"gender":""},
+    "Storm Prince Welkin": {"level":65,"ability":"Electric Surge","item":"Ampharosite","nature":"Modest","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":0,"df":4,"sa":252,"sd":0,"sp":0},"moves":["Thunderbolt","Dragon Pulse","Volt Switch","Focus Blast"],"gender":""}
   },
   "Minior": {
     "B-Rank Teacher Mr. Bee": {"level":65,"ability":"","item":"Flying Gem","nature":"Rash","ivs":{"hp":25,"at":25,"df":25,"sa":25,"sd":25,"sp":25},"evs":{"hp":0,"at":4,"df":0,"sa":252,"sd":0,"sp":252},"moves":["Shell Smash","Power Gem","Acrobatics","Earth Power"],"gender":"F"},
@@ -985,6 +905,7 @@ var SETDEX_PATHWAYS = {
     "Poison Apprentice Leila 6 Dynamax": {"level":80,"ability":"Corrosion","item":"Focus Sash","nature":"Timid","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":4,"sa":252,"sd":0,"sp":252},"moves":["Fire Blast","Sludge Bomb","Dragon Pulse","Nasty Plot"],"gender":""},
     "Poison Apprentice Leila 7": {"level":100,"ability":"Corrosion","item":"Focus Sash","nature":"Timid","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":4,"sa":252,"sd":0,"sp":252},"moves":["Fire Blast","Sludge Bomb","Dragon Pulse","Nasty Plot"],"gender":""},
     "Poison Apprentice Leila 8 Dynamax": {"level":100,"ability":"Corrosion","item":"Focus Sash","nature":"Timid","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":4,"sa":252,"sd":0,"sp":252},"moves":["Fire Blast","Sludge Bomb","Dragon Pulse","Nasty Plot"],"gender":""},
+    "Goonette Goonettes 5": {"level":55,"ability":"","item":"","nature":"Serious","ivs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"evs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"moves":["","","",""],"gender":"F"},
     "Elite Four Koga 3": {"level":80,"ability":"Oblivious","item":"Focus Sash","nature":"Timid","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":4,"sa":252,"sd":0,"sp":252},"moves":["Nasty Plot","Fire Blast","Sludge Bomb","Dragon Pulse"],"gender":"F"},
     "Wandering Musician Lyric": {"level":80,"ability":"Corrosion","item":"Focus Sash","nature":"Timid","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":0,"sa":252,"sd":4,"sp":252},"moves":["Fire Blast","Sludge Wave","Nasty Plot","Toxic"],"gender":"F"}
   },
@@ -998,8 +919,7 @@ var SETDEX_PATHWAYS = {
     "Magma Admin Tabitha": {"level":60,"ability":"Infiltrator","item":"","nature":"Serious","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"moves":["","","",""],"gender":""},
     "Gym Leader Falkner 3": {"level":80,"ability":"Infiltrator","item":"Black Sludge","nature":"Jolly","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":4,"sa":0,"sd":252,"sp":252},"moves":["Brave Bird","Super Fang","Toxic","Roost"],"gender":"M"},
     "Elite Four Koga 3": {"level":80,"ability":"Regenerator","item":"Black Sludge","nature":"Jolly","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":0,"df":4,"sa":0,"sd":0,"sp":252},"moves":["Brave Bird","Roost","U-turn","Poison Fang"],"gender":"M"},
-    "Ninja Contributor Kakashi": {"level":65,"ability":"Inner Focus","item":"Black Sludge","nature":"Jolly","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":0,"df":4,"sa":0,"sd":0,"sp":252},"moves":["Dual Wingbeat","Crunch","Quick Guard","Toxic"],"gender":"M"},
-    "Elite Four Agatha": {"level":85,"ability":"Gale Wings","item":"Flyinium Z","nature":"Adamant","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":252,"df":0,"sa":0,"sd":4,"sp":0},"moves":["Brave Bird","Roost","Tailwind","Curse"],"gender":"F"}
+    "Ninja Contributor Kakashi": {"level":65,"ability":"Inner Focus","item":"Black Sludge","nature":"Jolly","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":0,"df":4,"sa":0,"sd":0,"sp":252},"moves":["Dual Wingbeat","Crunch","Quick Guard","Toxic"],"gender":"M"}
   },
   "Skuntank": {
     "Poison Apprentice Leila 1": {"level":55,"ability":"Aftermath","item":"","nature":"Adamant","ivs":{"hp":25,"at":25,"df":25,"sa":25,"sd":25,"sp":25},"evs":{"hp":160,"at":160,"df":0,"sa":0,"sd":0,"sp":0},"moves":["Night Slash","Poison Jab","Play Rough","Toxic"],"gender":"F"},
@@ -1030,8 +950,7 @@ var SETDEX_PATHWAYS = {
     "Poison Apprentice Leila 8": {"level":100,"ability":"Regenerator","item":"Slowbronite","nature":"Calm","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":0,"df":4,"sa":0,"sd":252,"sp":0},"moves":["Scald","Psyshock","Calm Mind","Slack Off"],"gender":"M"},
     "Aqua Grunt Brandon Lead": {"level":40,"ability":"Own Tempo","item":"","nature":"Serious","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"moves":["","","",""],"gender":""},
     "Team Rocket Nathan": {"level":35,"ability":"","item":"","nature":"Serious","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"moves":["","","",""],"gender":""},
-    "Gym Leader Sabrina Dynamax": {"level":80,"ability":"Regenerator","item":"Leftovers","nature":"Calm","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":0,"df":0,"sa":4,"sd":252,"sp":0},"moves":["Scald","Expanding Force","Focus Blast","Slack Off"],"gender":"F"},
-    "Elite Four Lorelei": {"level":85,"ability":"Regenerator","item":"Slowbronite","nature":"Calm","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":0,"df":4,"sa":0,"sd":252,"sp":0},"moves":["Cosmic Power","Slack Off","Body Press","Stored Power"],"gender":"M"}
+    "Janitor Bo": {"level":100,"ability":"Holy Duster","item":"Slowbronite","nature":"Relaxed","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":0},"evs":{"hp":252,"at":0,"df":0,"sa":4,"sd":252,"sp":0},"moves":["Bouncy Bubble","Stored Power","Iron Defense","Calm Mind"],"gender":""}
   },
   "Arcanine-Hisui": {
     "Shy Guy Tony Lead": {"level":55,"ability":"Intimidate","item":"Rockium Z","nature":"Naive","ivs":{"hp":25,"at":25,"df":25,"sa":25,"sd":25,"sp":25},"evs":{"hp":0,"at":160,"df":0,"sa":0,"sd":0,"sp":160},"moves":["Stone Edge","Fire Blast","Extreme Speed","Will-O-Wisp"],"gender":"M"},
@@ -1043,7 +962,9 @@ var SETDEX_PATHWAYS = {
     "Shy Guy Tony 6": {"level":80,"ability":"Rock Head","item":"Choice Scarf","nature":"Adamant","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":0,"sa":0,"sd":4,"sp":252},"moves":["Head Smash","Flare Blitz","Close Combat","Wild Charge"],"gender":"M"},
     "Shy Guy Tony 7": {"level":100,"ability":"Rock Head","item":"Choice Scarf","nature":"Adamant","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":0,"sa":0,"sd":4,"sp":252},"moves":["Head Smash","Flare Blitz","Close Combat","Wild Charge"],"gender":"M"},
     "Shy Guy Tony 8": {"level":100,"ability":"Rock Head","item":"Choice Scarf","nature":"Adamant","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":0,"sa":0,"sd":4,"sp":252},"moves":["Head Smash","Flare Blitz","Close Combat","Wild Charge"],"gender":"M"},
-    "Hero Crystal 4": {"level":90,"ability":"Drought","item":"Choice Scarf","nature":"Adamant","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":4,"sa":0,"sd":0,"sp":252},"moves":["Head Smash","Flare Blitz","Wild Charge","Close Combat"],"gender":"M"}
+    "Hero Crystal 4": {"level":90,"ability":"Drought","item":"Choice Scarf","nature":"Adamant","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":4,"sa":0,"sd":0,"sp":252},"moves":["Head Smash","Flare Blitz","Wild Charge","Close Combat"],"gender":"M"},
+    "Mystery Girl Emma 1": {"level":65,"ability":"Immolate","item":"Choice Band","nature":"Adamant","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":0,"sa":4,"sd":252,"sp":0},"moves":["Extreme Speed","Head Smash","Will-O-Wisp","Morning Sun"],"gender":"M"},
+    "Rocker Princess Petra": {"level":100,"ability":"Magic Guard","item":"Life Orb","nature":"Jolly","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":4,"at":252,"df":0,"sa":0,"sd":0,"sp":252},"moves":["Flare Blitz","Head Smash","Wild Charge","Extreme Speed"],"gender":"M"}
   },
   "Shuckle": {
     "Shy Guy Tony 1 Lead": {"level":55,"ability":"Sturdy","item":"","nature":"Calm","ivs":{"hp":25,"at":0,"df":25,"sa":25,"sd":25,"sp":25},"evs":{"hp":160,"at":0,"df":0,"sa":0,"sd":160,"sp":0},"moves":["Sticky Web","Stealth Rock","Toxic","Infestation"],"gender":"M"},
@@ -1074,8 +995,8 @@ var SETDEX_PATHWAYS = {
   },
   "Lycanroc-Dusk": {
     "Shy Guy Tony 3": {"level":75,"ability":"Tough Claws","item":"Rockium Z","nature":"Jolly","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":4,"sa":0,"sd":0,"sp":252},"moves":["Stone Edge","Close Combat","Play Rough","Accelerock"],"gender":"M"},
-    "Shy Guy Tony 5": {"level":80,"ability":"Tough Claws","item":"Lycanrium Z","nature":"Jolly","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":4,"sa":0,"sd":0,"sp":252},"moves":["Stone Edge","Close Combat","Play Rough","Accelerock"],"gender":"M"},
-    "Shy Guy Tony 7": {"level":100,"ability":"Tough Claws","item":"Lycanrium Z","nature":"Jolly","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":4,"sa":0,"sd":0,"sp":252},"moves":["Stone Edge","Close Combat","Play Rough","Accelerock"],"gender":"M"}
+    "Shy Guy Tony 5": {"level":80,"ability":"Tough Claws","item":"Lycanium Z","nature":"Jolly","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":4,"sa":0,"sd":0,"sp":252},"moves":["Stone Edge","Close Combat","Play Rough","Accelerock"],"gender":"M"},
+    "Shy Guy Tony 7": {"level":100,"ability":"Tough Claws","item":"Lycanium Z","nature":"Jolly","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":4,"sa":0,"sd":0,"sp":252},"moves":["Stone Edge","Close Combat","Play Rough","Accelerock"],"gender":"M"}
   },
   "Celesteela": {
     "Shy Guy Tony 3": {"level":75,"ability":"Beast Boost","item":"Leftovers","nature":"Sassy","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":0,"df":4,"sa":0,"sd":252,"sp":0},"moves":["Leech Seed","Protect","Heavy Slam","Flamethrower"],"gender":""},
@@ -1122,6 +1043,19 @@ var SETDEX_PATHWAYS = {
     "Battle Server Kairo 28 Lead": {"level":80,"ability":"Prankster","item":"Sablenite","nature":"Bold","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":0,"df":252,"sa":0,"sd":4,"sp":0},"moves":["Foul Play","Seismic Toss","Recover","Toxic"],"gender":"F"},
     "Nightmare Elisia": {"level":75,"ability":"Intimidate","item":"Sablenite","nature":"Impish","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":0,"df":252,"sa":0,"sd":0,"sp":0},"moves":["Toxic","Recover","Foul Play","Cosmic Power"],"gender":"M"}
   },
+  "Infernape": {
+    "Battle Chaser Kairo Lead": {"level":55,"ability":"Iron Fist","item":"Fightinium Z","nature":"Jolly","ivs":{"hp":25,"at":25,"df":25,"sa":25,"sd":25,"sp":25},"evs":{"hp":0,"at":160,"df":0,"sa":0,"sd":0,"sp":160},"moves":["Fire Punch","Thunder Punch","Taunt","Close Combat"],"gender":"M"},
+    "Battle Chaser Kairo 1": {"level":55,"ability":"Iron Fist","item":"Fightinium Z","nature":"Jolly","ivs":{"hp":25,"at":25,"df":25,"sa":25,"sd":25,"sp":25},"evs":{"hp":0,"at":160,"df":0,"sa":0,"sd":0,"sp":160},"moves":["Fire Punch","Thunder Punch","Taunt","Close Combat"],"gender":"M"},
+    "Battle Chaser Kairo 2": {"level":70,"ability":"Iron Fist","item":"Fightinium Z","nature":"Jolly","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":4,"sa":0,"sd":0,"sp":252},"moves":["Fire Punch","Thunder Punch","Rock Slide","Close Combat"],"gender":"M"},
+    "Battle Chaser Kairo 3": {"level":75,"ability":"Iron Fist","item":"Punching Glove","nature":"Jolly","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":4,"sa":0,"sd":0,"sp":252},"moves":["Fire Punch","Thunder Punch","Knock Off","Drain Punch"],"gender":"M"},
+    "Battle Chaser Kairo 4": {"level":75,"ability":"Iron Fist","item":"Punching Glove","nature":"Jolly","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":4,"sa":0,"sd":0,"sp":252},"moves":["Fire Punch","Thunder Punch","Knock Off","Drain Punch"],"gender":"M"},
+    "Battle Chaser Kairo 5": {"level":80,"ability":"Iron Fist","item":"Life Orb","nature":"Jolly","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":4,"sa":0,"sd":0,"sp":252},"moves":["Fire Punch","Thunder Punch","Knock Off","Drain Punch"],"gender":"M"},
+    "Battle Chaser Kairo 7": {"level":100,"ability":"Iron Fist","item":"Life Orb","nature":"Jolly","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":4,"sa":0,"sd":0,"sp":252},"moves":["Fire Punch","Thunder Punch","Knock Off","Drain Punch"],"gender":"M"},
+    "Gym Leader Maylene 3": {"level":80,"ability":"Sheer Force","item":"Life Orb","nature":"Jolly","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":4,"sa":0,"sd":0,"sp":252},"moves":["Flare Blitz","Close Combat","Thunder Punch","Rock Slide"],"gender":""},
+    "Elite 4 Trainer Flint 3": {"level":80,"ability":"Sheer Force","item":"Choice Scarf","nature":"Jolly","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":4,"sa":0,"sd":0,"sp":252},"moves":["Close Combat","Flare Blitz","U-turn","Earthquake"],"gender":"M"},
+    "Overconfident Raito 1": {"level":90,"ability":"Dragonize","item":"Air Balloon","nature":"Jolly","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":4,"sa":0,"sd":0,"sp":252},"moves":["Flare Blitz","Double-Edge","Close Combat","Thunder Punch"],"gender":"M"},
+    "Master Chef Vastus Dynamax": {"level":80,"ability":"Dry-Aged","item":"Life Orb","nature":"Hasty","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":168,"df":0,"sa":88,"sd":0,"sp":252},"moves":["Overheat","Close Combat","Leaf Storm","Mach Punch"],"gender":""}
+  },
   "Torterra": {
     "Battle Chaser Kairo 1 Lead": {"level":55,"ability":"Shell Armor","item":"","nature":"Careful","ivs":{"hp":25,"at":25,"df":25,"sa":25,"sd":25,"sp":25},"evs":{"hp":160,"at":0,"df":0,"sa":0,"sd":160,"sp":0},"moves":["Earthquake","Seed Bomb","Synthesis","Stealth Rock"],"gender":"F"},
     "Battle Chaser Kairo 2": {"level":70,"ability":"Shell Armor","item":"Yache Berry","nature":"Careful","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":4,"sa":0,"sd":252,"sp":0},"moves":["Earthquake","Wood Hammer","Stone Edge","Shell Smash"],"gender":"F"},
@@ -1152,7 +1086,8 @@ var SETDEX_PATHWAYS = {
     "Battle Chaser Kairo 5 Dynamax": {"level":80,"ability":"Surge Surfer","item":"Life Orb","nature":"Timid","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":4,"sa":252,"sd":0,"sp":252},"moves":["Thunder","Surf","Expanding Force","Focus Blast"],"gender":"M"},
     "Battle Chaser Kairo 6 Dynamax": {"level":80,"ability":"Surge Surfer","item":"Life Orb","nature":"Timid","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":4,"sa":252,"sd":0,"sp":252},"moves":["Thunder","Surf","Psychic","Focus Blast"],"gender":"M"},
     "Battle Chaser Kairo 7 Dynamax": {"level":100,"ability":"Surge Surfer","item":"Life Orb","nature":"Timid","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":4,"sa":252,"sd":0,"sp":252},"moves":["Thunder","Surf","Expanding Force","Focus Blast"],"gender":"M"},
-    "Battle Chaser Kairo 8 Dynamax": {"level":100,"ability":"Surge Surfer","item":"Life Orb","nature":"Timid","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":4,"sa":252,"sd":0,"sp":252},"moves":["Thunder","Surf","Psychic","Focus Blast"],"gender":"M"}
+    "Battle Chaser Kairo 8 Dynamax": {"level":100,"ability":"Surge Surfer","item":"Life Orb","nature":"Timid","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":4,"sa":252,"sd":0,"sp":252},"moves":["Thunder","Surf","Psychic","Focus Blast"],"gender":"M"},
+    "Storm Prince Welkin Lead": {"level":65,"ability":"Electric Surge","item":"Life Orb","nature":"Timid","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":4,"sa":252,"sd":0,"sp":252},"moves":["Rising Voltage","Surf","Psychic","Focus Blast"],"gender":"M"}
   },
   "Iron Moth": {
     "Battle Chaser Kairo 3": {"level":75,"ability":"","item":"Poisonium Z","nature":"Timid","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":4,"sa":252,"sd":0,"sp":252},"moves":["Fiery Dance","Sludge Wave","Energy Ball","Morning Sun"],"gender":""},
@@ -1161,6 +1096,7 @@ var SETDEX_PATHWAYS = {
   },
   "Zoroark": {
     "A-Rank Teacher Ms. Aye Lead": {"level":75,"ability":"","item":"Focus Sash","nature":"Timid","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":4,"sa":252,"sd":0,"sp":252},"moves":["Dark Pulse","Flamethrower","Sludge Bomb","Focus Blast"],"gender":"F"},
+    "Blake Gang Goon 4": {"level":55,"ability":"","item":"","nature":"Serious","ivs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"evs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"moves":["","","",""],"gender":"M"},
     "Professor Spruce Dragon Dynamax": {"level":80,"ability":"Illusion","item":"Black Glasses","nature":"Timid","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":4,"sa":252,"sd":0,"sp":252},"moves":["Nasty Plot","Dark Pulse","Sludge Bomb","Focus Blast"],"gender":"F"},
     "Professor Spruce Dragon 1 Dynamax": {"level":100,"ability":"Illusion","item":"Black Glasses","nature":"Timid","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":4,"sa":252,"sd":0,"sp":252},"moves":["Nasty Plot","Dark Pulse","Sludge Bomb","Focus Blast"],"gender":"F"}
   },
@@ -1172,10 +1108,12 @@ var SETDEX_PATHWAYS = {
     "Skydiver Axel 5": {"level":80,"ability":"Multiscale","item":"Lum Berry","nature":"Adamant","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":0,"sa":0,"sd":4,"sp":252},"moves":["Dragon Dance","Outrage","Dual Wingbeat","Earthquake"],"gender":"M"},
     "Skydiver Axel 7": {"level":100,"ability":"Multiscale","item":"Lum Berry","nature":"Adamant","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":0,"sa":0,"sd":4,"sp":252},"moves":["Dragon Dance","Outrage","Dual Wingbeat","Earthquake"],"gender":"M"},
     "Gym Leader Clair 3": {"level":80,"ability":"Multiscale","item":"Life Orb","nature":"Adamant","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":0,"sa":0,"sd":4,"sp":252},"moves":["Dragon Dance","Extreme Speed","Outrage","Fire Punch"],"gender":""},
-    "Shadow Six Detective MacBurn Felix 1": {"level":100,"ability":"Multiscale","item":"Dragonitite","nature":"Timid","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":4,"sa":252,"sd":0,"sp":252},"moves":["Squall","Flamethrower","Dazzling Gleam","Dragon Pulse"],"gender":"M"},
+    "Shadow Six Perceptive Detective Felix 1": {"level":100,"ability":"Multiscale","item":"Dragonitite","nature":"Timid","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":4,"sa":252,"sd":0,"sp":252},"moves":["Squall","Flamethrower","Dazzling Gleam","Wild Card"],"gender":"M"},
     "Arch Saint Arlo Fyor": {"level":80,"ability":"Multiscale","item":"Leftovers","nature":"Adamant","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":248,"at":52,"df":56,"sa":0,"sd":0,"sp":154},"moves":["Dragon Dance","Dual Wingbeat","Earthquake","Roost"],"gender":"M"},
     "Arch Saint Arlo Fyor 1": {"level":100,"ability":"Aerilate","item":"Choice Band","nature":"Adamant","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":248,"at":252,"df":10,"sa":0,"sd":0,"sp":0},"moves":["Extreme Speed","","",""],"gender":"M"},
-    "That Guy Bobkowski": {"level":70,"ability":"Multiscale","item":"Heavy-Duty Boots","nature":"Adamant","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":4,"sa":0,"sd":0,"sp":252},"moves":["Extreme Speed","Outrage","Fire Punch","Dragon Dance"],"gender":""}
+    "Arch Saint Arlo Fyor 2 Dynamax": {"level":80,"ability":"Divine Mandate","item":"Leftovers","nature":"Jolly","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":0,"sa":0,"sd":4,"sp":252},"moves":["Outrage","Dual Wingbeat","Play Rough","Earthquake"],"gender":"M"},
+    "That Guy Bobkowski": {"level":70,"ability":"Multiscale","item":"Heavy-Duty Boots","nature":"Adamant","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":4,"sa":0,"sd":0,"sp":252},"moves":["Extreme Speed","Outrage","Fire Punch","Dragon Dance"],"gender":""},
+    "Fossil Duo Mogege and Tali": {"level":75,"ability":"Multiscale","item":"Dragonitite","nature":"Timid","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":4,"sa":252,"sd":0,"sp":252},"moves":["Weather Ball","Earth Power","Moonblast","Hurricane"],"gender":"M"}
   },
   "Azumarill": {
     "A-Rank Teacher Ms. Aye": {"level":75,"ability":"Huge Power","item":"Assault Vest","nature":"Adamant","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":252,"df":4,"sa":0,"sd":0,"sp":0},"moves":["Liquidation","Play Rough","Superpower","Aqua Jet"],"gender":"F"},
@@ -1200,10 +1138,12 @@ var SETDEX_PATHWAYS = {
     "Dancer Suza 6 Lead": {"level":80,"ability":"Bulletproof","item":"Kommonium Z","nature":"Timid","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":4,"sa":252,"sd":0,"sp":252},"moves":["Clanging Scales","Aura Sphere","Boomburst","Flash Cannon"],"gender":"F"},
     "Dancer Suza 7 Lead": {"level":100,"ability":"Bulletproof","item":"Kommonium Z","nature":"Timid","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":4,"sa":252,"sd":0,"sp":252},"moves":["Clanging Scales","Aura Sphere","Boomburst","Flash Cannon"],"gender":"F"},
     "Dancer Suza 8 Lead": {"level":100,"ability":"Bulletproof","item":"Kommonium Z","nature":"Timid","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":4,"sa":252,"sd":0,"sp":252},"moves":["Clanging Scales","Aura Sphere","Boomburst","Flash Cannon"],"gender":"F"},
-    "Shadow Six Detective MacBurn Felix": {"level":80,"ability":"Stacked Odds","item":"Kommonium Z","nature":"Naive","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":4,"sa":252,"sd":0,"sp":252},"moves":["Clanging Scales","Aura Sphere","Flamethrower","Treasure Drop"],"gender":"M"},
+    "Shadow Six High Flyer Milos Zelex 2": {"level":80,"ability":"Duelize","item":"Kommonium Z","nature":"Timid","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":0,"sa":252,"sd":4,"sp":252},"moves":["Boomburst","Clanging Scales","Flash Cannon","Flamethrower"],"gender":"M"},
+    "Shadow Six Perceptive Detective Felix": {"level":80,"ability":"Stacked Odds","item":"Kommonium Z","nature":"Naive","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":4,"sa":252,"sd":0,"sp":252},"moves":["Clanging Scales","Aura Sphere","Flamethrower","Treasure Drop"],"gender":"M"},
     "Master Chef Vastus 1": {"level":80,"ability":"Bulletproof","item":"Punching Glove","nature":"Jolly","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":0,"sa":0,"sd":4,"sp":252},"moves":["Dragon Dance","Drain Punch","Dragon Claw","Crabhammer"],"gender":"F"},
     "Master Chef Vastus 2": {"level":100,"ability":"Intimidate","item":"Kommonite","nature":"Jolly","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":72,"at":200,"df":16,"sa":0,"sd":16,"sp":204},"moves":["Clangorous Soul","Drain Punch","Outrage","Iron Head"],"gender":"F"},
-    "Master Chef Vastus 10": {"level":120,"ability":"Intrepid Sword","item":"Kommonite","nature":"Jolly","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":72,"at":200,"df":16,"sa":0,"sd":16,"sp":204},"moves":["No Retreat","Drain Punch","Dragon Hammer","Gigaton Hammer"],"gender":"F"}
+    "Master Chef Vastus 10": {"level":120,"ability":"Intrepid Sword","item":"Kommonite","nature":"Jolly","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":72,"at":200,"df":16,"sa":0,"sd":16,"sp":204},"moves":["No Retreat","Drain Punch","Dragon Hammer","Gigaton Hammer"],"gender":"F"},
+    "Master Chef Vastus": {"level":80,"ability":"Thick Fat","item":"Kommonium Z","nature":"Hasty","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":4,"df":0,"sa":252,"sd":0,"sp":252},"moves":["Clanging Scales","Drain Punch","Flamethrower","Clangorous Soul"],"gender":"F"}
   },
   "Sceptile": {
     "Jockstrap Keith Lead": {"level":70,"ability":"","item":"Sceptilite","nature":"Naive","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":4,"df":0,"sa":252,"sd":0,"sp":252},"moves":["Leaf Storm","Dragon Pulse","Focus Blast","Earthquake"],"gender":"M"},
@@ -1241,8 +1181,7 @@ var SETDEX_PATHWAYS = {
   "Buzzwole": {
     "Jockstrap Keith 2": {"level":75,"ability":"Beast Boost","item":"Assault Vest","nature":"Adamant","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":252,"df":4,"sa":0,"sd":0,"sp":0},"moves":["Leech Life","Close Combat","Stone Edge","Iron Head"],"gender":"M"},
     "Jockstrap Keith 5": {"level":80,"ability":"Beast Boost","item":"Fightinium Z","nature":"Adamant","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":252,"df":4,"sa":0,"sd":0,"sp":0},"moves":["Leech Life","Close Combat","Stone Edge","Iron Head"],"gender":"M"},
-    "Jockstrap Keith 7": {"level":100,"ability":"Beast Boost","item":"Fightinium Z","nature":"Adamant","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":252,"df":4,"sa":0,"sd":0,"sp":0},"moves":["Leech Life","Close Combat","Stone Edge","Iron Head"],"gender":"M"},
-    "Eclipse Elite Zack": {"level":100,"ability":"Contrary","item":"Leftovers","nature":"Adamant","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":6,"at":252,"df":0,"sa":0,"sd":0,"sp":252},"moves":["Hammer Arm","Leech Life","Ice Hammer","Headlong Rush"],"gender":""}
+    "Jockstrap Keith 7": {"level":100,"ability":"Beast Boost","item":"Fightinium Z","nature":"Adamant","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":252,"df":4,"sa":0,"sd":0,"sp":0},"moves":["Leech Life","Close Combat","Stone Edge","Iron Head"],"gender":"M"}
   },
   "Metagross": {
     "Jockstrap Keith 2": {"level":75,"ability":"Clear Body","item":"Blunder Policy","nature":"Adamant","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":4,"at":252,"df":0,"sa":0,"sd":0,"sp":252},"moves":["Meteor Mash","Zen Headbutt","Earthquake","Rock Slide"],"gender":""},
@@ -1254,6 +1193,7 @@ var SETDEX_PATHWAYS = {
     "Gym Leader Sabrina 3": {"level":80,"ability":"Clear Body","item":"Assault Vest","nature":"Adamant","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":4,"at":252,"df":0,"sa":0,"sd":252,"sp":0},"moves":["Meteor Mash","Zen Headbutt","Earthquake","Power-Up Punch"],"gender":""},
     "Gym Leader Jasmine 3": {"level":80,"ability":"Tough Claws","item":"Weakness Policy","nature":"Adamant","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":0,"sa":0,"sd":6,"sp":252},"moves":["Earthquake","Meteor Mash","Ice Punch","Agility"],"gender":""},
     "Shadow Six Unfettered Scholar Maxwell": {"level":80,"ability":"Swift Swim","item":"Groundium Z","nature":"Adamant","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":4,"sa":0,"sd":0,"sp":252},"moves":["Meteor Mash","Zen Headbutt","Earthquake","Ice Punch"],"gender":""},
+    "Professor Spruce Dragon": {"level":80,"ability":"Filter","item":"Choice Band","nature":"Adamant","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":252,"df":0,"sa":0,"sd":4,"sp":0},"moves":["Graviton Hammer","Bullet Punch","Singularity","Earthquake"],"gender":""},
     "Battle Server Kairo 12": {"level":70,"ability":"Clear Body","item":"Weakness Policy","nature":"Adamant","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":0,"sa":0,"sd":4,"sp":252},"moves":["Meteor Mash","Zen Headbutt","Ice Punch","Agility"],"gender":""},
     "Battle Server Kairo 30 Lead": {"level":80,"ability":"Clear Body","item":"Metagrossite","nature":"Jolly","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":4,"sa":0,"sd":0,"sp":252},"moves":["Meteor Mash","Zen Headbutt","Earthquake","Ice Punch"],"gender":""},
     "Tourney Champion FQEF": {"level":70,"ability":"Clear Body","item":"Assault Vest","nature":"Adamant","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":48,"at":252,"df":0,"sa":0,"sd":0,"sp":208},"moves":["Meteor Mash","Knock Off","Earthquake","Zen Headbutt"],"gender":""}
@@ -1262,7 +1202,8 @@ var SETDEX_PATHWAYS = {
     "Jockstrap Keith 2": {"level":75,"ability":"Libero","item":"Firium Z","nature":"Jolly","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":4,"sa":0,"sd":0,"sp":252},"moves":["Pyro Ball","High Jump Kick","Zen Headbutt","Gunk Shot"],"gender":"M"},
     "Jockstrap Keith 5": {"level":80,"ability":"Libero","item":"Choice Band","nature":"Jolly","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":4,"sa":0,"sd":0,"sp":252},"moves":["Pyro Ball","High Jump Kick","Zen Headbutt","Gunk Shot"],"gender":"M"},
     "Jockstrap Keith 7": {"level":100,"ability":"Libero","item":"Choice Band","nature":"Jolly","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":4,"sa":0,"sd":0,"sp":252},"moves":["Pyro Ball","High Jump Kick","Zen Headbutt","Gunk Shot"],"gender":"M"},
-    "Shadow Six High Flyer Milos Zelex Dynamax": {"level":80,"ability":"Libero","item":"Choice Band","nature":"Jolly","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":6,"at":252,"df":0,"sa":0,"sd":0,"sp":252},"moves":["Pyro Ball","Sacred Sword","Heavy Cavalry","Relic Blade"],"gender":"M"}
+    "Shadow Six High Flyer Milos Zelex Dynamax": {"level":80,"ability":"Libero","item":"Choice Band","nature":"Jolly","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":6,"at":252,"df":0,"sa":0,"sd":0,"sp":252},"moves":["Pyro Ball","Sacred Sword","Heavy Cavalry","Relic Blade"],"gender":"M"},
+    "Shadow Six High Flyer Milos Zelex 2": {"level":80,"ability":"Gallant","item":"Heavy-Duty Boots","nature":"Jolly","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":224,"at":32,"df":0,"sa":0,"sd":0,"sp":252},"moves":["Pyro Ball","U-turn","Will-O-Wisp","Court Change"],"gender":"M"}
   },
   "Sneasler": {
     "Gang Leader Blake Lead": {"level":70,"ability":"Unburden","item":"Air Balloon","nature":"Jolly","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":4,"sa":0,"sd":0,"sp":252},"moves":["Swords Dance","Dire Claw","Close Combat","Acrobatics"],"gender":"M"},
@@ -1276,7 +1217,9 @@ var SETDEX_PATHWAYS = {
     "Shadow Six High Flyer Milos Zelex": {"level":80,"ability":"Sharpness","item":"Air Balloon","nature":"Jolly","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":6,"at":252,"df":0,"sa":0,"sd":0,"sp":252},"moves":["Dire Claw","Sacred Sword","Shadow Claw","Swords Dance"],"gender":"F"},
     "Shadow Six High Flyer Milos Zelex 1 Dynamax": {"level":100,"ability":"Unburden","item":"Air Balloon","nature":"Jolly","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":0,"sa":0,"sd":6,"sp":252},"moves":["Close Combat","Earthquake","Dire Claw","Shadow Bone"],"gender":"F"},
     "Cheese Lord Miloszelex 10 Dynamax": {"level":120,"ability":"Pure Power","item":"Choice Scarf","nature":"Jolly","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":6,"at":252,"df":0,"sa":0,"sd":0,"sp":252},"moves":["Dragon Ascent","Close Combat","Dire Claw","Spectral Thief"],"gender":""},
-    "Battle Server Kairo 26 Lead": {"level":80,"ability":"Unburden","item":"Focus Sash","nature":"Jolly","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":4,"sa":0,"sd":0,"sp":252},"moves":["Dire Claw","Close Combat","Acrobatics","Reversal"],"gender":"F"}
+    "Battle Server Kairo 26 Lead": {"level":80,"ability":"Unburden","item":"Focus Sash","nature":"Jolly","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":4,"sa":0,"sd":0,"sp":252},"moves":["Dire Claw","Close Combat","Acrobatics","Reversal"],"gender":"F"},
+    "Alchemist Hexipher": {"level":100,"ability":"Dust Reaction","item":"Choice Scarf","nature":"Jolly","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":0,"sa":0,"sd":4,"sp":252},"moves":["Close Combat","Dire Claw","Earthquake","U-turn"],"gender":"M"},
+    "Monk Instructor Terra Lead": {"level":100,"ability":"Serene Grace","item":"Focus Sash","nature":"Jolly","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":0,"sa":0,"sd":4,"sp":252},"moves":["Dire Claw","Rock Slide","Sucker Punch","Triple Arrows"],"gender":"M"}
   },
   "Houndoom": {
     "Gang Leader Blake 1": {"level":70,"ability":"Dirty Deeds","item":"Houndoominite","nature":"Timid","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":4,"sa":252,"sd":0,"sp":252},"moves":["Fire Blast","Sludge Bomb","Dark Pulse","Nasty Plot"],"gender":"M"},
@@ -1287,12 +1230,14 @@ var SETDEX_PATHWAYS = {
     "Gang Leader Blake 7": {"level":100,"ability":"Dirty Deeds","item":"Houndoominite","nature":"Timid","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":4,"sa":252,"sd":0,"sp":252},"moves":["Fire Blast","Sludge Bomb","Dark Pulse","Nasty Plot"],"gender":"M"},
     "Gang Leader Blake 8": {"level":100,"ability":"Dirty Deeds","item":"Houndoominite","nature":"Timid","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":4,"sa":252,"sd":0,"sp":252},"moves":["Fire Blast","Sludge Bomb","Dark Pulse","Nasty Plot"],"gender":"M"},
     "Ace KAM Lead": {"level":25,"ability":"Flash Fire","item":"","nature":"Serious","ivs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"evs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"moves":["Nasty Plot","Incinerate","Snarl","Smog"],"gender":""},
+    "Blake Gang Goonies 3": {"level":55,"ability":"","item":"","nature":"Serious","ivs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"evs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"moves":["","","",""],"gender":""},
     "Crooked Cop Rocky Lead": {"level":55,"ability":"Flash Fire","item":"","nature":"Serious","ivs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"evs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"moves":["Flamethrower","Dark Pulse","Nasty Plot","Hyper Voice"],"gender":"F"},
     "Gym Leader Flannery 3": {"level":80,"ability":"Dirty Deeds","item":"Life Orb","nature":"Timid","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":4,"sa":252,"sd":0,"sp":252},"moves":["Destiny Bond","Solar Beam","Fire Blast","Dark Pulse"],"gender":"M"},
     "Elite 4 Trainer Flint 3": {"level":80,"ability":"Drought","item":"Houndoominite","nature":"Timid","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":4,"sa":252,"sd":0,"sp":252},"moves":["Nasty Plot","Dark Pulse","Sludge Bomb","Fire Blast"],"gender":"M"},
     "Elite 4 Trainer Karen 3": {"level":80,"ability":"Drought","item":"Life Orb","nature":"Timid","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":4,"sa":252,"sd":0,"sp":252},"moves":["Solar Beam","Dark Pulse","Sludge Bomb","Fire Blast"],"gender":"M"},
     "Battle Server Kairo 29": {"level":80,"ability":"Early Bird","item":"Houndoominite","nature":"Timid","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":4,"sa":252,"sd":0,"sp":252},"moves":["Fire Blast","Solar Beam","Dark Pulse","Destiny Bond"],"gender":"M"},
-    "Claw Gang Gibo": {"level":70,"ability":"Dirty Deeds","item":"Quick Claw","nature":"Adamant","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"moves":["Dark Pulse","Heat Wave","Nasty Plot","Destiny Bond"],"gender":"M"}
+    "Claw Gang Gibo": {"level":70,"ability":"Dirty Deeds","item":"Quick Claw","nature":"Adamant","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"moves":["Dark Pulse","Heat Wave","Nasty Plot","Destiny Bond"],"gender":"M"},
+    "Mystery Girl Emma 1": {"level":65,"ability":"Dirty Deeds","item":"Houndoominite","nature":"Timid","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":4,"sa":252,"sd":0,"sp":252},"moves":["Fire Blast","Sludge Bomb","Dark Pulse","Nasty Plot"],"gender":"M"}
   },
   "Honchkrow": {
     "Gang Leader Blake 1": {"level":70,"ability":"Moxie","item":"Life Orb","nature":"Adamant","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":4,"sa":0,"sd":0,"sp":252},"moves":["Brave Bird","Sucker Punch","Superpower","Roost"],"gender":"M"},
@@ -1300,9 +1245,17 @@ var SETDEX_PATHWAYS = {
     "Gang Leader Blake 5": {"level":80,"ability":"Moxie","item":"Flyinium Z","nature":"Adamant","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":4,"sa":0,"sd":0,"sp":252},"moves":["Brave Bird","Sucker Punch","Superpower","Roost"],"gender":"M"},
     "Gang Leader Blake 7": {"level":100,"ability":"Moxie","item":"Flyinium Z","nature":"Adamant","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":4,"sa":0,"sd":0,"sp":252},"moves":["Brave Bird","Sucker Punch","Superpower","Roost"],"gender":"M"},
     "Rocket Admin Petrel": {"level":60,"ability":"Moxie","item":"","nature":"Serious","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"moves":["","","",""],"gender":""},
+    "Blake Gang Goonies 3": {"level":55,"ability":"","item":"","nature":"Serious","ivs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"evs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"moves":["","","",""],"gender":""},
     "Elite 4 Trainer Karen 3": {"level":80,"ability":"Moxie","item":"Life Orb","nature":"Adamant","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":0,"sa":0,"sd":4,"sp":252},"moves":["Brave Bird","Sucker Punch","Roost","Superpower"],"gender":"M"},
     "Hero Silver 3": {"level":80,"ability":"Prankster","item":"Life Orb","nature":"Adamant","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":4,"sa":0,"sd":0,"sp":252},"moves":["Brave Bird","Night Slash","U-turn","Tailwind"],"gender":"M"},
     "Hero Silver 4 Lead": {"level":90,"ability":"Prankster","item":"Focus Sash","nature":"Adamant","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":252,"df":4,"sa":0,"sd":0,"sp":0},"moves":["Knock Off","Encore","Thunder Wave","Memento"],"gender":"M"}
+  },
+  "Toxtricity": {
+    "Gang Leader Blake 2": {"level":75,"ability":"Punk Rock","item":"Throat Spray","nature":"Timid","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":4,"sa":252,"sd":0,"sp":252},"moves":["Boomburst","Overdrive","Sludge Bomb","Thunder Wave"],"gender":"M"},
+    "Gang Leader Blake 5 Lead Dynamax": {"level":80,"ability":"Punk Rock","item":"Focus Sash","nature":"Modest","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":4,"sa":252,"sd":0,"sp":252},"moves":["Boomburst","Overdrive","Sludge Bomb","Thunder Wave"],"gender":"M"},
+    "Gang Leader Blake 7 Lead Dynamax": {"level":100,"ability":"Punk Rock","item":"Focus Sash","nature":"Modest","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":4,"sa":252,"sd":0,"sp":252},"moves":["Boomburst","Overdrive","Sludge Bomb","Thunder Wave"],"gender":"M"},
+    "Wandering Musician Lyric 1 Dynamax": {"level":100,"ability":"Unburden","item":"Air Balloon","nature":"Modest","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":4,"sa":252,"sd":0,"sp":252},"moves":["Boomburst","Overdrive","Sludge Bomb","Ice Beam"],"gender":""},
+    "Musicians Gallagher and Lyric": {"level":120,"ability":"Venomize","item":"Air Balloon","nature":"Modest","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":4,"sa":252,"sd":0,"sp":252},"moves":["Boomburst","Overdrive","Hyperspace Hole","Minamo Giri"],"gender":""}
   },
   "Annihilape": {
     "Gang Leader Blake 2": {"level":75,"ability":"Defiant","item":"Assault Vest","nature":"Adamant","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":252,"df":4,"sa":0,"sd":0,"sp":0},"moves":["Rage Fist","Drain Punch","Gunk Shot","Stone Edge"],"gender":"M"},
@@ -1319,7 +1272,6 @@ var SETDEX_PATHWAYS = {
     "Gang Leader Blake 2": {"level":75,"ability":"","item":"Roseli Berry","nature":"Quiet","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":0},"evs":{"hp":0,"at":0,"df":252,"sa":252,"sd":4,"sp":0},"moves":["Funest Funnel","Ravenous Cry","Dragon Pulse","Flamethrower"],"gender":""},
     "Gang Leader Blake 5": {"level":80,"ability":"","item":"Life Orb","nature":"Quiet","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":0},"evs":{"hp":0,"at":0,"df":252,"sa":252,"sd":4,"sp":0},"moves":["Funest Funnel","Ravenous Cry","Dragon Pulse","Flamethrower"],"gender":""},
     "Gang Leader Blake 7": {"level":100,"ability":"","item":"Life Orb","nature":"Quiet","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":0},"evs":{"hp":0,"at":0,"df":252,"sa":252,"sd":4,"sp":0},"moves":["Funest Funnel","Ravenous Cry","Dragon Pulse","Flamethrower"],"gender":""},
-    "Eclipse Elite Zack": {"level":100,"ability":"Innards Out","item":"Custap Berry","nature":"Brave","ivs":{"hp":31,"at":31,"df":0,"sa":31,"sd":0,"sp":0},"evs":{"hp":252,"at":252,"df":0,"sa":0,"sd":0,"sp":0},"moves":["Knock Off","Outrage","Funest Funnel","Gyro Ball"],"gender":""},
     "Heretic Soul Arlo Fyor 10": {"level":120,"ability":"Sinful Gluttony","item":"Leftovers","nature":"Adamant","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":6,"at":102,"df":152,"sa":0,"sd":248,"sp":0},"moves":["Wicked Blow","Dragon Rush","Gunk Shot","Drain Punch"],"gender":""}
   },
   "Florges": {
@@ -1330,14 +1282,17 @@ var SETDEX_PATHWAYS = {
     "Gardener Caroline 5": {"level":80,"ability":"Grassy Surge","item":"Grassy Seed","nature":"Bold","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":0,"df":252,"sa":4,"sd":0,"sp":0},"moves":["Spirit Bloom","Synthesis","Aromatherapy","Energy Ball"],"gender":"F"},
     "Gardener Caroline 6 Lead": {"level":80,"ability":"Grassy Surge","item":"Grassy Seed","nature":"Bold","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":0,"df":252,"sa":4,"sd":0,"sp":0},"moves":["Spirit Bloom","Synthesis","Aromatherapy","Energy Ball"],"gender":"F"},
     "Gardener Caroline 7": {"level":100,"ability":"Grassy Surge","item":"Grassy Seed","nature":"Bold","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":0,"df":252,"sa":4,"sd":0,"sp":0},"moves":["Spirit Bloom","Synthesis","Aromatherapy","Energy Ball"],"gender":"F"},
-    "Gardener Caroline 8 Lead": {"level":100,"ability":"Grassy Surge","item":"Grassy Seed","nature":"Bold","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":0,"df":252,"sa":4,"sd":0,"sp":0},"moves":["Spirit Bloom","Synthesis","Aromatherapy","Energy Ball"],"gender":"F"}
+    "Gardener Caroline 8 Lead": {"level":100,"ability":"Grassy Surge","item":"Grassy Seed","nature":"Bold","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":0,"df":252,"sa":4,"sd":0,"sp":0},"moves":["Spirit Bloom","Synthesis","Aromatherapy","Energy Ball"],"gender":"F"},
+    "Shadow Six Unfettered Scholar Maxwell 3": {"level":80,"ability":"Grassy Surge","item":"Choice Scarf","nature":"Timid","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":0,"sa":252,"sd":4,"sp":252},"moves":["Terrain Pulse","Spirit Bloom","Psychic Noise","Trick"],"gender":"F"},
+    "Druid Jehowiczak": {"level":80,"ability":"Grassy Surge","item":"Leftovers","nature":"Modest","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":0,"df":0,"sa":252,"sd":4,"sp":0},"moves":["Spirit Bloom","Giga Drain","Earth Power","Calm Mind"],"gender":"F"}
   },
   "Trevenant": {
     "Gardener Caroline 1 Lead": {"level":70,"ability":"Natural Cure","item":"Choice Band","nature":"Adamant","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":252,"df":4,"sa":0,"sd":0,"sp":0},"moves":["Shadow Claw","Wood Hammer","Rock Slide","Drain Punch"],"gender":"F"},
     "Gardener Caroline 2": {"level":75,"ability":"Harvest","item":"Sitrus Berry","nature":"Adamant","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":252,"df":4,"sa":0,"sd":0,"sp":0},"moves":["Shadow Claw","Wood Hammer","Rock Slide","Drain Punch"],"gender":"F"},
     "Gardener Caroline 5 Dynamax": {"level":80,"ability":"Harvest","item":"Coba Berry","nature":"Adamant","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":252,"df":4,"sa":0,"sd":0,"sp":0},"moves":["Shadow Claw","Wood Hammer","Earthquake","Drain Punch"],"gender":"F"},
     "Gardener Caroline 7 Dynamax": {"level":100,"ability":"Harvest","item":"Coba Berry","nature":"Adamant","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":252,"df":4,"sa":0,"sd":0,"sp":0},"moves":["Shadow Claw","Wood Hammer","Earthquake","Drain Punch"],"gender":"F"},
-    "Youngster Mizuno Lead": {"level":65,"ability":"Natural Cure","item":"","nature":"Serious","ivs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"evs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"moves":["Horn Leech","Shadow Claw","Will-O-Wisp","Rock Slide"],"gender":"M"}
+    "Youngster Mizuno Lead": {"level":65,"ability":"Natural Cure","item":"","nature":"Serious","ivs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"evs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"moves":["Horn Leech","Shadow Claw","Will-O-Wisp","Rock Slide"],"gender":"M"},
+    "Mysterious Heroine ???": {"level":100,"ability":"Harvest","item":"Sitrus Berry","nature":"Adamant","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":252,"df":4,"sa":0,"sd":0,"sp":0},"moves":["Poltergeist","Wood Hammer","Rock Slide","Drain Punch"],"gender":"F"}
   },
   "Turtonator": {
     "Gardener Caroline 1": {"level":70,"ability":"Weak Armor","item":"White Herb","nature":"Timid","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":0,"sa":252,"sd":4,"sp":252},"moves":["Shell Smash","Fire Blast","Dragon Pulse","Flash Cannon"],"gender":"M"},
@@ -1363,7 +1318,7 @@ var SETDEX_PATHWAYS = {
     "Gardener Caroline 8": {"level":100,"ability":"Overgrow","item":"Venusaurite","nature":"Bold","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":0,"df":252,"sa":0,"sd":4,"sp":0},"moves":["Giga Drain","Sludge Bomb","Synthesis","Leech Seed"],"gender":"M"},
     "Gym Leader Erika 3 Lead": {"level":80,"ability":"Drought","item":"Venusaurite","nature":"Modest","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":0,"df":4,"sa":252,"sd":0,"sp":0},"moves":["Growth","Sludge Bomb","Solar Beam","Earth Power"],"gender":"F"},
     "Battle Server Kairo 23": {"level":80,"ability":"Overgrow","item":"Venusaurite","nature":"Bold","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":0,"df":252,"sa":4,"sd":0,"sp":0},"moves":["Leech Seed","Toxic","Synthesis","Giga Drain"],"gender":"M"},
-    "Gym Leader Erika Lead": {"level":80,"ability":"Grassy Surge","item":"Venusaurite","nature":"Modest","ivs":{"hp":31,"at":0,"df":31,"sa":30,"sd":31,"sp":30},"evs":{"hp":252,"at":0,"df":0,"sa":252,"sd":0,"sp":4},"moves":["Synthesis","Energy Ball","Sludge Bomb","Hidden Power"],"gender":"M"}
+    "Mysterious Heroine ???": {"level":100,"ability":"Overgrow","item":"Venusaurite","nature":"Bold","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":0,"df":252,"sa":0,"sd":4,"sp":0},"moves":["Giga Drain","Sludge Bomb","Earth Power","Leech Seed"],"gender":"F"}
   },
   "Mimikyu": {
     "Outcast Mandy Lead": {"level":70,"ability":"","item":"Mimikite","nature":"Jolly","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":4,"sa":0,"sd":0,"sp":252},"moves":["Play Rough","Shadow Claw","Shadow Sneak","Swords Dance"],"gender":"F"},
@@ -1374,6 +1329,7 @@ var SETDEX_PATHWAYS = {
     "Outcast Mandy 6": {"level":80,"ability":"","item":"Mimikite","nature":"Jolly","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":4,"sa":0,"sd":0,"sp":252},"moves":["Play Rough","Poltergeist","Shadow Sneak","Swords Dance"],"gender":"F"},
     "Outcast Mandy 7": {"level":100,"ability":"","item":"Mimikite","nature":"Jolly","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":4,"sa":0,"sd":0,"sp":252},"moves":["Play Rough","Poltergeist","Shadow Sneak","Swords Dance"],"gender":"F"},
     "Outcast Mandy 8": {"level":100,"ability":"","item":"Mimikite","nature":"Jolly","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":4,"sa":0,"sd":0,"sp":252},"moves":["Play Rough","Poltergeist","Shadow Sneak","Swords Dance"],"gender":"F"},
+    "Outcast Mandy": {"level":80,"ability":"","item":"Mimikite","nature":"Jolly","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":0,"sa":0,"sd":4,"sp":252},"moves":["Play Rough","Wild Card","Shadow Sneak","Swords Dance"],"gender":"F"},
     "Professor Spruce Dragon": {"level":80,"ability":"Disguise","item":"Mimikium Z","nature":"Adamant","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":4,"sa":0,"sd":0,"sp":252},"moves":["Swords Dance","Play Rough","Shadow Claw","Shadow Sneak"],"gender":"F"},
     "Professor Spruce Dragon 1": {"level":100,"ability":"Disguise","item":"Mimikium Z","nature":"Adamant","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":4,"sa":0,"sd":0,"sp":252},"moves":["Swords Dance","Play Rough","Shadow Claw","Shadow Sneak"],"gender":"F"},
     "Tourney Champion FQEF": {"level":70,"ability":"","item":"Mimikite","nature":"Jolly","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":0,"sa":0,"sd":4,"sp":252},"moves":["Swords Dance","Play Rough","Wood Hammer","Drain Punch"],"gender":""}
@@ -1383,7 +1339,8 @@ var SETDEX_PATHWAYS = {
     "Outcast Mandy 2 Lead": {"level":75,"ability":"Unburden","item":"Flying Gem","nature":"Adamant","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":200,"df":0,"sa":0,"sd":0,"sp":56},"moves":["Phantom Force","Strength Sap","Destiny Bond","Acrobatics"],"gender":"F"},
     "Outcast Mandy 4 Lead": {"level":75,"ability":"Unburden","item":"Flying Gem","nature":"Adamant","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":200,"df":0,"sa":0,"sd":0,"sp":56},"moves":["Phantom Force","Strength Sap","Destiny Bond","Acrobatics"],"gender":"F"},
     "Outcast Mandy 5 Lead": {"level":80,"ability":"Unburden","item":"Flying Gem","nature":"Adamant","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":200,"df":0,"sa":0,"sd":0,"sp":56},"moves":["Phantom Force","Strength Sap","Destiny Bond","Acrobatics"],"gender":"F"},
-    "Outcast Mandy 7 Lead": {"level":100,"ability":"Unburden","item":"Flying Gem","nature":"Adamant","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":200,"df":0,"sa":0,"sd":0,"sp":56},"moves":["Phantom Force","Strength Sap","Destiny Bond","Acrobatics"],"gender":"F"}
+    "Outcast Mandy 7 Lead": {"level":100,"ability":"Unburden","item":"Flying Gem","nature":"Adamant","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":200,"df":0,"sa":0,"sd":0,"sp":56},"moves":["Phantom Force","Strength Sap","Destiny Bond","Acrobatics"],"gender":"F"},
+    "Outcast Mandy": {"level":80,"ability":"Aftermath","item":"Leftovers","nature":"Bold","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":248,"at":0,"df":252,"sa":0,"sd":0,"sp":8},"moves":["Hex","Strength Sap","Defog","Will-O-Wisp"],"gender":"F"}
   },
   "Pyroar": {
     "Outcast Mandy 1": {"level":70,"ability":"Intimidate","item":"Life Orb","nature":"Timid","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":4,"sa":252,"sd":0,"sp":252},"moves":["Fire Blast","Boomburst","Dark Pulse","Sleep Talk"],"gender":"M"},
@@ -1393,6 +1350,7 @@ var SETDEX_PATHWAYS = {
     "Outcast Mandy 6 Lead Dynamax": {"level":80,"ability":"Intimidate","item":"Life Orb","nature":"Timid","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":4,"sa":252,"sd":0,"sp":252},"moves":["Fire Blast","Boomburst","Dark Pulse","Solar Beam"],"gender":"M"},
     "Outcast Mandy 7": {"level":100,"ability":"Noble Hunt","item":"Choice Band","nature":"Jolly","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":0,"sa":0,"sd":4,"sp":252},"moves":["Flare Blitz","Double-Edge","Wild Charge","Psychic Fangs"],"gender":"F"},
     "Outcast Mandy 8 Lead Dynamax": {"level":100,"ability":"Intimidate","item":"Life Orb","nature":"Timid","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":4,"sa":252,"sd":0,"sp":252},"moves":["Fire Blast","Boomburst","Dark Pulse","Solar Beam"],"gender":"M"},
+    "Outcast Mandy": {"level":80,"ability":"Scrappy","item":"Choice Specs","nature":"Jolly","ivs":{"hp":31,"at":1,"df":31,"sa":31,"sd":31,"sp":30},"evs":{"hp":0,"at":0,"df":0,"sa":252,"sd":4,"sp":252},"moves":["Fire Blast","Boomburst","Dark Pulse","Hidden Power"],"gender":"F"},
     "Battle Server Kairo 18": {"level":80,"ability":"Noble Hunt","item":"Firium Z","nature":"Jolly","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":0,"sa":0,"sd":4,"sp":252},"moves":["Flare Blitz","Return","Wild Charge","Psychic Fangs"],"gender":"M"},
     "Battle Server Kairo 36 Lead": {"level":80,"ability":"Noble Hunt","item":"Firium Z","nature":"Jolly","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":0,"sa":0,"sd":4,"sp":252},"moves":["Flare Blitz","Return","Wild Charge","Psychic Fangs"],"gender":"M"},
     "Battle Server Kairo 37": {"level":80,"ability":"Noble Hunt","item":"Firium Z","nature":"Jolly","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":0,"sa":0,"sd":4,"sp":252},"moves":["Flare Blitz","Return","Wild Charge","Psychic Fangs"],"gender":"M"},
@@ -1404,6 +1362,7 @@ var SETDEX_PATHWAYS = {
     "Outcast Mandy 6": {"level":80,"ability":"Infiltrator","item":"White Herb","nature":"Naive","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":4,"sa":252,"sd":0,"sp":252},"moves":["Draco Meteor","Shadow Ball","Flamethrower","Sludge Bomb"],"gender":"M"},
     "Outcast Mandy 7": {"level":100,"ability":"Infiltrator","item":"Ghostium Z","nature":"Naive","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":4,"sa":252,"sd":0,"sp":252},"moves":["Draco Meteor","Shadow Ball","Flamethrower","U-turn"],"gender":"M"},
     "Outcast Mandy 8": {"level":100,"ability":"Infiltrator","item":"White Herb","nature":"Naive","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":4,"sa":252,"sd":0,"sp":252},"moves":["Draco Meteor","Shadow Ball","Flamethrower","Sludge Bomb"],"gender":"M"},
+    "Outcast Mandy Lead": {"level":80,"ability":"Lucky Charm","item":"Heavy-Duty Boots","nature":"Timid","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":0,"sa":252,"sd":4,"sp":252},"moves":["Draco Meteor","Hex","Thunder Wave","U-turn"],"gender":"M"},
     "Shadow Six High Flyer Milos Zelex": {"level":80,"ability":"Duelize","item":"Life Orb","nature":"Timid","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":6,"at":0,"df":0,"sa":252,"sd":0,"sp":252},"moves":["Tri Attack","Shadow Ball","Dragon Pulse","Flamethrower"],"gender":"M"},
     "Shadow Six High Flyer Milos Zelex 1": {"level":100,"ability":"Clear Body","item":"Dragapultite","nature":"Adamant","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":0,"sa":0,"sd":6,"sp":252},"moves":["Dragon Darts","Shadow Bone","Sacred Sword","Swords Dance"],"gender":"M"},
     "Cheese Lord Miloszelex 10": {"level":120,"ability":"Psychic Surge","item":"Dragapultite","nature":"Modest","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":6,"at":0,"df":0,"sa":252,"sd":0,"sp":252},"moves":["Shadow Ball","Dragon Energy","Eruption","Water Spout"],"gender":"M"},
@@ -1416,6 +1375,7 @@ var SETDEX_PATHWAYS = {
     "Outcast Mandy 2": {"level":75,"ability":"","item":"Booster Energy","nature":"Jolly","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":0,"sa":0,"sd":4,"sp":252},"moves":["Close Combat","Psycho Cut","Spirit Break","Throat Chop"],"gender":"F"},
     "Outcast Mandy 5": {"level":80,"ability":"","item":"Life Orb","nature":"Jolly","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":0,"sa":0,"sd":4,"sp":252},"moves":["Close Combat","Psycho Cut","Spirit Break","Thunder Punch"],"gender":"F"},
     "Outcast Mandy 7": {"level":100,"ability":"","item":"Life Orb","nature":"Jolly","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":0,"sa":0,"sd":4,"sp":252},"moves":["Close Combat","Psycho Cut","Spirit Break","Thunder Punch"],"gender":"F"},
+    "Outcast Mandy Dynamax": {"level":80,"ability":"","item":"Booster Energy","nature":"Naive","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":0,"sa":0,"sd":4,"sp":252},"moves":["Close Combat","Moonblast","Knock Off","Destiny Bond"],"gender":"F"},
     "Shadow Six High Flyer Milos Zelex 1": {"level":100,"ability":"Sheer Force","item":"Life Orb","nature":"Timid","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":0,"sa":252,"sd":6,"sp":252},"moves":["Moonblast","Focus Blast","Thunderbolt","Shadow Ball"],"gender":""}
   },
   "Medicham": {
@@ -1456,14 +1416,29 @@ var SETDEX_PATHWAYS = {
     "Dancer Suza 5": {"level":80,"ability":"","item":"Assault Vest","nature":"Adamant","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":200,"df":0,"sa":0,"sd":252,"sp":56},"moves":["Headlong Rush","Close Combat","Megahorn","Rapid Spin"],"gender":""},
     "Dancer Suza 7": {"level":100,"ability":"","item":"Assault Vest","nature":"Adamant","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":200,"df":0,"sa":0,"sd":252,"sp":56},"moves":["Headlong Rush","Close Combat","Megahorn","Rapid Spin"],"gender":""},
     "Regigigas Fanatic Estionese Dynamax": {"level":80,"ability":"Chlorophyll","item":"Life Orb","nature":"Adamant","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":4,"sa":0,"sd":0,"sp":252},"moves":["Headlong Rush","Icicle Crash","Rapid Spin","Close Combat"],"gender":""},
-    "Mad Berserker Gallagher 1 Dynamax": {"level":100,"ability":"Protosynthesis","item":"Assault Vest","nature":"Jolly","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":252,"df":0,"sa":0,"sd":4,"sp":0},"moves":["Close Combat","Headlong Rush","Knock Off","Fire Lash"],"gender":""}
+    "Mad Berserker Gallagher 1 Dynamax": {"level":100,"ability":"Protosynthesis","item":"Assault Vest","nature":"Jolly","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":252,"df":0,"sa":0,"sd":4,"sp":0},"moves":["Close Combat","Headlong Rush","Knock Off","Fire Lash"],"gender":""},
+    "Musicians Gallagher and Lyric Dynamax": {"level":120,"ability":"Parental Bond","item":"Assault Vest","nature":"Jolly","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":252,"df":0,"sa":0,"sd":4,"sp":0},"moves":["Close Combat","Headlong Rush","Knock Off","Fire Lash"],"gender":""}
   },
   "Lilligant-Hisui": {
     "Dancer Suza 2": {"level":75,"ability":"Hustle","item":"Wide Lens","nature":"Jolly","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":4,"sa":0,"sd":0,"sp":252},"moves":["Victory Dance","Leaf Blade","Close Combat","Poison Jab"],"gender":"M"},
     "Dancer Suza 5": {"level":80,"ability":"Hustle","item":"Focus Sash","nature":"Jolly","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":4,"sa":0,"sd":0,"sp":252},"moves":["Victory Dance","Leaf Blade","Close Combat","Poison Jab"],"gender":"M"},
     "Dancer Suza 7": {"level":100,"ability":"Hustle","item":"Focus Sash","nature":"Jolly","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":4,"sa":0,"sd":0,"sp":252},"moves":["Victory Dance","Leaf Blade","Close Combat","Poison Jab"],"gender":"M"},
     "Druid Jehowiczak": {"level":80,"ability":"Hustle","item":"Life Orb","nature":"Jolly","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":4,"sa":0,"sd":0,"sp":252},"moves":["Victory Dance","Close Combat","Leaf Blade","Ice Punch"],"gender":"F"},
-    "Druid Jehowiczak 1": {"level":100,"ability":"Hustle","item":"Life Orb","nature":"Jolly","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":0,"sa":0,"sd":4,"sp":252},"moves":["Victory Dance","Shadow Punch","Flower Trick","Aerial Ace"],"gender":"F"}
+    "Druid Jehowiczak 1": {"level":100,"ability":"Hustle","item":"Life Orb","nature":"Jolly","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":0,"sa":0,"sd":4,"sp":252},"moves":["Victory Dance","Shadow Punch","Flower Trick","Aerial Ace"],"gender":"F"},
+    "Druid Jehowiczak Dynamax": {"level":80,"ability":"Forest Spirits","item":"Life Orb","nature":"Jolly","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":0,"sa":0,"sd":4,"sp":252},"moves":["Leaf Blade","Close Combat","Triple Axel","Shillelagh"],"gender":"F"}
+  },
+  "Aerodactyl": {
+    "Skydiver Axel Lead": {"level":70,"ability":"Rock Head","item":"Aerodactylite","nature":"Jolly","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":4,"sa":0,"sd":0,"sp":252},"moves":["Head Smash","Dual Wingbeat","Earthquake","Ice Fang"],"gender":"F"},
+    "Skydiver Axel 1": {"level":70,"ability":"Rock Head","item":"Aerodactylite","nature":"Jolly","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":4,"sa":0,"sd":0,"sp":252},"moves":["Head Smash","Dual Wingbeat","Earthquake","Ice Fang"],"gender":"F"},
+    "Skydiver Axel 2": {"level":75,"ability":"Rock Head","item":"Aerodactylite","nature":"Jolly","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":4,"sa":0,"sd":0,"sp":252},"moves":["Head Smash","Dual Wingbeat","Earthquake","Aqua Tail"],"gender":"F"},
+    "Skydiver Axel 4 Lead": {"level":75,"ability":"Rock Head","item":"Aerodactylite","nature":"Jolly","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":4,"sa":0,"sd":0,"sp":252},"moves":["Head Smash","Dual Wingbeat","Earthquake","Ice Fang"],"gender":"F"},
+    "Skydiver Axel 5": {"level":80,"ability":"Rock Head","item":"Aerodactylite","nature":"Jolly","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":4,"sa":0,"sd":0,"sp":252},"moves":["Head Smash","Dual Wingbeat","Earthquake","Aqua Tail"],"gender":"F"},
+    "Skydiver Axel 6": {"level":80,"ability":"Rock Head","item":"Aerodactylite","nature":"Jolly","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":4,"sa":0,"sd":0,"sp":252},"moves":["Head Smash","Dual Wingbeat","Earthquake","Aqua Tail"],"gender":"F"},
+    "Skydiver Axel 7": {"level":100,"ability":"Rock Head","item":"Aerodactylite","nature":"Jolly","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":4,"sa":0,"sd":0,"sp":252},"moves":["Head Smash","Dual Wingbeat","Earthquake","Aqua Tail"],"gender":"F"},
+    "Skydiver Axel 8": {"level":100,"ability":"Rock Head","item":"Aerodactylite","nature":"Jolly","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":4,"sa":0,"sd":0,"sp":252},"moves":["Head Smash","Dual Wingbeat","Earthquake","Aqua Tail"],"gender":"F"},
+    "Channeler Lonita Lead": {"level":65,"ability":"Rock Head","item":"","nature":"Serious","ivs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"evs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"moves":["Rock Slide","Brave Bird","Earthquake","Fire Fang"],"gender":"F"},
+    "Battle Server Kairo 19": {"level":80,"ability":"Rock Head","item":"Choice Band","nature":"Jolly","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":4,"sa":0,"sd":0,"sp":252},"moves":["Head Smash","Brave Bird","Earthquake","Ice Fang"],"gender":"F"},
+    "Fossil Duo Mogege and Tali": {"level":75,"ability":"Rock Head","item":"Life Orb","nature":"Jolly","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":4,"sa":0,"sd":0,"sp":252},"moves":["Head Smash","Dual Wingbeat","Iron Head","Double-Edge"],"gender":"M"}
   },
   "Pelipper": {
     "Skydiver Axel 2 Lead": {"level":75,"ability":"Drizzle","item":"Damp Rock","nature":"Relaxed","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":0},"evs":{"hp":252,"at":0,"df":252,"sa":4,"sd":0,"sp":0},"moves":["Scald","Hurricane","Roost","U-turn"],"gender":"M"},
@@ -1471,7 +1446,8 @@ var SETDEX_PATHWAYS = {
     "Skydiver Axel 7 Lead": {"level":100,"ability":"Drizzle","item":"Damp Rock","nature":"Relaxed","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":0},"evs":{"hp":252,"at":0,"df":252,"sa":4,"sd":0,"sp":0},"moves":["Scald","Hurricane","Roost","U-turn"],"gender":"M"},
     "Aqua Elite Ant Lead": {"level":50,"ability":"Drizzle","item":"","nature":"Serious","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"moves":["","","",""],"gender":""},
     "Picnicker Mia Lead": {"level":40,"ability":"Drizzle","item":"Wacan Berry","nature":"Serious","ivs":{"hp":20,"at":20,"df":20,"sa":20,"sd":20,"sp":20},"evs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"moves":["Air Slash","Weather Ball","Roost","Tailwind"],"gender":"F"},
-    "Sis and Bro Mindy & Bill": {"level":44,"ability":"Drizzle","item":"","nature":"Serious","ivs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"evs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"moves":["Tailwind","Water Pulse","Air Slash","Icy Wind"],"gender":"M"}
+    "Sis and Bro Mindy & Bill": {"level":44,"ability":"Drizzle","item":"","nature":"Serious","ivs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"evs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"moves":["Tailwind","Water Pulse","Air Slash","Icy Wind"],"gender":"M"},
+    "Janitor Bo Lead": {"level":100,"ability":"Flash Flood","item":"Leftovers","nature":"Bold","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":248,"at":0,"df":16,"sa":4,"sd":240,"sp":0},"moves":["Tidal Lock","Hurricane","Toxic","Protect"],"gender":""}
   },
   "Iron Jugulis": {
     "Skydiver Axel 2": {"level":75,"ability":"Quark Drive","item":"Life Orb","nature":"Timid","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":4,"sa":252,"sd":0,"sp":252},"moves":["Dark Pulse","Hurricane","Hydro Pump","Earth Power"],"gender":""},
@@ -1492,14 +1468,26 @@ var SETDEX_PATHWAYS = {
   },
   "Sylveon": {
     "Mute Girl Midnight 1": {"level":70,"ability":"Pixilate","item":"Normalium Z","nature":"Modest","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":0,"df":4,"sa":252,"sd":0,"sp":0},"moves":["Hyper Voice","Psyshock","Mystical Fire","Calm Mind"],"gender":"F"},
-    "Mute Girl Midnight 2": {"level":80,"ability":"Pixilate","item":"Normalium Z","nature":"Modest","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":0,"df":4,"sa":252,"sd":0,"sp":0},"moves":["Hyper Voice","Psyshock","Mystical Fire","Calm Mind"],"gender":"F"}
+    "Mute Girl Midnight 2": {"level":80,"ability":"Pixilate","item":"Normalium Z","nature":"Modest","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":0,"df":4,"sa":252,"sd":0,"sp":0},"moves":["Hyper Voice","Psyshock","Mystical Fire","Calm Mind"],"gender":"F"},
+    "Shy Girl Grace 2": {"level":35,"ability":"Pixilate","item":"Clear Amulet","nature":"Modest","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":0,"df":4,"sa":252,"sd":0,"sp":0},"moves":["Hyper Voice","Psyshock","Mystical Fire","Calm Mind"],"gender":"F"}
   },
   "Garchomp": {
     "Mute Girl Midnight 2": {"level":80,"ability":"Rough Skin","item":"Rocky Helmet","nature":"Jolly","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":4,"sa":0,"sd":0,"sp":252},"moves":["Iron Head","Earthquake","Outrage","Swords Dance"],"gender":"F"},
     "Elite 4 Trainer Drake 3": {"level":80,"ability":"Rough Skin","item":"Garchompite","nature":"Adamant","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":4,"sa":0,"sd":0,"sp":252},"moves":["Earthquake","Dragon Claw","Shadow Claw","Sacred Sword"],"gender":""},
+    "Druid Jehowiczak": {"level":80,"ability":"Tellurize","item":"Frost Orb","nature":"Jolly","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":0,"sa":0,"sd":4,"sp":252},"moves":["Facade","Outrage","Fire Fang","Swords Dance"],"gender":""},
     "That Guy Bobkowski Lead": {"level":70,"ability":"Rough Skin","item":"Rocky Helmet","nature":"Jolly","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":0,"df":4,"sa":0,"sd":0,"sp":252},"moves":["Earthquake","Dragon Tail","Stealth Rock","Spikes"],"gender":""},
     "World Champion Wait2Seconds Lead": {"level":80,"ability":"Rough Skin","item":"Focus Sash","nature":"Jolly","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":0,"sa":0,"sd":4,"sp":252},"moves":["Stealth Rock","Swords Dance","Scale Shot","Earthquake"],"gender":""},
     "Battle Server Kairo 21": {"level":80,"ability":"Rough Skin","item":"Garchompite","nature":"Jolly","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":4,"sa":0,"sd":0,"sp":252},"moves":["Dragon Claw","Earthquake","Fire Fang","Swords Dance"],"gender":"M"}
+  },
+  "Hydreigon": {
+    "Mute Girl Midnight 2 Dynamax": {"level":80,"ability":"","item":"Life Orb","nature":"Timid","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":4,"sa":252,"sd":0,"sp":252},"moves":["Dragon Pulse","Flash Cannon","Dark Pulse","Flamethrower"],"gender":"F"},
+    "Shadow Six Corrupted Jester Barret 3 Dynamax": {"level":80,"ability":"Soul Conduit","item":"Leftovers","nature":"Timid","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":6,"at":0,"df":0,"sa":252,"sd":0,"sp":252},"moves":["Dark Pulse","Flash Cannon","Dragon Pulse","Earth Power"],"gender":""},
+    "Shadow Six Corrupted Jester Barret 4": {"level":100,"ability":"Intimidate","item":"Hydreigonite","nature":"Adamant","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":252,"df":0,"sa":0,"sd":4,"sp":0},"moves":["Crunch","Dragon Hammer","Earthquake","Psycho Cut"],"gender":"M"},
+    "Shadow Six Corrupted Jester Barret 5": {"level":75,"ability":"Dirty Deeds","item":"Life Orb","nature":"Timid","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":6,"at":0,"df":0,"sa":252,"sd":0,"sp":252},"moves":["Dark Pulse","Flash Cannon","Dragon Pulse","Earth Power"],"gender":""},
+    "Shadow Six Corrupted Jester Barret 10": {"level":120,"ability":"Intrepid Sword","item":"Hydreigonite","nature":"Adamant","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":252,"df":0,"sa":0,"sd":4,"sp":0},"moves":["Wicked Blow","Dragon Hammer","Earthquake","Psycho Cut"],"gender":"M"},
+    "Wandering Musician Lyric": {"level":80,"ability":"Levitate","item":"Loaded Dice","nature":"Adamant","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":0,"sa":0,"sd":4,"sp":252},"moves":["Scale Shot","Earthquake","Dragon Dance","Crunch"],"gender":"F"},
+    "That Guy Bobkowski": {"level":70,"ability":"Levitate","item":"Choice Specs","nature":"Timid","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":4,"sa":252,"sd":0,"sp":252},"moves":["Dark Pulse","Flash Cannon","Fire Blast","Draco Meteor"],"gender":""},
+    "Battle Server Kairo 15": {"level":70,"ability":"Levitate","item":"Choice Specs","nature":"Timid","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":0,"sa":252,"sd":4,"sp":252},"moves":["Draco Meteor","Dark Pulse","Fire Blast","Earth Power"],"gender":"F"}
   },
   "Numel": {
     "Magma Grunt Mikey Lead": {"level":30,"ability":"Simple","item":"","nature":"Serious","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"moves":["","","",""],"gender":"M"},
@@ -1537,8 +1525,7 @@ var SETDEX_PATHWAYS = {
     "Magma Elite Mai": {"level":42,"ability":"Levitate","item":"","nature":"Serious","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"moves":["","","",""],"gender":""},
     "Magma Admin Tabitha": {"level":60,"ability":"Neutralizing Gas","item":"","nature":"Serious","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"moves":["","","",""],"gender":""},
     "Team Rocket Andy": {"level":35,"ability":"Neutralizing Gas","item":"","nature":"Serious","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"moves":["","","",""],"gender":""},
-    "Elite Four Koga 3 Lead": {"level":80,"ability":"Levitate","item":"Rocky Helmet","nature":"Bold","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":0,"df":252,"sa":0,"sd":4,"sp":0},"moves":["Sludge Bomb","Will-O-Wisp","Toxic Spikes","Pain Split"],"gender":"M"},
-    "Elite Four Agatha Lead": {"level":85,"ability":"Neutralizing Gas","item":"Focus Sash","nature":"Calm","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":0,"df":4,"sa":0,"sd":252,"sp":0},"moves":["Clear Smog","Pain Split","Toxic Spikes","Fire Blast"],"gender":"M"}
+    "Elite Four Koga 3 Lead": {"level":80,"ability":"Levitate","item":"Rocky Helmet","nature":"Bold","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":0,"df":252,"sa":0,"sd":4,"sp":0},"moves":["Sludge Bomb","Will-O-Wisp","Toxic Spikes","Pain Split"],"gender":"M"}
   },
   "Seviper": {
     "Magma Elite Manny": {"level":41,"ability":"Poison Touch","item":"","nature":"Serious","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"moves":["","","",""],"gender":""},
@@ -1556,6 +1543,10 @@ var SETDEX_PATHWAYS = {
     "Magma Admin Courtney": {"level":60,"ability":"Anger Point","item":"","nature":"Serious","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"moves":["","","",""],"gender":""},
     "Magma Boss Maxie": {"level":85,"ability":"Intimidate","item":"Cameruptite","nature":"Quiet","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":0},"evs":{"hp":252,"at":4,"df":0,"sa":252,"sd":0,"sp":0},"moves":["Torch Song","Earth Power","Energy Ball","Trick Room"],"gender":"M"},
     "Gym Leader Flannery 3": {"level":80,"ability":"Solid Rock","item":"Cameruptite","nature":"Quiet","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":4,"df":0,"sa":252,"sd":0,"sp":0},"moves":["Fire Blast","Earth Power","Rock Slide","Flash Cannon"],"gender":"F"}
+  },
+  "Ninetales": {
+    "Magma Admin Courtney Lead": {"level":60,"ability":"Drought","item":"","nature":"Serious","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"moves":["","","",""],"gender":""},
+    "Elite 4 Trainer Flint 3 Lead": {"level":80,"ability":"Drought","item":"Heat Rock","nature":"Timid","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":4,"sa":252,"sd":0,"sp":252},"moves":["Nasty Plot","Solar Beam","Fire Blast","Extrasensory"],"gender":"F"}
   },
   "Cacturne": {
     "Magma Boss Maxie": {"level":85,"ability":"Triage","item":"Life Orb","nature":"Adamant","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":252,"df":4,"sa":0,"sd":0,"sp":0},"moves":["Horn Leech","Spiky Shield","Drain Punch","Sucker Punch"],"gender":"M"}
@@ -1610,8 +1601,8 @@ var SETDEX_PATHWAYS = {
     "Aqua Boss Archie Dynamax": {"level":85,"ability":"Contrary","item":"Focus Sash","nature":"Timid","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":4,"sa":252,"sd":0,"sp":252},"moves":["Hydro Pump","Thunder","Psycho Boost","Ice Beam"],"gender":""},
     "Swimmer Milla Lead": {"level":44,"ability":"Analytic","item":"","nature":"Serious","ivs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"evs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"moves":["Hydro Pump","Psychic","Thunderbolt","Recover"],"gender":""},
     "Gym Leader Misty 3": {"level":80,"ability":"Drizzle","item":"Life Orb","nature":"Timid","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":252,"sa":0,"sd":4,"sp":252},"moves":["Psychic","Scald","Ice Beam","Calm Mind"],"gender":""},
-    "Battle Server Kairo 27": {"level":80,"ability":"Analytic","item":"Life Orb","nature":"Timid","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":4,"sa":252,"sd":0,"sp":252},"moves":["Psyshock","Hydro Pump","Dazzling Gleam","Thunderbolt"],"gender":""},
-    "Gym Leader Misty Dynamax": {"level":80,"ability":"Dazzling","item":"Life Orb","nature":"Timid","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":4,"sa":252,"sd":0,"sp":252},"moves":["Hydro Pump","Thunder","Psychic","Moonblast"],"gender":""}
+    "Professor Spruce Dragon Lead": {"level":80,"ability":"Gravity Surge","item":"","nature":"Timid","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":0,"sa":252,"sd":4,"sp":252},"moves":["Hydro Pump","Zap Cannon","Volt Switch","Recover"],"gender":""},
+    "Battle Server Kairo 27": {"level":80,"ability":"Analytic","item":"Life Orb","nature":"Timid","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":4,"sa":252,"sd":0,"sp":252},"moves":["Psyshock","Hydro Pump","Dazzling Gleam","Thunderbolt"],"gender":""}
   },
   "Kingler": {
     "Aqua Elite Carlo": {"level":50,"ability":"Sheer Force","item":"","nature":"Serious","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"moves":["","","",""],"gender":""}
@@ -1627,12 +1618,14 @@ var SETDEX_PATHWAYS = {
     "Aqua Elite Angel": {"level":50,"ability":"Unaware","item":"","nature":"Serious","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"moves":["","","",""],"gender":""},
     "Tuber Chloe": {"level":32,"ability":"Unaware","item":"Leftovers","nature":"Serious","ivs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"evs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"moves":["Aqua Tail","Yawn","Recover","Bulldoze"],"gender":"F"},
     "Mad Berserker Gallagher": {"level":80,"ability":"Intimidate","item":"Quagsirite","nature":"Relaxed","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":0,"df":252,"sa":0,"sd":4,"sp":0},"moves":["Toxic","Recover","Hex","U-turn"],"gender":"M"},
-    "Mad Berserker Gallagher 1": {"level":100,"ability":"Poison Heal","item":"Toxic Orb","nature":"Impish","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":4,"df":252,"sa":0,"sd":0,"sp":0},"moves":["Toxic","Recover","Waterfall","Protect"],"gender":"F"}
+    "Mad Berserker Gallagher 1": {"level":100,"ability":"Poison Heal","item":"Toxic Orb","nature":"Impish","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":4,"df":252,"sa":0,"sd":0,"sp":0},"moves":["Toxic","Recover","Waterfall","Protect"],"gender":"F"},
+    "Druid Jehowiczak Lead": {"level":80,"ability":"Sap Sipper","item":"Leftovers","nature":"Impish","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":4,"df":252,"sa":0,"sd":0,"sp":0},"moves":["Earthquake","Aqua Tail","Yawn","Leech Seed"],"gender":"M"}
   },
   "Sharpedo": {
     "Aqua Elite Angel": {"level":50,"ability":"","item":"","nature":"Serious","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"moves":["","","",""],"gender":""},
     "Aqua Admin Shelly": {"level":60,"ability":"Speed Boost","item":"","nature":"Serious","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"moves":["","","",""],"gender":""},
-    "Aqua Boss Archie": {"level":85,"ability":"Intimidate","item":"Sharpedonite","nature":"Jolly","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":4,"sa":0,"sd":0,"sp":252},"moves":["Fishious Rend","Wicked Blow","Close Combat","Extreme Speed"],"gender":"M"}
+    "Aqua Boss Archie": {"level":85,"ability":"Intimidate","item":"Sharpedonite","nature":"Jolly","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":4,"sa":0,"sd":0,"sp":252},"moves":["Fishious Rend","Wicked Blow","Close Combat","Extreme Speed"],"gender":"M"},
+    "Master Chef Vastus": {"level":80,"ability":"Speed Boost","item":"Sharpedonite","nature":"Adamant","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":0,"sa":0,"sd":4,"sp":252},"moves":["Crabhammer","Crunch","Earthquake","Protect"],"gender":""}
   },
   "Wailord": {
     "Aqua Admin Shelly Lead": {"level":60,"ability":"Drizzle","item":"","nature":"Serious","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"moves":["","","",""],"gender":""},
@@ -1642,6 +1635,10 @@ var SETDEX_PATHWAYS = {
     "Battle Server Kairo 13 Lead": {"level":70,"ability":"Drizzle","item":"Damp Rock","nature":"Adamant","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":252,"df":0,"sa":0,"sd":4,"sp":0},"moves":["Liquidation","Avalanche","Earthquake","Curse"],"gender":"M"},
     "Battle Server Kairo 31 Lead": {"level":80,"ability":"Drizzle","item":"Damp Rock","nature":"Adamant","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":252,"df":4,"sa":0,"sd":0,"sp":0},"moves":["Curse","Liquidation","Avalanche","Self-Destruct"],"gender":"M"}
   },
+  "Walrein": {
+    "Aqua Admin Matt": {"level":60,"ability":"Thick Fat","item":"","nature":"Serious","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"moves":["","","",""],"gender":""},
+    "Gym Leader Wallace 3": {"level":80,"ability":"Thick Fat","item":"Leftovers","nature":"Bold","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":0,"df":252,"sa":4,"sd":0,"sp":0},"moves":["Ice Beam","Protect","Toxic","Surf"],"gender":"M"}
+  },
   "Ludicolo": {
     "Aqua Admin Matt": {"level":60,"ability":"Swift Swim","item":"","nature":"Serious","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"moves":["Giga Drain","Hydro Pump","Leech Seed","Ice Beam"],"gender":""},
     "Fisherman Ben 1 Lead": {"level":23,"ability":"Swift Swim","item":"","nature":"Serious","ivs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"evs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"moves":["Leech Seed","Hydro Pump","Giga Drain","Rain Dance"],"gender":"M"},
@@ -1649,7 +1646,8 @@ var SETDEX_PATHWAYS = {
     "Gym Leader Wallace 3": {"level":80,"ability":"Swift Swim","item":"Life Orb","nature":"Modest","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":4,"sa":252,"sd":0,"sp":252},"moves":["Giga Drain","Surf","Ice Beam","Rain Dance"],"gender":"M"},
     "Master Chef Vastus 1 Lead": {"level":80,"ability":"Drizzle","item":"Damp Rock","nature":"Modest","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":0,"df":80,"sa":176,"sd":0,"sp":0},"moves":["Scald","Leaf Storm","Ice Beam","Focus Blast"],"gender":"M"},
     "Master Chef Vastus 2 Lead": {"level":100,"ability":"Drizzle","item":"Damp Rock","nature":"Timid","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":0,"df":80,"sa":176,"sd":0,"sp":0},"moves":["Memento","","",""],"gender":"M"},
-    "Master Chef Vastus 10 Lead": {"level":120,"ability":"Healing Droplets++","item":"Life Orb","nature":"Adamant","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":252,"df":0,"sa":0,"sd":0,"sp":0},"moves":["Horn Leech","Drain Punch","Wave Crash","Ice Punch"],"gender":"M"}
+    "Master Chef Vastus 10 Lead": {"level":120,"ability":"Healing Droplets++","item":"Life Orb","nature":"Adamant","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":252,"df":0,"sa":0,"sd":0,"sp":0},"moves":["Horn Leech","Drain Punch","Wave Crash","Ice Punch"],"gender":"M"},
+    "Master Chef Vastus Lead": {"level":80,"ability":"Gooey","item":"Assault Vest","nature":"Bold","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":160,"at":0,"df":252,"sa":0,"sd":0,"sp":96},"moves":["Scald","Giga Drain","Ice Beam","Knock Off"],"gender":"M"}
   },
   "Dhelmise": {
     "Aqua Boss Archie Lead": {"level":85,"ability":"Drizzle","item":"Damp Rock","nature":"Adamant","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":252,"df":4,"sa":0,"sd":0,"sp":0},"moves":["Spectral Thief","Wood Hammer","Flip Turn","Destiny Bond"],"gender":""}
@@ -1657,6 +1655,7 @@ var SETDEX_PATHWAYS = {
   "Beedrill": {
     "Team Rocket Andy Lead": {"level":35,"ability":"Merciless","item":"","nature":"Serious","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"moves":["","","",""],"gender":""},
     "Bug Catcher Kenny 1": {"level":15,"ability":"","item":"","nature":"Serious","ivs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"evs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"moves":["Poison Sting","Fury Attack","Fury Cutter","Laser Focus"],"gender":"M"},
+    "Beauty Crea": {"level":30,"ability":"Shield Dust","item":"","nature":"Serious","ivs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"evs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"moves":["Pin Missile","Fury Cutter","Harden","Venoshock"],"gender":"F"},
     "Shadow Six Swarm Shepherd Arcturus": {"level":80,"ability":"Adaptability","item":"Beedrillite","nature":"Jolly","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":0,"sa":4,"sd":0,"sp":252},"moves":["X-Scissor","Drill Run","Poison Jab","Brick Break"],"gender":"F"},
     "Shadow Six Swarm Shepherd Arcturus 10": {"level":120,"ability":"Intrepid Sword","item":"Beedrillite","nature":"Jolly","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":0,"sa":0,"sd":4,"sp":252},"moves":["Leech Life","Drill Run","Gunk Shot","Close Combat"],"gender":"F"},
     "Battle Server Kairo 2": {"level":15,"ability":"Merciless","item":"","nature":"Jolly","ivs":{"hp":15,"at":15,"df":15,"sa":15,"sd":15,"sp":15},"evs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"moves":["Twineedle","Fury Attack","Pursuit","Attract"],"gender":"F"},
@@ -1669,13 +1668,12 @@ var SETDEX_PATHWAYS = {
     "Team Rocket Eric Lead": {"level":35,"ability":"Guts","item":"","nature":"Serious","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"moves":["","","",""],"gender":""},
     "Gym Leader Brawly 3": {"level":80,"ability":"No Guard","item":"Assault Vest","nature":"Adamant","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":252,"df":0,"sa":0,"sd":4,"sp":0},"moves":["Knock Off","Dynamic Punch","Bullet Punch","Stone Edge"],"gender":"M"},
     "Gym Leader Maylene 3": {"level":80,"ability":"Guts","item":"Flame Orb","nature":"Adamant","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":252,"df":0,"sa":0,"sd":4,"sp":0},"moves":["Close Combat","Knock Off","Facade","Bullet Punch"],"gender":""},
-    "Hero Blue 3 Dynamax": {"level":84,"ability":"Sniper","item":"Assault Vest","nature":"Adamant","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":4,"sa":0,"sd":252,"sp":0},"moves":["Cross Chop","Throat Chop","Thunder Punch","Ice Punch"],"gender":"M"},
-    "Elite Four Bruno Dynamax": {"level":85,"ability":"No Guard","item":"Assault Vest","nature":"Adamant","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":252,"df":0,"sa":0,"sd":4,"sp":0},"moves":["Dynamic Punch","Fissure","Stone Edge","Bullet Punch"],"gender":"M"},
-    "Champion Blue Lead Dynamax": {"level":85,"ability":"Guts","item":"Assault Vest","nature":"Adamant","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":4,"sa":0,"sd":252,"sp":0},"moves":["Cross Chop","Throat Chop","Thunder Punch","Ice Punch"],"gender":"M"}
+    "Hero Blue 3 Dynamax": {"level":84,"ability":"Sniper","item":"Assault Vest","nature":"Adamant","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":4,"sa":0,"sd":252,"sp":0},"moves":["Cross Chop","Throat Chop","Thunder Punch","Ice Punch"],"gender":"M"}
   },
   "Scizor": {
     "Team Rocket Eric": {"level":35,"ability":"Technician","item":"","nature":"Serious","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"moves":["","","",""],"gender":""},
     "Hero Blue 3 Lead": {"level":84,"ability":"Flash Fire","item":"Life Orb","nature":"Adamant","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":252,"df":0,"sa":0,"sd":0,"sp":4},"moves":["Skitter Bug","Meteor Mash","Close Combat","Swords Dance"],"gender":"M"},
+    "Shadow Six High Flyer Milos Zelex 2": {"level":80,"ability":"Weak Armor","item":"Life Orb","nature":"Adamant","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":4,"sa":0,"sd":0,"sp":252},"moves":["Iron Head","Knock Off","Sacred Sword","Swords Dance"],"gender":"M"},
     "Shadow Six Swarm Shepherd Arcturus": {"level":80,"ability":"Technician","item":"Choice Band","nature":"Brave","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":252,"df":0,"sa":0,"sd":4,"sp":0},"moves":["Bullet Punch","U-turn","Dual Wingbeat","Close Combat"],"gender":"F"},
     "Shadow Six Swarm Shepherd Arcturus 1": {"level":100,"ability":"Technician","item":"Life Orb","nature":"Adamant","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":252,"df":0,"sa":0,"sd":4,"sp":0},"moves":["Bullet Punch","Bug Bite","Swords Dance","Close Combat"],"gender":"F"},
     "Doctor Yukine": {"level":80,"ability":"Technician","item":"Life Orb","nature":"Adamant","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":0,"sa":0,"sd":4,"sp":252},"moves":["Bullet Punch","Bug Bite","Close Combat","Swords Dance"],"gender":"M"},
@@ -1685,6 +1683,14 @@ var SETDEX_PATHWAYS = {
   "Talonflame": {
     "Team Rocket Linda Lead": {"level":35,"ability":"Flame Body","item":"","nature":"Serious","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"moves":["","","",""],"gender":""},
     "Battle Server Kairo 6": {"level":35,"ability":"Flame Body","item":"","nature":"Jolly","ivs":{"hp":20,"at":20,"df":20,"sa":20,"sd":20,"sp":20},"evs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"moves":["Aerial Ace","Flame Charge","Will-O-Wisp","Roost"],"gender":"M"}
+  },
+  "Magnezone": {
+    "Team Rocket Linda": {"level":35,"ability":"Sturdy","item":"","nature":"Serious","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"moves":["","","",""],"gender":""},
+    "Gym Leader LT Surge 3": {"level":80,"ability":"Magnet Pull","item":"Air Balloon","nature":"Modest","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":0,"df":0,"sa":0,"sd":4,"sp":252},"moves":["Tri Attack","Flash Cannon","Electric Terrain","Rising Voltage"],"gender":""},
+    "Gym Leader Jasmine 3": {"level":80,"ability":"Levitate","item":"Light Clay","nature":"Modest","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":0,"df":4,"sa":252,"sd":0,"sp":0},"moves":["Discharge","Flash Cannon","Reflect","Light Screen"],"gender":""},
+    "Shadow Six Idle Warrior Rexzo Kuxne": {"level":80,"ability":"Levitate","item":"Light Clay","nature":"Jolly","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":6,"at":0,"df":0,"sa":252,"sd":0,"sp":252},"moves":["Flash Cannon","Reflect","Discharge","Light Screen"],"gender":"M"},
+    "Arch Saint Arlo Fyor": {"level":80,"ability":"Sturdy","item":"Assault Vest","nature":"Modest","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":212,"at":0,"df":0,"sa":252,"sd":0,"sp":44},"moves":["Volt Switch","Thunderbolt","Flash Cannon","Leaf Storm"],"gender":""},
+    "Battle Server Kairo 16 Lead": {"level":70,"ability":"Sturdy","item":"Choice Scarf","nature":"Modest","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":0,"sa":252,"sd":4,"sp":252},"moves":["Thunderbolt","Flash Cannon","Tri Attack","Volt Switch"],"gender":""}
   },
   "Muk-Alola": {
     "Team Rocket Johnny Lead": {"level":36,"ability":"Poison Touch","item":"","nature":"Serious","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"moves":["","","",""],"gender":""},
@@ -1702,14 +1708,16 @@ var SETDEX_PATHWAYS = {
   },
   "Weezing-Galar": {
     "Rocket Admin Petrel Lead": {"level":60,"ability":"Levitate","item":"","nature":"Serious","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"moves":["","","",""],"gender":""},
-    "Battle Server Kairo 14 Lead": {"level":70,"ability":"Levitate","item":"Black Sludge","nature":"Calm","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":0,"df":4,"sa":0,"sd":252,"sp":0},"moves":["Clear Smog","Will-O-Wisp","Destiny Bond","Pain Split"],"gender":"M"}
+    "Battle Server Kairo 14 Lead": {"level":70,"ability":"Levitate","item":"Black Sludge","nature":"Calm","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":0,"df":4,"sa":0,"sd":252,"sp":0},"moves":["Clear Smog","Will-O-Wisp","Destiny Bond","Pain Split"],"gender":"M"},
+    "Fossil Duo Mogege and Tali": {"level":75,"ability":"Levitate","item":"Black Sludge","nature":"Calm","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":0,"df":4,"sa":0,"sd":252,"sp":0},"moves":["Leech Seed","Will-O-Wisp","Thunder","Strange Steam"],"gender":"M"}
   },
   "Raticate": {
     "Rocket Admin Petrel": {"level":60,"ability":"Strong Jaw","item":"","nature":"Serious","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"moves":["","","",""],"gender":""},
     "Youngster Kyle 1 Lead": {"level":20,"ability":"Guts","item":"","nature":"Serious","ivs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"evs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"moves":["Hyper Fang","Bite","Laser Focus","Scary Face"],"gender":"M"},
     "Crooked Cop Rocky": {"level":55,"ability":"Strong Jaw","item":"","nature":"Serious","ivs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"evs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"moves":["Hyper Fang","Crunch","Leer","Flame Wheel"],"gender":"M"},
     "Hero Yellow 3 Dynamax": {"level":80,"ability":"Huge Power","item":"Life Orb","nature":"Adamant","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":4,"sa":0,"sd":0,"sp":252},"moves":["Extreme Speed","Crunch","Pluck","Stomping Tantrum"],"gender":"M"},
-    "Hero Yellow 4": {"level":90,"ability":"Huge Power","item":"Life Orb","nature":"Adamant","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":4,"sa":0,"sd":0,"sp":252},"moves":["Extreme Speed","Crunch","Close Combat","No Retreat"],"gender":"M"}
+    "Hero Yellow 4": {"level":90,"ability":"Huge Power","item":"Life Orb","nature":"Adamant","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":4,"sa":0,"sd":0,"sp":252},"moves":["Extreme Speed","Crunch","Close Combat","No Retreat"],"gender":"M"},
+    "Claw Gang Minnie Lead": {"level":30,"ability":"","item":"Quick Claw","nature":"Adamant","ivs":{"hp":20,"at":20,"df":20,"sa":20,"sd":20,"sp":20},"evs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"moves":["Hyper Fang","Crunch","Sucker Punch","Focus Energy"],"gender":"M"}
   },
   "Ditto": {
     "Rocket Admin Petrel": {"level":60,"ability":"Imposter","item":"","nature":"Serious","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"moves":["","","",""],"gender":""},
@@ -1738,7 +1746,8 @@ var SETDEX_PATHWAYS = {
     "Bug Catcher Kenny": {"level":9,"ability":"","item":"","nature":"Serious","ivs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"evs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"moves":["Poison Sting","String Shot","Bug Bite","Harden"],"gender":"M"}
   },
   "Butterfree": {
-    "Bug Catcher Kenny 1 Lead": {"level":15,"ability":"","item":"","nature":"Serious","ivs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"evs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"moves":["Bug Bite","Gust","Poison Powder","Sleep Powder"],"gender":"F"}
+    "Bug Catcher Kenny 1 Lead": {"level":15,"ability":"","item":"","nature":"Serious","ivs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"evs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"moves":["Bug Bite","Gust","Poison Powder","Sleep Powder"],"gender":"F"},
+    "Beauty Crea Lead": {"level":30,"ability":"Tinted Lens","item":"","nature":"Serious","ivs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"evs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"moves":["Air Slash","Bug Buzz","String Shot","Psybeam"],"gender":"F"}
   },
   "Caterpie": {
     "Bug Catcher Kenny 2 Lead": {"level":8,"ability":"","item":"","nature":"Serious","ivs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"evs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"moves":["Tackle","String Shot","Bug Bite",""],"gender":"F"}
@@ -1782,8 +1791,7 @@ var SETDEX_PATHWAYS = {
   "Shedinja": {
     "Youngster Jason 1": {"level":20,"ability":"","item":"","nature":"Serious","ivs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"evs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"moves":["Final Gambit","Confuse Ray","Dig","Shadow Claw"],"gender":""},
     "Hero Crystal 3": {"level":80,"ability":"Wonder Guard","item":"Safety Goggles","nature":"Adamant","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":0,"sa":4,"sd":0,"sp":252},"moves":["Shadow Sneak","Poltergeist","Swords Dance","X-Scissor"],"gender":"M"},
-    "Hero Crystal 4": {"level":90,"ability":"Sturdy","item":"Safety Goggles","nature":"Adamant","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":0,"sa":4,"sd":0,"sp":252},"moves":["Poltergeist","Swords Dance","Attack Order","Gunk Shot"],"gender":"M"},
-    "Academy Rival A Test Dummy Lead": {"level":1,"ability":"","item":"Shedinjite","nature":"Timid","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"moves":["Splash","","",""],"gender":"F"}
+    "Hero Crystal 4": {"level":90,"ability":"Sturdy","item":"Safety Goggles","nature":"Adamant","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":0,"sa":4,"sd":0,"sp":252},"moves":["Poltergeist","Swords Dance","Attack Order","Gunk Shot"],"gender":"M"}
   },
   "Sentret": {
     "Lass Leila Lead": {"level":10,"ability":"Keen Eye","item":"","nature":"Serious","ivs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"evs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"moves":["Charm","Reversal","Covet","Quick Attack"],"gender":"F"}
@@ -1840,6 +1848,15 @@ var SETDEX_PATHWAYS = {
   "Steenee": {
     "Beauty Baisly Lead": {"level":18,"ability":"Oblivious","item":"","nature":"Serious","ivs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"evs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"moves":["Magical Leaf","Attract","Charm","Synthesis"],"gender":"F"}
   },
+  "Patrat": {
+    "Police Officer": {"level":15,"ability":"","item":"","nature":"Serious","ivs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"evs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"moves":["","","",""],"gender":""}
+  },
+  "Yamper": {
+    "Police Officer 1 Lead": {"level":15,"ability":"","item":"","nature":"Serious","ivs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"evs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"moves":["","","",""],"gender":""}
+  },
+  "Hoothoot": {
+    "Police Officer 1": {"level":15,"ability":"","item":"","nature":"Serious","ivs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"evs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"moves":["","","",""],"gender":""}
+  },
   "Smeargle": {
     "Cool Trainer Shawn Lead": {"level":11,"ability":"","item":"","nature":"Serious","ivs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"evs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"moves":["Sketch","","",""],"gender":"M"}
   },
@@ -1892,13 +1909,72 @@ var SETDEX_PATHWAYS = {
     "Blake Gang Goon": {"level":45,"ability":"Prankster","item":"","nature":"Serious","ivs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"evs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"moves":["Swagger","Thunder Wave","Brave Bird","Foul Play"],"gender":"M"}
   },
   "Scrafty": {
-    "Blake Gang Goon": {"level":45,"ability":"Intimidate","item":"","nature":"Serious","ivs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"evs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"moves":["Crunch","Brick Break","Facade","Sand Attack"],"gender":"M"}
+    "Blake Gang Goon": {"level":45,"ability":"Intimidate","item":"","nature":"Serious","ivs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"evs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"moves":["Crunch","Brick Break","Facade","Sand Attack"],"gender":"M"},
+    "Blake Gang Goonies 3 Lead": {"level":55,"ability":"","item":"","nature":"Serious","ivs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"evs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"moves":["","","",""],"gender":"M"}
+  },
+  "Revavroom": {
+    "Blake Gang Goonies 3": {"level":55,"ability":"","item":"","nature":"Serious","ivs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"evs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"moves":["","","",""],"gender":"M"},
+    "Claw Gang Gibo": {"level":70,"ability":"Accelerate","item":"Air Balloon","nature":"Adamant","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"moves":["Iron Head","Gunk Shot","High Horsepower","Shift Gear"],"gender":"M"}
+  },
+  "Perrserker": {
+    "Blake Gang Goonies 3": {"level":55,"ability":"","item":"","nature":"Serious","ivs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"evs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"moves":["","","",""],"gender":"M"},
+    "Claw Gang Gibo Lead": {"level":70,"ability":"Steely Spirit","item":"Quick Claw","nature":"Adamant","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"moves":["Claw Dagger","Close Combat","Seed Bomb","Swords Dance"],"gender":"M"}
+  },
+  "Exploud": {
+    "Blake Gang Loud Brother 2 Lead": {"level":55,"ability":"Intimidate","item":"","nature":"Serious","ivs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"evs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"moves":["Crunch","Brick Break","Facade","Sand Attack"],"gender":"M"},
+    "Blake Gang Loud Brother 2": {"level":55,"ability":"Intimidate","item":"","nature":"Serious","ivs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"evs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"moves":["Crunch","Brick Break","Facade","Sand Attack"],"gender":"M"},
+    "Blake Gang Loud Brother 2 Exploud 2": {"level":55,"ability":"Intimidate","item":"","nature":"Serious","ivs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"evs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"moves":["Crunch","Brick Break","Facade","Sand Attack"],"gender":"M"},
+    "Cool Couple Ivan & Sheba": {"level":62,"ability":"Screamer","item":"Throat Spray","nature":"Serious","ivs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"evs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"moves":["Boomburst","Shadow Ball","Blizzard","Fire Blast"],"gender":""},
+    "Gym Leader Norman 3": {"level":80,"ability":"Scrappy","item":"Choice Specs","nature":"Modest","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":0,"df":4,"sa":252,"sd":0,"sp":0},"moves":["Boomburst","Fire Blast","Focus Blast","Surf"],"gender":"M"},
+    "Wandering Musician Lyric": {"level":80,"ability":"Screamer","item":"Choice Specs","nature":"Modest","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":0,"df":0,"sa":252,"sd":4,"sp":0},"moves":["Boomburst","Shadow Ball","",""],"gender":"F"}
+  },
+  "Zigzagoon-Galar": {
+    "Blake Gang Beniar  Lead": {"level":9,"ability":"","item":"","nature":"Serious","ivs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"evs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"moves":["","","",""],"gender":""}
+  },
+  "Purrloin": {
+    "Blake Gang Beniar": {"level":9,"ability":"","item":"","nature":"Serious","ivs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"evs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"moves":["","","",""],"gender":""}
+  },
+  "Persian-Alola": {
+    "Blake Gang Goonies 3 Lead": {"level":55,"ability":"","item":"","nature":"Serious","ivs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"evs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"moves":["","","",""],"gender":""}
+  },
+  "Raticate-Alola": {
+    "Blake Gang Goonies 3": {"level":55,"ability":"","item":"","nature":"Serious","ivs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"evs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"moves":["","","",""],"gender":""},
+    "Crooked Cop Rocky": {"level":55,"ability":"Thick Fat","item":"","nature":"Serious","ivs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"evs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"moves":["Crunch","Hyper Fang","Scary Face","Quick Attack"],"gender":"M"},
+    "Claw Gang Timbo": {"level":30,"ability":"","item":"Quick Claw","nature":"Adamant","ivs":{"hp":20,"at":20,"df":20,"sa":20,"sd":20,"sp":20},"evs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"moves":["Hyper Fang","Crunch","Sucker Punch","Focus Energy"],"gender":"M"}
+  },
+  "Bisharp": {
+    "Blake Gang Goon 4 Lead": {"level":55,"ability":"","item":"","nature":"Serious","ivs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"evs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"moves":["","","",""],"gender":"M"}
+  },
+  "Thievul": {
+    "Blake Gang Goon 4": {"level":55,"ability":"","item":"","nature":"Serious","ivs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"evs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"moves":["","","",""],"gender":"M"},
+    "Claw Gang Timbo Lead": {"level":30,"ability":"Swiper","item":"","nature":"Naive","ivs":{"hp":20,"at":20,"df":20,"sa":20,"sd":20,"sp":20},"evs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"moves":["Nasty Plot","Dark Pulse","Snarl","Sucker Punch"],"gender":"F"},
+    "Claw Gang Gibo": {"level":70,"ability":"Swiper","item":"","nature":"Jolly","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"moves":["Sucker Punch","Play Rough","Psychic Fangs","Fling"],"gender":"M"}
+  },
+  "Durant": {
+    "Blake Gang Goon 4": {"level":55,"ability":"","item":"","nature":"Serious","ivs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"evs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"moves":["","","",""],"gender":"M"}
+  },
+  "Grapploct": {
+    "Blake Gang Goon 4": {"level":55,"ability":"","item":"","nature":"Serious","ivs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"evs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"moves":["","","",""],"gender":"M"}
+  },
+  "Toxicroak": {
+    "Goonette Goonettes 5 Lead": {"level":55,"ability":"","item":"","nature":"Serious","ivs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"evs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"moves":["","","",""],"gender":"F"},
+    "Cool Couple Isaac & Jenna": {"level":50,"ability":"Dry Skin","item":"","nature":"Serious","ivs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"evs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"moves":["Helping Hand","Protect","Drain Punch","Rock Slide"],"gender":""},
+    "Gym Leader Maylene 3": {"level":80,"ability":"Dry Skin","item":"Life Orb","nature":"Jolly","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":4,"sa":0,"sd":0,"sp":252},"moves":["Swords Dance","Gunk Shot","Drain Punch","Sucker Punch"],"gender":""},
+    "Battle Server Kairo 20": {"level":80,"ability":"Dry Skin","item":"Life Orb","nature":"Jolly","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":4,"sa":0,"sd":0,"sp":252},"moves":["Sucker Punch","Gunk Shot","Close Combat","Swords Dance"],"gender":"M"}
+  },
+  "Liepard": {
+    "Goonette Goonettes 5": {"level":55,"ability":"","item":"","nature":"Serious","ivs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"evs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"moves":["","","",""],"gender":"F"}
   },
   "Swellow": {
-    "Youngster Jay Lead": {"level":31,"ability":"Scrappy","item":"","nature":"Serious","ivs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"evs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"moves":["Brave Bird","Roost","Steel Wing","Boomburst"],"gender":"M"}
+    "Youngster Jay Lead": {"level":31,"ability":"Scrappy","item":"","nature":"Serious","ivs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"evs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"moves":["Brave Bird","Roost","Steel Wing","Boomburst"],"gender":"M"},
+    "Lass Yuka Lead": {"level":30,"ability":"Scrappy","item":"","nature":"Serious","ivs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"evs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"moves":["Brave Bird","Roost","Steel Wing","Boomburst"],"gender":"M"}
   },
   "Toucannon": {
     "Youngster Jay": {"level":30,"ability":"Skill Link","item":"","nature":"Serious","ivs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"evs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"moves":["Beak Blast","Rock Blast","Bullet Seed","Roost"],"gender":"M"}
+  },
+  "Staravia": {
+    "Lass Yuka": {"level":30,"ability":"Intimidate","item":"","nature":"Serious","ivs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"evs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"moves":["Wing Attack","Quick Attack","Retaliate","Feather Dance"],"gender":"M"},
+    "Aroma Lady Henna": {"level":28,"ability":"Intimidate","item":"","nature":"Serious","ivs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"evs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"moves":["Wing Attack","Quick Attack","Retaliate","Feather Dance"],"gender":"M"}
   },
   "Unfezant": {
     "Youngster Tomas Lead": {"level":36,"ability":"Super Luck","item":"","nature":"Serious","ivs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"evs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"moves":["Air Cutter","Night Slash","Secret Power","Detect"],"gender":"M"}
@@ -1906,14 +1982,23 @@ var SETDEX_PATHWAYS = {
   "Togetic": {
     "Aroma Lady Henna Lead": {"level":30,"ability":"Serene Grace","item":"","nature":"Serious","ivs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"evs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"moves":["Air Slash","Thunder Wave","Roost","Ancient Power"],"gender":"F"}
   },
-  "Staravia": {
-    "Aroma Lady Henna": {"level":28,"ability":"Intimidate","item":"","nature":"Serious","ivs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"evs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"moves":["Wing Attack","Quick Attack","Retaliate","Feather Dance"],"gender":"M"}
-  },
   "Kirlia": {
     "Beauty Riss": {"level":29,"ability":"Synchronize","item":"","nature":"Serious","ivs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"evs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"moves":["Psychic","Magical Leaf","Disarming Voice","Life Dew"],"gender":"F"}
   },
   "Orthworm": {
     "Pokémon Ranger Rico Lead": {"level":35,"ability":"","item":"","nature":"Ty","ivs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"evs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"moves":["Coil","Smack Down","Bulldoze","Iron Head"],"gender":"M"}
+  },
+  "Machoke": {
+    "Crush Girl Seelie Lead": {"level":30,"ability":"Guts","item":"","nature":"Serious","ivs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"evs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"moves":["Bulk Up","Revenge","Rock Slide","Knock Off"],"gender":"M"}
+  },
+  "Primeape": {
+    "Crush Girl Seelie": {"level":30,"ability":"Anger Point","item":"","nature":"Serious","ivs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"evs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"moves":["Cross Chop","Retaliate","Thrash","Fire Punch"],"gender":"M"}
+  },
+  "Hitmontop": {
+    "Crush Girl Seelie": {"level":30,"ability":"Intimidate","item":"","nature":"Serious","ivs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"evs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"moves":["Triple Kick","Fake Out","Rock Slide","Sucker Punch"],"gender":""},
+    "Crush Kin Rita & Ryo Lead": {"level":62,"ability":"Intimidate","item":"Adrenaline Orb","nature":"Serious","ivs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"evs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"moves":["Close Combat","Fake Out","Rock Slide","Bullet Punch"],"gender":""},
+    "Gym Leader Brawly 3": {"level":80,"ability":"Technician","item":"Assault Vest","nature":"Adamant","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":252,"df":0,"sa":0,"sd":4,"sp":0},"moves":["Rapid Spin","Triple Axel","Mach Punch","Close Combat"],"gender":"M"},
+    "Battle Server Kairo 8 Lead": {"level":55,"ability":"Intimidate","item":"Leftovers","nature":"Careful","ivs":{"hp":25,"at":25,"df":25,"sa":25,"sd":25,"sp":25},"evs":{"hp":80,"at":0,"df":0,"sa":0,"sd":80,"sp":0},"moves":["Revenge","Triple Axel","Bulldoze","Rapid Spin"],"gender":"M"}
   },
   "Gurdurr": {
     "Crush Girl Olga Lead": {"level":32,"ability":"Sheer Force","item":"","nature":"Serious","ivs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"evs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"moves":["Bulk Up","Mach Punch","Rock Slide","Focus Energy"],"gender":"M"}
@@ -1922,20 +2007,13 @@ var SETDEX_PATHWAYS = {
     "Youngster Picco Lead": {"level":30,"ability":"Dry Skin","item":"","nature":"Serious","ivs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"evs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"moves":["Parabolic Charge","Thunder Wave","Round","Bulldoze"],"gender":"M"},
     "Master Chef Vastus 1 Dynamax": {"level":80,"ability":"Flare Boost","item":"Flame Orb","nature":"Timid","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":4,"at":0,"df":0,"sa":252,"sd":0,"sp":252},"moves":["Thunder","Scald","Leaf Storm","Signal Beam"],"gender":"F"}
   },
-  "Stakataka": {
-    "Eclipse Elite Zack Lead": {"level":100,"ability":"Sturdy","item":"Custap Berry","nature":"Relaxed","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":0},"evs":{"hp":252,"at":0,"df":252,"sa":0,"sd":6,"sp":0},"moves":["Stealth Rock","Body Press","Wall Crash","Recover"],"gender":""}
-  },
-  "Xurkitree": {
-    "Eclipse Elite Zack": {"level":100,"ability":"Unburden","item":"Air Balloon","nature":"Modest","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":6,"sa":252,"sd":0,"sp":252},"moves":["Electro Ball","Energy Ball","Dazzling Gleam","Tail Glow"],"gender":""}
-  },
-  "Genesect": {
-    "Eclipse Elite Zack": {"level":100,"ability":"Download","item":"Douse Drive","nature":"Rash","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":6,"df":0,"sa":252,"sd":0,"sp":252},"moves":["Techno Blast","Shift Gear","Leech Life","Flash Cannon"],"gender":""}
-  },
   "Emolga": {
-    "Lass Shana Lead": {"level":35,"ability":"Static","item":"","nature":"Serious","ivs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"evs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"moves":["Spark","Acrobatics","Thunder Wave","Signal Beam"],"gender":"F"}
+    "Lass Shana Lead": {"level":35,"ability":"Static","item":"","nature":"Serious","ivs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"evs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"moves":["Spark","Acrobatics","Thunder Wave","Signal Beam"],"gender":"F"},
+    "Statico Goons Statico Goons": {"level":30,"ability":"Static","item":"","nature":"Modest","ivs":{"hp":20,"at":0,"df":20,"sa":20,"sd":20,"sp":20},"evs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"moves":["Spark","Acrobatics","Thunder Wave","Signal Beam"],"gender":"F"}
   },
   "Magneton": {
-    "Lass Shana": {"level":36,"ability":"Sturdy","item":"","nature":"Serious","ivs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"evs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"moves":["Thunderbolt","Flash Cannon","Tri Attack","Thunder Wave"],"gender":""}
+    "Lass Shana": {"level":36,"ability":"Sturdy","item":"","nature":"Serious","ivs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"evs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"moves":["Thunderbolt","Flash Cannon","Tri Attack","Thunder Wave"],"gender":""},
+    "Statico Goons Statico Goons": {"level":30,"ability":"Sturdy","item":"","nature":"Modest","ivs":{"hp":20,"at":0,"df":20,"sa":20,"sd":20,"sp":20},"evs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"moves":["Thunderbolt","Flash Cannon","Tri Attack","Thunder Wave"],"gender":""}
   },
   "Drednaw": {
     "Picnicker Mia": {"level":40,"ability":"Strong Jaw","item":"Leftovers","nature":"Serious","ivs":{"hp":20,"at":20,"df":20,"sa":20,"sd":20,"sp":20},"evs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"moves":["Cave In","Jaw Lock","Ice Fang","Protect"],"gender":"M"}
@@ -1972,7 +2050,8 @@ var SETDEX_PATHWAYS = {
   },
   "Abomasnow": {
     "Youngster Benji": {"level":50,"ability":"Snow Warning","item":"","nature":"Serious","ivs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"evs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"moves":["Blizzard","Wood Hammer","Mega Punch","Grass Whistle"],"gender":""},
-    "Gym Leader Candice 3": {"level":80,"ability":"Snow Warning","item":"Abomasite","nature":"Brave","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":252,"df":0,"sa":4,"sd":0,"sp":0},"moves":["Blizzard","Aurora Veil","Wood Hammer","Earthquake"],"gender":""}
+    "Gym Leader Candice 3": {"level":80,"ability":"Snow Warning","item":"Abomasite","nature":"Brave","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":252,"df":0,"sa":4,"sd":0,"sp":0},"moves":["Blizzard","Aurora Veil","Wood Hammer","Earthquake"],"gender":""},
+    "Shadow Six Unfettered Scholar Maxwell 3": {"level":80,"ability":"Soundproof","item":"Abomasite","nature":"Quiet","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":0,"df":0,"sa":252,"sd":4,"sp":0},"moves":["Blizzard","Grassy Glide","Earth Power","Aurora Veil"],"gender":"M"}
   },
   "Eiscue": {
     "Youngster Benji": {"level":50,"ability":"","item":"","nature":"Serious","ivs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"evs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"moves":["Aurora Veil","Ice Punch","Liquidation","Iron Head"],"gender":""}
@@ -1985,8 +2064,7 @@ var SETDEX_PATHWAYS = {
   },
   "Jynx": {
     "Lass Peneloppe": {"level":50,"ability":"Snow Warning","item":"","nature":"Serious","ivs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"evs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"moves":["Blizzard","Psychic","Lovely Kiss","Nasty Plot"],"gender":""},
-    "Gym Leader Sabrina 3": {"level":80,"ability":"Snow Warning","item":"Choice Specs","nature":"Timid","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":4,"sa":252,"sd":0,"sp":252},"moves":["Psychic","Blizzard","Shadow Ball","Focus Blast"],"gender":"F"},
-    "Elite Four Lorelei": {"level":85,"ability":"Psychic Surge","item":"Choice Scarf","nature":"Modest","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":4,"sa":252,"sd":0,"sp":252},"moves":["Expanding Force","Blizzard","Focus Blast","Shadow Ball"],"gender":""}
+    "Gym Leader Sabrina 3": {"level":80,"ability":"Snow Warning","item":"Choice Specs","nature":"Timid","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":4,"sa":252,"sd":0,"sp":252},"moves":["Psychic","Blizzard","Shadow Ball","Focus Blast"],"gender":"F"}
   },
   "Glaceon": {
     "Lass Peneloppe": {"level":50,"ability":"","item":"","nature":"Serious","ivs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"evs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"moves":["Freeze-Dry","Toxic","Wish","Protect"],"gender":""},
@@ -1995,22 +2073,17 @@ var SETDEX_PATHWAYS = {
   "Grafaiai": {
     "Cool Couple Isaac & Jenna": {"level":50,"ability":"Prankster","item":"","nature":"Serious","ivs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"evs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"moves":["Acid Spray","Swagger","Foul Play","Scary Face"],"gender":""}
   },
-  "Toxicroak": {
-    "Cool Couple Isaac & Jenna": {"level":50,"ability":"Dry Skin","item":"","nature":"Serious","ivs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"evs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"moves":["Helping Hand","Protect","Drain Punch","Rock Slide"],"gender":""},
-    "Gym Leader Maylene 3": {"level":80,"ability":"Dry Skin","item":"Life Orb","nature":"Jolly","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":4,"sa":0,"sd":0,"sp":252},"moves":["Swords Dance","Gunk Shot","Drain Punch","Sucker Punch"],"gender":""},
-    "Battle Server Kairo 20": {"level":80,"ability":"Dry Skin","item":"Life Orb","nature":"Jolly","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":4,"sa":0,"sd":0,"sp":252},"moves":["Sucker Punch","Gunk Shot","Close Combat","Swords Dance"],"gender":"M"}
-  },
   "Vileplume": {
     "Camper Bobby Lead": {"level":50,"ability":"Effect Spore","item":"","nature":"Serious","ivs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"evs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"moves":["Toxic","Strength Sap","Giga Drain","Venoshock"],"gender":"M"},
-    "Gym Leader Erika 3": {"level":80,"ability":"Chlorophyll","item":"Leftovers","nature":"Modest","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":0,"df":0,"sa":0,"sd":6,"sp":252},"moves":["Giga Drain","Sludge Bomb","Strength Sap","Sleep Powder"],"gender":"F"},
-    "Gym Leader Erika": {"level":80,"ability":"Pure Prayer","item":"Black Sludge","nature":"Bold","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":0,"df":252,"sa":4,"sd":0,"sp":0},"moves":["Spore","Leech Seed","Giga Drain","Strength Sap"],"gender":"F"}
+    "Gym Leader Erika 3": {"level":80,"ability":"Chlorophyll","item":"Leftovers","nature":"Modest","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":0,"df":0,"sa":0,"sd":6,"sp":252},"moves":["Giga Drain","Sludge Bomb","Strength Sap","Sleep Powder"],"gender":"F"}
   },
   "Umbreon": {
     "Camper Bobby": {"level":50,"ability":"Insomnia","item":"","nature":"Serious","ivs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"evs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"moves":["Toxic","Wish","Protect","Foul Play"],"gender":"M"},
     "Elite 4 Trainer Karen 3 Lead": {"level":80,"ability":"Unaware","item":"Leftovers","nature":"Calm","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":0,"df":4,"sa":0,"sd":252,"sp":0},"moves":["Foul Play","Moonlight","Toxic","Swagger"],"gender":"F"},
     "Colosseum Hero Wes 3 Lead": {"level":80,"ability":"Friend Guard","item":"Leftovers","nature":"Bold","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":0,"df":252,"sa":0,"sd":4,"sp":0},"moves":["Snarl","Dazzling Gleam","Moonlight","Helping Hand"],"gender":""},
     "Professor Spruce Dragon": {"level":80,"ability":"Poison Heal","item":"Toxic Orb","nature":"Calm","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":0,"df":4,"sa":0,"sd":252,"sp":0},"moves":["Wish","Protect","Toxic","Foul Play"],"gender":"M"},
-    "Professor Spruce Dragon 1": {"level":100,"ability":"Poison Heal","item":"Toxic Orb","nature":"Calm","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":0,"df":4,"sa":0,"sd":252,"sp":0},"moves":["Wish","Protect","Toxic","Foul Play"],"gender":"M"}
+    "Professor Spruce Dragon 1": {"level":100,"ability":"Poison Heal","item":"Toxic Orb","nature":"Calm","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":0,"df":4,"sa":0,"sd":252,"sp":0},"moves":["Wish","Protect","Toxic","Foul Play"],"gender":"M"},
+    "Janitor Bo": {"level":100,"ability":"Unaware","item":"Chesto Berry","nature":"Calm","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":0,"df":4,"sa":0,"sd":252,"sp":0},"moves":["Baddy Bad","Calm Mind","Rest","Baton Pass"],"gender":""}
   },
   "Flamigo": {
     "Crush Girl Beth Lead": {"level":52,"ability":"Scrappy","item":"","nature":"Serious","ivs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"evs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"moves":["Close Combat","Acrobatics","Throat Chop","U-turn"],"gender":"M"}
@@ -2033,7 +2106,8 @@ var SETDEX_PATHWAYS = {
   },
   "Clodsire": {
     "Ruin Maniac Theodore": {"level":60,"ability":"Water Absorb","item":"","nature":"Serious","ivs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"evs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"moves":["Toxic","Recover","Earth Power","Sludge Bomb"],"gender":"M"},
-    "Mad Berserker Gallagher Lead": {"level":80,"ability":"Unaware","item":"Toxic Orb","nature":"Careful","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":0,"df":4,"sa":0,"sd":252,"sp":0},"moves":["Switcheroo","Toxic Spikes","Earthquake","Leech Life"],"gender":"F"}
+    "Mad Berserker Gallagher Lead": {"level":80,"ability":"Unaware","item":"Toxic Orb","nature":"Careful","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":0,"df":4,"sa":0,"sd":252,"sp":0},"moves":["Switcheroo","Toxic Spikes","Earthquake","Leech Life"],"gender":"F"},
+    "Rocker Princess Petra Lead": {"level":100,"ability":"Rock Never Dies","item":"Black Sludge","nature":"Careful","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":248,"at":0,"df":244,"sa":0,"sd":16,"sp":0},"moves":["Gunk Shot","Stealth Rock","Fissure","Recover"],"gender":"F"}
   },
   "Runerigus": {
     "Ruin Maniac Theodore": {"level":60,"ability":"","item":"Chesto Berry","nature":"Serious","ivs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"evs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"moves":["Body Press","Shadow Claw","Iron Defense","Rest"],"gender":"M"},
@@ -2058,7 +2132,9 @@ var SETDEX_PATHWAYS = {
     "Battle Server Kairo 10": {"level":55,"ability":"Insomnia","item":"","nature":"Careful","ivs":{"hp":25,"at":25,"df":25,"sa":25,"sd":25,"sp":25},"evs":{"hp":80,"at":0,"df":0,"sa":0,"sd":80,"sp":0},"moves":["Leech Seed","Phantom Force","Trick-or-Treat","Seed Bomb"],"gender":"M"}
   },
   "Houndstone": {
-    "Lass Cici": {"level":65,"ability":"Sand Rush","item":"","nature":"Serious","ivs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"evs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"moves":["Last Respects","Play Rough","Crunch","Charm"],"gender":"F"}
+    "Lass Cici": {"level":65,"ability":"Sand Rush","item":"","nature":"Serious","ivs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"evs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"moves":["Last Respects","Play Rough","Crunch","Charm"],"gender":"F"},
+    "Mystery Girl Emma": {"level":30,"ability":"Fluffy","item":"Leftovers","nature":"Adamant","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":4,"sa":0,"sd":0,"sp":252},"moves":["Last Respects","Play Rough","Crunch","Poltergeist"],"gender":"F"},
+    "Mystery Girl Emma 1": {"level":65,"ability":"Fluffy","item":"Choice Scarf","nature":"Adamant","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":4,"sa":0,"sd":0,"sp":252},"moves":["Last Respects","Play Rough","Crunch","Poltergeist"],"gender":"F"}
   },
   "Dusclops": {
     "Youngster Mizuno": {"level":65,"ability":"Pressure","item":"Eviolite","nature":"Serious","ivs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"evs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"moves":["Will-O-Wisp","Pain Split","Seismic Toss","Infestation"],"gender":"M"}
@@ -2097,13 +2173,7 @@ var SETDEX_PATHWAYS = {
     "Cool Couple Ivan & Sheba": {"level":62,"ability":"Soundproof","item":"Light Clay","nature":"Serious","ivs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"evs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"moves":["Light Screen","Reflect","Psychic","Dazzling Gleam"],"gender":""},
     "Gym Leader Sabrina 3 Lead": {"level":80,"ability":"Prankster","item":"Light Clay","nature":"Timid","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":0,"sa":252,"sd":4,"sp":252},"moves":["Psychic","Reflect","Light Screen","Dazzling Gleam"],"gender":"M"},
     "Hero Crystal 3 Lead": {"level":80,"ability":"Prankster","item":"Light Clay","nature":"Timid","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":0,"df":4,"sa":0,"sd":0,"sp":252},"moves":["Reflect","Light Screen","Psychic","Dazzling Gleam"],"gender":"F"},
-    "Hero Crystal 4 Lead": {"level":90,"ability":"Contrary","item":"Life Orb","nature":"Timid","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":0,"df":4,"sa":0,"sd":0,"sp":252},"moves":["Psycho Boost","Fleur Cannon","Leaf Storm","Destiny Bond"],"gender":"F"},
-    "Gym Leader Sabrina Lead": {"level":80,"ability":"Screen Maker","item":"Light Clay","nature":"Timid","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":0,"df":4,"sa":0,"sd":0,"sp":252},"moves":["Light Screen","Reflect","Psyshock","Dazzling Gleam"],"gender":"M"}
-  },
-  "Exploud": {
-    "Cool Couple Ivan & Sheba": {"level":62,"ability":"Screamer","item":"Throat Spray","nature":"Serious","ivs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"evs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"moves":["Boomburst","Shadow Ball","Blizzard","Fire Blast"],"gender":""},
-    "Gym Leader Norman 3": {"level":80,"ability":"Scrappy","item":"Choice Specs","nature":"Modest","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":0,"df":4,"sa":252,"sd":0,"sp":0},"moves":["Boomburst","Fire Blast","Focus Blast","Surf"],"gender":"M"},
-    "Wandering Musician Lyric": {"level":80,"ability":"Screamer","item":"Choice Specs","nature":"Modest","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":0,"df":0,"sa":252,"sd":4,"sp":0},"moves":["Boomburst","Shadow Ball","",""],"gender":"F"}
+    "Hero Crystal 4 Lead": {"level":90,"ability":"Contrary","item":"Life Orb","nature":"Timid","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":0,"df":4,"sa":0,"sd":0,"sp":252},"moves":["Psycho Boost","Fleur Cannon","Leaf Storm","Destiny Bond"],"gender":"F"}
   },
   "Sinistcha": {
     "Cool Couple Ivan & Sheba": {"level":62,"ability":"Hospitality","item":"Big Root","nature":"Serious","ivs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"evs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"moves":["Matcha Gotcha","Shadow Ball","Scald","Strength Sap"],"gender":""},
@@ -2115,11 +2185,6 @@ var SETDEX_PATHWAYS = {
   },
   "Lokix": {
     "Young Couple Jazz & Cass": {"level":65,"ability":"Showdown Mode","item":"","nature":"Serious","ivs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"evs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"moves":["Axe Kick","Leech Life","Throat Chop","Swords Dance"],"gender":""}
-  },
-  "Hitmontop": {
-    "Crush Kin Rita & Ryo Lead": {"level":62,"ability":"Intimidate","item":"Adrenaline Orb","nature":"Serious","ivs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"evs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"moves":["Close Combat","Fake Out","Rock Slide","Bullet Punch"],"gender":""},
-    "Gym Leader Brawly 3": {"level":80,"ability":"Technician","item":"Assault Vest","nature":"Adamant","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":252,"df":0,"sa":0,"sd":4,"sp":0},"moves":["Rapid Spin","Triple Axel","Mach Punch","Close Combat"],"gender":"M"},
-    "Battle Server Kairo 8 Lead": {"level":55,"ability":"Intimidate","item":"Leftovers","nature":"Careful","ivs":{"hp":25,"at":25,"df":25,"sa":25,"sd":25,"sp":25},"evs":{"hp":80,"at":0,"df":0,"sa":0,"sd":80,"sp":0},"moves":["Revenge","Triple Axel","Bulldoze","Rapid Spin"],"gender":"M"}
   },
   "Hariyama": {
     "Crush Kin Rita & Ryo": {"level":62,"ability":"Sheer Force","item":"Sitrus Berry","nature":"Serious","ivs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"evs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"moves":["Belly Drum","Drain Punch","Bullet Punch","Rock Slide"],"gender":""},
@@ -2143,17 +2208,15 @@ var SETDEX_PATHWAYS = {
     "Bug Catcher Gibie": {"level":67,"ability":"Levitate","item":"","nature":"Serious","ivs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"evs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"moves":["Rock Slide","Zen Headbutt","Explosion","Light Screen"],"gender":""},
     "Gym Leader Tate&Liza 3 Lead": {"level":80,"ability":"Levitate","item":"Leftovers","nature":"Careful","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":4,"df":0,"sa":252,"sd":0,"sp":0},"moves":["Stealth Rock","Zen Headbutt","Will-O-Wisp","Stone Edge"],"gender":"M"}
   },
-  "Raticate-Alola": {
-    "Crooked Cop Rocky": {"level":55,"ability":"Thick Fat","item":"","nature":"Serious","ivs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"evs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"moves":["Crunch","Hyper Fang","Scary Face","Quick Attack"],"gender":"M"},
-    "Claw Gang Timbo": {"level":30,"ability":"","item":"Quick Claw","nature":"Adamant","ivs":{"hp":20,"at":20,"df":20,"sa":20,"sd":20,"sp":20},"evs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"moves":["Hyper Fang","Crunch","Sucker Punch","Focus Energy"],"gender":"M"}
+  "Hitmonchan": {
+    "Creep Chadwick Lead": {"level":30,"ability":"","item":"","nature":"Serious","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":4,"sa":0,"sd":0,"sp":252},"moves":["","","",""],"gender":"M"}
   },
   "Tyranitar": {
     "Gym Leader Brock 3 Lead": {"level":80,"ability":"Sand Stream","item":"Smooth Rock","nature":"Jolly","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":4,"sa":0,"sd":0,"sp":252},"moves":["Stone Axe","Ceaseless Edge","Earthquake","Dragon Dance"],"gender":"M"},
     "Shadow Six Idle Warrior Rexzo Kuxne": {"level":80,"ability":"Intimidate","item":"Tyranitarite","nature":"Adamant","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":252,"df":0,"sa":0,"sd":6,"sp":0},"moves":["Stone Edge","Dragon Dance","Brick Break","Crunch"],"gender":""},
     "Shadow Six Idle Warrior Rexzo Kuxne 1": {"level":102,"ability":"Darkness Boost2","item":"Focus Sash","nature":"Adamant","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":100,"at":252,"df":150,"sa":0,"sd":4,"sp":0},"moves":["Stone Edge","Tectonic Cleave","Abyssal Slash","Close Combat"],"gender":""},
     "Shadow Six Idle Warrior Rexzo Kuxne 10": {"level":120,"ability":"Darkness Boost","item":"Focus Sash","nature":"Adamant","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":100,"at":252,"df":150,"sa":0,"sd":4,"sp":0},"moves":["Diamond Storm","Precipice Blades","Wicked Blow","Close Combat"],"gender":""},
-    "Battle Server Kairo 19": {"level":80,"ability":"Sand Stream","item":"Tyranitarite","nature":"Jolly","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":0,"sa":0,"sd":4,"sp":252},"moves":["Stone Edge","Earthquake","Crunch","Dragon Dance"],"gender":"F"},
-    "Gym Leader Brock": {"level":80,"ability":"Intimidate","item":"Tyranitarite","nature":"Jolly","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":4,"sa":0,"sd":0,"sp":252},"moves":["Knock Off","Stone Edge","Play Rough","Dragon Dance"],"gender":"M"}
+    "Battle Server Kairo 19": {"level":80,"ability":"Sand Stream","item":"Tyranitarite","nature":"Jolly","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":0,"sa":0,"sd":4,"sp":252},"moves":["Stone Edge","Earthquake","Crunch","Dragon Dance"],"gender":"F"}
   },
   "Gigalith": {
     "Gym Leader Brock 3": {"level":80,"ability":"Sand Force","item":"Weakness Policy","nature":"Adamant","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":252,"df":4,"sa":0,"sd":0,"sp":0},"moves":["Iron Head","Superpower","Rock Slide","Earthquake"],"gender":"F"}
@@ -2161,8 +2224,7 @@ var SETDEX_PATHWAYS = {
   "Golem": {
     "Gym Leader Brock 3": {"level":80,"ability":"Rock Head","item":"Passho Berry","nature":"Adamant","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":252,"df":0,"sa":0,"sd":4,"sp":0},"moves":["Head Smash","Double-Edge","Earthquake","Body Press"],"gender":"M"},
     "Hero Yellow 3": {"level":80,"ability":"Sturdy","item":"Custap Berry","nature":"Adamant","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":4,"sa":0,"sd":0,"sp":252},"moves":["Stone Edge","Earthquake","Reversal","Explosion"],"gender":"M"},
-    "Hero Yellow 4": {"level":90,"ability":"Sturdy","item":"Custap Berry","nature":"Adamant","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":4,"sa":0,"sd":0,"sp":252},"moves":["Stone Edge","Earthquake","Reversal","Explosion"],"gender":"M"},
-    "Gym Leader Brock Lead": {"level":80,"ability":"Sturdy","item":"Weakness Policy","nature":"Jolly","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":4,"sa":0,"sd":0,"sp":252},"moves":["Shell Smash","Boulder Drop","Earthquake","Sucker Punch"],"gender":"M"}
+    "Hero Yellow 4": {"level":90,"ability":"Sturdy","item":"Custap Berry","nature":"Adamant","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":4,"sa":0,"sd":0,"sp":252},"moves":["Stone Edge","Earthquake","Reversal","Explosion"],"gender":"M"}
   },
   "Crustle": {
     "Gym Leader Brock 3": {"level":80,"ability":"Water Absorb","item":"Focus Sash","nature":"Jolly","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":0,"sa":0,"sd":4,"sp":252},"moves":["Rock Slide","X-Scissor","Earthquake","Shell Smash"],"gender":"F"}
@@ -2170,24 +2232,17 @@ var SETDEX_PATHWAYS = {
   "Steelix": {
     "Gym Leader Brock 3": {"level":80,"ability":"Sturdy","item":"Steelixite","nature":"Impish","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":0,"df":252,"sa":0,"sd":4,"sp":0},"moves":["Rock Slide","Body Press","Earthquake","Shield Bash"],"gender":"M"},
     "Gym Leader Jasmine 3": {"level":80,"ability":"Titanium Armor","item":"Steelixite","nature":"Adamant","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":0,"df":252,"sa":0,"sd":4,"sp":0},"moves":["Body Press","Shield Bash","Earthquake","Curse"],"gender":""},
-    "Gym Leader Byron 3": {"level":80,"ability":"Titanium Armor","item":"Leftovers","nature":"Impish","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":0,"df":252,"sa":0,"sd":4,"sp":0},"moves":["Shield Bash","Body Press","Recover","Iron Defense"],"gender":""},
-    "Elite Four Bruno Lead": {"level":85,"ability":"Sturdy","item":"Steelixite","nature":"Bold","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":0,"df":252,"sa":0,"sd":4,"sp":0},"moves":["Shield Bash","Iron Defense","Body Press","Stealth Rock"],"gender":"M"}
+    "Gym Leader Byron 3": {"level":80,"ability":"Titanium Armor","item":"Leftovers","nature":"Impish","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":0,"df":252,"sa":0,"sd":4,"sp":0},"moves":["Shield Bash","Body Press","Recover","Iron Defense"],"gender":""}
   },
   "Politoed": {
     "Gym Leader Misty 3 Lead": {"level":80,"ability":"Drizzle","item":"Damp Rock","nature":"Modest","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":0,"df":0,"sa":252,"sd":4,"sp":0},"moves":["Scald","Ice Beam","Earth Power","Flip Turn"],"gender":"M"},
     "Hero Gold 3 Lead": {"level":80,"ability":"Water Bubble","item":"Choice Specs","nature":"Quiet","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":0,"df":0,"sa":252,"sd":4,"sp":0},"moves":["Scald","Ice Beam","Earth Power","Flip Turn"],"gender":"M"},
-    "Arch Saint Arlo Fyor Lead": {"level":80,"ability":"Drizzle","item":"Damp Rock","nature":"Sassy","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":0},"evs":{"hp":248,"at":0,"df":0,"sa":10,"sd":252,"sp":0},"moves":["Scald","Toxic","Encore","Roost"],"gender":"M"}
+    "Arch Saint Arlo Fyor Lead": {"level":80,"ability":"Drizzle","item":"Damp Rock","nature":"Sassy","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":0},"evs":{"hp":248,"at":0,"df":0,"sa":10,"sd":252,"sp":0},"moves":["Scald","Toxic","Encore","Roost"],"gender":"M"},
+    "Fossil Duo Mogege and Tali Lead": {"level":75,"ability":"Drizzle","item":"Damp Rock","nature":"Modest","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":0},"evs":{"hp":248,"at":0,"df":0,"sa":10,"sd":252,"sp":0},"moves":["Scald","Flip Turn","Dark Dirge","Icy Wind"],"gender":"M"}
   },
   "Blastoise": {
     "Gym Leader Misty 3": {"level":80,"ability":"Swift Swim","item":"Mystic Water","nature":"Modest","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":0,"df":4,"sa":0,"sd":0,"sp":252},"moves":["Dark Pulse","Ice Beam","Hydro Pump","Shell Smash"],"gender":"M"},
-    "Hero Leaf 3": {"level":80,"ability":"Drizzle","item":"Blastoisinite","nature":"Modest","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":0,"sa":252,"sd":4,"sp":252},"moves":["Aura Sphere","Ice Beam","Scald","Shell Smash"],"gender":"M"},
-    "Hero Red 1": {"level":85,"ability":"Drizzle","item":"Focus Sash","nature":"Modest","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":0,"sa":252,"sd":4,"sp":252},"moves":["Steam Eruption","Ice Beam","Shell Smash","Earth Power"],"gender":"M"},
-    "Hero Red 2 Dynamax": {"level":85,"ability":"Drizzle","item":"White Herb","nature":"Timid","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":0,"sa":252,"sd":4,"sp":252},"moves":["Scald","Squall","Shell Smash","Earth Power"],"gender":"M"},
-    "Hero Red 3": {"level":85,"ability":"Drizzle","item":"Focus Sash","nature":"Modest","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":0,"sa":252,"sd":4,"sp":252},"moves":["Steam Eruption","Ice Beam","Shell Smash","Earth Power"],"gender":"M"},
-    "Hero Red 4": {"level":85,"ability":"Drizzle","item":"Focus Sash","nature":"Modest","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":0,"sa":252,"sd":4,"sp":252},"moves":["Steam Eruption","Ice Beam","Shell Smash","Earth Power"],"gender":"M"},
-    "Hero Red 5": {"level":85,"ability":"Drizzle","item":"Focus Sash","nature":"Modest","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":0,"sa":252,"sd":4,"sp":252},"moves":["Steam Eruption","Ice Beam","Shell Smash","Earth Power"],"gender":"M"},
-    "Hero Red 6": {"level":120,"ability":"Simple","item":"White Herb","nature":"Modest","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":0,"sa":252,"sd":4,"sp":252},"moves":["Steam Eruption","Freeze-Dry","Shell Smash","Earth Power"],"gender":"M"},
-    "Champion Blue": {"level":85,"ability":"Intimidate","item":"Blastoisinite","nature":"Timid","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":4,"sa":252,"sd":0,"sp":252},"moves":["Shell Smash","Scald","Ice Beam","Aura Sphere"],"gender":"M"}
+    "Hero Leaf 3": {"level":80,"ability":"Drizzle","item":"Blastoisinite","nature":"Modest","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":0,"sa":252,"sd":4,"sp":252},"moves":["Aura Sphere","Ice Beam","Scald","Shell Smash"],"gender":"M"}
   },
   "Psyduck": {
     "Gym Leader Misty 3": {"level":80,"ability":"Pure Power","item":"Focus Sash","nature":"Adamant","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":252,"df":0,"sa":0,"sd":4,"sp":0},"moves":["Liquidation","Ice Punch","Zen Headbutt","Amnesia"],"gender":"M"}
@@ -2197,19 +2252,17 @@ var SETDEX_PATHWAYS = {
   },
   "Raichu": {
     "Gym Leader LT Surge 3 Dynamax": {"level":80,"ability":"Static","item":"Air Balloon","nature":"Timid","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":4,"sa":252,"sd":0,"sp":252},"moves":["Thunder","Grass Knot","Surf","Nasty Plot"],"gender":"M"},
-    "Gym Leader Volkner 3": {"level":80,"ability":"Static","item":"Air Balloon","nature":"Timid","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":4,"sa":252,"sd":0,"sp":252},"moves":["Thunderbolt","Surf","Nasty Plot","Focus Blast"],"gender":""},
-    "Gym Leader Lt. Surge Lead Dynamax": {"level":80,"ability":"Static","item":"Air Balloon","nature":"Jolly","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":4,"sa":0,"sd":0,"sp":252},"moves":["Volt Tackle","Close Combat","Liquidation","Extreme Speed"],"gender":"M"}
+    "Gym Leader Volkner 3": {"level":80,"ability":"Static","item":"Air Balloon","nature":"Timid","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":4,"sa":252,"sd":0,"sp":252},"moves":["Thunderbolt","Surf","Nasty Plot","Focus Blast"],"gender":""}
   },
   "Jolteon": {
     "Gym Leader LT Surge 3": {"level":80,"ability":"Quick Feet","item":"Leftovers","nature":"Modest","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":0,"sa":252,"sd":4,"sp":252},"moves":["Thunder","Weather Ball","Substitute","Shadow Ball"],"gender":"F"},
     "Overconfident Raito 1": {"level":90,"ability":"Basilisk","item":"Dragonium Z","nature":"Timid","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":4,"sa":252,"sd":0,"sp":252},"moves":["Thunderbolt","Alluring Voice","Draco Meteor","Volt Switch"],"gender":"M"},
-    "Gym Leader Lt. Surge": {"level":80,"ability":"Volt Absorb","item":"Throat Spray","nature":"Timid","ivs":{"hp":31,"at":0,"df":31,"sa":30,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":4,"sa":252,"sd":0,"sp":252},"moves":["Thunderbolt","Alluring Voice","Shadow Ball","Hidden Power"],"gender":"M"},
-    "Champion Blue": {"level":85,"ability":"Technician","item":"Life Orb","nature":"Timid","ivs":{"hp":31,"at":0,"df":30,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":4,"sa":252,"sd":0,"sp":252},"moves":["Thunderbolt","Hidden Power","Charge Beam","Alluring Voice"],"gender":"M"}
+    "Storm Prince Welkin": {"level":65,"ability":"Technician","item":"Life Orb","nature":"Timid","ivs":{"hp":31,"at":0,"df":30,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":4,"sa":252,"sd":0,"sp":252},"moves":["Thunderbolt","Hidden Power","Charge Beam","Alluring Voice"],"gender":"M"}
   },
   "Victreebel": {
     "Gym Leader Erika 3": {"level":80,"ability":"Chlorophyll","item":"Grassium Z","nature":"Modest","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":0,"sa":252,"sd":4,"sp":252},"moves":["Strength Sap","Leaf Storm","Sludge Bomb","Sunny Day"],"gender":"F"},
     "Battle Server Kairo 5": {"level":35,"ability":"Chlorophyll","item":"","nature":"Timid","ivs":{"hp":20,"at":0,"df":20,"sa":20,"sd":20,"sp":20},"evs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"moves":["Solar Beam","Venoshock","Strength Sap","Sleep Powder"],"gender":"F"},
-    "Gym Leader Erika Dynamax": {"level":80,"ability":"Unburden","item":"Grassy Seed","nature":"Adamant","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":4,"sa":0,"sd":0,"sp":252},"moves":["Power Whip","Gunk Shot","Knock Off","Leech Life"],"gender":"F"}
+    "Aroma Ladies Sei and Kei": {"level":35,"ability":"Chlorophyll","item":"","nature":"Timid","ivs":{"hp":20,"at":0,"df":20,"sa":20,"sd":20,"sp":20},"evs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"moves":["Solar Beam","Venoshock","Sunny Day","Sleep Powder"],"gender":"F"}
   },
   "Lilligant": {
     "Gym Leader Erika 3": {"level":80,"ability":"Chlorophyll","item":"Life Orb","nature":"Modest","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":0,"sa":252,"sd":4,"sp":252},"moves":["Quiver Dance","Sleep Powder","Giga Drain","Pollen Puff"],"gender":"M"}
@@ -2217,7 +2270,8 @@ var SETDEX_PATHWAYS = {
   "Tangrowth": {
     "Gym Leader Erika 3": {"level":80,"ability":"Regenerator","item":"Rocky Helmet","nature":"Relaxed","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":0,"df":252,"sa":0,"sd":4,"sp":0},"moves":["Leaf Storm","Rock Slide","Earthquake","Synthesis"],"gender":""},
     "Gym Leader Gardenia 3": {"level":80,"ability":"Regenerator","item":"Assault Vest","nature":"Sassy","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":0,"df":4,"sa":0,"sd":252,"sp":0},"moves":["Giga Drain","Rock Slide","Earthquake","Sludge Bomb"],"gender":""},
-    "Battle Server Kairo 5 Lead": {"level":35,"ability":"Chlorophyll","item":"Heat Rock","nature":"Jolly","ivs":{"hp":20,"at":20,"df":20,"sa":20,"sd":20,"sp":20},"evs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"moves":["Sunny Day","Grassy Glide","Rock Slide","Bulldoze"],"gender":"M"}
+    "Battle Server Kairo 5 Lead": {"level":35,"ability":"Chlorophyll","item":"Heat Rock","nature":"Jolly","ivs":{"hp":20,"at":20,"df":20,"sa":20,"sd":20,"sp":20},"evs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"moves":["Sunny Day","Grassy Glide","Rock Slide","Bulldoze"],"gender":"M"},
+    "Aroma Ladies Sei and Kei": {"level":35,"ability":"Chlorophyll","item":"Heat Rock","nature":"Jolly","ivs":{"hp":20,"at":20,"df":20,"sa":20,"sd":20,"sp":20},"evs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"moves":["Sunny Day","Grassy Glide","Rock Slide","Bulldoze"],"gender":"M"}
   },
   "Appletun": {
     "Gym Leader Erika 3": {"level":80,"ability":"Thick Fat","item":"White Herb","nature":"Bold","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":0,"df":252,"sa":0,"sd":4,"sp":0},"moves":["Draco Meteor","Apple Acid","Leech Seed","Recover"],"gender":""}
@@ -2248,7 +2302,8 @@ var SETDEX_PATHWAYS = {
     "Coach Joy 6 Blissey 2": {"level":75,"ability":"","item":"Mental Herb","nature":"Rash","ivs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"evs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"moves":["Blissful Lesson","","",""],"gender":"F"},
     "Coach Joy 6 Blissey 3": {"level":75,"ability":"","item":"Mental Herb","nature":"Rash","ivs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"evs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"moves":["Blissful Lesson","","",""],"gender":"F"},
     "Coach Joy 6 Blissey 4": {"level":75,"ability":"","item":"Mental Herb","nature":"Rash","ivs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"evs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"moves":["Blissful Lesson","","",""],"gender":"F"},
-    "Coach Joy 6 Blissey 5": {"level":75,"ability":"","item":"Mental Herb","nature":"Rash","ivs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"evs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"moves":["Blissful Lesson","","",""],"gender":"F"}
+    "Coach Joy 6 Blissey 5": {"level":75,"ability":"","item":"Mental Herb","nature":"Rash","ivs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"evs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"moves":["Blissful Lesson","","",""],"gender":"F"},
+    "The Vessel Slater Lead": {"level":100,"ability":"Natural Cure","item":"Leftovers","nature":"Bold","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":0,"df":252,"sa":0,"sd":4,"sp":0},"moves":["Thunder Wave","Seismic Toss","Soft-Boiled","Stealth Rock"],"gender":"F"}
   },
   "Clefable": {
     "Gym Leader Whitney 3": {"level":80,"ability":"Magic Guard","item":"Leftovers","nature":"Bold","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":0,"df":252,"sa":4,"sd":0,"sp":0},"moves":["Moonblast","Calm Mind","Flamethrower","Soft-Boiled"],"gender":"M"},
@@ -2275,7 +2330,8 @@ var SETDEX_PATHWAYS = {
     "Shadow Six Idle Warrior Rexzo Kuxne Lead": {"level":80,"ability":"Iron Barbs","item":"Rocky Helmet","nature":"Adamant","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":6,"at":252,"df":0,"sa":0,"sd":0,"sp":252},"moves":["Stone Axe","Synthesis","Ceaseless Edge","Power Whip"],"gender":"M"},
     "Shadow Six Idle Warrior Rexzo Kuxne 1 Lead": {"level":100,"ability":"Vicious Edge","item":"Leftovers","nature":"Impish","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":0,"df":252,"sa":0,"sd":4,"sp":0},"moves":["Stone Axe","Ceaseless Edge","Protect","Shield Bash"],"gender":"M"},
     "Shadow Six Idle Warrior Rexzo Kuxne 10 Lead": {"level":120,"ability":"Huge Power","item":"Leftovers","nature":"Brave","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":0},"evs":{"hp":252,"at":252,"df":0,"sa":0,"sd":4,"sp":0},"moves":["Stone Axe","Ceaseless Edge","Power Whip","Gyro Ball"],"gender":"M"},
-    "Battle Server Kairo 12 Lead": {"level":70,"ability":"Iron Barbs","item":"Occa Berry","nature":"Relaxed","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":0},"evs":{"hp":252,"at":4,"df":252,"sa":0,"sd":0,"sp":0},"moves":["Leech Seed","Protect","Gyro Ball","Body Press"],"gender":"F"}
+    "Battle Server Kairo 12 Lead": {"level":70,"ability":"Iron Barbs","item":"Occa Berry","nature":"Relaxed","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":0},"evs":{"hp":252,"at":4,"df":252,"sa":0,"sd":0,"sp":0},"moves":["Leech Seed","Protect","Gyro Ball","Body Press"],"gender":"F"},
+    "Alchemist Hexipher Lead": {"level":100,"ability":"Equivalence","item":"Leftovers","nature":"Relaxed","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":0},"evs":{"hp":252,"at":0,"df":80,"sa":0,"sd":176,"sp":0},"moves":["Leech Seed","Stealth Rock","Gyro Ball","Spikes"],"gender":"M"}
   },
   "Dragonair": {
     "Gym Leader Clair 3 Lead": {"level":80,"ability":"Shed Skin","item":"Eviolite","nature":"Jolly","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":0,"sa":6,"sd":0,"sp":252},"moves":["Dragon Dance","Extreme Speed","Outrage","Aqua Tail"],"gender":""}
@@ -2287,6 +2343,9 @@ var SETDEX_PATHWAYS = {
   },
   "Druddigon": {
     "Gym Leader Clair 3": {"level":80,"ability":"Sheer Force","item":"Life Orb","nature":"Adamant","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":252,"df":0,"sa":0,"sd":4,"sp":0},"moves":["Dragon Claw","Fire Punch","Superpower","Gunk Shot"],"gender":""}
+  },
+  "Torkoal": {
+    "Gym Leader Flannery 3 Lead": {"level":80,"ability":"Drought","item":"Heat Rock","nature":"Bold","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":0,"df":252,"sa":4,"sd":0,"sp":0},"moves":["Lava Plume","Body Press","Solar Beam","Stealth Rock"],"gender":"F"}
   },
   "Magmortar": {
     "Gym Leader Flannery 3": {"level":80,"ability":"Flame Body","item":"Choice Scarf","nature":"Modest","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":4,"sa":252,"sd":0,"sp":252},"moves":["Fire Blast","Thunderbolt","Focus Blast","Scorching Sands"],"gender":"M"},
@@ -2321,7 +2380,8 @@ var SETDEX_PATHWAYS = {
   },
   "Roserade": {
     "Gym Leader Gardenia 3": {"level":80,"ability":"Natural Cure","item":"Life Orb","nature":"Timid","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":4,"sa":252,"sd":0,"sp":252},"moves":["Giga Drain","Sludge Bomb","Extrasensory","Shadow Ball"],"gender":""},
-    "Mad Berserker Gallagher Dynamax": {"level":80,"ability":"Drought","item":"Big Root","nature":"Modest","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":4,"sa":252,"sd":0,"sp":252},"moves":["Power Trick","Giga Drain","Venoshock","Solar Beam"],"gender":"F"}
+    "Mad Berserker Gallagher Dynamax": {"level":80,"ability":"Drought","item":"Big Root","nature":"Modest","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":4,"sa":252,"sd":0,"sp":252},"moves":["Power Trick","Giga Drain","Venoshock","Solar Beam"],"gender":"F"},
+    "Mysterious Heroine ??? Lead": {"level":100,"ability":"Garden of Thorns","item":"Life Orb","nature":"Modest","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":4,"sa":252,"sd":0,"sp":252},"moves":["Earth Power","Giga Drain","Sludge Wave","Dazzling Gleam"],"gender":"F"}
   },
   "Tropius": {
     "Gym Leader Gardenia 3": {"level":80,"ability":"Harvest","item":"Sitrus Berry","nature":"Bold","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":0,"df":252,"sa":0,"sd":4,"sp":0},"moves":["Leech Seed","Substitute","Air Slash","Toxic"],"gender":""}
@@ -2330,6 +2390,7 @@ var SETDEX_PATHWAYS = {
     "Gym Leader Byron 3 Lead": {"level":80,"ability":"Titanium Armor","item":"Aggronite","nature":"Impish","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":0,"df":252,"sa":0,"sd":4,"sp":0},"moves":["Shield Bash","Body Press","Stealth Rock","Iron Defense"],"gender":""},
     "Hero Sapphire 3": {"level":80,"ability":"Titanium Armor","item":"Air Balloon","nature":"Impish","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":4,"df":252,"sa":0,"sd":0,"sp":0},"moves":["Rock Slide","Shield Bash","Iron Defense","Body Press"],"gender":"M"},
     "Shadow Six High Flyer Milos Zelex": {"level":80,"ability":"Intimidate","item":"Aggronite","nature":"Calm","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":0,"df":6,"sa":0,"sd":252,"sp":0},"moves":["Iron Defense","Shield Bash","Recover","Body Press"],"gender":"M"},
+    "Shadow Six High Flyer Milos Zelex 2": {"level":80,"ability":"Sturdy","item":"Aggronite","nature":"Careful","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":248,"at":8,"df":0,"sa":0,"sd":252,"sp":0},"moves":["Body Press","Shield Bash","Iron Defense","Rest"],"gender":"M"},
     "Battle Server Kairo 19 Lead": {"level":80,"ability":"Sturdy","item":"Custap Berry","nature":"Careful","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":4,"df":252,"sa":0,"sd":0,"sp":0},"moves":["Stealth Rock","Iron Head","Body Press","Endeavor"],"gender":"M"}
   },
   "Excadrill": {
@@ -2354,16 +2415,18 @@ var SETDEX_PATHWAYS = {
   "Rapidash": {
     "Elite 4 Trainer Flint 3": {"level":80,"ability":"Speed Boost","item":"Leftovers","nature":"Jolly","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":4,"sa":0,"sd":0,"sp":252},"moves":["Flare Blitz","High Horsepower","Will-O-Wisp","Morning Sun"],"gender":"M"},
     "Battle Server Kairo 11": {"level":55,"ability":"Immolate","item":"","nature":"Jolly","ivs":{"hp":25,"at":25,"df":25,"sa":25,"sd":25,"sp":25},"evs":{"hp":0,"at":80,"df":0,"sa":0,"sd":0,"sp":80},"moves":["Double-Edge","Drill Run","Morning Sun","Megahorn"],"gender":"F"},
-    "Prim Lady Chloé Dynamax": {"level":78,"ability":"Speed Boost","item":"Electrium Z","nature":"Adamant","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":0,"sa":0,"sd":4,"sp":252},"moves":["Flare Blitz","High Horsepower","Wild Charge","Baton Pass"],"gender":"M"},
-    "Gym Leader Blaine": {"level":80,"ability":"Speed Boost","item":"Air Balloon","nature":"Adamant","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":4,"sa":0,"sd":0,"sp":252},"moves":["Swords Dance","Flare Blitz","Wild Charge","High Horsepower"],"gender":"M"}
+    "Prim Lady Chloé Dynamax": {"level":78,"ability":"Speed Boost","item":"Electrium Z","nature":"Adamant","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":0,"sa":0,"sd":4,"sp":252},"moves":["Flare Blitz","High Horsepower","Wild Charge","Baton Pass"],"gender":"M"}
   },
   "Absol": {
     "Elite 4 Trainer Karen 3": {"level":80,"ability":"Justified","item":"Absolite","nature":"Jolly","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":4,"sa":0,"sd":0,"sp":252},"moves":["Swords Dance","Sucker Punch","Close Combat","Play Rough"],"gender":"M"},
     "Doctor Yukine": {"level":80,"ability":"Intimidate","item":"Absolite","nature":"Naive","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":4,"sa":0,"sd":0,"sp":252},"moves":["Throat Chop","Psycho Cut","Extreme Speed","Sucker Punch"],"gender":"M"},
-    "Battle Server Kairo 33": {"level":80,"ability":"Justified","item":"Absolite","nature":"Naive","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":4,"sa":0,"sd":0,"sp":252},"moves":["Knock Off","Play Rough","Close Combat","Fire Blast"],"gender":"F"}
+    "Battle Server Kairo 33": {"level":80,"ability":"Justified","item":"Absolite","nature":"Naive","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":4,"sa":0,"sd":0,"sp":252},"moves":["Knock Off","Play Rough","Close Combat","Fire Blast"],"gender":"F"},
+    "Mystery Girl Emma": {"level":30,"ability":"Justified","item":"Leftovers","nature":"Adamant","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":4,"sa":0,"sd":0,"sp":252},"moves":["Knock Off","Play Rough","Close Combat","Sucker Punch"],"gender":"F"},
+    "Mystery Girl Emma 1": {"level":65,"ability":"Justified","item":"Leftovers","nature":"Adamant","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":4,"sa":0,"sd":0,"sp":252},"moves":["Knock Off","Play Rough","Close Combat","Sucker Punch"],"gender":"F"}
   },
   "Haxorus": {
     "Elite 4 Trainer Drake 3": {"level":80,"ability":"Mold Breaker","item":"Life Orb","nature":"Adamant","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":4,"sa":0,"sd":0,"sp":252},"moves":["Outrage","First Impression","Earthquake","Dragon Dance"],"gender":""},
+    "Occultist Umbra 1": {"level":100,"ability":"Intimidate","item":" Haxorite","nature":"Jolly","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":0,"sa":0,"sd":4,"sp":252},"moves":["Dual Chop","Dragon Dance","Iron Head","Blazing Portent"],"gender":"M"},
     "Regigigas Fanatic Estionese": {"level":80,"ability":"Mold Breaker","item":"Leftovers","nature":"Adamant","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":4,"sa":0,"sd":0,"sp":252},"moves":["Dragon Dance","Dragon Claw","Trailblaze","Close Combat"],"gender":"M"},
     "Serpent Tamer Ahran": {"level":70,"ability":"Mold Breaker","item":"Life Orb","nature":"Adamant","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":6,"sa":0,"sd":0,"sp":252},"moves":["Dragon Dance","Outrage","X-Scissor","Poison Jab"],"gender":""}
   },
@@ -2381,7 +2444,8 @@ var SETDEX_PATHWAYS = {
   "Meganium": {
     "Colosseum Hero Wes 3": {"level":80,"ability":"Chlorophyll","item":"Light Clay","nature":"Adamant","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":4,"at":252,"df":0,"sa":0,"sd":0,"sp":252},"moves":["Spore","Petal Blizzard","Light Screen","Reflect"],"gender":""},
     "Hero Crystal 3 Dynamax": {"level":80,"ability":"Thick Fat","item":"Leftovers","nature":"Modest","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":0,"df":4,"sa":252,"sd":0,"sp":0},"moves":["Leech Seed","Sludge Bomb","Leaf Storm","Hurricane"],"gender":"M"},
-    "Hero Crystal 4 Dynamax": {"level":90,"ability":"Huge Power","item":"Leftovers","nature":"Adamant","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":252,"df":4,"sa":0,"sd":0,"sp":0},"moves":["Earthquake","Superpower","Leaf Blade","Bounce"],"gender":"M"}
+    "Hero Crystal 4 Dynamax": {"level":90,"ability":"Huge Power","item":"Leftovers","nature":"Adamant","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":252,"df":4,"sa":0,"sd":0,"sp":0},"moves":["Earthquake","Superpower","Leaf Blade","Bounce"],"gender":"M"},
+    "Janitor Bo": {"level":100,"ability":"Fur Coat","item":"Rocky Helmet","nature":"Impish","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":0,"df":252,"sa":0,"sd":4,"sp":0},"moves":["Sylvan Siphon","Body Press","Dragon Tail","Curse"],"gender":""}
   },
   "Lugia-Shadow": {
     "Colosseum Hero Wes 3": {"level":80,"ability":"Sheer Force","item":"Life Orb","nature":"Modest","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":4,"at":0,"df":0,"sa":252,"sd":0,"sp":252},"moves":["Oblivion Wing","Roost","Psychic","Shadow Ball"],"gender":""}
@@ -2404,7 +2468,9 @@ var SETDEX_PATHWAYS = {
     "Shadow Six Unfettered Scholar Maxwell Lead": {"level":80,"ability":"Drizzle","item":"Damp Rock","nature":"Adamant","ivs":{"hp":31,"at":31,"df":31,"sa":2,"sd":31,"sp":31},"evs":{"hp":252,"at":252,"df":0,"sa":0,"sd":6,"sp":0},"moves":["Wave Crash","Earthquake","Ice Punch","Flip Turn"],"gender":"M"},
     "Druid Jehowiczak 1": {"level":100,"ability":"Sap Sipper","item":"Leftovers","nature":"Adamant","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":252,"df":0,"sa":0,"sd":4,"sp":0},"moves":["Earthquake","Liquidation","Leech Seed","Ice Punch"],"gender":"M"},
     "Arch Saint Arlo Fyor": {"level":80,"ability":"Magic Guard","item":"Leftovers","nature":"Relaxed","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":240,"at":16,"df":252,"sa":0,"sd":0,"sp":0},"moves":["Flip Turn","Earthquake","Roost","Toxic"],"gender":"M"},
-    "Battle Server Kairo 31": {"level":80,"ability":"Hydration","item":"Swampertite","nature":"Adamant","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":4,"sa":0,"sd":0,"sp":252},"moves":["Waterfall","Earthquake","Ice Punch","Superpower"],"gender":"M"}
+    "Arch Saint Arlo Fyor 2": {"level":80,"ability":"Mirror Armor","item":"Leftovers","nature":"Impish","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":4,"df":252,"sa":0,"sd":0,"sp":0},"moves":["Flip Turn","Earthquake","Knock Off","Stealth Rock"],"gender":"M"},
+    "Battle Server Kairo 31": {"level":80,"ability":"Hydration","item":"Swampertite","nature":"Adamant","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":4,"sa":0,"sd":0,"sp":252},"moves":["Waterfall","Earthquake","Ice Punch","Superpower"],"gender":"M"},
+    "Alchemist Hexipher": {"level":100,"ability":"Sap Sipper","item":"Assault Vest","nature":"Adamant","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":252,"df":0,"sa":0,"sd":4,"sp":0},"moves":["Liquidation","Earthquake","Bitter Blade","Rock Slide"],"gender":"M"}
   },
   "Latios": {
     "Hero Ruby 3": {"level":80,"ability":"Speed Boost","item":"Life Orb","nature":"Modest","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":4,"sa":252,"sd":0,"sp":252},"moves":["Dragon Pulse","Recover","Psychic","Signal Beam"],"gender":""},
@@ -2450,7 +2516,7 @@ var SETDEX_PATHWAYS = {
   },
   "Togekiss": {
     "Hero Gold 3": {"level":80,"ability":"Serene Grace","item":"Leftovers","nature":"Modest","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":0,"df":0,"sa":200,"sd":0,"sp":56},"moves":["Thunder Wave","Air Slash","Roost","Moonblast"],"gender":"F"},
-    "Shadow Six Detective MacBurn Felix": {"level":80,"ability":"Psychic Surge","item":"Togekissite","nature":"Modest","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":0,"sa":252,"sd":4,"sp":252},"moves":["Moonblast","Aura Sphere","Air Slash","Nasty Plot"],"gender":"F"},
+    "Shadow Six Perceptive Detective Felix": {"level":80,"ability":"Psychic Surge","item":"Togekissite","nature":"Modest","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":0,"sa":252,"sd":4,"sp":252},"moves":["Moonblast","Aura Sphere","Air Slash","Nasty Plot"],"gender":"F"},
     "Battle Server Kairo 32 Lead": {"level":80,"ability":"Serene Grace","item":"Leftovers","nature":"Modest","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":0,"df":0,"sa":200,"sd":0,"sp":56},"moves":["Thunder Wave","Air Slash","Flamethrower","Roost"],"gender":"F"}
   },
   "Ho-Oh": {
@@ -2460,8 +2526,7 @@ var SETDEX_PATHWAYS = {
   "Charizard": {
     "Hero Blue 3": {"level":84,"ability":"Intimidate","item":"Charizardite Y","nature":"Timid","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":4,"sa":252,"sd":0,"sp":252},"moves":["Fire Blast","Squall","Focus Blast","Solar Beam"],"gender":"M"},
     "Shadow Six Unfettered Scholar Maxwell Dynamax": {"level":80,"ability":"Fusion Core","item":"Charti Berry","nature":"Timid","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":6,"sa":252,"sd":0,"sp":252},"moves":["Flamethrower","Hurricane","Scald","Energy Ball"],"gender":"M"},
-    "Battle Server Kairo 24": {"level":80,"ability":"Blaze","item":"Charizardite Y","nature":"Timid","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":4,"sa":252,"sd":0,"sp":252},"moves":["Fire Blast","Solar Beam","Focus Blast","Roost"],"gender":"M"},
-    "Gym Leader Blaine Lead": {"level":80,"ability":"Blaze","item":"Charizardite Y","nature":"Timid","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":4,"sa":252,"sd":0,"sp":252},"moves":["Fire Blast","Solar Beam","Squall","Earth Power"],"gender":"M"}
+    "Battle Server Kairo 24": {"level":80,"ability":"Blaze","item":"Charizardite Y","nature":"Timid","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":4,"sa":252,"sd":0,"sp":252},"moves":["Fire Blast","Solar Beam","Focus Blast","Roost"],"gender":"M"}
   },
   "Zapdos": {
     "Hero Blue 3": {"level":84,"ability":"Drizzle","item":"Leftovers","nature":"Timid","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":4,"sa":252,"sd":0,"sp":252},"moves":["Thunder","Roost","Hurricane","Weather Ball"],"gender":""}
@@ -2480,6 +2545,14 @@ var SETDEX_PATHWAYS = {
     "Hero Red 4": {"level":85,"ability":"Drought","item":"Choice Scarf","nature":"Jolly","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":4,"sa":0,"sd":0,"sp":252},"moves":["Flare Blitz","Solar Blade","Dragon Ascent","Close Combat"],"gender":"M"},
     "Hero Red 5": {"level":85,"ability":"Drought","item":"Choice Scarf","nature":"Jolly","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":4,"sa":0,"sd":0,"sp":252},"moves":["Flare Blitz","Solar Blade","Dragon Ascent","Close Combat"],"gender":"M"},
     "Hero Red 6 Dynamax": {"level":120,"ability":"Huge Power","item":"Focus Sash","nature":"Adamant","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":4,"sa":0,"sd":0,"sp":252},"moves":["Sacred Fire","Dragon Ascent","Drain Punch",""],"gender":"M"}
+  },
+  "Blastoise-2": {
+    "Hero Red 1": {"level":85,"ability":"Drizzle","item":"Focus Sash","nature":"Modest","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":0,"sa":252,"sd":4,"sp":252},"moves":["Steam Eruption","Ice Beam","Shell Smash","Earth Power"],"gender":"M"},
+    "Hero Red 2 Dynamax": {"level":85,"ability":"Drizzle","item":"White Herb","nature":"Timid","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":0,"sa":252,"sd":4,"sp":252},"moves":["Scald","Squall","Shell Smash","Earth Power"],"gender":"M"},
+    "Hero Red 3": {"level":85,"ability":"Drizzle","item":"Focus Sash","nature":"Modest","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":0,"sa":252,"sd":4,"sp":252},"moves":["Steam Eruption","Ice Beam","Shell Smash","Earth Power"],"gender":"M"},
+    "Hero Red 4": {"level":85,"ability":"Drizzle","item":"Focus Sash","nature":"Modest","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":0,"sa":252,"sd":4,"sp":252},"moves":["Steam Eruption","Ice Beam","Shell Smash","Earth Power"],"gender":"M"},
+    "Hero Red 5": {"level":85,"ability":"Drizzle","item":"Focus Sash","nature":"Modest","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":0,"sa":252,"sd":4,"sp":252},"moves":["Steam Eruption","Ice Beam","Shell Smash","Earth Power"],"gender":"M"},
+    "Hero Red 6": {"level":120,"ability":"Simple","item":"White Herb","nature":"Modest","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":0,"sa":252,"sd":4,"sp":252},"moves":["Steam Eruption","Freeze-Dry","Shell Smash","Earth Power"],"gender":"M"}
   },
   "Venusaur-2": {
     "Hero Red 1": {"level":85,"ability":"Fur Coat","item":"Black Sludge","nature":"Calm","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":0,"df":0,"sa":4,"sd":252,"sp":0},"moves":["Sludge Bomb","Earth Power","Calm Mind","Giga Drain"],"gender":"M"},
@@ -2501,6 +2574,15 @@ var SETDEX_PATHWAYS = {
   },
   "Blaziken-Mega": {
     "Hero Sapphire 4": {"level":90,"ability":"Speed Boost","item":"Focus Sash","nature":"Adamant","ivs":{"hp":0,"at":31,"df":0,"sa":31,"sd":0,"sp":31},"evs":{"hp":0,"at":252,"df":4,"sa":0,"sd":0,"sp":252},"moves":["Pyro Ball","Earthquake","Reversal","Swords Dance"],"gender":"F"}
+  },
+  "Goodra-Hisui": {
+    "Hero Zinnia 4": {"level":95,"ability":"Simple","item":"White Herb","nature":"Modest","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":4,"sa":252,"sd":0,"sp":252},"moves":["Shell Smash","Dragon Pulse","Flash Cannon","Torch Song"],"gender":""},
+    "Occultist Umbra Lead": {"level":80,"ability":"Toxic Debris","item":"Assault Vest","nature":"Quiet","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":0},"evs":{"hp":252,"at":0,"df":4,"sa":252,"sd":0,"sp":0},"moves":["Blood Tithe","Dragon Pulse","Ice Beam","Flash Cannon"],"gender":"M"},
+    "Occultist Umbra 1 Lead": {"level":100,"ability":"Toxic Debris","item":"Assault Vest","nature":"Sassy","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":0},"evs":{"hp":158,"at":0,"df":252,"sa":0,"sd":100,"sp":0},"moves":["Blood Tithe","Body Press","Psyshield Bash","Shield Bash"],"gender":"M"},
+    "Fanatic Occultist Umbra": {"level":120,"ability":"Annoying Wall","item":"Leftovers","nature":"Sassy","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":0},"evs":{"hp":100,"at":0,"df":252,"sa":0,"sd":158,"sp":0},"moves":["Flip Turn","Body Press","Cotton Guard","Shield Bash"],"gender":"M"},
+    "Doctor Yukine": {"level":80,"ability":"Hydration","item":"Leftovers","nature":"Bold","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":0,"df":252,"sa":0,"sd":4,"sp":0},"moves":["Iron Defense","Body Press","Shield Bash","Rest"],"gender":"M"},
+    "Battle Server Kairo 12": {"level":70,"ability":"Gooey","item":"Assault Vest","nature":"Relaxed","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":0,"df":252,"sa":0,"sd":0,"sp":0},"moves":["Flash Cannon","Dragon Tail","Ice Beam","Body Press"],"gender":"F"},
+    "Battle Server Kairo 25": {"level":80,"ability":"Shell Armor","item":"Leftovers","nature":"Bold","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":0,"df":252,"sa":4,"sd":0,"sp":0},"moves":["Flash Cannon","Body Press","Draco Meteor","Shelter"],"gender":"F"}
   },
   "Altaria-Mega": {
     "Hero Zinnia 4": {"level":95,"ability":"Pure Power","item":"Lum Berry","nature":"Jolly","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":4,"sa":0,"sd":0,"sp":252},"moves":["Dragon Ascent","Outrage","No Retreat","Earthquake"],"gender":""}
@@ -2556,7 +2638,7 @@ var SETDEX_PATHWAYS = {
     "Force of Nature 6 Lead": {"level":80,"ability":"Legendary Aura","item":"","nature":"Adamant","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":252,"df":0,"sa":4,"sd":0,"sp":0},"moves":["Double Iron Bash","Earthquake","Rock Tomb","Thunder Wave"],"gender":""}
   },
   "Scizor-Mega": {
-    "Cheese Lord Miloszelex 10": {"level":120,"ability":"Pure Power","item":"Focus Sash","nature":"Adamant","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":252,"df":0,"sa":6,"sd":0,"sp":0},"moves":["Jet Punch","Mach Punch","Skitter Bug","Bullet Punch"],"gender":"M"}
+    "Cheese Lord Miloszelex 10": {"level":120,"ability":"Pure Power","item":"Focus Sash","nature":"Adamant","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":252,"df":0,"sa":6,"sd":0,"sp":0},"moves":["Jet Punch","Double Iron Bash","U-turn","Knock Off"],"gender":"M"}
   },
   "Duraludon": {
     "Shadow Six Idle Warrior Rexzo Kuxne Dynamax": {"level":80,"ability":"Titanium Armor","item":"Air Balloon","nature":"Bold","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":0,"df":252,"sa":0,"sd":6,"sp":0},"moves":["Body Press","Draco Meteor","Iron Defense","Shield Bash"],"gender":"M"},
@@ -2607,50 +2689,56 @@ var SETDEX_PATHWAYS = {
     "Shadow Six Unfettered Scholar Maxwell 2 Lead": {"level":102,"ability":"X Pickup2","item":"Sword and Boots","nature":"Adamant","ivs":{"hp":31,"at":31,"df":31,"sa":21,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":6,"sa":0,"sd":0,"sp":252},"moves":["Slash","Sacred Sword","Fae Blade","Night Slash"],"gender":"F"},
     "Cheese Guardian Maxwell 10": {"level":120,"ability":"X Pickup","item":"Sword and Boots","nature":"Adamant","ivs":{"hp":31,"at":31,"df":31,"sa":21,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":252,"sa":0,"sd":0,"sp":0},"moves":["Slash","Sacred Sword","Power Trip","Bitter Blade"],"gender":"F"}
   },
+  "Rillaboom": {
+    "Shadow Six Unfettered Scholar Maxwell 3 Lead": {"level":80,"ability":"Grassy Surge","item":"Terrain Extender","nature":"Adamant","ivs":{"hp":31,"at":31,"df":31,"sa":2,"sd":31,"sp":31},"evs":{"hp":204,"at":252,"df":0,"sa":0,"sd":0,"sp":52},"moves":["Grassy Glide","Knock Off","U-turn","Wood Hammer"],"gender":"M"},
+    "Battle Server Kairo 23 Lead": {"level":80,"ability":"Grassy Surge","item":"Assault Vest","nature":"Timid","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":4,"sa":0,"sd":252,"sp":0},"moves":["Grassy Glide","Darkest Lariat","Superpower","U-turn"],"gender":"M"},
+    "Mysterious Heroine ??? Dynamax": {"level":100,"ability":"Garden of Thorns","item":"Assault Vest","nature":"Adamant","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":4,"sa":0,"sd":252,"sp":0},"moves":["Wood Hammer","Darkest Lariat","Superpower","High Horsepower"],"gender":"F"}
+  },
+  "Hawlucha": {
+    "Shadow Six Unfettered Scholar Maxwell 3": {"level":80,"ability":"Unburden","item":"Grassy Seed","nature":"Adamant","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":0,"sa":0,"sd":4,"sp":252},"moves":["Acrobatics","Close Combat","Clean Slate","Swords Dance"],"gender":""},
+    "Battle Server Kairo 24": {"level":80,"ability":"Unburden","item":"Flying Gem","nature":"Adamant","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":0,"sa":0,"sd":4,"sp":252},"moves":["Acrobatics","Close Combat","Stone Edge","Swords Dance"],"gender":"M"}
+  },
   "Diancie": {
     "Cheese Guardian Maxwell 10 Lead": {"level":120,"ability":"Psychic Surge","item":"Diancite","nature":"Naive","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":6,"df":0,"sa":252,"sd":0,"sp":252},"moves":["Stone Axe","Moonblast","Expanding Force","Torch Song"],"gender":""},
-    "Force of Nature 9 Lead": {"level":80,"ability":"Legendary Aura","item":"","nature":"Impish","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":4,"df":252,"sa":0,"sd":0,"sp":0},"moves":["Diamond Storm","Body Press","Iron Defense","Play Rough"],"gender":""}
-  },
-  "Drakeon": {
-    "Shadow Six Detective MacBurn Felix Lead": {"level":80,"ability":"Golden Land","item":"Leftovers","nature":"Impish","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":0,"df":252,"sa":0,"sd":4,"sp":0},"moves":["Drakey Drake","Body Press","Roost","Lucky Dip"],"gender":"M"},
-    "Shadow Six Detective MacBurn Felix 2 Lead": {"level":80,"ability":"Golden Land","item":"Leftovers","nature":"Impish","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":0,"df":252,"sa":0,"sd":4,"sp":0},"moves":["Body Press","Jackpot Bonanza","Roost","Lucky Dip"],"gender":"M"}
+    "Force of Nature 9 Lead": {"level":80,"ability":"Legendary Aura","item":"","nature":"Impish","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":4,"df":252,"sa":0,"sd":0,"sp":0},"moves":["Diamond Storm","Body Press","Iron Defense","Play Rough"],"gender":""},
+    "Alchemist Hexipher": {"level":100,"ability":"Clear Body","item":"Diancite","nature":"Modest","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":0,"sa":252,"sd":4,"sp":252},"moves":["Baneful Bunker","Moonblast","Power Gem","Earth Power"],"gender":""}
   },
   "Spectreon": {
-    "Shadow Six Detective MacBurn Felix": {"level":80,"ability":"All or Nothing","item":"Life Orb","nature":"Jolly","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":4,"sa":0,"sd":0,"sp":252},"moves":["Spooky Spook","Wild Card","Treasure Drop","Play Rough"],"gender":"F"},
-    "Shadow Six Detective MacBurn Felix 2": {"level":80,"ability":"Ghouliate","item":"Life Orb","nature":"Jolly","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":4,"sa":0,"sd":0,"sp":252},"moves":["Jackpot Bonanza","Wild Card","Treasure Drop","Play Rough"],"gender":"F"}
+    "Shadow Six Perceptive Detective Felix": {"level":80,"ability":"All or Nothing","item":"Gambler's Dice","nature":"Jolly","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":4,"sa":0,"sd":0,"sp":252},"moves":["Spooky Spook","Wild Card","Treasure Drop","Play Rough"],"gender":"F"},
+    "Shadow Six Perceptive Detective Felix 1": {"level":100,"ability":"All or Nothing","item":"Gambler's Dice","nature":"Jolly","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":4,"sa":0,"sd":0,"sp":252},"moves":["Spooky Spook","Wild Card","Treasure Drop","Play Rough"],"gender":"F"},
+    "Shadow Six Perceptive Detective Felix 2": {"level":80,"ability":"All or Nothing","item":"Gambler's Dice","nature":"Jolly","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":4,"sa":0,"sd":0,"sp":252},"moves":["Jackpot Bonanza","Wild Card","Treasure Drop","Play Rough"],"gender":"F"}
   },
   "Riolu-Aura": {
-    "Shadow Six Detective MacBurn Felix Dynamax": {"level":80,"ability":"Spendthrift","item":"Big Nugget","nature":"Jolly","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":4,"sa":0,"sd":0,"sp":252},"moves":["Close Combat","Treasure Drop","Ice Punch","Wild Card"],"gender":"M"},
-    "Shadow Six Detective MacBurn Felix 1 Dynamax": {"level":102,"ability":"Golden Hour","item":"Assault Vest","nature":"Jolly","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":0,"sa":0,"sd":4,"sp":252},"moves":["Drain Punch","Blaze Kick","Ice Punch","Serpent Ascent"],"gender":"M"},
-    "Shadow Six Detective MacBurn Felix 2": {"level":102,"ability":"Spendthrift","item":"Big Nugget","nature":"Adamant","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":0,"sa":0,"sd":4,"sp":252},"moves":["Wild Card","","",""],"gender":"M"}
+    "Shadow Six Perceptive Detective Felix Dynamax": {"level":80,"ability":"Spendthrift","item":"Big Nugget","nature":"Jolly","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":4,"sa":0,"sd":0,"sp":252},"moves":["Close Combat","Treasure Drop","Ice Punch","Wild Card"],"gender":"M"},
+    "Shadow Six Perceptive Detective Felix 1 Dynamax": {"level":102,"ability":"Golden Hour","item":"Assault Vest","nature":"Jolly","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":0,"sa":0,"sd":4,"sp":252},"moves":["Drain Punch","Blaze Kick","Ice Punch","Serpent Ascent"],"gender":"M"},
+    "Shadow Six Perceptive Detective Felix 2": {"level":102,"ability":"Stacked Odds","item":"Gambler's Dice","nature":"Adamant","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":0,"sa":0,"sd":4,"sp":252},"moves":["Wild Card","Treasure Drop","Jackpot Bonanza","Fyre Frost"],"gender":"M"}
   },
-  "Aegislash": {
-    "Shadow Six Detective MacBurn Felix 1 Lead": {"level":100,"ability":"Pure Power","item":"Leftovers","nature":"Brave","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":0},"evs":{"hp":252,"at":252,"df":0,"sa":0,"sd":4,"sp":0},"moves":["Gyro Ball","King's Shield","Shadow Sneak","Ceaseless Edge"],"gender":"M"},
-    "Battle Server Kairo 28": {"level":80,"ability":"Stance Change","item":"Leftovers","nature":"Brave","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":0},"evs":{"hp":252,"at":252,"df":0,"sa":0,"sd":4,"sp":0},"moves":["King's Shield","Sacred Sword","Shadow Claw","Gyro Ball"],"gender":"F"}
-  },
-  "Victini": {
-    "Shadow Six Detective MacBurn Felix 1": {"level":100,"ability":"Speed Boost","item":"Choice Band","nature":"Naive","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":0,"sa":252,"sd":4,"sp":252},"moves":["Bolt Strike","V-create","Zen Headbutt","Searing Shot"],"gender":"M"},
-    "Crazy Detective MacBurn Felix 10": {"level":120,"ability":"Contrary","item":"Choice Scarf","nature":"Timid","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":0,"sa":252,"sd":4,"sp":252},"moves":["Draco Meteor","V-create","Fleur Cannon","Overheat"],"gender":"M"}
+  "Palafin": {
+    "Shadow Six Perceptive Detective Felix 1": {"level":100,"ability":"Zero To Hero","item":"Life Orb","nature":"Jolly","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":4,"sa":0,"sd":0,"sp":252},"moves":["Jet Punch","Extreme Speed","Flip Turn","Close Combat"],"gender":"F"}
   },
   "Meowscarada-Ace": {
-    "Shadow Six Detective MacBurn Felix 1": {"level":100,"ability":"Trouble Bond","item":"Focus Sash","nature":"Jolly","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":4,"sa":0,"sd":0,"sp":252},"moves":["Flower Trick","Knock Off","Play Rough","Aqua Step"],"gender":"F"},
-    "Crazy Detective MacBurn Felix 10": {"level":120,"ability":"Trouble Bond","item":"Joker Card","nature":"Jolly","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":4,"sa":0,"sd":0,"sp":252},"moves":["Flower Trick","Wicked Blow","Fyre Frost","Surging Strikes"],"gender":"F"}
-  },
-  "Dragonite-Mega": {
-    "Crazy Detective MacBurn Felix 10 Lead": {"level":120,"ability":"Titanium Armor","item":"Weakness Policy","nature":"Modest","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":4,"sa":252,"sd":0,"sp":252},"moves":["Earth Power","Broken Skies","Dynamax Cannon","Holy Spark"],"gender":"M"}
-  },
-  "Palafin-Hero": {
-    "Crazy Detective MacBurn Felix 10": {"level":120,"ability":"Pure Power","item":"Life Orb","nature":"Jolly","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":4,"sa":0,"sd":0,"sp":252},"moves":["Jet Punch","Extreme Speed","Surging Strikes","Close Combat"],"gender":"F"}
+    "Shadow Six Perceptive Detective Felix 1": {"level":100,"ability":"Trouble Bond","item":"Focus Sash","nature":"Jolly","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":4,"sa":0,"sd":0,"sp":252},"moves":["Flower Trick","Fyre Frost","Play Rough","Treasure Drop"],"gender":"F"},
+    "Crazy Detective Felix 10": {"level":120,"ability":"Trouble Bond","item":"Joker Card","nature":"Jolly","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":4,"sa":0,"sd":0,"sp":252},"moves":["Flower Trick","Wicked Blow","Fyre Frost","Surging Strikes"],"gender":"F"}
   },
   "Aegislash-Damocles": {
-    "Crazy Detective MacBurn Felix 10": {"level":120,"ability":"Sword of Damocles","item":"Punching Glove","nature":"Brave","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":0},"evs":{"hp":252,"at":252,"df":0,"sa":0,"sd":4,"sp":0},"moves":["Last Respects","Double Iron Bash","Spectral Thief","Wicked Blow"],"gender":"M"}
+    "Crazy Detective Felix 10 Lead": {"level":120,"ability":"Sword of Damocles","item":"Punching Glove","nature":"Brave","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":0},"evs":{"hp":252,"at":252,"df":0,"sa":0,"sd":4,"sp":0},"moves":["Last Respects","Double Iron Bash","Spectral Thief","Wicked Blow"],"gender":"M"}
+  },
+  "Dragonite-Mega": {
+    "Crazy Detective Felix 10": {"level":120,"ability":"Titanium Armor","item":"Weakness Policy","nature":"Modest","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":4,"sa":252,"sd":0,"sp":252},"moves":["Earth Power","Broken Skies","Dynamax Cannon","Holy Spark"],"gender":"M"}
+  },
+  "Victini": {
+    "Crazy Detective Felix 10": {"level":120,"ability":"Contrary","item":"Choice Scarf","nature":"Timid","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":0,"sa":252,"sd":4,"sp":252},"moves":["Draco Meteor","V-create","Fleur Cannon","Overheat"],"gender":"M"}
+  },
+  "Palafin-Hero": {
+    "Crazy Detective Felix 10": {"level":120,"ability":"Pure Power","item":"Life Orb","nature":"Jolly","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":4,"sa":0,"sd":0,"sp":252},"moves":["Jet Punch","Extreme Speed","Surging Strikes","Close Combat"],"gender":"F"}
   },
   "Riolu-Originator": {
-    "Crazy Detective MacBurn Felix 10 Dynamax": {"level":120,"ability":"Golden Hour","item":"Assault Vest","nature":"Jolly","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":0,"sa":0,"sd":4,"sp":252},"moves":["Close Combat","Biden Blast","Fyre Frost","Dragon Ascent"],"gender":"M"}
+    "Crazy Detective Felix 10 Dynamax": {"level":120,"ability":"Golden Hour","item":"Assault Vest","nature":"Jolly","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":0,"sa":0,"sd":4,"sp":252},"moves":["Close Combat","Biden Blast","Fyre Frost","Dragon Ascent"],"gender":"M"}
   },
   "Zoroark-Hisui": {
-    "Occultist Umbra": {"level":80,"ability":"Speed Boost","item":"Choice Specs","nature":"Timid","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":4,"at":0,"df":0,"sa":252,"sd":0,"sp":252},"moves":["Shadow Ball","Hyper Voice","Flamethrower","Moonblast"],"gender":"M"},
-    "Occultist Umbra 1": {"level":102,"ability":"Abyssal Veil","item":"Life Orb","nature":"Timid","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":4,"at":0,"df":0,"sa":252,"sd":0,"sp":252},"moves":["Shadow Ball","Hyper Voice","Flamethrower","Moonblast"],"gender":"M"},
+    "Occultist Umbra": {"level":80,"ability":"Sheer Force","item":"Life Orb","nature":"Timid","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":4,"at":0,"df":0,"sa":252,"sd":0,"sp":252},"moves":["Spore","Hyper Voice","Hex","Vengeful Flame"],"gender":"M"},
+    "Occultist Umbra 1": {"level":102,"ability":"Abyssal Veil","item":"Life Orb","nature":"Timid","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":4,"at":0,"df":0,"sa":252,"sd":0,"sp":252},"moves":["Spore","Hyper Voice","Vengeful Flame","Hex"],"gender":"M"},
+    "Fanatic Occultist Umbra": {"level":120,"ability":"Abyssal Veil ++","item":"Life Orb","nature":"Timid","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":4,"at":0,"df":0,"sa":252,"sd":0,"sp":252},"moves":["Astral Barrage","Boomburst","Shell Smash","Light of Ruin"],"gender":"M"},
     "Battle Server Kairo 18 Lead": {"level":80,"ability":"Illusion","item":"Focus Sash","nature":"Timid","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":0,"sa":252,"sd":4,"sp":252},"moves":["Hyper Voice","Bitter Malice","Burning Jealousy","Focus Blast"],"gender":"F"},
     "Battle Server Kairo 36": {"level":80,"ability":"Illusion","item":"Focus Sash","nature":"Timid","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":0,"sa":252,"sd":4,"sp":252},"moves":["Hyper Voice","Bitter Malice","Flamethrower","Focus Blast"],"gender":"M"},
     "Battle Server Kairo 37 Lead": {"level":80,"ability":"Illusion","item":"Focus Sash","nature":"Timid","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":0,"sa":252,"sd":4,"sp":252},"moves":["Hyper Voice","Bitter Malice","Burning Jealousy","Focus Blast"],"gender":"F"},
@@ -2658,7 +2746,16 @@ var SETDEX_PATHWAYS = {
     "Serpent Tamer Ahran": {"level":70,"ability":"","item":"Ghostium Z","nature":"Timid","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":0,"sa":252,"sd":6,"sp":252},"moves":["Bitter Malice","Hyper Voice","Flamethrower","Dark Pulse"],"gender":""}
   },
   "Urshifu": {
-    "Occultist Umbra 1": {"level":100,"ability":"Iron Fist","item":"Punching Glove","nature":"Jolly","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":4,"at":252,"df":0,"sa":0,"sd":0,"sp":252},"moves":["Wicked Blow","Ice Punch","Sucker Punch","Drain Punch"],"gender":"M"}
+    "Occultist Umbra 1": {"level":100,"ability":"Unseen Fist","item":"Punching Glove","nature":"Jolly","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":4,"at":252,"df":0,"sa":0,"sd":0,"sp":252},"moves":["Wicked Blow","Ice Punch","Sucker Punch","Close Combat"],"gender":"M"}
+  },
+  "Samurott": {
+    "Fanatic Occultist Umbra Lead": {"level":120,"ability":"Parental Bond","item":"Assault Vest","nature":"Impish","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":4,"at":0,"df":252,"sa":0,"sd":252,"sp":0},"moves":["Ceaseless Edge","Toxic Splinters","Stone Axe","Blood Tithe"],"gender":"M"}
+  },
+  "Haxorus-Mega": {
+    "Fanatic Occultist Umbra": {"level":120,"ability":"Pure Power","item":"Loaded Dice","nature":"Jolly","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":0,"sa":0,"sd":6,"sp":252},"moves":["Blazing Portent","Scale Shot","Double Iron Bash","Victory Dance"],"gender":"M"}
+  },
+  "Giratina": {
+    "Fanatic Occultist Umbra": {"level":120,"ability":"Contrary","item":"Leftovers","nature":"Timid","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":6,"sa":252,"sd":0,"sp":252},"moves":["Draco Meteor","Overheat","Fleur Cannon","V-create"],"gender":""}
   },
   "Bidoof-Peanutbutter": {
     "Disaster Rusty Lead": {"level":120,"ability":"Ha Ha You're Weak","item":"Choice Band","nature":"Adamant","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":4,"sa":0,"sd":0,"sp":252},"moves":["U-turn","Flip Turn","",""],"gender":"M"},
@@ -2675,10 +2772,20 @@ var SETDEX_PATHWAYS = {
     "Disaster Rusty 1 Bidoof-Peanutbutter 5": {"level":120,"ability":"Golden Hour","item":"Eviolite","nature":"Naive","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":4,"sa":0,"sd":0,"sp":252},"moves":["Minamo Giri","Biden Blast","Fyre Frost","Earthquake"],"gender":"M"}
   },
   "Dracovish": {
-    "Doctor Yukine Lead": {"level":80,"ability":"Drizzle","item":"Damp Rock","nature":"Adamant","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":0},"evs":{"hp":252,"at":252,"df":0,"sa":0,"sd":0,"sp":0},"moves":["Flip Turn","Glare","Outrage","Waterfall"],"gender":"M"}
+    "Doctor Yukine Lead": {"level":80,"ability":"Drizzle","item":"Damp Rock","nature":"Adamant","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":0},"evs":{"hp":252,"at":252,"df":0,"sa":0,"sd":0,"sp":0},"moves":["Flip Turn","Glare","Outrage","Waterfall"],"gender":"M"},
+    "Fossil Duo Mogege and Tali": {"level":75,"ability":"Strong Jaw","item":"Choice Scarf","nature":"Jolly","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":0},"evs":{"hp":4,"at":252,"df":0,"sa":0,"sd":0,"sp":252},"moves":["Fishious Rend","Crunch","Outrage","Psychic Fangs"],"gender":"M"}
   },
   "Sirfetch'd": {
     "Doctor Yukine": {"level":80,"ability":"Unburden","item":"Air Balloon","nature":"Jolly","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":4,"sa":0,"sd":0,"sp":252},"moves":["Sacred Sword","Leaf Blade","Brave Bird","Night Slash"],"gender":"M"}
+  },
+  "Xurkitree": {
+    "Professor Spruce Dragon": {"level":80,"ability":"Beast Boost","item":"Choice Scarf","nature":"Timid","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":0,"sa":252,"sd":4,"sp":252},"moves":["Thunderbolt","Volt Switch","Energy Ball","Dazzling Gleam"],"gender":""}
+  },
+  "Kingambit": {
+    "Professor Spruce Dragon": {"level":80,"ability":"Supreme Overlord","item":"Black Glasses","nature":"Adamant","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":252,"df":0,"sa":0,"sd":4,"sp":0},"moves":["Kowtow Cleave","Sucker Punch","Guillotine","Swords Dance"],"gender":""},
+    "Arch Saint Arlo Fyor 1": {"level":100,"ability":"Supreme Overlord","item":"Leftovers","nature":"Adamant","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":212,"at":252,"df":0,"sa":0,"sd":0,"sp":44},"moves":["Swords Dance","Iron Head","Sucker Punch","Jet Punch"],"gender":"M"},
+    "World Champion Wait2Seconds": {"level":80,"ability":"Supreme Overlord","item":"Focus Sash","nature":"Jolly","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":72,"sa":0,"sd":0,"sp":184},"moves":["Swords Dance","Knock Off","Sucker Punch","Iron Head"],"gender":""},
+    "Battle Server Kairo 30": {"level":80,"ability":"Supreme Overlord","item":"Life Orb","nature":"Adamant","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":252,"df":0,"sa":0,"sd":4,"sp":0},"moves":["Iron Head","Sucker Punch","Swords Dance","Low Kick"],"gender":"M"}
   },
   "Magikarp": {
     "Overconfident Raito Lead": {"level":1,"ability":"Prankster","item":"Focus Sash","nature":"Modest","ivs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"evs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"moves":["Splash","","",""],"gender":""},
@@ -2686,8 +2793,7 @@ var SETDEX_PATHWAYS = {
     "Overconfident Raito Dynamax": {"level":1,"ability":"Imposter","item":"Focus Sash","nature":"Modest","ivs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"evs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"moves":["Transform","","",""],"gender":""},
     "Overconfident Raito Magikarp 2": {"level":1,"ability":"Prankster","item":"Mental Herb","nature":"Modest","ivs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"evs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"moves":["Destiny Bond","Baneful Bunker","",""],"gender":""},
     "Overconfident Raito Magikarp 3": {"level":1,"ability":"Prankster","item":"Focus Sash","nature":"Modest","ivs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"evs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"moves":["Memento","","",""],"gender":""},
-    "Overconfident Raito Magikarp 4": {"level":1,"ability":"Supreme Overlord","item":"Focus Sash","nature":"Modest","ivs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"evs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"moves":["Endeavor","Aqua Jet","",""],"gender":""},
-    "Academy Rival A Test Dummy": {"level":1,"ability":"Technician","item":"","nature":"Timid","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"moves":["Brine","Icicle Spear","Double Hit","Bullet Punch"],"gender":"F"}
+    "Overconfident Raito Magikarp 4": {"level":1,"ability":"Supreme Overlord","item":"Focus Sash","nature":"Modest","ivs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"evs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"moves":["Endeavor","Aqua Jet","",""],"gender":""}
   },
   "Braviary-Hisui": {
     "Regigigas Fanatic Estionese": {"level":80,"ability":"Sheer Force","item":"Life Orb","nature":"Timid","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":248,"at":0,"df":0,"sa":252,"sd":8,"sp":0},"moves":["Calm Mind","Air Slash","Psychic","U-turn"],"gender":"M"},
@@ -2699,6 +2805,15 @@ var SETDEX_PATHWAYS = {
   "Whismur": {
     "Wandering Musician Lyric 1": {"level":102,"ability":"Crescendo","item":"Choice Specs","nature":"Timid","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":4,"sa":252,"sd":0,"sp":252},"moves":["Boomburst","","",""],"gender":""}
   },
+  "Whismur-Fluffy": {
+    "Musicians Gallagher and Lyric": {"level":120,"ability":"Crescendo","item":"Choice Specs","nature":"Timid","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":4,"sa":252,"sd":0,"sp":252},"moves":["Boomburst","","",""],"gender":""}
+  },
+  "Baxcalibur-Mega": {
+    "Musicians Gallagher and Lyric": {"level":120,"ability":"Gorilla Tactics","item":"Choice Band","nature":"Adamant","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":252,"df":0,"sa":4,"sd":0,"sp":0},"moves":["Dragon Darts","Earthquake","Glacial Lance","Extreme Speed"],"gender":"M"}
+  },
+  "Goodra-Mega": {
+    "Musicians Gallagher and Lyric": {"level":120,"ability":"Arena Trap","item":"Joker Card","nature":"Bold","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":0,"df":252,"sa":0,"sd":4,"sp":0},"moves":["Dynamax Cannon","Armageddon","Recover","Protect"],"gender":""}
+  },
   "Porygon-Z": {
     "Druid Jehowiczak": {"level":80,"ability":"Download","item":"Normalium Z","nature":"Timid","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":4,"sa":252,"sd":0,"sp":252},"moves":["Tri Attack","Thunderbolt","Shadow Ball","Signal Beam"],"gender":""}
   },
@@ -2708,20 +2823,33 @@ var SETDEX_PATHWAYS = {
   "Zygarde-10%": {
     "Druid Jehowiczak 1": {"level":100,"ability":"Tellurize","item":"Choice Band","nature":"Jolly","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":4,"sa":0,"sd":0,"sp":252},"moves":["Extreme Speed","Glaive Rush","Rock Slide","X-Scissor"],"gender":""}
   },
+  "Toedscruel": {
+    "Druid Jehowiczak": {"level":80,"ability":"Druidcraft","item":"Leftovers","nature":"Timid","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":0,"sa":252,"sd":4,"sp":252},"moves":["Giga Drain","Earth Power","Hex","Spore"],"gender":""}
+  },
   "Swanna": {
     "Arch Saint Arlo Fyor": {"level":80,"ability":"Holy Duster","item":"Swannite","nature":"Timid","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":0,"sa":252,"sd":6,"sp":252},"moves":["Flip Turn","Icy Wind","Chilling Water","Hurricane"],"gender":"F"}
   },
   "Glimmora": {
     "Arch Saint Arlo Fyor 1 Lead": {"level":100,"ability":"Intimidate","item":"Glimmorite","nature":"Timid","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":0,"sa":252,"sd":16,"sp":240},"moves":["Shell Smash","Power Gem","Mortal Spin","Earth Power"],"gender":"F"},
+    "Arch Saint Arlo Fyor 2 Lead": {"level":80,"ability":"Toxic Debris","item":"Focus Sash","nature":"Naive","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":4,"df":0,"sa":252,"sd":0,"sp":252},"moves":["Power Gem","Earth Power","Mortal Spin","Toxic Spikes"],"gender":"M"},
     "Heretic Soul Arlo Fyor 10 Lead": {"level":120,"ability":"Grassy Surge","item":"Glimmorite","nature":"Timid","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":244,"at":0,"df":0,"sa":14,"sd":0,"sp":252},"moves":["Stellar Oblivion","Mortal Spin","Baddy Bad","Glitzy Glow"],"gender":"F"}
   },
   "Rotom-Heat": {
     "Arch Saint Arlo Fyor 1": {"level":100,"ability":"Levitate","item":"Leftovers","nature":"Timid","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":248,"at":0,"df":108,"sa":0,"sd":0,"sp":152},"moves":["Volt Switch","Mystical Fire","Will-O-Wisp","Roost"],"gender":""},
-    "Heretic Soul Arlo Fyor 10": {"level":120,"ability":"Levitate","item":"Leftovers","nature":"Timid","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":248,"at":0,"df":0,"sa":10,"sd":0,"sp":252},"moves":["Volt Switch","Mystical Fire","Burning Bulwark","Roost"],"gender":""}
+    "Heretic Soul Arlo Fyor 10": {"level":120,"ability":"Levitate","item":"Leftovers","nature":"Timid","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":248,"at":0,"df":0,"sa":10,"sd":0,"sp":252},"moves":["Volt Switch","Mystical Fire","Burning Bulwark","Roost"],"gender":""},
+    "Master Chef Vastus": {"level":80,"ability":"Levitate","item":"Heavy-Duty Boots","nature":"Modest","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":248,"at":0,"df":0,"sa":252,"sd":8,"sp":0},"moves":["Mystical Fire","Volt Switch","Will-O-Wisp","Pain Split"],"gender":""}
   },
   "Swampert-Stalking-Tide": {
     "Arch Saint Arlo Fyor 1": {"level":102,"ability":"Hydrochasm Surge","item":"Sitrus Berry","nature":"Calm","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":248,"at":0,"df":130,"sa":0,"sd":132,"sp":0},"moves":["Hydro Pump","Moonblast","Earth Power","Hurricane"],"gender":"M"},
     "Heretic Soul Arlo Fyor 10": {"level":120,"ability":"Hydrochasm Surge++","item":"Assault Vest","nature":"Calm","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":248,"at":0,"df":130,"sa":0,"sd":132,"sp":0},"moves":["Origin Pulse [M]","Moonblast","Sandsear Storm","Hurricane"],"gender":"M"}
+  },
+  "Rotom-Wash": {
+    "Arch Saint Arlo Fyor 2": {"level":80,"ability":"Levitate","item":"Leftovers","nature":"Calm","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":0,"df":0,"sa":4,"sd":252,"sp":0},"moves":["Hydro Pump","Volt Switch","Will-O-Wisp","Roost"],"gender":""},
+    "Battle Server Kairo 16": {"level":70,"ability":"Levitate","item":"Leftovers","nature":"Modest","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":0,"df":0,"sa":252,"sd":4,"sp":0},"moves":["Hydro Pump","Thunderbolt","Will-O-Wisp","Pain Split"],"gender":"M"},
+    "Battle Server Kairo 34": {"level":80,"ability":"Levitate","item":"Leftovers","nature":"Calm","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":0,"df":4,"sa":0,"sd":252,"sp":0},"moves":["Hydro Pump","Thunderbolt","Will-O-Wisp","Pain Split"],"gender":"M"}
+  },
+  "Vaporeon": {
+    "Arch Saint Arlo Fyor 2": {"level":80,"ability":"Seraphic Heal","item":"Leftovers","nature":"Modest","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":0,"df":0,"sa":252,"sd":4,"sp":0},"moves":["Bouncy Bubble","Ice Beam","Dazzling Gleam","Calm Mind"],"gender":""}
   },
   "Decidueye": {
     "Heretic Soul Arlo Fyor 10 Dynamax": {"level":120,"ability":"Speed Boost","item":"Weakness Policy","nature":"Jolly","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":4,"at":252,"df":0,"sa":0,"sd":6,"sp":248},"moves":["Ivy Cudgel","Spirit Break","Thousand Arrows","Brave Bird"],"gender":"M"}
@@ -2734,7 +2862,8 @@ var SETDEX_PATHWAYS = {
   },
   "Basculegion": {
     "Master Chef Vastus 1": {"level":80,"ability":"Swift Swim","item":"Life Orb","nature":"Adamant","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":0,"sa":0,"sd":4,"sp":252},"moves":["Crabhammer","Poltergeist","Flare Blitz","Psychic Fangs"],"gender":"M"},
-    "Master Chef Vastus 2": {"level":102,"ability":"Ya Estas Cocinado","item":"Booster Energy","nature":"Jolly","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":4,"sa":0,"sd":0,"sp":252},"moves":["Iron Head","Last Respects","Wave Crash","Head Smash"],"gender":"M"}
+    "Master Chef Vastus 2": {"level":102,"ability":"Ya Estas Cocinado","item":"Booster Energy","nature":"Jolly","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":4,"sa":0,"sd":0,"sp":252},"moves":["Iron Head","Last Respects","Wave Crash","Head Smash"],"gender":"M"},
+    "Master Chef Vastus": {"level":80,"ability":"Adaptability","item":"Choice Scarf","nature":"Jolly","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":0,"sa":0,"sd":4,"sp":252},"moves":["Last Respects","Wave Crash","Flip Turn","Aqua Jet"],"gender":"M"}
   },
   "Mr. Rime": {
     "Master Chef Vastus 1": {"level":80,"ability":"Own Tempo","item":"Eggnog","nature":"Adamant","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":252,"df":0,"sa":0,"sd":4,"sp":0},"moves":["Triple Axel","Zen Headbutt","Drain Punch","Sucker Punch"],"gender":"M"}
@@ -2790,7 +2919,8 @@ var SETDEX_PATHWAYS = {
     "Battle Server Kairo 3 Lead": {"level":35,"ability":"Tangling Hair","item":"","nature":"Jolly","ivs":{"hp":20,"at":20,"df":20,"sa":20,"sd":20,"sp":20},"evs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"moves":["Metal Claw","Bulldoze","Stealth Rock","Memento"],"gender":"M"}
   },
   "Gastrodon": {
-    "Battle Server Kairo 3": {"level":35,"ability":"Storm Drain","item":"Rindo Berry","nature":"Quiet","ivs":{"hp":20,"at":20,"df":20,"sa":20,"sd":20,"sp":20},"evs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"moves":["Water Pulse","Mud Shot","Icy Wind","Recover"],"gender":"F"}
+    "Battle Server Kairo 3": {"level":35,"ability":"Storm Drain","item":"Rindo Berry","nature":"Quiet","ivs":{"hp":20,"at":20,"df":20,"sa":20,"sd":20,"sp":20},"evs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"moves":["Water Pulse","Mud Shot","Icy Wind","Recover"],"gender":"F"},
+    "Aroma Ladies Sei and Kei Lead": {"level":35,"ability":"Storm Drain","item":"Rindo Berry","nature":"Quiet","ivs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"evs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"moves":["Water Pulse","Mud Shot","Icy Wind","Recover"],"gender":"F"}
   },
   "Diggersby": {
     "Battle Server Kairo 3": {"level":35,"ability":"Huge Power","item":"","nature":"Adamant","ivs":{"hp":20,"at":20,"df":20,"sa":20,"sd":20,"sp":20},"evs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"moves":["Agility","Bulldoze","Secret Power","Quick Attack"],"gender":"M"}
@@ -2799,10 +2929,12 @@ var SETDEX_PATHWAYS = {
     "Battle Server Kairo 4": {"level":35,"ability":"Thick Fat","item":"Sitrus Berry","nature":"Careful","ivs":{"hp":20,"at":20,"df":20,"sa":20,"sd":20,"sp":20},"evs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"moves":["Avalanche","Bulldoze","Ice Shard","Curse"],"gender":"M"}
   },
   "Rotom-Frost": {
-    "Battle Server Kairo 4": {"level":35,"ability":"Levitate","item":"","nature":"Modest","ivs":{"hp":20,"at":0,"df":20,"sa":20,"sd":20,"sp":20},"evs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"moves":["Blizzard","Shock Wave","Thunder Wave","Pain Split"],"gender":""}
+    "Battle Server Kairo 4": {"level":35,"ability":"Levitate","item":"","nature":"Modest","ivs":{"hp":20,"at":0,"df":20,"sa":20,"sd":20,"sp":20},"evs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"moves":["Blizzard","Shock Wave","Thunder Wave","Pain Split"],"gender":""},
+    "Aroma Ladies Sei and Kei": {"level":35,"ability":"Levitate","item":"","nature":"Modest","ivs":{"hp":20,"at":0,"df":20,"sa":20,"sd":20,"sp":20},"evs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"moves":["Blizzard","Shock Wave","Thunder Wave","Pain Split"],"gender":""}
   },
   "Swoobat": {
-    "Battle Server Kairo 6": {"level":35,"ability":"Simple","item":"","nature":"Timid","ivs":{"hp":20,"at":0,"df":20,"sa":20,"sd":20,"sp":20},"evs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"moves":["Amnesia","Confusion","Air Slash","Roost"],"gender":"F"}
+    "Battle Server Kairo 6": {"level":35,"ability":"Simple","item":"","nature":"Timid","ivs":{"hp":20,"at":0,"df":20,"sa":20,"sd":20,"sp":20},"evs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"moves":["Amnesia","Confusion","Air Slash","Roost"],"gender":"F"},
+    "Aroma Ladies Sei and Kei": {"level":35,"ability":"Simple","item":"","nature":"Timid","ivs":{"hp":20,"at":0,"df":20,"sa":20,"sd":20,"sp":20},"evs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"moves":["Amnesia","Confusion","Air Slash","Roost"],"gender":"F"}
   },
   "Slowbro-Galar": {
     "Battle Server Kairo 9": {"level":55,"ability":"Quick Draw","item":"Quick Claw","nature":"Calm","ivs":{"hp":25,"at":0,"df":25,"sa":25,"sd":25,"sp":25},"evs":{"hp":80,"at":0,"df":0,"sa":80,"sd":0,"sp":0},"moves":["Shell Side Arm","Psyshock","Flamethrower","Calm Mind"],"gender":"F"}
@@ -2810,18 +2942,12 @@ var SETDEX_PATHWAYS = {
   "Overqwil": {
     "Battle Server Kairo 15 Lead": {"level":70,"ability":"Intimidate","item":"Black Sludge","nature":"Careful","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":0,"df":4,"sa":0,"sd":252,"sp":0},"moves":["Barb Barrage","Crunch","Self-Destruct","Toxic Spikes"],"gender":"M"}
   },
-  "Rotom-Wash": {
-    "Battle Server Kairo 16": {"level":70,"ability":"Levitate","item":"Leftovers","nature":"Modest","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":0,"df":0,"sa":252,"sd":4,"sp":0},"moves":["Hydro Pump","Thunderbolt","Will-O-Wisp","Pain Split"],"gender":"M"},
-    "Battle Server Kairo 34": {"level":80,"ability":"Levitate","item":"Leftovers","nature":"Calm","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":0,"df":4,"sa":0,"sd":252,"sp":0},"moves":["Hydro Pump","Thunderbolt","Will-O-Wisp","Pain Split"],"gender":"M"}
-  },
   "Hippowdon": {
     "Battle Server Kairo 21 Lead": {"level":80,"ability":"Sand Stream","item":"Smooth Rock","nature":"Careful","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":4,"df":0,"sa":0,"sd":252,"sp":0},"moves":["Stealth Rock","Slack Off","Earthquake","Stone Edge"],"gender":"F"}
   },
-  "Rillaboom": {
-    "Battle Server Kairo 23 Lead": {"level":80,"ability":"Grassy Surge","item":"Assault Vest","nature":"Timid","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":4,"sa":0,"sd":252,"sp":0},"moves":["Grassy Glide","Darkest Lariat","Superpower","U-turn"],"gender":"M"}
-  },
-  "Hawlucha": {
-    "Battle Server Kairo 24": {"level":80,"ability":"Unburden","item":"Flying Gem","nature":"Adamant","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":0,"sa":0,"sd":4,"sp":252},"moves":["Acrobatics","Close Combat","Stone Edge","Swords Dance"],"gender":"M"}
+  "Aegislash": {
+    "Battle Server Kairo 28": {"level":80,"ability":"Stance Change","item":"Leftovers","nature":"Brave","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":0},"evs":{"hp":252,"at":252,"df":0,"sa":0,"sd":4,"sp":0},"moves":["King's Shield","Sacred Sword","Shadow Claw","Gyro Ball"],"gender":"F"},
+    "Alchemist Hexipher": {"level":102,"ability":"Transmutation","item":"Focus Sash","nature":"Jolly","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":4,"sa":0,"sd":0,"sp":252},"moves":["Close Combat","Gigaton Hammer","Bitter Blade","Magical Torque"],"gender":"M"}
   },
   "Darmanitan": {
     "Battle Server Kairo 29": {"level":80,"ability":"Gorilla Tactics","item":"Choice Band","nature":"Jolly","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":4,"sa":0,"sd":0,"sp":252},"moves":["Flare Blitz","Zen Headbutt","Earthquake","Superpower"],"gender":"M"},
@@ -2849,26 +2975,19 @@ var SETDEX_PATHWAYS = {
     "Monstrosity Haxorus? Lead Haxorus-Deadsaurus 2": {"level":70,"ability":"","item":"","nature":"Adamant","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":252,"df":4,"sa":0,"sd":0,"sp":0},"moves":["Outrage","Guillotine","Gastro Acid","Thrash"],"gender":"M"}
   },
   "Nickit": {
-    "Claw Gang Himbo Lead": {"level":15,"ability":"Stakeout","item":"Oran Berry","nature":"Naive","ivs":{"hp":15,"at":15,"df":15,"sa":15,"sd":15,"sp":15},"evs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"moves":["Quick Attack","Tail Whip","Hone Claws","Snarl"],"gender":"F"}
+    "Claw Gang Himbo Lead": {"level":13,"ability":"Stakeout","item":"Oran Berry","nature":"Naive","ivs":{"hp":15,"at":15,"df":15,"sa":15,"sd":15,"sp":15},"evs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"moves":["Quick Attack","Tail Whip","Hone Claws","Snarl"],"gender":"F"}
   },
   "Yungoos": {
     "Claw Gang Jill Lead": {"level":13,"ability":"Stakeout","item":"","nature":"Naive","ivs":{"hp":15,"at":15,"df":15,"sa":15,"sd":15,"sp":15},"evs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"moves":["Tackle","Pursuit","Odor Sleuth","Sand Attack"],"gender":"F"}
   },
   "Poochyena": {
-    "Claw Gang Kaleb Lead": {"level":15,"ability":"Run Away","item":"Oran Berry","nature":"Jolly","ivs":{"hp":15,"at":15,"df":15,"sa":15,"sd":15,"sp":15},"evs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"moves":["Tackle","Sand Attack","Bite","Mud-Slap"],"gender":"F"}
+    "Claw Gang Kaleb Lead": {"level":13,"ability":"Run Away","item":"Oran Berry","nature":"Jolly","ivs":{"hp":15,"at":15,"df":15,"sa":15,"sd":15,"sp":15},"evs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"moves":["Tackle","Sand Attack","Bite","Mud-Slap"],"gender":"F"}
   },
   "Magnemite": {
     "Claw Gang Kaleb": {"level":12,"ability":"Magnet Pull","item":"Berry Juice","nature":"Serious","ivs":{"hp":15,"at":15,"df":15,"sa":15,"sd":15,"sp":15},"evs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"moves":["Electro Ball","Tackle","Supersonic","Thunder Wave"],"gender":""}
   },
-  "Thievul": {
-    "Claw Gang Timbo Lead": {"level":30,"ability":"Swiper","item":"","nature":"Naive","ivs":{"hp":20,"at":20,"df":20,"sa":20,"sd":20,"sp":20},"evs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"moves":["Nasty Plot","Dark Pulse","Snarl","Sucker Punch"],"gender":"F"},
-    "Claw Gang Gibo": {"level":70,"ability":"Swiper","item":"","nature":"Jolly","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"moves":["Sucker Punch","Play Rough","Psychic Fangs","Fling"],"gender":"M"}
-  },
-  "Perrserker": {
-    "Claw Gang Gibo Lead": {"level":70,"ability":"Steely Spirit","item":"Quick Claw","nature":"Adamant","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"moves":["Claw Dagger","Close Combat","Seed Bomb","Swords Dance"],"gender":"M"}
-  },
-  "Revavroom": {
-    "Claw Gang Gibo": {"level":70,"ability":"Accelerate","item":"Air Balloon","nature":"Adamant","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"moves":["Iron Head","Gunk Shot","High Horsepower","Shift Gear"],"gender":"M"}
+  "Varoom": {
+    "Claw Gang Minnie": {"level":30,"ability":"","item":"Quick Claw","nature":"Adamant","ivs":{"hp":20,"at":20,"df":20,"sa":20,"sd":20,"sp":20},"evs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"moves":["Iron Head","Headbutt","Poison Jab","Swagger"],"gender":"M"}
   },
   "Grumpig": {
     "Claw Gang Gibo": {"level":70,"ability":"Thick Fat","item":"Quick Claw","nature":"Timid","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"moves":["Extrasensory","Power Gem","Encore","Snarl"],"gender":"F"}
@@ -2884,6 +3003,9 @@ var SETDEX_PATHWAYS = {
   },
   "Nidoking": {
     "Shy Girl Grace 1 Lead": {"level":50,"ability":"Sheer Force","item":"Expert Belt","nature":"Jolly","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":160,"df":0,"sa":0,"sd":0,"sp":160},"moves":["Horn Rush","Poison Jab","Megahorn","Thunder Punch"],"gender":""}
+  },
+  "Tinkaton": {
+    "Shy Girl Grace 2 Lead": {"level":38,"ability":"Pure Power","item":"Curious Bat","nature":"Adamant","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":4,"sa":0,"sd":0,"sp":252},"moves":["Gigaton Hammer","Stardust Ace","Knucklebash Slam","Curveball Swing"],"gender":""}
   },
   "Mew": {
     "Force of Nature Lead": {"level":80,"ability":"Legendary Aura","item":"","nature":"Timid","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":0,"df":0,"sa":4,"sd":0,"sp":252},"moves":["Psychic","Calm Mind","Aura Sphere","Flamethrower"],"gender":""}
@@ -2912,31 +3034,39 @@ var SETDEX_PATHWAYS = {
   "Manaphy": {
     "Force of Nature 10 Lead": {"level":80,"ability":"Legendary Aura","item":"","nature":"Timid","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":0,"df":0,"sa":4,"sd":0,"sp":252},"moves":["Tail Glow","Energy Ball","Scald","Ice Beam"],"gender":""}
   },
+  "Alomomola": {
+    "The Vessel Slater Lead": {"level":40,"ability":"Regenerator","item":"Leftovers","nature":"Impish","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":40,"at":0,"df":216,"sa":0,"sd":252,"sp":0},"moves":["Protect","Flip Turn","Wish","Knock Off"],"gender":"F"},
+    "The Vessel Slater": {"level":100,"ability":"Regenerator","item":"Leftovers","nature":"Bold","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":40,"at":0,"df":216,"sa":0,"sd":252,"sp":0},"moves":["Protect","Flip Turn","Wish","Knock Off"],"gender":"F"}
+  },
+  "Oshawott": {
+    "The Vessel Slater": {"level":40,"ability":"Shell Armor","item":"Eviolite","nature":"Docile","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":130,"sa":0,"sd":190,"sp":130},"moves":["Substitute","Ice Beam","Aqua Ring","Scald"],"gender":"F"},
+    "The Vessel Slater Oshawott 2": {"level":100,"ability":"Shell Armor","item":"Eviolite","nature":"Docile","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":0,"df":190,"sa":0,"sd":190,"sp":130},"moves":["Substitute","Protect","Copycat","Whirlpool"],"gender":"F"}
+  },
+  "Alcremie": {
+    "The Vessel Slater": {"level":100,"ability":"Laced Cream","item":"Toxic Orb","nature":"Relaxed","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":0,"df":192,"sa":0,"sd":64,"sp":0},"moves":["Acid Armor","Calm Mind","Draining Kiss","Stored Power"],"gender":"F"}
+  },
+  "Muk-Trash": {
+    "Janitor Bo": {"level":100,"ability":"Earth Eater","item":"Ability Shield","nature":"Relaxed","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":0},"evs":{"hp":252,"at":0,"df":252,"sa":0,"sd":4,"sp":0},"moves":["Roost","Acid Armor","Shield Bash","Minimize"],"gender":""}
+  },
   "Onix": {
-    "Gym Leader Brock Dynamax": {"level":80,"ability":"Water Absorb","item":"Eviolite","nature":"Adamant","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":252,"df":0,"sa":0,"sd":4,"sp":0},"moves":["Head Smash","Headlong Rush","Wood Hammer","Body Press"],"gender":"M"}
+    "Rocker Princess Petra": {"level":100,"ability":"Sap Sipper","item":"Eviolite","nature":"Impish","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":0,"df":252,"sa":0,"sd":4,"sp":0},"moves":["Wall Crash","Shield Bash","Rock Polish","Fissure"],"gender":"M"}
   },
-  "Dewgong": {
-    "Gym Leader Misty Lead": {"level":80,"ability":"Ice Scales","item":"Leftovers","nature":"Calm","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":0,"df":4,"sa":0,"sd":252,"sp":0},"moves":["Toxic","Icy Wind","Chilling Water","Slack Off"],"gender":"F"}
+  "Archaludon": {
+    "Rocker Princess Petra Dynamax": {"level":100,"ability":"Earth Eater","item":"Assault Vest","nature":"Modest","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":0,"df":0,"sa":252,"sd":4,"sp":0},"moves":["Aura Sphere","Dragon Pulse","Flash Cannon","Earth Power"],"gender":"F"}
   },
-  "Sandslash-Alola": {
-    "Elite Four Lorelei": {"level":85,"ability":"Slush Rush","item":"Life Orb","nature":"Adamant","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":4,"sa":0,"sd":0,"sp":252},"moves":["Icicle Crash","Heavy Cavalry","Earthquake","Swords Dance"],"gender":"M"}
+  "Iron Boulder": {
+    "Rocker Princess Petra": {"level":100,"ability":"Sharpness","item":"Katana","nature":"Jolly","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":4,"at":252,"df":0,"sa":0,"sd":0,"sp":252},"moves":["Mighty Cleave","Psycho Cut","Sacred Sword","Dire Claw"],"gender":""}
   },
-  "Cloyster": {
-    "Elite Four Lorelei": {"level":85,"ability":"Skill Link","item":"Focus Sash","nature":"Adamant","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":4,"sa":0,"sd":0,"sp":252},"moves":["Shell Smash","Rock Blast","Icicle Spear","Waterfall"],"gender":"F"}
+  "Iron Crown": {
+    "Monk Instructor Terra": {"level":100,"ability":"Psyonize","item":"Assault Vest","nature":"Modest","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":0,"df":4,"sa":252,"sd":0,"sp":0},"moves":["Tachyon Cutter","Kiai","Volt Switch","Torch Song"],"gender":"M"}
   },
-  "Hitmonlee": {
-    "Elite Four Bruno": {"level":85,"ability":"Iron Heel","item":"Choice Scarf","nature":"Adamant","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":4,"sa":0,"sd":0,"sp":252},"moves":["High Jump Kick","Triple Axel","Blaze Kick","Knock Off"],"gender":""}
+  "Farigiraf": {
+    "Monk Instructor Terra": {"level":100,"ability":"Armor Tail","item":"Focus Sash","nature":"Modest","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":4,"at":0,"df":0,"sa":252,"sd":0,"sp":252},"moves":["Stored Power","Dazzling Gleam","Armor Cannon","Shell Smash"],"gender":"M"}
   },
-  "Golem-Alola": {
-    "Elite Four Bruno": {"level":85,"ability":"Galvanize","item":"Focus Sash","nature":"Jolly","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":4,"sa":0,"sd":0,"sp":252},"moves":["Shell Smash","Boulder Drop","Return","Earthquake"],"gender":"M"}
+  "Garchomp-Gaia-Garchomp": {
+    "Monk Instructor Terra": {"level":102,"ability":"Absolute Gaia","item":"Shell Bell","nature":"Jolly","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":4,"at":252,"df":0,"sa":0,"sd":0,"sp":252},"moves":["Dragon Rush","Triple Kick","Fissure","Guillotine"],"gender":"F"}
   },
-  "Hitmonchan": {
-    "Elite Four Bruno": {"level":85,"ability":"Unburden","item":"Normal Gem","nature":"Adamant","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":4,"sa":0,"sd":0,"sp":252},"moves":["Fake Out","Close Combat","Thunder Punch","Knock Off"],"gender":""}
-  },
-  "Marowak-Alola": {
-    "Elite Four Agatha": {"level":85,"ability":"Rock Head","item":"Thick Club","nature":"Jolly","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":0,"at":252,"df":0,"sa":0,"sd":0,"sp":252},"moves":["Flare Blitz","Wood Hammer","Bonemerang","Shadow Bone"],"gender":"M"}
-  },
-  "Arbok": {
-    "Elite Four Agatha": {"level":85,"ability":"Simple","item":"Air Balloon","nature":"Impish","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":252,"at":0,"df":128,"sa":0,"sd":128,"sp":0},"moves":["Coil","Sucker Punch","Leech Life","Gunk Shot"],"gender":"F"}
+  "Urshifu-Rapid-Strike": {
+    "Monk Instructor Terra": {"level":100,"ability":"Martial Body","item":"Punching Glove","nature":"Jolly","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":4,"at":252,"df":0,"sa":0,"sd":0,"sp":252},"moves":["Triple Arrows","Surging Strikes","Ice Punch","Poison Jab"],"gender":""}
   }
 };

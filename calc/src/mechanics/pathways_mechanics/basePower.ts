@@ -65,6 +65,12 @@ export function calculateBasePowerPathways(
     basePower = 102;
     desc.moveBP = basePower;
   }
+  
+  if (attacker.hasAbility('Night Stalker') && move.flags.twoturn) {
+    basePower *= 2
+    desc.moveBP = basePower;
+    desc.attackerAbility = attacker.ability;
+  }
 
   //could also be an if else block
   switch (move.name) {
@@ -74,6 +80,7 @@ export function calculateBasePowerPathways(
       break;
     case 'Bolt Beak':
     case 'Fishious Rend':
+    case 'Penguinous Rend':
       basePower = move.bp * (turnOrder !== 'last' ? 2 : 1);
       desc.moveBP = basePower;
       break;
@@ -90,6 +97,7 @@ export function calculateBasePowerPathways(
       desc.moveBP = basePower;
       break;
     case 'Gyro Ball':
+    case 'Donkey Dunk':
       basePower = Math.min(150, Math.floor((25 * defender.stats.spe) / attacker.stats.spe) + 1);
       if (attacker.stats.spe === 0) basePower = 1;
       desc.moveBP = basePower;
@@ -115,6 +123,7 @@ export function calculateBasePowerPathways(
       break;
     case 'Barb Barrage':
     case 'Venoshock':
+    case 'Keen Kick':
       if (defender.hasStatus('psn', 'tox')) {
         basePower *= 2;
         desc.moveBP = basePower;
@@ -156,8 +165,7 @@ export function calculateBasePowerPathways(
       break;
     case 'Terrain Pulse':
     case 'Terrain Blast':
-      if (field.hasTerrain('Dragonic Soul', 'Terror Realm', 'Dream World', 'Faraday Cage', 'Frozen Kingdom') ||
-          (field.hasTerrain('Electric', 'Grassy', 'Misty', 'Psychic') && !isGrounded(attacker, field))) {
+      if (!!field.terrain) {
         basePower *= 2;
       }
       desc.moveBP = basePower;
@@ -181,11 +189,13 @@ export function calculateBasePowerPathways(
     case 'Dragon Energy':
     case 'Eruption':
     case 'Water Spout':
+    case 'Gaia Burst':
       basePower = Math.max(1, Math.floor((150 * attacker.curHP()) / attacker.maxHP()));
       desc.moveBP = basePower;
       break;
     case 'Flail':
     case 'Reversal':
+    case 'Reckoning':
       const p = Math.floor((48 * attacker.curHP()) / attacker.maxHP());
       basePower = p <= 1 ? 200 : p <= 4 ? 150 : p <= 9 ? 100 : p <= 16 ? 80 : p <= 32 ? 40 : 20;
       desc.moveBP = basePower;
@@ -218,6 +228,7 @@ export function calculateBasePowerPathways(
           desc.moveName = 'Thunderbolt';
           break;
         case 'Grassy':
+        case 'Garden of Thorns':
           basePower = 90;
           desc.moveName = 'Energy Ball';
           break;
@@ -249,6 +260,10 @@ export function calculateBasePowerPathways(
         case 'Frozen Kingdom':
           basePower = 90;
           desc.moveName = 'Ice Beam';
+          break;
+        case 'Rock Never Dies':
+          basePower = 80;
+          desc.moveName = 'Power Gem';
           break;
         default:
           basePower = 80;
@@ -444,6 +459,14 @@ export function calculateBasePowerPathways(
         basePower = Math.round(basePower * 0.5);
         desc.terrain = field.terrain;
       }
+      break;
+    case 'Drunken Fist':
+    case 'Tipsy Heel':
+      if (attacker.hasStatus('slp') || attacker.hasAbility('Comatose', 'Awakening')) {
+        basePower *= 1.5;
+        desc.moveBP = basePower;
+      }
+      break;
   }
   
   if (basePower === 0) {
@@ -510,7 +533,8 @@ export function calculateBPModsPathways(
   if (isGrounded(attacker, field) && (
     (field.hasTerrain('Electric') && move.hasType('Electric')) ||
     (field.hasTerrain('Grassy') && move.hasType('Grass')) ||
-    (field.hasTerrain('Psychic') && move.hasType('Psychic'))
+    (field.hasTerrain('Psychic') && move.hasType('Psychic')) ||
+    (field.hasTerrain('Rock Never Dies') && move.hasType('Rock', 'Ground'))
   )) {
     bpMod *= 1.3;
     desc.terrain = field.terrain;
@@ -518,7 +542,8 @@ export function calculateBPModsPathways(
     (field.hasTerrain('Dragonic Soul') && move.hasType('Dragon')) ||
     (field.hasTerrain('Terror Realm') && move.hasType('Ghost', 'Dark')) ||
     (field.hasTerrain('Faraday Cage') && move.hasType('Electric')) ||
-    (field.hasTerrain('Frozen Kingdom') && move.hasType('Ice'))
+    (field.hasTerrain('Frozen Kingdom') && move.hasType('Ice')) ||
+    (field.hasTerrain('Garden of Thorns') && attacker.hasType('Grass') && isGrounded(attacker,field))
   ) {
     bpMod *= 1.5;
     desc.terrain = field.terrain;
@@ -538,7 +563,8 @@ export function calculateBPModsPathways(
     (attacker.hasAbility('Water Bubble', 'Hydrochasm Surge++') && move.hasType('Water')) ||
     (attacker.hasAbility('Killing Joke2') && field.hasTerrain('Psychic')) ||
     attacker.hasAbility('Sword of Damocles', 'Legendary Aura') ||
-    (attacker.hasAbility('Requiem Di Diavolo') && move.flags.sound)
+    (attacker.hasAbility('Requiem Di Diavolo') && move.flags.sound) ||
+    (attacker.hasAbility('Vile Venom') && move.hasType('Poison'))
   ) {
     bpMod *= 2;
     desc.attackerAbility = attacker.ability;
@@ -555,14 +581,14 @@ export function calculateBPModsPathways(
     (attacker.hasAbility('Screamer') && move.flags.sound) ||
     (attacker.hasAbility('Dragon\'s Maw') && move.hasType('Dragon')) ||
     (attacker.hasAbility('Transistor') && move.hasType('Electric')) ||
-    (attacker.hasAbility('Iron Fist', 'Distortion', 'Lightning Speed') && move.flags.punch) ||
+    (attacker.hasAbility('Iron Fist', 'Distortion', 'Lightning Speed', 'Martial Body') && move.flags.punch) ||
     (attacker.hasAbility('Beary Broken', 'Abyssal Veil', 'Abyssal Veil ++')) ||
     (attacker.hasAbility('Dragon DNA') && !attacker.hasType('Dragon') && move.hasType('Dragon')) ||
     (attacker.hasAbility('Sharpshooter') && move.flags.shot) ||
     (attacker.hasAbility('Blademaster') && move.flags.blade) ||
-    (attacker.hasAbility('Dirty Deeds') && move.hasType('Dark')) ||
-    (attacker.hasAbility('Clean Heart') && move.hasType('Fairy')) ||
-    (attacker.hasAbility('Iron Heel') && move.flags.kicking) ||
+    (attacker.hasAbility('Dirty Deeds', 'Great Mischief') && move.hasType('Dark')) ||
+    (attacker.hasAbility('Clean Heart', 'Lunar Light') && move.hasType('Fairy')) ||
+    (attacker.hasAbility('Iron Heel', 'Vile Venom', 'Martial Body') && move.flags.kicking) ||
     (attacker.hasAbility('Steelworker') && move.hasType('Steel')) ||
     (attacker.hasAbility('Rocky Payload') && move.hasType('Rock')) ||
     (attacker.hasAbility('Angel Tears') && move.hasType('Water', 'Fairy'))
@@ -575,16 +601,17 @@ export function calculateBPModsPathways(
     bpMod *= 4 / 3;
     desc.attackerAbility = attacker.ability;
   } else if (
-    (attacker.hasAbility('Dreadful') && defender.status) ||
+    (attacker.hasAbility('Dreadful') && (defender.status || defender.hasAbility('Comatose', 'Awakening'))) ||
     (attacker.hasAbility('Divine Mandate', 'Hydrochasm Surge', 'Hydrochasm Surge++') && move.hasType('Flying', 'Fairy')) ||
     (attacker.hasAbility('Neurotoxicity') && move.hasType('Electric', 'Poison')) ||
     (attacker.hasAbility('Analytic') && (turnOrder !== 'first' || field.defenderSide.isSwitching === 'out')) ||
-    (attacker.hasAbility('Sheer Force') && move.secondaries && !move.isMax) ||
+    (attacker.hasAbility('Sheer Force', 'Heavy Heart') && move.secondaries && !move.isMax) ||
     (attacker.hasAbility('Sand Force', 'Desert Devil') && field.hasWeather('Sand', 'Raging Sandstorm') && move.hasType('Rock', 'Ground', 'Steel')) ||
     (attacker.hasAbility('Forest Spirits') && move.hasType('Grass', 'Fairy')) ||
     (attacker.hasAbility('Primal Fury') && move.hasType('Bug', 'Flying')) ||
-    (attacker.hasAbility('Tough Claws') && move.flags.contact) ||
-    (attacker.hasAbility('Punk Rock') && move.flags.sound)
+    (attacker.hasAbility('Tough Claws', 'Beary Cold') && move.flags.contact) ||
+    (attacker.hasAbility('Punk Rock') && move.flags.sound) ||
+    (attacker.hasAbility('Boiling Point') && attacker.hasStatus('brn') && move.category === 'Special')
   ) {
     bpMod *= 1.3;
     desc.attackerAbility = attacker.ability;
@@ -592,7 +619,8 @@ export function calculateBPModsPathways(
     (attacker.hasAbility('Ambusher') && attacker.abilityOn) ||
     (attacker.hasAbility('First Blood') && defender.curHP() >= defender.maxHP() * 0.75) ||
     (attacker.hasAbility('Stealth Bomber') && move.flags.bullet) ||
-    (attacker.hasAbility('Rivalry') && attacker.gender !== 'N' && attacker.gender === defender.gender)
+    (attacker.hasAbility('Rivalry') && attacker.gender !== 'N' && attacker.gender === defender.gender) ||
+    (attacker.hasAbility('VIle Venom') && defender.hasStatus('psn', 'tox'))
   ) {
     bpMod *= 1.25;
     desc.attackerAbility = attacker.ability;
@@ -612,10 +640,25 @@ export function calculateBPModsPathways(
     bpMod *= 1.3; //hydrochasm double up, IR ability uses atmods fsr
     desc.attackerAbility = attacker.ability;
   }
+  if (attacker.hasAbility('Mana Burn') && move.hasType('Fire')) {
+    let mult = 1.3
+    if (basePower <= 40) {
+      mult = 2
+    } else if (basePower <= 60) {
+      mult = 1.75
+    } else if (basePower <= 80) {
+      mult = 1.5
+    }
+    bpMod *= mult
+    desc.attackerAbility = attacker.ability;
+  }
   
   //defender ability
   if (defender.hasAbility('Dry Skin') && move.hasType('Fire')) {
     bpMod *= 1.25;
+    desc.defenderAbility = defender.ability;
+  } else if (defender.hasAbility('Robust Toxin') && attacker.hasStatus('psn', 'tox')) {
+    bpMod *= 0.75
     desc.defenderAbility = defender.ability;
   } else if (
     (defender.hasAbility('Awakening') && move.hasType('Rock', 'Ice', 'Steel', 'Dragon', 'Electric')) ||
@@ -624,8 +667,11 @@ export function calculateBPModsPathways(
     (defender.hasAbility('Thick Fat') && move.hasType('Fire', 'Ice')) ||
     (defender.hasAbility('Druidcraft') && move.hasType('Bug', 'Ice', 'Flying')) ||
     (defender.hasAbility('Purifying Salt') && move.hasType('Ghost')) ||
-    (defender.hasAbility('Burn Out2') && move.hasType('Ice')) ||
-    (defender.hasAbility('Sinful Gluttony') && move.hasType('Dragon', 'Fairy'))
+    (defender.hasAbility('Burn Out2', 'Ice Sculptor') && move.hasType('Ice')) ||
+    (defender.hasAbility('Sinful Gluttony') && move.hasType('Dragon', 'Fairy')) ||
+    (defender.hasAbility('Great Mischief') && defender.abilityOn) ||
+    (defender.hasAbility('Snake Oil') && move.hasType('Water')) ||
+    (defender.hasAbility('Blessed Salt') && move.hasType('Ghost'))
   ) {
     bpMod *= 0.5;
     desc.defenderAbility = defender.ability;
@@ -656,7 +702,10 @@ export function calculateBPModsPathways(
   ) {
     bpMod *= 1.5;
     desc.attackerItem = attacker.item;
-  } else if (attacker.hasItem(`${move.type} Gem`)) {
+  } else if (
+    (attacker.hasItem(`${move.type} Gem`)) ||
+    (attacker.hasItem('Sinister Orb') && (defender.status || defender.hasAbility('Comatose', 'Awakening')))
+  ) {
     bpMod *= 1.3;
     desc.attackerItem = attacker.item;
   } else if (

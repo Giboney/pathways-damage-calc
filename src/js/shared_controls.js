@@ -504,7 +504,7 @@ function abilityChange(pokeInfo) {
 			break;
 	}
 
-	var TOGGLE_ABILITIES = ['Flash Fire', 'Intimidate', 'Minus', 'Plus', 'Slow Start', 'Unburden', 'Stakeout', 'Teraform Zero', 'Lighten', 'Mesmerize', 'Ha Ha You\'re Weak', 'Ambusher', 'Intrepid Sword', 'Dauntless Shield', 'Sinful Gluttony', 'Hydrochasm Surge++'];
+	var TOGGLE_ABILITIES = ['Flash Fire', 'Intimidate', 'Minus', 'Plus', 'Slow Start', 'Unburden', 'Stakeout', 'Teraform Zero', 'Lighten', 'Mesmerize', 'Ha Ha You\'re Weak', 'Ambusher', 'Intrepid Sword', 'Dauntless Shield', 'Sinful Gluttony', 'Hydrochasm Surge++', 'Great Mischief'];
 
 	if (TOGGLE_ABILITIES.includes(ability)) {
 		pokeInfo.find(".abilityToggle").show();
@@ -528,8 +528,21 @@ function abilityChange(pokeInfo) {
 		pokeInfo.find(".alliesFainted").hide();
 	}
 	
+	if (['Street Chef', 'Combo Flurry'].includes(ability)) {
+		pokeInfo.find(".combo").show();
+	} else {
+		pokeInfo.find(".combo").val(1);
+		pokeInfo.find(".combo").hide();
+	}
+	
 	if (ability === 'Gravity Surge') {
 		$("#gravity").prop("checked", true);
+	}
+	
+	//TODO add trick room and do temporal exchange + distortion
+	
+	if (ability === 'Fowl Play') {
+		$('#' + (id === 'p1' ? 'tailwindL' : 'tailwindR')).prop('checked', true);
 	}
 	
 	//form change
@@ -604,6 +617,9 @@ $("input[name='weather']").change(function () {
 	if (terrain === "Frozen Kingdom" && weather !== "Snow") {
 		autosetTerrain("None", 0);
 	}
+	if (terrain === 'Rock Never Dies' && weather !== 'Sand') {
+		autosetTerrain('None',0);
+	}
 	
 	lastManualWeather = weather;
 });
@@ -632,6 +648,7 @@ function autosetWeather(ability, i) {
 		case "Drizzle":
 		case "Healing Droplets":
 		case "Healing Droplets++":
+		case "Flash Flood":
 			lastAutoWeather[i] = "Rain";
 			$("#rain").prop("checked", true);
 			break;
@@ -677,11 +694,18 @@ function autosetWeather(ability, i) {
 			lastAutoWeather[i] = "Raging Sandstorm";
 			$("#raging-sandstorm").prop("checked", true);
 			break;
+		case 'Rock Never Dies':
+			lastAutoWeather[i] = "Sand";
+			$("#sand").prop("checked", true);
+			break;
 	}
 	var terrain = $("input:checkbox[name='terrain']:checked").val();
 	var weather = $("input:radio[name='weather']:checked").val();
 	if (terrain === "Frozen Kingdom" && weather !== "Snow") {
 		autosetTerrain("None", 0);
+	}
+	if (terrain === 'Rock Never Dies' && weather !== 'Sand') {
+		autosetTerrain('None',0);
 	}
 	if (currentWeather !== weather) {
 		lastManualWeather = false;
@@ -706,7 +730,11 @@ function autosetTerrain(ability, i) {
 	}
 	var lastTerrain = $("input:checkbox[name='terrain']:checked");
 	// terrain input uses checkbox instead of radio, need to uncheck all first
-	if (ability !== 'Frozen Kingdom' || !$("input:radio[name='weather']:checked").is('.locked-weather') || weather === 'Snow') {
+	if (
+		(ability !== 'Frozen Kingdom' || weather === 'Snow') ||
+		(ability !== 'Rock Never Dies' || weather === 'Sand') ||
+		!$("input:radio[name='weather']:checked").is('.locked-weather')
+	) {
 		$("input:checkbox[name='terrain']:checked").prop("checked", false);
 	
 		switch (ability) {
@@ -754,6 +782,14 @@ function autosetTerrain(ability, i) {
 				lastAutoTerrain[i] = "Frozen Kingdom";
 				$("#frozen-kingdom").prop("checked", true);
 				break;
+			case "Garden of Thorns":
+				lastAutoTerrain[i] = "Garden of Thorns";
+				$("#garden-of-thorns").prop("checked", true);
+				break;
+			case "Rock Never Dies":
+				lastAutoTerrain[i] = "Rock Never Dies";
+				$("#rock-never-dies").prop("checked", true);
+				break;
 			default:
 				//if ability did not change terrain, recheck previous terrain and keep manual terrain
 				lastTerrain.prop("checked", true);
@@ -762,6 +798,9 @@ function autosetTerrain(ability, i) {
 		var weather = $("input:radio[name='weather']:checked").val();
 		var terrain = $("input:checkbox[name='terrain']:checked").val();
 		if (currentTerrain === "Frozen Kingdom" && terrain !== "Frozen Kingdom" && weather === 'Snow') {
+			autosetWeather("None", 0);
+		}
+		if (currentTerrain === "Rock Never Dies" && terrain !== "Rock Never Dies" && weather === 'Sand') {
 			autosetWeather("None", 0);
 		}
 	}
@@ -1512,6 +1551,7 @@ function createPokemon(pokeInfo) {
 			isDynamaxed: isDynamaxed,
 			alliesFainted: parseInt(pokeInfo.find(".alliesFainted").val()),
 			boostedStat: pokeInfo.find(".boostedStat").val() || undefined,
+			combo: pokeInfo.find(".combo").val() || undefined,
 			teraType: teraType,
 			boosts: boosts,
 			curHP: curHP,
@@ -2143,11 +2183,12 @@ var stickyMoves = (function () {
 
 function isPokeInfoGrounded(pokeInfo) {
 	var teraType = pokeInfo.find(".teraToggle").is(":checked") ? pokeInfo.find(".teraType").val() : undefined;
-	return $("#gravity").prop("checked") || (
-		  teraType ? teraType !== "Flying" : pokeInfo.find(".type1").val() !== "Flying" &&
-        teraType ? teraType !== "Flying" : pokeInfo.find(".type2").val() !== "Flying" &&
-        pokeInfo.find(".ability").val() !== "Levitate" &&
-        pokeInfo.find(".item").val() !== "Air Balloon"
+	
+	return $("#gravity").prop("checked") || pokeInfo.find(".item").val() !== "Iron Ball" || (
+	  teraType ? !["Flying", "Omnitype"].include(teraType) :
+	  	!["Flying", "Omnitype"].some(e => [pokeInfo.find(".type1").val(), pokeInfo.find(".type2").val()].includes(e)) &&
+	  !['Golden Hour', 'Levitate', 'Lightning Speed', 'Distortion', 'Witchcraft', 'Swarming', 'Spookster'].include(pokeInfo.find(".ability").val()) &&
+	  pokeInfo.find(".item").val() !== "Air Balloon"
 	);
 }
 
@@ -2221,7 +2262,10 @@ function getTerrainEffects() {
 	var weather = $("input:radio[name='weather']:checked").val();
 	var lastTerrain = false;
 	if ($(this).is("input:checkbox[name='terrain']:checked")) {
-		if ($(this).val() === 'Frozen Kingdom' && $("input:radio[name='weather']:checked").is('.locked-weather') && weather !== 'Snow') {
+		if ($("input:radio[name='weather']:checked").is('.locked-weather') && (
+			($(this).val() === 'Frozen Kingdom' && weather !== 'Snow') ||
+			($(this).val() === 'Rock Never Dies' && weather !== 'Sand'))
+		) {
 			$(this).prop('checked', false);
 		} else {
 			lastTerrain = $("input:checkbox[name='terrain']:checked").not(this).val();
@@ -2324,6 +2368,19 @@ function getTerrainEffects() {
 			autosetWeather("None", 0);
 		}
 	}
+	//rock never dies
+	if (terrainValue === "Rock Never Dies") {
+		if (weather !== "Sand") {
+			if ($(this).is("input:checkbox[name='terrain']:checked")) {
+				stickyWeather.clearStickyWeather();
+			}
+			autosetWeather("Rock Never Dies", 0);
+		}
+	} else {
+		if (lastTerrain === "Rock Never Dies" && weather === "Sand") {
+			autosetWeather("None", 0);
+		}
+	}
 	
 	checkBoostItem($("#p1"));
 	checkBoostItem($("#p2"));
@@ -2373,7 +2430,7 @@ function lowerStatStage(pokeInfo, stat, numStages, source, intim = false) {
 		}
 	}
 	var dropImmune = ['Clear Body', 'White Smoke', 'Full Metal Body', 'Golden Hour', 'Moribund', 'Dry-Aged', 'Hydrochasm Surge', 'Hydrochasm Surge++', ].includes(ability) || (ability === "Flower Veil" && types.includes("Grass")) || ['Clear Amulet', 'White Herb'].includes(item);
-	var intimImmune = dropImmune || ['Inner Focus', 'Own Tempo', 'Oblivious', 'Scrappy', 'Mind\'s Eye', 'Bird of Prey', 'Soul Ablaze', 'Fiery Spirit', 'Guard Dog'].includes(ability);
+	var intimImmune = dropImmune || ['Inner Focus', 'Own Tempo', 'Oblivious', 'Scrappy', 'Mind\'s Eye', 'Bird of Prey', 'Soul Ablaze', 'Fiery Spirit', 'Guard Dog', 'Stubborn Mule', 'Bane'].includes(ability);
 	
 	var before = new Boosts($("#" + id));
 	if (item === "Adrenaline Orb" && intim) {
@@ -2386,7 +2443,7 @@ function lowerStatStage(pokeInfo, stat, numStages, source, intim = false) {
 		} else if (ability === "Contrary") {
 			numStages *= -1;
 		}
-		if (!(ability === "Hyper Cutter" && boosts.hasClass("at")) && !(intim && intimImmune)) {
+		if (!(['Axe Tyranny', 'Hyper Cutter'].includes(ability) && boosts.hasClass("at")) && !(intim && intimImmune)) {
 			boosts.val(Math.min(Math.max(Number(boosts.val()) - numStages, -6), 6));
 			if (ability === "Defiant") {
 				var at = pokeInfo.find(".at .boost")

@@ -28,6 +28,7 @@ export namespace State {
     darkAura?: number;
     alignment?: I.Alignment;
     overrides?: Partial<I.Specie>;
+    combo?: number;
   }
 
   export interface Move {

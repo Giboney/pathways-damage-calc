@@ -52,18 +52,34 @@ export function calculateFinalModPathways(
   //attacker ability
   if (
     (attacker.hasAbility('Sniper', 'Guidance System') && isCritical) ||
-    (attacker.hasAbility('Tinted Lens') && typeEffectiveness < 1) ||
+    (attacker.hasAbility('Tinted Lens', 'Hoppertunist') && typeEffectiveness < 1) ||
     (attacker.hasAbility('Insidious') && typeEffectiveness < 1 && move.hasType('Bug', 'Poison')) ||
     (attacker.hasAbility('Natural Enemy') && typeEffectiveness < 1 && move.hasType('Bug', 'Grass'))
-  ){
+  ) {
     finalMod *= 2;
     desc.attackerAbility = attacker.ability;
-  } else if (attacker.hasAbility('Neuroforce', 'Eureka') && typeEffectiveness > 1) {
+  } else if (
+    (attacker.hasAbility('Spell Focus') && !attacker.item)
+  ) {
+    finalMod *= 1.5;
+    desc.attackerAbility = attacker.ability;
+  } else if (
+    (attacker.hasAbility('Neuroforce', 'Eureka') && typeEffectiveness > 1) ||
+    (attacker.hasAbility('Elementalist') && move.hasType('Fire', 'Electric', 'Ice'))
+  ) {
     finalMod *= 1.25;
     desc.attackerAbility = attacker.ability;
   } else if (attacker.hasAbility('Crescendo') && move.timesUsedWithMetronome! >= 1) {
     const timesUsedWithMetronome = Math.min(5, Math.floor(move.timesUsedWithMetronome!));
     finalMod *= 1 + 0.2 * timesUsedWithMetronome;
+    desc.attackerAbility = attacker.ability;
+  } else if (attacker.hasAbility('Street Chef') && move.hasType('Fire', 'Water', 'Grass') && attacker.combo) {
+    finalMod *= 1 + attacker.combo * 0.2;
+    desc.combo = attacker.combo;
+    desc.attackerAbility = attacker.ability;
+  } else if (attacker.hasAbility('Combo Flurry') && (move.flags.punch || move.flags.kicking) && attacker.combo) {
+    finalMod *= 1 + attacker.combo * 0.2;
+    desc.combo = attacker.combo;
     desc.attackerAbility = attacker.ability;
   }
   
@@ -82,7 +98,7 @@ export function calculateFinalModPathways(
     desc.defenderAbility = defender.ability;
   } else if (
     (defender.hasAbility('Ice Scales') && move.category === 'Special') ||
-    (defender.hasAbility('Multiscale', 'Shadow Shield', 'Killing Joke') && defender.curHP() === defender.maxHP() &&
+    (defender.hasAbility('Multiscale', 'Shadow Shield', 'Killing Joke', 'Absolute Gaia') && defender.curHP() === defender.maxHP() &&
      hitCount === 0 && !affectedByHazards(defender, field) && !attacker.hasAbility('Parental Bond (Child)')) ||
     (defender.hasAbility('Water Bubble') && move.hasType('Fire')) ||
     (defender.hasAbility('Punk Rock') && move.flags.sound) ||
@@ -95,7 +111,7 @@ export function calculateFinalModPathways(
     desc.defenderAbility = defender.ability;
   } else if (
     (defender.hasAbility('Filter', 'Solid Rock', 'Prism Armor') && typeEffectiveness > 1) ||
-    defender.hasAbility('Sword of Damocles')
+    defender.hasAbility('Sword of Damocles', 'Spookster')
   ) {
     finalMod *= 0.75;
     desc.defenderAbility = defender.ability;
@@ -148,6 +164,9 @@ export function calculateFinalModPathways(
   }
   if (field.hasTerrain('Dragonic Soul') && defender.hasType('Dragon')) {
     finalMod *= 0.9;
+    desc.terrain = field.terrain;
+  } else if (field.hasTerrain('Garden of Thorns') && isGrounded(attacker, field) && attacker.hasType('Grass')) {
+    finalMod *= 2;
     desc.terrain = field.terrain;
   }
   
@@ -221,19 +240,19 @@ export function calculateFinalModPathways(
   finalMod *= typeEffectiveness;
   if (
     attacker.hasStatus('brn') && move.category === 'Physical' &&
-    !attacker.hasAbility('Guts', 'Grit', 'Laced Cream', 'Dry-Aged') && !move.named('Facade', 'Brilliant Bravado')
+    !attacker.hasAbility('Guts', 'Grit', 'Laced Cream', 'Dry-Aged', 'Rampage') && !move.named('Facade', 'Brilliant Bravado')
   ) {
     finalMod *= 0.5;
     desc.isBurned = true;
   } else if (
     attacker.hasStatus('fbt') && move.category === 'Special' &&
-    !attacker.hasAbility('Guts', 'Grit', 'Laced Cream', 'Dry-Aged') && !move.named('Facade', 'Brilliant Bravado')
+    !attacker.hasAbility('Guts', 'Grit', 'Laced Cream', 'Dry-Aged', 'Rampage') && !move.named('Facade', 'Brilliant Bravado')
   ) {
     finalMod *= 0.5;
     desc.isFrostbitten = true;
   }
   
-  if (!isCritical && !move.named('Brick Break', 'Psychic Fangs', 'Doom Blade', 'Stone Fangs')) {
+  if (!isCritical && !move.named('Brick Break', 'Psychic Fangs', 'Doom Blade', 'Stone Fangs', 'Front Kick')) {
     if (field.defenderSide.isAuroraVeil) {
       finalMod *= field.gameType !== 'Singles' ? 2 / 3 : 0.5;
       desc.isAuroraVeil = true;
