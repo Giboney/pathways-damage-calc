@@ -550,12 +550,12 @@ const PATHWAYS = SV.concat([
   'Boiling Point',//
   'Street Chef',// DONE
   'Vegetarian',//seraphic heal for grass
-  'Dry-Aged',//not used, ignores stat changes from any source, item, status, stat stages
+  'Dry-Aged',//DONE ignores stat changes from any source, item, status, stat stages
   'Mesmerize',//intim but spatk
   'Rapid Fire',//loaded dice as an ability
   'Oxidation',//poison hits steel for normal effectiveness
   'Ferrite Scales',//bmods x0.5 if rock or ice dr, immuse to poison
-  'Garden of Thorns',//TODO
+  'Garden of Thorns',//DONE
   //'Temporal Exchange',//unused (for now)
   'Flash Flood', //done
   //'Lightning Chain',//
@@ -588,9 +588,9 @@ const PATHWAYS = SV.concat([
   //'Breakdown',//
   //'Scorching Touch',//
   //'Bane',//
-  'Transmutation',//
-  'Rock Never Dies',//TODO
-  'Absolute Gaia',//
+  'Transmutation',//DONE
+  'Rock Never Dies',//DONE
+  'Absolute Gaia',//DONE
   'Combo Flurry',//DONE
   'Revelry',//
   'Undead Detonation',//

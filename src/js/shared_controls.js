@@ -352,7 +352,7 @@ $(".abilityToggle").on("change", function() {
 var formChangeAbilities = [
 	'Lightning Speed', 'Distortion', 'Killing Joke', 'Killing Joke2', 'Abyssal Veil', 'Abyssal Veil ++',
 	'Requiem Di Diavolo', 'Crescendo', 'Darkness Boost', 'Darkness Boost2', 'Ya Estas Cocinado',
-	'Hydrochasm Surge', 'Hydrochasm Surge++', 'Tera Shift'
+	'Hydrochasm Surge', 'Hydrochasm Surge++', 'Tera Shift', 'Transmutation'
 ];
 
 function getFormFromAbility(ability, name) {
@@ -405,6 +405,11 @@ function getFormFromAbility(ability, name) {
 		case 'Tera Shift':
 			if (name.includes('Terapagos')) {
 				return 'Terapagos-Terastal';
+			}
+			return name;
+		case 'Transmutation':
+			if (name.includes('Aegislash')) {
+				return 'Aegislash-Alchemist';
 			}
 			return name;
 		default:

@@ -3345,7 +3345,7 @@ var PBS = {
   'Gabite': {name: 'GABITE'},
   'Garchomp': {name: 'GARCHOMP'},
   'Garchomp-Mega': {name: 'GARCHOMP', form: 1},
-  'Garchomp-Gaia-Garchomp': {name: 'GARCHOMP', form: 2},
+  'Garchomp-Gaia': {name: 'GARCHOMP', form: 2},
   'Munchlax': {name: 'MUNCHLAX'},
   'Riolu': {name: 'RIOLU'},
   'Riolu-Partner': {name: 'RIOLU', form: 2},

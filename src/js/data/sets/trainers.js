@@ -6609,7 +6609,7 @@ var TRAINERDEX_PATHWAYS = {
     "Farigiraf": {
       "3": {"level":100,"ability":"Armor Tail","item":"Focus Sash","nature":"Modest","ivs":{"hp":31,"at":0,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":4,"at":0,"df":0,"sa":252,"sd":0,"sp":252},"moves":["Stored Power","Dazzling Gleam","Armor Cannon","Shell Smash"],"gender":"M"}
     },
-    "Garchomp-Gaia-Garchomp": {
+    "Garchomp-Gaia": {
       "4": {"level":102,"ability":"Absolute Gaia","item":"Shell Bell","nature":"Jolly","ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"evs":{"hp":4,"at":252,"df":0,"sa":0,"sd":0,"sp":252},"moves":["Dragon Rush","Triple Kick","Fissure","Guillotine"],"gender":"F"}
     },
     "Slaking": {

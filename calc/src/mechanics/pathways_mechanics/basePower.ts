@@ -694,7 +694,7 @@ export function calculateBPModsPathways(
   // Items
   //attacker item
   if (
-    ((!move.isZ && !move.isMax) &&
+    ((!move.isZ && !move.isMax && !attacker.hasAbility('Dry-Aged')) &&
      ((attacker.hasItem('Choice Band') && move.category === 'Physical') ||
       (attacker.hasItem('Choice Specs') && move.category === 'Special'))
     ) ||

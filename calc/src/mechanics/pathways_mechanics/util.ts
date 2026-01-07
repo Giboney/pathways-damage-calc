@@ -256,7 +256,7 @@ export function getFinalSpeedPathways(pokemon: Pokemon, field: Field, side: Side
   }
 
   if (
-		pokemon.hasItem('Choice Scarf') ||
+		(pokemon.hasItem('Choice Scarf') && !pokemon.hasAbility('Dry-Aged')) ||
 		(pokemon.hasItem('Nuptial Veil') && pokemon.named('Salandit'))
 	) {
     speedMod *= 1.5;
@@ -266,7 +266,7 @@ export function getFinalSpeedPathways(pokemon: Pokemon, field: Field, side: Side
     speedMod *= 2;
   }
 
-  if (side.isTailwind) speedMod *= 2;
+  if (side.isTailwind && !pokemon.hasAbility('Dry-Aged')) speedMod *= 2;
   // Pledge swamp would get applied here when implemented
 	
   if (pokemon.hasStatus('par') && !pokemon.hasAbility('Quick Feet', 'Rampage', 'Laced Cream', 'Dry Aged')) {
